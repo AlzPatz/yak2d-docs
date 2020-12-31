@@ -1,0 +1,570 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Namespace Yak2D
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Namespace Yak2D
+   ">
+    <meta name="generator" content="docfx 2.56.6.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Yak2D">
+  
+  <h1 id="Yak2D" data-uid="Yak2D" class="text-break">Namespace Yak2D
+  </h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="markdown level0 remarks"></div>
+    <h3 id="classes">Classes
+  </h3>
+      <h4><a class="xref" href="Yak2D.Color.html">Color</a></h4>
+      <section><p>Methods to generate COLOURS but using the american spelling
+Time will tell if this generates confusion. Perhaps I should stick with the americanised spelling</p>
+</section>
+      <h4><a class="xref" href="Yak2D.CustomVeldridBase.html">CustomVeldridBase</a></h4>
+      <section><p>Override this base class to enable the creation of a custom rendering stage
+with exposure to all key components (device, factory, window, commandlist)
+The render method has access to an optional 4 input textures and single render target
+The update has raw access to the latest veldrid input snapshot object</p>
+</section>
+      <h4><a class="xref" href="Yak2D.Launcher.html">Launcher</a></h4>
+      <section><p>Welcome to the Yak2D cross platform c# graphics framework! To get started, please provide Run() your own implementation of the IApplication interface</p>
+</section>
+      <h4><a class="xref" href="Yak2D.StartupConfig.html">StartupConfig</a></h4>
+      <section><p>Holds the start up properties for a Yak2D application</p>
+</section>
+      <h4><a class="xref" href="Yak2D.TextureBrush.html">TextureBrush</a></h4>
+      <section><p>Descriptor object for the properties of a specific Texture use in a fluent interface drawable object
+The fluent drawing interface currently only supports texture references (not raw unsigned integer ids). Wrap ids if required</p>
+</section>
+      <h4><a class="xref" href="Yak2D.Yak2DException.html">Yak2DException</a></h4>
+      <section><p>Represents errors that occur in Yak2D library.</p>
+</section>
+    <h3 id="structs">Structs
+  </h3>
+      <h4><a class="xref" href="Yak2D.BloomEffectConfiguration.html">BloomEffectConfiguration</a></h4>
+      <section><p>The bloom effect downsamples the source, ignoring colour data below a brightness cut off
+The downsampled image is then blurred
+The final result is the source image plus a blend of the downsampled image back on top</p>
+</section>
+      <h4><a class="xref" href="Yak2D.Blur1DEffectConfiguration.html">Blur1DEffectConfiguration</a></h4>
+      <section><p>The directional blur effect downsamples and then blurs the image along a direction</p>
+</section>
+      <h4><a class="xref" href="Yak2D.BlurEffectConfiguration.html">BlurEffectConfiguration</a></h4>
+      <section><p>The blur effect downsamples and then blurs the image in both horizontal and vertical directions</p>
+</section>
+      <h4><a class="xref" href="Yak2D.Colour.html">Colour</a></h4>
+      <section><p>A four component colour, with RGBA values each within 0 to 1 range</p>
+</section>
+      <h4><a class="xref" href="Yak2D.ColourEffectConfiguration.html">ColourEffectConfiguration</a></h4>
+      <section><p>Simple colour modification effects
+Mulitple effects can be combined, the result of one effect is fed into the input source of the next
+The ordering is: [Clear Surface Background?] -&gt; Single Colour -&gt; GrayScale -&gt; Colourise -&gt; Negative -&gt; Opacity</p>
+</section>
+      <h4><a class="xref" href="Yak2D.CrtEffectConfiguration.html">CrtEffectConfiguration</a></h4>
+      <section><p>Mimicks the effect of a Cathode Ray Tube Screen
+Particularly effective when combined with CRT Mesh shaped render surface (MeshRender stage)</p>
+</section>
+      <h4><a class="xref" href="Yak2D.DistortionDrawRequest.html">DistortionDrawRequest</a></h4>
+      <section><p>Holds data for 2D distortion height map drawing requests
+A drawing request is comprised of indexed vertices arranged in a triangle list</p>
+</section>
+      <h4><a class="xref" href="Yak2D.DistortionEffectConfiguration.html">DistortionEffectConfiguration</a></h4>
+      <section><p>The Distortion effect is generated by shifting texture coorindates based on the gradient of a height map, scaled by a chosen factor</p>
+</section>
+      <h4><a class="xref" href="Yak2D.DrawRequest.html">DrawRequest</a></h4>
+      <section><p>Holds data for 2D drawing requests
+A drawing request is comprised of indexed vertices arranged in a triangle list</p>
+</section>
+      <h4><a class="xref" href="Yak2D.EdgeDetectionConfiguration.html">EdgeDetectionConfiguration</a></h4>
+      <section><p>Detect edges and produce a grayscale result</p>
+</section>
+      <h4><a class="xref" href="Yak2D.MeshRenderLightConfiguration.html">MeshRenderLightConfiguration</a></h4>
+      <section><p>Mesh render stage allows multiple directional and spotlight lights
+The lighting model is Phong -&gt; per-pixel lighting</p>
+</section>
+      <h4><a class="xref" href="Yak2D.MeshRenderLightingPropertiesConfiguration.html">MeshRenderLightingPropertiesConfiguration</a></h4>
+      <section><p>Mesh render stage allows multiple directional and spotlight lights
+The lighting model is Phong -&gt; per-pixel lighting</p>
+</section>
+      <h4><a class="xref" href="Yak2D.OldMovieConfiguration.html">OldMovieConfiguration</a></h4>
+      <section><p>Creates the effect of an old movie reel / projector
+Includes: Scratch Lines in frames, Noise, Random Vertical Shifting, Dimming, Reel Rolling, Over Exposure Flicker</p>
+</section>
+      <h4><a class="xref" href="Yak2D.PixellateConfiguration.html">PixellateConfiguration</a></h4>
+      <section><p>Texture Coordinates are rounded so that the image is divided up into a number of squares that each
+reference the same pixel, thus creating a pixellated effect
+The Intensity is an interpolation between the pre-transformed texture coordinates and the post transform coordiantes</p>
+</section>
+      <h4><a class="xref" href="Yak2D.QuadTexCoords.html">QuadTexCoords</a></h4>
+      <section></section>
+      <h4><a class="xref" href="Yak2D.RectangularCuboidMeshTexCoords.html">RectangularCuboidMeshTexCoords</a></h4>
+      <section><p>Represents the Texture Coordinates used to map a single
+Texture onto a 6 sided rectangular cuboid(rectangle type cube) mesh</p>
+<p>Coordinate System is LHS, with y upwards and z positive into camera</p>
+<p>The faces are set out on the cube such that
+1 to 4: side faces, with side one facing along z(into camera) for an unrotated cube mesh(up is positive y)
+1 = back face, normal along positive z
+2 = right face, normal along positive x
+3 = front face, normal along negative z
+4 = left face, normal along negative x
+side 5 is top face.with the top of that 2d area being furthest along positive z in the above example
+side 6 is bottom face. orientated so that upon rotating the above mentioned around the x axis the
+top and bottom face would appear the same way up when facing the camera
+i.e.when unrotated the top of the 2d area will be closest to camera upside down.
+a little tricky to describe - but should be roughly &quot;as expected&quot;</p>
+<p>Most use cases will use the standard / auto generated coordinates.please note
+the texture is split into 6 regions. 2 rows of 3, with each face assigned as:</p>
+<p>[1][2][3]
+[4][5][6]</p>
+</section>
+      <h4><a class="xref" href="Yak2D.ShaderUniformDescription.html">ShaderUniformDescription</a></h4>
+      <section><p>Description for shader uniforms used in a CustomShader render stage</p>
+</section>
+      <h4><a class="xref" href="Yak2D.StaticConfiguration.html">StaticConfiguration</a></h4>
+      <section><p>Creates an evolving static 'noise' effect</p>
+</section>
+      <h4><a class="xref" href="Yak2D.StyleEffectGroupConfiguration.html">StyleEffectGroupConfiguration</a></h4>
+      <section><p>A RenderStage that applies stylised effects to a texture source and render to a target
+Effects are: Pixellate, Edge Detection, Static Noise, Cathode Ray Tube and Old Movie Reel,
+A combination of all the effects can be applied together
+In general, effect results are fed into the next effect
+The order being -&gt; Pixellate -&gt; Edge Detection -&gt; Static -&gt; Old Movie Reel -&gt; CRT
+This struct contains configuration data for all effects in the stage</p>
+</section>
+      <h4><a class="xref" href="Yak2D.TextureData.html">TextureData</a></h4>
+      <section><p>Holds Texture Dimensions and Pixel Data</p>
+</section>
+      <h4><a class="xref" href="Yak2D.TransformResult.html">TransformResult</a></h4>
+      <section><p>Holds the result of a Transform from or too Window Position</p>
+</section>
+      <h4><a class="xref" href="Yak2D.Vertex2D.html">Vertex2D</a></h4>
+      <section><p>Vertex data used in 2D drawing operations</p>
+</section>
+      <h4><a class="xref" href="Yak2D.Vertex3D.html">Vertex3D</a></h4>
+      <section><p>Vertex data used in 3D mesh rendering operations</p>
+</section>
+    <h3 id="interfaces">Interfaces
+  </h3>
+      <h4><a class="xref" href="Yak2D.IApplication.html">IApplication</a></h4>
+      <section><p>The interface that user apps must implement. The framework calls the methods which define the broad program flow</p>
+</section>
+      <h4><a class="xref" href="Yak2D.IBackend.html">IBackend</a></h4>
+      <section><p>Platform API operations</p>
+</section>
+      <h4><a class="xref" href="Yak2D.IBaseDrawable.html">IBaseDrawable</a></h4>
+      <section><p>The base object type for the shape drawing fluent interface
+Each of the object's methods represent a possible fill type for shape drawing
+The fluent type interface is designed for simple, rapid, iterative shape drawing
+It currently only supports texture references (not raw unsigned integer ids). Wrap ids if required</p>
+</section>
+      <h4><a class="xref" href="Yak2D.IBloomStage.html">IBloomStage</a></h4>
+      <section><p>A RenderStage that applies a bloom effect to a texture source and render to a target
+Brightness threshold, additive mix amount with source and number of blur component samples can be configured for the stage
+The source texture is downsampled and threhold clipped onto a smaller surface before being blurred and re-mixed with the original
+Holds the unsiged 64 bit integer framework id for the stage</p>
+</section>
+      <h4><a class="xref" href="Yak2D.IBlur1DStage.html">IBlur1DStage</a></h4>
+      <section><p>A RenderStage that applies a directional (1d) blur effect to a texture source and render to a target
+For non-directional blur, use the standard Blur effect instead
+Blur direction, fractional mix amount with source and number of blur component samples can be configured for the stage
+Holds the unsiged 64 bit integer framework id for the stage</p>
+</section>
+      <h4><a class="xref" href="Yak2D.IBlurStage.html">IBlurStage</a></h4>
+      <section><p>A RenderStage that applies a blur effect to a texture source and render to a target
+The blur is applied in both x and y texture coordinate directions, it is not a directional blur - use Blur1D effect instead in that scenario
+Fractional mix amount with source and number of blur component samples can be configured for the stage
+Holds the unsiged 64 bit integer framework id for the stage</p>
+</section>
+      <h4><a class="xref" href="Yak2D.ICamera.html">ICamera</a></h4>
+      <section><p>A Camera reference (2D or 3D)
+Holds the unsiged 64 bit integer framework id for the resource</p>
+</section>
+      <h4><a class="xref" href="Yak2D.ICamera2D.html">ICamera2D</a></h4>
+      <section><p>A reference for a Camera used in 2D Drawing
+Holds the unsiged 64 bit integer framework id for the resource</p>
+</section>
+      <h4><a class="xref" href="Yak2D.ICamera3D.html">ICamera3D</a></h4>
+      <section><p>A reference for a Camera used in 3D Rendering
+Holds the unsiged 64 bit integer framework id for the resource</p>
+</section>
+      <h4><a class="xref" href="Yak2D.ICameras.html">ICameras</a></h4>
+      <section><p>Camera Operations: Creation, Configuration and Destruction
+2D Cameras are used by Drawing Stages (IDrawStage and IDistortionStage)
+3D Cameras are used by the MeshRender Stage</p>
+</section>
+      <h4><a class="xref" href="Yak2D.IColourEffectsStage.html">IColourEffectsStage</a></h4>
+      <section><p>A RenderStage that applies simple colour modification effects to a texture source and render to a target
+Effects are: single colour mix, grayscale, negative, colourise and opacity
+A combination of all the effects can be applied together
+Holds the unsiged 64 bit integer framework id for the stage</p>
+</section>
+      <h4><a class="xref" href="Yak2D.ICommonMeshBuilder.html">ICommonMeshBuilder</a></h4>
+      <section><p>Provides functions to generate the Vertex3D arrays for a selection of mesh types for the MeshRender stage</p>
+</section>
+      <h4><a class="xref" href="Yak2D.ICommonOperations.html">ICommonOperations</a></h4>
+      <section><p>Angle conversion, 2d vector rotation and helpers for generating line, arrow and regular polygon vertex positions and indices lists</p>
+</section>
+      <h4><a class="xref" href="Yak2D.IConstructedDrawable.html">IConstructedDrawable</a></h4>
+      <section><p>Represents a fluent interface object that is in a drawable state
+Contains methods represent additional modifier options for further shape modification
+The fluent type interface is designed for simple, rapid, iterative shape drawing
+It currently only supports references (not raw unsigned integer ids). Wrap ids if required</p>
+</section>
+      <h4><a class="xref" href="Yak2D.ICoordinateTransforms.html">ICoordinateTransforms</a></h4>
+      <section><p>Functions to transform positions between World, Screen and Window coordinates</p>
+</section>
+      <h4><a class="xref" href="Yak2D.ICustomShaderStage.html">ICustomShaderStage</a></h4>
+      <section><p>A reference for a user defined shader effect stage
+The user defines the shader code, constrained by a set maximum number of texture and uniform configuration variable inputs
+Holds the unsiged 64 bit integer framework id for the stage</p>
+</section>
+      <h4><a class="xref" href="Yak2D.ICustomVeldridStage.html">ICustomVeldridStage</a></h4>
+      <section><p>A reference for a user defined stage of custom veldrid logic, enabling operations or integrations that require complete access to veldrid library functions
+Holds the unsiged 64 bit integer framework id for the stage</p>
+</section>
+      <h4><a class="xref" href="Yak2D.IDisplay.html">IDisplay</a></h4>
+      <section><p>Display / Window Operations: Resolution, Position, Title, State</p>
+</section>
+      <h4><a class="xref" href="Yak2D.IDistortionCollection.html">IDistortionCollection</a></h4>
+      <section></section>
+      <h4><a class="xref" href="Yak2D.IDistortionHelper.html">IDistortionHelper</a></h4>
+      <section><p>Provides tools to help the generation of height map distortion textures, as well as simple distotion sprite evolution and lifecycle manager</p>
+</section>
+      <h4><a class="xref" href="Yak2D.IDistortionStage.html">IDistortionStage</a></h4>
+      <section><p>A RenderStage that applies a distortion effect to a texture source and render to a target
+The per-pixel distortion amount is generated from a distortion height map
+The distortion height map is drawn each frame, in a similar way that DrawStage draw requests are generated, queued and sorted
+The final distortion amount per-pixel is scaled by a configurable scalar quantity
+Holds the unsiged 64 bit integer framework id for the stage</p>
+</section>
+      <h4><a class="xref" href="Yak2D.IDistortionTextureGenerator.html">IDistortionTextureGenerator</a></h4>
+      <section><p>Generate Textures suitable for use in distortion drawing (Rgba and Float32)</p>
+</section>
+      <h4><a class="xref" href="Yak2D.IDrawing.html">IDrawing</a></h4>
+      <section><p>Drawing Operations
+Build draw queues containing lists of triangles and their properties (colouring and texturing, layer, coordinate space and depth)
+Draw queues exist for standard drawing (DrawStage) as well as drawing to distortion height maps (DistortionStage)
+Bitmap font rendering is supported</p>
+</section>
+      <h4><a class="xref" href="Yak2D.IDrawingHelpers.html">IDrawingHelpers</a></h4>
+      <section><p>Drawing Helpers for Common Shapes
+Quad, Regular Polygon, Line and Arrow drawing functions
+Includes Fluent Interface for building and modifying shape drawing in steps</p>
+</section>
+      <h4><a class="xref" href="Yak2D.IDrawStage.html">IDrawStage</a></h4>
+      <section><p>A RenderStage that collects, sorts and processes 2d drawing requests
+Holds the unsiged 64 bit integer framework id for the stage</p>
+</section>
+      <h4><a class="xref" href="Yak2D.IFont.html">IFont</a></h4>
+      <section><p>A Font reference
+Holds the unsiged 64 bit integer framework id for the resource</p>
+</section>
+      <h4><a class="xref" href="Yak2D.IFonts.html">IFonts</a></h4>
+      <section><p>Font Operations: Load, Destroy and Count</p>
+</section>
+      <h4><a class="xref" href="Yak2D.IFps.html">IFps</a></h4>
+      <section><p>Provides current per-second rates for update and draw/render iteration loops</p>
+</section>
+      <h4><a class="xref" href="Yak2D.IFrameworkMessenger.html">IFrameworkMessenger</a></h4>
+      <section><p>An interface for framework messages. The default implementation outputs to console (and only for a DEBUG build). The user may define their own to redirect messages generated by the framework</p>
+</section>
+      <h4><a class="xref" href="Yak2D.IHelpers.html">IHelpers</a></h4>
+      <section><p>Helper objects to support / simplify rendering stages</p>
+</section>
+      <h4><a class="xref" href="Yak2D.IInput.html">IInput</a></h4>
+      <section><p>Input Operations
+Yak2D supports Keyboard, Mouse and Gamepad input</p>
+</section>
+      <h4><a class="xref" href="Yak2D.IKeyed.html">IKeyed</a></h4>
+      <section><p>All framework object references provided to users are ultimately simple objects that hold unsigned int64 ID keys. Each reference inherrits from this base intereface.
+The type system is used to help avoid keys being used incorrectly: each object type has it's own empty interface that inherrits from IKeyed (perhaps an anti-pattern).
+The actual int64 keys are not hidden from the user, so key 'abuse' can occur; but allows custom storage of key values if desired.
+The framework allows raw keys to be provided to it's service methods, but the user must ensure keys are used for the correct item types
+Note: The framework does not internally hold references to the IKeyed Objects provided to the user on resource creation, it only stores the unsigned int64
+Note: When resources are lost (and the framework requests resource [re-]creation), all old keys will become invalid. It is not guaranteed that keys will not be reused, but it is unlikley (multiple universe lifespan type expected periods)</p>
+</section>
+      <h4><a class="xref" href="Yak2D.ILine.html">ILine</a></h4>
+      <section><p>The Line object type for the shape drawing fluent interface
+A line can be converted into an arrow
+The fluent type interface is designed for simple, rapid, iterative shape drawing</p>
+</section>
+      <h4><a class="xref" href="Yak2D.IMeshRenderStage.html">IMeshRenderStage</a></h4>
+      <section><p>A RenderStage that will render a 3D Textured Mesh
+Ambient, Directional and Spotlights can be configured for the stage, along with the Mesh to render
+Holds the unsiged 64 bit integer framework id for the stage</p>
+</section>
+      <h4><a class="xref" href="Yak2D.IMixStage.html">IMixStage</a></h4>
+      <section><p>A RenderStage that enables the mixing of up to four textures together
+The general mix factors per texture are defined in the configuration
+A further 'per-pixel' mixing scalar can be defined using mixTexture
+Holds the unsiged 64 bit integer framework id for the stage</p>
+</section>
+      <h4><a class="xref" href="Yak2D.IPersistentDistortionQueue.html">IPersistentDistortionQueue</a></h4>
+      <section><p>A Distortion Effect Persistent Draw Queue reference
+Holds the unsiged 64 bit integer framework id for the resource</p>
+</section>
+      <h4><a class="xref" href="Yak2D.IPersistentDrawQueue.html">IPersistentDrawQueue</a></h4>
+      <section><p>A Persistent Draw Queue reference
+Holds the unsiged 64 bit integer framework id for the resource</p>
+</section>
+      <h4><a class="xref" href="Yak2D.IRenderQueue.html">IRenderQueue</a></h4>
+      <section><p>Builds the rendering queue
+Each call to this object will add a step to the queue</p>
+</section>
+      <h4><a class="xref" href="Yak2D.IRenderStage.html">IRenderStage</a></h4>
+      <section><p>A reference that can represent any type of RenderStage
+Holds the unsiged 64 bit integer framework id for the stage</p>
+</section>
+      <h4><a class="xref" href="Yak2D.IRenderTarget.html">IRenderTarget</a></h4>
+      <section><p>A Render Target reference
+Holds the unsiged 64 bit integer framework id for the resource</p>
+</section>
+      <h4><a class="xref" href="Yak2D.IServices.html">IServices</a></h4>
+      <section><p>Provides access to all Yak2D core components</p>
+</section>
+      <h4><a class="xref" href="Yak2D.IShape.html">IShape</a></h4>
+      <section><p>The shape object type for the shape drawing fluent interface
+Each of the object's methods represent a possible fill type for shape drawing
+The fluent type interface is designed for simple, rapid, iterative shape drawing</p>
+</section>
+      <h4><a class="xref" href="Yak2D.IStages.html">IStages</a></h4>
+      <section><p>Render Stage Operations
+Creation, configuration and destruction of render stages and viewports</p>
+</section>
+      <h4><a class="xref" href="Yak2D.IStyleEffectsStage.html">IStyleEffectsStage</a></h4>
+      <section><p>A RenderStage that applies stylised effects to a texture source and render to a target
+Effects are: Pixellate, Edge Detection, Cathode Ray Tube and Old Movie Reel,
+A combination of all the effects can be applied together
+Holds the unsiged 64 bit integer framework id for the stage</p>
+</section>
+      <h4><a class="xref" href="Yak2D.ISurfaceCopyStage.html">ISurfaceCopyStage</a></h4>
+      <section><p>A RenderStage that performs a GPU to CPU copy of Surface Pixel Data
+A Surface being either a Texture or RenderTarget
+Cannot copy from window main render target (TO CHECK)
+The stage requires the creation of an internal staging texture. This is sized to the source texture
+The texture size can be pre-set to avoid texture creation at render, but it will be re-created if the
+size does not match the eventual source texture copied from
+The Stage item itself holds the callback delegate that is called with the pixel data once rendering is complete
+Holds the unsiged 64 bit integer framework id for the stage</p>
+</section>
+      <h4><a class="xref" href="Yak2D.ISurfaces.html">ISurfaces</a></h4>
+      <section><p>GPU Surface Operations
+Texture and Render Target Creation and Destruction
+A surface is either a Texture or a RenderTarget
+A RenderTarget can be drawn too, a Texture cannot
+Both RenderTarget and Textures can be used as Textures (pixel sources)</p>
+</section>
+      <h4><a class="xref" href="Yak2D.ITexture.html">ITexture</a></h4>
+      <section><p>A Texture reference
+Holds the unsiged 64 bit integer framework id for the resource</p>
+</section>
+      <h4><a class="xref" href="Yak2D.ITextured.html">ITextured</a></h4>
+      <section><p>The Filled object type for the shape drawing fluent interface
+Each of the object's methods represent a possible shape type for shape drawing
+The fluent type interface is designed for simple, rapid, iterative shape drawing</p>
+</section>
+      <h4><a class="xref" href="Yak2D.ITransformable.html">ITransformable</a></h4>
+      <section><p>Represents a fluent interface object that is in a drawable state, but can also be scaled and rotated
+in addition to the operations possible on a IConstructedDrawable type
+Contains methods for those scaling and rotation operations
+The fluent type interface is designed for simple, rapid, iterative shape drawing</p>
+</section>
+      <h4><a class="xref" href="Yak2D.IViewport.html">IViewport</a></h4>
+      <section><p>A Viewport reference
+Holds the unsiged 64 bit integer framework id for the resource</p>
+</section>
+    <h3 id="enums">Enums
+  </h3>
+      <h4><a class="xref" href="Yak2D.AssetSourceEnum.html">AssetSourceEnum</a></h4>
+      <section><p>Assets (Textures, Fonts) can be either embedded as resources or included in the application output directory
+Embedded resources must be part of the assembly that provides the implementation of IApplication to the framework launcher</p>
+<p>Below note that angle brackets have been replaced with () to avoid xml formatting complaints
+An example of .csproj content that would embed in the application assembly all files in the Textures folder (found in the .csproj root folder):
+(ItemGroup) (EmbeddedResource Include=&quot;Textures**&quot;/) (/ItemGroup)</p>
+<p>An example of .csproj content that would include in the output directory all of the files in the Fonts folder (found in the .csproj root folder):
+(ItemGroup) (Content Include=&quot;$(MSBuildThisFileDirectory)Fonts**&quot;) (CopyToOutputDirectory)PreserveNewest(/CopyToOutputDirectory)(Link)Fonts%(RecursiveDir)%(FileName)%(Extension)(/Link)(/Content)(/ItemGroup)
+The () around MSBuildThisFileDirectory are correct, the rest should be replaced with angled brackets</p>
+<p>Currently it is not possible to provide an absolute file path to the application to load an asset from any location</p>
+</section>
+      <h4><a class="xref" href="Yak2D.BlendState.html">BlendState</a></h4>
+      <section><p>How pixel colours are combined when a source pixel is drawn onto a target pixel</p>
+</section>
+      <h4><a class="xref" href="Yak2D.CoordinateSpace.html">CoordinateSpace</a></h4>
+      <section><p>DrawRequests (DrawStage and DistortionStage) are transformed to World or Screen Coordinates by the properties of the chosen Camera2D at render time
+Screen coordinates are (0,0) in the middle of the Camera's view and extend half of the camera's virtual resolution along the x and y axis
+The axis are positive X to the right, and positive Y upwards in terms of screen orientation
+The top left corner of the screen is therefore location (-0.5 VirtualResolutionX, +0.5 VirtualResolutionY)
+The camera's resolution is virtual (not pixel based), as when a DrawStage is rendered onto a RenderTarget, the camera's view is rendered across the entire RenderTarget (or current viewport portion)
+If the virtual resolution does not match the pixel resolution of the RenderTarget or Viewport, then the resultant render is scaled to the target shape
+This enables window / system resolution to remain seperate from the logical positioning of objects in both Screen and World space</p>
+<p>World coordinates are similar, but rendering position is transformed by both the camera's zoom and world focus point (and rotation)
+World axis are also (when the camera is not rotated) positive x to the right, and positive y upwards in terms of on-screen direction</p>
+</section>
+      <h4><a class="xref" href="Yak2D.DisplayState.html">DisplayState</a></h4>
+      <section><p>Application desktop window state</p>
+</section>
+      <h4><a class="xref" href="Yak2D.FillType.html">FillType</a></h4>
+      <section><p>Represents the Triangle Fill Type of a DrawRequest (when submitted to a DrawStage)</p>
+</section>
+      <h4><a class="xref" href="Yak2D.FrameworkMessage.html">FrameworkMessage</a></h4>
+      <section><p>Framework messages inform the user application of an important state change</p>
+</section>
+      <h4><a class="xref" href="Yak2D.GamepadAxis.html">GamepadAxis</a></h4>
+      <section><p>Enumeration of gamepad axes (xbox style)
+Identical to Veldrid Enum</p>
+</section>
+      <h4><a class="xref" href="Yak2D.GamepadButton.html">GamepadButton</a></h4>
+      <section><p>Enumeration of gamepad buttons (xbox style)
+Identical to Veldrid Enum</p>
+</section>
+      <h4><a class="xref" href="Yak2D.GraphicsApi.html">GraphicsApi</a></h4>
+      <section><p>Represents the various Graphics APIs</p>
+</section>
+      <h4><a class="xref" href="Yak2D.ImageFormat.html">ImageFormat</a></h4>
+      <section><p>Image file type</p>
+</section>
+      <h4><a class="xref" href="Yak2D.KeyCode.html">KeyCode</a></h4>
+      <section><p>Enumeration of keyboard keys
+Identical to Veldrid Enum</p>
+</section>
+      <h4><a class="xref" href="Yak2D.LifeCycle.html">LifeCycle</a></h4>
+      <section><p>Defines the looping (or not) properties of an item held in a distortion collection</p>
+</section>
+      <h4><a class="xref" href="Yak2D.LightType.html">LightType</a></h4>
+      <section><p>The Light type used in MeshRender Stages (Phong lighting model)</p>
+</section>
+      <h4><a class="xref" href="Yak2D.MouseButton.html">MouseButton</a></h4>
+      <section><p>Simple enumeration of buttons
+Identical to Veldrid Enum</p>
+</section>
+      <h4><a class="xref" href="Yak2D.ResizeSamplerType.html">ResizeSamplerType</a></h4>
+      <section><p>Sampling method used when re-sizing / re-sampling an image during bloom and blur stages</p>
+</section>
+      <h4><a class="xref" href="Yak2D.SamplerType.html">SamplerType</a></h4>
+      <section><p>Texture Sampler Filter Type. A filter type is chosen at Gpu Surface creation time (Textures and RenderTargets)</p>
+</section>
+      <h4><a class="xref" href="Yak2D.ShaderUniformType.html">ShaderUniformType</a></h4>
+      <section><p>Descriptor for Custom User Shader stage uniform type</p>
+</section>
+      <h4><a class="xref" href="Yak2D.SineWavePoint.html">SineWavePoint</a></h4>
+      <section><p>Labels defining points on a sinusoidal curve</p>
+</section>
+      <h4><a class="xref" href="Yak2D.TextJustify.html">TextJustify</a></h4>
+      <section><p>Text justification for DrawString</p>
+</section>
+      <h4><a class="xref" href="Yak2D.TextureCoordinateMode.html">TextureCoordinateMode</a></h4>
+      <section><p>Texture Coordinate Wrap Behaviour
+Yak2D does not support border pixel or solid colour texture coordinate wrap</p>
+</section>
+      <h4><a class="xref" href="Yak2D.TextureMixDirection.html">TextureMixDirection</a></h4>
+      <section><p>Dual texturing descriptor for use in DrawingHelpers fluent draw interface</p>
+</section>
+      <h4><a class="xref" href="Yak2D.TextureScaling.html">TextureScaling</a></h4>
+      <section><p>Texture scaling / repetition descriptor for use in DrawingHelpers fluent draw interface</p>
+</section>
+      <h4><a class="xref" href="Yak2D.UpdatePeriod.html">UpdatePeriod</a></h4>
+      <section><p>Framework Update Loop time period type
+A fixed timestep, as small as possible, is generally advised to give more stable simulations
+Please note, that if the user has requested the framework processes fractional catch up update iterations
+before drawing, not all update timesteps will be of an equal length. It maybe preferrable to avoid
+fractional pre-draw updates and implement some draw update motion interpolation to achieve additional smoothness
+at the risk of error correction / deviation from the next update simulation step</p>
+</section>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

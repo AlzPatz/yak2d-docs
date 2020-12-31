@@ -1,0 +1,928 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Interface ISurfaces
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Interface ISurfaces
+   ">
+    <meta name="generator" content="docfx 2.56.6.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Yak2D.ISurfaces">
+  
+  
+  <h1 id="Yak2D_ISurfaces" data-uid="Yak2D.ISurfaces" class="text-break">Interface ISurfaces
+  </h1>
+  <div class="markdown level0 summary"><p>GPU Surface Operations
+Texture and Render Target Creation and Destruction
+A surface is either a Texture or a RenderTarget
+A RenderTarget can be drawn too, a Texture cannot
+Both RenderTarget and Textures can be used as Textures (pixel sources)</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Yak2D.html">Yak2D</a></h6>
+  <h6><strong>Assembly</strong>: Yak2D.Api.dll</h6>
+  <h5 id="Yak2D_ISurfaces_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public interface ISurfaces</code></pre>
+  </div>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_ISurfaces_TotalUserSurfaceCount.md&amp;value=---%0Auid%3A%20Yak2D.ISurfaces.TotalUserSurfaceCount%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Services/ISurfaces.cs/#L19">View Source</a>
+  </span>
+  <a id="Yak2D_ISurfaces_TotalUserSurfaceCount_" data-uid="Yak2D.ISurfaces.TotalUserSurfaceCount*"></a>
+  <h4 id="Yak2D_ISurfaces_TotalUserSurfaceCount" data-uid="Yak2D.ISurfaces.TotalUserSurfaceCount">TotalUserSurfaceCount</h4>
+  <div class="markdown level1 summary"><p>Surfaces includes all Textures and RenderTargets</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">int TotalUserSurfaceCount { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_ISurfaces_UserRenderTargetCount.md&amp;value=---%0Auid%3A%20Yak2D.ISurfaces.UserRenderTargetCount%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Services/ISurfaces.cs/#L24">View Source</a>
+  </span>
+  <a id="Yak2D_ISurfaces_UserRenderTargetCount_" data-uid="Yak2D.ISurfaces.UserRenderTargetCount*"></a>
+  <h4 id="Yak2D_ISurfaces_UserRenderTargetCount" data-uid="Yak2D.ISurfaces.UserRenderTargetCount">UserRenderTargetCount</h4>
+  <div class="markdown level1 summary"><p>Render Targets can be drawn too, and used in place of textures as a source of pixel data</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">int UserRenderTargetCount { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_ISurfaces_UserTextureCount.md&amp;value=---%0Auid%3A%20Yak2D.ISurfaces.UserTextureCount%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Services/ISurfaces.cs/#L29">View Source</a>
+  </span>
+  <a id="Yak2D_ISurfaces_UserTextureCount_" data-uid="Yak2D.ISurfaces.UserTextureCount*"></a>
+  <h4 id="Yak2D_ISurfaces_UserTextureCount" data-uid="Yak2D.ISurfaces.UserTextureCount">UserTextureCount</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">int UserTextureCount { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_ISurfaces_CreateFloat32FromData_System_UInt32_System_UInt32_System_Single___Yak2D_SamplerType_.md&amp;value=---%0Auid%3A%20Yak2D.ISurfaces.CreateFloat32FromData(System.UInt32%2CSystem.UInt32%2CSystem.Single%5B%5D%2CYak2D.SamplerType)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Services/ISurfaces.cs/#L91">View Source</a>
+  </span>
+  <a id="Yak2D_ISurfaces_CreateFloat32FromData_" data-uid="Yak2D.ISurfaces.CreateFloat32FromData*"></a>
+  <h4 id="Yak2D_ISurfaces_CreateFloat32FromData_System_UInt32_System_UInt32_System_Single___Yak2D_SamplerType_" data-uid="Yak2D.ISurfaces.CreateFloat32FromData(System.UInt32,System.UInt32,System.Single[],Yak2D.SamplerType)">CreateFloat32FromData(UInt32, UInt32, Single[], SamplerType)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ITexture CreateFloat32FromData(uint textureWidth, uint textureHeight, float[] pixels, SamplerType samplerType = SamplerType.Anisotropic)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.UInt32</span></td>
+        <td><span class="parametername">textureWidth</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.UInt32</span></td>
+        <td><span class="parametername">textureHeight</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span>[]</td>
+        <td><span class="parametername">pixels</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.SamplerType.html">SamplerType</a></td>
+        <td><span class="parametername">samplerType</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.ITexture.html">ITexture</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_ISurfaces_CreateRenderTarget_System_UInt32_System_UInt32_System_Boolean_Yak2D_SamplerType_System_UInt32_.md&amp;value=---%0Auid%3A%20Yak2D.ISurfaces.CreateRenderTarget(System.UInt32%2CSystem.UInt32%2CSystem.Boolean%2CYak2D.SamplerType%2CSystem.UInt32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Services/ISurfaces.cs/#L44">View Source</a>
+  </span>
+  <a id="Yak2D_ISurfaces_CreateRenderTarget_" data-uid="Yak2D.ISurfaces.CreateRenderTarget*"></a>
+  <h4 id="Yak2D_ISurfaces_CreateRenderTarget_System_UInt32_System_UInt32_System_Boolean_Yak2D_SamplerType_System_UInt32_" data-uid="Yak2D.ISurfaces.CreateRenderTarget(System.UInt32,System.UInt32,System.Boolean,Yak2D.SamplerType,System.UInt32)">CreateRenderTarget(UInt32, UInt32, Boolean, SamplerType, UInt32)</h4>
+  <div class="markdown level1 summary"><p>Create a GPU drawing surface. RenderTargets can be sampled inplace of Textures</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IRenderTarget CreateRenderTarget(uint width, uint height, bool autoClearColourAndDepthEachFrame = true, SamplerType samplerType = SamplerType.Anisotropic, uint numberOfMipMapLevels = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.UInt32</span></td>
+        <td><span class="parametername">width</span></td>
+        <td><p>Width in pixels</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.UInt32</span></td>
+        <td><span class="parametername">height</span></td>
+        <td><p>Height in pixels</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">autoClearColourAndDepthEachFrame</span></td>
+        <td><p>Instruct the framework to clear the depth and colour pixel data of the render target before each render iteration. Helps ensure the user does not forget too</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.SamplerType.html">SamplerType</a></td>
+        <td><span class="parametername">samplerType</span></td>
+        <td><p>When the Render Target is sampled as a texture, which sampler filter should be used</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.UInt32</span></td>
+        <td><span class="parametername">numberOfMipMapLevels</span></td>
+        <td><p>How many MipMap levels should be created (&gt;0, 1 for none)</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.IRenderTarget.html">IRenderTarget</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_ISurfaces_CreateRgbaFromData_System_UInt32_System_UInt32_Vector4___Yak2D_SamplerType_System_Boolean_.md&amp;value=---%0Auid%3A%20Yak2D.ISurfaces.CreateRgbaFromData(System.UInt32%2CSystem.UInt32%2CVector4%5B%5D%2CYak2D.SamplerType%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Services/ISurfaces.cs/#L104">View Source</a>
+  </span>
+  <a id="Yak2D_ISurfaces_CreateRgbaFromData_" data-uid="Yak2D.ISurfaces.CreateRgbaFromData*"></a>
+  <h4 id="Yak2D_ISurfaces_CreateRgbaFromData_System_UInt32_System_UInt32_Vector4___Yak2D_SamplerType_System_Boolean_" data-uid="Yak2D.ISurfaces.CreateRgbaFromData(System.UInt32,System.UInt32,Vector4[],Yak2D.SamplerType,System.Boolean)">CreateRgbaFromData(UInt32, UInt32, Vector4[], SamplerType, Boolean)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ITexture CreateRgbaFromData(uint textureWidth, uint textureHeight, Vector4[] pixels, SamplerType samplerType = SamplerType.Anisotropic, bool generateMipMaps = true)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.UInt32</span></td>
+        <td><span class="parametername">textureWidth</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.UInt32</span></td>
+        <td><span class="parametername">textureHeight</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector4</span>[]</td>
+        <td><span class="parametername">pixels</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.SamplerType.html">SamplerType</a></td>
+        <td><span class="parametername">samplerType</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">generateMipMaps</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.ITexture.html">ITexture</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_ISurfaces_DestoryAllUserSurfaces.md&amp;value=---%0Auid%3A%20Yak2D.ISurfaces.DestoryAllUserSurfaces%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Services/ISurfaces.cs/#L151">View Source</a>
+  </span>
+  <a id="Yak2D_ISurfaces_DestoryAllUserSurfaces_" data-uid="Yak2D.ISurfaces.DestoryAllUserSurfaces*"></a>
+  <h4 id="Yak2D_ISurfaces_DestoryAllUserSurfaces" data-uid="Yak2D.ISurfaces.DestoryAllUserSurfaces">DestoryAllUserSurfaces()</h4>
+  <div class="markdown level1 summary"><p>Destroy all user surfaces (render targets and textures)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void DestoryAllUserSurfaces()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_ISurfaces_DestroyAllUserRenderTargets.md&amp;value=---%0Auid%3A%20Yak2D.ISurfaces.DestroyAllUserRenderTargets%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Services/ISurfaces.cs/#L156">View Source</a>
+  </span>
+  <a id="Yak2D_ISurfaces_DestroyAllUserRenderTargets_" data-uid="Yak2D.ISurfaces.DestroyAllUserRenderTargets*"></a>
+  <h4 id="Yak2D_ISurfaces_DestroyAllUserRenderTargets" data-uid="Yak2D.ISurfaces.DestroyAllUserRenderTargets">DestroyAllUserRenderTargets()</h4>
+  <div class="markdown level1 summary"><p>Destroy all user render targets</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void DestroyAllUserRenderTargets()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_ISurfaces_DestroyAllUserTextures.md&amp;value=---%0Auid%3A%20Yak2D.ISurfaces.DestroyAllUserTextures%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Services/ISurfaces.cs/#L161">View Source</a>
+  </span>
+  <a id="Yak2D_ISurfaces_DestroyAllUserTextures_" data-uid="Yak2D.ISurfaces.DestroyAllUserTextures*"></a>
+  <h4 id="Yak2D_ISurfaces_DestroyAllUserTextures" data-uid="Yak2D.ISurfaces.DestroyAllUserTextures">DestroyAllUserTextures()</h4>
+  <div class="markdown level1 summary"><p>Destroy all user textures</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void DestroyAllUserTextures()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_ISurfaces_DestroySurface_System_UInt64_.md&amp;value=---%0Auid%3A%20Yak2D.ISurfaces.DestroySurface(System.UInt64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Services/ISurfaces.cs/#L146">View Source</a>
+  </span>
+  <a id="Yak2D_ISurfaces_DestroySurface_" data-uid="Yak2D.ISurfaces.DestroySurface*"></a>
+  <h4 id="Yak2D_ISurfaces_DestroySurface_System_UInt64_" data-uid="Yak2D.ISurfaces.DestroySurface(System.UInt64)">DestroySurface(UInt64)</h4>
+  <div class="markdown level1 summary"><p>Remove surface object data from framework</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void DestroySurface(ulong surface)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><span class="parametername">surface</span></td>
+        <td><p>The surface (RenderTarget or Texture) id to destroy</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_ISurfaces_DestroySurface_Yak2D_ITexture_.md&amp;value=---%0Auid%3A%20Yak2D.ISurfaces.DestroySurface(Yak2D.ITexture)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Services/ISurfaces.cs/#L140">View Source</a>
+  </span>
+  <a id="Yak2D_ISurfaces_DestroySurface_" data-uid="Yak2D.ISurfaces.DestroySurface*"></a>
+  <h4 id="Yak2D_ISurfaces_DestroySurface_Yak2D_ITexture_" data-uid="Yak2D.ISurfaces.DestroySurface(Yak2D.ITexture)">DestroySurface(ITexture)</h4>
+  <div class="markdown level1 summary"><p>Remove surface object data from framework</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void DestroySurface(ITexture surface)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.ITexture.html">ITexture</a></td>
+        <td><span class="parametername">surface</span></td>
+        <td><p>The surface (RenderTarget or Texture) reference to destroy</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_ISurfaces_GetSurfaceDimensions_System_UInt64_.md&amp;value=---%0Auid%3A%20Yak2D.ISurfaces.GetSurfaceDimensions(System.UInt64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Services/ISurfaces.cs/#L121">View Source</a>
+  </span>
+  <a id="Yak2D_ISurfaces_GetSurfaceDimensions_" data-uid="Yak2D.ISurfaces.GetSurfaceDimensions*"></a>
+  <h4 id="Yak2D_ISurfaces_GetSurfaceDimensions_System_UInt64_" data-uid="Yak2D.ISurfaces.GetSurfaceDimensions(System.UInt64)">GetSurfaceDimensions(UInt64)</h4>
+  <div class="markdown level1 summary"><p>Return dimensions of a surface</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Size GetSurfaceDimensions(ulong surface)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><span class="parametername">surface</span></td>
+        <td><p>Surface (Texture or RenderTarget) id</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Size</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_ISurfaces_GetSurfaceDimensions_Yak2D_ITexture_.md&amp;value=---%0Auid%3A%20Yak2D.ISurfaces.GetSurfaceDimensions(Yak2D.ITexture)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Services/ISurfaces.cs/#L115">View Source</a>
+  </span>
+  <a id="Yak2D_ISurfaces_GetSurfaceDimensions_" data-uid="Yak2D.ISurfaces.GetSurfaceDimensions*"></a>
+  <h4 id="Yak2D_ISurfaces_GetSurfaceDimensions_Yak2D_ITexture_" data-uid="Yak2D.ISurfaces.GetSurfaceDimensions(Yak2D.ITexture)">GetSurfaceDimensions(ITexture)</h4>
+  <div class="markdown level1 summary"><p>Return dimensions of a surface</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Size GetSurfaceDimensions(ITexture surface)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.ITexture.html">ITexture</a></td>
+        <td><span class="parametername">surface</span></td>
+        <td><p>Surface (Texture or RenderTarget) reference</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Size</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_ISurfaces_LoadTexture_Stream_Yak2D_SamplerType_System_Boolean_.md&amp;value=---%0Auid%3A%20Yak2D.ISurfaces.LoadTexture(Stream%2CYak2D.SamplerType%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Services/ISurfaces.cs/#L70">View Source</a>
+  </span>
+  <a id="Yak2D_ISurfaces_LoadTexture_" data-uid="Yak2D.ISurfaces.LoadTexture*"></a>
+  <h4 id="Yak2D_ISurfaces_LoadTexture_Stream_Yak2D_SamplerType_System_Boolean_" data-uid="Yak2D.ISurfaces.LoadTexture(Stream,Yak2D.SamplerType,System.Boolean)">LoadTexture(Stream, SamplerType, Boolean)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ITexture LoadTexture(Stream stream, SamplerType samplerType = SamplerType.Anisotropic, bool generateMipMaps = true)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Stream</span></td>
+        <td><span class="parametername">stream</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.SamplerType.html">SamplerType</a></td>
+        <td><span class="parametername">samplerType</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">generateMipMaps</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.ITexture.html">ITexture</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_ISurfaces_LoadTexture_System_String_Yak2D_AssetSourceEnum_Yak2D_ImageFormat_Yak2D_SamplerType_System_Boolean_.md&amp;value=---%0Auid%3A%20Yak2D.ISurfaces.LoadTexture(System.String%2CYak2D.AssetSourceEnum%2CYak2D.ImageFormat%2CYak2D.SamplerType%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Services/ISurfaces.cs/#L58">View Source</a>
+  </span>
+  <a id="Yak2D_ISurfaces_LoadTexture_" data-uid="Yak2D.ISurfaces.LoadTexture*"></a>
+  <h4 id="Yak2D_ISurfaces_LoadTexture_System_String_Yak2D_AssetSourceEnum_Yak2D_ImageFormat_Yak2D_SamplerType_System_Boolean_" data-uid="Yak2D.ISurfaces.LoadTexture(System.String,Yak2D.AssetSourceEnum,Yak2D.ImageFormat,Yak2D.SamplerType,System.Boolean)">LoadTexture(String, AssetSourceEnum, ImageFormat, SamplerType, Boolean)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ITexture LoadTexture(string path, AssetSourceEnum assetType, ImageFormat imageFormat = ImageFormat.PNG, SamplerType samplerType = SamplerType.Anisotropic, bool generateMipMaps = true)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">path</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.AssetSourceEnum.html">AssetSourceEnum</a></td>
+        <td><span class="parametername">assetType</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.ImageFormat.html">ImageFormat</a></td>
+        <td><span class="parametername">imageFormat</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.SamplerType.html">SamplerType</a></td>
+        <td><span class="parametername">samplerType</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">generateMipMaps</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.ITexture.html">ITexture</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_ISurfaces_LoadTextureColourData_System_String_Yak2D_AssetSourceEnum_Yak2D_ImageFormat_.md&amp;value=---%0Auid%3A%20Yak2D.ISurfaces.LoadTextureColourData(System.String%2CYak2D.AssetSourceEnum%2CYak2D.ImageFormat)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Services/ISurfaces.cs/#L80">View Source</a>
+  </span>
+  <a id="Yak2D_ISurfaces_LoadTextureColourData_" data-uid="Yak2D.ISurfaces.LoadTextureColourData*"></a>
+  <h4 id="Yak2D_ISurfaces_LoadTextureColourData_System_String_Yak2D_AssetSourceEnum_Yak2D_ImageFormat_" data-uid="Yak2D.ISurfaces.LoadTextureColourData(System.String,Yak2D.AssetSourceEnum,Yak2D.ImageFormat)">LoadTextureColourData(String, AssetSourceEnum, ImageFormat)</h4>
+  <div class="markdown level1 summary"><p>Loads texture colour data from a .png image asset</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">TextureData LoadTextureColourData(string path, AssetSourceEnum assetType, ImageFormat imageFormat = ImageFormat.PNG)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">path</span></td>
+        <td><p>Image (.png) asset name including path (no file extension)&quot;</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.AssetSourceEnum.html">AssetSourceEnum</a></td>
+        <td><span class="parametername">assetType</span></td>
+        <td><p>Embedded in the binary or a file location&quot;</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.ImageFormat.html">ImageFormat</a></td>
+        <td><span class="parametername">imageFormat</span></td>
+        <td><p>Image file encoding&quot;</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.TextureData.html">TextureData</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_ISurfaces_ReturnMainWindowRenderTarget.md&amp;value=---%0Auid%3A%20Yak2D.ISurfaces.ReturnMainWindowRenderTarget%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Services/ISurfaces.cs/#L34">View Source</a>
+  </span>
+  <a id="Yak2D_ISurfaces_ReturnMainWindowRenderTarget_" data-uid="Yak2D.ISurfaces.ReturnMainWindowRenderTarget*"></a>
+  <h4 id="Yak2D_ISurfaces_ReturnMainWindowRenderTarget" data-uid="Yak2D.ISurfaces.ReturnMainWindowRenderTarget">ReturnMainWindowRenderTarget()</h4>
+  <div class="markdown level1 summary"><p>Returns the RenderTarget reference of the current window's main rendering surface</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IRenderTarget ReturnMainWindowRenderTarget()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.IRenderTarget.html">IRenderTarget</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_ISurfaces_SetMainWindowRenderTargetAutoClearColour_System_Boolean_.md&amp;value=---%0Auid%3A%20Yak2D.ISurfaces.SetMainWindowRenderTargetAutoClearColour(System.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Services/ISurfaces.cs/#L134">View Source</a>
+  </span>
+  <a id="Yak2D_ISurfaces_SetMainWindowRenderTargetAutoClearColour_" data-uid="Yak2D.ISurfaces.SetMainWindowRenderTargetAutoClearColour*"></a>
+  <h4 id="Yak2D_ISurfaces_SetMainWindowRenderTargetAutoClearColour_System_Boolean_" data-uid="Yak2D.ISurfaces.SetMainWindowRenderTargetAutoClearColour(System.Boolean)">SetMainWindowRenderTargetAutoClearColour(Boolean)</h4>
+  <div class="markdown level1 summary"><p>Modify whether the framework clears the main window render target colour at the start of each draw frame
+Automatic clearing of colour sets pixels to RGBA 0,0,0,0 (transparent black)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void SetMainWindowRenderTargetAutoClearColour(bool autoClearColour)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">autoClearColour</span></td>
+        <td><p>To clear or not to clear</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_ISurfaces_SetMainWindowRenderTargetAutoClearDepth_System_Boolean_.md&amp;value=---%0Auid%3A%20Yak2D.ISurfaces.SetMainWindowRenderTargetAutoClearDepth(System.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Services/ISurfaces.cs/#L127">View Source</a>
+  </span>
+  <a id="Yak2D_ISurfaces_SetMainWindowRenderTargetAutoClearDepth_" data-uid="Yak2D.ISurfaces.SetMainWindowRenderTargetAutoClearDepth*"></a>
+  <h4 id="Yak2D_ISurfaces_SetMainWindowRenderTargetAutoClearDepth_System_Boolean_" data-uid="Yak2D.ISurfaces.SetMainWindowRenderTargetAutoClearDepth(System.Boolean)">SetMainWindowRenderTargetAutoClearDepth(Boolean)</h4>
+  <div class="markdown level1 summary"><p>Modify whether the framework clears the main window render target depth at the start of each draw frame</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void SetMainWindowRenderTargetAutoClearDepth(bool autoClearDepth)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">autoClearDepth</span></td>
+        <td><p>To clear or not to clear</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_ISurfaces.md&amp;value=---%0Auid%3A%20Yak2D.ISurfaces%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Services/ISurfaces.cs/#L14" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

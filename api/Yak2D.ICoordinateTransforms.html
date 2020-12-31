@@ -1,0 +1,837 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Interface ICoordinateTransforms
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Interface ICoordinateTransforms
+   ">
+    <meta name="generator" content="docfx 2.56.6.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Yak2D.ICoordinateTransforms">
+  
+  
+  <h1 id="Yak2D_ICoordinateTransforms" data-uid="Yak2D.ICoordinateTransforms" class="text-break">Interface ICoordinateTransforms
+  </h1>
+  <div class="markdown level0 summary"><p>Functions to transform positions between World, Screen and Window coordinates</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Yak2D.html">Yak2D</a></h6>
+  <h6><strong>Assembly</strong>: Yak2D.Api.dll</h6>
+  <h5 id="Yak2D_ICoordinateTransforms_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public interface ICoordinateTransforms</code></pre>
+  </div>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_ICoordinateTransforms_ScreenFromWindow_Vector2_System_UInt64_System_Nullable_System_UInt64__.md&amp;value=---%0Auid%3A%20Yak2D.ICoordinateTransforms.ScreenFromWindow(Vector2%2CSystem.UInt64%2CSystem.Nullable%7BSystem.UInt64%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Utilities/ICoordinateTransforms.cs/#L50">View Source</a>
+  </span>
+  <a id="Yak2D_ICoordinateTransforms_ScreenFromWindow_" data-uid="Yak2D.ICoordinateTransforms.ScreenFromWindow*"></a>
+  <h4 id="Yak2D_ICoordinateTransforms_ScreenFromWindow_Vector2_System_UInt64_System_Nullable_System_UInt64__" data-uid="Yak2D.ICoordinateTransforms.ScreenFromWindow(Vector2,System.UInt64,System.Nullable{System.UInt64})">ScreenFromWindow(Vector2, UInt64, Nullable&lt;UInt64&gt;)</h4>
+  <div class="markdown level1 summary"><p>Converts a Window Position (Origin Top-Left) to a Camera's Screen Position</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">TransformResult ScreenFromWindow(Vector2 position, ulong camera, ulong? viewport = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>Window Position To Transform (Origin Top-Left)</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><span class="parametername">camera</span></td>
+        <td><p>Camera id key through which the world is viewed</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.UInt64</span>&gt;</td>
+        <td><span class="parametername">viewport</span></td>
+        <td><p>The viewport id key which defines a camera's window area (default null is whole window)</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.TransformResult.html">TransformResult</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_ICoordinateTransforms_ScreenFromWindow_Vector2_Yak2D_ICamera2D_Yak2D_IViewport_.md&amp;value=---%0Auid%3A%20Yak2D.ICoordinateTransforms.ScreenFromWindow(Vector2%2CYak2D.ICamera2D%2CYak2D.IViewport)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Utilities/ICoordinateTransforms.cs/#L43">View Source</a>
+  </span>
+  <a id="Yak2D_ICoordinateTransforms_ScreenFromWindow_" data-uid="Yak2D.ICoordinateTransforms.ScreenFromWindow*"></a>
+  <h4 id="Yak2D_ICoordinateTransforms_ScreenFromWindow_Vector2_Yak2D_ICamera2D_Yak2D_IViewport_" data-uid="Yak2D.ICoordinateTransforms.ScreenFromWindow(Vector2,Yak2D.ICamera2D,Yak2D.IViewport)">ScreenFromWindow(Vector2, ICamera2D, IViewport)</h4>
+  <div class="markdown level1 summary"><p>Converts a Window Position (Origin Top-Left) to a Camera's Screen Position</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">TransformResult ScreenFromWindow(Vector2 position, ICamera2D camera, IViewport viewport = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>Window Position To Transform (Origin Top-Left)</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.ICamera2D.html">ICamera2D</a></td>
+        <td><span class="parametername">camera</span></td>
+        <td><p>Camera through which the world is viewed</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.IViewport.html">IViewport</a></td>
+        <td><span class="parametername">viewport</span></td>
+        <td><p>The viewport which defines a camera's window area (default null is whole window)</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.TransformResult.html">TransformResult</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_ICoordinateTransforms_ScreenFromWorld_Vector2_System_UInt64_.md&amp;value=---%0Auid%3A%20Yak2D.ICoordinateTransforms.ScreenFromWorld(Vector2%2CSystem.UInt64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Utilities/ICoordinateTransforms.cs/#L22">View Source</a>
+  </span>
+  <a id="Yak2D_ICoordinateTransforms_ScreenFromWorld_" data-uid="Yak2D.ICoordinateTransforms.ScreenFromWorld*"></a>
+  <h4 id="Yak2D_ICoordinateTransforms_ScreenFromWorld_Vector2_System_UInt64_" data-uid="Yak2D.ICoordinateTransforms.ScreenFromWorld(Vector2,System.UInt64)">ScreenFromWorld(Vector2, UInt64)</h4>
+  <div class="markdown level1 summary"><p>Converts a Camera's World position to it's Screen Position</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Vector2 ScreenFromWorld(Vector2 position, ulong camera)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>World Position To Transform</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><span class="parametername">camera</span></td>
+        <td><p>Camera id key through which the world is viewed</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_ICoordinateTransforms_ScreenFromWorld_Vector2_Yak2D_ICamera2D_.md&amp;value=---%0Auid%3A%20Yak2D.ICoordinateTransforms.ScreenFromWorld(Vector2%2CYak2D.ICamera2D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Utilities/ICoordinateTransforms.cs/#L16">View Source</a>
+  </span>
+  <a id="Yak2D_ICoordinateTransforms_ScreenFromWorld_" data-uid="Yak2D.ICoordinateTransforms.ScreenFromWorld*"></a>
+  <h4 id="Yak2D_ICoordinateTransforms_ScreenFromWorld_Vector2_Yak2D_ICamera2D_" data-uid="Yak2D.ICoordinateTransforms.ScreenFromWorld(Vector2,Yak2D.ICamera2D)">ScreenFromWorld(Vector2, ICamera2D)</h4>
+  <div class="markdown level1 summary"><p>Converts a Camera's World position to it's Screen Position</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Vector2 ScreenFromWorld(Vector2 position, ICamera2D camera)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>World Position To Transform</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.ICamera2D.html">ICamera2D</a></td>
+        <td><span class="parametername">camera</span></td>
+        <td><p>Camera through which the world is viewed</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_ICoordinateTransforms_WindowFromScreen_Vector2_System_UInt64_System_Nullable_System_UInt64__.md&amp;value=---%0Auid%3A%20Yak2D.ICoordinateTransforms.WindowFromScreen(Vector2%2CSystem.UInt64%2CSystem.Nullable%7BSystem.UInt64%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Utilities/ICoordinateTransforms.cs/#L65">View Source</a>
+  </span>
+  <a id="Yak2D_ICoordinateTransforms_WindowFromScreen_" data-uid="Yak2D.ICoordinateTransforms.WindowFromScreen*"></a>
+  <h4 id="Yak2D_ICoordinateTransforms_WindowFromScreen_Vector2_System_UInt64_System_Nullable_System_UInt64__" data-uid="Yak2D.ICoordinateTransforms.WindowFromScreen(Vector2,System.UInt64,System.Nullable{System.UInt64})">WindowFromScreen(Vector2, UInt64, Nullable&lt;UInt64&gt;)</h4>
+  <div class="markdown level1 summary"><p>Converts a Screen Position to a Window Position (Origin Top-Left)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">TransformResult WindowFromScreen(Vector2 position, ulong camera, ulong? viewport = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>Screen Position To Transform</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><span class="parametername">camera</span></td>
+        <td><p>Camera id key through which the world is viewed</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.UInt64</span>&gt;</td>
+        <td><span class="parametername">viewport</span></td>
+        <td><p>The viewport id key which defines a camera's window area (default null is whole window)</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.TransformResult.html">TransformResult</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_ICoordinateTransforms_WindowFromScreen_Vector2_Yak2D_ICamera2D_Yak2D_IViewport_.md&amp;value=---%0Auid%3A%20Yak2D.ICoordinateTransforms.WindowFromScreen(Vector2%2CYak2D.ICamera2D%2CYak2D.IViewport)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Utilities/ICoordinateTransforms.cs/#L58">View Source</a>
+  </span>
+  <a id="Yak2D_ICoordinateTransforms_WindowFromScreen_" data-uid="Yak2D.ICoordinateTransforms.WindowFromScreen*"></a>
+  <h4 id="Yak2D_ICoordinateTransforms_WindowFromScreen_Vector2_Yak2D_ICamera2D_Yak2D_IViewport_" data-uid="Yak2D.ICoordinateTransforms.WindowFromScreen(Vector2,Yak2D.ICamera2D,Yak2D.IViewport)">WindowFromScreen(Vector2, ICamera2D, IViewport)</h4>
+  <div class="markdown level1 summary"><p>Converts a Screen Position to a Window Position (Origin Top-Left)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">TransformResult WindowFromScreen(Vector2 position, ICamera2D camera, IViewport viewport = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>Screen Position To Transform</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.ICamera2D.html">ICamera2D</a></td>
+        <td><span class="parametername">camera</span></td>
+        <td><p>Camera through which the world is viewed</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.IViewport.html">IViewport</a></td>
+        <td><span class="parametername">viewport</span></td>
+        <td><p>The viewport which defines a camera's window area (default null is whole window)</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.TransformResult.html">TransformResult</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_ICoordinateTransforms_WindowFromWorld_Vector2_System_UInt64_System_Nullable_System_UInt64__.md&amp;value=---%0Auid%3A%20Yak2D.ICoordinateTransforms.WindowFromWorld(Vector2%2CSystem.UInt64%2CSystem.Nullable%7BSystem.UInt64%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Utilities/ICoordinateTransforms.cs/#L96">View Source</a>
+  </span>
+  <a id="Yak2D_ICoordinateTransforms_WindowFromWorld_" data-uid="Yak2D.ICoordinateTransforms.WindowFromWorld*"></a>
+  <h4 id="Yak2D_ICoordinateTransforms_WindowFromWorld_Vector2_System_UInt64_System_Nullable_System_UInt64__" data-uid="Yak2D.ICoordinateTransforms.WindowFromWorld(Vector2,System.UInt64,System.Nullable{System.UInt64})">WindowFromWorld(Vector2, UInt64, Nullable&lt;UInt64&gt;)</h4>
+  <div class="markdown level1 summary"><p>Converts a World Position to a Window Position (Origin Top-Left)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">TransformResult WindowFromWorld(Vector2 position, ulong camera, ulong? viewport = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>World Position To Transform</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><span class="parametername">camera</span></td>
+        <td><p>Camera through which the world is viewed</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.UInt64</span>&gt;</td>
+        <td><span class="parametername">viewport</span></td>
+        <td><p>The viewport which defines a camera's window area (default null is whole window)</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.TransformResult.html">TransformResult</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_ICoordinateTransforms_WindowFromWorld_Vector2_Yak2D_ICamera2D_Yak2D_IViewport_.md&amp;value=---%0Auid%3A%20Yak2D.ICoordinateTransforms.WindowFromWorld(Vector2%2CYak2D.ICamera2D%2CYak2D.IViewport)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Utilities/ICoordinateTransforms.cs/#L88">View Source</a>
+  </span>
+  <a id="Yak2D_ICoordinateTransforms_WindowFromWorld_" data-uid="Yak2D.ICoordinateTransforms.WindowFromWorld*"></a>
+  <h4 id="Yak2D_ICoordinateTransforms_WindowFromWorld_Vector2_Yak2D_ICamera2D_Yak2D_IViewport_" data-uid="Yak2D.ICoordinateTransforms.WindowFromWorld(Vector2,Yak2D.ICamera2D,Yak2D.IViewport)">WindowFromWorld(Vector2, ICamera2D, IViewport)</h4>
+  <div class="markdown level1 summary"><p>Converts a World Position to a Window Position (Origin Top-Left)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">TransformResult WindowFromWorld(Vector2 position, ICamera2D camera, IViewport viewport = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>World Position To Transform</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.ICamera2D.html">ICamera2D</a></td>
+        <td><span class="parametername">camera</span></td>
+        <td><p>Camera through which the world is viewed</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.IViewport.html">IViewport</a></td>
+        <td><span class="parametername">viewport</span></td>
+        <td><p>The viewport which defines a camera's window area (default null is whole window)</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.TransformResult.html">TransformResult</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_ICoordinateTransforms_WorldFromScreen_Vector2_System_UInt64_.md&amp;value=---%0Auid%3A%20Yak2D.ICoordinateTransforms.WorldFromScreen(Vector2%2CSystem.UInt64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Utilities/ICoordinateTransforms.cs/#L35">View Source</a>
+  </span>
+  <a id="Yak2D_ICoordinateTransforms_WorldFromScreen_" data-uid="Yak2D.ICoordinateTransforms.WorldFromScreen*"></a>
+  <h4 id="Yak2D_ICoordinateTransforms_WorldFromScreen_Vector2_System_UInt64_" data-uid="Yak2D.ICoordinateTransforms.WorldFromScreen(Vector2,System.UInt64)">WorldFromScreen(Vector2, UInt64)</h4>
+  <div class="markdown level1 summary"><p>Converts a Camera's Screen position to it's World Position</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Vector2 WorldFromScreen(Vector2 position, ulong camera)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>Screen Position To Transform</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><span class="parametername">camera</span></td>
+        <td><p>Camera id key through which the world is viewed</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_ICoordinateTransforms_WorldFromScreen_Vector2_Yak2D_ICamera2D_.md&amp;value=---%0Auid%3A%20Yak2D.ICoordinateTransforms.WorldFromScreen(Vector2%2CYak2D.ICamera2D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Utilities/ICoordinateTransforms.cs/#L29">View Source</a>
+  </span>
+  <a id="Yak2D_ICoordinateTransforms_WorldFromScreen_" data-uid="Yak2D.ICoordinateTransforms.WorldFromScreen*"></a>
+  <h4 id="Yak2D_ICoordinateTransforms_WorldFromScreen_Vector2_Yak2D_ICamera2D_" data-uid="Yak2D.ICoordinateTransforms.WorldFromScreen(Vector2,Yak2D.ICamera2D)">WorldFromScreen(Vector2, ICamera2D)</h4>
+  <div class="markdown level1 summary"><p>Converts a Camera's Screen position to it's World Position</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Vector2 WorldFromScreen(Vector2 position, ICamera2D camera)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>Screen Position To Transform</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.ICamera2D.html">ICamera2D</a></td>
+        <td><span class="parametername">camera</span></td>
+        <td><p>Camera through which the world is viewed</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_ICoordinateTransforms_WorldFromWindow_Vector2_System_UInt64_System_Nullable_System_UInt64__.md&amp;value=---%0Auid%3A%20Yak2D.ICoordinateTransforms.WorldFromWindow(Vector2%2CSystem.UInt64%2CSystem.Nullable%7BSystem.UInt64%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Utilities/ICoordinateTransforms.cs/#L80">View Source</a>
+  </span>
+  <a id="Yak2D_ICoordinateTransforms_WorldFromWindow_" data-uid="Yak2D.ICoordinateTransforms.WorldFromWindow*"></a>
+  <h4 id="Yak2D_ICoordinateTransforms_WorldFromWindow_Vector2_System_UInt64_System_Nullable_System_UInt64__" data-uid="Yak2D.ICoordinateTransforms.WorldFromWindow(Vector2,System.UInt64,System.Nullable{System.UInt64})">WorldFromWindow(Vector2, UInt64, Nullable&lt;UInt64&gt;)</h4>
+  <div class="markdown level1 summary"><p>Converts a Window Position (Origin Top-Left) to a Camera's World Position</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">TransformResult WorldFromWindow(Vector2 position, ulong camera, ulong? viewport = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>Window Position To Transform (Origin Top-Left)</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><span class="parametername">camera</span></td>
+        <td><p>Camera through which the world is viewed</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.UInt64</span>&gt;</td>
+        <td><span class="parametername">viewport</span></td>
+        <td><p>The viewport which defines a camera's window area (default null is whole window)</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.TransformResult.html">TransformResult</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_ICoordinateTransforms_WorldFromWindow_Vector2_Yak2D_ICamera2D_Yak2D_IViewport_.md&amp;value=---%0Auid%3A%20Yak2D.ICoordinateTransforms.WorldFromWindow(Vector2%2CYak2D.ICamera2D%2CYak2D.IViewport)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Utilities/ICoordinateTransforms.cs/#L73">View Source</a>
+  </span>
+  <a id="Yak2D_ICoordinateTransforms_WorldFromWindow_" data-uid="Yak2D.ICoordinateTransforms.WorldFromWindow*"></a>
+  <h4 id="Yak2D_ICoordinateTransforms_WorldFromWindow_Vector2_Yak2D_ICamera2D_Yak2D_IViewport_" data-uid="Yak2D.ICoordinateTransforms.WorldFromWindow(Vector2,Yak2D.ICamera2D,Yak2D.IViewport)">WorldFromWindow(Vector2, ICamera2D, IViewport)</h4>
+  <div class="markdown level1 summary"><p>Converts a Window Position (Origin Top-Left) to a Camera's World Position</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">TransformResult WorldFromWindow(Vector2 position, ICamera2D camera, IViewport viewport = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>Window Position To Transform (Origin Top-Left)</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.ICamera2D.html">ICamera2D</a></td>
+        <td><span class="parametername">camera</span></td>
+        <td><p>Camera through which the world is viewed</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.IViewport.html">IViewport</a></td>
+        <td><span class="parametername">viewport</span></td>
+        <td><p>The viewport which defines a camera's window area (default null is whole window)</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.TransformResult.html">TransformResult</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_ICoordinateTransforms.md&amp;value=---%0Auid%3A%20Yak2D.ICoordinateTransforms%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Utilities/ICoordinateTransforms.cs/#L9" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

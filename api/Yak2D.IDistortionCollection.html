@@ -1,0 +1,317 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Interface IDistortionCollection
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Interface IDistortionCollection
+   ">
+    <meta name="generator" content="docfx 2.56.6.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Yak2D.IDistortionCollection">
+  
+  
+  <h1 id="Yak2D_IDistortionCollection" data-uid="Yak2D.IDistortionCollection" class="text-break">Interface IDistortionCollection
+  </h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Yak2D.html">Yak2D</a></h6>
+  <h6><strong>Assembly</strong>: Yak2D.Api.dll</h6>
+  <h5 id="Yak2D_IDistortionCollection_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public interface IDistortionCollection</code></pre>
+  </div>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_IDistortionCollection_Add_Yak2D_LifeCycle_Yak2D_CoordinateSpace_System_Single_Yak2D_ITexture_Vector2_Vector2_Vector2_Vector2_System_Single_System_Single_System_Single_System_Single_.md&amp;value=---%0Auid%3A%20Yak2D.IDistortionCollection.Add(Yak2D.LifeCycle%2CYak2D.CoordinateSpace%2CSystem.Single%2CYak2D.ITexture%2CVector2%2CVector2%2CVector2%2CVector2%2CSystem.Single%2CSystem.Single%2CSystem.Single%2CSystem.Single)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Utilities/IDistortionCollection.cs/#L26">View Source</a>
+  </span>
+  <a id="Yak2D_IDistortionCollection_Add_" data-uid="Yak2D.IDistortionCollection.Add*"></a>
+  <h4 id="Yak2D_IDistortionCollection_Add_Yak2D_LifeCycle_Yak2D_CoordinateSpace_System_Single_Yak2D_ITexture_Vector2_Vector2_Vector2_Vector2_System_Single_System_Single_System_Single_System_Single_" data-uid="Yak2D.IDistortionCollection.Add(Yak2D.LifeCycle,Yak2D.CoordinateSpace,System.Single,Yak2D.ITexture,Vector2,Vector2,Vector2,Vector2,System.Single,System.Single,System.Single,System.Single)">Add(LifeCycle, CoordinateSpace, Single, ITexture, Vector2, Vector2, Vector2, Vector2, Single, Single, Single, Single)</h4>
+  <div class="markdown level1 summary"><p>Create a new distortion object (textured quad) and add to the collection</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void Add(LifeCycle cycle, CoordinateSpace coordinateSpace, float durationInSeconds, ITexture texture, Vector2 initPosition, Vector2 finalPosition, Vector2 initSize, Vector2 finalSize, float initIntensity, float finalIntensity, float initialRotation, float finalRotation)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.LifeCycle.html">LifeCycle</a></td>
+        <td><span class="parametername">cycle</span></td>
+        <td><p>The distortion object can be looped</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.CoordinateSpace.html">CoordinateSpace</a></td>
+        <td><span class="parametername">coordinateSpace</span></td>
+        <td><p>The coordinate space (world or screen) that the distortion object should be drawn in</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">durationInSeconds</span></td>
+        <td><p>The length of a single cycle</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.ITexture.html">ITexture</a></td>
+        <td><span class="parametername">texture</span></td>
+        <td><p>The texture reference</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">initPosition</span></td>
+        <td><p>Location the textured quad is positioned at the start of a cycle</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">finalPosition</span></td>
+        <td><p>The textured quad's final position, position is interpolated from init to final over the cycle</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">initSize</span></td>
+        <td><p>Quad (square) dimensions at the start of a cycle</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">finalSize</span></td>
+        <td><p>Quad (square) dimensions at the end of a cycle, the size is interpolated over the cycle</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">initIntensity</span></td>
+        <td><p>Drawn intensity of texture at the start of a cycle</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">finalIntensity</span></td>
+        <td><p>Drawn intensity of texture at the end of a cycle, the intensity is interpolated over the cycle</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">initialRotation</span></td>
+        <td><p>Rotation in degress at the start of a cycle</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">finalRotation</span></td>
+        <td><p>Rotation in degress at the end of a cycle, angle is interpolated during a cycle</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_IDistortionCollection_ClearCollection.md&amp;value=---%0Auid%3A%20Yak2D.IDistortionCollection.ClearCollection%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Utilities/IDistortionCollection.cs/#L56">View Source</a>
+  </span>
+  <a id="Yak2D_IDistortionCollection_ClearCollection_" data-uid="Yak2D.IDistortionCollection.ClearCollection*"></a>
+  <h4 id="Yak2D_IDistortionCollection_ClearCollection" data-uid="Yak2D.IDistortionCollection.ClearCollection">ClearCollection()</h4>
+  <div class="markdown level1 summary"><p>Removes all current distortion drawing objects from the collection</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void ClearCollection()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_IDistortionCollection_Draw_Yak2D_IDrawing_Yak2D_IDistortionStage_.md&amp;value=---%0Auid%3A%20Yak2D.IDistortionCollection.Draw(Yak2D.IDrawing%2CYak2D.IDistortionStage)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Utilities/IDistortionCollection.cs/#L51">View Source</a>
+  </span>
+  <a id="Yak2D_IDistortionCollection_Draw_" data-uid="Yak2D.IDistortionCollection.Draw*"></a>
+  <h4 id="Yak2D_IDistortionCollection_Draw_Yak2D_IDrawing_Yak2D_IDistortionStage_" data-uid="Yak2D.IDistortionCollection.Draw(Yak2D.IDrawing,Yak2D.IDistortionStage)">Draw(IDrawing, IDistortionStage)</h4>
+  <div class="markdown level1 summary"><p>The user should call this to draw the distortion collection each frame</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void Draw(IDrawing drawing, IDistortionStage stage)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.IDrawing.html">IDrawing</a></td>
+        <td><span class="parametername">drawing</span></td>
+        <td><p>The framework drawing service</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.IDistortionStage.html">IDistortionStage</a></td>
+        <td><span class="parametername">stage</span></td>
+        <td><p>The distortion drawing stage the collection is to be drawn too</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_IDistortionCollection_Update_System_Single_.md&amp;value=---%0Auid%3A%20Yak2D.IDistortionCollection.Update(System.Single)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Utilities/IDistortionCollection.cs/#L44">View Source</a>
+  </span>
+  <a id="Yak2D_IDistortionCollection_Update_" data-uid="Yak2D.IDistortionCollection.Update*"></a>
+  <h4 id="Yak2D_IDistortionCollection_Update_System_Single_" data-uid="Yak2D.IDistortionCollection.Update(System.Single)">Update(Single)</h4>
+  <div class="markdown level1 summary"><p>The user should call this during any update that it is wished the distortion objects should be advanced</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void Update(float timeStep)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">timeStep</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_IDistortionCollection.md&amp;value=---%0Auid%3A%20Yak2D.IDistortionCollection%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Utilities/IDistortionCollection.cs/#L9" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,1382 @@
+{
+  "homepages": [],
+  "source_base_path": "/home/runner/work/yak2d-docs-content/docs",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.AssetSourceEnum.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.AssetSourceEnum.html",
+          "hash": "QkXyw38YZyUnRO2Dxj6UGw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.BlendState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.BlendState.html",
+          "hash": "G28StVaN30s+Zeu73wkHzw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.BloomEffectConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.BloomEffectConfiguration.html",
+          "hash": "BFtVVlLKdmRIqPm2TOZ60A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.Blur1DEffectConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.Blur1DEffectConfiguration.html",
+          "hash": "KbArLeb8wc5djVYiY5unQQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.BlurEffectConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.BlurEffectConfiguration.html",
+          "hash": "8+6jGrHY6HdSb1Dc4SAibw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.Color.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.Color.html",
+          "hash": "d0Zq7IuKoL1ToZnafWSKUA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.Colour.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.Colour.html",
+          "hash": "oBg0PMKhfKuZtyq0pZtIkQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.ColourEffectConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.ColourEffectConfiguration.html",
+          "hash": "wMXXc5eJzLVZbWvruWuFAg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.CoordinateSpace.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.CoordinateSpace.html",
+          "hash": "e4Y709jSDH5oBxIMNU9GpQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.CrtEffectConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.CrtEffectConfiguration.html",
+          "hash": "3Yalp+jum+miF1yintC68w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.CustomVeldridBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.CustomVeldridBase.html",
+          "hash": "EhBPsTRgxNehzsV7M+mo5Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.DisplayState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.DisplayState.html",
+          "hash": "yVte+Z3+JPEzwxfFvk/7uA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.DistortionDrawRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.DistortionDrawRequest.html",
+          "hash": "ttf3eaEgG2dhUPGI4MLgxw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.DistortionEffectConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.DistortionEffectConfiguration.html",
+          "hash": "moPCFu27EA8ARn+XqD/sKA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.DrawRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.DrawRequest.html",
+          "hash": "dhI5anqr+dMwYmXFEMh6ew=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.EdgeDetectionConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.EdgeDetectionConfiguration.html",
+          "hash": "5sYQYC19gRjL0jNsI2I6IA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.FillType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.FillType.html",
+          "hash": "+viutolCS5TcZqVonV8Hpw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.FrameworkMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.FrameworkMessage.html",
+          "hash": "yusFbbxd/d0XpVTl/qZQMQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.GamepadAxis.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.GamepadAxis.html",
+          "hash": "6gRJwijz+KBJ90FbxpYPiA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.GamepadButton.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.GamepadButton.html",
+          "hash": "mBuvYYcYb7Q8gsV7tBS9MA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.GraphicsApi.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.GraphicsApi.html",
+          "hash": "WIALdYcOdOjr/CMr/IGAHA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.IApplication.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.IApplication.html",
+          "hash": "/5YsPjzumqlLsiYByzbsiQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.IBackend.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.IBackend.html",
+          "hash": "igUqETQXplIBH3tgdiVt9w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.IBaseDrawable.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.IBaseDrawable.html",
+          "hash": "Pun7uGVOU4tXBYhID8kUAQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.IBloomStage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.IBloomStage.html",
+          "hash": "NuLz8zeNZ2wO6FQh3s/DoQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.IBlur1DStage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.IBlur1DStage.html",
+          "hash": "/15lkdPbl167q5Kp3fBM1w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.IBlurStage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.IBlurStage.html",
+          "hash": "UwVkEY23B06rS20CTLIeow=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.ICamera.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.ICamera.html",
+          "hash": "J4QjXHVc8VW6elEePjlMWA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.ICamera2D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.ICamera2D.html",
+          "hash": "oRdQd5HZ627pv6X7aVO/8Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.ICamera3D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.ICamera3D.html",
+          "hash": "KgpFMNo5HbaGzsWioxOz4w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.ICameras.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.ICameras.html",
+          "hash": "+hGroPgL7rK1R7qxSps9kQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.IColourEffectsStage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.IColourEffectsStage.html",
+          "hash": "m16mh8U+2Rxgssfg+Ug25A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.ICommonMeshBuilder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.ICommonMeshBuilder.html",
+          "hash": "/Halh3vznwg4sl3c4Q2g1g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.ICommonOperations.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.ICommonOperations.html",
+          "hash": "p4UehjQB7tFzhCFaPD01Cw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.IConstructedDrawable.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.IConstructedDrawable.html",
+          "hash": "mPIZRRqkUgPjVAw5AaWZhw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.ICoordinateTransforms.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.ICoordinateTransforms.html",
+          "hash": "O3nYN3EKpgPlVqts9iOrtQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.ICustomShaderStage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.ICustomShaderStage.html",
+          "hash": "X8QtVd/3kuvODlnxg/Sk0Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.ICustomVeldridStage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.ICustomVeldridStage.html",
+          "hash": "Bw6YBnfsZNBAEl8uq7x/UQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.IDisplay.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.IDisplay.html",
+          "hash": "R+Z9cFfwS/4249m5PALJ2A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.IDistortionCollection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.IDistortionCollection.html",
+          "hash": "rrDFZFsfNkfkhvXb2U6Slw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.IDistortionHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.IDistortionHelper.html",
+          "hash": "Ges7mp8n/7ObnusoEFzSIA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.IDistortionStage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.IDistortionStage.html",
+          "hash": "xLVrxSPscCbMmlk/xcNHJw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.IDistortionTextureGenerator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.IDistortionTextureGenerator.html",
+          "hash": "OiwruColSYdZb9XSZIJDwQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.IDrawStage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.IDrawStage.html",
+          "hash": "Fbfs+uUflj9pFHkLtiD1tg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.IDrawing.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.IDrawing.html",
+          "hash": "Bupos5CRSJ2fyHtl0H8ioQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.IDrawingHelpers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.IDrawingHelpers.html",
+          "hash": "Ex2BJKI2hRW7SIFbZeXQcw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.IFont.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.IFont.html",
+          "hash": "cgLXyxf1zpvgSy/KpxG0iw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.IFonts.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.IFonts.html",
+          "hash": "/cZf3QfNQnVbb6FerOyRzw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.IFps.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.IFps.html",
+          "hash": "3q+Vr0y6ASV1fqNO2SduWg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.IFrameworkMessenger.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.IFrameworkMessenger.html",
+          "hash": "aopYCYUi3tUFGmqfsqHD1A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.IHelpers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.IHelpers.html",
+          "hash": "2JS+DtsbuCj6j9EfVLzUFg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.IInput.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.IInput.html",
+          "hash": "DfN7ZMgWcwPHh2dcs2QdLg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.IKeyed.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.IKeyed.html",
+          "hash": "kgJH2Ud4EIs1vTN7KIOMeQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.ILine.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.ILine.html",
+          "hash": "eerkmKjc7y+pxsEXkTptDQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.IMeshRenderStage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.IMeshRenderStage.html",
+          "hash": "SABmBSH6T/+yiA3yWf1tpQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.IMixStage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.IMixStage.html",
+          "hash": "lTM+d/8ywBTZyEVO+TzQ+A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.IPersistentDistortionQueue.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.IPersistentDistortionQueue.html",
+          "hash": "bkJMUyUmCJJi3hV64x0kOA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.IPersistentDrawQueue.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.IPersistentDrawQueue.html",
+          "hash": "AOWaAX73sJEkL06mAEM12A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.IRenderQueue.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.IRenderQueue.html",
+          "hash": "8hMGDoGiVVf342J+nLVrzQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.IRenderStage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.IRenderStage.html",
+          "hash": "fDbD53tUW18dUCGncWWhLg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.IRenderTarget.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.IRenderTarget.html",
+          "hash": "x8Btwdk7zSQ5ZINU5tjF5A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.IServices.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.IServices.html",
+          "hash": "Vifbm4YuDrU1yH0QOK//dg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.IShape.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.IShape.html",
+          "hash": "zYPdPOePN+5auE+FdkeVfg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.IStages.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.IStages.html",
+          "hash": "OphWAPeNiwQneSTEcEaz2Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.IStyleEffectsStage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.IStyleEffectsStage.html",
+          "hash": "xGJlHZX+gI09u7MZvJeHvw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.ISurfaceCopyStage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.ISurfaceCopyStage.html",
+          "hash": "+qbPWQR2ydODNtRRzXY05Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.ISurfaces.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.ISurfaces.html",
+          "hash": "RFj1gbslj52wKFTT3eBdUg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.ITexture.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.ITexture.html",
+          "hash": "Ai8zHY7obqQ6iH5HYExFmw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.ITextured.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.ITextured.html",
+          "hash": "zTuerfqQXZ91q8sLLXTl3w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.ITransformable.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.ITransformable.html",
+          "hash": "rjl0OiADC4fwGE7fU1Udag=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.IViewport.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.IViewport.html",
+          "hash": "6oFoHTKp+QY6B+i3xkDJoQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.ImageFormat.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.ImageFormat.html",
+          "hash": "nAFDr/1zfVaPLESDftdxDw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.KeyCode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.KeyCode.html",
+          "hash": "YBpwEB6TrN8EAm95WmlkGA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.Launcher.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.Launcher.html",
+          "hash": "b5BZot5xupECqqg7sQPdYQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.LifeCycle.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.LifeCycle.html",
+          "hash": "Penth6xVSxC1cuFvEthU9A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.LightType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.LightType.html",
+          "hash": "3IeQM6CwddqK996MdBDYqg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.MeshRenderLightConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.MeshRenderLightConfiguration.html",
+          "hash": "qFYOqcXRJYQzsODDXAFqLg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.MeshRenderLightingPropertiesConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.MeshRenderLightingPropertiesConfiguration.html",
+          "hash": "l5bGQ93iaIDdY9TUv0D8rg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.MouseButton.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.MouseButton.html",
+          "hash": "UkeCHM81s7bs2ZbZzYD7Sg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.OldMovieConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.OldMovieConfiguration.html",
+          "hash": "jAMOJwnoWh88WrHPJQRhwA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.PixellateConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.PixellateConfiguration.html",
+          "hash": "sLjYZFdSO2ayz5Lw/gkODQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.QuadTexCoords.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.QuadTexCoords.html",
+          "hash": "SLeo1Px9EKs8y6ok1gBFLw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.RectangularCuboidMeshTexCoords.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.RectangularCuboidMeshTexCoords.html",
+          "hash": "/s8xs9CHO5/5cBcb94gWzA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.ResizeSamplerType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.ResizeSamplerType.html",
+          "hash": "9rrE+S5zeELm4H3wBBQVQw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.SamplerType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.SamplerType.html",
+          "hash": "H+XMM61AcuvqFpMP8jvm7A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.ShaderUniformDescription.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.ShaderUniformDescription.html",
+          "hash": "eHgHkYqhaXQQetE/PujU+g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.ShaderUniformType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.ShaderUniformType.html",
+          "hash": "DEL4yELZuBUb4AiWzC4pqw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.SineWavePoint.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.SineWavePoint.html",
+          "hash": "IF2cXAeA6BLYXVy1bLVsgA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.StartupConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.StartupConfig.html",
+          "hash": "3WOwKXGjLOpyifhBh5uDBw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.StaticConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.StaticConfiguration.html",
+          "hash": "WJ8hfYUfmC+mOANZRqWb7g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.StyleEffectGroupConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.StyleEffectGroupConfiguration.html",
+          "hash": "E3E1ZLS59XWlQ8v6xKNTXA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.TextJustify.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.TextJustify.html",
+          "hash": "5BImDS7Z4ZoXimaBUZaiQA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.TextureBrush.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.TextureBrush.html",
+          "hash": "VpAz3LFCym+H1ot0G5LXEA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.TextureCoordinateMode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.TextureCoordinateMode.html",
+          "hash": "4SR5nlhoY81f2LK/j879vA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.TextureData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.TextureData.html",
+          "hash": "ZlEDNIho9CmO1XMEB7awEQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.TextureMixDirection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.TextureMixDirection.html",
+          "hash": "ly8QydJHBgqdqKwJlGj8yQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.TextureScaling.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.TextureScaling.html",
+          "hash": "bSFlqKCoNOhB4WTNzi6T1Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.TransformResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.TransformResult.html",
+          "hash": "vat+qxbv3SYD5plw0Z28Tg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.UpdatePeriod.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.UpdatePeriod.html",
+          "hash": "5BPWmoMNUqUG+YoPzwXsxw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.Vertex2D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.Vertex2D.html",
+          "hash": "dF9SEtMe07AJHWLJ8lKFqQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.Vertex3D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.Vertex3D.html",
+          "hash": "3YPcDBpkWBbvxFZHk4IjlQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.Yak2DException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.Yak2DException.html",
+          "hash": "a5uSax29IeAID8YCXXEopA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yak2D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yak2D.html",
+          "hash": "PTdwhzqgdsbQ+OhsO9rYUw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html",
+          "hash": "Ri4RuLSIOBEIKq/sjcg7Xw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "PBL3euRI6M+vFeDNuKtq1w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/intro.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/intro.html",
+          "hash": "3CP9warxBTR+9JS4wtnBbg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "articles/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "articles/toc.html",
+          "hash": "gB8AESyvNru97tzIZofEEg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/yak.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/yak.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "1V90ADd/amgnTiMeu6Unsg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "+rHUkRZHZRi5gd1aTU6lJA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot build incrementally because last build info is missing.",
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0,
+        "full_build_reason_code": "NoAvailableBuildCache"
+      },
+      "processors": {
+        "ConceptualDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 3,
+          "skipped_file_count": 0
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 103,
+          "skipped_file_count": 0
+        },
+        "ResourceDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: last post processor info is null.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

@@ -1,0 +1,1718 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Interface IRenderQueue
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Interface IRenderQueue
+   ">
+    <meta name="generator" content="docfx 2.56.6.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Yak2D.IRenderQueue">
+  
+  
+  <h1 id="Yak2D_IRenderQueue" data-uid="Yak2D.IRenderQueue" class="text-break">Interface IRenderQueue
+  </h1>
+  <div class="markdown level0 summary"><p>Builds the rendering queue
+Each call to this object will add a step to the queue</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Yak2D.html">Yak2D</a></h6>
+  <h6><strong>Assembly</strong>: Yak2D.Api.dll</h6>
+  <h5 id="Yak2D_IRenderQueue_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public interface IRenderQueue</code></pre>
+  </div>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_IRenderQueue_Bloom_System_UInt64_System_UInt64_System_UInt64_.md&amp;value=---%0Auid%3A%20Yak2D.IRenderQueue.Bloom(System.UInt64%2CSystem.UInt64%2CSystem.UInt64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Services/IRenderQueue.cs/#L129">View Source</a>
+  </span>
+  <a id="Yak2D_IRenderQueue_Bloom_" data-uid="Yak2D.IRenderQueue.Bloom*"></a>
+  <h4 id="Yak2D_IRenderQueue_Bloom_System_UInt64_System_UInt64_System_UInt64_" data-uid="Yak2D.IRenderQueue.Bloom(System.UInt64,System.UInt64,System.UInt64)">Bloom(UInt64, UInt64, UInt64)</h4>
+  <div class="markdown level1 summary"><p>Apply bloom effect to a texture source and render to a target
+Brightness threshold, additive mix amount with source and number of blur component samples can be configured for the stage</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void Bloom(ulong stage, ulong source, ulong target)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><span class="parametername">stage</span></td>
+        <td><p>The Bloom stage id</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><span class="parametername">source</span></td>
+        <td><p>The Texture id of the source surface the effect will use</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><span class="parametername">target</span></td>
+        <td><p>The render target surface id that the post-effect result will be drawn too</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_IRenderQueue_Bloom_Yak2D_IBloomStage_Yak2D_ITexture_Yak2D_IRenderTarget_.md&amp;value=---%0Auid%3A%20Yak2D.IRenderQueue.Bloom(Yak2D.IBloomStage%2CYak2D.ITexture%2CYak2D.IRenderTarget)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Services/IRenderQueue.cs/#L118">View Source</a>
+  </span>
+  <a id="Yak2D_IRenderQueue_Bloom_" data-uid="Yak2D.IRenderQueue.Bloom*"></a>
+  <h4 id="Yak2D_IRenderQueue_Bloom_Yak2D_IBloomStage_Yak2D_ITexture_Yak2D_IRenderTarget_" data-uid="Yak2D.IRenderQueue.Bloom(Yak2D.IBloomStage,Yak2D.ITexture,Yak2D.IRenderTarget)">Bloom(IBloomStage, ITexture, IRenderTarget)</h4>
+  <div class="markdown level1 summary"><p>Apply bloom effect to a texture source and render to a target
+Brightness threshold, additive mix amount with source and number of blur component samples can be configured for the stage</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void Bloom(IBloomStage stage, ITexture source, IRenderTarget target)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.IBloomStage.html">IBloomStage</a></td>
+        <td><span class="parametername">stage</span></td>
+        <td><p>The Bloom stage reference</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.ITexture.html">ITexture</a></td>
+        <td><span class="parametername">source</span></td>
+        <td><p>The Texture reference of the source surface the effect will use</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.IRenderTarget.html">IRenderTarget</a></td>
+        <td><span class="parametername">target</span></td>
+        <td><p>The render target surface reference that the post-effect result will be drawn too</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_IRenderQueue_Blur_System_UInt64_System_UInt64_System_UInt64_.md&amp;value=---%0Auid%3A%20Yak2D.IRenderQueue.Blur(System.UInt64%2CSystem.UInt64%2CSystem.UInt64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Services/IRenderQueue.cs/#L153">View Source</a>
+  </span>
+  <a id="Yak2D_IRenderQueue_Blur_" data-uid="Yak2D.IRenderQueue.Blur*"></a>
+  <h4 id="Yak2D_IRenderQueue_Blur_System_UInt64_System_UInt64_System_UInt64_" data-uid="Yak2D.IRenderQueue.Blur(System.UInt64,System.UInt64,System.UInt64)">Blur(UInt64, UInt64, UInt64)</h4>
+  <div class="markdown level1 summary"><p>Apply a blur effect to a texture source and render to a target
+The blur is applied in both x and y texture coordinate directions, it is not a directional blur - use Blur1D effect instead in that scenario
+Fractional mix amount with source and number of blur component samples can be configured for the stage</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void Blur(ulong stage, ulong source, ulong target)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><span class="parametername">stage</span></td>
+        <td><p>The Blur stage id</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><span class="parametername">source</span></td>
+        <td><p>The Texture id of the source surface the effect will use</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><span class="parametername">target</span></td>
+        <td><p>The render target surface id that the post-effect result will be drawn too</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_IRenderQueue_Blur_Yak2D_IBlurStage_Yak2D_ITexture_Yak2D_IRenderTarget_.md&amp;value=---%0Auid%3A%20Yak2D.IRenderQueue.Blur(Yak2D.IBlurStage%2CYak2D.ITexture%2CYak2D.IRenderTarget)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Services/IRenderQueue.cs/#L141">View Source</a>
+  </span>
+  <a id="Yak2D_IRenderQueue_Blur_" data-uid="Yak2D.IRenderQueue.Blur*"></a>
+  <h4 id="Yak2D_IRenderQueue_Blur_Yak2D_IBlurStage_Yak2D_ITexture_Yak2D_IRenderTarget_" data-uid="Yak2D.IRenderQueue.Blur(Yak2D.IBlurStage,Yak2D.ITexture,Yak2D.IRenderTarget)">Blur(IBlurStage, ITexture, IRenderTarget)</h4>
+  <div class="markdown level1 summary"><p>Apply a blur effect to a texture source and render to a target
+The blur is applied in both x and y texture coordinate directions, it is not a directional blur - use Blur1D effect instead in that scenario
+Fractional mix amount with source and number of blur component samples can be configured for the stage</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void Blur(IBlurStage stage, ITexture source, IRenderTarget target)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.IBlurStage.html">IBlurStage</a></td>
+        <td><span class="parametername">stage</span></td>
+        <td><p>The Blur stage reference</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.ITexture.html">ITexture</a></td>
+        <td><span class="parametername">source</span></td>
+        <td><p>The Texture reference of the source surface the effect will use</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.IRenderTarget.html">IRenderTarget</a></td>
+        <td><span class="parametername">target</span></td>
+        <td><p>The render target surface reference that the post-effect result will be drawn too</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_IRenderQueue_Blur1D_System_UInt64_System_UInt64_System_UInt64_.md&amp;value=---%0Auid%3A%20Yak2D.IRenderQueue.Blur1D(System.UInt64%2CSystem.UInt64%2CSystem.UInt64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Services/IRenderQueue.cs/#L177">View Source</a>
+  </span>
+  <a id="Yak2D_IRenderQueue_Blur1D_" data-uid="Yak2D.IRenderQueue.Blur1D*"></a>
+  <h4 id="Yak2D_IRenderQueue_Blur1D_System_UInt64_System_UInt64_System_UInt64_" data-uid="Yak2D.IRenderQueue.Blur1D(System.UInt64,System.UInt64,System.UInt64)">Blur1D(UInt64, UInt64, UInt64)</h4>
+  <div class="markdown level1 summary"><p>Apply a directional (1d) blur effect to a texture source and render to a target
+For non-directional blur, use the standard Blur effect instead
+Blur direction, fractional mix amount with source and number of blur component samples can be configured for the stage</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void Blur1D(ulong stage, ulong source, ulong target)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><span class="parametername">stage</span></td>
+        <td><p>The Blur1D stage id</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><span class="parametername">source</span></td>
+        <td><p>The Texture id of the source surface the effect will use</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><span class="parametername">target</span></td>
+        <td><p>The render target surface id that the post-effect result will be drawn too</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_IRenderQueue_Blur1D_Yak2D_IBlur1DStage_Yak2D_ITexture_Yak2D_IRenderTarget_.md&amp;value=---%0Auid%3A%20Yak2D.IRenderQueue.Blur1D(Yak2D.IBlur1DStage%2CYak2D.ITexture%2CYak2D.IRenderTarget)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Services/IRenderQueue.cs/#L165">View Source</a>
+  </span>
+  <a id="Yak2D_IRenderQueue_Blur1D_" data-uid="Yak2D.IRenderQueue.Blur1D*"></a>
+  <h4 id="Yak2D_IRenderQueue_Blur1D_Yak2D_IBlur1DStage_Yak2D_ITexture_Yak2D_IRenderTarget_" data-uid="Yak2D.IRenderQueue.Blur1D(Yak2D.IBlur1DStage,Yak2D.ITexture,Yak2D.IRenderTarget)">Blur1D(IBlur1DStage, ITexture, IRenderTarget)</h4>
+  <div class="markdown level1 summary"><p>Apply a directional (1d) blur effect to a texture source and render to a target
+For non-directional blur, use the standard Blur effect instead
+Blur direction, fractional mix amount with source and number of blur component samples can be configured for the stage</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void Blur1D(IBlur1DStage stage, ITexture source, IRenderTarget target)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.IBlur1DStage.html">IBlur1DStage</a></td>
+        <td><span class="parametername">stage</span></td>
+        <td><p>The Blur1D stage reference</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.ITexture.html">ITexture</a></td>
+        <td><span class="parametername">source</span></td>
+        <td><p>The Texture reference of the source surface the effect will use</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.IRenderTarget.html">IRenderTarget</a></td>
+        <td><span class="parametername">target</span></td>
+        <td><p>The render target surface reference that the post-effect result will be drawn too</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_IRenderQueue_ClearColour_System_UInt64_Yak2D_Colour_.md&amp;value=---%0Auid%3A%20Yak2D.IRenderQueue.ClearColour(System.UInt64%2CYak2D.Colour)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Services/IRenderQueue.cs/#L22">View Source</a>
+  </span>
+  <a id="Yak2D_IRenderQueue_ClearColour_" data-uid="Yak2D.IRenderQueue.ClearColour*"></a>
+  <h4 id="Yak2D_IRenderQueue_ClearColour_System_UInt64_Yak2D_Colour_" data-uid="Yak2D.IRenderQueue.ClearColour(System.UInt64,Yak2D.Colour)">ClearColour(UInt64, Colour)</h4>
+  <div class="markdown level1 summary"><p>Sets all the pixels on render target to the chosen colour</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void ClearColour(ulong target, Colour colour)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><span class="parametername">target</span></td>
+        <td><p>Render Target id</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
+        <td><span class="parametername">colour</span></td>
+        <td><p>Clear colour</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_IRenderQueue_ClearColour_Yak2D_IRenderTarget_Yak2D_Colour_.md&amp;value=---%0Auid%3A%20Yak2D.IRenderQueue.ClearColour(Yak2D.IRenderTarget%2CYak2D.Colour)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Services/IRenderQueue.cs/#L14">View Source</a>
+  </span>
+  <a id="Yak2D_IRenderQueue_ClearColour_" data-uid="Yak2D.IRenderQueue.ClearColour*"></a>
+  <h4 id="Yak2D_IRenderQueue_ClearColour_Yak2D_IRenderTarget_Yak2D_Colour_" data-uid="Yak2D.IRenderQueue.ClearColour(Yak2D.IRenderTarget,Yak2D.Colour)">ClearColour(IRenderTarget, Colour)</h4>
+  <div class="markdown level1 summary"><p>Sets all the pixels on render target to the chosen colour</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void ClearColour(IRenderTarget target, Colour colour)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.IRenderTarget.html">IRenderTarget</a></td>
+        <td><span class="parametername">target</span></td>
+        <td><p>Render Target reference</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
+        <td><span class="parametername">colour</span></td>
+        <td><p>Clear colour</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_IRenderQueue_ClearDepth_System_UInt64_.md&amp;value=---%0Auid%3A%20Yak2D.IRenderQueue.ClearDepth(System.UInt64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Services/IRenderQueue.cs/#L35">View Source</a>
+  </span>
+  <a id="Yak2D_IRenderQueue_ClearDepth_" data-uid="Yak2D.IRenderQueue.ClearDepth*"></a>
+  <h4 id="Yak2D_IRenderQueue_ClearDepth_System_UInt64_" data-uid="Yak2D.IRenderQueue.ClearDepth(System.UInt64)">ClearDepth(UInt64)</h4>
+  <div class="markdown level1 summary"><p>Clears each depth buffer pixel to 1.0 on a render target</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void ClearDepth(ulong target)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><span class="parametername">target</span></td>
+        <td><p>Render Target reference</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_IRenderQueue_ClearDepth_Yak2D_IRenderTarget_.md&amp;value=---%0Auid%3A%20Yak2D.IRenderQueue.ClearDepth(Yak2D.IRenderTarget)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Services/IRenderQueue.cs/#L29">View Source</a>
+  </span>
+  <a id="Yak2D_IRenderQueue_ClearDepth_" data-uid="Yak2D.IRenderQueue.ClearDepth*"></a>
+  <h4 id="Yak2D_IRenderQueue_ClearDepth_Yak2D_IRenderTarget_" data-uid="Yak2D.IRenderQueue.ClearDepth(Yak2D.IRenderTarget)">ClearDepth(IRenderTarget)</h4>
+  <div class="markdown level1 summary"><p>Clears each depth buffer pixel to 1.0 on a render target</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void ClearDepth(IRenderTarget target)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.IRenderTarget.html">IRenderTarget</a></td>
+        <td><span class="parametername">target</span></td>
+        <td><p>Render Target reference</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_IRenderQueue_ColourEffects_System_UInt64_System_UInt64_System_UInt64_.md&amp;value=---%0Auid%3A%20Yak2D.IRenderQueue.ColourEffects(System.UInt64%2CSystem.UInt64%2CSystem.UInt64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Services/IRenderQueue.cs/#L107">View Source</a>
+  </span>
+  <a id="Yak2D_IRenderQueue_ColourEffects_" data-uid="Yak2D.IRenderQueue.ColourEffects*"></a>
+  <h4 id="Yak2D_IRenderQueue_ColourEffects_System_UInt64_System_UInt64_System_UInt64_" data-uid="Yak2D.IRenderQueue.ColourEffects(System.UInt64,System.UInt64,System.UInt64)">ColourEffects(UInt64, UInt64, UInt64)</h4>
+  <div class="markdown level1 summary"><p>Apply simple colour modification effects to a texture source and render to a target
+Effects are: single colour mix, grayscale, negative, colourise and opacity
+A combination of all the effects can be applied together</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void ColourEffects(ulong stage, ulong source, ulong target)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><span class="parametername">stage</span></td>
+        <td><p>The ColourEffects stage id</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><span class="parametername">source</span></td>
+        <td><p>The Texture id of the source surface the effects will use</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><span class="parametername">target</span></td>
+        <td><p>The render target surface id that the post-effect result will be drawn too</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_IRenderQueue_ColourEffects_Yak2D_IColourEffectsStage_Yak2D_ITexture_Yak2D_IRenderTarget_.md&amp;value=---%0Auid%3A%20Yak2D.IRenderQueue.ColourEffects(Yak2D.IColourEffectsStage%2CYak2D.ITexture%2CYak2D.IRenderTarget)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Services/IRenderQueue.cs/#L95">View Source</a>
+  </span>
+  <a id="Yak2D_IRenderQueue_ColourEffects_" data-uid="Yak2D.IRenderQueue.ColourEffects*"></a>
+  <h4 id="Yak2D_IRenderQueue_ColourEffects_Yak2D_IColourEffectsStage_Yak2D_ITexture_Yak2D_IRenderTarget_" data-uid="Yak2D.IRenderQueue.ColourEffects(Yak2D.IColourEffectsStage,Yak2D.ITexture,Yak2D.IRenderTarget)">ColourEffects(IColourEffectsStage, ITexture, IRenderTarget)</h4>
+  <div class="markdown level1 summary"><p>Apply simple colour modification effects to a texture source and render to a target
+Effects are: single colour mix, grayscale, negative, colourise and opacity
+A combination of all the effects can be applied together</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void ColourEffects(IColourEffectsStage stage, ITexture source, IRenderTarget target)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.IColourEffectsStage.html">IColourEffectsStage</a></td>
+        <td><span class="parametername">stage</span></td>
+        <td><p>The ColourEffects stage reference</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.ITexture.html">ITexture</a></td>
+        <td><span class="parametername">source</span></td>
+        <td><p>The Texture reference of the source surface the effects will use</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.IRenderTarget.html">IRenderTarget</a></td>
+        <td><span class="parametername">target</span></td>
+        <td><p>The render target surface that the post-effect result will be drawn too</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_IRenderQueue_Copy_System_UInt64_System_UInt64_.md&amp;value=---%0Auid%3A%20Yak2D.IRenderQueue.Copy(System.UInt64%2CSystem.UInt64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Services/IRenderQueue.cs/#L196">View Source</a>
+  </span>
+  <a id="Yak2D_IRenderQueue_Copy_" data-uid="Yak2D.IRenderQueue.Copy*"></a>
+  <h4 id="Yak2D_IRenderQueue_Copy_System_UInt64_System_UInt64_" data-uid="Yak2D.IRenderQueue.Copy(System.UInt64,System.UInt64)">Copy(UInt64, UInt64)</h4>
+  <div class="markdown level1 summary"><p>Copies colour data from one texture source to a render target
+The surfaces do not need to be the same dimensions</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void Copy(ulong source, ulong target)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><span class="parametername">source</span></td>
+        <td><p>The Texture id of the source to copy colour data from</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><span class="parametername">target</span></td>
+        <td><p>The render target surface id to copy too</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_IRenderQueue_Copy_Yak2D_ITexture_Yak2D_IRenderTarget_.md&amp;value=---%0Auid%3A%20Yak2D.IRenderQueue.Copy(Yak2D.ITexture%2CYak2D.IRenderTarget)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Services/IRenderQueue.cs/#L187">View Source</a>
+  </span>
+  <a id="Yak2D_IRenderQueue_Copy_" data-uid="Yak2D.IRenderQueue.Copy*"></a>
+  <h4 id="Yak2D_IRenderQueue_Copy_Yak2D_ITexture_Yak2D_IRenderTarget_" data-uid="Yak2D.IRenderQueue.Copy(Yak2D.ITexture,Yak2D.IRenderTarget)">Copy(ITexture, IRenderTarget)</h4>
+  <div class="markdown level1 summary"><p>Copies colour data from one texture source to a render target
+The surfaces do not need to be the same dimensions</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void Copy(ITexture source, IRenderTarget target)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.ITexture.html">ITexture</a></td>
+        <td><span class="parametername">source</span></td>
+        <td><p>The Texture reference of the source to copy colour data from</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.IRenderTarget.html">IRenderTarget</a></td>
+        <td><span class="parametername">target</span></td>
+        <td><p>The render target surface reference to copy too</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_IRenderQueue_CopySurfaceData_System_UInt64_System_UInt64_.md&amp;value=---%0Auid%3A%20Yak2D.IRenderQueue.CopySurfaceData(System.UInt64%2CSystem.UInt64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Services/IRenderQueue.cs/#L372">View Source</a>
+  </span>
+  <a id="Yak2D_IRenderQueue_CopySurfaceData_" data-uid="Yak2D.IRenderQueue.CopySurfaceData*"></a>
+  <h4 id="Yak2D_IRenderQueue_CopySurfaceData_System_UInt64_System_UInt64_" data-uid="Yak2D.IRenderQueue.CopySurfaceData(System.UInt64,System.UInt64)">CopySurfaceData(UInt64, UInt64)</h4>
+  <div class="markdown level1 summary"><p>Transfer surface (Texture or RenderTarget) pixel data from GPU to CPU
+The Main window swapchain backbuffer target cannot be copied
+A single copy stage must only be used once per render queue (as allowing a second use would either require overwriting data or more temporary possible heap allocation)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void CopySurfaceData(ulong stage, ulong source)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><span class="parametername">stage</span></td>
+        <td><p>Stage id. Holds callback delegates used to pass pixel data back to user</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><span class="parametername">source</span></td>
+        <td><p>Surface id. The surface (RenderTarget or Texture) to copy pixel data from</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_IRenderQueue_CopySurfaceData_Yak2D_ISurfaceCopyStage_Yak2D_ITexture_.md&amp;value=---%0Auid%3A%20Yak2D.IRenderQueue.CopySurfaceData(Yak2D.ISurfaceCopyStage%2CYak2D.ITexture)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Services/IRenderQueue.cs/#L363">View Source</a>
+  </span>
+  <a id="Yak2D_IRenderQueue_CopySurfaceData_" data-uid="Yak2D.IRenderQueue.CopySurfaceData*"></a>
+  <h4 id="Yak2D_IRenderQueue_CopySurfaceData_Yak2D_ISurfaceCopyStage_Yak2D_ITexture_" data-uid="Yak2D.IRenderQueue.CopySurfaceData(Yak2D.ISurfaceCopyStage,Yak2D.ITexture)">CopySurfaceData(ISurfaceCopyStage, ITexture)</h4>
+  <div class="markdown level1 summary"><p>Transfer surface (Texture or RenderTarget) pixel data from GPU to CPU
+The Main window swapchain backbuffer target cannot be copied
+A single copy stage must only be used once per render queue (as allowing a second use would either require overwriting data or more temporary possible heap allocation)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void CopySurfaceData(ISurfaceCopyStage stage, ITexture source)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.ISurfaceCopyStage.html">ISurfaceCopyStage</a></td>
+        <td><span class="parametername">stage</span></td>
+        <td><p>Stage Reference. Holds callback delegates used to pass pixel data back to user</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.ITexture.html">ITexture</a></td>
+        <td><span class="parametername">source</span></td>
+        <td><p>Surface Reference. The surface (RenderTarget or Texture) to copy pixel data from</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_IRenderQueue_CustomShader_System_UInt64_System_UInt64_System_UInt64_System_UInt64_System_UInt64_System_UInt64_.md&amp;value=---%0Auid%3A%20Yak2D.IRenderQueue.CustomShader(System.UInt64%2CSystem.UInt64%2CSystem.UInt64%2CSystem.UInt64%2CSystem.UInt64%2CSystem.UInt64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Services/IRenderQueue.cs/#L317">View Source</a>
+  </span>
+  <a id="Yak2D_IRenderQueue_CustomShader_" data-uid="Yak2D.IRenderQueue.CustomShader*"></a>
+  <h4 id="Yak2D_IRenderQueue_CustomShader_System_UInt64_System_UInt64_System_UInt64_System_UInt64_System_UInt64_System_UInt64_" data-uid="Yak2D.IRenderQueue.CustomShader(System.UInt64,System.UInt64,System.UInt64,System.UInt64,System.UInt64,System.UInt64)">CustomShader(UInt64, UInt64, UInt64, UInt64, UInt64, UInt64)</h4>
+  <div class="markdown level1 summary"><p>Applies a user defined custom shader effect
+The user defines the shader code, constrained by a set maximum number of texture and uniform configuration variable inputs</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void CustomShader(ulong stage, ulong tex0, ulong tex1, ulong tex2, ulong tex3, ulong target)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><span class="parametername">stage</span></td>
+        <td><p>The CustomShader stage id</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><span class="parametername">tex0</span></td>
+        <td><p>An input Texture id</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><span class="parametername">tex1</span></td>
+        <td><p>An input Texture id</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><span class="parametername">tex2</span></td>
+        <td><p>An input Texture id</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><span class="parametername">tex3</span></td>
+        <td><p>An input Texture id</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><span class="parametername">target</span></td>
+        <td><p>The render target surface id that the shader result will be drawn too</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_IRenderQueue_CustomShader_Yak2D_ICustomShaderStage_Yak2D_ITexture_Yak2D_ITexture_Yak2D_ITexture_Yak2D_ITexture_Yak2D_IRenderTarget_.md&amp;value=---%0Auid%3A%20Yak2D.IRenderQueue.CustomShader(Yak2D.ICustomShaderStage%2CYak2D.ITexture%2CYak2D.ITexture%2CYak2D.ITexture%2CYak2D.ITexture%2CYak2D.IRenderTarget)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Services/IRenderQueue.cs/#L300">View Source</a>
+  </span>
+  <a id="Yak2D_IRenderQueue_CustomShader_" data-uid="Yak2D.IRenderQueue.CustomShader*"></a>
+  <h4 id="Yak2D_IRenderQueue_CustomShader_Yak2D_ICustomShaderStage_Yak2D_ITexture_Yak2D_ITexture_Yak2D_ITexture_Yak2D_ITexture_Yak2D_IRenderTarget_" data-uid="Yak2D.IRenderQueue.CustomShader(Yak2D.ICustomShaderStage,Yak2D.ITexture,Yak2D.ITexture,Yak2D.ITexture,Yak2D.ITexture,Yak2D.IRenderTarget)">CustomShader(ICustomShaderStage, ITexture, ITexture, ITexture, ITexture, IRenderTarget)</h4>
+  <div class="markdown level1 summary"><p>Applies a user defined custom shader effect
+The user defines the shader code, constrained by a set maximum number of texture and uniform configuration variable inputs</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void CustomShader(ICustomShaderStage stage, ITexture tex0, ITexture tex1, ITexture tex2, ITexture tex3, IRenderTarget target)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.ICustomShaderStage.html">ICustomShaderStage</a></td>
+        <td><span class="parametername">stage</span></td>
+        <td><p>The CustomShader stage reference</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.ITexture.html">ITexture</a></td>
+        <td><span class="parametername">tex0</span></td>
+        <td><p>An input Texture reference</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.ITexture.html">ITexture</a></td>
+        <td><span class="parametername">tex1</span></td>
+        <td><p>An input Texture reference</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.ITexture.html">ITexture</a></td>
+        <td><span class="parametername">tex2</span></td>
+        <td><p>An input Texture reference</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.ITexture.html">ITexture</a></td>
+        <td><span class="parametername">tex3</span></td>
+        <td><p>An input Texture reference</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.IRenderTarget.html">IRenderTarget</a></td>
+        <td><span class="parametername">target</span></td>
+        <td><p>The render target surface reference that the shader result will be drawn too</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_IRenderQueue_CustomVeldrid_System_UInt64_System_UInt64_System_UInt64_System_UInt64_System_UInt64_System_UInt64_.md&amp;value=---%0Auid%3A%20Yak2D.IRenderQueue.CustomVeldrid(System.UInt64%2CSystem.UInt64%2CSystem.UInt64%2CSystem.UInt64%2CSystem.UInt64%2CSystem.UInt64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Services/IRenderQueue.cs/#L349">View Source</a>
+  </span>
+  <a id="Yak2D_IRenderQueue_CustomVeldrid_" data-uid="Yak2D.IRenderQueue.CustomVeldrid*"></a>
+  <h4 id="Yak2D_IRenderQueue_CustomVeldrid_System_UInt64_System_UInt64_System_UInt64_System_UInt64_System_UInt64_System_UInt64_" data-uid="Yak2D.IRenderQueue.CustomVeldrid(System.UInt64,System.UInt64,System.UInt64,System.UInt64,System.UInt64,System.UInt64)">CustomVeldrid(UInt64, UInt64, UInt64, UInt64, UInt64, UInt64)</h4>
+  <div class="markdown level1 summary"><p>Applies a user defined custom piece of veldrid logic, enabling operations or integrations that require complete access to veldrid library functions</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void CustomVeldrid(ulong stage, ulong tex0, ulong tex1, ulong tex2, ulong tex3, ulong target)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><span class="parametername">stage</span></td>
+        <td><p>The CustomVeldrid stage id</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><span class="parametername">tex0</span></td>
+        <td><p>An input Texture id</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><span class="parametername">tex1</span></td>
+        <td><p>An input Texture id</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><span class="parametername">tex2</span></td>
+        <td><p>An input Texture id</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><span class="parametername">tex3</span></td>
+        <td><p>An input Texture id</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><span class="parametername">target</span></td>
+        <td><p>The render target surface id that the custom veldrid code may draw too, to enable use in wider yak2D rendering</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_IRenderQueue_CustomVeldrid_Yak2D_ICustomVeldridStage_Yak2D_ITexture_Yak2D_ITexture_Yak2D_ITexture_Yak2D_ITexture_Yak2D_IRenderTarget_.md&amp;value=---%0Auid%3A%20Yak2D.IRenderQueue.CustomVeldrid(Yak2D.ICustomVeldridStage%2CYak2D.ITexture%2CYak2D.ITexture%2CYak2D.ITexture%2CYak2D.ITexture%2CYak2D.IRenderTarget)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Services/IRenderQueue.cs/#L333">View Source</a>
+  </span>
+  <a id="Yak2D_IRenderQueue_CustomVeldrid_" data-uid="Yak2D.IRenderQueue.CustomVeldrid*"></a>
+  <h4 id="Yak2D_IRenderQueue_CustomVeldrid_Yak2D_ICustomVeldridStage_Yak2D_ITexture_Yak2D_ITexture_Yak2D_ITexture_Yak2D_ITexture_Yak2D_IRenderTarget_" data-uid="Yak2D.IRenderQueue.CustomVeldrid(Yak2D.ICustomVeldridStage,Yak2D.ITexture,Yak2D.ITexture,Yak2D.ITexture,Yak2D.ITexture,Yak2D.IRenderTarget)">CustomVeldrid(ICustomVeldridStage, ITexture, ITexture, ITexture, ITexture, IRenderTarget)</h4>
+  <div class="markdown level1 summary"><p>Applies a user defined custom piece of veldrid logic, enabling operations or integrations that require complete access to veldrid library functions</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void CustomVeldrid(ICustomVeldridStage stage, ITexture tex0, ITexture tex1, ITexture tex2, ITexture tex3, IRenderTarget target)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.ICustomVeldridStage.html">ICustomVeldridStage</a></td>
+        <td><span class="parametername">stage</span></td>
+        <td><p>The CustomVeldrid stage reference</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.ITexture.html">ITexture</a></td>
+        <td><span class="parametername">tex0</span></td>
+        <td><p>An input Texture reference</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.ITexture.html">ITexture</a></td>
+        <td><span class="parametername">tex1</span></td>
+        <td><p>An input Texture reference</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.ITexture.html">ITexture</a></td>
+        <td><span class="parametername">tex2</span></td>
+        <td><p>An input Texture reference</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.ITexture.html">ITexture</a></td>
+        <td><span class="parametername">tex3</span></td>
+        <td><p>An input Texture reference</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.IRenderTarget.html">IRenderTarget</a></td>
+        <td><span class="parametername">target</span></td>
+        <td><p>The render target surface reference that the custom veldrid code may draw too, to enable use in wider yak2D rendering</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_IRenderQueue_Distortion_System_UInt64_System_UInt64_System_UInt64_System_UInt64_.md&amp;value=---%0Auid%3A%20Yak2D.IRenderQueue.Distortion(System.UInt64%2CSystem.UInt64%2CSystem.UInt64%2CSystem.UInt64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Services/IRenderQueue.cs/#L82">View Source</a>
+  </span>
+  <a id="Yak2D_IRenderQueue_Distortion_" data-uid="Yak2D.IRenderQueue.Distortion*"></a>
+  <h4 id="Yak2D_IRenderQueue_Distortion_System_UInt64_System_UInt64_System_UInt64_System_UInt64_" data-uid="Yak2D.IRenderQueue.Distortion(System.UInt64,System.UInt64,System.UInt64,System.UInt64)">Distortion(UInt64, UInt64, UInt64, UInt64)</h4>
+  <div class="markdown level1 summary"><p>Applies a distortion effect to a texture source and render to a target
+The per-pixel distortion amount is generated from a distortion height map
+The distortion height map is drawn each frame, in a similar way that DrawStage draw requests are generated, queued and sorted
+The final distortion amount per-pixel is scaled by a configurable scalar quantity</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void Distortion(ulong stage, ulong camera, ulong source, ulong target)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><span class="parametername">stage</span></td>
+        <td><p>The Distortion stage id</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><span class="parametername">camera</span></td>
+        <td><p>The 2D camera id used to transform and position the draw vertices</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><span class="parametername">source</span></td>
+        <td><p>The Texture id of the source surface the effect will use</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><span class="parametername">target</span></td>
+        <td><p>The render target surface id that the post-effect result will be drawn too</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_IRenderQueue_Distortion_Yak2D_IDistortionStage_Yak2D_ICamera2D_Yak2D_ITexture_Yak2D_IRenderTarget_.md&amp;value=---%0Auid%3A%20Yak2D.IRenderQueue.Distortion(Yak2D.IDistortionStage%2CYak2D.ICamera2D%2CYak2D.ITexture%2CYak2D.IRenderTarget)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Services/IRenderQueue.cs/#L67">View Source</a>
+  </span>
+  <a id="Yak2D_IRenderQueue_Distortion_" data-uid="Yak2D.IRenderQueue.Distortion*"></a>
+  <h4 id="Yak2D_IRenderQueue_Distortion_Yak2D_IDistortionStage_Yak2D_ICamera2D_Yak2D_ITexture_Yak2D_IRenderTarget_" data-uid="Yak2D.IRenderQueue.Distortion(Yak2D.IDistortionStage,Yak2D.ICamera2D,Yak2D.ITexture,Yak2D.IRenderTarget)">Distortion(IDistortionStage, ICamera2D, ITexture, IRenderTarget)</h4>
+  <div class="markdown level1 summary"><p>Applies a distortion effect to a texture source and render to a target
+The per-pixel distortion amount is generated from a distortion height map
+The distortion height map is drawn each frame, in a similar way that DrawStage draw requests are generated, queued and sorted
+The final distortion amount per-pixel is scaled by a configurable scalar quantity</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void Distortion(IDistortionStage stage, ICamera2D camera, ITexture source, IRenderTarget target)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.IDistortionStage.html">IDistortionStage</a></td>
+        <td><span class="parametername">stage</span></td>
+        <td><p>The Distortion stage reference</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.ICamera2D.html">ICamera2D</a></td>
+        <td><span class="parametername">camera</span></td>
+        <td><p>The 2D camera reference used to transform and position the draw vertices</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.ITexture.html">ITexture</a></td>
+        <td><span class="parametername">source</span></td>
+        <td><p>The Texture reference of the source surface the effect will use</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.IRenderTarget.html">IRenderTarget</a></td>
+        <td><span class="parametername">target</span></td>
+        <td><p>The render target surface reference that the post-effect result will be drawn too</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_IRenderQueue_Draw_System_UInt64_System_UInt64_System_UInt64_.md&amp;value=---%0Auid%3A%20Yak2D.IRenderQueue.Draw(System.UInt64%2CSystem.UInt64%2CSystem.UInt64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Services/IRenderQueue.cs/#L53">View Source</a>
+  </span>
+  <a id="Yak2D_IRenderQueue_Draw_" data-uid="Yak2D.IRenderQueue.Draw*"></a>
+  <h4 id="Yak2D_IRenderQueue_Draw_System_UInt64_System_UInt64_System_UInt64_" data-uid="Yak2D.IRenderQueue.Draw(System.UInt64,System.UInt64,System.UInt64)">Draw(UInt64, UInt64, UInt64)</h4>
+  <div class="markdown level1 summary"><p>Render a draw stage to a target surface</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void Draw(ulong stage, ulong camera, ulong target)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><span class="parametername">stage</span></td>
+        <td><p>The DrawStage id</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><span class="parametername">camera</span></td>
+        <td><p>The 2D camera id used to transform and position the draw vertices</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><span class="parametername">target</span></td>
+        <td><p>The render target surface id upon which to draw</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_IRenderQueue_Draw_Yak2D_IDrawStage_Yak2D_ICamera2D_Yak2D_IRenderTarget_.md&amp;value=---%0Auid%3A%20Yak2D.IRenderQueue.Draw(Yak2D.IDrawStage%2CYak2D.ICamera2D%2CYak2D.IRenderTarget)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Services/IRenderQueue.cs/#L43">View Source</a>
+  </span>
+  <a id="Yak2D_IRenderQueue_Draw_" data-uid="Yak2D.IRenderQueue.Draw*"></a>
+  <h4 id="Yak2D_IRenderQueue_Draw_Yak2D_IDrawStage_Yak2D_ICamera2D_Yak2D_IRenderTarget_" data-uid="Yak2D.IRenderQueue.Draw(Yak2D.IDrawStage,Yak2D.ICamera2D,Yak2D.IRenderTarget)">Draw(IDrawStage, ICamera2D, IRenderTarget)</h4>
+  <div class="markdown level1 summary"><p>Render a draw stage to a target surface</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void Draw(IDrawStage stage, ICamera2D camera, IRenderTarget target)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.IDrawStage.html">IDrawStage</a></td>
+        <td><span class="parametername">stage</span></td>
+        <td><p>The DrawStage reference</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.ICamera2D.html">ICamera2D</a></td>
+        <td><span class="parametername">camera</span></td>
+        <td><p>The 2D camera reference used to transform and position the draw vertices</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.IRenderTarget.html">IRenderTarget</a></td>
+        <td><span class="parametername">target</span></td>
+        <td><p>The render target reference surface upon which to draw</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_IRenderQueue_MeshRender_System_UInt64_System_UInt64_System_UInt64_System_UInt64_.md&amp;value=---%0Auid%3A%20Yak2D.IRenderQueue.MeshRender(System.UInt64%2CSystem.UInt64%2CSystem.UInt64%2CSystem.UInt64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Services/IRenderQueue.cs/#L244">View Source</a>
+  </span>
+  <a id="Yak2D_IRenderQueue_MeshRender_" data-uid="Yak2D.IRenderQueue.MeshRender*"></a>
+  <h4 id="Yak2D_IRenderQueue_MeshRender_System_UInt64_System_UInt64_System_UInt64_System_UInt64_" data-uid="Yak2D.IRenderQueue.MeshRender(System.UInt64,System.UInt64,System.UInt64,System.UInt64)">MeshRender(UInt64, UInt64, UInt64, UInt64)</h4>
+  <div class="markdown level1 summary"><p>Render a 3D Textured Mesh
+Ambient, Directional and Spotlights can be configured for the stage, along with the Mesh to render</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void MeshRender(ulong stage, ulong camera, ulong source, ulong target)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><span class="parametername">stage</span></td>
+        <td><p>The MeshRender stage id</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><span class="parametername">camera</span></td>
+        <td><p>The Camera (3D) id that will transform and project the 3D mesh</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><span class="parametername">source</span></td>
+        <td><p>The Texture id of the source surface the mesh will be texture mapped with</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><span class="parametername">target</span></td>
+        <td><p>The render target surface id that the result will be drawn too</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_IRenderQueue_MeshRender_Yak2D_IMeshRenderStage_Yak2D_ICamera3D_Yak2D_ITexture_Yak2D_IRenderTarget_.md&amp;value=---%0Auid%3A%20Yak2D.IRenderQueue.MeshRender(Yak2D.IMeshRenderStage%2CYak2D.ICamera3D%2CYak2D.ITexture%2CYak2D.IRenderTarget)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Services/IRenderQueue.cs/#L231">View Source</a>
+  </span>
+  <a id="Yak2D_IRenderQueue_MeshRender_" data-uid="Yak2D.IRenderQueue.MeshRender*"></a>
+  <h4 id="Yak2D_IRenderQueue_MeshRender_Yak2D_IMeshRenderStage_Yak2D_ICamera3D_Yak2D_ITexture_Yak2D_IRenderTarget_" data-uid="Yak2D.IRenderQueue.MeshRender(Yak2D.IMeshRenderStage,Yak2D.ICamera3D,Yak2D.ITexture,Yak2D.IRenderTarget)">MeshRender(IMeshRenderStage, ICamera3D, ITexture, IRenderTarget)</h4>
+  <div class="markdown level1 summary"><p>Render a 3D Textured Mesh
+Ambient, Directional and Spotlights can be configured for the stage, along with the Mesh to render</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void MeshRender(IMeshRenderStage stage, ICamera3D camera, ITexture source, IRenderTarget target)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.IMeshRenderStage.html">IMeshRenderStage</a></td>
+        <td><span class="parametername">stage</span></td>
+        <td><p>The MeshRender stage reference</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.ICamera3D.html">ICamera3D</a></td>
+        <td><span class="parametername">camera</span></td>
+        <td><p>The Camera (3D) reference that will transform and project the 3D mesh</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.ITexture.html">ITexture</a></td>
+        <td><span class="parametername">source</span></td>
+        <td><p>The Texture reference of the source surface the mesh will be texture mapped with</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.IRenderTarget.html">IRenderTarget</a></td>
+        <td><span class="parametername">target</span></td>
+        <td><p>The render target surface reference that the result will be drawn too</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_IRenderQueue_Mix_System_UInt64_System_UInt64_System_UInt64_System_UInt64_System_UInt64_System_UInt64_System_UInt64_.md&amp;value=---%0Auid%3A%20Yak2D.IRenderQueue.Mix(System.UInt64%2CSystem.UInt64%2CSystem.UInt64%2CSystem.UInt64%2CSystem.UInt64%2CSystem.UInt64%2CSystem.UInt64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Services/IRenderQueue.cs/#L282">View Source</a>
+  </span>
+  <a id="Yak2D_IRenderQueue_Mix_" data-uid="Yak2D.IRenderQueue.Mix*"></a>
+  <h4 id="Yak2D_IRenderQueue_Mix_System_UInt64_System_UInt64_System_UInt64_System_UInt64_System_UInt64_System_UInt64_System_UInt64_" data-uid="Yak2D.IRenderQueue.Mix(System.UInt64,System.UInt64,System.UInt64,System.UInt64,System.UInt64,System.UInt64,System.UInt64)">Mix(UInt64, UInt64, UInt64, UInt64, UInt64, UInt64, UInt64)</h4>
+  <div class="markdown level1 summary"><p>Enables the mixing of up to four textures together
+The general mix factors per texture are defined in the configuration
+A further 'per-pixel' mixing scalar can be defined using mixTexture</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void Mix(ulong stage, ulong mixTexture, ulong tex0, ulong tex1, ulong tex2, ulong tex3, ulong target)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><span class="parametername">stage</span></td>
+        <td><p>The Mix stage id</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><span class="parametername">mixTexture</span></td>
+        <td><p>Optional texture id providing 'per-pixel' mixing factors. R, G, B, A components represents textures 0, 1, 2, 3. The textures do not need to be the same dimensions, hence per-pixel is only an accurate description when they are all the same size</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><span class="parametername">tex0</span></td>
+        <td><p>An input Texture id</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><span class="parametername">tex1</span></td>
+        <td><p>An input Texture id</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><span class="parametername">tex2</span></td>
+        <td><p>An input Texture id</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><span class="parametername">tex3</span></td>
+        <td><p>An input Texture id</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><span class="parametername">target</span></td>
+        <td><p>The render target surface id that the post-effect result will be drawn too</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_IRenderQueue_Mix_Yak2D_IMixStage_Yak2D_ITexture_Yak2D_ITexture_Yak2D_ITexture_Yak2D_ITexture_Yak2D_ITexture_Yak2D_IRenderTarget_.md&amp;value=---%0Auid%3A%20Yak2D.IRenderQueue.Mix(Yak2D.IMixStage%2CYak2D.ITexture%2CYak2D.ITexture%2CYak2D.ITexture%2CYak2D.ITexture%2CYak2D.ITexture%2CYak2D.IRenderTarget)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Services/IRenderQueue.cs/#L262">View Source</a>
+  </span>
+  <a id="Yak2D_IRenderQueue_Mix_" data-uid="Yak2D.IRenderQueue.Mix*"></a>
+  <h4 id="Yak2D_IRenderQueue_Mix_Yak2D_IMixStage_Yak2D_ITexture_Yak2D_ITexture_Yak2D_ITexture_Yak2D_ITexture_Yak2D_ITexture_Yak2D_IRenderTarget_" data-uid="Yak2D.IRenderQueue.Mix(Yak2D.IMixStage,Yak2D.ITexture,Yak2D.ITexture,Yak2D.ITexture,Yak2D.ITexture,Yak2D.ITexture,Yak2D.IRenderTarget)">Mix(IMixStage, ITexture, ITexture, ITexture, ITexture, ITexture, IRenderTarget)</h4>
+  <div class="markdown level1 summary"><p>Enables the mixing of up to four textures together
+The general mix factors per texture are defined in the configuration
+A further 'per-pixel' mixing scalar can be defined using mixTexture</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void Mix(IMixStage stage, ITexture mixTexture, ITexture tex0, ITexture tex1, ITexture tex2, ITexture tex3, IRenderTarget target)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.IMixStage.html">IMixStage</a></td>
+        <td><span class="parametername">stage</span></td>
+        <td><p>The Mix stage reference</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.ITexture.html">ITexture</a></td>
+        <td><span class="parametername">mixTexture</span></td>
+        <td><p>Optional texture reference providing 'per-pixel' mixing factors. R, G, B, A components represents textures 0, 1, 2, 3. The textures do not need to be the same dimensions, hence per-pixel is only an accurate description when they are all the same size</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.ITexture.html">ITexture</a></td>
+        <td><span class="parametername">tex0</span></td>
+        <td><p>An input Texture reference</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.ITexture.html">ITexture</a></td>
+        <td><span class="parametername">tex1</span></td>
+        <td><p>An input Texture reference</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.ITexture.html">ITexture</a></td>
+        <td><span class="parametername">tex2</span></td>
+        <td><p>An input Texture reference</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.ITexture.html">ITexture</a></td>
+        <td><span class="parametername">tex3</span></td>
+        <td><p>An input Texture reference</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.IRenderTarget.html">IRenderTarget</a></td>
+        <td><span class="parametername">target</span></td>
+        <td><p>The render target surface reference that the post-effect result will be drawn too</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_IRenderQueue_RemoveViewport.md&amp;value=---%0Auid%3A%20Yak2D.IRenderQueue.RemoveViewport%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Services/IRenderQueue.cs/#L391">View Source</a>
+  </span>
+  <a id="Yak2D_IRenderQueue_RemoveViewport_" data-uid="Yak2D.IRenderQueue.RemoveViewport*"></a>
+  <h4 id="Yak2D_IRenderQueue_RemoveViewport" data-uid="Yak2D.IRenderQueue.RemoveViewport">RemoveViewport()</h4>
+  <div class="markdown level1 summary"><p>Clears any set viewport, allowing subsequent rendering operations to draw to entire surfaces</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void RemoveViewport()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_IRenderQueue_SetViewport_System_UInt64_.md&amp;value=---%0Auid%3A%20Yak2D.IRenderQueue.SetViewport(System.UInt64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Services/IRenderQueue.cs/#L386">View Source</a>
+  </span>
+  <a id="Yak2D_IRenderQueue_SetViewport_" data-uid="Yak2D.IRenderQueue.SetViewport*"></a>
+  <h4 id="Yak2D_IRenderQueue_SetViewport_System_UInt64_" data-uid="Yak2D.IRenderQueue.SetViewport(System.UInt64)">SetViewport(UInt64)</h4>
+  <div class="markdown level1 summary"><p>Sets the portion of the render surfaces that subsequent redner operations will draw too
+The user must clear the viewport if subsequent rendering operations wish to draw to entire surfaces</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void SetViewport(ulong viewport)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><span class="parametername">viewport</span></td>
+        <td><p>The Viewport id to apply to subsequent rendering operations</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_IRenderQueue_SetViewport_Yak2D_IViewport_.md&amp;value=---%0Auid%3A%20Yak2D.IRenderQueue.SetViewport(Yak2D.IViewport)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Services/IRenderQueue.cs/#L379">View Source</a>
+  </span>
+  <a id="Yak2D_IRenderQueue_SetViewport_" data-uid="Yak2D.IRenderQueue.SetViewport*"></a>
+  <h4 id="Yak2D_IRenderQueue_SetViewport_Yak2D_IViewport_" data-uid="Yak2D.IRenderQueue.SetViewport(Yak2D.IViewport)">SetViewport(IViewport)</h4>
+  <div class="markdown level1 summary"><p>Sets the portion of the render surfaces that subsequent redner operations will draw too
+The user must clear the viewport if subsequent rendering operations wish to draw to entire surfaces</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void SetViewport(IViewport viewport)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.IViewport.html">IViewport</a></td>
+        <td><span class="parametername">viewport</span></td>
+        <td><p>The Viewport reference to apply to subsequent rendering operations</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_IRenderQueue_StyleEffects_System_UInt64_System_UInt64_System_UInt64_.md&amp;value=---%0Auid%3A%20Yak2D.IRenderQueue.StyleEffects(System.UInt64%2CSystem.UInt64%2CSystem.UInt64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Services/IRenderQueue.cs/#L219">View Source</a>
+  </span>
+  <a id="Yak2D_IRenderQueue_StyleEffects_" data-uid="Yak2D.IRenderQueue.StyleEffects*"></a>
+  <h4 id="Yak2D_IRenderQueue_StyleEffects_System_UInt64_System_UInt64_System_UInt64_" data-uid="Yak2D.IRenderQueue.StyleEffects(System.UInt64,System.UInt64,System.UInt64)">StyleEffects(UInt64, UInt64, UInt64)</h4>
+  <div class="markdown level1 summary"><p>Apply stylised effects to a texture source and render to a target
+Effects are: Pixellate, Edge Detection, Cathode Ray Tube and Old Movie Reel,
+A combination of all the effects can be applied together</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void StyleEffects(ulong stage, ulong source, ulong target)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><span class="parametername">stage</span></td>
+        <td><p>The StyleEffects stage id</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><span class="parametername">source</span></td>
+        <td><p>The Texture id of the source surface the effects will use</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><span class="parametername">target</span></td>
+        <td><p>The render target surface id that the post-effect result will be drawn too</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_IRenderQueue_StyleEffects_Yak2D_IStyleEffectsStage_Yak2D_ITexture_Yak2D_IRenderTarget_.md&amp;value=---%0Auid%3A%20Yak2D.IRenderQueue.StyleEffects(Yak2D.IStyleEffectsStage%2CYak2D.ITexture%2CYak2D.IRenderTarget)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Services/IRenderQueue.cs/#L207">View Source</a>
+  </span>
+  <a id="Yak2D_IRenderQueue_StyleEffects_" data-uid="Yak2D.IRenderQueue.StyleEffects*"></a>
+  <h4 id="Yak2D_IRenderQueue_StyleEffects_Yak2D_IStyleEffectsStage_Yak2D_ITexture_Yak2D_IRenderTarget_" data-uid="Yak2D.IRenderQueue.StyleEffects(Yak2D.IStyleEffectsStage,Yak2D.ITexture,Yak2D.IRenderTarget)">StyleEffects(IStyleEffectsStage, ITexture, IRenderTarget)</h4>
+  <div class="markdown level1 summary"><p>Apply stylised effects to a texture source and render to a target
+Effects are: Pixellate, Edge Detection, Cathode Ray Tube and Old Movie Reel,
+A combination of all the effects can be applied together</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void StyleEffects(IStyleEffectsStage stage, ITexture source, IRenderTarget target)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.IStyleEffectsStage.html">IStyleEffectsStage</a></td>
+        <td><span class="parametername">stage</span></td>
+        <td><p>The StyleEffects stage reference</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.ITexture.html">ITexture</a></td>
+        <td><span class="parametername">source</span></td>
+        <td><p>The Texture reference of the source surface the effects will use</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.IRenderTarget.html">IRenderTarget</a></td>
+        <td><span class="parametername">target</span></td>
+        <td><p>The render target surface reference that the post-effect result will be drawn too</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_IRenderQueue.md&amp;value=---%0Auid%3A%20Yak2D.IRenderQueue%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Services/IRenderQueue.cs/#L7" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

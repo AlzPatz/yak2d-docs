@@ -1,0 +1,2041 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Interface IDrawing
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Interface IDrawing
+   ">
+    <meta name="generator" content="docfx 2.56.6.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Yak2D.IDrawing">
+  
+  
+  <h1 id="Yak2D_IDrawing" data-uid="Yak2D.IDrawing" class="text-break">Interface IDrawing
+  </h1>
+  <div class="markdown level0 summary"><p>Drawing Operations
+Build draw queues containing lists of triangles and their properties (colouring and texturing, layer, coordinate space and depth)
+Draw queues exist for standard drawing (DrawStage) as well as drawing to distortion height maps (DistortionStage)
+Bitmap font rendering is supported</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Yak2D.html">Yak2D</a></h6>
+  <h6><strong>Assembly</strong>: Yak2D.Api.dll</h6>
+  <h5 id="Yak2D_IDrawing_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public interface IDrawing</code></pre>
+  </div>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_IDrawing_Helpers.md&amp;value=---%0Auid%3A%20Yak2D.IDrawing.Helpers%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Services/IDrawing.cs/#L18">View Source</a>
+  </span>
+  <a id="Yak2D_IDrawing_Helpers_" data-uid="Yak2D.IDrawing.Helpers*"></a>
+  <h4 id="Yak2D_IDrawing_Helpers" data-uid="Yak2D.IDrawing.Helpers">Helpers</h4>
+  <div class="markdown level1 summary"><p>Provides access to functions to simplify common drawing operations (lines, quads, regular polygons and arrows)
+Includes a  fluent interface option for building flexible partial shapes and iterating / modifying</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IDrawingHelpers Helpers { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.IDrawingHelpers.html">IDrawingHelpers</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_IDrawing_ClearDynamicDistortionRequestQueue_System_UInt64_.md&amp;value=---%0Auid%3A%20Yak2D.IDrawing.ClearDynamicDistortionRequestQueue(System.UInt64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Services/IDrawing.cs/#L233">View Source</a>
+  </span>
+  <a id="Yak2D_IDrawing_ClearDynamicDistortionRequestQueue_" data-uid="Yak2D.IDrawing.ClearDynamicDistortionRequestQueue*"></a>
+  <h4 id="Yak2D_IDrawing_ClearDynamicDistortionRequestQueue_System_UInt64_" data-uid="Yak2D.IDrawing.ClearDynamicDistortionRequestQueue(System.UInt64)">ClearDynamicDistortionRequestQueue(UInt64)</h4>
+  <div class="markdown level1 summary"><p>Clears the Dynamic (non-persistent-on-clear) Draw Queue from a DistortionStage</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void ClearDynamicDistortionRequestQueue(ulong stage)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><span class="parametername">stage</span></td>
+        <td><p>DistortionStage id</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_IDrawing_ClearDynamicDistortionRequestQueue_Yak2D_IDistortionStage_.md&amp;value=---%0Auid%3A%20Yak2D.IDrawing.ClearDynamicDistortionRequestQueue(Yak2D.IDistortionStage)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Services/IDrawing.cs/#L227">View Source</a>
+  </span>
+  <a id="Yak2D_IDrawing_ClearDynamicDistortionRequestQueue_" data-uid="Yak2D.IDrawing.ClearDynamicDistortionRequestQueue*"></a>
+  <h4 id="Yak2D_IDrawing_ClearDynamicDistortionRequestQueue_Yak2D_IDistortionStage_" data-uid="Yak2D.IDrawing.ClearDynamicDistortionRequestQueue(Yak2D.IDistortionStage)">ClearDynamicDistortionRequestQueue(IDistortionStage)</h4>
+  <div class="markdown level1 summary"><p>Clears the Dynamic (non-persistent-on-clear) Draw Queue from a DistortionStage</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void ClearDynamicDistortionRequestQueue(IDistortionStage stage)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.IDistortionStage.html">IDistortionStage</a></td>
+        <td><span class="parametername">stage</span></td>
+        <td><p>DistortionStage reference</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_IDrawing_ClearDynamicDrawRequestQueue_System_UInt64_.md&amp;value=---%0Auid%3A%20Yak2D.IDrawing.ClearDynamicDrawRequestQueue(System.UInt64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Services/IDrawing.cs/#L84">View Source</a>
+  </span>
+  <a id="Yak2D_IDrawing_ClearDynamicDrawRequestQueue_" data-uid="Yak2D.IDrawing.ClearDynamicDrawRequestQueue*"></a>
+  <h4 id="Yak2D_IDrawing_ClearDynamicDrawRequestQueue_System_UInt64_" data-uid="Yak2D.IDrawing.ClearDynamicDrawRequestQueue(System.UInt64)">ClearDynamicDrawRequestQueue(UInt64)</h4>
+  <div class="markdown level1 summary"><p>Clears the Dynamic (non-persistent-on-clear) Draw Queue from a DrawStage</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void ClearDynamicDrawRequestQueue(ulong stage)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><span class="parametername">stage</span></td>
+        <td><p>DrawStage id</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_IDrawing_ClearDynamicDrawRequestQueue_Yak2D_IDrawStage_.md&amp;value=---%0Auid%3A%20Yak2D.IDrawing.ClearDynamicDrawRequestQueue(Yak2D.IDrawStage)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Services/IDrawing.cs/#L78">View Source</a>
+  </span>
+  <a id="Yak2D_IDrawing_ClearDynamicDrawRequestQueue_" data-uid="Yak2D.IDrawing.ClearDynamicDrawRequestQueue*"></a>
+  <h4 id="Yak2D_IDrawing_ClearDynamicDrawRequestQueue_Yak2D_IDrawStage_" data-uid="Yak2D.IDrawing.ClearDynamicDrawRequestQueue(Yak2D.IDrawStage)">ClearDynamicDrawRequestQueue(IDrawStage)</h4>
+  <div class="markdown level1 summary"><p>Clears the Dynamic (non-persistent-on-clear) Draw Queue from a DrawStage</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void ClearDynamicDrawRequestQueue(IDrawStage stage)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.IDrawStage.html">IDrawStage</a></td>
+        <td><span class="parametername">stage</span></td>
+        <td><p>DrawStage reference</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_IDrawing_CreatePersistentDistortQueue_System_UInt64_Yak2D_DistortionDrawRequest___System_Boolean_.md&amp;value=---%0Auid%3A%20Yak2D.IDrawing.CreatePersistentDistortQueue(System.UInt64%2CYak2D.DistortionDrawRequest%5B%5D%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Services/IDrawing.cs/#L203">View Source</a>
+  </span>
+  <a id="Yak2D_IDrawing_CreatePersistentDistortQueue_" data-uid="Yak2D.IDrawing.CreatePersistentDistortQueue*"></a>
+  <h4 id="Yak2D_IDrawing_CreatePersistentDistortQueue_System_UInt64_Yak2D_DistortionDrawRequest___System_Boolean_" data-uid="Yak2D.IDrawing.CreatePersistentDistortQueue(System.UInt64,Yak2D.DistortionDrawRequest[],System.Boolean)">CreatePersistentDistortQueue(UInt64, DistortionDrawRequest[], Boolean)</h4>
+  <div class="markdown level1 summary"><p>A persistent distortion draw queue has a collection of distortion draw requests that persist even after clearing the dynamic portion of a DistortionStage's draw queue</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IPersistentDistortionQueue CreatePersistentDistortQueue(ulong stage, DistortionDrawRequest[] requests, bool validate = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><span class="parametername">stage</span></td>
+        <td><p>DistortionStage id that the persistent queue will be added too</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.DistortionDrawRequest.html">DistortionDrawRequest</a>[]</td>
+        <td><span class="parametername">requests</span></td>
+        <td><p>Distortion Draw requests that will for the persistent part of the draw queue</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">validate</span></td>
+        <td><p>Check whether the content of distortion draw request array appears valid. If this fails, null is returned</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.IPersistentDistortionQueue.html">IPersistentDistortionQueue</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_IDrawing_CreatePersistentDistortQueue_Yak2D_IDistortionStage_Yak2D_DistortionDrawRequest___System_Boolean_.md&amp;value=---%0Auid%3A%20Yak2D.IDrawing.CreatePersistentDistortQueue(Yak2D.IDistortionStage%2CYak2D.DistortionDrawRequest%5B%5D%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Services/IDrawing.cs/#L193">View Source</a>
+  </span>
+  <a id="Yak2D_IDrawing_CreatePersistentDistortQueue_" data-uid="Yak2D.IDrawing.CreatePersistentDistortQueue*"></a>
+  <h4 id="Yak2D_IDrawing_CreatePersistentDistortQueue_Yak2D_IDistortionStage_Yak2D_DistortionDrawRequest___System_Boolean_" data-uid="Yak2D.IDrawing.CreatePersistentDistortQueue(Yak2D.IDistortionStage,Yak2D.DistortionDrawRequest[],System.Boolean)">CreatePersistentDistortQueue(IDistortionStage, DistortionDrawRequest[], Boolean)</h4>
+  <div class="markdown level1 summary"><p>A persistent distortion draw queue has a collection of distortion draw requests that persist even after clearing the dynamic portion of a DistortionStage's draw queue</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IPersistentDistortionQueue CreatePersistentDistortQueue(IDistortionStage stage, DistortionDrawRequest[] requests, bool validate = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.IDistortionStage.html">IDistortionStage</a></td>
+        <td><span class="parametername">stage</span></td>
+        <td><p>DistortionStage Reference that the persistent queue will be added too</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.DistortionDrawRequest.html">DistortionDrawRequest</a>[]</td>
+        <td><span class="parametername">requests</span></td>
+        <td><p>Distortion Draw requests that will for the persistent part of the draw queue</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">validate</span></td>
+        <td><p>Check whether the content of distortion draw request array appears valid. If this fails, null is returned</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.IPersistentDistortionQueue.html">IPersistentDistortionQueue</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_IDrawing_CreatePersistentDrawQueue_System_UInt64_Yak2D_DrawRequest___System_Boolean_.md&amp;value=---%0Auid%3A%20Yak2D.IDrawing.CreatePersistentDrawQueue(System.UInt64%2CYak2D.DrawRequest%5B%5D%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Services/IDrawing.cs/#L54">View Source</a>
+  </span>
+  <a id="Yak2D_IDrawing_CreatePersistentDrawQueue_" data-uid="Yak2D.IDrawing.CreatePersistentDrawQueue*"></a>
+  <h4 id="Yak2D_IDrawing_CreatePersistentDrawQueue_System_UInt64_Yak2D_DrawRequest___System_Boolean_" data-uid="Yak2D.IDrawing.CreatePersistentDrawQueue(System.UInt64,Yak2D.DrawRequest[],System.Boolean)">CreatePersistentDrawQueue(UInt64, DrawRequest[], Boolean)</h4>
+  <div class="markdown level1 summary"><p>A persistent draw queue has a collection of draw requests that persist even after clearing the dynamic portion of a DrawStage's draw queue</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IPersistentDrawQueue CreatePersistentDrawQueue(ulong stage, DrawRequest[] requests, bool validate = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><span class="parametername">stage</span></td>
+        <td><p>DrawStage id that the persistent queue will be added too</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.DrawRequest.html">DrawRequest</a>[]</td>
+        <td><span class="parametername">requests</span></td>
+        <td><p>Draw requests that will for the persistent part of the draw queue</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">validate</span></td>
+        <td><p>Check whether the content of draw request array appears valid. If this fails, null is returned</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.IPersistentDrawQueue.html">IPersistentDrawQueue</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_IDrawing_CreatePersistentDrawQueue_Yak2D_IDrawStage_Yak2D_DrawRequest___System_Boolean_.md&amp;value=---%0Auid%3A%20Yak2D.IDrawing.CreatePersistentDrawQueue(Yak2D.IDrawStage%2CYak2D.DrawRequest%5B%5D%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Services/IDrawing.cs/#L44">View Source</a>
+  </span>
+  <a id="Yak2D_IDrawing_CreatePersistentDrawQueue_" data-uid="Yak2D.IDrawing.CreatePersistentDrawQueue*"></a>
+  <h4 id="Yak2D_IDrawing_CreatePersistentDrawQueue_Yak2D_IDrawStage_Yak2D_DrawRequest___System_Boolean_" data-uid="Yak2D.IDrawing.CreatePersistentDrawQueue(Yak2D.IDrawStage,Yak2D.DrawRequest[],System.Boolean)">CreatePersistentDrawQueue(IDrawStage, DrawRequest[], Boolean)</h4>
+  <div class="markdown level1 summary"><p>A persistent draw queue has a collection of draw requests that persist even after clearing the dynamic portion of a DrawStage's draw queue</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IPersistentDrawQueue CreatePersistentDrawQueue(IDrawStage stage, DrawRequest[] requests, bool validate = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.IDrawStage.html">IDrawStage</a></td>
+        <td><span class="parametername">stage</span></td>
+        <td><p>DrawStage reference that the persistent queue will be added too</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.DrawRequest.html">DrawRequest</a>[]</td>
+        <td><span class="parametername">requests</span></td>
+        <td><p>Draw requests that will for the persistent part of the draw queue</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">validate</span></td>
+        <td><p>Check whether the content of draw request array appears valid. If this fails, null is returned</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.IPersistentDrawQueue.html">IPersistentDrawQueue</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_IDrawing_Draw_System_UInt64_Yak2D_CoordinateSpace_Yak2D_FillType_Yak2D_Vertex2D___System_Int32___Yak2D_Colour_System_UInt64_System_UInt64_Yak2D_TextureCoordinateMode_Yak2D_TextureCoordinateMode_System_Single_System_Int32_System_Boolean_.md&amp;value=---%0Auid%3A%20Yak2D.IDrawing.Draw(System.UInt64%2CYak2D.CoordinateSpace%2CYak2D.FillType%2CYak2D.Vertex2D%5B%5D%2CSystem.Int32%5B%5D%2CYak2D.Colour%2CSystem.UInt64%2CSystem.UInt64%2CYak2D.TextureCoordinateMode%2CYak2D.TextureCoordinateMode%2CSystem.Single%2CSystem.Int32%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Services/IDrawing.cs/#L173">View Source</a>
+  </span>
+  <a id="Yak2D_IDrawing_Draw_" data-uid="Yak2D.IDrawing.Draw*"></a>
+  <h4 id="Yak2D_IDrawing_Draw_System_UInt64_Yak2D_CoordinateSpace_Yak2D_FillType_Yak2D_Vertex2D___System_Int32___Yak2D_Colour_System_UInt64_System_UInt64_Yak2D_TextureCoordinateMode_Yak2D_TextureCoordinateMode_System_Single_System_Int32_System_Boolean_" data-uid="Yak2D.IDrawing.Draw(System.UInt64,Yak2D.CoordinateSpace,Yak2D.FillType,Yak2D.Vertex2D[],System.Int32[],Yak2D.Colour,System.UInt64,System.UInt64,Yak2D.TextureCoordinateMode,Yak2D.TextureCoordinateMode,System.Single,System.Int32,System.Boolean)">Draw(UInt64, CoordinateSpace, FillType, Vertex2D[], Int32[], Colour, UInt64, UInt64, TextureCoordinateMode, TextureCoordinateMode, Single, Int32, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Add draw request to the DrawStage's dynamic (non-persistent-on-clear) draw queue by specifying the request's components</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void Draw(ulong stage, CoordinateSpace target, FillType type, Vertex2D[] vertices, int[] indices, Colour colour, ulong texture0, ulong texture1, TextureCoordinateMode texWrap0, TextureCoordinateMode texWrap1, float depth, int layer, bool validate = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><span class="parametername">stage</span></td>
+        <td><p>DrawStage id</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.CoordinateSpace.html">CoordinateSpace</a></td>
+        <td><span class="parametername">target</span></td>
+        <td><p>The coordinate space (world or screen) that the vertices should be transformed by</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.FillType.html">FillType</a></td>
+        <td><span class="parametername">type</span></td>
+        <td><p>Fill / Texturing type - Coloured, Single Textured or Dual Textured</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.Vertex2D.html">Vertex2D</a>[]</td>
+        <td><span class="parametername">vertices</span></td>
+        <td><p>The vertices that make up the triangles to draw</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span>[]</td>
+        <td><span class="parametername">indices</span></td>
+        <td><p>The indices that reference vertices that make up the triangles to draw</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
+        <td><span class="parametername">colour</span></td>
+        <td><p>An overall colour applied to all vertices at drawing</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><span class="parametername">texture0</span></td>
+        <td><p>Primary Texture id (the only texture used for single texturing)</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><span class="parametername">texture1</span></td>
+        <td><p>Secondary Texture id (used for dual texturing)</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.TextureCoordinateMode.html">TextureCoordinateMode</a></td>
+        <td><span class="parametername">texWrap0</span></td>
+        <td><p>Primary Texture Coordinate Wrap behaviour</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.TextureCoordinateMode.html">TextureCoordinateMode</a></td>
+        <td><span class="parametername">texWrap1</span></td>
+        <td><p>Secondary Texure Coordinate Wrap behaviour</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">depth</span></td>
+        <td><p>Z depth of vertices defining ordering within a layer (0.0 [front] to 1.0 [back])</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">layer</span></td>
+        <td><blockquote>
+<p>= 0. The layer that these vertices belong too, lower layers are drawn behind higher layers</p>
+</blockquote>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">validate</span></td>
+        <td><p>Check whether the content of the draw request appears valid before adding to the queue</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_IDrawing_Draw_System_UInt64_Yak2D_DrawRequest_System_Boolean_.md&amp;value=---%0Auid%3A%20Yak2D.IDrawing.Draw(System.UInt64%2CYak2D.DrawRequest%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Services/IDrawing.cs/#L102">View Source</a>
+  </span>
+  <a id="Yak2D_IDrawing_Draw_" data-uid="Yak2D.IDrawing.Draw*"></a>
+  <h4 id="Yak2D_IDrawing_Draw_System_UInt64_Yak2D_DrawRequest_System_Boolean_" data-uid="Yak2D.IDrawing.Draw(System.UInt64,Yak2D.DrawRequest,System.Boolean)">Draw(UInt64, DrawRequest, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Adds draw request to the DrawStage's dynamic (non-persistent-on-clear) draw queue</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void Draw(ulong stage, DrawRequest request, bool validate = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><span class="parametername">stage</span></td>
+        <td><p>DrawStage id</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.DrawRequest.html">DrawRequest</a></td>
+        <td><span class="parametername">request</span></td>
+        <td><p>Draw request to add to queue</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">validate</span></td>
+        <td><p>Check whether the content of the draw request appears valid before adding to the queue</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_IDrawing_Draw_System_UInt64_Yak2D_DrawRequest__System_Boolean_.md&amp;value=---%0Auid%3A%20Yak2D.IDrawing.Draw(System.UInt64%2CYak2D.DrawRequest%40%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Services/IDrawing.cs/#L123">View Source</a>
+  </span>
+  <a id="Yak2D_IDrawing_Draw_" data-uid="Yak2D.IDrawing.Draw*"></a>
+  <h4 id="Yak2D_IDrawing_Draw_System_UInt64_Yak2D_DrawRequest__System_Boolean_" data-uid="Yak2D.IDrawing.Draw(System.UInt64,Yak2D.DrawRequest@,System.Boolean)">Draw(UInt64, ref DrawRequest, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Adds draw request to the DrawStage's dynamic (non-persistent-on-clear) draw queue</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void Draw(ulong stage, ref DrawRequest request, bool validate = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><span class="parametername">stage</span></td>
+        <td><p>DrawStage id</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.DrawRequest.html">DrawRequest</a></td>
+        <td><span class="parametername">request</span></td>
+        <td><p>Draw request to add to queue</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">validate</span></td>
+        <td><p>Check whether the content of the draw request appears valid before adding to the queue</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_IDrawing_Draw_Yak2D_IDrawStage_Yak2D_CoordinateSpace_Yak2D_FillType_Yak2D_Vertex2D___System_Int32___Yak2D_Colour_Yak2D_ITexture_Yak2D_ITexture_Yak2D_TextureCoordinateMode_Yak2D_TextureCoordinateMode_System_Single_System_Int32_System_Boolean_.md&amp;value=---%0Auid%3A%20Yak2D.IDrawing.Draw(Yak2D.IDrawStage%2CYak2D.CoordinateSpace%2CYak2D.FillType%2CYak2D.Vertex2D%5B%5D%2CSystem.Int32%5B%5D%2CYak2D.Colour%2CYak2D.ITexture%2CYak2D.ITexture%2CYak2D.TextureCoordinateMode%2CYak2D.TextureCoordinateMode%2CSystem.Single%2CSystem.Int32%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Services/IDrawing.cs/#L143">View Source</a>
+  </span>
+  <a id="Yak2D_IDrawing_Draw_" data-uid="Yak2D.IDrawing.Draw*"></a>
+  <h4 id="Yak2D_IDrawing_Draw_Yak2D_IDrawStage_Yak2D_CoordinateSpace_Yak2D_FillType_Yak2D_Vertex2D___System_Int32___Yak2D_Colour_Yak2D_ITexture_Yak2D_ITexture_Yak2D_TextureCoordinateMode_Yak2D_TextureCoordinateMode_System_Single_System_Int32_System_Boolean_" data-uid="Yak2D.IDrawing.Draw(Yak2D.IDrawStage,Yak2D.CoordinateSpace,Yak2D.FillType,Yak2D.Vertex2D[],System.Int32[],Yak2D.Colour,Yak2D.ITexture,Yak2D.ITexture,Yak2D.TextureCoordinateMode,Yak2D.TextureCoordinateMode,System.Single,System.Int32,System.Boolean)">Draw(IDrawStage, CoordinateSpace, FillType, Vertex2D[], Int32[], Colour, ITexture, ITexture, TextureCoordinateMode, TextureCoordinateMode, Single, Int32, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Add draw request to the DrawStage's dynamic (non-persistent-on-clear) draw queue by specifying the request's components</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void Draw(IDrawStage stage, CoordinateSpace target, FillType type, Vertex2D[] vertices, int[] indices, Colour colour, ITexture texture0, ITexture texture1, TextureCoordinateMode texWrap0, TextureCoordinateMode texWrap1, float depth, int layer, bool validate = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.IDrawStage.html">IDrawStage</a></td>
+        <td><span class="parametername">stage</span></td>
+        <td><p>DrawStage reference</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.CoordinateSpace.html">CoordinateSpace</a></td>
+        <td><span class="parametername">target</span></td>
+        <td><p>The coordinate space (world or screen) that the vertices should be transformed by</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.FillType.html">FillType</a></td>
+        <td><span class="parametername">type</span></td>
+        <td><p>Fill / Texturing type - Coloured, Single Textured or Dual Textured</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.Vertex2D.html">Vertex2D</a>[]</td>
+        <td><span class="parametername">vertices</span></td>
+        <td><p>The vertices that make up the triangles to draw</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span>[]</td>
+        <td><span class="parametername">indices</span></td>
+        <td><p>The indices that reference vertices that make up the triangles to draw</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
+        <td><span class="parametername">colour</span></td>
+        <td><p>An overall colour applied to all vertices at drawing</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.ITexture.html">ITexture</a></td>
+        <td><span class="parametername">texture0</span></td>
+        <td><p>Primary Texture Reference (the only texture used for single texturing)</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.ITexture.html">ITexture</a></td>
+        <td><span class="parametername">texture1</span></td>
+        <td><p>Secondary Texture Reference (used for dual texturing)</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.TextureCoordinateMode.html">TextureCoordinateMode</a></td>
+        <td><span class="parametername">texWrap0</span></td>
+        <td><p>Primary Texture Coordinate Wrap behaviour</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.TextureCoordinateMode.html">TextureCoordinateMode</a></td>
+        <td><span class="parametername">texWrap1</span></td>
+        <td><p>Secondary Texure Coordinate Wrap behaviour</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">depth</span></td>
+        <td><p>Z depth of vertices defining ordering within a layer (0.0 [front] to 1.0 [back])</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">layer</span></td>
+        <td><blockquote>
+<p>= 0. The layer that these vertices belong too, lower layers are drawn behind higher layers</p>
+</blockquote>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">validate</span></td>
+        <td><p>Check whether the content of the draw request appears valid before adding to the queue</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_IDrawing_Draw_Yak2D_IDrawStage_Yak2D_DrawRequest_System_Boolean_.md&amp;value=---%0Auid%3A%20Yak2D.IDrawing.Draw(Yak2D.IDrawStage%2CYak2D.DrawRequest%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Services/IDrawing.cs/#L92">View Source</a>
+  </span>
+  <a id="Yak2D_IDrawing_Draw_" data-uid="Yak2D.IDrawing.Draw*"></a>
+  <h4 id="Yak2D_IDrawing_Draw_Yak2D_IDrawStage_Yak2D_DrawRequest_System_Boolean_" data-uid="Yak2D.IDrawing.Draw(Yak2D.IDrawStage,Yak2D.DrawRequest,System.Boolean)">Draw(IDrawStage, DrawRequest, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Adds draw request to the DrawStage's dynamic (non-persistent-on-clear) draw queue</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void Draw(IDrawStage stage, DrawRequest request, bool validate = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.IDrawStage.html">IDrawStage</a></td>
+        <td><span class="parametername">stage</span></td>
+        <td><p>DrawStage reference</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.DrawRequest.html">DrawRequest</a></td>
+        <td><span class="parametername">request</span></td>
+        <td><p>Draw request to add to queue</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">validate</span></td>
+        <td><p>Check whether the content of the draw request appears valid before adding to the queue</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_IDrawing_Draw_Yak2D_IDrawStage_Yak2D_DrawRequest__System_Boolean_.md&amp;value=---%0Auid%3A%20Yak2D.IDrawing.Draw(Yak2D.IDrawStage%2CYak2D.DrawRequest%40%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Services/IDrawing.cs/#L112">View Source</a>
+  </span>
+  <a id="Yak2D_IDrawing_Draw_" data-uid="Yak2D.IDrawing.Draw*"></a>
+  <h4 id="Yak2D_IDrawing_Draw_Yak2D_IDrawStage_Yak2D_DrawRequest__System_Boolean_" data-uid="Yak2D.IDrawing.Draw(Yak2D.IDrawStage,Yak2D.DrawRequest@,System.Boolean)">Draw(IDrawStage, ref DrawRequest, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Adds draw request to the DrawStage's dynamic (non-persistent-on-clear) draw queue</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void Draw(IDrawStage stage, ref DrawRequest request, bool validate = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.IDrawStage.html">IDrawStage</a></td>
+        <td><span class="parametername">stage</span></td>
+        <td><p>DrawStage reference</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.DrawRequest.html">DrawRequest</a></td>
+        <td><span class="parametername">request</span></td>
+        <td><p>Draw request to add to queue</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">validate</span></td>
+        <td><p>Check whether the content of the draw request appears valid before adding to the queue</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_IDrawing_DrawDistortion_System_UInt64_Yak2D_CoordinateSpace_Yak2D_FillType_Yak2D_Vertex2D___System_Int32___Yak2D_Colour_System_UInt64_System_UInt64_Yak2D_TextureCoordinateMode_Yak2D_TextureCoordinateMode_System_Single_System_Boolean_.md&amp;value=---%0Auid%3A%20Yak2D.IDrawing.DrawDistortion(System.UInt64%2CYak2D.CoordinateSpace%2CYak2D.FillType%2CYak2D.Vertex2D%5B%5D%2CSystem.Int32%5B%5D%2CYak2D.Colour%2CSystem.UInt64%2CSystem.UInt64%2CYak2D.TextureCoordinateMode%2CYak2D.TextureCoordinateMode%2CSystem.Single%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Services/IDrawing.cs/#L317">View Source</a>
+  </span>
+  <a id="Yak2D_IDrawing_DrawDistortion_" data-uid="Yak2D.IDrawing.DrawDistortion*"></a>
+  <h4 id="Yak2D_IDrawing_DrawDistortion_System_UInt64_Yak2D_CoordinateSpace_Yak2D_FillType_Yak2D_Vertex2D___System_Int32___Yak2D_Colour_System_UInt64_System_UInt64_Yak2D_TextureCoordinateMode_Yak2D_TextureCoordinateMode_System_Single_System_Boolean_" data-uid="Yak2D.IDrawing.DrawDistortion(System.UInt64,Yak2D.CoordinateSpace,Yak2D.FillType,Yak2D.Vertex2D[],System.Int32[],Yak2D.Colour,System.UInt64,System.UInt64,Yak2D.TextureCoordinateMode,Yak2D.TextureCoordinateMode,System.Single,System.Boolean)">DrawDistortion(UInt64, CoordinateSpace, FillType, Vertex2D[], Int32[], Colour, UInt64, UInt64, TextureCoordinateMode, TextureCoordinateMode, Single, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Add distortion draw request to the DistortionStage's dynamic (non-persistent-on-clear) draw queue by specifying the request's components</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void DrawDistortion(ulong stage, CoordinateSpace target, FillType type, Vertex2D[] vertices, int[] indices, Colour colour, ulong texture0, ulong texture1, TextureCoordinateMode texWrap0, TextureCoordinateMode texWrap1, float intensity, bool validate = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><span class="parametername">stage</span></td>
+        <td><p>DistortionStage id</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.CoordinateSpace.html">CoordinateSpace</a></td>
+        <td><span class="parametername">target</span></td>
+        <td><p>The coordinate space (world or screen) that the vertices should be transformed by</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.FillType.html">FillType</a></td>
+        <td><span class="parametername">type</span></td>
+        <td><p>Fill / Texturing type - Coloured, Single Textured or Dual Textured</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.Vertex2D.html">Vertex2D</a>[]</td>
+        <td><span class="parametername">vertices</span></td>
+        <td><p>The vertices that make up the triangles to draw</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span>[]</td>
+        <td><span class="parametername">indices</span></td>
+        <td><p>The indices that reference vertices that make up the triangles to draw</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
+        <td><span class="parametername">colour</span></td>
+        <td><p>An overall colour applied to all vertices at drawing</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><span class="parametername">texture0</span></td>
+        <td><p>Primary Texture id (the only texture used for single texturing)</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><span class="parametername">texture1</span></td>
+        <td><p>Secondary Texture id (used for dual texturing)</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.TextureCoordinateMode.html">TextureCoordinateMode</a></td>
+        <td><span class="parametername">texWrap0</span></td>
+        <td><p>Primary Texture Coordinate Wrap behaviour</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.TextureCoordinateMode.html">TextureCoordinateMode</a></td>
+        <td><span class="parametername">texWrap1</span></td>
+        <td><p>Secondary Texure Coordinate Wrap behaviour</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">intensity</span></td>
+        <td><p>Scalar quantity to multply the height factor of the drawn pixels</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">validate</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_IDrawing_DrawDistortion_System_UInt64_Yak2D_DistortionDrawRequest_System_Boolean_.md&amp;value=---%0Auid%3A%20Yak2D.IDrawing.DrawDistortion(System.UInt64%2CYak2D.DistortionDrawRequest%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Services/IDrawing.cs/#L251">View Source</a>
+  </span>
+  <a id="Yak2D_IDrawing_DrawDistortion_" data-uid="Yak2D.IDrawing.DrawDistortion*"></a>
+  <h4 id="Yak2D_IDrawing_DrawDistortion_System_UInt64_Yak2D_DistortionDrawRequest_System_Boolean_" data-uid="Yak2D.IDrawing.DrawDistortion(System.UInt64,Yak2D.DistortionDrawRequest,System.Boolean)">DrawDistortion(UInt64, DistortionDrawRequest, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Adds distortion draw request to the DistortionStage's dynamic (non-persistent-on-clear) draw queue</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void DrawDistortion(ulong stage, DistortionDrawRequest request, bool validate = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><span class="parametername">stage</span></td>
+        <td><p>DistortionStage id</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.DistortionDrawRequest.html">DistortionDrawRequest</a></td>
+        <td><span class="parametername">request</span></td>
+        <td><p>Distortion Draw request to add to queue</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">validate</span></td>
+        <td><p>Check whether the content of the distortion draw request appears valid before adding to the queue</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_IDrawing_DrawDistortion_System_UInt64_Yak2D_DistortionDrawRequest__System_Boolean_.md&amp;value=---%0Auid%3A%20Yak2D.IDrawing.DrawDistortion(System.UInt64%2CYak2D.DistortionDrawRequest%40%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Services/IDrawing.cs/#L271">View Source</a>
+  </span>
+  <a id="Yak2D_IDrawing_DrawDistortion_" data-uid="Yak2D.IDrawing.DrawDistortion*"></a>
+  <h4 id="Yak2D_IDrawing_DrawDistortion_System_UInt64_Yak2D_DistortionDrawRequest__System_Boolean_" data-uid="Yak2D.IDrawing.DrawDistortion(System.UInt64,Yak2D.DistortionDrawRequest@,System.Boolean)">DrawDistortion(UInt64, ref DistortionDrawRequest, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Adds distortion draw request to the DistortionStage's dynamic (non-persistent-on-clear) draw queue</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void DrawDistortion(ulong stage, ref DistortionDrawRequest request, bool validate = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><span class="parametername">stage</span></td>
+        <td><p>DistortionStage id</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.DistortionDrawRequest.html">DistortionDrawRequest</a></td>
+        <td><span class="parametername">request</span></td>
+        <td><p>Distortion Draw request to add to queue</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">validate</span></td>
+        <td><p>Check whether the content of the distortion draw request appears valid before adding to the queue</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_IDrawing_DrawDistortion_Yak2D_IDistortionStage_Yak2D_CoordinateSpace_Yak2D_FillType_Yak2D_Vertex2D___System_Int32___Yak2D_Colour_Yak2D_ITexture_Yak2D_ITexture_Yak2D_TextureCoordinateMode_Yak2D_TextureCoordinateMode_System_Single_System_Boolean_.md&amp;value=---%0Auid%3A%20Yak2D.IDrawing.DrawDistortion(Yak2D.IDistortionStage%2CYak2D.CoordinateSpace%2CYak2D.FillType%2CYak2D.Vertex2D%5B%5D%2CSystem.Int32%5B%5D%2CYak2D.Colour%2CYak2D.ITexture%2CYak2D.ITexture%2CYak2D.TextureCoordinateMode%2CYak2D.TextureCoordinateMode%2CSystem.Single%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Services/IDrawing.cs/#L289">View Source</a>
+  </span>
+  <a id="Yak2D_IDrawing_DrawDistortion_" data-uid="Yak2D.IDrawing.DrawDistortion*"></a>
+  <h4 id="Yak2D_IDrawing_DrawDistortion_Yak2D_IDistortionStage_Yak2D_CoordinateSpace_Yak2D_FillType_Yak2D_Vertex2D___System_Int32___Yak2D_Colour_Yak2D_ITexture_Yak2D_ITexture_Yak2D_TextureCoordinateMode_Yak2D_TextureCoordinateMode_System_Single_System_Boolean_" data-uid="Yak2D.IDrawing.DrawDistortion(Yak2D.IDistortionStage,Yak2D.CoordinateSpace,Yak2D.FillType,Yak2D.Vertex2D[],System.Int32[],Yak2D.Colour,Yak2D.ITexture,Yak2D.ITexture,Yak2D.TextureCoordinateMode,Yak2D.TextureCoordinateMode,System.Single,System.Boolean)">DrawDistortion(IDistortionStage, CoordinateSpace, FillType, Vertex2D[], Int32[], Colour, ITexture, ITexture, TextureCoordinateMode, TextureCoordinateMode, Single, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Add distortion draw request to the DistortionStage's dynamic (non-persistent-on-clear) draw queue by specifying the request's components</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void DrawDistortion(IDistortionStage stage, CoordinateSpace target, FillType type, Vertex2D[] vertices, int[] indices, Colour colour, ITexture texture0, ITexture texture1, TextureCoordinateMode texWrap0, TextureCoordinateMode texWrap1, float intensity, bool validate = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.IDistortionStage.html">IDistortionStage</a></td>
+        <td><span class="parametername">stage</span></td>
+        <td><p>DistortionStage reference</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.CoordinateSpace.html">CoordinateSpace</a></td>
+        <td><span class="parametername">target</span></td>
+        <td><p>The coordinate space (world or screen) that the vertices should be transformed by</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.FillType.html">FillType</a></td>
+        <td><span class="parametername">type</span></td>
+        <td><p>Fill / Texturing type - Coloured, Single Textured or Dual Textured</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.Vertex2D.html">Vertex2D</a>[]</td>
+        <td><span class="parametername">vertices</span></td>
+        <td><p>The vertices that make up the triangles to draw</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span>[]</td>
+        <td><span class="parametername">indices</span></td>
+        <td><p>The indices that reference vertices that make up the triangles to draw</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
+        <td><span class="parametername">colour</span></td>
+        <td><p>An overall colour applied to all vertices at drawing</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.ITexture.html">ITexture</a></td>
+        <td><span class="parametername">texture0</span></td>
+        <td><p>Primary Texture Reference (the only texture used for single texturing)</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.ITexture.html">ITexture</a></td>
+        <td><span class="parametername">texture1</span></td>
+        <td><p>Secondary Texture Reference (used for dual texturing)</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.TextureCoordinateMode.html">TextureCoordinateMode</a></td>
+        <td><span class="parametername">texWrap0</span></td>
+        <td><p>Primary Texture Coordinate Wrap behaviour</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.TextureCoordinateMode.html">TextureCoordinateMode</a></td>
+        <td><span class="parametername">texWrap1</span></td>
+        <td><p>Secondary Texure Coordinate Wrap behaviour</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">intensity</span></td>
+        <td><p>Scalar quantity to multply the height factor of the drawn pixels</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">validate</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_IDrawing_DrawDistortion_Yak2D_IDistortionStage_Yak2D_DistortionDrawRequest_System_Boolean_.md&amp;value=---%0Auid%3A%20Yak2D.IDrawing.DrawDistortion(Yak2D.IDistortionStage%2CYak2D.DistortionDrawRequest%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Services/IDrawing.cs/#L241">View Source</a>
+  </span>
+  <a id="Yak2D_IDrawing_DrawDistortion_" data-uid="Yak2D.IDrawing.DrawDistortion*"></a>
+  <h4 id="Yak2D_IDrawing_DrawDistortion_Yak2D_IDistortionStage_Yak2D_DistortionDrawRequest_System_Boolean_" data-uid="Yak2D.IDrawing.DrawDistortion(Yak2D.IDistortionStage,Yak2D.DistortionDrawRequest,System.Boolean)">DrawDistortion(IDistortionStage, DistortionDrawRequest, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Adds distortion draw request to the DistortionStage's dynamic (non-persistent-on-clear) draw queue</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void DrawDistortion(IDistortionStage stage, DistortionDrawRequest request, bool validate = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.IDistortionStage.html">IDistortionStage</a></td>
+        <td><span class="parametername">stage</span></td>
+        <td><p>DistortionStage reference</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.DistortionDrawRequest.html">DistortionDrawRequest</a></td>
+        <td><span class="parametername">request</span></td>
+        <td><p>Distortion Draw request to add to queue</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">validate</span></td>
+        <td><p>Check whether the content of the distortion draw request appears valid before adding to the queue</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_IDrawing_DrawDistortion_Yak2D_IDistortionStage_Yak2D_DistortionDrawRequest__System_Boolean_.md&amp;value=---%0Auid%3A%20Yak2D.IDrawing.DrawDistortion(Yak2D.IDistortionStage%2CYak2D.DistortionDrawRequest%40%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Services/IDrawing.cs/#L261">View Source</a>
+  </span>
+  <a id="Yak2D_IDrawing_DrawDistortion_" data-uid="Yak2D.IDrawing.DrawDistortion*"></a>
+  <h4 id="Yak2D_IDrawing_DrawDistortion_Yak2D_IDistortionStage_Yak2D_DistortionDrawRequest__System_Boolean_" data-uid="Yak2D.IDrawing.DrawDistortion(Yak2D.IDistortionStage,Yak2D.DistortionDrawRequest@,System.Boolean)">DrawDistortion(IDistortionStage, ref DistortionDrawRequest, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Adds distortion draw request to the DistortionStage's dynamic (non-persistent-on-clear) draw queue</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void DrawDistortion(IDistortionStage stage, ref DistortionDrawRequest request, bool validate = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.IDistortionStage.html">IDistortionStage</a></td>
+        <td><span class="parametername">stage</span></td>
+        <td><p>DistortionStage reference</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.DistortionDrawRequest.html">DistortionDrawRequest</a></td>
+        <td><span class="parametername">request</span></td>
+        <td><p>Distortion Draw request to add to queue</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">validate</span></td>
+        <td><p>Check whether the content of the distortion draw request appears valid before adding to the queue</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_IDrawing_DrawString_System_UInt64_Yak2D_CoordinateSpace_System_String_Yak2D_Colour_System_Single_Vector2_Yak2D_TextJustify_System_Single_System_Int32_System_Boolean_.md&amp;value=---%0Auid%3A%20Yak2D.IDrawing.DrawString(System.UInt64%2CYak2D.CoordinateSpace%2CSystem.String%2CYak2D.Colour%2CSystem.Single%2CVector2%2CYak2D.TextJustify%2CSystem.Single%2CSystem.Int32%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Services/IDrawing.cs/#L397">View Source</a>
+  </span>
+  <a id="Yak2D_IDrawing_DrawString_" data-uid="Yak2D.IDrawing.DrawString*"></a>
+  <h4 id="Yak2D_IDrawing_DrawString_System_UInt64_Yak2D_CoordinateSpace_System_String_Yak2D_Colour_System_Single_Vector2_Yak2D_TextJustify_System_Single_System_Int32_System_Boolean_" data-uid="Yak2D.IDrawing.DrawString(System.UInt64,Yak2D.CoordinateSpace,System.String,Yak2D.Colour,System.Single,Vector2,Yak2D.TextJustify,System.Single,System.Int32,System.Boolean)">DrawString(UInt64, CoordinateSpace, String, Colour, Single, Vector2, TextJustify, Single, Int32, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Create a draw request from a Text String and Font and add to the DrawStage's dynamic (non-persistent-on-clear) draw queue
+Uses default font</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void DrawString(ulong stage, CoordinateSpace target, string text, Colour colour, float fontSize, Vector2 position, TextJustify justify, float depth, int layer, bool useKerningsWhereAvaliable = true)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><span class="parametername">stage</span></td>
+        <td><p>DrawStage id</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.CoordinateSpace.html">CoordinateSpace</a></td>
+        <td><span class="parametername">target</span></td>
+        <td><p>The coordinate space (world or screen) that the vertices should be transformed by</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">text</span></td>
+        <td><p>Text string to draw</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
+        <td><span class="parametername">colour</span></td>
+        <td><p>Text colour</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">fontSize</span></td>
+        <td><p>Font size in pixels</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>Position of text string (x dependent on justify, y is top)</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.TextJustify.html">TextJustify</a></td>
+        <td><span class="parametername">justify</span></td>
+        <td><p>Horizontal positioning of text relative to position</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">depth</span></td>
+        <td><p>Z depth of vertices defining ordering within a layer (0.0 [front] to 1.0 [back])</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">layer</span></td>
+        <td><blockquote>
+<p>= 0. The layer that these vertices belong too, lower layers are drawn behind higher layers</p>
+</blockquote>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">useKerningsWhereAvaliable</span></td>
+        <td><p>Use font kerning data for spacing adjustments if font contains this data</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_IDrawing_DrawString_System_UInt64_Yak2D_CoordinateSpace_System_String_Yak2D_Colour_System_Single_Vector2_Yak2D_TextJustify_System_Single_System_Int32_System_UInt64_System_Boolean_.md&amp;value=---%0Auid%3A%20Yak2D.IDrawing.DrawString(System.UInt64%2CYak2D.CoordinateSpace%2CSystem.String%2CYak2D.Colour%2CSystem.Single%2CVector2%2CYak2D.TextJustify%2CSystem.Single%2CSystem.Int32%2CSystem.UInt64%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Services/IDrawing.cs/#L371">View Source</a>
+  </span>
+  <a id="Yak2D_IDrawing_DrawString_" data-uid="Yak2D.IDrawing.DrawString*"></a>
+  <h4 id="Yak2D_IDrawing_DrawString_System_UInt64_Yak2D_CoordinateSpace_System_String_Yak2D_Colour_System_Single_Vector2_Yak2D_TextJustify_System_Single_System_Int32_System_UInt64_System_Boolean_" data-uid="Yak2D.IDrawing.DrawString(System.UInt64,Yak2D.CoordinateSpace,System.String,Yak2D.Colour,System.Single,Vector2,Yak2D.TextJustify,System.Single,System.Int32,System.UInt64,System.Boolean)">DrawString(UInt64, CoordinateSpace, String, Colour, Single, Vector2, TextJustify, Single, Int32, UInt64, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Create a draw request from a Text String and Font and add to the DrawStage's dynamic (non-persistent-on-clear) draw queue</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void DrawString(ulong stage, CoordinateSpace target, string text, Colour colour, float fontSize, Vector2 position, TextJustify justify, float depth, int layer, ulong font, bool useKerningsWhereAvaliable = true)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><span class="parametername">stage</span></td>
+        <td><p>DrawStage id</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.CoordinateSpace.html">CoordinateSpace</a></td>
+        <td><span class="parametername">target</span></td>
+        <td><p>The coordinate space (world or screen) that the vertices should be transformed by</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">text</span></td>
+        <td><p>Text string to draw</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
+        <td><span class="parametername">colour</span></td>
+        <td><p>Text colour</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">fontSize</span></td>
+        <td><p>Font size in pixels</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>Position of text string (x dependent on justify, y is top)</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.TextJustify.html">TextJustify</a></td>
+        <td><span class="parametername">justify</span></td>
+        <td><p>Horizontal positioning of text relative to position</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">depth</span></td>
+        <td><p>Z depth of vertices defining ordering within a layer (0.0 [front] to 1.0 [back])</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">layer</span></td>
+        <td><blockquote>
+<p>= 0. The layer that these vertices belong too, lower layers are drawn behind higher layers</p>
+</blockquote>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><span class="parametername">font</span></td>
+        <td><p>Font id to use</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">useKerningsWhereAvaliable</span></td>
+        <td><p>Use font kerning data for spacing adjustments if font contains this data</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_IDrawing_DrawString_Yak2D_IDrawStage_Yak2D_CoordinateSpace_System_String_Yak2D_Colour_System_Single_Vector2_Yak2D_TextJustify_System_Single_System_Int32_Yak2D_IFont_System_Boolean_.md&amp;value=---%0Auid%3A%20Yak2D.IDrawing.DrawString(Yak2D.IDrawStage%2CYak2D.CoordinateSpace%2CSystem.String%2CYak2D.Colour%2CSystem.Single%2CVector2%2CYak2D.TextJustify%2CSystem.Single%2CSystem.Int32%2CYak2D.IFont%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Services/IDrawing.cs/#L345">View Source</a>
+  </span>
+  <a id="Yak2D_IDrawing_DrawString_" data-uid="Yak2D.IDrawing.DrawString*"></a>
+  <h4 id="Yak2D_IDrawing_DrawString_Yak2D_IDrawStage_Yak2D_CoordinateSpace_System_String_Yak2D_Colour_System_Single_Vector2_Yak2D_TextJustify_System_Single_System_Int32_Yak2D_IFont_System_Boolean_" data-uid="Yak2D.IDrawing.DrawString(Yak2D.IDrawStage,Yak2D.CoordinateSpace,System.String,Yak2D.Colour,System.Single,Vector2,Yak2D.TextJustify,System.Single,System.Int32,Yak2D.IFont,System.Boolean)">DrawString(IDrawStage, CoordinateSpace, String, Colour, Single, Vector2, TextJustify, Single, Int32, IFont, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Create a draw request from a Text String and Font and add to the DrawStage's dynamic (non-persistent-on-clear) draw queue</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void DrawString(IDrawStage stage, CoordinateSpace target, string text, Colour colour, float fontSize, Vector2 position, TextJustify justify, float depth, int layer, IFont font = null, bool useKerningsWhereAvaliable = true)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.IDrawStage.html">IDrawStage</a></td>
+        <td><span class="parametername">stage</span></td>
+        <td><p>DrawStage reference</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.CoordinateSpace.html">CoordinateSpace</a></td>
+        <td><span class="parametername">target</span></td>
+        <td><p>The coordinate space (world or screen) that the vertices should be transformed by</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">text</span></td>
+        <td><p>Text string to draw</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
+        <td><span class="parametername">colour</span></td>
+        <td><p>Text colour</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">fontSize</span></td>
+        <td><p>Font size in pixels</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>Position of text string (x dependent on justify, y is top)</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.TextJustify.html">TextJustify</a></td>
+        <td><span class="parametername">justify</span></td>
+        <td><p>Horizontal positioning of text relative to position</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">depth</span></td>
+        <td><p>Z depth of vertices defining ordering within a layer (0.0 [front] to 1.0 [back])</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">layer</span></td>
+        <td><blockquote>
+<p>= 0. The layer that these vertices belong too, lower layers are drawn behind higher layers</p>
+</blockquote>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.IFont.html">IFont</a></td>
+        <td><span class="parametername">font</span></td>
+        <td><p>Font reference to use, null uses a default font</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">useKerningsWhereAvaliable</span></td>
+        <td><p>Use font kerning data for spacing adjustments if font contains this data</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_IDrawing_GetSurfaceDimensions_System_UInt64_.md&amp;value=---%0Auid%3A%20Yak2D.IDrawing.GetSurfaceDimensions(System.UInt64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Services/IDrawing.cs/#L36">View Source</a>
+  </span>
+  <a id="Yak2D_IDrawing_GetSurfaceDimensions_" data-uid="Yak2D.IDrawing.GetSurfaceDimensions*"></a>
+  <h4 id="Yak2D_IDrawing_GetSurfaceDimensions_System_UInt64_" data-uid="Yak2D.IDrawing.GetSurfaceDimensions(System.UInt64)">GetSurfaceDimensions(UInt64)</h4>
+  <div class="markdown level1 summary"><p>Get size of texture in pixels</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Size GetSurfaceDimensions(ulong texture)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><span class="parametername">texture</span></td>
+        <td><p>Texture id&quot;</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Size</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_IDrawing_GetSurfaceDimensions_Yak2D_ITexture_.md&amp;value=---%0Auid%3A%20Yak2D.IDrawing.GetSurfaceDimensions(Yak2D.ITexture)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Services/IDrawing.cs/#L31">View Source</a>
+  </span>
+  <a id="Yak2D_IDrawing_GetSurfaceDimensions_" data-uid="Yak2D.IDrawing.GetSurfaceDimensions*"></a>
+  <h4 id="Yak2D_IDrawing_GetSurfaceDimensions_Yak2D_ITexture_" data-uid="Yak2D.IDrawing.GetSurfaceDimensions(Yak2D.ITexture)">GetSurfaceDimensions(ITexture)</h4>
+  <div class="markdown level1 summary"><p>Get size of texture in pixels</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Size GetSurfaceDimensions(ITexture texture)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.ITexture.html">ITexture</a></td>
+        <td><span class="parametername">texture</span></td>
+        <td><p>Texture reference&quot;</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Size</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_IDrawing_MeasureStringLength_System_String_System_Single_System_UInt64_.md&amp;value=---%0Auid%3A%20Yak2D.IDrawing.MeasureStringLength(System.String%2CSystem.Single%2CSystem.UInt64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Services/IDrawing.cs/#L424">View Source</a>
+  </span>
+  <a id="Yak2D_IDrawing_MeasureStringLength_" data-uid="Yak2D.IDrawing.MeasureStringLength*"></a>
+  <h4 id="Yak2D_IDrawing_MeasureStringLength_System_String_System_Single_System_UInt64_" data-uid="Yak2D.IDrawing.MeasureStringLength(System.String,System.Single,System.UInt64)">MeasureStringLength(String, Single, UInt64)</h4>
+  <div class="markdown level1 summary"><p>Measure pixel length (width) of a string</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">float MeasureStringLength(string text, float fontSize, ulong font)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">text</span></td>
+        <td><p>Text string</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">fontSize</span></td>
+        <td><p>Size of font in pixels</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><span class="parametername">font</span></td>
+        <td><p>Font id to use</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_IDrawing_MeasureStringLength_System_String_System_Single_Yak2D_IFont_.md&amp;value=---%0Auid%3A%20Yak2D.IDrawing.MeasureStringLength(System.String%2CSystem.Single%2CYak2D.IFont)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Services/IDrawing.cs/#L414">View Source</a>
+  </span>
+  <a id="Yak2D_IDrawing_MeasureStringLength_" data-uid="Yak2D.IDrawing.MeasureStringLength*"></a>
+  <h4 id="Yak2D_IDrawing_MeasureStringLength_System_String_System_Single_Yak2D_IFont_" data-uid="Yak2D.IDrawing.MeasureStringLength(System.String,System.Single,Yak2D.IFont)">MeasureStringLength(String, Single, IFont)</h4>
+  <div class="markdown level1 summary"><p>Measure pixel length (width) of a string</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">float MeasureStringLength(string text, float fontSize, IFont font = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">text</span></td>
+        <td><p>Text string</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">fontSize</span></td>
+        <td><p>Size of font in pixels</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.IFont.html">IFont</a></td>
+        <td><span class="parametername">font</span></td>
+        <td><p>Font reference to use, null uses a default font</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_IDrawing_RemovePersistentDistortQueue_System_UInt64_System_UInt64_.md&amp;value=---%0Auid%3A%20Yak2D.IDrawing.RemovePersistentDistortQueue(System.UInt64%2CSystem.UInt64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Services/IDrawing.cs/#L220">View Source</a>
+  </span>
+  <a id="Yak2D_IDrawing_RemovePersistentDistortQueue_" data-uid="Yak2D.IDrawing.RemovePersistentDistortQueue*"></a>
+  <h4 id="Yak2D_IDrawing_RemovePersistentDistortQueue_System_UInt64_System_UInt64_" data-uid="Yak2D.IDrawing.RemovePersistentDistortQueue(System.UInt64,System.UInt64)">RemovePersistentDistortQueue(UInt64, UInt64)</h4>
+  <div class="markdown level1 summary"><p>Removes (destroys) a persistent distortion draw queue from a DistortionStage</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void RemovePersistentDistortQueue(ulong stage, ulong queue)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><span class="parametername">stage</span></td>
+        <td><p>DistortionStage id from which to remove the persistent queue (if attached)</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><span class="parametername">queue</span></td>
+        <td><p>PersistentDistortionQueue id to remove from the DistortionStage</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_IDrawing_RemovePersistentDistortQueue_Yak2D_IDistortionStage_Yak2D_IPersistentDistortionQueue_.md&amp;value=---%0Auid%3A%20Yak2D.IDrawing.RemovePersistentDistortQueue(Yak2D.IDistortionStage%2CYak2D.IPersistentDistortionQueue)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Services/IDrawing.cs/#L212">View Source</a>
+  </span>
+  <a id="Yak2D_IDrawing_RemovePersistentDistortQueue_" data-uid="Yak2D.IDrawing.RemovePersistentDistortQueue*"></a>
+  <h4 id="Yak2D_IDrawing_RemovePersistentDistortQueue_Yak2D_IDistortionStage_Yak2D_IPersistentDistortionQueue_" data-uid="Yak2D.IDrawing.RemovePersistentDistortQueue(Yak2D.IDistortionStage,Yak2D.IPersistentDistortionQueue)">RemovePersistentDistortQueue(IDistortionStage, IPersistentDistortionQueue)</h4>
+  <div class="markdown level1 summary"><p>Removes (destroys) a persistent distortion draw queue from a DistortionStage</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void RemovePersistentDistortQueue(IDistortionStage stage, IPersistentDistortionQueue queue)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.IDistortionStage.html">IDistortionStage</a></td>
+        <td><span class="parametername">stage</span></td>
+        <td><p>DistortionStage reference from which to remove the persistent queue (if attached)</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.IPersistentDistortionQueue.html">IPersistentDistortionQueue</a></td>
+        <td><span class="parametername">queue</span></td>
+        <td><p>PersistentDistortionQueue reference to remove from the DistortionStage</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_IDrawing_RemovePersistentDrawQueue_System_UInt64_System_UInt64_.md&amp;value=---%0Auid%3A%20Yak2D.IDrawing.RemovePersistentDrawQueue(System.UInt64%2CSystem.UInt64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Services/IDrawing.cs/#L71">View Source</a>
+  </span>
+  <a id="Yak2D_IDrawing_RemovePersistentDrawQueue_" data-uid="Yak2D.IDrawing.RemovePersistentDrawQueue*"></a>
+  <h4 id="Yak2D_IDrawing_RemovePersistentDrawQueue_System_UInt64_System_UInt64_" data-uid="Yak2D.IDrawing.RemovePersistentDrawQueue(System.UInt64,System.UInt64)">RemovePersistentDrawQueue(UInt64, UInt64)</h4>
+  <div class="markdown level1 summary"><p>Removes (destroys) a persistent draw queue from a DrawStage</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void RemovePersistentDrawQueue(ulong stage, ulong queue)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><span class="parametername">stage</span></td>
+        <td><p>DrawStage id from which to remove the persistent queue (if attached)</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><span class="parametername">queue</span></td>
+        <td><p>PersistentDrawQueue id to remove from the DrawStage</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_IDrawing_RemovePersistentDrawQueue_Yak2D_IDrawStage_Yak2D_IPersistentDrawQueue_.md&amp;value=---%0Auid%3A%20Yak2D.IDrawing.RemovePersistentDrawQueue(Yak2D.IDrawStage%2CYak2D.IPersistentDrawQueue)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Services/IDrawing.cs/#L63">View Source</a>
+  </span>
+  <a id="Yak2D_IDrawing_RemovePersistentDrawQueue_" data-uid="Yak2D.IDrawing.RemovePersistentDrawQueue*"></a>
+  <h4 id="Yak2D_IDrawing_RemovePersistentDrawQueue_Yak2D_IDrawStage_Yak2D_IPersistentDrawQueue_" data-uid="Yak2D.IDrawing.RemovePersistentDrawQueue(Yak2D.IDrawStage,Yak2D.IPersistentDrawQueue)">RemovePersistentDrawQueue(IDrawStage, IPersistentDrawQueue)</h4>
+  <div class="markdown level1 summary"><p>Removes (destroys) a persistent draw queue from a DrawStage</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void RemovePersistentDrawQueue(IDrawStage stage, IPersistentDrawQueue queue)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.IDrawStage.html">IDrawStage</a></td>
+        <td><span class="parametername">stage</span></td>
+        <td><p>DrawStage reference from which to remove the persistent queue (if attached)</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.IPersistentDrawQueue.html">IPersistentDrawQueue</a></td>
+        <td><span class="parametername">queue</span></td>
+        <td><p>PersistentDrawQueue reference to remove from the DrawStage</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_IDrawing_WrapTextureId_System_UInt64_.md&amp;value=---%0Auid%3A%20Yak2D.IDrawing.WrapTextureId(System.UInt64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Services/IDrawing.cs/#L25">View Source</a>
+  </span>
+  <a id="Yak2D_IDrawing_WrapTextureId_" data-uid="Yak2D.IDrawing.WrapTextureId*"></a>
+  <h4 id="Yak2D_IDrawing_WrapTextureId_System_UInt64_" data-uid="Yak2D.IDrawing.WrapTextureId(System.UInt64)">WrapTextureId(UInt64)</h4>
+  <div class="markdown level1 summary"><p>Create a Texture reference object from an id
+DrawRequests require Texture References (currently), so if the user is storing raw ulong references instead, this method allows an easy conversion back to a reference object</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ITexture WrapTextureId(ulong id)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><span class="parametername">id</span></td>
+        <td><p>The Texture's unique ulong identifier</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.ITexture.html">ITexture</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/AlzPatz/yak2d-docs-content/new/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/apiSpec/new?filename=Yak2D_IDrawing.md&amp;value=---%0Auid%3A%20Yak2D.IDrawing%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/8bb133bd434b5af79d5b68ec2e8ca1cd61d7ab64/src/Interface/Services/IDrawing.cs/#L12" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
