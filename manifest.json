@@ -1315,6 +1315,17 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "images/lifecycle.xml",
+      "output": {
+        "resource": {
+          "relative_path": "images/lifecycle.xml"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "images/yak.png",
       "output": {
         "resource": {
