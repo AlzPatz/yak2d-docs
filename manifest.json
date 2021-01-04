@@ -1265,23 +1265,52 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "articles/intro.md",
+      "source_relative_path": "articles/glossary.md",
       "output": {
         ".html": {
-          "relative_path": "articles/intro.html",
-          "hash": "QoVq/45n1fERIJLSBG0PRg=="
+          "relative_path": "articles/glossary.html",
+          "hash": "mNauTbVhVTuYnIP+ky/bBA=="
         }
       },
       "is_incremental": false,
       "version": ""
     },
     {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "articles/lifecycle.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/lifecycle.html",
+          "hash": "6e8sogLkf3OeYe+bxrgwjA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
       "type": "Toc",
       "source_relative_path": "articles/toc.yml",
       "output": {
         ".html": {
           "relative_path": "articles/toc.html",
-          "hash": "gB8AESyvNru97tzIZofEEg=="
+          "hash": "euOOBpQvkd4uU8gwUbe/2g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/lifecycle.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/lifecycle.png"
         }
       },
       "is_incremental": false,
@@ -1304,19 +1333,22 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "q6krnHuBdLz5UAEpSEyE6g=="
+          "hash": "bAF7Z0UMHOnqPRMj/RPT6g=="
         }
       },
       "is_incremental": false,
       "version": ""
     },
     {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
       "type": "Toc",
       "source_relative_path": "toc.yml",
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "+rHUkRZHZRi5gd1aTU6lJA=="
+          "hash": "399+qaCKRcOvkwQafl580Q=="
         }
       },
       "is_incremental": false,
@@ -1337,7 +1369,7 @@
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 3,
+          "total_file_count": 4,
           "skipped_file_count": 0
         },
         "ManagedReferenceDocumentProcessor": {
