@@ -1288,12 +1288,15 @@
       "version": ""
     },
     {
+      "log_codes": [
+        "UidNotFound"
+      ],
       "type": "Conceptual",
       "source_relative_path": "articles/lifecycle.md",
       "output": {
         ".html": {
           "relative_path": "articles/lifecycle.html",
-          "hash": "Etez7C1eU/sOQhECE5cxNg=="
+          "hash": "FNhjo45B/qJ9jd13I1kWRw=="
         }
       },
       "is_incremental": false,
