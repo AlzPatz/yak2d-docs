@@ -9,7 +9,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.AssetSourceEnum.html",
-          "hash": "1fgb/D2pYTQ1IWMDcbymPQ=="
+          "hash": "c8DctPPnrFKxSGIdFXswnQ=="
         }
       },
       "is_incremental": false,
@@ -21,7 +21,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.BlendState.html",
-          "hash": "7nnsDksv7wEA/GgdCx47tA=="
+          "hash": "OFHfcI6ijuABoqjarK28eA=="
         }
       },
       "is_incremental": false,
@@ -33,7 +33,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.BloomEffectConfiguration.html",
-          "hash": "FDVKZ1FpNTL3k0+1Eadv9w=="
+          "hash": "g7seRQlEGxeBOdyPaphccg=="
         }
       },
       "is_incremental": false,
@@ -45,7 +45,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.Blur1DEffectConfiguration.html",
-          "hash": "2DPDFgzeNP2yYclDygG39A=="
+          "hash": "yEBY6xNFngZ8VVAxrqamnA=="
         }
       },
       "is_incremental": false,
@@ -57,7 +57,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.BlurEffectConfiguration.html",
-          "hash": "6cOkNIUuDLZaF9Tvy+zw8Q=="
+          "hash": "EzbaPrdTx1PxQ7UF7f+tAQ=="
         }
       },
       "is_incremental": false,
@@ -69,7 +69,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.Color.html",
-          "hash": "mQ1h37naJmc/qtlAYlAfxw=="
+          "hash": "eM8G9e2P44XMYFW9HM961g=="
         }
       },
       "is_incremental": false,
@@ -81,7 +81,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.Colour.html",
-          "hash": "9nv1ReXIs31eE7iOOJjJ5w=="
+          "hash": "DGGxLxDH1f1nnFQIFICv1Q=="
         }
       },
       "is_incremental": false,
@@ -93,7 +93,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.ColourEffectConfiguration.html",
-          "hash": "fhzAV8OTDuz9mSYNqN3xtQ=="
+          "hash": "AvRwx7v0a9/JXQCNC2hT/Q=="
         }
       },
       "is_incremental": false,
@@ -105,7 +105,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.CoordinateSpace.html",
-          "hash": "IDcF7rGg2FxQbWKzBTmq8Q=="
+          "hash": "MhhIL3wBzqvsQLt2HLYaAw=="
         }
       },
       "is_incremental": false,
@@ -117,7 +117,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.CrtEffectConfiguration.html",
-          "hash": "/1fnuUuw+TMr3c/agCoDkQ=="
+          "hash": "opA/+BGeGz+7nooDKOXSLQ=="
         }
       },
       "is_incremental": false,
@@ -129,7 +129,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.CustomVeldridBase.html",
-          "hash": "564rCJ5qrw+IiLIAFyK0FQ=="
+          "hash": "oJSFGoD2sFLtcrNPJVTjQQ=="
         }
       },
       "is_incremental": false,
@@ -141,7 +141,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.DisplayState.html",
-          "hash": "olYgAXubvmdopghKP/BWkg=="
+          "hash": "+rDhLZ0YwgmQtyy/EsbxWg=="
         }
       },
       "is_incremental": false,
@@ -153,7 +153,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.DistortionDrawRequest.html",
-          "hash": "44co90ZO8rsY9OjJjeZrqA=="
+          "hash": "3E8t1ve1J2CPGKK9x1dH3g=="
         }
       },
       "is_incremental": false,
@@ -165,7 +165,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.DistortionEffectConfiguration.html",
-          "hash": "XhJHD65udYmOlhP+2nolIw=="
+          "hash": "TZ6AH4t1t4aQj5unTUHCgg=="
         }
       },
       "is_incremental": false,
@@ -177,7 +177,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.DrawRequest.html",
-          "hash": "HFHZ8+oODeMQEO1nQ3czOg=="
+          "hash": "z4/+JOkP9Lrzc0rRb1xL8g=="
         }
       },
       "is_incremental": false,
@@ -189,7 +189,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.EdgeDetectionConfiguration.html",
-          "hash": "QhVcjb0iU4ZCksaCseSmNw=="
+          "hash": "XGT5c3jA88KvuYsN/cgrlQ=="
         }
       },
       "is_incremental": false,
@@ -201,7 +201,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.FillType.html",
-          "hash": "Od9LHPRWKifSMKaSKedKNA=="
+          "hash": "WbNHJGpeRUL+1c2SvaL8oA=="
         }
       },
       "is_incremental": false,
@@ -213,7 +213,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.FrameworkMessage.html",
-          "hash": "O+T94hww3ONwPgyO1nLMvQ=="
+          "hash": "9rXGkie7vsPBAJrDjyZsTg=="
         }
       },
       "is_incremental": false,
@@ -225,7 +225,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.GamepadAxis.html",
-          "hash": "sG+jvD2sEs75dta5FxG0Jw=="
+          "hash": "CcP+stV3GL5hQellb2gLZw=="
         }
       },
       "is_incremental": false,
@@ -237,7 +237,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.GamepadButton.html",
-          "hash": "aatY4EX60e6ANGrXs2F/oA=="
+          "hash": "WwTaJcEiWqFT3lBj5lJuhQ=="
         }
       },
       "is_incremental": false,
@@ -249,7 +249,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.GraphicsApi.html",
-          "hash": "HDvzJ1Mwb6m2XMZ3kI4gRg=="
+          "hash": "pWWnn0ZvNkrQmUJkQSJKrw=="
         }
       },
       "is_incremental": false,
@@ -261,7 +261,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.IApplication.html",
-          "hash": "r+TzUdruA064atMuvwmBzQ=="
+          "hash": "20RwMjkV9MHSKkZ86e2fCQ=="
         }
       },
       "is_incremental": false,
@@ -273,7 +273,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.IBackend.html",
-          "hash": "oiozU3lvlwfuz2bb8RZvBQ=="
+          "hash": "9hZiV+IvJb6ERTr7VbIh0Q=="
         }
       },
       "is_incremental": false,
@@ -285,7 +285,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.IBaseDrawable.html",
-          "hash": "uLB0zJQPh4p/EvEkaYbm2w=="
+          "hash": "PqLxfu1QbZNFPpUpOhnqhg=="
         }
       },
       "is_incremental": false,
@@ -297,7 +297,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.IBloomStage.html",
-          "hash": "VeG2Iz/XD5zhsMuYN2JZ0w=="
+          "hash": "bZq6eEjAyyDs4wvgotT9Qg=="
         }
       },
       "is_incremental": false,
@@ -309,7 +309,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.IBlur1DStage.html",
-          "hash": "J4VthDo/DBKUcJ6D1PjGhw=="
+          "hash": "TdjKwu8HwiHBF9dn15iXVQ=="
         }
       },
       "is_incremental": false,
@@ -321,7 +321,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.IBlurStage.html",
-          "hash": "IQgKTnXeO/+5OOaqFvzH6g=="
+          "hash": "+uawRzEFAB7CX8YMQN0Ihg=="
         }
       },
       "is_incremental": false,
@@ -333,7 +333,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.ICamera.html",
-          "hash": "OsNnn/8DeW1GJRXj9RnF6A=="
+          "hash": "wsI2qPwlr+k/0iieLSQlEw=="
         }
       },
       "is_incremental": false,
@@ -345,7 +345,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.ICamera2D.html",
-          "hash": "A2TfJbjdeQP8+sieouhWCQ=="
+          "hash": "DGDQCLgTyTirua8ivNOFHw=="
         }
       },
       "is_incremental": false,
@@ -357,7 +357,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.ICamera3D.html",
-          "hash": "qAKdMuUEHCCzPAS3dB+uOA=="
+          "hash": "+6ytGfCBniCTt7/t8yABzQ=="
         }
       },
       "is_incremental": false,
@@ -369,7 +369,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.ICameras.html",
-          "hash": "go40W71HN2LHfmKqi9IHWQ=="
+          "hash": "tkHbLStL7qcHXsQ4He55YQ=="
         }
       },
       "is_incremental": false,
@@ -381,7 +381,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.IColourEffectsStage.html",
-          "hash": "r9OWfr3OmKm3cG5WIsaahw=="
+          "hash": "PCsyf+EEnNzacJtneePfGw=="
         }
       },
       "is_incremental": false,
@@ -393,7 +393,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.ICommonMeshBuilder.html",
-          "hash": "TGca4OnSCvxnt4K18tQ1qA=="
+          "hash": "cZoTVgpOZKoqewcKhWakBg=="
         }
       },
       "is_incremental": false,
@@ -405,7 +405,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.ICommonOperations.html",
-          "hash": "ik4a8MYpfVDGvvqHuJepZQ=="
+          "hash": "qur0AXnmKt7fQTCnrixF/w=="
         }
       },
       "is_incremental": false,
@@ -417,7 +417,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.IConstructedDrawable.html",
-          "hash": "SpDvCyRqz+O9OUj9gXJ1CQ=="
+          "hash": "Qve5ZFauWSRmWbwgN7W4+A=="
         }
       },
       "is_incremental": false,
@@ -429,7 +429,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.ICoordinateTransforms.html",
-          "hash": "0yvoqwCJGSgwGCS//tH4Pw=="
+          "hash": "hElqnwpcS7tMYwU8G5Bjpw=="
         }
       },
       "is_incremental": false,
@@ -441,7 +441,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.ICustomShaderStage.html",
-          "hash": "GvmRuup6tCn0ToySwlbAxQ=="
+          "hash": "9Gi029Y/2nKKOoNDiAOXrg=="
         }
       },
       "is_incremental": false,
@@ -453,7 +453,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.ICustomVeldridStage.html",
-          "hash": "hngDwO2U1hrnEIJ6Y/GAmw=="
+          "hash": "zsH171wiKyXFvbITRp9qFg=="
         }
       },
       "is_incremental": false,
@@ -465,7 +465,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.IDisplay.html",
-          "hash": "FoBYiwVqTrDQ05+RCA+TZw=="
+          "hash": "sdCaoLZpJhMVrkSvqa/1FA=="
         }
       },
       "is_incremental": false,
@@ -477,7 +477,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.IDistortionCollection.html",
-          "hash": "i2kkZfFH82m2GZUaVo3eHA=="
+          "hash": "FaB3miBJxf2ot+6eXxz/5Q=="
         }
       },
       "is_incremental": false,
@@ -489,7 +489,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.IDistortionHelper.html",
-          "hash": "cYfyIFGDBftgELiDacrnig=="
+          "hash": "Gw2il4s0Mg1tH2DbB3XOcw=="
         }
       },
       "is_incremental": false,
@@ -501,7 +501,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.IDistortionStage.html",
-          "hash": "8KxKQt0tRPiBc268bD1kqw=="
+          "hash": "RV+ClL/OAaTe23OkORCYDA=="
         }
       },
       "is_incremental": false,
@@ -513,7 +513,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.IDistortionTextureGenerator.html",
-          "hash": "+aMxe+Y5aMgb/pYYOAvy/Q=="
+          "hash": "el/+xSEe9S3OL6M+WNoMug=="
         }
       },
       "is_incremental": false,
@@ -525,7 +525,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.IDrawStage.html",
-          "hash": "SiQQdqa4shHGIS8Syrdvgg=="
+          "hash": "6GPaiqJ9NOuVCaCt0OFAxw=="
         }
       },
       "is_incremental": false,
@@ -537,7 +537,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.IDrawing.html",
-          "hash": "QJgq2ORTfLJZGEm7/TXuaQ=="
+          "hash": "AHV2IZFqlju2q5K02DAs8w=="
         }
       },
       "is_incremental": false,
@@ -549,7 +549,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.IDrawingHelpers.html",
-          "hash": "9T2/1bRWdMAzHNGQEu8hAA=="
+          "hash": "CeGcG4MiAWWuaaj7kg/lJg=="
         }
       },
       "is_incremental": false,
@@ -561,7 +561,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.IFont.html",
-          "hash": "C0S6/0fNsJLsSc+9+/TkRA=="
+          "hash": "p3I9yVjiOJOwru92kN/gLg=="
         }
       },
       "is_incremental": false,
@@ -573,7 +573,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.IFonts.html",
-          "hash": "81yEmlTTGtuZe1YMKxpvXg=="
+          "hash": "BM0WuW2TXUU6n33kCT5H/w=="
         }
       },
       "is_incremental": false,
@@ -585,7 +585,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.IFps.html",
-          "hash": "zI6ROedGNZDdn0y3IggRUw=="
+          "hash": "whttArpypiHYZQc4NcWJGQ=="
         }
       },
       "is_incremental": false,
@@ -597,7 +597,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.IFrameworkMessenger.html",
-          "hash": "kWh5aCDyPk7G7wtK7VuD3w=="
+          "hash": "giN9hI02pG8iUeh2e/kWSA=="
         }
       },
       "is_incremental": false,
@@ -609,7 +609,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.IHelpers.html",
-          "hash": "TmlwU9ys6iJFyEOj6KQeXQ=="
+          "hash": "vW1vZ0timq9F2lf7v9b/hQ=="
         }
       },
       "is_incremental": false,
@@ -621,7 +621,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.IInput.html",
-          "hash": "VoBsbpZONBZM2D9ockcnhQ=="
+          "hash": "/kovsLfK7aga3srR69ikZg=="
         }
       },
       "is_incremental": false,
@@ -633,7 +633,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.IKeyed.html",
-          "hash": "KyRdNIeA6lgWA+6Iz6/NFw=="
+          "hash": "3CwB+lyROut11Qpe87fSiA=="
         }
       },
       "is_incremental": false,
@@ -645,7 +645,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.ILine.html",
-          "hash": "Zo3ttXXOUNC8HFpls1tv4w=="
+          "hash": "U0zC673JAlpixLMz39lUEw=="
         }
       },
       "is_incremental": false,
@@ -657,7 +657,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.IMeshRenderStage.html",
-          "hash": "GSySgYRONE7S7/3RMqPkdw=="
+          "hash": "7kFcBpfPNhGO0ZNegVrBNQ=="
         }
       },
       "is_incremental": false,
@@ -669,7 +669,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.IMixStage.html",
-          "hash": "QN8EgTG2PnpoQ0guEtmUPw=="
+          "hash": "fxWUtP+5MKcyr4ss82tWbw=="
         }
       },
       "is_incremental": false,
@@ -681,7 +681,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.IPersistentDistortionQueue.html",
-          "hash": "mTi5hp+1x7/aXXDSrLqW1Q=="
+          "hash": "dw2LwSHpKwbMggIWh/rXIA=="
         }
       },
       "is_incremental": false,
@@ -693,7 +693,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.IPersistentDrawQueue.html",
-          "hash": "Ziu95JnXBVfLoXMbGbM1Rg=="
+          "hash": "+JwPLpjWtjaR3ByH6o8Cnw=="
         }
       },
       "is_incremental": false,
@@ -705,7 +705,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.IRenderQueue.html",
-          "hash": "dMTqksJYcr4AwxWr3ja9OA=="
+          "hash": "BYLuaqG4+y2/nBGiZ0OStQ=="
         }
       },
       "is_incremental": false,
@@ -717,7 +717,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.IRenderStage.html",
-          "hash": "H3Xtm9EXcKY/QMGBbHPPRg=="
+          "hash": "Z5QlrqZmKz9NPwes9WkCDA=="
         }
       },
       "is_incremental": false,
@@ -729,7 +729,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.IRenderTarget.html",
-          "hash": "Ghj4Hl7LuYomlgTJI83gNQ=="
+          "hash": "H3g3ZJrUkhIhteJp7ICNEA=="
         }
       },
       "is_incremental": false,
@@ -741,7 +741,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.IServices.html",
-          "hash": "yIq0TuR3eX63r615VFakWg=="
+          "hash": "Ioiw7Mq3vH3n0f+fk/Ertg=="
         }
       },
       "is_incremental": false,
@@ -753,7 +753,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.IShape.html",
-          "hash": "aCc2aKiwcPmsgOry2kkZTg=="
+          "hash": "zNz/sbrN8AKpZnZ0kfLRUg=="
         }
       },
       "is_incremental": false,
@@ -765,7 +765,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.IStages.html",
-          "hash": "CK+hZKbr2gbvvCdHhWDVqA=="
+          "hash": "VYY+m04Fei+f0b9gstvZ7Q=="
         }
       },
       "is_incremental": false,
@@ -777,7 +777,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.IStyleEffectsStage.html",
-          "hash": "U67AOIH34e5vh+qloQ/mCg=="
+          "hash": "1Eey8nbHZoo19ofB21AB2w=="
         }
       },
       "is_incremental": false,
@@ -789,7 +789,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.ISurfaceCopyStage.html",
-          "hash": "o8L2FbPfRhxMclrYNS6HHQ=="
+          "hash": "NcbPx/s9vOnpj4/ooT5eeg=="
         }
       },
       "is_incremental": false,
@@ -801,7 +801,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.ISurfaces.html",
-          "hash": "J8KbI9WB/WksyTEo62wmtg=="
+          "hash": "gBky/4/KefqjFioSTXFHqg=="
         }
       },
       "is_incremental": false,
@@ -813,7 +813,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.ITexture.html",
-          "hash": "F5q+X9RBhF3wFeTf95o3zQ=="
+          "hash": "ewtXDSbwHHUwToI0ALa4Ww=="
         }
       },
       "is_incremental": false,
@@ -825,7 +825,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.ITextured.html",
-          "hash": "b0XK56O437LmfGE+H8NwGQ=="
+          "hash": "byF9jLe+CWmGflzh9XlXpw=="
         }
       },
       "is_incremental": false,
@@ -837,7 +837,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.ITransformable.html",
-          "hash": "eKXm+onkwermZMFt0QMQhg=="
+          "hash": "e1hHt7UEEKIKJLo1nuIhbA=="
         }
       },
       "is_incremental": false,
@@ -849,7 +849,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.IViewport.html",
-          "hash": "Vv1sP0u3wfWAZXleKcXLFw=="
+          "hash": "4Rf0yczr6vVc/dZWepAh9Q=="
         }
       },
       "is_incremental": false,
@@ -861,7 +861,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.ImageFormat.html",
-          "hash": "Cl0MnP2AY2H0sKqIiTntbw=="
+          "hash": "P/aNQCxpqDjJD5cmTRFE/A=="
         }
       },
       "is_incremental": false,
@@ -873,7 +873,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.KeyCode.html",
-          "hash": "YyQcgdn7gO365vjpxi/2pA=="
+          "hash": "ThybaTtVqZrxOcRTvo8Fvg=="
         }
       },
       "is_incremental": false,
@@ -885,7 +885,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.Launcher.html",
-          "hash": "19LN8EVp/VU19SimwWR1aA=="
+          "hash": "kVINZNGhWetpTYMIFWhfjA=="
         }
       },
       "is_incremental": false,
@@ -897,7 +897,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.LifeCycle.html",
-          "hash": "GE1qSjaNfM2/HYiIopIMGw=="
+          "hash": "M+T/4GfrgE7EuwHta0wFfw=="
         }
       },
       "is_incremental": false,
@@ -909,7 +909,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.LightType.html",
-          "hash": "IfSz/eM3TxEnLFs7UznQAg=="
+          "hash": "iPR+SoIXzOwGy3tWTWxlZw=="
         }
       },
       "is_incremental": false,
@@ -921,7 +921,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.MeshRenderLightConfiguration.html",
-          "hash": "smvg0zEl4PUrviHM0FH1IA=="
+          "hash": "/LZcS4r3kU1WKx7WHui0PA=="
         }
       },
       "is_incremental": false,
@@ -933,7 +933,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.MeshRenderLightingPropertiesConfiguration.html",
-          "hash": "iv0djLHieLtAQtv9Gfbm1A=="
+          "hash": "cC13p+Ma5hJQ1oYqmTfVSA=="
         }
       },
       "is_incremental": false,
@@ -945,7 +945,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.MouseButton.html",
-          "hash": "zVI+EvhLQMLPZLBCkulXeg=="
+          "hash": "2nJnTBrMCbScqVeatXcAnw=="
         }
       },
       "is_incremental": false,
@@ -957,7 +957,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.OldMovieConfiguration.html",
-          "hash": "706QfG0B/TAOY9eR4EpnIA=="
+          "hash": "Ztkf/E94DbEgMNRd4G1qKQ=="
         }
       },
       "is_incremental": false,
@@ -969,7 +969,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.PixellateConfiguration.html",
-          "hash": "r8/oQOmkuQ5vrgdxMw28xQ=="
+          "hash": "hIduFZnOYrKbVhsnhZMS8Q=="
         }
       },
       "is_incremental": false,
@@ -981,7 +981,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.QuadTexCoords.html",
-          "hash": "2QNPaVCVXq44mr2CzEhbiA=="
+          "hash": "XUnpqqogW+27vfPLTRzXnQ=="
         }
       },
       "is_incremental": false,
@@ -993,7 +993,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.RectangularCuboidMeshTexCoords.html",
-          "hash": "e9dDD2d0I5FS4ECanVUtpg=="
+          "hash": "IJ3zRMFh4XUBTMgYbvZwhQ=="
         }
       },
       "is_incremental": false,
@@ -1005,7 +1005,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.ResizeSamplerType.html",
-          "hash": "ObLrA3DBYRQZ+JYthJk0nA=="
+          "hash": "xNHrcnKeubYLqyvafr1Hyw=="
         }
       },
       "is_incremental": false,
@@ -1017,7 +1017,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.SamplerType.html",
-          "hash": "9sYTku+tSgmCufclt8Qm/A=="
+          "hash": "Al+lhYi0o1URwQ8HVBR/+w=="
         }
       },
       "is_incremental": false,
@@ -1029,7 +1029,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.ShaderUniformDescription.html",
-          "hash": "jAUKSVmbZ88prT44w1MJUA=="
+          "hash": "2y7K+QoMrxsxox5oMGs2yA=="
         }
       },
       "is_incremental": false,
@@ -1041,7 +1041,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.ShaderUniformType.html",
-          "hash": "UZfMSnw8W9UGotZAC3oyXA=="
+          "hash": "mFBSqRXrftGMOEIiueVIrw=="
         }
       },
       "is_incremental": false,
@@ -1053,7 +1053,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.SineWavePoint.html",
-          "hash": "7csRmcHg/Q7uOS4/ePC5Vw=="
+          "hash": "SbKxHyhmRrqFOVD6vKCKRg=="
         }
       },
       "is_incremental": false,
@@ -1065,7 +1065,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.StartupConfig.html",
-          "hash": "PbOPC4Qlm4qZToSL+ezyTg=="
+          "hash": "MyweCZvhS9/J5TmUlr6fuA=="
         }
       },
       "is_incremental": false,
@@ -1077,7 +1077,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.StaticConfiguration.html",
-          "hash": "r0Ht2o5m7pADbvmuJkgVUQ=="
+          "hash": "PigIahw8KRZ8TIH3LZbBwg=="
         }
       },
       "is_incremental": false,
@@ -1089,7 +1089,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.StyleEffectGroupConfiguration.html",
-          "hash": "/OFWPYtitITT84B6E3vo1g=="
+          "hash": "UO87G8bQhLLNERTvL1oEdg=="
         }
       },
       "is_incremental": false,
@@ -1101,7 +1101,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.TextJustify.html",
-          "hash": "c/UbJUg/6MIG5KvAIsm4NA=="
+          "hash": "mNb92osd/6YBam5hTT/suw=="
         }
       },
       "is_incremental": false,
@@ -1113,7 +1113,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.TextureBrush.html",
-          "hash": "VFgpOS3vhRcVLFlFqRaFuA=="
+          "hash": "2vWPVK6U2C+eDYER365DoA=="
         }
       },
       "is_incremental": false,
@@ -1125,7 +1125,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.TextureCoordinateMode.html",
-          "hash": "DRgloBuKqiP8b+3xPYMOiw=="
+          "hash": "A/XpVZgC9AmK0YubN8Ki1A=="
         }
       },
       "is_incremental": false,
@@ -1137,7 +1137,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.TextureData.html",
-          "hash": "1SgZ0Ujos7/dezD+l1tp+Q=="
+          "hash": "iVBuNdr/ZLirZYHoBTN39g=="
         }
       },
       "is_incremental": false,
@@ -1149,7 +1149,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.TextureMixDirection.html",
-          "hash": "IZk4BHhGPsxpt9hSwIIUpQ=="
+          "hash": "UsKTEsqj9Ic3NJ2OH+YflQ=="
         }
       },
       "is_incremental": false,
@@ -1161,7 +1161,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.TextureScaling.html",
-          "hash": "FfRQBDSJXExXxIdPcQOxuA=="
+          "hash": "4hLapIh9HxqDTC9u3+95Xw=="
         }
       },
       "is_incremental": false,
@@ -1173,7 +1173,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.TransformResult.html",
-          "hash": "7Wp+7jmHorvWJ9GMFsD5/A=="
+          "hash": "GADJobJMYgxstmDa/xD1cA=="
         }
       },
       "is_incremental": false,
@@ -1185,7 +1185,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.UpdatePeriod.html",
-          "hash": "IUnosuhdBDgVx6oKEjTUTQ=="
+          "hash": "lg2dmvjOZBvW7EgI43NX1g=="
         }
       },
       "is_incremental": false,
@@ -1197,7 +1197,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.Vertex2D.html",
-          "hash": "wsoLvEj4puxP7w2OV4rYzQ=="
+          "hash": "SB5oSKSfd4MrbtB+CrNe7Q=="
         }
       },
       "is_incremental": false,
@@ -1209,7 +1209,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.Vertex3D.html",
-          "hash": "C9wBtK2sVr1AtjWQ7MoK3A=="
+          "hash": "3r4H59eoZeXerW/g4Nr17A=="
         }
       },
       "is_incremental": false,
@@ -1221,7 +1221,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.Yak2DException.html",
-          "hash": "1LOAFKTy4XTddeffHWnoyQ=="
+          "hash": "vuXjW7448RbQlSGyKTQVRA=="
         }
       },
       "is_incremental": false,
@@ -1233,7 +1233,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yak2D.html",
-          "hash": "9F9qGcXuJWzW1rh/ktdMIg=="
+          "hash": "diVcOunLG4Tx66EL2jQnrg=="
         }
       },
       "is_incremental": false,
@@ -1248,7 +1248,7 @@
       "output": {
         ".html": {
           "relative_path": "api/index.html",
-          "hash": "ZfzYxy2GQFtukbZ3tU/1KA=="
+          "hash": "1BuYAdeGbU2C2obM5jATqQ=="
         }
       },
       "is_incremental": false,
@@ -1272,7 +1272,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/glossary.html",
-          "hash": "JNtLFkmD6e2exDJCIA03Uw=="
+          "hash": "8RW70Lx7ZQAfvnGlqx/TNg=="
         }
       },
       "is_incremental": false,
@@ -1284,7 +1284,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/intro.html",
-          "hash": "PTgch6g8ALLZMH4PWwPMXA=="
+          "hash": "C7fueP+C9xDv9yW+GUMG+g=="
         }
       },
       "is_incremental": false,
@@ -1296,7 +1296,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/lifecycle.html",
-          "hash": "7aJVtrxF/swC2dGT9KXQ4A=="
+          "hash": "ZPk4bSiK8EWTqk2WTfDK2g=="
         }
       },
       "is_incremental": false,
@@ -1360,6 +1360,17 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "images/logo.svg",
+      "output": {
+        "resource": {
+          "relative_path": "images/logo.svg"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "images/yak.png",
       "output": {
         "resource": {
@@ -1375,18 +1386,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "nOi8pT+7KMjAB1fucBeVWg=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "logo.svg",
-      "output": {
-        "resource": {
-          "relative_path": "logo.svg"
+          "hash": "u3gprECWgBqkKcoURDT5yg=="
         }
       },
       "is_incremental": false,
