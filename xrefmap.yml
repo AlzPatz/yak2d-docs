@@ -5,7 +5,7 @@ references:
   name: 'Glossary : Key Framework Terms'
   href: articles/glossary.html
 - uid: uid_intro
-  name: Articles
+  name: yak2D Usage Guide
   href: articles/intro.html
 - uid: uid_lifecycle
   name: Application Lifecycle

@@ -1248,7 +1248,7 @@
       "output": {
         ".html": {
           "relative_path": "api/index.html",
-          "hash": "gXEA0LxYZaXQtj/mMOaObw=="
+          "hash": "v2Mgaylb4z9RFkTV3ez/qg=="
         }
       },
       "is_incremental": false,
@@ -1279,12 +1279,15 @@
       "version": ""
     },
     {
+      "log_codes": [
+        "UidNotFound"
+      ],
       "type": "Conceptual",
       "source_relative_path": "articles/intro.md",
       "output": {
         ".html": {
           "relative_path": "articles/intro.html",
-          "hash": "yp8IGMupidZZwQ+XhydHXg=="
+          "hash": "9pHlotf2fNZ12HhRLOhuEQ=="
         }
       },
       "is_incremental": false,
@@ -1296,7 +1299,23 @@
       "output": {
         ".html": {
           "relative_path": "articles/lifecycle.html",
-          "hash": "ZRllj1yCQrypid3aFukvpg=="
+          "hash": "IN919QqEVVD+vRVO1ZWOYA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "UidNotFound",
+        "invalid-yaml-header"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "articles/overview.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/overview.html",
+          "hash": "YP7WEROdMaFwQkJvYh3bxg=="
         }
       },
       "is_incremental": false,
@@ -1386,7 +1405,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "uYwyHfqAM5u9lj1HFPgs9g=="
+          "hash": "3UQn836wa4s1NecjMdVlBg=="
         }
       },
       "is_incremental": false,
@@ -1419,7 +1438,7 @@
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 5,
+          "total_file_count": 6,
           "skipped_file_count": 0
         },
         "ManagedReferenceDocumentProcessor": {

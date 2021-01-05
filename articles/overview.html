@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>yak2D Overview and Getting Started </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="yak2D Overview and Getting Started ">
+    <meta name="generator" content="docfx 2.56.6.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/logo.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="yak2d-overview-and-getting-started"><strong>yak2D</strong> Overview and Getting Started</h1>
+
+<h2 id="overview">Overview</h2>
+<p>A framework that simplifies the creation of interactive cross platform desktop 2D graphics applications.</p>
+<p>It provides 2D polygon sorting and drawing functions, in addition to shader effects. Bitmap Font Rendering is also provided.</p>
+<p><strong>yak2D</strong> offers basic input functionality (mouse &amp; keyboard, as well as gamepad).</p>
+<p>Audio functionality is <em><strong>not</strong></em> provided by the framework.</p>
+<h2 id="structure">Structure</h2>
+<p>For those that care about such definitions, <strong>yak2D</strong> is described (and structured) as a <em>framework</em> rather than a <em>library</em>. This structure is suitable given the control that <strong>yak2D</strong> must have over the <a class="xref" href="lifecycle.html">application lifecycle</a> - in particular, the timing and sequencing of <strong>update</strong> and <strong>render</strong> steps.</p>
+<p>The framework accepts an instance of the user's implementation of the <a class="xref" href="../api/Yak2D.IApplication.html">IApplication</a> interface and calls it's methods during the <a class="xref" href="lifecycle.html">application lifecycle</a>.</p>
+<h2 id="rendering">Rendering</h2>
+<p><strong>yak2D</strong> offers simple and flexible configuration of the render path, enabling complex 2D effects to be quickly implemented.</p>
+<p>For each render frame, a render queue is built out of <a href="xref:uid_renderstages">RenderStages</a>. A <a href="xref:uid_renderstages">RenderStage</a> provides a specific render function, (usually) taking <a href="xref:uid_surfaces">Surfaces</a> as input and a <a href="xref:uid_render_targets">RenderTarget</a> as output.</p>
+<p><a class="xref" href="glossary.html#Drawing">Drawing</a> in <strong>yak2D</strong> refers to the collection, sorting, transforming and ultimately rendering of coloured and textured polygons (here is where you draw your 'sprites'...) upon a <a href="xref:uid_render_targets">RenderTarget</a>. <a class="xref" href="glossary.html#Drawing">Drawing</a> functionality is encompassed within a special type of <a href="xref:uid_renderstages">RenderStage</a>. Prior to rendering, <a class="xref" href="../api/Yak2D.DrawRequest.html">Draw Requests</a>, must be submitted to a <a class="xref" href="../api/Yak2D.IDrawStage.html">DrawStage</a>. When rendering, a <a class="xref" href="glossary.html#Cameras">Camera</a> defines the transformation of the positions of <a class="xref" href="../api/Yak2D.DrawRequest.html">Draw Requests</a>. <a class="xref" href="../api/Yak2D.IApplication.html">IApplication</a> exposes specific <a class="xref" href="glossary.html#Drawing">Drawing</a> methods that run before <a href="xref:Yak2D.IApplication.Render">Rendering</a> for the submission of <a class="xref" href="../api/Yak2D.DrawRequest.html">Draw Requests</a>, as well as the configuration of <a class="xref" href="glossary.html#Cameras">Cameras</a> and the general configuration of <a href="xref:uid_renderstages">RenderStages</a>.</p>
+<h2 id="core-loop">Core Loop</h2>
+<p>A user must define three main parts of a <strong>yak2D</strong> application's core loop:</p>
+<ol>
+<li>Update
+<ul>
+<li>Designed for non-graphical application code, such as simulation updates. Fixed and Variable timesteps may be chosen for updates.</li>
+</ul>
+</li>
+<li>Draw (and Pre-Draw)
+<ul>
+<li>Used for submitting <a class="xref" href="../api/Yak2D.DrawRequest.html">Draw Requests</a> to  <a class="xref" href="../api/Yak2D.IDrawStage.html">DrawStages</a> and configuring <a href="xref:uid_renderstages">RenderStages</a></li>
+</ul>
+</li>
+<li>Render
+<ul>
+<li>For building the render queue by ordering <a href="xref:uid_renderstages">RenderStages</a> and defining the input and output <a href="xref:uid_surfaces">Surfaces</a> for each step</li>
+</ul>
+</li>
+</ol>
+<h2 id="resources">Resources</h2>
+<p><strong>yak2D</strong> manages the creation and destruction of all objects related to framework usage (<a class="xref" href="../api/Yak2D.ITexture.html">Textures</a>, <a class="xref" href="../api/Yak2D.ICamera2D.html">Cameras</a>, <a class="xref" href="../api/Yak2D.IRenderStage.html">Render Stages</a>... being examples). These objects are called <a class="xref" href="glossary.html#Resources">Resources</a> and are not passed to the user directly. Rather, a user application holds lightweight objects that reference the underlying resource. These lightweight objects are simple wrappers around <code>int64</code> keys and in some instances a user may wish to hold only these <code>int64</code> keys. Many of <strong>yak2D</strong>'s functions accept either object (derived from <a href="xref:Yak2D.IKeyed%5D">IKeyed</a> or the raw int64 keys. The [IKeyed](xref:Yak2D.IKeyed] object hierarchy was used so C#'s type system to help a user avoid passing the wrong objects to functions, as well as get instant feedback on object type from intellisense.</p>
+<p><a class="xref" href="../api/Yak2D.IApplication.html">IApplication</a> exsposes the method <a href="xref:Yak2D.IApplication.CreateResources">CreateResources</a> which is where all <a class="xref" href="glossary.html#Resources">Resource</a> creation should be performed. This method is called once at application start up, and then whenever <a class="xref" href="glossary.html#Resources">Resources</a> should be re-created (such as when a graphics device is lost during a Graphics API change).</p>
+<h2 id="basic-usage">Basic Usage</h2>
+<ul>
+<li>Create a new .NET core console application</li>
+<li>Add <strong>yak2D</strong> to the project via the Nuget package manager</li>
+<li>Create a class that implements <a class="xref" href="../api/Yak2D.IApplication.html">IApplication</a></li>
+<li>In your application's <code>Program.cs</code> , or somewhere appropriate, pass an instance of your <a class="xref" href="../api/Yak2D.IApplication.html">IApplication</a> implementation to <a href="xref:Yak2D.Launcher.Run">Launcher.Run()</a></li>
+</ul>
+<p>Please see the <a href="xref:uid_tutorial">tutorial</a> for a more detailed step by step guide to creating an application.</p>
+<h2 id="further-reading">Further Reading</h2>
+<p>Please refer to:</p>
+<p><a class="xref" href="glossary.html">Glossary of Terms</a> for a summary of terms used (hopefully consistently) across <strong>yak2D</strong>'s API and Documentation.</p>
+<p><a href="xref:uid_features">Framework Features</a> for a detailed overview of <strong>yak2D</strong>'s features.</p>
+<p><a class="xref" href="lifecycle.html">Application Lifecycle</a> for a description of the general flow of an application running on the <strong>yak2D</strong> framework, including a description of when a user's <a class="xref" href="../api/Yak2D.IApplication.html">IApplication</a> method implementations are called.</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            yak2D - Alex Paterson
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
