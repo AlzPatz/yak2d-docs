@@ -1360,6 +1360,17 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "images/logo_big.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/logo_big.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "images/yak.png",
       "output": {
         "resource": {
@@ -1375,7 +1386,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "f523Ep0gUlgNnC6CfvMKuQ=="
+          "hash": "uYwyHfqAM5u9lj1HFPgs9g=="
         }
       },
       "is_incremental": false,
