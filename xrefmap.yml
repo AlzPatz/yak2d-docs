@@ -10,6 +10,9 @@ references:
 - uid: uid_lifecycle
   name: Application Lifecycle
   href: articles/lifecycle.html
+- uid: uid_overview
+  name: yak2D Overview and Getting Started
+  href: articles/overview.html
 - uid: Yak2D
   name: Yak2D
   href: api/Yak2D.html

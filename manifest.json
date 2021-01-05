@@ -1287,7 +1287,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/intro.html",
-          "hash": "9pHlotf2fNZ12HhRLOhuEQ=="
+          "hash": "ps4IPVS8GPx/p1UCRIYhbg=="
         }
       },
       "is_incremental": false,
@@ -1307,15 +1307,14 @@
     },
     {
       "log_codes": [
-        "UidNotFound",
-        "invalid-yaml-header"
+        "UidNotFound"
       ],
       "type": "Conceptual",
       "source_relative_path": "articles/overview.md",
       "output": {
         ".html": {
           "relative_path": "articles/overview.html",
-          "hash": "YP7WEROdMaFwQkJvYh3bxg=="
+          "hash": "qdKBRsJpyk5NG6SyZYuYHA=="
         }
       },
       "is_incremental": false,
