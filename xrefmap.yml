@@ -2,7 +2,7 @@
 sorted: true
 references:
 - uid: uid_coordinatesystems
-  name: yak2D Coordinate Systems, Resolutions and Rendering
+  name: yak2D Coordinate Systems and Rendering Resolution
   href: articles/coordinatesystems.html
 - uid: uid_glossary
   name: yak2D Glossary

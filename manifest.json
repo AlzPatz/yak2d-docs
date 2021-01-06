@@ -1275,7 +1275,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/coordinatesystems.html",
-          "hash": "KMVbHQ3f9yNX7znHo7ZWVQ=="
+          "hash": "TxcZMsGr/sXPJihJgKm+8w=="
         }
       },
       "is_incremental": false,
@@ -1329,7 +1329,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/overview.html",
-          "hash": "rB3EGTTs5c55I9C/u5kUYQ=="
+          "hash": "mCWPp1KaudFRz13soMg66w=="
         }
       },
       "is_incremental": false,
@@ -1419,6 +1419,28 @@
       "output": {
         "resource": {
           "relative_path": "images/screenspace.xml"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/windowspace.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/windowspace.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/windowspace.xml",
+      "output": {
+        "resource": {
+          "relative_path": "images/windowspace.xml"
         }
       },
       "is_incremental": false,
