@@ -101,7 +101,7 @@
 <p><img src="../images/screenspace.png" alt=""></p>
 <h3 id="world-space"><strong>World Space</strong></h3>
 <p>The coordinate system used when drawing with <a class="xref" href="../api/Yak2D.CoordinateSpace.html">CoordinateSpace.World</a>. Positions are defined in relation to an origin. The visible area is defined by the camera's world focus point (position) in relation to the origin, the camera's zoom scalar, rotation and <a class="xref" href="glossary.html#VirtualResolution">virtual resolution</a>.</p>
-<p>World space's axis are similar to screen space, in that when unrotated, positive X-axis runs from left to right, with positive Y-axis running 'upwards' towards the top of the visible area.</p>
+<p><strong>World space axis are similar to screen space</strong>, in that when unrotated, positive X-axis runs from left to right, with positive Y-axis running 'upwards' towards the top of the visible area.</p>
 <p>Therefore, if the camera's world focus point is (0,0), it's zoom is 1.0 and there is no camera rotation, then a position in world space will match a position in screen space.</p>
 <h3 id="window-space"><strong>Window Space</strong></h3>
 <p>Window space is used when defining <a href="xref:uid_viewports">viewports</a> and is the coordinate system used for <a href="xref:Yak2D.Input.MousePosition">mouse position</a>.</p>
@@ -120,9 +120,9 @@
 <p><img src="../images/windowspace.png" alt=""></p>
 <h2 id="viewports">Viewports</h2>
 <p><a href="xref:uid_viewports">Viewports</a> are used to define rectangular <a href="xref:uidglossary#RenderArea">render areas</a> of a <a href="xref:uid_rendertargets">RenderTarget</a>.</p>
-<p>Viewport position and size are defined in pixel units and use <a class="xref" href="coordinatesystems.html#window-space">window space</a> axes.</p>
+<p>Viewport position and size are defined in pixel units and use <a class="xref" href="coordinatesystems.html#window-space">window space</a> coordinates.</p>
 <h2 id="texture-coordinates">Texture Coordinates</h2>
-<p><strong>yak2D</strong> texture coordinates are origin top-left and do not change across any graphics API backends. This is the same as used in Direct3D, Vulkan and Metal APIs, and is the same origin and axes directions as <a class="xref" href="coordinatesystems.html#window-space">window space</a>.</p>
+<p><strong>yak2D</strong> texture coordinates are origin top-left and do not change across any graphics API backends. This is the same as used in Direct3D, Vulkan and Metal APIs, and is the coordinate system as <a class="xref" href="coordinatesystems.html#window-space">window space</a>.</p>
 <p><strong>Note:</strong> When writing shaders for a <a href="xref:Yak2D.ICustomVeldrid">CustomVeldrid</a> <a href="xref:uid_renderstages">RenderStage</a>, the user is responsible for accounting for the backend differences between graphics APIs.</p>
 <p>When writing shaders for a <a href="xref:Yak2D.ICustomShader">CustomShader</a> <a href="xref:uid_renderstages">RenderStage</a>, the vertex shader provided <em><strong>already accounts for the differences</strong></em> in OpenGL texture coordinates. Therefore all shaders can be written assuming origin top-left.</p>
 <h2 id="3d-rendering">3D Rendering</h2>
@@ -130,7 +130,7 @@
 <p><strong>yak2D</strong> uses a Right-Handed coordinate system, which does not change across any graphics API backends. This coordinate system is positive-x towards the right, positive-y upwards and positive-z out of the screen, towards the camera.</p>
 <p><strong>Note:</strong> When writing shaders for a <a href="xref:Yak2D.ICustomVeldrid">CustomVeldrid</a> <a href="xref:uid_renderstages">RenderStage</a>, the user is responsible for accounting for the backend differences between graphics APIs.</p>
 <h2 id="mouse-input">Mouse Input</h2>
-<p><strong>yak2D</strong> provides <a href="xref:Yak2D.Input.MousePosition">mouse position</a> as a position on the application window, in <a class="xref" href="coordinatesystems.html#window-space">window space</a>.</p>
+<p><strong>yak2D</strong> provides <a class="xref" href="../api/Yak2D.IInput.html#Yak2D_IInput_MousePosition">mouse position</a> as a position on the application window, in <a class="xref" href="coordinatesystems.html#window-space">window space</a>.</p>
 <h2 id="coordinate-system-conversions">Coordinate System Conversions</h2>
 <p>To easily convert positions between any of <a class="xref" href="coordinatesystems.html#screen-space">screen space</a>, <a class="xref" href="coordinatesystems.html#world-space">world space</a> or <a class="xref" href="coordinatesystems.html#window-space">window space</a>, <strong>yak2D</strong> provides <a class="xref" href="../api/Yak2D.ICoordinateTransforms.html">helper functions</a>.</p>
 </article>
