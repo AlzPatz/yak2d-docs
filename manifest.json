@@ -1267,12 +1267,27 @@
       "version": ""
     },
     {
+      "log_codes": [
+        "UidNotFound"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "articles/coordinatesystems.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/coordinatesystems.html",
+          "hash": "dekYlyaBBC+OXuXSXid/jQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
       "type": "Conceptual",
       "source_relative_path": "articles/glossary.md",
       "output": {
         ".html": {
           "relative_path": "articles/glossary.html",
-          "hash": "E6yZYLi78hE40M9+ubcV1Q=="
+          "hash": "Qq2zTrjPt9gpxTRen9k2oQ=="
         }
       },
       "is_incremental": false,
@@ -1287,7 +1302,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/intro.html",
-          "hash": "ps4IPVS8GPx/p1UCRIYhbg=="
+          "hash": "wjV0EcrdSycaka4qvs94vg=="
         }
       },
       "is_incremental": false,
@@ -1299,7 +1314,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/lifecycle.html",
-          "hash": "IN919QqEVVD+vRVO1ZWOYA=="
+          "hash": "Qr9ITFSQUyhUBObhYcn43A=="
         }
       },
       "is_incremental": false,
@@ -1314,7 +1329,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/overview.html",
-          "hash": "vyQRcTLCmUuEAZ8a/opMyw=="
+          "hash": "rB3EGTTs5c55I9C/u5kUYQ=="
         }
       },
       "is_incremental": false,
@@ -1389,6 +1404,28 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "images/screenspace.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/screenspace.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/screenspace.xml",
+      "output": {
+        "resource": {
+          "relative_path": "images/screenspace.xml"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "images/yak.png",
       "output": {
         "resource": {
@@ -1437,7 +1474,7 @@
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 6,
+          "total_file_count": 7,
           "skipped_file_count": 0
         },
         "ManagedReferenceDocumentProcessor": {

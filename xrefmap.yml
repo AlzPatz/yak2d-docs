@@ -1,14 +1,17 @@
 ### YamlMime:XRefMap
 sorted: true
 references:
+- uid: uid_coordinatesystems
+  name: yak2D Coordinate Systems, Resolutions and Rendering
+  href: articles/coordinatesystems.html
 - uid: uid_glossary
-  name: 'Glossary : Key Framework Terms'
+  name: yak2D Glossary
   href: articles/glossary.html
 - uid: uid_intro
   name: yak2D Usage Guide
   href: articles/intro.html
 - uid: uid_lifecycle
-  name: Application Lifecycle
+  name: yak2D Application Lifecycle
   href: articles/lifecycle.html
 - uid: uid_overview
   name: yak2D Overview and Getting Started

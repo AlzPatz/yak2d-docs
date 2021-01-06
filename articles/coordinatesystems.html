@@ -1,0 +1,141 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>yak2D Coordinate Systems, Resolutions and Rendering </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="yak2D Coordinate Systems, Resolutions and Rendering ">
+    <meta name="generator" content="docfx 2.56.6.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/logo.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="uid_coordinatesystems">
+<h1 id="yak2d-coordinate-systems-resolutions-and-rendering"><strong>yak2D</strong> Coordinate Systems, Resolutions and Rendering</h1>
+
+<h2 id="a-renderstages-output-is-render-area-size-agnostic">A RenderStage's output is render area size agnostic</h2>
+<p>A <a href="xref:uid_renderstages">RenderStage</a>'s output will fill the entire destination <a href="xref:uidglossary#RenderArea">render area</a>, which is either an entire <a href="xref:uid_rendertargets">RenderTarget</a> or a rectangular area of one defined by a <a href="xref:uid_viewports">viewport</a>.</p>
+<p>This means that rendering operations are 'resolution agnostic'. The final size of the <a href="xref:uidglossary#RenderArea">render area</a> does not matter.</p>
+<p>If the aspect ratio of the destination <a href="xref:uidglossary#RenderArea">render area</a> does not match that of the <a href="xref:uid_renderstages">RenderStage</a>'s output, the output will be distorted (stretched or squashed) to fit.</p>
+<h2 id="drawing">Drawing</h2>
+<p>During <a class="xref" href="glossary.html#Drawing">Drawing</a>, <a class="xref" href="../api/Yak2D.DrawRequest.html">DrawRequests</a> are submitted to, and rendered by, a <a class="xref" href="../api/Yak2D.IDrawStage.html">DrawStage</a>. The final position of vertices upon the <a href="xref:uidglossary#RenderArea">render area</a> is transformed by the assigned <a class="xref" href="../api/Yak2D.ICamera2D.html">Camera2D</a>.</p>
+<p>Each <a class="xref" href="../api/Yak2D.ICamera2D.html">Camera2D</a> has a <a class="xref" href="glossary.html#VirtualResolution">virtual resolution</a> that defines the boundaries of <a class="xref" href="coordinatesystems.html#screenspace">screen space</a> as well as <a class="xref" href="coordinatesystems.html#worldspace">world space</a> once a camera's zoom, world focus point and rotation are also accounted for.</p>
+<h2 id="what-this-means-in-practice">What this means in practice</h2>
+<p>A user can choose a <a class="xref" href="glossary.html#VirtualResolution">virtual resolution</a> and draw everything in relation to these effective screen dimensions, but it can be rendered at a final real resolution chosen simply by the an appropriately sized <a href="xref:uidglossary#RenderArea">render area</a>.</p>
+<h2 id="coordinate-systems-spaces">Coordinate Systems (<em><strong>Spaces</strong></em>)</h2>
+<p><strong>yak2D</strong> uses 3 coordinate systems (or <em><strong>spaces</strong></em>) for 2D rendering:</p>
+<ol>
+<li><a class="xref" href="coordinatesystems.html#screenspace"><strong>Screen</strong></a> space</li>
+<li><a class="xref" href="coordinatesystems.html#worldspace"><strong>World</strong></a> space</li>
+<li><a class="xref" href="coordinatesystems.html#windowspace"><strong>Window</strong></a> space</li>
+</ol>
+<h3 id="screen-space"><a href="#screenspace"><strong>Screen Space</strong></a></h3>
+<p>The coordinate system used when drawing with <a class="xref" href="../api/Yak2D.CoordinateSpace.html">CoordinateSpace.Screen</a>. Positions are defined in relation to a fixed visible area defined by the camera's <a class="xref" href="glossary.html#VirtualResolution">virtual resolution</a>.</p>
+<p>The origin (0,0) is located in the centre. Positive X-axis runs from left to right, with positive Y-axis running 'upwards' towards the top of the visible area.</p>
+<p>Visible positions in screen space are defined by:</p>
+<img src="https://render.githubusercontent.com/render/math?math=-w/2 \geq x < w/2">
+<p>and...</p>
+<img src="https://render.githubusercontent.com/render/math?math=-h/2 \geq y < h/2">
+<p>where:</p>
+<ul>
+<li>w = <a class="xref" href="glossary.html#VirtualResolution">virtual resolution</a> width</li>
+<li>h = <a class="xref" href="glossary.html#VirtualResolution">virtual resolution</a> height</li>
+</ul>
+<h4 id="screen-space-diagram">Screen Space Diagram</h4>
+<p><img src="../images/screenspace.png" alt=""></p>
+<h3 id="world-space"><strong>World Space</strong></h3>
+<p>The coordinate system used when drawing with <a class="xref" href="../api/Yak2D.CoordinateSpace.html">CoordinateSpace.World</a>. Positions are defined in relation to an origin. The visible area is defined by the camera's world focus point (position) in relation to the origin, the camera's zoom scalar, rotation and <a class="xref" href="glossary.html#VirtualResolution">virtual resolution</a>.</p>
+<p>World space's axis are similar to screen space, in that when unrotated, positive X-axis runs from left to right, with positive Y-axis running 'upwards' towards the top of the visible area.</p>
+<p>Therefore, if the camera's world focus point is (0,0), it's zoom is 1.0 and there is no camera rotation, then a position in world space will match a position in screen space.</p>
+<h2 id="viewports">Viewports</h2>
+<h2 id="3d-rendering">3D Rendering</h2>
+<h2 id="mouse-input">Mouse Input</h2>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            yak2D - Alex Paterson
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
