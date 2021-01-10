@@ -69,11 +69,18 @@
             <article class="content wrap" id="_content" data-uid="uid_glossary">
 <h1 id="yak2d-glossary"><strong>yak2D</strong> Glossary</h1>
 
-<p>Framework Terms</p>
+<p>Definitions used (mostly) consistently across <strong>yak2D</strong>'s source code and documentation.</p>
+<h2 id="application">Application</h2>
+<p>Refers to user code run with <strong>yak2D</strong>, consisting of the implemenation of the <a class="xref" href="../api/Yak2D.IApplication.html">IApplication</a> interface and supporting code.</p>
+<h2 id="camera">Camera</h2>
+<h2 id="drawing">Drawing</h2>
+<h2 id="resource">Resource</h2>
+<p>An object created by the <strong>yak2D</strong> framework. Internally, <strong>yak2D</strong> holds an <code>int64</code> key for each resouce. A user application holds resource references either in the form of lightweight objects derived from <a href="Yak2D.IKeyed">IKeyed</a> or simply the underlying <code>int64</code> values. All API methods accept the appropriate reference objects, whereas most (but not all) accept just the <code>int64</code> keys. Resource examples include <a class="xref" href="../api/Yak2D.ITexture.html">Textures</a>, <a class="xref" href="../api/Yak2D.ICamera2D.html">Cameras</a> and <a class="xref" href="../api/Yak2D.IRenderStage.html">RenderStages</a>.</p>
+<h2 id="renderstage">RenderStage</h2>
+<h2 id="render-area">Render Area</h2>
 <h2 id="service">Service</h2>
 <h2 id="surface">Surface</h2>
-<h2 id="renderstage">RenderStage</h2>
-<h2 id="camera">Camera</h2>
+<h2 id="camera-1">Camera</h2>
 </article>
           </div>
           

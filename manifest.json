@@ -1275,7 +1275,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/coordinatesystems.html",
-          "hash": "JRjeghibCk308QGru/zvAA=="
+          "hash": "77DKMyLCNHNBkRyGLz7mfA=="
         }
       },
       "is_incremental": false,
@@ -1283,11 +1283,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "articles/glossary.md",
+      "source_relative_path": "articles/features.md",
       "output": {
         ".html": {
-          "relative_path": "articles/glossary.html",
-          "hash": "9nHqoImo7g+/SF7gaTGzag=="
+          "relative_path": "articles/features.html",
+          "hash": "V7M2ouSQ4EtQTsrQxqVjoA=="
         }
       },
       "is_incremental": false,
@@ -1295,14 +1295,26 @@
     },
     {
       "log_codes": [
-        "UidNotFound"
+        "InvalidFileLink"
       ],
+      "type": "Conceptual",
+      "source_relative_path": "articles/glossary.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/glossary.html",
+          "hash": "hF1A0Afv9xvXKOLT7RxtfA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
       "type": "Conceptual",
       "source_relative_path": "articles/intro.md",
       "output": {
         ".html": {
           "relative_path": "articles/intro.html",
-          "hash": "wjV0EcrdSycaka4qvs94vg=="
+          "hash": "kZCTclBfyLTOQqIOuMPBsQ=="
         }
       },
       "is_incremental": false,
@@ -1329,7 +1341,43 @@
       "output": {
         ".html": {
           "relative_path": "articles/overview.html",
-          "hash": "mCWPp1KaudFRz13soMg66w=="
+          "hash": "NURpBLV3gybfykUjIgQdow=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/renderstages.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/renderstages.html",
+          "hash": "wXctjWJs+4Hp3w1jo5TqVg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/rendertargets.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/rendertargets.html",
+          "hash": "93PL9m2kV+OZg3h2mYjT/A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/surfaces.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/surfaces.html",
+          "hash": "rXD+KpupFsM+9IIVzAAfGw=="
         }
       },
       "is_incremental": false,
@@ -1342,6 +1390,18 @@
         ".html": {
           "relative_path": "articles/toc.html",
           "hash": "gB8AESyvNru97tzIZofEEg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/tutorials.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/tutorials.html",
+          "hash": "TYT6ZVLsvQQK726Zc++UYA=="
         }
       },
       "is_incremental": false,
@@ -1496,7 +1556,7 @@
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 7,
+          "total_file_count": 12,
           "skipped_file_count": 0
         },
         "ManagedReferenceDocumentProcessor": {

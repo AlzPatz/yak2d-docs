@@ -4,6 +4,9 @@ references:
 - uid: uid_coordinatesystems
   name: yak2D Coordinate Systems and Rendering Resolution
   href: articles/coordinatesystems.html
+- uid: uid_features
+  name: Features
+  href: articles/features.html
 - uid: uid_glossary
   name: yak2D Glossary
   href: articles/glossary.html
@@ -16,6 +19,18 @@ references:
 - uid: uid_overview
   name: yak2D Overview and Getting Started
   href: articles/overview.html
+- uid: uid_renderstages
+  name: RenderStages
+  href: articles/renderstages.html
+- uid: uid_rendertargets
+  name: RenderTargets
+  href: articles/rendertargets.html
+- uid: uid_surfaces
+  name: Surfaces
+  href: articles/surfaces.html
+- uid: uid_tutorials
+  name: Tutorials
+  href: articles/tutorials.html
 - uid: Yak2D
   name: Yak2D
   href: api/Yak2D.html
