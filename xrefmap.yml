@@ -31,6 +31,9 @@ references:
 - uid: uid_tutorials
   name: Tutorials
   href: articles/tutorials.html
+- uid: uid_viewports
+  name: Viewports
+  href: articles/viewports.html
 - uid: Yak2D
   name: Yak2D
   href: api/Yak2D.html
