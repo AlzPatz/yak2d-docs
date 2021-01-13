@@ -28,6 +28,9 @@ references:
 - uid: uid_surfaces
   name: Surfaces
   href: articles/surfaces.html
+- uid: uid_tut_gettingstarted
+  name: Getting Started
+  href: articles/gettingstarted.html
 - uid: uid_tutorials
   name: Tutorials
   href: articles/tutorials.html

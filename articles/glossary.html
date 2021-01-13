@@ -76,13 +76,19 @@
 <h2 id="drawing">Drawing</h2>
 <h2 id="resource">Resource</h2>
 <p>An object created by the <strong>yak2D</strong> framework. Internally, <strong>yak2D</strong> holds an <code>int64</code> key for each resouce. A user application holds resource references either in the form of lightweight objects derived from <a href="Yak2D.IKeyed">IKeyed</a> or simply the underlying <code>int64</code> values. All API methods accept the appropriate reference objects, whereas most (but not all) accept just the <code>int64</code> keys. Resource examples include <a class="xref" href="../api/Yak2D.ITexture.html">Textures</a>, <a class="xref" href="../api/Yak2D.ICamera2D.html">Cameras</a> and <a class="xref" href="../api/Yak2D.IRenderStage.html">RenderStages</a>.</p>
+<h2 id="renderqueue">RenderQueue</h2>
 <h2 id="renderstage">RenderStage</h2>
+<h2 id="renderstep">RenderStep</h2>
+<p>A term used in the <strong>yak2D</strong> documentation that refers to a single iteration of the framework's rending loop. From a user standpoint, a RenderStep will encompass the calling of all <a class="xref" href="glossary.html#drawing">drawing</a> and <a class="xref" href="glossary.html#rendering">rendering</a> methods within the user's implementation of the <a class="xref" href="../api/Yak2D.IApplication.html">IApplication</a> interface, namely: <a href="xref:Yak2D.IApplication.PreDrawing">PreDrawing()</a>, <a href="xref:Yak2D.IApplication.Drawing">Drawing()</a> and <a href="xref:Yak2D.IApplication.Rendering">Rendering</a>; called in that order.</p>
 <h2 id="renderarea">RenderArea</h2>
-<p>A term used in <strong>yak2D</strong> documentation that refers to either an entire <a class="xref" href="rendertargets.html">RenderTarget</a> or a rectangular area of one as defined by a <a class="xref" href="viewports.html">viewport</a>. There are no objects named 'RenderArea' used directly in the <strong>yak2D</strong> API.</p>
+<p>A term used in the <strong>yak2D</strong> documentation that refers to either an entire <a class="xref" href="rendertargets.html">RenderTarget</a> or a rectangular area of one as defined by a <a class="xref" href="viewports.html">viewport</a>. There are no objects named 'RenderArea' used directly in the <strong>yak2D</strong> API.</p>
+<h2 id="rendering">Rendering</h2>
 <h2 id="service">Service</h2>
 <h2 id="surface">Surface</h2>
 <h2 id="camera-1">Camera</h2>
 <h2 id="virtual-resolution">Virtual Resolution</h2>
+<h2 id="updatestep">UpdateStep</h2>
+<p>A term used in the <strong>yak2D</strong> documentation that refers to single iteration of the framework's update (non-rendering) loop. In a single UpdateStep, the <a href="xref:Yak2D.IApplication.Update">update</a> method of the user's <a class="xref" href="../api/Yak2D.IApplication.html">IApplication</a> implementation is called.</p>
 </article>
           </div>
           

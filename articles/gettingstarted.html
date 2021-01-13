@@ -1,0 +1,232 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Getting Started </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Getting Started ">
+    <meta name="generator" content="docfx 2.56.6.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/logo.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="uid_tut_gettingstarted">
+<h1 id="getting-started">Getting Started</h1>
+
+<h2 id="aim">Aim</h2>
+<p>By the end of this article you will have created a new project that uses <strong>yak2D</strong>. You will have created the outline of an application, which clears the display to a colour and exits when the escape key is pressed.</p>
+<p>This blank project will be used as the starting point for further tutorials (or your own applications!)</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+<li>A desktop OS (Windows, Linux or MacOS)</li>
+<li>Basic C# knowledge</li>
+</ul>
+<h2 id="environment-setup">Environment Setup</h2>
+<p>You wil require software to help you write code</p>
+<ul>
+<li><strong>Windows</strong>: <a href="https://visualstudio.microsoft.com/">Visual Studio</a></li>
+<li><strong>Linux</strong> and <strong>MacOS</strong>: A <a href="https://code.visualstudio.com/">text editor</a> of any sort</li>
+</ul>
+<p><strong>yak2D</strong> applications are built with .NET. <strong>yak2D</strong> targets the <code>NetStandard2.0</code> framework.</p>
+<p>This tutorial uses the command line tooling <code>dotnet [command]</code> for Linux and MacOS environments. Whilst the command line tools are also available for Windows, using the <a href="https://visualstudio.microsoft.com/">Visual Studio IDE</a> is described below.</p>
+<h3 id="windows">Windows</h3>
+<ol>
+<li>Download the Visual Studio IDE. At the time of writing the free version of Visual Studio is Community 2019
+<ul>
+<li>During the installation, install .NET Core desktop development packages (at the time of writing, this is included under the &quot;.NET desktop development&quot; workload option presented by the Visual Studio Installer)</li>
+</ul>
+</li>
+<li>Open Visual Studio and Create a new Console App (.NET Core). Choose the project name and disk location
+<img src="../images/win_00.png" alt=""></li>
+<li>Once the project is open, add the <strong>yak2D</strong> nuget packages to your project:
+<ul>
+<li>In the solution explorer, right click on the project and go to &quot;Manage Nuget Packages&quot;
+<img src="../images/win_01.png" alt=""></li>
+<li>In the Nuget Package Manager, navigate to the browse tab</li>
+<li>Search for &quot;yak2D&quot; and install the latest stable version
+<img src="../images/win_02.png" alt=""></li>
+</ul>
+</li>
+<li>Once the <strong>yak2D</strong> package has downloaded, and you have accepted any licenses, add a new class file to your project. This file will hold your the root of your application's code:
+<ul>
+<li>In the solution explorer, right click on the project and go to &quot;Add&quot;, then &quot;New Item...&quot;
+<img src="../images/win_03.png" alt=""></li>
+<li>Choose &quot;Class&quot; and name your file with a <code>.cs</code> extension. For this tutorial <code>MyApplication.cs</code> was chosen
+<img src="../images/win_04.png" alt=""></li>
+</ul>
+</li>
+</ol>
+<p>With the project set up, ready for code, please scroll down and continue with the <a class="xref" href="gettingstarted.html#Writing-Code">writing code</a> section.</p>
+<h3 id="linux">Linux</h3>
+<ol>
+<li>Download your chosen text editor</li>
+<li>Install .NET</li>
+</ol>
+<h3 id="macos">MacOS</h3>
+<p><em>Under Construction a.k.a waiting for some time with a Mac. Installing .NET on MacOS is relatively easy, please google for a guide. Dotnet command line functions then work the same as on a linux distro</em></p>
+<h2 id="writing-code">Writing Code</h2>
+<p><em>At this stage it is assumed you have a .NET core console project created with two source files: <code>Program.cs</code> and <code>MyApplication.cs</code></em>.</p>
+<p>To launch a <strong>yak2D</strong> application you must create a class that implements the <a class="xref" href="../api/Yak2D.IApplication.html">IApplication</a> interface, instantiate an instance of the class, and pass that to the <a href="xref:Yak2D.Launcher.Run">Launcher.Run()</a> method:</p>
+<ol>
+<li><p>In <code>MyApplication.cs</code> add the following using statement at the top of the file:</p>
+<p><code>using Yak2D;</code></p>
+</li>
+<li><p>In <code>MyApplication.cs</code> let the class inherrit from the <a class="xref" href="../api/Yak2D.IApplication.html">IApplication</a> interface by changing the class definition line from:</p>
+<p><code>class MyApplication</code></p>
+<p>to</p>
+<p><code>class MyApplication : IApplication</code></p>
+</li>
+<li><p>We now need to provide implementations of the methods described by the <a class="xref" href="../api/Yak2D.IApplication.html">IApplication</a> interface.</p>
+<ul>
+<li>We will tackle each method one at a time. If you are using a variant of Visual Studio or another IDE with the ability, you can ask the editor to automatically fill in blank methods for the interface to save some typing. In Visual Studio (windows) you can navigate to the drop down button under the red squiggly line and click on <code>Implement Interface</code>:
+<img src="../images/win_05.png" alt=""></li>
+<li><em>Please note</em>: The auto-fill functions are not guaranteed to order the methods in the most logical way. Whilst the order in which the methods appear in the source code file <strong>do not matter</strong>, it is recommended to re-order your methods in the way described below to better reflect program execution flow and code understanding.</li>
+<li>All methods should be written between the opening curly bracket ({) following <code>class MyApplication : IApplication</code> and the next closing curly bracket immediately following.</li>
+<li><strong>Implement <a class="xref" href="../api/Yak2D.IApplication.html#Yak2D_IApplication_OnStartup">OnStartup()</a></strong>. This method runs before any other in the application and allows you to add any code you wish to run ahead of the application's other methods. In this instance, we do not have any code we wish to run, so we provide an empty method implementation:</li>
+</ul>
+<pre><code>public void OnStartup() { }
+</code></pre>
+<ul>
+<li><strong>Implement <a class="xref" href="../api/Yak2D.IApplication.html#Yak2D_IApplication_Configure">Configure()</a></strong>. This method returns an instance of the <a class="xref" href="../api/Yak2D.StartupConfig.html">StartupConfig</a> class, which holds application configuration information. It is called once at application start up. We can use a helper method within <a class="xref" href="../api/Yak2D.StartupConfig.html">StartupConfig</a> to simplify the creation and get some default values. Below we pass a window resolution of 960 by 540 pixels, a string for the window title of &quot;My Application!&quot; and finally we pass <code>false</code> for whether to open the application in fullscreen mode (i.e requesting a windowed application).</li>
+</ul>
+<pre><code>public StartupConfig Configure()
+{
+    return StartupConfig.Default(960, 540, &quot;My Application!&quot;, false);
+}
+</code></pre>
+<ul>
+<li><strong>Implement <a href="xref:Yak2D.IApplication.CreateResources">CreateResources()</a></strong>. All <a class="xref" href="glossary.html#Resource">resource</a> creation should be completed within, or be triggered by, this method. It runs once before the main update and rendering loops begin and is also triggered if the application loses it's <a class="xref" href="glossary.html#Resource">resources</a> at anytime. A blank application uses no resources so for now an empty method is all that is required. The method must return <code>true</code> to indicate to the framework that it was successful:</li>
+</ul>
+<pre><code>public bool CreateResources() 
+{ 
+    return true;
+}
+</code></pre>
+<ul>
+<li><strong>Implement <a href="xref:Yak2D.IApplication.ProcessMessage">ProcessMessage()</a></strong>. Ahead of an <a class="xref" href="glossary.html#updatestep">UpdateStep</a>, this method is called once for every message generated by the framework. Allows the application to be informed about a number of different events, such as a gamepad being added or the window being resized. There are no messages we need to process for the blank application, so you guessed it, we create another empty method implementation:</li>
+</ul>
+<pre><code>public void ProcessMessage(FrameworkMessage msg, IServices yak) { }
+</code></pre>
+<ul>
+<li><strong>Implement <a href="xref:Yak2D.IApplication.Update">Update()</a></strong>. Called during an <a class="xref" href="glossary.html#updatestep">UpdateStep</a>. Used for non-drawing and rendering application logic. For this application we simply return <code>false</code> (which triggers an application shutdown) if the <code>escape</code> key is pressed.</li>
+</ul>
+<pre><code>public void Update(IServices yak, float secondsSinceLastUpdate)
+{
+    return !yak.Input.IsKeyCurrentlyPressed(KeyCode.Escape);
+}
+</code></pre>
+<ul>
+<li><strong>Implement <a href="xref:Yak2D.IApplication.PreDrawing">PreDrawing()</a></strong>. The first user method of three called during a <a class="xref" href="glossary.html#renderstep">RenderStep</a>. A place for non-drawing or rendering code to be executed ahead of drawing and rendering. Again, for a blank application, we create an empty method.</li>
+</ul>
+<pre><code>public void PreDrawing(IServices yak, float secondsSinceLastDraw, float secondsSinceLastUpdate) { }
+</code></pre>
+<ul>
+<li><strong>Implement <a href="xref:Yak2D.IApplication.Drawing">Drawing()</a></strong>. The second user method of three called during a <a class="xref" href="glossary.html#renderstep">RenderStep</a>. As the name implies, this method is used for <a class="xref" href="glossary.html#drawing">drawing</a>, namely creating and submitting <a class="xref" href="../api/Yak2D.DrawRequest.html">DrawRequests</a> to <a class="xref" href="../api/Yak2D.IDrawStage.html">DrawStages</a>. The blank application does not contain a <a class="xref" href="../api/Yak2D.IDrawStage.html">DrawStage</a> and so an empty method is created.</li>
+</ul>
+<pre><code>public void Drawing(IDraw draw, IFps fps, IInput input, ICoordinateTransforms transforms, float secondsSinceLastDraw, float secondsSinceLastUpdate) { }
+</code></pre>
+<ul>
+<li><strong>Implement <a href="xref:Yak2D.IApplication.Rendering">Rendering()</a></strong>. The third user method of three called during a <a class="xref" href="glossary.html#renderstep">RenderStep</a>. In this method the user must build the <a class="xref" href="glossary.html#renderqueue">RenderQueue</a> by calling methods provided by the <a class="xref" href="../api/Yak2D.IRenderQueue.html">IRenderQueue</a> instance. In this example, the only action to queue is to clear the window's <a class="xref" href="../api/Yak2D.IRenderTarget.html">RenderTarget</a> colour data with a colour as well as clearing its depth buffer. <em>Note: A user may choose for the framework to automatically clear the window's <a class="xref" href="../api/Yak2D.IRenderTarget.html">RenderTarget</a>'s colour and depth ahead of actions placed into the <a class="xref" href="glossary.html#renderqueue">RenderQueue</a>. In fact, the default<a class="xref" href="../api/Yak2D.StartupConfig.html">StartupConfig</a> provided by the helper method used in <a class="xref" href="../api/Yak2D.IApplication.html#Yak2D_IApplication_Configure">Configure()</a> above is set to auto-clear. The auto-clear colour is always transparent black RGBA(0, 0, 0, 0). Therefore in the code below, the depth clear is not technically required</em></li>
+</ul>
+<pre><code>public void Rendering(IRenderQueue q, IRenderTarget windowRenderTarget)
+{
+    q.ClearDepth(windowRenderTarget);
+    q.ClearColour(windowRenderTarget, Colour.Pink);
+}
+</code></pre>
+<ul>
+<li><strong>Implement <a class="xref" href="../api/Yak2D.IApplication.html#Yak2D_IApplication_Shutdown">Shutdown()</a></strong>. Called upon application exit. A place for the user application to release any acquired resources not related to the <strong>yak2D</strong> framework and that will not be disposed of automatically. In this blank application, an empty method suffices.</li>
+</ul>
+<pre><code>public void Shutdown() { }
+</code></pre>
+</li>
+</ol>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            yak2D - Alex Paterson
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

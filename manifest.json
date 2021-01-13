@@ -1295,6 +1295,22 @@
     },
     {
       "log_codes": [
+        "UidNotFound"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "articles/gettingstarted.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/gettingstarted.html",
+          "hash": "g1iBrIf04kErPR9c5RSlSw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "UidNotFound",
         "InvalidFileLink"
       ],
       "type": "Conceptual",
@@ -1302,7 +1318,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/glossary.html",
-          "hash": "lXTNnQiDLE5cprJFfTeGKA=="
+          "hash": "/Lbn0jQx1WXzwbCkjwZLuQ=="
         }
       },
       "is_incremental": false,
@@ -1341,7 +1357,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/overview.html",
-          "hash": "NURpBLV3gybfykUjIgQdow=="
+          "hash": "pA+IHmd3EjlzqFJUcGfC/Q=="
         }
       },
       "is_incremental": false,
@@ -1396,12 +1412,15 @@
       "version": ""
     },
     {
+      "log_codes": [
+        "UidNotFound"
+      ],
       "type": "Conceptual",
       "source_relative_path": "articles/tutorials.md",
       "output": {
         ".html": {
           "relative_path": "articles/tutorials.html",
-          "hash": "TYT6ZVLsvQQK726Zc++UYA=="
+          "hash": "K2sY72kdr2zo9mQyWb4fjA=="
         }
       },
       "is_incremental": false,
@@ -1498,6 +1517,72 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "images/win_00.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/win_00.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/win_01.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/win_01.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/win_02.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/win_02.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/win_03.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/win_03.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/win_04.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/win_04.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/win_05.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/win_05.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "images/windowspace.png",
       "output": {
         "resource": {
@@ -1568,7 +1653,7 @@
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 13,
+          "total_file_count": 14,
           "skipped_file_count": 0
         },
         "ManagedReferenceDocumentProcessor": {
