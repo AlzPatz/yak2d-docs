@@ -1302,7 +1302,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/gettingstarted.html",
-          "hash": "g1iBrIf04kErPR9c5RSlSw=="
+          "hash": "2RyTnQaCojC3zTFs4j50fw=="
         }
       },
       "is_incremental": false,
@@ -1420,7 +1420,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/tutorials.html",
-          "hash": "K2sY72kdr2zo9mQyWb4fjA=="
+          "hash": "nQwM2BET8wjXwW3EiX56Pw=="
         }
       },
       "is_incremental": false,
@@ -1576,6 +1576,17 @@
       "output": {
         "resource": {
           "relative_path": "images/win_05.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/win_06.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/win_06.png"
         }
       },
       "is_incremental": false,
