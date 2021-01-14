@@ -17,7 +17,7 @@ references:
   name: yak2D Application Lifecycle
   href: articles/lifecycle.html
 - uid: uid_overview
-  name: yak2D Overview and Getting Started
+  name: yak2D Overview and Basic Usage
   href: articles/overview.html
 - uid: uid_renderstages
   name: RenderStages
@@ -28,6 +28,18 @@ references:
 - uid: uid_surfaces
   name: Surfaces
   href: articles/surfaces.html
+- uid: uid_tut_continued
+  name: Getting Started - Continued (part 2)
+  href: articles/continued.html
+- uid: uid_tut_customshader
+  name: Tutorial - CustomShader
+  href: articles/tutorialcustomshader.html
+- uid: uid_tut_demogame
+  name: Building the DemoGame
+  href: articles/demogame.html
+- uid: uid_tut_distribution
+  name: Tutorial - Distributing your Application
+  href: articles/tutorialdistribution.html
 - uid: uid_tut_gettingstarted
   name: Getting Started
   href: articles/gettingstarted.html

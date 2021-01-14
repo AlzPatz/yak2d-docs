@@ -1271,11 +1271,38 @@
         "UidNotFound"
       ],
       "type": "Conceptual",
+      "source_relative_path": "articles/continued.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/continued.html",
+          "hash": "iZL7USU/ZoEg0oDgvyntxg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "UidNotFound"
+      ],
+      "type": "Conceptual",
       "source_relative_path": "articles/coordinatesystems.md",
       "output": {
         ".html": {
           "relative_path": "articles/coordinatesystems.html",
           "hash": "Z8B9ilc+yiLw2e1/QGd/bg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/demogame.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/demogame.html",
+          "hash": "DG/z+gJzi2ZqfnLZPsoukw=="
         }
       },
       "is_incremental": false,
@@ -1330,7 +1357,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/intro.html",
-          "hash": "kZCTclBfyLTOQqIOuMPBsQ=="
+          "hash": "gEM43SPAQDDKXtsftP8WrQ=="
         }
       },
       "is_incremental": false,
@@ -1357,7 +1384,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/overview.html",
-          "hash": "pA+IHmd3EjlzqFJUcGfC/Q=="
+          "hash": "4GgM+rhJw+tWx1AQ9a7Q3Q=="
         }
       },
       "is_incremental": false,
@@ -1400,27 +1427,51 @@
       "version": ""
     },
     {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
       "type": "Toc",
       "source_relative_path": "articles/toc.yml",
       "output": {
         ".html": {
           "relative_path": "articles/toc.html",
-          "hash": "gB8AESyvNru97tzIZofEEg=="
+          "hash": "G3wBhEJRAYyqJlbbKItxDg=="
         }
       },
       "is_incremental": false,
       "version": ""
     },
     {
-      "log_codes": [
-        "UidNotFound"
-      ],
+      "type": "Conceptual",
+      "source_relative_path": "articles/tutorialcustomshader.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/tutorialcustomshader.html",
+          "hash": "stpuhtnC7TAxIGpqRhXUPw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/tutorialdistribution.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/tutorialdistribution.html",
+          "hash": "bpLvDnCCbyqO29d9ExuNGw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
       "type": "Conceptual",
       "source_relative_path": "articles/tutorials.md",
       "output": {
         ".html": {
           "relative_path": "articles/tutorials.html",
-          "hash": "nQwM2BET8wjXwW3EiX56Pw=="
+          "hash": "3zxAW2wgf6eIpzyEBAlK7w=="
         }
       },
       "is_incremental": false,
@@ -1631,7 +1682,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "3UQn836wa4s1NecjMdVlBg=="
+          "hash": "f0CP8N8h5cFRYa0VlFQgfQ=="
         }
       },
       "is_incremental": false,
@@ -1664,7 +1715,7 @@
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 14,
+          "total_file_count": 18,
           "skipped_file_count": 0
         },
         "ManagedReferenceDocumentProcessor": {
