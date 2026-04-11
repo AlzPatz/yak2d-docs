@@ -1,0 +1,2367 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class Stages </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class Stages ">
+    
+    
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/logo.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Yak2D.Graphics.Stages">
+
+
+
+  <h1 id="Yak2D_Graphics_Stages" data-uid="Yak2D.Graphics.Stages" class="text-break">Class Stages</h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><span class="xref">Stages</span></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="Yak2D.IStages.html">IStages</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Yak2D.html">Yak2D</a>.<a class="xref" href="Yak2D.Graphics.html">Graphics</a></h6>
+  <h6><strong>Assembly</strong>: Yak2D.Graphics.dll</h6>
+  <h5 id="Yak2D_Graphics_Stages_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class Stages : IStages</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+</h3>
+  <a id="Yak2D_Graphics_Stages__ctor_" data-uid="Yak2D.Graphics.Stages.#ctor*"></a>
+  <h4 id="Yak2D_Graphics_Stages__ctor_Yak2D_Graphics_IRenderStageManager_Yak2D_Internal_IViewportManager_Yak2D_Graphics_IRenderStageVisitor_" data-uid="Yak2D.Graphics.Stages.#ctor(Yak2D.Graphics.IRenderStageManager,Yak2D.Internal.IViewportManager,Yak2D.Graphics.IRenderStageVisitor)">Stages(IRenderStageManager, IViewportManager, IRenderStageVisitor)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Stages(IRenderStageManager renderStageManager, IViewportManager viewportManager, IRenderStageVisitor renderStageVisitor)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.Graphics.IRenderStageManager.html">IRenderStageManager</a></td>
+        <td><span class="parametername">renderStageManager</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.Internal.IViewportManager.html">IViewportManager</a></td>
+        <td><span class="parametername">viewportManager</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.Graphics.IRenderStageVisitor.html">IRenderStageVisitor</a></td>
+        <td><span class="parametername">renderStageVisitor</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+</h3>
+  <a id="Yak2D_Graphics_Stages_CountRenderStages_" data-uid="Yak2D.Graphics.Stages.CountRenderStages*"></a>
+  <h4 id="Yak2D_Graphics_Stages_CountRenderStages" data-uid="Yak2D.Graphics.Stages.CountRenderStages">CountRenderStages</h4>
+  <div class="markdown level1 summary"><p>Returns the number of user created render stages currently managed by the framework</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int CountRenderStages { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_Stages_CountViewports_" data-uid="Yak2D.Graphics.Stages.CountViewports*"></a>
+  <h4 id="Yak2D_Graphics_Stages_CountViewports" data-uid="Yak2D.Graphics.Stages.CountViewports">CountViewports</h4>
+  <div class="markdown level1 summary"><p>Returns the number of user created viewports currently managed by the framework</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int CountViewports { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+</h3>
+  <a id="Yak2D_Graphics_Stages_CreateBloomStage_" data-uid="Yak2D.Graphics.Stages.CreateBloomStage*"></a>
+  <h4 id="Yak2D_Graphics_Stages_CreateBloomStage_System_UInt32_System_UInt32_" data-uid="Yak2D.Graphics.Stages.CreateBloomStage(System.UInt32,System.UInt32)">CreateBloomStage(uint, uint)</h4>
+  <div class="markdown level1 summary"><p>A RenderStage that can apply a bloom effect to a texture source and render to a target
+Brightness threshold, additive mix amount with source and number of blur component samples can be configured for the stage
+The source texture is downsampled and threhold clipped onto a smaller surface before being blurred and re-mixed with the original</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IBloomStage CreateBloomStage(uint sampleSurfaceWidth, uint sampleSurfaceHeight)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></td>
+        <td><span class="parametername">sampleSurfaceWidth</span></td>
+        <td><p>The width of the downsampling texture used. Smaller == less computationally intensive, lower quality bloom, but larger blur distance per sample</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></td>
+        <td><span class="parametername">sampleSurfaceHeight</span></td>
+        <td><p>The height of the downsampling texture used. Smaller == less computationally intensive, lower quality bloom, but larger blur distance per sample</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.IBloomStage.html">IBloomStage</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_Stages_CreateBlur1DStage_" data-uid="Yak2D.Graphics.Stages.CreateBlur1DStage*"></a>
+  <h4 id="Yak2D_Graphics_Stages_CreateBlur1DStage_System_UInt32_System_UInt32_" data-uid="Yak2D.Graphics.Stages.CreateBlur1DStage(System.UInt32,System.UInt32)">CreateBlur1DStage(uint, uint)</h4>
+  <div class="markdown level1 summary"><p>A RenderStage that applies a directional (1d) blur effect to a texture source and render to a target
+For non-directional blur, use the standard Blur effect instead
+Blur direction, fractional mix amount with source and number of blur component samples can be configured for the stage</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IBlur1DStage CreateBlur1DStage(uint sampleSurfaceWidth, uint sampleSurfaceHeight)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></td>
+        <td><span class="parametername">sampleSurfaceWidth</span></td>
+        <td><p>The width of the downsampling texture used. Smaller == less computationally intensive, lower quality bloom, but larger blur distance per sample</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></td>
+        <td><span class="parametername">sampleSurfaceHeight</span></td>
+        <td><p>The height of the downsampling texture used. Smaller == less computationally intensive, lower quality bloom, but larger blur distance per sample</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.IBlur1DStage.html">IBlur1DStage</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_Stages_CreateBlurStage_" data-uid="Yak2D.Graphics.Stages.CreateBlurStage*"></a>
+  <h4 id="Yak2D_Graphics_Stages_CreateBlurStage_System_UInt32_System_UInt32_" data-uid="Yak2D.Graphics.Stages.CreateBlurStage(System.UInt32,System.UInt32)">CreateBlurStage(uint, uint)</h4>
+  <div class="markdown level1 summary"><p>A RenderStage that applies a blur effect to a texture source and render to a target
+The blur is applied in both x and y texture coordinate directions, it is not a directional blur - use Blur1D effect instead in that scenario
+Fractional mix amount with source and number of blur component samples can be configured for the stage</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IBlurStage CreateBlurStage(uint sampleSurfaceWidth, uint sampleSurfaceHeight)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></td>
+        <td><span class="parametername">sampleSurfaceWidth</span></td>
+        <td><p>The width of the downsampling texture used. Smaller == less computationally intensive, lower quality bloom, but larger blur distance per sample</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></td>
+        <td><span class="parametername">sampleSurfaceHeight</span></td>
+        <td><p>The height of the downsampling texture used. Smaller == less computationally intensive, lower quality bloom, but larger blur distance per sample</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.IBlurStage.html">IBlurStage</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_Stages_CreateColourEffectsStage_" data-uid="Yak2D.Graphics.Stages.CreateColourEffectsStage*"></a>
+  <h4 id="Yak2D_Graphics_Stages_CreateColourEffectsStage" data-uid="Yak2D.Graphics.Stages.CreateColourEffectsStage">CreateColourEffectsStage()</h4>
+  <div class="markdown level1 summary"><p>Provides simple colour modification effects to a texture source and render to a target
+Effects are: single colour mix, grayscale, negative, colourise and opacity
+A combination of all the effects can be applied together</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IColourEffectsStage CreateColourEffectsStage()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.IColourEffectsStage.html">IColourEffectsStage</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_Stages_CreateCustomShaderStage_" data-uid="Yak2D.Graphics.Stages.CreateCustomShaderStage*"></a>
+  <h4 id="Yak2D_Graphics_Stages_CreateCustomShaderStage_System_String_Yak2D_AssetSourceEnum_Yak2D_ShaderUniformDescription___Yak2D_BlendState_System_Boolean_" data-uid="Yak2D.Graphics.Stages.CreateCustomShaderStage(System.String,Yak2D.AssetSourceEnum,Yak2D.ShaderUniformDescription[],Yak2D.BlendState,System.Boolean)">CreateCustomShaderStage(string, AssetSourceEnum, ShaderUniformDescription[], BlendState, bool)</h4>
+  <div class="markdown level1 summary"><p>Creates a stage for a user defined shader effect
+The user defines the shader code, constrained by a set maximum number of texture and uniform configuration variable inputs</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ICustomShaderStage CreateCustomShaderStage(string fragmentShaderPathName, AssetSourceEnum assetType, ShaderUniformDescription[] uniformDescriptions, BlendState blendState, bool useSpirvCompile = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">fragmentShaderPathName</span></td>
+        <td><p>Shader code filename (no extension) including path&quot;</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.AssetSourceEnum.html">AssetSourceEnum</a></td>
+        <td><span class="parametername">assetType</span></td>
+        <td><p>Embedded in the binary or a file location&quot;</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.ShaderUniformDescription.html">ShaderUniformDescription</a>[]</td>
+        <td><span class="parametername">uniformDescriptions</span></td>
+        <td><p>Description of shader uniforms (textures or data structs)</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.BlendState.html">BlendState</a></td>
+        <td><span class="parametername">blendState</span></td>
+        <td><p>How source pixels are mixed with destination pixels on surfaces</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">useSpirvCompile</span></td>
+        <td><p>Compile shader code at runtime from .glsl SPIRV shader</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.ICustomShaderStage.html">ICustomShaderStage</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_Stages_CreateCustomVeldridStage_" data-uid="Yak2D.Graphics.Stages.CreateCustomVeldridStage*"></a>
+  <h4 id="Yak2D_Graphics_Stages_CreateCustomVeldridStage_Yak2D_CustomVeldridBase_" data-uid="Yak2D.Graphics.Stages.CreateCustomVeldridStage(Yak2D.CustomVeldridBase)">CreateCustomVeldridStage(CustomVeldridBase)</h4>
+  <div class="markdown level1 summary"><p>Create a stage for a user defined custom piece of veldrid logic, enabling operations or integrations that require complete access to veldrid library functions</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ICustomVeldridStage CreateCustomVeldridStage(CustomVeldridBase stage)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.CustomVeldridBase.html">CustomVeldridBase</a></td>
+        <td><span class="parametername">stage</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.ICustomVeldridStage.html">ICustomVeldridStage</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_Stages_CreateDistortionStage_" data-uid="Yak2D.Graphics.Stages.CreateDistortionStage*"></a>
+  <h4 id="Yak2D_Graphics_Stages_CreateDistortionStage_System_UInt32_System_UInt32_System_Boolean_" data-uid="Yak2D.Graphics.Stages.CreateDistortionStage(System.UInt32,System.UInt32,System.Boolean)">CreateDistortionStage(uint, uint, bool)</h4>
+  <div class="markdown level1 summary"><p>A RenderStage that applies a distortion effect to a texture source and render to a target
+The per-pixel distortion amount is generated from a distortion height map
+The distortion height map is drawn each frame, in a similar way that DrawStage draw requests are generated, queued and sorted
+The final distortion amount per-pixel is scaled by a configurable scalar quantity</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IDistortionStage CreateDistortionStage(uint internalSurfaceWidth, uint internalSurfaceHeight, bool clearDynamicRequestQueueEachFrame = true)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></td>
+        <td><span class="parametername">internalSurfaceWidth</span></td>
+        <td><p>The width of the internal textures used for generating the height and gradient maps. Smaller == less computationally intensive, lower quality distortion</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></td>
+        <td><span class="parametername">internalSurfaceHeight</span></td>
+        <td><p>The height of the internal textures used for generating the height and gradient maps. Smaller == less computationally intensive, lower quality distortion</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">clearDynamicRequestQueueEachFrame</span></td>
+        <td><p>Set to automatically remove (clear) draw requests from the stage's queue following each draw iteration. Stops the user being required to remember to clear the queues at the start of each draw update. A useful default as this can regularly catch users (me...) out, resulting in ever increasing draw queue sizes :)</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.IDistortionStage.html">IDistortionStage</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_Stages_CreateDrawStage_" data-uid="Yak2D.Graphics.Stages.CreateDrawStage*"></a>
+  <h4 id="Yak2D_Graphics_Stages_CreateDrawStage_System_Boolean_Yak2D_BlendState_" data-uid="Yak2D.Graphics.Stages.CreateDrawStage(System.Boolean,Yak2D.BlendState)">CreateDrawStage(bool, BlendState)</h4>
+  <div class="markdown level1 summary"><p>Draw Queues are used to collect, sort and process 2d drawing requests</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IDrawStage CreateDrawStage(bool clearDynamicRequestQueueEachFrame = true, BlendState blendState = BlendState.Alpha)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">clearDynamicRequestQueueEachFrame</span></td>
+        <td><p>Set to automatically remove (clear) draw requests from the stage's queue following each draw iteration. Stops the user being required to remember to clear the queues at the start of each draw update. A useful default as this can regularly catch users (me...) out, resulting in ever increasing draw queue sizes :)</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.BlendState.html">BlendState</a></td>
+        <td><span class="parametername">blendState</span></td>
+        <td><p>How source pixels are mixed with destination pixels on surfaces</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.IDrawStage.html">IDrawStage</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_Stages_CreateMeshRenderStage_" data-uid="Yak2D.Graphics.Stages.CreateMeshRenderStage*"></a>
+  <h4 id="Yak2D_Graphics_Stages_CreateMeshRenderStage" data-uid="Yak2D.Graphics.Stages.CreateMeshRenderStage">CreateMeshRenderStage()</h4>
+  <div class="markdown level1 summary"><p>A RenderStage that will render a 3D Textured Mesh
+Ambient, Directional and Spotlights can be configured for the stage, along with the Mesh to render</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IMeshRenderStage CreateMeshRenderStage()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.IMeshRenderStage.html">IMeshRenderStage</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_Stages_CreateMixStage_" data-uid="Yak2D.Graphics.Stages.CreateMixStage*"></a>
+  <h4 id="Yak2D_Graphics_Stages_CreateMixStage" data-uid="Yak2D.Graphics.Stages.CreateMixStage">CreateMixStage()</h4>
+  <div class="markdown level1 summary"><p>A RenderStage that enables the mixing of up to four textures together
+The general mix factors per texture are defined in the configuration
+A further 'per-pixel' mixing scalar can be defined using mixTexture</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IMixStage CreateMixStage()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.IMixStage.html">IMixStage</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_Stages_CreateStyleEffectsStage_" data-uid="Yak2D.Graphics.Stages.CreateStyleEffectsStage*"></a>
+  <h4 id="Yak2D_Graphics_Stages_CreateStyleEffectsStage" data-uid="Yak2D.Graphics.Stages.CreateStyleEffectsStage">CreateStyleEffectsStage()</h4>
+  <div class="markdown level1 summary"><p>A RenderStage that applies stylised effects to a texture source and render to a target
+Effects are: Pixellate, Edge Detection, Static Noise, Cathode Ray Tube and Old Movie Reel,
+A combination of all the effects can be applied together</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IStyleEffectsStage CreateStyleEffectsStage()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.IStyleEffectsStage.html">IStyleEffectsStage</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_Stages_CreateSurfaceCopyDataStage_" data-uid="Yak2D.Graphics.Stages.CreateSurfaceCopyDataStage*"></a>
+  <h4 id="Yak2D_Graphics_Stages_CreateSurfaceCopyDataStage_System_UInt32_System_UInt32_System_Action_Yak2D_TextureData__System_Boolean_" data-uid="Yak2D.Graphics.Stages.CreateSurfaceCopyDataStage(System.UInt32,System.UInt32,System.Action{Yak2D.TextureData},System.Boolean)">CreateSurfaceCopyDataStage(uint, uint, Action&lt;TextureData&gt;, bool)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ISurfaceCopyStage CreateSurfaceCopyDataStage(uint initialStagingTextureWidth, uint initialStagingTextureHeight, Action&lt;TextureData&gt; callback, bool useFloat32PixelFormat = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></td>
+        <td><span class="parametername">initialStagingTextureWidth</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></td>
+        <td><span class="parametername">initialStagingTextureHeight</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="Yak2D.TextureData.html">TextureData</a>&gt;</td>
+        <td><span class="parametername">callback</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">useFloat32PixelFormat</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.ISurfaceCopyStage.html">ISurfaceCopyStage</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_Stages_CreateViewport_" data-uid="Yak2D.Graphics.Stages.CreateViewport*"></a>
+  <h4 id="Yak2D_Graphics_Stages_CreateViewport_System_UInt32_System_UInt32_System_UInt32_System_UInt32_" data-uid="Yak2D.Graphics.Stages.CreateViewport(System.UInt32,System.UInt32,System.UInt32,System.UInt32)">CreateViewport(uint, uint, uint, uint)</h4>
+  <div class="markdown level1 summary"><p>A viewport defines an area of a render surface used as a drawing area
+The topleft corner of a render surface is defined as the origin (0,0)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IViewport CreateViewport(uint minx, uint miny, uint width, uint height)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></td>
+        <td><span class="parametername">minx</span></td>
+        <td><p>Left edge of viewport in pixels</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></td>
+        <td><span class="parametername">miny</span></td>
+        <td><p>Top edge of viewport in pixels</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></td>
+        <td><span class="parametername">width</span></td>
+        <td><p>Width of viewport in pixels</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></td>
+        <td><span class="parametername">height</span></td>
+        <td><p>Height of viewport in pixels</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.IViewport.html">IViewport</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_Stages_DestroyAllStages_" data-uid="Yak2D.Graphics.Stages.DestroyAllStages*"></a>
+  <h4 id="Yak2D_Graphics_Stages_DestroyAllStages" data-uid="Yak2D.Graphics.Stages.DestroyAllStages">DestroyAllStages()</h4>
+  <div class="markdown level1 summary"><p>Destroy all render stages</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DestroyAllStages()</code></pre>
+  </div>
+  <a id="Yak2D_Graphics_Stages_DestroyAllViewports_" data-uid="Yak2D.Graphics.Stages.DestroyAllViewports*"></a>
+  <h4 id="Yak2D_Graphics_Stages_DestroyAllViewports" data-uid="Yak2D.Graphics.Stages.DestroyAllViewports">DestroyAllViewports()</h4>
+  <div class="markdown level1 summary"><p>Destroy all user created viewport object data</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DestroyAllViewports()</code></pre>
+  </div>
+  <a id="Yak2D_Graphics_Stages_DestroyStage_" data-uid="Yak2D.Graphics.Stages.DestroyStage*"></a>
+  <h4 id="Yak2D_Graphics_Stages_DestroyStage_System_UInt64_" data-uid="Yak2D.Graphics.Stages.DestroyStage(System.UInt64)">DestroyStage(ulong)</h4>
+  <div class="markdown level1 summary"><p>Destroy a render stage</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DestroyStage(ulong renderStage)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint64">ulong</a></td>
+        <td><span class="parametername">renderStage</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_Stages_DestroyStage_" data-uid="Yak2D.Graphics.Stages.DestroyStage*"></a>
+  <h4 id="Yak2D_Graphics_Stages_DestroyStage_Yak2D_IRenderStage_" data-uid="Yak2D.Graphics.Stages.DestroyStage(Yak2D.IRenderStage)">DestroyStage(IRenderStage)</h4>
+  <div class="markdown level1 summary"><p>Destroy a render stage</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DestroyStage(IRenderStage renderStage)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.IRenderStage.html">IRenderStage</a></td>
+        <td><span class="parametername">renderStage</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_Stages_DestroyViewport_" data-uid="Yak2D.Graphics.Stages.DestroyViewport*"></a>
+  <h4 id="Yak2D_Graphics_Stages_DestroyViewport_System_UInt64_" data-uid="Yak2D.Graphics.Stages.DestroyViewport(System.UInt64)">DestroyViewport(ulong)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DestroyViewport(ulong viewport)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint64">ulong</a></td>
+        <td><span class="parametername">viewport</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_Stages_DestroyViewport_" data-uid="Yak2D.Graphics.Stages.DestroyViewport*"></a>
+  <h4 id="Yak2D_Graphics_Stages_DestroyViewport_Yak2D_IViewport_" data-uid="Yak2D.Graphics.Stages.DestroyViewport(Yak2D.IViewport)">DestroyViewport(IViewport)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DestroyViewport(IViewport viewport)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.IViewport.html">IViewport</a></td>
+        <td><span class="parametername">viewport</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_Stages_SetBloomConfig_" data-uid="Yak2D.Graphics.Stages.SetBloomConfig*"></a>
+  <h4 id="Yak2D_Graphics_Stages_SetBloomConfig_System_UInt64_Yak2D_BloomEffectConfiguration_System_Single_" data-uid="Yak2D.Graphics.Stages.SetBloomConfig(System.UInt64,Yak2D.BloomEffectConfiguration,System.Single)">SetBloomConfig(ulong, BloomEffectConfiguration, float)</h4>
+  <div class="markdown level1 summary"><p>Update Render Stage Configuration</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetBloomConfig(ulong effect, BloomEffectConfiguration config, float transitionSeconds)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint64">ulong</a></td>
+        <td><span class="parametername">effect</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.BloomEffectConfiguration.html">BloomEffectConfiguration</a></td>
+        <td><span class="parametername">config</span></td>
+        <td><p>The target stage configuration</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="parametername">transitionSeconds</span></td>
+        <td><p>Time in seconds over which to interpolate the current configuration to the target configuration</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_Stages_SetBloomConfig_" data-uid="Yak2D.Graphics.Stages.SetBloomConfig*"></a>
+  <h4 id="Yak2D_Graphics_Stages_SetBloomConfig_Yak2D_IBloomStage_Yak2D_BloomEffectConfiguration_System_Single_" data-uid="Yak2D.Graphics.Stages.SetBloomConfig(Yak2D.IBloomStage,Yak2D.BloomEffectConfiguration,System.Single)">SetBloomConfig(IBloomStage, BloomEffectConfiguration, float)</h4>
+  <div class="markdown level1 summary"><p>Update Render Stage Configuration</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetBloomConfig(IBloomStage effect, BloomEffectConfiguration config, float transitionSeconds)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.IBloomStage.html">IBloomStage</a></td>
+        <td><span class="parametername">effect</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.BloomEffectConfiguration.html">BloomEffectConfiguration</a></td>
+        <td><span class="parametername">config</span></td>
+        <td><p>The target stage configuration</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="parametername">transitionSeconds</span></td>
+        <td><p>Time in seconds over which to interpolate the current configuration to the target configuration</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_Stages_SetBlur1DConfig_" data-uid="Yak2D.Graphics.Stages.SetBlur1DConfig*"></a>
+  <h4 id="Yak2D_Graphics_Stages_SetBlur1DConfig_System_UInt64_Yak2D_Blur1DEffectConfiguration_System_Single_" data-uid="Yak2D.Graphics.Stages.SetBlur1DConfig(System.UInt64,Yak2D.Blur1DEffectConfiguration,System.Single)">SetBlur1DConfig(ulong, Blur1DEffectConfiguration, float)</h4>
+  <div class="markdown level1 summary"><p>Update Render Stage Configuration</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetBlur1DConfig(ulong effect, Blur1DEffectConfiguration config, float transitionSeconds)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint64">ulong</a></td>
+        <td><span class="parametername">effect</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.Blur1DEffectConfiguration.html">Blur1DEffectConfiguration</a></td>
+        <td><span class="parametername">config</span></td>
+        <td><p>The target stage configuration</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="parametername">transitionSeconds</span></td>
+        <td><p>Time in seconds over which to interpolate the current configuration to the target configuration</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_Stages_SetBlur1DConfig_" data-uid="Yak2D.Graphics.Stages.SetBlur1DConfig*"></a>
+  <h4 id="Yak2D_Graphics_Stages_SetBlur1DConfig_Yak2D_IBlur1DStage_Yak2D_Blur1DEffectConfiguration_System_Single_" data-uid="Yak2D.Graphics.Stages.SetBlur1DConfig(Yak2D.IBlur1DStage,Yak2D.Blur1DEffectConfiguration,System.Single)">SetBlur1DConfig(IBlur1DStage, Blur1DEffectConfiguration, float)</h4>
+  <div class="markdown level1 summary"><p>Update Render Stage Configuration</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetBlur1DConfig(IBlur1DStage effect, Blur1DEffectConfiguration config, float transitionSeconds)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.IBlur1DStage.html">IBlur1DStage</a></td>
+        <td><span class="parametername">effect</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.Blur1DEffectConfiguration.html">Blur1DEffectConfiguration</a></td>
+        <td><span class="parametername">config</span></td>
+        <td><p>The target stage configuration</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="parametername">transitionSeconds</span></td>
+        <td><p>Time in seconds over which to interpolate the current configuration to the target configuration</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_Stages_SetBlurConfig_" data-uid="Yak2D.Graphics.Stages.SetBlurConfig*"></a>
+  <h4 id="Yak2D_Graphics_Stages_SetBlurConfig_System_UInt64_Yak2D_BlurEffectConfiguration_System_Single_" data-uid="Yak2D.Graphics.Stages.SetBlurConfig(System.UInt64,Yak2D.BlurEffectConfiguration,System.Single)">SetBlurConfig(ulong, BlurEffectConfiguration, float)</h4>
+  <div class="markdown level1 summary"><p>Update Render Stage Configuration</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetBlurConfig(ulong effect, BlurEffectConfiguration config, float transitionSeconds)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint64">ulong</a></td>
+        <td><span class="parametername">effect</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.BlurEffectConfiguration.html">BlurEffectConfiguration</a></td>
+        <td><span class="parametername">config</span></td>
+        <td><p>The target stage configuration</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="parametername">transitionSeconds</span></td>
+        <td><p>Time in seconds over which to interpolate the current configuration to the target configuration</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_Stages_SetBlurConfig_" data-uid="Yak2D.Graphics.Stages.SetBlurConfig*"></a>
+  <h4 id="Yak2D_Graphics_Stages_SetBlurConfig_Yak2D_IBlurStage_Yak2D_BlurEffectConfiguration_System_Single_" data-uid="Yak2D.Graphics.Stages.SetBlurConfig(Yak2D.IBlurStage,Yak2D.BlurEffectConfiguration,System.Single)">SetBlurConfig(IBlurStage, BlurEffectConfiguration, float)</h4>
+  <div class="markdown level1 summary"><p>Update Render Stage Configuration</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetBlurConfig(IBlurStage effect, BlurEffectConfiguration config, float transitionSeconds)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.IBlurStage.html">IBlurStage</a></td>
+        <td><span class="parametername">effect</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.BlurEffectConfiguration.html">BlurEffectConfiguration</a></td>
+        <td><span class="parametername">config</span></td>
+        <td><p>The target stage configuration</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="parametername">transitionSeconds</span></td>
+        <td><p>Time in seconds over which to interpolate the current configuration to the target configuration</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_Stages_SetColourEffectsConfig_" data-uid="Yak2D.Graphics.Stages.SetColourEffectsConfig*"></a>
+  <h4 id="Yak2D_Graphics_Stages_SetColourEffectsConfig_System_UInt64_Yak2D_ColourEffectConfiguration_System_Single_" data-uid="Yak2D.Graphics.Stages.SetColourEffectsConfig(System.UInt64,Yak2D.ColourEffectConfiguration,System.Single)">SetColourEffectsConfig(ulong, ColourEffectConfiguration, float)</h4>
+  <div class="markdown level1 summary"><p>Update Render Stage Configuration</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetColourEffectsConfig(ulong effect, ColourEffectConfiguration config, float transitionSeconds)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint64">ulong</a></td>
+        <td><span class="parametername">effect</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.ColourEffectConfiguration.html">ColourEffectConfiguration</a></td>
+        <td><span class="parametername">config</span></td>
+        <td><p>The target stage configuration</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="parametername">transitionSeconds</span></td>
+        <td><p>Time in seconds over which to interpolate the current configuration to the target configuration</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_Stages_SetColourEffectsConfig_" data-uid="Yak2D.Graphics.Stages.SetColourEffectsConfig*"></a>
+  <h4 id="Yak2D_Graphics_Stages_SetColourEffectsConfig_Yak2D_IColourEffectsStage_Yak2D_ColourEffectConfiguration_System_Single_" data-uid="Yak2D.Graphics.Stages.SetColourEffectsConfig(Yak2D.IColourEffectsStage,Yak2D.ColourEffectConfiguration,System.Single)">SetColourEffectsConfig(IColourEffectsStage, ColourEffectConfiguration, float)</h4>
+  <div class="markdown level1 summary"><p>Update Render Stage Configuration</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetColourEffectsConfig(IColourEffectsStage effect, ColourEffectConfiguration config, float transitionSeconds)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.IColourEffectsStage.html">IColourEffectsStage</a></td>
+        <td><span class="parametername">effect</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.ColourEffectConfiguration.html">ColourEffectConfiguration</a></td>
+        <td><span class="parametername">config</span></td>
+        <td><p>The target stage configuration</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="parametername">transitionSeconds</span></td>
+        <td><p>Time in seconds over which to interpolate the current configuration to the target configuration</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_Stages_SetCustomShaderUniformValues_" data-uid="Yak2D.Graphics.Stages.SetCustomShaderUniformValues*"></a>
+  <h4 id="Yak2D_Graphics_Stages_SetCustomShaderUniformValues__1_System_UInt64_System_String___0_" data-uid="Yak2D.Graphics.Stages.SetCustomShaderUniformValues``1(System.UInt64,System.String,``0)">SetCustomShaderUniformValues&lt;T&gt;(ulong, string, T)</h4>
+  <div class="markdown level1 summary"><p>Update user defined custom shader uniforms - Single value</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetCustomShaderUniformValues&lt;T&gt;(ulong stage, string uniformName, T data) where T : unmanaged</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint64">ulong</a></td>
+        <td><span class="parametername">stage</span></td>
+        <td><p>The stage id</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">uniformName</span></td>
+        <td><p>The string name reference of the uniform</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">data</span></td>
+        <td><p>The struct containing the uniform data</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_Stages_SetCustomShaderUniformValues_" data-uid="Yak2D.Graphics.Stages.SetCustomShaderUniformValues*"></a>
+  <h4 id="Yak2D_Graphics_Stages_SetCustomShaderUniformValues__1_System_UInt64_System_String___0___" data-uid="Yak2D.Graphics.Stages.SetCustomShaderUniformValues``1(System.UInt64,System.String,``0[])">SetCustomShaderUniformValues&lt;T&gt;(ulong, string, T[])</h4>
+  <div class="markdown level1 summary"><p>Update user defined custom shader uniforms - Array of values</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetCustomShaderUniformValues&lt;T&gt;(ulong stage, string uniformName, T[] dataArray) where T : unmanaged</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint64">ulong</a></td>
+        <td><span class="parametername">stage</span></td>
+        <td><p>The stage id</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">uniformName</span></td>
+        <td><p>The string name reference of the uniform</p>
+</td>
+      </tr>
+      <tr>
+        <td>T[]</td>
+        <td><span class="parametername">dataArray</span></td>
+        <td><p>The array of structs containing the uniform data</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_Stages_SetCustomShaderUniformValues_" data-uid="Yak2D.Graphics.Stages.SetCustomShaderUniformValues*"></a>
+  <h4 id="Yak2D_Graphics_Stages_SetCustomShaderUniformValues__1_Yak2D_ICustomShaderStage_System_String___0_" data-uid="Yak2D.Graphics.Stages.SetCustomShaderUniformValues``1(Yak2D.ICustomShaderStage,System.String,``0)">SetCustomShaderUniformValues&lt;T&gt;(ICustomShaderStage, string, T)</h4>
+  <div class="markdown level1 summary"><p>Update user defined custom shader uniforms - Single value</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetCustomShaderUniformValues&lt;T&gt;(ICustomShaderStage stage, string uniformName, T data) where T : unmanaged</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.ICustomShaderStage.html">ICustomShaderStage</a></td>
+        <td><span class="parametername">stage</span></td>
+        <td><p>The stage reference</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">uniformName</span></td>
+        <td><p>The string name reference of the uniform</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">data</span></td>
+        <td><p>The struct containing the uniform data</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_Stages_SetCustomShaderUniformValues_" data-uid="Yak2D.Graphics.Stages.SetCustomShaderUniformValues*"></a>
+  <h4 id="Yak2D_Graphics_Stages_SetCustomShaderUniformValues__1_Yak2D_ICustomShaderStage_System_String___0___" data-uid="Yak2D.Graphics.Stages.SetCustomShaderUniformValues``1(Yak2D.ICustomShaderStage,System.String,``0[])">SetCustomShaderUniformValues&lt;T&gt;(ICustomShaderStage, string, T[])</h4>
+  <div class="markdown level1 summary"><p>Update user defined custom shader uniforms - Array of values</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetCustomShaderUniformValues&lt;T&gt;(ICustomShaderStage stage, string uniformName, T[] dataArray) where T : unmanaged</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.ICustomShaderStage.html">ICustomShaderStage</a></td>
+        <td><span class="parametername">stage</span></td>
+        <td><p>The stage reference</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">uniformName</span></td>
+        <td><p>The string name reference of the uniform</p>
+</td>
+      </tr>
+      <tr>
+        <td>T[]</td>
+        <td><span class="parametername">dataArray</span></td>
+        <td><p>The array of structs containing the uniform data</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_Stages_SetDistortionConfig_" data-uid="Yak2D.Graphics.Stages.SetDistortionConfig*"></a>
+  <h4 id="Yak2D_Graphics_Stages_SetDistortionConfig_System_UInt64_Yak2D_DistortionEffectConfiguration_System_Single_" data-uid="Yak2D.Graphics.Stages.SetDistortionConfig(System.UInt64,Yak2D.DistortionEffectConfiguration,System.Single)">SetDistortionConfig(ulong, DistortionEffectConfiguration, float)</h4>
+  <div class="markdown level1 summary"><p>Update Render Stage Configuration</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetDistortionConfig(ulong effect, DistortionEffectConfiguration config, float transitionSeconds)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint64">ulong</a></td>
+        <td><span class="parametername">effect</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.DistortionEffectConfiguration.html">DistortionEffectConfiguration</a></td>
+        <td><span class="parametername">config</span></td>
+        <td><p>The target stage configuration</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="parametername">transitionSeconds</span></td>
+        <td><p>Time in seconds over which to interpolate the current configuration to the target configuration</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_Stages_SetDistortionConfig_" data-uid="Yak2D.Graphics.Stages.SetDistortionConfig*"></a>
+  <h4 id="Yak2D_Graphics_Stages_SetDistortionConfig_Yak2D_IDistortionStage_Yak2D_DistortionEffectConfiguration_System_Single_" data-uid="Yak2D.Graphics.Stages.SetDistortionConfig(Yak2D.IDistortionStage,Yak2D.DistortionEffectConfiguration,System.Single)">SetDistortionConfig(IDistortionStage, DistortionEffectConfiguration, float)</h4>
+  <div class="markdown level1 summary"><p>Update Render Stage Configuration</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetDistortionConfig(IDistortionStage effect, DistortionEffectConfiguration config, float transitionSeconds)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.IDistortionStage.html">IDistortionStage</a></td>
+        <td><span class="parametername">effect</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.DistortionEffectConfiguration.html">DistortionEffectConfiguration</a></td>
+        <td><span class="parametername">config</span></td>
+        <td><p>The target stage configuration</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="parametername">transitionSeconds</span></td>
+        <td><p>Time in seconds over which to interpolate the current configuration to the target configuration</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_Stages_SetMeshRenderLightingProperties_" data-uid="Yak2D.Graphics.Stages.SetMeshRenderLightingProperties*"></a>
+  <h4 id="Yak2D_Graphics_Stages_SetMeshRenderLightingProperties_System_UInt64_Yak2D_MeshRenderLightingPropertiesConfiguration_System_Single_" data-uid="Yak2D.Graphics.Stages.SetMeshRenderLightingProperties(System.UInt64,Yak2D.MeshRenderLightingPropertiesConfiguration,System.Single)">SetMeshRenderLightingProperties(ulong, MeshRenderLightingPropertiesConfiguration, float)</h4>
+  <div class="markdown level1 summary"><p>Update Mesh Render Overall Light Properties - Number of lights, specular colour, shininess</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetMeshRenderLightingProperties(ulong effect, MeshRenderLightingPropertiesConfiguration config, float transitionSeconds)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint64">ulong</a></td>
+        <td><span class="parametername">effect</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.MeshRenderLightingPropertiesConfiguration.html">MeshRenderLightingPropertiesConfiguration</a></td>
+        <td><span class="parametername">config</span></td>
+        <td><p>The target stage configuration</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="parametername">transitionSeconds</span></td>
+        <td><p>Time in seconds over which to interpolate the current configuration to the target configuration</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_Stages_SetMeshRenderLightingProperties_" data-uid="Yak2D.Graphics.Stages.SetMeshRenderLightingProperties*"></a>
+  <h4 id="Yak2D_Graphics_Stages_SetMeshRenderLightingProperties_Yak2D_IMeshRenderStage_Yak2D_MeshRenderLightingPropertiesConfiguration_System_Single_" data-uid="Yak2D.Graphics.Stages.SetMeshRenderLightingProperties(Yak2D.IMeshRenderStage,Yak2D.MeshRenderLightingPropertiesConfiguration,System.Single)">SetMeshRenderLightingProperties(IMeshRenderStage, MeshRenderLightingPropertiesConfiguration, float)</h4>
+  <div class="markdown level1 summary"><p>Update Mesh Render Overall Light Properties - Number of lights, specular colour, shininess</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetMeshRenderLightingProperties(IMeshRenderStage effect, MeshRenderLightingPropertiesConfiguration config, float transitionSeconds)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.IMeshRenderStage.html">IMeshRenderStage</a></td>
+        <td><span class="parametername">effect</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.MeshRenderLightingPropertiesConfiguration.html">MeshRenderLightingPropertiesConfiguration</a></td>
+        <td><span class="parametername">config</span></td>
+        <td><p>The target stage configuration</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="parametername">transitionSeconds</span></td>
+        <td><p>Time in seconds over which to interpolate the current configuration to the target configuration</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_Stages_SetMeshRenderLights_" data-uid="Yak2D.Graphics.Stages.SetMeshRenderLights*"></a>
+  <h4 id="Yak2D_Graphics_Stages_SetMeshRenderLights_System_UInt64_Yak2D_MeshRenderLightConfiguration___System_Single_" data-uid="Yak2D.Graphics.Stages.SetMeshRenderLights(System.UInt64,Yak2D.MeshRenderLightConfiguration[],System.Single)">SetMeshRenderLights(ulong, MeshRenderLightConfiguration[], float)</h4>
+  <div class="markdown level1 summary"><p>Update Mesh Render Per Light Properties</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetMeshRenderLights(ulong effect, MeshRenderLightConfiguration[] lightConfigurations, float transitionSeconds)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint64">ulong</a></td>
+        <td><span class="parametername">effect</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.MeshRenderLightConfiguration.html">MeshRenderLightConfiguration</a>[]</td>
+        <td><span class="parametername">lightConfigurations</span></td>
+        <td><p>Array of target light configuration</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="parametername">transitionSeconds</span></td>
+        <td><p>Time in seconds over which to interpolate the current configuration to the target configuration</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_Stages_SetMeshRenderLights_" data-uid="Yak2D.Graphics.Stages.SetMeshRenderLights*"></a>
+  <h4 id="Yak2D_Graphics_Stages_SetMeshRenderLights_Yak2D_IMeshRenderStage_Yak2D_MeshRenderLightConfiguration___System_Single_" data-uid="Yak2D.Graphics.Stages.SetMeshRenderLights(Yak2D.IMeshRenderStage,Yak2D.MeshRenderLightConfiguration[],System.Single)">SetMeshRenderLights(IMeshRenderStage, MeshRenderLightConfiguration[], float)</h4>
+  <div class="markdown level1 summary"><p>Update Mesh Render Per Light Properties</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetMeshRenderLights(IMeshRenderStage effect, MeshRenderLightConfiguration[] lightConfigurations, float transitionSeconds)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.IMeshRenderStage.html">IMeshRenderStage</a></td>
+        <td><span class="parametername">effect</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.MeshRenderLightConfiguration.html">MeshRenderLightConfiguration</a>[]</td>
+        <td><span class="parametername">lightConfigurations</span></td>
+        <td><p>Array of target light configuration</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="parametername">transitionSeconds</span></td>
+        <td><p>Time in seconds over which to interpolate the current configuration to the target configuration</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_Stages_SetMeshRenderMesh_" data-uid="Yak2D.Graphics.Stages.SetMeshRenderMesh*"></a>
+  <h4 id="Yak2D_Graphics_Stages_SetMeshRenderMesh_System_UInt64_Yak2D_Vertex3D___" data-uid="Yak2D.Graphics.Stages.SetMeshRenderMesh(System.UInt64,Yak2D.Vertex3D[])">SetMeshRenderMesh(ulong, Vertex3D[])</h4>
+  <div class="markdown level1 summary"><p>Update Mesh Render - The Mesh</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetMeshRenderMesh(ulong effect, Vertex3D[] mesh)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint64">ulong</a></td>
+        <td><span class="parametername">effect</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.Vertex3D.html">Vertex3D</a>[]</td>
+        <td><span class="parametername">mesh</span></td>
+        <td><p>Array of target light configuration</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_Stages_SetMeshRenderMesh_" data-uid="Yak2D.Graphics.Stages.SetMeshRenderMesh*"></a>
+  <h4 id="Yak2D_Graphics_Stages_SetMeshRenderMesh_Yak2D_IMeshRenderStage_Yak2D_Vertex3D___" data-uid="Yak2D.Graphics.Stages.SetMeshRenderMesh(Yak2D.IMeshRenderStage,Yak2D.Vertex3D[])">SetMeshRenderMesh(IMeshRenderStage, Vertex3D[])</h4>
+  <div class="markdown level1 summary"><p>Update Mesh Render - The Mesh</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetMeshRenderMesh(IMeshRenderStage effect, Vertex3D[] mesh)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.IMeshRenderStage.html">IMeshRenderStage</a></td>
+        <td><span class="parametername">effect</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.Vertex3D.html">Vertex3D</a>[]</td>
+        <td><span class="parametername">mesh</span></td>
+        <td><p>Array of target light configuration</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_Stages_SetMixStageProperties_" data-uid="Yak2D.Graphics.Stages.SetMixStageProperties*"></a>
+  <h4 id="Yak2D_Graphics_Stages_SetMixStageProperties_System_UInt64_System_Numerics_Vector4_System_Single_System_Boolean_" data-uid="Yak2D.Graphics.Stages.SetMixStageProperties(System.UInt64,System.Numerics.Vector4,System.Single,System.Boolean)">SetMixStageProperties(ulong, Vector4, float, bool)</h4>
+  <div class="markdown level1 summary"><p>Update Render Stage Configuration</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetMixStageProperties(ulong stage, Vector4 amounts, float transitionSeconds, bool normalise)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint64">ulong</a></td>
+        <td><span class="parametername">stage</span></td>
+        <td><p>The stage id</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.vector4">Vector4</a></td>
+        <td><span class="parametername">amounts</span></td>
+        <td><p>The target 4-component scalar mix amounts</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="parametername">transitionSeconds</span></td>
+        <td><p>Time in seconds over which to interpolate the current configuration to the target configuration</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">normalise</span></td>
+        <td><p>Clamp mix values to 1.0</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_Stages_SetMixStageProperties_" data-uid="Yak2D.Graphics.Stages.SetMixStageProperties*"></a>
+  <h4 id="Yak2D_Graphics_Stages_SetMixStageProperties_Yak2D_IMixStage_System_Numerics_Vector4_System_Single_System_Boolean_" data-uid="Yak2D.Graphics.Stages.SetMixStageProperties(Yak2D.IMixStage,System.Numerics.Vector4,System.Single,System.Boolean)">SetMixStageProperties(IMixStage, Vector4, float, bool)</h4>
+  <div class="markdown level1 summary"><p>Update Render Stage Configuration</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetMixStageProperties(IMixStage stage, Vector4 amounts, float transitionSeconds, bool normalise)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.IMixStage.html">IMixStage</a></td>
+        <td><span class="parametername">stage</span></td>
+        <td><p>The stage reference</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.vector4">Vector4</a></td>
+        <td><span class="parametername">amounts</span></td>
+        <td><p>The target 4-component scalar mix amounts</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="parametername">transitionSeconds</span></td>
+        <td><p>Time in seconds over which to interpolate the current configuration to the target configuration</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">normalise</span></td>
+        <td><p>Clamp mix values to 1.0</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_Stages_SetStyleEffectsCrtConfig_" data-uid="Yak2D.Graphics.Stages.SetStyleEffectsCrtConfig*"></a>
+  <h4 id="Yak2D_Graphics_Stages_SetStyleEffectsCrtConfig_System_UInt64_Yak2D_CrtEffectConfiguration_System_Single_" data-uid="Yak2D.Graphics.Stages.SetStyleEffectsCrtConfig(System.UInt64,Yak2D.CrtEffectConfiguration,System.Single)">SetStyleEffectsCrtConfig(ulong, CrtEffectConfiguration, float)</h4>
+  <div class="markdown level1 summary"><p>Update StyleEffects Configuration - Cathode Ray Tube</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetStyleEffectsCrtConfig(ulong effect, CrtEffectConfiguration config, float transitionSeconds)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint64">ulong</a></td>
+        <td><span class="parametername">effect</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.CrtEffectConfiguration.html">CrtEffectConfiguration</a></td>
+        <td><span class="parametername">config</span></td>
+        <td><p>The target stage configuration</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="parametername">transitionSeconds</span></td>
+        <td><p>Time in seconds over which to interpolate the current configuration to the target configuration</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_Stages_SetStyleEffectsCrtConfig_" data-uid="Yak2D.Graphics.Stages.SetStyleEffectsCrtConfig*"></a>
+  <h4 id="Yak2D_Graphics_Stages_SetStyleEffectsCrtConfig_Yak2D_IStyleEffectsStage_Yak2D_CrtEffectConfiguration_System_Single_" data-uid="Yak2D.Graphics.Stages.SetStyleEffectsCrtConfig(Yak2D.IStyleEffectsStage,Yak2D.CrtEffectConfiguration,System.Single)">SetStyleEffectsCrtConfig(IStyleEffectsStage, CrtEffectConfiguration, float)</h4>
+  <div class="markdown level1 summary"><p>Update StyleEffects Configuration - Cathode Ray Tube</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetStyleEffectsCrtConfig(IStyleEffectsStage effect, CrtEffectConfiguration config, float transitionSeconds)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.IStyleEffectsStage.html">IStyleEffectsStage</a></td>
+        <td><span class="parametername">effect</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.CrtEffectConfiguration.html">CrtEffectConfiguration</a></td>
+        <td><span class="parametername">config</span></td>
+        <td><p>The target stage configuration</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="parametername">transitionSeconds</span></td>
+        <td><p>Time in seconds over which to interpolate the current configuration to the target configuration</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_Stages_SetStyleEffectsEdgeDetectionConfig_" data-uid="Yak2D.Graphics.Stages.SetStyleEffectsEdgeDetectionConfig*"></a>
+  <h4 id="Yak2D_Graphics_Stages_SetStyleEffectsEdgeDetectionConfig_System_UInt64_Yak2D_EdgeDetectionConfiguration_System_Single_" data-uid="Yak2D.Graphics.Stages.SetStyleEffectsEdgeDetectionConfig(System.UInt64,Yak2D.EdgeDetectionConfiguration,System.Single)">SetStyleEffectsEdgeDetectionConfig(ulong, EdgeDetectionConfiguration, float)</h4>
+  <div class="markdown level1 summary"><p>Update StyleEffects Configuration - Edge Detection</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetStyleEffectsEdgeDetectionConfig(ulong effect, EdgeDetectionConfiguration config, float transitionSeconds)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint64">ulong</a></td>
+        <td><span class="parametername">effect</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.EdgeDetectionConfiguration.html">EdgeDetectionConfiguration</a></td>
+        <td><span class="parametername">config</span></td>
+        <td><p>The target stage configuration</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="parametername">transitionSeconds</span></td>
+        <td><p>Time in seconds over which to interpolate the current configuration to the target configuration</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_Stages_SetStyleEffectsEdgeDetectionConfig_" data-uid="Yak2D.Graphics.Stages.SetStyleEffectsEdgeDetectionConfig*"></a>
+  <h4 id="Yak2D_Graphics_Stages_SetStyleEffectsEdgeDetectionConfig_Yak2D_IStyleEffectsStage_Yak2D_EdgeDetectionConfiguration_System_Single_" data-uid="Yak2D.Graphics.Stages.SetStyleEffectsEdgeDetectionConfig(Yak2D.IStyleEffectsStage,Yak2D.EdgeDetectionConfiguration,System.Single)">SetStyleEffectsEdgeDetectionConfig(IStyleEffectsStage, EdgeDetectionConfiguration, float)</h4>
+  <div class="markdown level1 summary"><p>Update StyleEffects Configuration - Edge Detection</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetStyleEffectsEdgeDetectionConfig(IStyleEffectsStage effect, EdgeDetectionConfiguration config, float transitionSeconds)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.IStyleEffectsStage.html">IStyleEffectsStage</a></td>
+        <td><span class="parametername">effect</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.EdgeDetectionConfiguration.html">EdgeDetectionConfiguration</a></td>
+        <td><span class="parametername">config</span></td>
+        <td><p>The target stage configuration</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="parametername">transitionSeconds</span></td>
+        <td><p>Time in seconds over which to interpolate the current configuration to the target configuration</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_Stages_SetStyleEffectsGroupConfig_" data-uid="Yak2D.Graphics.Stages.SetStyleEffectsGroupConfig*"></a>
+  <h4 id="Yak2D_Graphics_Stages_SetStyleEffectsGroupConfig_System_UInt64_Yak2D_StyleEffectGroupConfiguration_System_Single_" data-uid="Yak2D.Graphics.Stages.SetStyleEffectsGroupConfig(System.UInt64,Yak2D.StyleEffectGroupConfiguration,System.Single)">SetStyleEffectsGroupConfig(ulong, StyleEffectGroupConfiguration, float)</h4>
+  <div class="markdown level1 summary"><p>Update StyleEffects Configuration - All effects at once</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetStyleEffectsGroupConfig(ulong effect, StyleEffectGroupConfiguration config, float transitionSeconds)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint64">ulong</a></td>
+        <td><span class="parametername">effect</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.StyleEffectGroupConfiguration.html">StyleEffectGroupConfiguration</a></td>
+        <td><span class="parametername">config</span></td>
+        <td><p>The target stage configuration</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="parametername">transitionSeconds</span></td>
+        <td><p>Time in seconds over which to interpolate the current configuration to the target configuration</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_Stages_SetStyleEffectsGroupConfig_" data-uid="Yak2D.Graphics.Stages.SetStyleEffectsGroupConfig*"></a>
+  <h4 id="Yak2D_Graphics_Stages_SetStyleEffectsGroupConfig_Yak2D_IStyleEffectsStage_Yak2D_StyleEffectGroupConfiguration_System_Single_" data-uid="Yak2D.Graphics.Stages.SetStyleEffectsGroupConfig(Yak2D.IStyleEffectsStage,Yak2D.StyleEffectGroupConfiguration,System.Single)">SetStyleEffectsGroupConfig(IStyleEffectsStage, StyleEffectGroupConfiguration, float)</h4>
+  <div class="markdown level1 summary"><p>Update StyleEffects Configuration - All effects at once</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetStyleEffectsGroupConfig(IStyleEffectsStage effect, StyleEffectGroupConfiguration config, float transitionSeconds)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.IStyleEffectsStage.html">IStyleEffectsStage</a></td>
+        <td><span class="parametername">effect</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.StyleEffectGroupConfiguration.html">StyleEffectGroupConfiguration</a></td>
+        <td><span class="parametername">config</span></td>
+        <td><p>The target stage configuration</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="parametername">transitionSeconds</span></td>
+        <td><p>Time in seconds over which to interpolate the current configuration to the target configuration</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_Stages_SetStyleEffectsOldMovieConfig_" data-uid="Yak2D.Graphics.Stages.SetStyleEffectsOldMovieConfig*"></a>
+  <h4 id="Yak2D_Graphics_Stages_SetStyleEffectsOldMovieConfig_System_UInt64_Yak2D_OldMovieConfiguration_System_Single_" data-uid="Yak2D.Graphics.Stages.SetStyleEffectsOldMovieConfig(System.UInt64,Yak2D.OldMovieConfiguration,System.Single)">SetStyleEffectsOldMovieConfig(ulong, OldMovieConfiguration, float)</h4>
+  <div class="markdown level1 summary"><p>Update StyleEffects Configuration - Old Movie Reel</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetStyleEffectsOldMovieConfig(ulong effect, OldMovieConfiguration config, float transitionSeconds)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint64">ulong</a></td>
+        <td><span class="parametername">effect</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.OldMovieConfiguration.html">OldMovieConfiguration</a></td>
+        <td><span class="parametername">config</span></td>
+        <td><p>The target stage configuration</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="parametername">transitionSeconds</span></td>
+        <td><p>Time in seconds over which to interpolate the current configuration to the target configuration</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_Stages_SetStyleEffectsOldMovieConfig_" data-uid="Yak2D.Graphics.Stages.SetStyleEffectsOldMovieConfig*"></a>
+  <h4 id="Yak2D_Graphics_Stages_SetStyleEffectsOldMovieConfig_Yak2D_IStyleEffectsStage_Yak2D_OldMovieConfiguration_System_Single_" data-uid="Yak2D.Graphics.Stages.SetStyleEffectsOldMovieConfig(Yak2D.IStyleEffectsStage,Yak2D.OldMovieConfiguration,System.Single)">SetStyleEffectsOldMovieConfig(IStyleEffectsStage, OldMovieConfiguration, float)</h4>
+  <div class="markdown level1 summary"><p>Update StyleEffects Configuration - Old Movie Reel</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetStyleEffectsOldMovieConfig(IStyleEffectsStage effect, OldMovieConfiguration config, float transitionSeconds)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.IStyleEffectsStage.html">IStyleEffectsStage</a></td>
+        <td><span class="parametername">effect</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.OldMovieConfiguration.html">OldMovieConfiguration</a></td>
+        <td><span class="parametername">config</span></td>
+        <td><p>The target stage configuration</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="parametername">transitionSeconds</span></td>
+        <td><p>Time in seconds over which to interpolate the current configuration to the target configuration</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_Stages_SetStyleEffectsPixellateConfig_" data-uid="Yak2D.Graphics.Stages.SetStyleEffectsPixellateConfig*"></a>
+  <h4 id="Yak2D_Graphics_Stages_SetStyleEffectsPixellateConfig_System_UInt64_Yak2D_PixellateConfiguration_System_Single_" data-uid="Yak2D.Graphics.Stages.SetStyleEffectsPixellateConfig(System.UInt64,Yak2D.PixellateConfiguration,System.Single)">SetStyleEffectsPixellateConfig(ulong, PixellateConfiguration, float)</h4>
+  <div class="markdown level1 summary"><p>Update StyleEffects Configuration - Pixellate</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetStyleEffectsPixellateConfig(ulong effect, PixellateConfiguration config, float transitionSeconds)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint64">ulong</a></td>
+        <td><span class="parametername">effect</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.PixellateConfiguration.html">PixellateConfiguration</a></td>
+        <td><span class="parametername">config</span></td>
+        <td><p>The target stage configuration</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="parametername">transitionSeconds</span></td>
+        <td><p>Time in seconds over which to interpolate the current configuration to the target configuration</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_Stages_SetStyleEffectsPixellateConfig_" data-uid="Yak2D.Graphics.Stages.SetStyleEffectsPixellateConfig*"></a>
+  <h4 id="Yak2D_Graphics_Stages_SetStyleEffectsPixellateConfig_Yak2D_IStyleEffectsStage_Yak2D_PixellateConfiguration_System_Single_" data-uid="Yak2D.Graphics.Stages.SetStyleEffectsPixellateConfig(Yak2D.IStyleEffectsStage,Yak2D.PixellateConfiguration,System.Single)">SetStyleEffectsPixellateConfig(IStyleEffectsStage, PixellateConfiguration, float)</h4>
+  <div class="markdown level1 summary"><p>Update StyleEffects Configuration - Pixellate</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetStyleEffectsPixellateConfig(IStyleEffectsStage effect, PixellateConfiguration config, float transitionSeconds)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.IStyleEffectsStage.html">IStyleEffectsStage</a></td>
+        <td><span class="parametername">effect</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.PixellateConfiguration.html">PixellateConfiguration</a></td>
+        <td><span class="parametername">config</span></td>
+        <td><p>The target stage configuration</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="parametername">transitionSeconds</span></td>
+        <td><p>Time in seconds over which to interpolate the current configuration to the target configuration</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_Stages_SetStyleEffectsStaticConfig_" data-uid="Yak2D.Graphics.Stages.SetStyleEffectsStaticConfig*"></a>
+  <h4 id="Yak2D_Graphics_Stages_SetStyleEffectsStaticConfig_System_UInt64_Yak2D_StaticConfiguration_System_Single_" data-uid="Yak2D.Graphics.Stages.SetStyleEffectsStaticConfig(System.UInt64,Yak2D.StaticConfiguration,System.Single)">SetStyleEffectsStaticConfig(ulong, StaticConfiguration, float)</h4>
+  <div class="markdown level1 summary"><p>Update StyleEffects Configuration - Static</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetStyleEffectsStaticConfig(ulong effect, StaticConfiguration config, float transitionSeconds)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint64">ulong</a></td>
+        <td><span class="parametername">effect</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.StaticConfiguration.html">StaticConfiguration</a></td>
+        <td><span class="parametername">config</span></td>
+        <td><p>The target stage configuration</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="parametername">transitionSeconds</span></td>
+        <td><p>Time in seconds over which to interpolate the current configuration to the target configuration</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_Stages_SetStyleEffectsStaticConfig_" data-uid="Yak2D.Graphics.Stages.SetStyleEffectsStaticConfig*"></a>
+  <h4 id="Yak2D_Graphics_Stages_SetStyleEffectsStaticConfig_Yak2D_IStyleEffectsStage_Yak2D_StaticConfiguration_System_Single_" data-uid="Yak2D.Graphics.Stages.SetStyleEffectsStaticConfig(Yak2D.IStyleEffectsStage,Yak2D.StaticConfiguration,System.Single)">SetStyleEffectsStaticConfig(IStyleEffectsStage, StaticConfiguration, float)</h4>
+  <div class="markdown level1 summary"><p>Update StyleEffects Configuration - Static</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetStyleEffectsStaticConfig(IStyleEffectsStage effect, StaticConfiguration config, float transitionSeconds)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.IStyleEffectsStage.html">IStyleEffectsStage</a></td>
+        <td><span class="parametername">effect</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.StaticConfiguration.html">StaticConfiguration</a></td>
+        <td><span class="parametername">config</span></td>
+        <td><p>The target stage configuration</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="parametername">transitionSeconds</span></td>
+        <td><p>Time in seconds over which to interpolate the current configuration to the target configuration</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_Stages_SetSurfaceCopyDataStageCallback_" data-uid="Yak2D.Graphics.Stages.SetSurfaceCopyDataStageCallback*"></a>
+  <h4 id="Yak2D_Graphics_Stages_SetSurfaceCopyDataStageCallback_System_UInt64_System_Action_Yak2D_TextureData__" data-uid="Yak2D.Graphics.Stages.SetSurfaceCopyDataStageCallback(System.UInt64,System.Action{Yak2D.TextureData})">SetSurfaceCopyDataStageCallback(ulong, Action&lt;TextureData&gt;)</h4>
+  <div class="markdown level1 summary"><p>Update user defined callback for GPU to CPU surface pixel data transfer on rendering completion</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetSurfaceCopyDataStageCallback(ulong stage, Action&lt;TextureData&gt; callback)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint64">ulong</a></td>
+        <td><span class="parametername">stage</span></td>
+        <td><p>The stage id</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="Yak2D.TextureData.html">TextureData</a>&gt;</td>
+        <td><span class="parametername">callback</span></td>
+        <td><p>User delegate called once rendering complete to provide user the results data. Rendering may happen asynchronously hence the use of callbacks to avoid multithreaded issues</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_Stages_SetSurfaceCopyDataStageCallback_" data-uid="Yak2D.Graphics.Stages.SetSurfaceCopyDataStageCallback*"></a>
+  <h4 id="Yak2D_Graphics_Stages_SetSurfaceCopyDataStageCallback_Yak2D_ISurfaceCopyStage_System_Action_Yak2D_TextureData__" data-uid="Yak2D.Graphics.Stages.SetSurfaceCopyDataStageCallback(Yak2D.ISurfaceCopyStage,System.Action{Yak2D.TextureData})">SetSurfaceCopyDataStageCallback(ISurfaceCopyStage, Action&lt;TextureData&gt;)</h4>
+  <div class="markdown level1 summary"><p>Update user defined callback for GPU to CPU surface pixel data transfer on rendering completion</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetSurfaceCopyDataStageCallback(ISurfaceCopyStage stage, Action&lt;TextureData&gt; callback)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.ISurfaceCopyStage.html">ISurfaceCopyStage</a></td>
+        <td><span class="parametername">stage</span></td>
+        <td><p>The stage reference</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="Yak2D.TextureData.html">TextureData</a>&gt;</td>
+        <td><span class="parametername">callback</span></td>
+        <td><p>User delegate called once rendering complete to provide user the results data. Rendering may happen asynchronously hence the use of callbacks to avoid multithreaded issues</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="Yak2D.IStages.html">IStages</a>
+  </div>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      yak2D - Alex Paterson
+      
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

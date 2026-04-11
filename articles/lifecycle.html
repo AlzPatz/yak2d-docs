@@ -73,7 +73,7 @@
 <p>Methods which the user defines or calls are coloured in light pink.</p>
 <p><img src="../images/lifecycle.png" alt=""></p>
 <p>The program loop is broadly split into two parts ('steps'): <strong>Update</strong> and <strong>Render</strong></p>
-<p>The frequency of Update steps is defined by the <a href="xref:Yak2D.UpdatePeriod">UpdatePeriod</a> Type declared in the <a href="xref:Yak2D.StartupConfig">StartupConfig</a> returned by the <a href="xref:Yak2D.IApplication.Configure">Configure</a> method of the user's <a href="xref:Yak2D.IApplication">IApplication</a> implementation.</p>
+<p>The frequency of Update steps is defined by the <a class="xref" href="../api/Yak2D.UpdatePeriod.html">UpdatePeriod</a> Type declared in the <a class="xref" href="../api/Yak2D.StartupConfig.html">StartupConfig</a> returned by the <a class="xref" href="../api/Yak2D.IApplication.html#Yak2D_IApplication_Configure">Configure</a> method of the user's <a class="xref" href="../api/Yak2D.IApplication.html">IApplication</a> implementation.</p>
 <p>The render steps are executed whenever all required Updates have been processed and as quickly as the GPU is able too (subject to vertical sync waits if required). Once Render commands are passed to the GPU, the main execution thread is not blocked, allowing additional Update steps to be processed, if required, until the GPU becomes free again.</p>
 
 </article>

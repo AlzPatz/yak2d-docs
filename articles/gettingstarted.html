@@ -163,7 +163,7 @@ sudo apt-get install -y dotnet-sdk-5.0
 <pre><code class="lang-bash">dotnet add package yak2D
 </code></pre>
 <ol start="8">
-<li>You will notice <code>Program.cs</code> is already present. We need to add a code file that will contain our implementation of the <a href="xref:Yak2D.IApplication">IApplication</a> interface. You can do this in a number of ways, including using the following command:</li>
+<li>You will notice <code>Program.cs</code> is already present. We need to add a code file that will contain our implementation of the <a class="xref" href="../api/Yak2D.IApplication.html">IApplication</a> interface. You can do this in a number of ways, including using the following command:</li>
 </ol>
 <pre><code class="lang-bash">touch MyApplication.cs
 </code></pre>
@@ -184,28 +184,28 @@ sudo apt-get install -y dotnet-sdk-5.0
 <p><em>Under Construction a.k.a waiting for some time with a Mac. Installing .NET on MacOS is relatively easy, please google for a guide. <code>dotnet</code> command line functions then work the same as on a linux distro</em></p>
 <h2 id="writing-code">Writing Code</h2>
 <p><em>At this stage it is assumed you have a .NET core console project created with two source files: <code>Program.cs</code> and <code>MyApplication.cs</code></em>.</p>
-<p>To launch a <strong>yak2D</strong> application you must create a class that implements the <a href="xref:Yak2D.IApplication">IApplication</a> interface, instantiate an instance of the class, and pass that to the <a href="xref:Yak2D.Launcher.Run">Launcher.Run()</a> method:</p>
+<p>To launch a <strong>yak2D</strong> application you must create a class that implements the <a class="xref" href="../api/Yak2D.IApplication.html">IApplication</a> interface, instantiate an instance of the class, and pass that to the <a href="xref:Yak2D.Launcher.Run">Launcher.Run()</a> method:</p>
 <ol>
 <li><p>In <code>MyApplication.cs</code> add the following using statement at the top of the file:</p>
 <p><code>using Yak2D;</code></p>
 </li>
-<li><p>In <code>MyApplication.cs</code> let the class inherrit from the <a href="xref:Yak2D.IApplication">IApplication</a> interface by changing the class definition line from:</p>
+<li><p>In <code>MyApplication.cs</code> let the class inherrit from the <a class="xref" href="../api/Yak2D.IApplication.html">IApplication</a> interface by changing the class definition line from:</p>
 <p><code>class MyApplication</code></p>
 <p>to</p>
 <p><code>class MyApplication : IApplication</code></p>
 </li>
-<li><p>We now need to provide implementations of the methods described by the <a href="xref:Yak2D.IApplication">IApplication</a> interface.</p>
+<li><p>We now need to provide implementations of the methods described by the <a class="xref" href="../api/Yak2D.IApplication.html">IApplication</a> interface.</p>
 <ul>
 <li>We will tackle each method one at a time. If you are using a variant of Visual Studio or another IDE with the ability, you can ask the editor to automatically fill in blank methods for the interface to save some typing. In Visual Studio (windows) you can navigate to the drop down button under the red squiggly line and click on <code>Implement Interface</code>:
 <img src="../images/win_05.png" alt=""></li>
 <li><em>Please note</em>: The auto-fill functions are not guaranteed to order the methods in the most logical way. Whilst the order in which the methods appear in the source code file <strong>do not matter</strong>, it is recommended to re-order your methods in the way described below to better reflect program execution flow and code understanding.</li>
 <li>All methods should be written between the opening curly bracket ({) following <code>class MyApplication : IApplication</code> and the next closing curly bracket immediately following.</li>
-<li><strong>Implement <a href="xref:Yak2D.IApplication.OnStartup">OnStartup()</a></strong>. This method runs before any other in the application and allows you to add any code you wish to run ahead of the application's other methods. In this instance, we do not have any code we wish to run, so we provide an empty method implementation:</li>
+<li><strong>Implement <a class="xref" href="../api/Yak2D.IApplication.html#Yak2D_IApplication_OnStartup">OnStartup()</a></strong>. This method runs before any other in the application and allows you to add any code you wish to run ahead of the application's other methods. In this instance, we do not have any code we wish to run, so we provide an empty method implementation:</li>
 </ul>
 <pre><code class="lang-csharp">public void OnStartup() { }
 </code></pre>
 <ul>
-<li><strong>Implement <a href="xref:Yak2D.IApplication.Configure">Configure()</a></strong>. This method returns an instance of the <a href="xref:Yak2D.StartupConfig">StartupConfig</a> class, which holds application configuration information. It is called once at application start up. We can use a helper method within <a href="xref:Yak2D.StartupConfig">StartupConfig</a> to simplify the creation and get some default values. Below we pass a window resolution of 960 by 540 pixels, a string for the window title of &quot;My Application!&quot; and finally we pass <code>false</code> for whether to open the application in fullscreen mode (i.e requesting a windowed application).</li>
+<li><strong>Implement <a class="xref" href="../api/Yak2D.IApplication.html#Yak2D_IApplication_Configure">Configure()</a></strong>. This method returns an instance of the <a class="xref" href="../api/Yak2D.StartupConfig.html">StartupConfig</a> class, which holds application configuration information. It is called once at application start up. We can use a helper method within <a class="xref" href="../api/Yak2D.StartupConfig.html">StartupConfig</a> to simplify the creation and get some default values. Below we pass a window resolution of 960 by 540 pixels, a string for the window title of &quot;My Application!&quot; and finally we pass <code>false</code> for whether to open the application in fullscreen mode (i.e requesting a windowed application).</li>
 </ul>
 <pre><code class="lang-csharp">public StartupConfig Configure()
 {
@@ -239,12 +239,12 @@ sudo apt-get install -y dotnet-sdk-5.0
 <pre><code class="lang-csharp">public void PreDrawing(IServices yak, float secondsSinceLastDraw, float secondsSinceLastUpdate) { }
 </code></pre>
 <ul>
-<li><strong>Implement <a href="xref:Yak2D.IApplication.Drawing">Drawing()</a></strong>. The second user method of three called during a <a class="xref" href="glossary.html#renderstep">RenderStep</a>. As the name implies, this method is used for <a class="xref" href="glossary.html#drawing">drawing</a>, namely creating and submitting <a href="xref:Yak2D.DrawRequest">DrawRequests</a> to <a href="xref:Yak2D.IDrawStage">DrawStages</a>. The blank application does not contain a <a href="xref:Yak2D.IDrawStage">DrawStage</a> and so an empty method is created.</li>
+<li><strong>Implement <a href="xref:Yak2D.IApplication.Drawing">Drawing()</a></strong>. The second user method of three called during a <a class="xref" href="glossary.html#renderstep">RenderStep</a>. As the name implies, this method is used for <a class="xref" href="glossary.html#drawing">drawing</a>, namely creating and submitting <a class="xref" href="../api/Yak2D.DrawRequest.html">DrawRequests</a> to <a class="xref" href="../api/Yak2D.IDrawStage.html">DrawStages</a>. The blank application does not contain a <a class="xref" href="../api/Yak2D.IDrawStage.html">DrawStage</a> and so an empty method is created.</li>
 </ul>
 <pre><code class="lang-csharp">public void Drawing(IDrawing draw, IFps fps, IInput input, ICoordinateTransforms transforms, float secondsSinceLastDraw, float secondsSinceLastUpdate) { }
 </code></pre>
 <ul>
-<li><strong>Implement <a href="xref:Yak2D.IApplication.Rendering">Rendering()</a></strong>. The third user method of three called during a <a class="xref" href="glossary.html#renderstep">RenderStep</a>. In this method the user must build the <a class="xref" href="glossary.html#renderqueue">RenderQueue</a> by calling methods provided by the <a href="xref:Yak2D.IRenderQueue">IRenderQueue</a> instance. In this example, the only action to queue is to clear the window's <a href="xref:Yak2D.IRenderTarget">RenderTarget</a> colour data with a colour as well as clearing its depth buffer. <em>Note: A user may choose for the framework to automatically clear the window's <a href="xref:Yak2D.IRenderTarget">RenderTarget</a>'s colour and depth ahead of actions placed into the <a class="xref" href="glossary.html#renderqueue">RenderQueue</a>. In fact, the default<a href="xref:Yak2D.StartupConfig">StartupConfig</a> provided by the helper method used in <a href="xref:Yak2D.IApplication.Configure">Configure()</a> above is set to auto-clear. The auto-clear colour is always transparent black RGBA(0, 0, 0, 0). Therefore in the code below, the depth clear is not technically required</em></li>
+<li><strong>Implement <a href="xref:Yak2D.IApplication.Rendering">Rendering()</a></strong>. The third user method of three called during a <a class="xref" href="glossary.html#renderstep">RenderStep</a>. In this method the user must build the <a class="xref" href="glossary.html#renderqueue">RenderQueue</a> by calling methods provided by the <a class="xref" href="../api/Yak2D.IRenderQueue.html">IRenderQueue</a> instance. In this example, the only action to queue is to clear the window's <a class="xref" href="../api/Yak2D.IRenderTarget.html">RenderTarget</a> colour data with a colour as well as clearing its depth buffer. <em>Note: A user may choose for the framework to automatically clear the window's <a class="xref" href="../api/Yak2D.IRenderTarget.html">RenderTarget</a>'s colour and depth ahead of actions placed into the <a class="xref" href="glossary.html#renderqueue">RenderQueue</a>. In fact, the default<a class="xref" href="../api/Yak2D.StartupConfig.html">StartupConfig</a> provided by the helper method used in <a class="xref" href="../api/Yak2D.IApplication.html#Yak2D_IApplication_Configure">Configure()</a> above is set to auto-clear. The auto-clear colour is always transparent black RGBA(0, 0, 0, 0). Therefore in the code below, the depth clear is not technically required</em></li>
 </ul>
 <pre><code class="lang-csharp">public void Rendering(IRenderQueue q, IRenderTarget windowRenderTarget)
 {
@@ -253,7 +253,7 @@ sudo apt-get install -y dotnet-sdk-5.0
 }
 </code></pre>
 <ul>
-<li><strong>Implement <a href="xref:Yak2D.IApplication.Shutdown">Shutdown()</a></strong>. Called upon application exit. A place for the user application to release any acquired resources not related to the <strong>yak2D</strong> framework and that will not be disposed of automatically. In this blank application, an empty method suffices.</li>
+<li><strong>Implement <a class="xref" href="../api/Yak2D.IApplication.html#Yak2D_IApplication_Shutdown">Shutdown()</a></strong>. Called upon application exit. A place for the user application to release any acquired resources not related to the <strong>yak2D</strong> framework and that will not be disposed of automatically. In this blank application, an empty method suffices.</li>
 </ul>
 <pre><code class="lang-csharp">public void Shutdown() { }
 </code></pre>

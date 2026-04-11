@@ -84,7 +84,7 @@
 <h3 id="choose-a-texture">Choose a Texture</h3>
 <p>Choose the Texture you wish to use in the application. This tutorial uses the following <a href="https://github.com/AlzPatz/yak2d/blob/master/logo.png">.png</a> which you can download. Note: <strong>yak2D</strong> supports .PNG, .BNP, .JPG, .GIF and .TGA.</p>
 <h3 id="define-and-create-the-applications-root-texture-directory">Define and create the Application's root Texture directory</h3>
-<p>The <a href="xref:Yak2D.StartupConfig">StartupConfig</a> object returned from <a href="xref:Yak2D.IApplication.Configure">Configure()</a> in the application's implementation of <a href="xref:Yak2D.IApplication">IApplication</a> defines a root Texture directory. This directory is relative to the directory within which the application's <code>csproj</code> project file resides, and whose relative address is where the framework will look for files when Texture load calls are made. In <code>MyApplication.cs</code> from the <a class="xref" href="gettingstarted.html">first tutorial</a> a helper method is used to create a <a href="xref:Yak2D.StartupConfig">StartupConfig</a> object. The helper method defines the directory as <code>Textures</code>. We must create this directory, add our texture file to it and then define how textures in this folder are included in the project.</p>
+<p>The <a class="xref" href="../api/Yak2D.StartupConfig.html">StartupConfig</a> object returned from <a class="xref" href="../api/Yak2D.IApplication.html#Yak2D_IApplication_Configure">Configure()</a> in the application's implementation of <a class="xref" href="../api/Yak2D.IApplication.html">IApplication</a> defines a root Texture directory. This directory is relative to the directory within which the application's <code>csproj</code> project file resides, and whose relative address is where the framework will look for files when Texture load calls are made. In <code>MyApplication.cs</code> from the <a class="xref" href="gettingstarted.html">first tutorial</a> a helper method is used to create a <a class="xref" href="../api/Yak2D.StartupConfig.html">StartupConfig</a> object. The helper method defines the directory as <code>Textures</code>. We must create this directory, add our texture file to it and then define how textures in this folder are included in the project.</p>
 <h4 id="windows">Windows</h4>
 <p>Using FileExplorer, navigate to the application's project directory, right click and select <code>New -&gt; Folder</code>. Name that folder <code>Textures</code></p>
 <h4 id="linux-and-macos">Linux and MacOS</h4>
@@ -108,10 +108,10 @@
 &lt;/ItemGroup&gt;
 </code></pre>
 <h3 id="load-the-texture">Load the Texture</h3>
-<p>Create a variable in <code>MyApplication.cs</code> to store a reference to an <a href="xref:Yak2D.ITexture">ITexture</a>:</p>
+<p>Create a variable in <code>MyApplication.cs</code> to store a reference to an <a class="xref" href="../api/Yak2D.ITexture.html">ITexture</a>:</p>
 <pre><code class="lang-csharp">private ITexture _texture;
 </code></pre>
-<p>We load the <a href="xref:Yak2D.ITexture">ITexture</a> in <code>MyApplication.cs</code>'s <a href="xref:Yak2D.IApplication.CreateResources">CreateResources()</a> method. As a reminder, all <a class="xref" href="glossary.html#Resource">resource</a> creation should be completed within, or be triggered by, this method.</p>
+<p>We load the <a class="xref" href="../api/Yak2D.ITexture.html">ITexture</a> in <code>MyApplication.cs</code>'s <a href="xref:Yak2D.IApplication.CreateResources">CreateResources()</a> method. As a reminder, all <a class="xref" href="glossary.html#Resource">resource</a> creation should be completed within, or be triggered by, this method.</p>
 <p>Assuming you have named your Texture <code>logo.png</code>, modify <a href="xref:Yak2D.IApplication.CreateResources">CreateResources()</a> to load the texture using the following:</p>
 <pre><code class="lang-csharp">public bool CreateResources(IServices yak)
 {

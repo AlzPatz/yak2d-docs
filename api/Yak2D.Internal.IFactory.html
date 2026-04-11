@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Interface IFactory </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Interface IFactory ">
+    
+    
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/logo.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Yak2D.Internal.IFactory">
+
+
+
+  <h1 id="Yak2D_Internal_IFactory" data-uid="Yak2D.Internal.IFactory" class="text-break">Interface IFactory</h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Yak2D.html">Yak2D</a>.<a class="xref" href="Yak2D.Internal.html">Internal</a></h6>
+  <h6><strong>Assembly</strong>: Yak2D.Internal.dll</h6>
+  <h5 id="Yak2D_Internal_IFactory_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public interface IFactory</code></pre>
+  </div>
+  <h3 id="properties">Properties
+</h3>
+  <a id="Yak2D_Internal_IFactory_RawFactory_" data-uid="Yak2D.Internal.IFactory.RawFactory*"></a>
+  <h4 id="Yak2D_Internal_IFactory_RawFactory" data-uid="Yak2D.Internal.IFactory.RawFactory">RawFactory</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">DisposeCollectorResourceFactory RawFactory { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DisposeCollectorResourceFactory</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+</h3>
+  <a id="Yak2D_Internal_IFactory_CreateBuffer_" data-uid="Yak2D.Internal.IFactory.CreateBuffer*"></a>
+  <h4 id="Yak2D_Internal_IFactory_CreateBuffer_NeoVeldrid_BufferDescription_" data-uid="Yak2D.Internal.IFactory.CreateBuffer(NeoVeldrid.BufferDescription)">CreateBuffer(BufferDescription)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">DeviceBuffer CreateBuffer(BufferDescription bufferDescription)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">BufferDescription</span></td>
+        <td><span class="parametername">bufferDescription</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DeviceBuffer</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Internal_IFactory_CreateCommandList_" data-uid="Yak2D.Internal.IFactory.CreateCommandList*"></a>
+  <h4 id="Yak2D_Internal_IFactory_CreateCommandList" data-uid="Yak2D.Internal.IFactory.CreateCommandList">CreateCommandList()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">CommandList CreateCommandList()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">CommandList</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Internal_IFactory_CreateFramebuffer_" data-uid="Yak2D.Internal.IFactory.CreateFramebuffer*"></a>
+  <h4 id="Yak2D_Internal_IFactory_CreateFramebuffer_NeoVeldrid_FramebufferDescription_" data-uid="Yak2D.Internal.IFactory.CreateFramebuffer(NeoVeldrid.FramebufferDescription)">CreateFramebuffer(FramebufferDescription)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Framebuffer CreateFramebuffer(FramebufferDescription framebufferDescription)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">FramebufferDescription</span></td>
+        <td><span class="parametername">framebufferDescription</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Framebuffer</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Internal_IFactory_CreateGraphicsPipeline_" data-uid="Yak2D.Internal.IFactory.CreateGraphicsPipeline*"></a>
+  <h4 id="Yak2D_Internal_IFactory_CreateGraphicsPipeline_NeoVeldrid_GraphicsPipelineDescription_" data-uid="Yak2D.Internal.IFactory.CreateGraphicsPipeline(NeoVeldrid.GraphicsPipelineDescription)">CreateGraphicsPipeline(GraphicsPipelineDescription)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Pipeline CreateGraphicsPipeline(GraphicsPipelineDescription pipelineDescription)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GraphicsPipelineDescription</span></td>
+        <td><span class="parametername">pipelineDescription</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Pipeline</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Internal_IFactory_CreateResourceLayout_" data-uid="Yak2D.Internal.IFactory.CreateResourceLayout*"></a>
+  <h4 id="Yak2D_Internal_IFactory_CreateResourceLayout_NeoVeldrid_ResourceLayoutDescription_" data-uid="Yak2D.Internal.IFactory.CreateResourceLayout(NeoVeldrid.ResourceLayoutDescription)">CreateResourceLayout(ResourceLayoutDescription)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ResourceLayout CreateResourceLayout(ResourceLayoutDescription resourceLayoutDescription)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ResourceLayoutDescription</span></td>
+        <td><span class="parametername">resourceLayoutDescription</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ResourceLayout</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Internal_IFactory_CreateResourceSet_" data-uid="Yak2D.Internal.IFactory.CreateResourceSet*"></a>
+  <h4 id="Yak2D_Internal_IFactory_CreateResourceSet_NeoVeldrid_ResourceSetDescription_" data-uid="Yak2D.Internal.IFactory.CreateResourceSet(NeoVeldrid.ResourceSetDescription)">CreateResourceSet(ResourceSetDescription)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ResourceSet CreateResourceSet(ResourceSetDescription resourceSetDescription)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ResourceSetDescription</span></td>
+        <td><span class="parametername">resourceSetDescription</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ResourceSet</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Internal_IFactory_CreateSampler_" data-uid="Yak2D.Internal.IFactory.CreateSampler*"></a>
+  <h4 id="Yak2D_Internal_IFactory_CreateSampler_NeoVeldrid_SamplerDescription_" data-uid="Yak2D.Internal.IFactory.CreateSampler(NeoVeldrid.SamplerDescription)">CreateSampler(SamplerDescription)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Sampler CreateSampler(SamplerDescription samplerDescription)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">SamplerDescription</span></td>
+        <td><span class="parametername">samplerDescription</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Sampler</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Internal_IFactory_CreateShader_" data-uid="Yak2D.Internal.IFactory.CreateShader*"></a>
+  <h4 id="Yak2D_Internal_IFactory_CreateShader_NeoVeldrid_ShaderDescription_" data-uid="Yak2D.Internal.IFactory.CreateShader(NeoVeldrid.ShaderDescription)">CreateShader(ShaderDescription)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Shader CreateShader(ShaderDescription shaderDescription)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ShaderDescription</span></td>
+        <td><span class="parametername">shaderDescription</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Shader</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Internal_IFactory_CreateShaderCompileFromSpirv_" data-uid="Yak2D.Internal.IFactory.CreateShaderCompileFromSpirv*"></a>
+  <h4 id="Yak2D_Internal_IFactory_CreateShaderCompileFromSpirv_NeoVeldrid_ShaderDescription_" data-uid="Yak2D.Internal.IFactory.CreateShaderCompileFromSpirv(NeoVeldrid.ShaderDescription)">CreateShaderCompileFromSpirv(ShaderDescription)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Shader CreateShaderCompileFromSpirv(ShaderDescription shaderDescription)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ShaderDescription</span></td>
+        <td><span class="parametername">shaderDescription</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Shader</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Internal_IFactory_CreateTexture_" data-uid="Yak2D.Internal.IFactory.CreateTexture*"></a>
+  <h4 id="Yak2D_Internal_IFactory_CreateTexture_NeoVeldrid_TextureDescription_" data-uid="Yak2D.Internal.IFactory.CreateTexture(NeoVeldrid.TextureDescription)">CreateTexture(TextureDescription)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Texture CreateTexture(TextureDescription textureDescription)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TextureDescription</span></td>
+        <td><span class="parametername">textureDescription</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Texture</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Internal_IFactory_CreateTextureView_" data-uid="Yak2D.Internal.IFactory.CreateTextureView*"></a>
+  <h4 id="Yak2D_Internal_IFactory_CreateTextureView_NeoVeldrid_Texture_" data-uid="Yak2D.Internal.IFactory.CreateTextureView(NeoVeldrid.Texture)">CreateTextureView(Texture)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">TextureView CreateTextureView(Texture texture)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Texture</span></td>
+        <td><span class="parametername">texture</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TextureView</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Internal_IFactory_DisposeAll_" data-uid="Yak2D.Internal.IFactory.DisposeAll*"></a>
+  <h4 id="Yak2D_Internal_IFactory_DisposeAll" data-uid="Yak2D.Internal.IFactory.DisposeAll">DisposeAll()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void DisposeAll()</code></pre>
+  </div>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      yak2D - Alex Paterson
+      
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

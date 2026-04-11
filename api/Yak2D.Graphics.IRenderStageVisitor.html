@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Interface IRenderStageVisitor </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Interface IRenderStageVisitor ">
+    
+    
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/logo.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Yak2D.Graphics.IRenderStageVisitor">
+
+
+
+  <h1 id="Yak2D_Graphics_IRenderStageVisitor" data-uid="Yak2D.Graphics.IRenderStageVisitor" class="text-break">Interface IRenderStageVisitor</h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Yak2D.html">Yak2D</a>.<a class="xref" href="Yak2D.Graphics.html">Graphics</a></h6>
+  <h6><strong>Assembly</strong>: Yak2D.Graphics.dll</h6>
+  <h5 id="Yak2D_Graphics_IRenderStageVisitor_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public interface IRenderStageVisitor</code></pre>
+  </div>
+  <h3 id="properties">Properties
+</h3>
+  <a id="Yak2D_Graphics_IRenderStageVisitor_CachedBloomEffectStageModel_" data-uid="Yak2D.Graphics.IRenderStageVisitor.CachedBloomEffectStageModel*"></a>
+  <h4 id="Yak2D_Graphics_IRenderStageVisitor_CachedBloomEffectStageModel" data-uid="Yak2D.Graphics.IRenderStageVisitor.CachedBloomEffectStageModel">CachedBloomEffectStageModel</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IBloomStageModel CachedBloomEffectStageModel { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.Graphics.IBloomStageModel.html">IBloomStageModel</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_IRenderStageVisitor_CachedBlur1dEffectModel_" data-uid="Yak2D.Graphics.IRenderStageVisitor.CachedBlur1dEffectModel*"></a>
+  <h4 id="Yak2D_Graphics_IRenderStageVisitor_CachedBlur1dEffectModel" data-uid="Yak2D.Graphics.IRenderStageVisitor.CachedBlur1dEffectModel">CachedBlur1dEffectModel</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IBlur1DStageModel CachedBlur1dEffectModel { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.Graphics.IBlur1DStageModel.html">IBlur1DStageModel</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_IRenderStageVisitor_CachedBlur2dEffectModel_" data-uid="Yak2D.Graphics.IRenderStageVisitor.CachedBlur2dEffectModel*"></a>
+  <h4 id="Yak2D_Graphics_IRenderStageVisitor_CachedBlur2dEffectModel" data-uid="Yak2D.Graphics.IRenderStageVisitor.CachedBlur2dEffectModel">CachedBlur2dEffectModel</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IBlurStageModel CachedBlur2dEffectModel { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.Graphics.IBlurStageModel.html">IBlurStageModel</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_IRenderStageVisitor_CachedColourEffectModel_" data-uid="Yak2D.Graphics.IRenderStageVisitor.CachedColourEffectModel*"></a>
+  <h4 id="Yak2D_Graphics_IRenderStageVisitor_CachedColourEffectModel" data-uid="Yak2D.Graphics.IRenderStageVisitor.CachedColourEffectModel">CachedColourEffectModel</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IColourEffectsStageModel CachedColourEffectModel { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.Graphics.IColourEffectsStageModel.html">IColourEffectsStageModel</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_IRenderStageVisitor_CachedCustomShaderModel_" data-uid="Yak2D.Graphics.IRenderStageVisitor.CachedCustomShaderModel*"></a>
+  <h4 id="Yak2D_Graphics_IRenderStageVisitor_CachedCustomShaderModel" data-uid="Yak2D.Graphics.IRenderStageVisitor.CachedCustomShaderModel">CachedCustomShaderModel</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ICustomShaderStageModel CachedCustomShaderModel { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.Graphics.ICustomShaderStageModel.html">ICustomShaderStageModel</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_IRenderStageVisitor_CachedCustomVeldridModel_" data-uid="Yak2D.Graphics.IRenderStageVisitor.CachedCustomVeldridModel*"></a>
+  <h4 id="Yak2D_Graphics_IRenderStageVisitor_CachedCustomVeldridModel" data-uid="Yak2D.Graphics.IRenderStageVisitor.CachedCustomVeldridModel">CachedCustomVeldridModel</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ICustomVeldridStageModel CachedCustomVeldridModel { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.Graphics.ICustomVeldridStageModel.html">ICustomVeldridStageModel</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_IRenderStageVisitor_CachedDistortionEffectStageModel_" data-uid="Yak2D.Graphics.IRenderStageVisitor.CachedDistortionEffectStageModel*"></a>
+  <h4 id="Yak2D_Graphics_IRenderStageVisitor_CachedDistortionEffectStageModel" data-uid="Yak2D.Graphics.IRenderStageVisitor.CachedDistortionEffectStageModel">CachedDistortionEffectStageModel</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IDistortionStageModel CachedDistortionEffectStageModel { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.Graphics.IDistortionStageModel.html">IDistortionStageModel</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_IRenderStageVisitor_CachedDrawStageModel_" data-uid="Yak2D.Graphics.IRenderStageVisitor.CachedDrawStageModel*"></a>
+  <h4 id="Yak2D_Graphics_IRenderStageVisitor_CachedDrawStageModel" data-uid="Yak2D.Graphics.IRenderStageVisitor.CachedDrawStageModel">CachedDrawStageModel</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IDrawStageModel CachedDrawStageModel { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.Graphics.IDrawStageModel.html">IDrawStageModel</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_IRenderStageVisitor_CachedMeshRenderStageModel_" data-uid="Yak2D.Graphics.IRenderStageVisitor.CachedMeshRenderStageModel*"></a>
+  <h4 id="Yak2D_Graphics_IRenderStageVisitor_CachedMeshRenderStageModel" data-uid="Yak2D.Graphics.IRenderStageVisitor.CachedMeshRenderStageModel">CachedMeshRenderStageModel</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IMeshRenderStageModel CachedMeshRenderStageModel { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.Graphics.IMeshRenderStageModel.html">IMeshRenderStageModel</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_IRenderStageVisitor_CachedMixStageModel_" data-uid="Yak2D.Graphics.IRenderStageVisitor.CachedMixStageModel*"></a>
+  <h4 id="Yak2D_Graphics_IRenderStageVisitor_CachedMixStageModel" data-uid="Yak2D.Graphics.IRenderStageVisitor.CachedMixStageModel">CachedMixStageModel</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IMixStageModel CachedMixStageModel { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.Graphics.IMixStageModel.html">IMixStageModel</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_IRenderStageVisitor_CachedStyleEffectStageModel_" data-uid="Yak2D.Graphics.IRenderStageVisitor.CachedStyleEffectStageModel*"></a>
+  <h4 id="Yak2D_Graphics_IRenderStageVisitor_CachedStyleEffectStageModel" data-uid="Yak2D.Graphics.IRenderStageVisitor.CachedStyleEffectStageModel">CachedStyleEffectStageModel</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IStyleEffectsStageModel CachedStyleEffectStageModel { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.Graphics.IStyleEffectsStageModel.html">IStyleEffectsStageModel</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_IRenderStageVisitor_CachedSurfaceCopyStageModel_" data-uid="Yak2D.Graphics.IRenderStageVisitor.CachedSurfaceCopyStageModel*"></a>
+  <h4 id="Yak2D_Graphics_IRenderStageVisitor_CachedSurfaceCopyStageModel" data-uid="Yak2D.Graphics.IRenderStageVisitor.CachedSurfaceCopyStageModel">CachedSurfaceCopyStageModel</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ISurfaceCopyStageModel CachedSurfaceCopyStageModel { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.Graphics.ISurfaceCopyStageModel.html">ISurfaceCopyStageModel</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+</h3>
+  <a id="Yak2D_Graphics_IRenderStageVisitor_CacheStageModel_" data-uid="Yak2D.Graphics.IRenderStageVisitor.CacheStageModel*"></a>
+  <h4 id="Yak2D_Graphics_IRenderStageVisitor_CacheStageModel_Yak2D_Graphics_IBloomStageModel_" data-uid="Yak2D.Graphics.IRenderStageVisitor.CacheStageModel(Yak2D.Graphics.IBloomStageModel)">CacheStageModel(IBloomStageModel)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void CacheStageModel(IBloomStageModel model)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.Graphics.IBloomStageModel.html">IBloomStageModel</a></td>
+        <td><span class="parametername">model</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_IRenderStageVisitor_CacheStageModel_" data-uid="Yak2D.Graphics.IRenderStageVisitor.CacheStageModel*"></a>
+  <h4 id="Yak2D_Graphics_IRenderStageVisitor_CacheStageModel_Yak2D_Graphics_IBlur1DStageModel_" data-uid="Yak2D.Graphics.IRenderStageVisitor.CacheStageModel(Yak2D.Graphics.IBlur1DStageModel)">CacheStageModel(IBlur1DStageModel)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void CacheStageModel(IBlur1DStageModel model)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.Graphics.IBlur1DStageModel.html">IBlur1DStageModel</a></td>
+        <td><span class="parametername">model</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_IRenderStageVisitor_CacheStageModel_" data-uid="Yak2D.Graphics.IRenderStageVisitor.CacheStageModel*"></a>
+  <h4 id="Yak2D_Graphics_IRenderStageVisitor_CacheStageModel_Yak2D_Graphics_IBlurStageModel_" data-uid="Yak2D.Graphics.IRenderStageVisitor.CacheStageModel(Yak2D.Graphics.IBlurStageModel)">CacheStageModel(IBlurStageModel)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void CacheStageModel(IBlurStageModel model)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.Graphics.IBlurStageModel.html">IBlurStageModel</a></td>
+        <td><span class="parametername">model</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_IRenderStageVisitor_CacheStageModel_" data-uid="Yak2D.Graphics.IRenderStageVisitor.CacheStageModel*"></a>
+  <h4 id="Yak2D_Graphics_IRenderStageVisitor_CacheStageModel_Yak2D_Graphics_IColourEffectsStageModel_" data-uid="Yak2D.Graphics.IRenderStageVisitor.CacheStageModel(Yak2D.Graphics.IColourEffectsStageModel)">CacheStageModel(IColourEffectsStageModel)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void CacheStageModel(IColourEffectsStageModel model)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.Graphics.IColourEffectsStageModel.html">IColourEffectsStageModel</a></td>
+        <td><span class="parametername">model</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_IRenderStageVisitor_CacheStageModel_" data-uid="Yak2D.Graphics.IRenderStageVisitor.CacheStageModel*"></a>
+  <h4 id="Yak2D_Graphics_IRenderStageVisitor_CacheStageModel_Yak2D_Graphics_ICustomShaderStageModel_" data-uid="Yak2D.Graphics.IRenderStageVisitor.CacheStageModel(Yak2D.Graphics.ICustomShaderStageModel)">CacheStageModel(ICustomShaderStageModel)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void CacheStageModel(ICustomShaderStageModel model)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.Graphics.ICustomShaderStageModel.html">ICustomShaderStageModel</a></td>
+        <td><span class="parametername">model</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_IRenderStageVisitor_CacheStageModel_" data-uid="Yak2D.Graphics.IRenderStageVisitor.CacheStageModel*"></a>
+  <h4 id="Yak2D_Graphics_IRenderStageVisitor_CacheStageModel_Yak2D_Graphics_ICustomVeldridStageModel_" data-uid="Yak2D.Graphics.IRenderStageVisitor.CacheStageModel(Yak2D.Graphics.ICustomVeldridStageModel)">CacheStageModel(ICustomVeldridStageModel)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void CacheStageModel(ICustomVeldridStageModel model)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.Graphics.ICustomVeldridStageModel.html">ICustomVeldridStageModel</a></td>
+        <td><span class="parametername">model</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_IRenderStageVisitor_CacheStageModel_" data-uid="Yak2D.Graphics.IRenderStageVisitor.CacheStageModel*"></a>
+  <h4 id="Yak2D_Graphics_IRenderStageVisitor_CacheStageModel_Yak2D_Graphics_IDistortionStageModel_" data-uid="Yak2D.Graphics.IRenderStageVisitor.CacheStageModel(Yak2D.Graphics.IDistortionStageModel)">CacheStageModel(IDistortionStageModel)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void CacheStageModel(IDistortionStageModel model)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.Graphics.IDistortionStageModel.html">IDistortionStageModel</a></td>
+        <td><span class="parametername">model</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_IRenderStageVisitor_CacheStageModel_" data-uid="Yak2D.Graphics.IRenderStageVisitor.CacheStageModel*"></a>
+  <h4 id="Yak2D_Graphics_IRenderStageVisitor_CacheStageModel_Yak2D_Graphics_IDrawStageModel_" data-uid="Yak2D.Graphics.IRenderStageVisitor.CacheStageModel(Yak2D.Graphics.IDrawStageModel)">CacheStageModel(IDrawStageModel)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void CacheStageModel(IDrawStageModel model)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.Graphics.IDrawStageModel.html">IDrawStageModel</a></td>
+        <td><span class="parametername">model</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_IRenderStageVisitor_CacheStageModel_" data-uid="Yak2D.Graphics.IRenderStageVisitor.CacheStageModel*"></a>
+  <h4 id="Yak2D_Graphics_IRenderStageVisitor_CacheStageModel_Yak2D_Graphics_IMeshRenderStageModel_" data-uid="Yak2D.Graphics.IRenderStageVisitor.CacheStageModel(Yak2D.Graphics.IMeshRenderStageModel)">CacheStageModel(IMeshRenderStageModel)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void CacheStageModel(IMeshRenderStageModel model)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.Graphics.IMeshRenderStageModel.html">IMeshRenderStageModel</a></td>
+        <td><span class="parametername">model</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_IRenderStageVisitor_CacheStageModel_" data-uid="Yak2D.Graphics.IRenderStageVisitor.CacheStageModel*"></a>
+  <h4 id="Yak2D_Graphics_IRenderStageVisitor_CacheStageModel_Yak2D_Graphics_IMixStageModel_" data-uid="Yak2D.Graphics.IRenderStageVisitor.CacheStageModel(Yak2D.Graphics.IMixStageModel)">CacheStageModel(IMixStageModel)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void CacheStageModel(IMixStageModel model)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.Graphics.IMixStageModel.html">IMixStageModel</a></td>
+        <td><span class="parametername">model</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_IRenderStageVisitor_CacheStageModel_" data-uid="Yak2D.Graphics.IRenderStageVisitor.CacheStageModel*"></a>
+  <h4 id="Yak2D_Graphics_IRenderStageVisitor_CacheStageModel_Yak2D_Graphics_IStyleEffectsStageModel_" data-uid="Yak2D.Graphics.IRenderStageVisitor.CacheStageModel(Yak2D.Graphics.IStyleEffectsStageModel)">CacheStageModel(IStyleEffectsStageModel)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void CacheStageModel(IStyleEffectsStageModel model)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.Graphics.IStyleEffectsStageModel.html">IStyleEffectsStageModel</a></td>
+        <td><span class="parametername">model</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_IRenderStageVisitor_CacheStageModel_" data-uid="Yak2D.Graphics.IRenderStageVisitor.CacheStageModel*"></a>
+  <h4 id="Yak2D_Graphics_IRenderStageVisitor_CacheStageModel_Yak2D_Graphics_ISurfaceCopyStageModel_" data-uid="Yak2D.Graphics.IRenderStageVisitor.CacheStageModel(Yak2D.Graphics.ISurfaceCopyStageModel)">CacheStageModel(ISurfaceCopyStageModel)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void CacheStageModel(ISurfaceCopyStageModel model)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.Graphics.ISurfaceCopyStageModel.html">ISurfaceCopyStageModel</a></td>
+        <td><span class="parametername">model</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_IRenderStageVisitor_ClearCachedDrawingModels_" data-uid="Yak2D.Graphics.IRenderStageVisitor.ClearCachedDrawingModels*"></a>
+  <h4 id="Yak2D_Graphics_IRenderStageVisitor_ClearCachedDrawingModels" data-uid="Yak2D.Graphics.IRenderStageVisitor.ClearCachedDrawingModels">ClearCachedDrawingModels()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void ClearCachedDrawingModels()</code></pre>
+  </div>
+  <a id="Yak2D_Graphics_IRenderStageVisitor_DispatchToRenderStage_" data-uid="Yak2D.Graphics.IRenderStageVisitor.DispatchToRenderStage*"></a>
+  <h4 id="Yak2D_Graphics_IRenderStageVisitor_DispatchToRenderStage_Yak2D_Graphics_IBloomStageModel_NeoVeldrid_CommandList_Yak2D_Graphics_RenderCommandQueueItem_" data-uid="Yak2D.Graphics.IRenderStageVisitor.DispatchToRenderStage(Yak2D.Graphics.IBloomStageModel,NeoVeldrid.CommandList,Yak2D.Graphics.RenderCommandQueueItem)">DispatchToRenderStage(IBloomStageModel, CommandList, RenderCommandQueueItem)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void DispatchToRenderStage(IBloomStageModel model, CommandList cl, RenderCommandQueueItem command)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.Graphics.IBloomStageModel.html">IBloomStageModel</a></td>
+        <td><span class="parametername">model</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">CommandList</span></td>
+        <td><span class="parametername">cl</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.Graphics.RenderCommandQueueItem.html">RenderCommandQueueItem</a></td>
+        <td><span class="parametername">command</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_IRenderStageVisitor_DispatchToRenderStage_" data-uid="Yak2D.Graphics.IRenderStageVisitor.DispatchToRenderStage*"></a>
+  <h4 id="Yak2D_Graphics_IRenderStageVisitor_DispatchToRenderStage_Yak2D_Graphics_IBlur1DStageModel_NeoVeldrid_CommandList_Yak2D_Graphics_RenderCommandQueueItem_" data-uid="Yak2D.Graphics.IRenderStageVisitor.DispatchToRenderStage(Yak2D.Graphics.IBlur1DStageModel,NeoVeldrid.CommandList,Yak2D.Graphics.RenderCommandQueueItem)">DispatchToRenderStage(IBlur1DStageModel, CommandList, RenderCommandQueueItem)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void DispatchToRenderStage(IBlur1DStageModel model, CommandList cl, RenderCommandQueueItem command)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.Graphics.IBlur1DStageModel.html">IBlur1DStageModel</a></td>
+        <td><span class="parametername">model</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">CommandList</span></td>
+        <td><span class="parametername">cl</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.Graphics.RenderCommandQueueItem.html">RenderCommandQueueItem</a></td>
+        <td><span class="parametername">command</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_IRenderStageVisitor_DispatchToRenderStage_" data-uid="Yak2D.Graphics.IRenderStageVisitor.DispatchToRenderStage*"></a>
+  <h4 id="Yak2D_Graphics_IRenderStageVisitor_DispatchToRenderStage_Yak2D_Graphics_IBlurStageModel_NeoVeldrid_CommandList_Yak2D_Graphics_RenderCommandQueueItem_" data-uid="Yak2D.Graphics.IRenderStageVisitor.DispatchToRenderStage(Yak2D.Graphics.IBlurStageModel,NeoVeldrid.CommandList,Yak2D.Graphics.RenderCommandQueueItem)">DispatchToRenderStage(IBlurStageModel, CommandList, RenderCommandQueueItem)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void DispatchToRenderStage(IBlurStageModel model, CommandList cl, RenderCommandQueueItem command)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.Graphics.IBlurStageModel.html">IBlurStageModel</a></td>
+        <td><span class="parametername">model</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">CommandList</span></td>
+        <td><span class="parametername">cl</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.Graphics.RenderCommandQueueItem.html">RenderCommandQueueItem</a></td>
+        <td><span class="parametername">command</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_IRenderStageVisitor_DispatchToRenderStage_" data-uid="Yak2D.Graphics.IRenderStageVisitor.DispatchToRenderStage*"></a>
+  <h4 id="Yak2D_Graphics_IRenderStageVisitor_DispatchToRenderStage_Yak2D_Graphics_IColourEffectsStageModel_NeoVeldrid_CommandList_Yak2D_Graphics_RenderCommandQueueItem_" data-uid="Yak2D.Graphics.IRenderStageVisitor.DispatchToRenderStage(Yak2D.Graphics.IColourEffectsStageModel,NeoVeldrid.CommandList,Yak2D.Graphics.RenderCommandQueueItem)">DispatchToRenderStage(IColourEffectsStageModel, CommandList, RenderCommandQueueItem)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void DispatchToRenderStage(IColourEffectsStageModel model, CommandList cl, RenderCommandQueueItem command)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.Graphics.IColourEffectsStageModel.html">IColourEffectsStageModel</a></td>
+        <td><span class="parametername">model</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">CommandList</span></td>
+        <td><span class="parametername">cl</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.Graphics.RenderCommandQueueItem.html">RenderCommandQueueItem</a></td>
+        <td><span class="parametername">command</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_IRenderStageVisitor_DispatchToRenderStage_" data-uid="Yak2D.Graphics.IRenderStageVisitor.DispatchToRenderStage*"></a>
+  <h4 id="Yak2D_Graphics_IRenderStageVisitor_DispatchToRenderStage_Yak2D_Graphics_ICustomShaderStageModel_NeoVeldrid_CommandList_Yak2D_Graphics_RenderCommandQueueItem_" data-uid="Yak2D.Graphics.IRenderStageVisitor.DispatchToRenderStage(Yak2D.Graphics.ICustomShaderStageModel,NeoVeldrid.CommandList,Yak2D.Graphics.RenderCommandQueueItem)">DispatchToRenderStage(ICustomShaderStageModel, CommandList, RenderCommandQueueItem)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void DispatchToRenderStage(ICustomShaderStageModel model, CommandList cl, RenderCommandQueueItem command)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.Graphics.ICustomShaderStageModel.html">ICustomShaderStageModel</a></td>
+        <td><span class="parametername">model</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">CommandList</span></td>
+        <td><span class="parametername">cl</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.Graphics.RenderCommandQueueItem.html">RenderCommandQueueItem</a></td>
+        <td><span class="parametername">command</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_IRenderStageVisitor_DispatchToRenderStage_" data-uid="Yak2D.Graphics.IRenderStageVisitor.DispatchToRenderStage*"></a>
+  <h4 id="Yak2D_Graphics_IRenderStageVisitor_DispatchToRenderStage_Yak2D_Graphics_ICustomVeldridStageModel_NeoVeldrid_CommandList_Yak2D_Graphics_RenderCommandQueueItem_" data-uid="Yak2D.Graphics.IRenderStageVisitor.DispatchToRenderStage(Yak2D.Graphics.ICustomVeldridStageModel,NeoVeldrid.CommandList,Yak2D.Graphics.RenderCommandQueueItem)">DispatchToRenderStage(ICustomVeldridStageModel, CommandList, RenderCommandQueueItem)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void DispatchToRenderStage(ICustomVeldridStageModel model, CommandList cl, RenderCommandQueueItem command)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.Graphics.ICustomVeldridStageModel.html">ICustomVeldridStageModel</a></td>
+        <td><span class="parametername">model</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">CommandList</span></td>
+        <td><span class="parametername">cl</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.Graphics.RenderCommandQueueItem.html">RenderCommandQueueItem</a></td>
+        <td><span class="parametername">command</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_IRenderStageVisitor_DispatchToRenderStage_" data-uid="Yak2D.Graphics.IRenderStageVisitor.DispatchToRenderStage*"></a>
+  <h4 id="Yak2D_Graphics_IRenderStageVisitor_DispatchToRenderStage_Yak2D_Graphics_IDistortionStageModel_NeoVeldrid_CommandList_Yak2D_Graphics_RenderCommandQueueItem_" data-uid="Yak2D.Graphics.IRenderStageVisitor.DispatchToRenderStage(Yak2D.Graphics.IDistortionStageModel,NeoVeldrid.CommandList,Yak2D.Graphics.RenderCommandQueueItem)">DispatchToRenderStage(IDistortionStageModel, CommandList, RenderCommandQueueItem)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void DispatchToRenderStage(IDistortionStageModel model, CommandList cl, RenderCommandQueueItem command)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.Graphics.IDistortionStageModel.html">IDistortionStageModel</a></td>
+        <td><span class="parametername">model</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">CommandList</span></td>
+        <td><span class="parametername">cl</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.Graphics.RenderCommandQueueItem.html">RenderCommandQueueItem</a></td>
+        <td><span class="parametername">command</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_IRenderStageVisitor_DispatchToRenderStage_" data-uid="Yak2D.Graphics.IRenderStageVisitor.DispatchToRenderStage*"></a>
+  <h4 id="Yak2D_Graphics_IRenderStageVisitor_DispatchToRenderStage_Yak2D_Graphics_IDrawStageModel_NeoVeldrid_CommandList_Yak2D_Graphics_RenderCommandQueueItem_" data-uid="Yak2D.Graphics.IRenderStageVisitor.DispatchToRenderStage(Yak2D.Graphics.IDrawStageModel,NeoVeldrid.CommandList,Yak2D.Graphics.RenderCommandQueueItem)">DispatchToRenderStage(IDrawStageModel, CommandList, RenderCommandQueueItem)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void DispatchToRenderStage(IDrawStageModel model, CommandList cl, RenderCommandQueueItem command)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.Graphics.IDrawStageModel.html">IDrawStageModel</a></td>
+        <td><span class="parametername">model</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">CommandList</span></td>
+        <td><span class="parametername">cl</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.Graphics.RenderCommandQueueItem.html">RenderCommandQueueItem</a></td>
+        <td><span class="parametername">command</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_IRenderStageVisitor_DispatchToRenderStage_" data-uid="Yak2D.Graphics.IRenderStageVisitor.DispatchToRenderStage*"></a>
+  <h4 id="Yak2D_Graphics_IRenderStageVisitor_DispatchToRenderStage_Yak2D_Graphics_IMeshRenderStageModel_NeoVeldrid_CommandList_Yak2D_Graphics_RenderCommandQueueItem_" data-uid="Yak2D.Graphics.IRenderStageVisitor.DispatchToRenderStage(Yak2D.Graphics.IMeshRenderStageModel,NeoVeldrid.CommandList,Yak2D.Graphics.RenderCommandQueueItem)">DispatchToRenderStage(IMeshRenderStageModel, CommandList, RenderCommandQueueItem)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void DispatchToRenderStage(IMeshRenderStageModel model, CommandList cl, RenderCommandQueueItem command)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.Graphics.IMeshRenderStageModel.html">IMeshRenderStageModel</a></td>
+        <td><span class="parametername">model</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">CommandList</span></td>
+        <td><span class="parametername">cl</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.Graphics.RenderCommandQueueItem.html">RenderCommandQueueItem</a></td>
+        <td><span class="parametername">command</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_IRenderStageVisitor_DispatchToRenderStage_" data-uid="Yak2D.Graphics.IRenderStageVisitor.DispatchToRenderStage*"></a>
+  <h4 id="Yak2D_Graphics_IRenderStageVisitor_DispatchToRenderStage_Yak2D_Graphics_IMixStageModel_NeoVeldrid_CommandList_Yak2D_Graphics_RenderCommandQueueItem_" data-uid="Yak2D.Graphics.IRenderStageVisitor.DispatchToRenderStage(Yak2D.Graphics.IMixStageModel,NeoVeldrid.CommandList,Yak2D.Graphics.RenderCommandQueueItem)">DispatchToRenderStage(IMixStageModel, CommandList, RenderCommandQueueItem)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void DispatchToRenderStage(IMixStageModel model, CommandList cl, RenderCommandQueueItem command)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.Graphics.IMixStageModel.html">IMixStageModel</a></td>
+        <td><span class="parametername">model</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">CommandList</span></td>
+        <td><span class="parametername">cl</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.Graphics.RenderCommandQueueItem.html">RenderCommandQueueItem</a></td>
+        <td><span class="parametername">command</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_IRenderStageVisitor_DispatchToRenderStage_" data-uid="Yak2D.Graphics.IRenderStageVisitor.DispatchToRenderStage*"></a>
+  <h4 id="Yak2D_Graphics_IRenderStageVisitor_DispatchToRenderStage_Yak2D_Graphics_IStyleEffectsStageModel_NeoVeldrid_CommandList_Yak2D_Graphics_RenderCommandQueueItem_" data-uid="Yak2D.Graphics.IRenderStageVisitor.DispatchToRenderStage(Yak2D.Graphics.IStyleEffectsStageModel,NeoVeldrid.CommandList,Yak2D.Graphics.RenderCommandQueueItem)">DispatchToRenderStage(IStyleEffectsStageModel, CommandList, RenderCommandQueueItem)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void DispatchToRenderStage(IStyleEffectsStageModel model, CommandList cl, RenderCommandQueueItem command)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.Graphics.IStyleEffectsStageModel.html">IStyleEffectsStageModel</a></td>
+        <td><span class="parametername">model</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">CommandList</span></td>
+        <td><span class="parametername">cl</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.Graphics.RenderCommandQueueItem.html">RenderCommandQueueItem</a></td>
+        <td><span class="parametername">command</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_IRenderStageVisitor_DispatchToRenderStage_" data-uid="Yak2D.Graphics.IRenderStageVisitor.DispatchToRenderStage*"></a>
+  <h4 id="Yak2D_Graphics_IRenderStageVisitor_DispatchToRenderStage_Yak2D_Graphics_ISurfaceCopyStageModel_NeoVeldrid_CommandList_Yak2D_Graphics_RenderCommandQueueItem_" data-uid="Yak2D.Graphics.IRenderStageVisitor.DispatchToRenderStage(Yak2D.Graphics.ISurfaceCopyStageModel,NeoVeldrid.CommandList,Yak2D.Graphics.RenderCommandQueueItem)">DispatchToRenderStage(ISurfaceCopyStageModel, CommandList, RenderCommandQueueItem)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void DispatchToRenderStage(ISurfaceCopyStageModel model, CommandList cl, RenderCommandQueueItem command)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.Graphics.ISurfaceCopyStageModel.html">ISurfaceCopyStageModel</a></td>
+        <td><span class="parametername">model</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">CommandList</span></td>
+        <td><span class="parametername">cl</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.Graphics.RenderCommandQueueItem.html">RenderCommandQueueItem</a></td>
+        <td><span class="parametername">command</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      yak2D - Alex Paterson
+      
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

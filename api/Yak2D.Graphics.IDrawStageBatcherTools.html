@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Interface IDrawStageBatcherTools </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Interface IDrawStageBatcherTools ">
+    
+    
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/logo.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Yak2D.Graphics.IDrawStageBatcherTools">
+
+
+
+  <h1 id="Yak2D_Graphics_IDrawStageBatcherTools" data-uid="Yak2D.Graphics.IDrawStageBatcherTools" class="text-break">Interface IDrawStageBatcherTools</h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Yak2D.html">Yak2D</a>.<a class="xref" href="Yak2D.Graphics.html">Graphics</a></h6>
+  <h6><strong>Assembly</strong>: Yak2D.Graphics.dll</h6>
+  <h5 id="Yak2D_Graphics_IDrawStageBatcherTools_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public interface IDrawStageBatcherTools</code></pre>
+  </div>
+  <h3 id="methods">Methods
+</h3>
+  <a id="Yak2D_Graphics_IDrawStageBatcherTools_AreAllQueuesInactive_" data-uid="Yak2D.Graphics.IDrawStageBatcherTools.AreAllQueuesInactive*"></a>
+  <h4 id="Yak2D_Graphics_IDrawStageBatcherTools_AreAllQueuesInactive_System_Int32__System_Boolean___" data-uid="Yak2D.Graphics.IDrawStageBatcherTools.AreAllQueuesInactive(System.Int32@,System.Boolean[])">AreAllQueuesInactive(ref int, bool[])</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool AreAllQueuesInactive(ref int numQueues, bool[] activeQueues)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">numQueues</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>[]</td>
+        <td><span class="parametername">activeQueues</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_IDrawStageBatcherTools_CombinedList_" data-uid="Yak2D.Graphics.IDrawStageBatcherTools.CombinedList*"></a>
+  <h4 id="Yak2D_Graphics_IDrawStageBatcherTools_CombinedList_Yak2D_Graphics_QueueWrap_System_Collections_Generic_List_Yak2D_Graphics_QueueWrap__" data-uid="Yak2D.Graphics.IDrawStageBatcherTools.CombinedList(Yak2D.Graphics.QueueWrap,System.Collections.Generic.List{Yak2D.Graphics.QueueWrap})">CombinedList(QueueWrap, List&lt;QueueWrap&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">List&lt;QueueWrap&gt; CombinedList(QueueWrap first, List&lt;QueueWrap&gt; others)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.Graphics.QueueWrap.html">QueueWrap</a></td>
+        <td><span class="parametername">first</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Yak2D.Graphics.QueueWrap.html">QueueWrap</a>&gt;</td>
+        <td><span class="parametername">others</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Yak2D.Graphics.QueueWrap.html">QueueWrap</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_IDrawStageBatcherTools_CreatePoolOfSize_" data-uid="Yak2D.Graphics.IDrawStageBatcherTools.CreatePoolOfSize*"></a>
+  <h4 id="Yak2D_Graphics_IDrawStageBatcherTools_CreatePoolOfSize_System_Int32_System_Boolean_Yak2D_Graphics_DrawingBatch___" data-uid="Yak2D.Graphics.IDrawStageBatcherTools.CreatePoolOfSize(System.Int32,System.Boolean,Yak2D.Graphics.DrawingBatch[])">CreatePoolOfSize(int, bool, DrawingBatch[])</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">DrawingBatch[] CreatePoolOfSize(int size, bool copyExisting, DrawingBatch[] existing = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">size</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">copyExisting</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.Graphics.DrawingBatch.html">DrawingBatch</a>[]</td>
+        <td><span class="parametername">existing</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.Graphics.DrawingBatch.html">DrawingBatch</a>[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_IDrawStageBatcherTools_FindDeepestQueueAtLowestLayer_" data-uid="Yak2D.Graphics.IDrawStageBatcherTools.FindDeepestQueueAtLowestLayer*"></a>
+  <h4 id="Yak2D_Graphics_IDrawStageBatcherTools_FindDeepestQueueAtLowestLayer_System_Int32__Yak2D_Graphics_QueueWrap___System_Int32___System_Int32_System_Boolean___" data-uid="Yak2D.Graphics.IDrawStageBatcherTools.FindDeepestQueueAtLowestLayer(System.Int32@,Yak2D.Graphics.QueueWrap[],System.Int32[],System.Int32,System.Boolean[])">FindDeepestQueueAtLowestLayer(ref int, QueueWrap[], int[], int, bool[])</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">int FindDeepestQueueAtLowestLayer(ref int numQueues, QueueWrap[] wraps, int[] nextRequest, int lowestLayer, bool[] activeInCurrentLayer)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">numQueues</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.Graphics.QueueWrap.html">QueueWrap</a>[]</td>
+        <td><span class="parametername">wraps</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>[]</td>
+        <td><span class="parametername">nextRequest</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">lowestLayer</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>[]</td>
+        <td><span class="parametername">activeInCurrentLayer</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_IDrawStageBatcherTools_FindLowestLayer_" data-uid="Yak2D.Graphics.IDrawStageBatcherTools.FindLowestLayer*"></a>
+  <h4 id="Yak2D_Graphics_IDrawStageBatcherTools_FindLowestLayer_System_Int32__Yak2D_Graphics_QueueWrap___System_Boolean___System_Int32___" data-uid="Yak2D.Graphics.IDrawStageBatcherTools.FindLowestLayer(System.Int32@,Yak2D.Graphics.QueueWrap[],System.Boolean[],System.Int32[])">FindLowestLayer(ref int, QueueWrap[], bool[], int[])</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">int FindLowestLayer(ref int numQueues, QueueWrap[] wraps, bool[] active, int[] nextRequest)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">numQueues</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.Graphics.QueueWrap.html">QueueWrap</a>[]</td>
+        <td><span class="parametername">wraps</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>[]</td>
+        <td><span class="parametername">active</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>[]</td>
+        <td><span class="parametername">nextRequest</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_IDrawStageBatcherTools_GenerateTheNextBatch_" data-uid="Yak2D.Graphics.IDrawStageBatcherTools.GenerateTheNextBatch*"></a>
+  <h4 id="Yak2D_Graphics_IDrawStageBatcherTools_GenerateTheNextBatch_Yak2D_Graphics_DrawingBatch___System_Int32_System_Int32_System_Int32__Yak2D_Graphics_QueueWrap___System_Int32___System_Int32_System_Boolean___System_Int32___System_Boolean___" data-uid="Yak2D.Graphics.IDrawStageBatcherTools.GenerateTheNextBatch(Yak2D.Graphics.DrawingBatch[],System.Int32,System.Int32,System.Int32@,Yak2D.Graphics.QueueWrap[],System.Int32[],System.Int32,System.Boolean[],System.Int32[],System.Boolean[])">GenerateTheNextBatch(DrawingBatch[], int, int, ref int, QueueWrap[], int[], int, bool[], int[], bool[])</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool GenerateTheNextBatch(DrawingBatch[] pool, int queue, int batchIndex, ref int numQueues, QueueWrap[] wraps, int[] nextRequestToConsume, int lowestLayer, bool[] activeInCurrentLayer, int[] indexCounter, bool[] activeOverAllLayers)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yak2D.Graphics.DrawingBatch.html">DrawingBatch</a>[]</td>
+        <td><span class="parametername">pool</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">queue</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">batchIndex</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">numQueues</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.Graphics.QueueWrap.html">QueueWrap</a>[]</td>
+        <td><span class="parametername">wraps</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>[]</td>
+        <td><span class="parametername">nextRequestToConsume</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">lowestLayer</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>[]</td>
+        <td><span class="parametername">activeInCurrentLayer</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>[]</td>
+        <td><span class="parametername">indexCounter</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>[]</td>
+        <td><span class="parametername">activeOverAllLayers</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Yak2D_Graphics_IDrawStageBatcherTools_IdentifyWhichQueuesAreActiveInTheCurrentLayer_" data-uid="Yak2D.Graphics.IDrawStageBatcherTools.IdentifyWhichQueuesAreActiveInTheCurrentLayer*"></a>
+  <h4 id="Yak2D_Graphics_IDrawStageBatcherTools_IdentifyWhichQueuesAreActiveInTheCurrentLayer_System_Int32__Yak2D_Graphics_QueueWrap___System_Int32___System_Int32_System_Boolean___System_Boolean___" data-uid="Yak2D.Graphics.IDrawStageBatcherTools.IdentifyWhichQueuesAreActiveInTheCurrentLayer(System.Int32@,Yak2D.Graphics.QueueWrap[],System.Int32[],System.Int32,System.Boolean[],System.Boolean[])">IdentifyWhichQueuesAreActiveInTheCurrentLayer(ref int, QueueWrap[], int[], int, bool[], bool[])</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void IdentifyWhichQueuesAreActiveInTheCurrentLayer(ref int numQueues, QueueWrap[] wraps, int[] nextRequest, int layer, bool[] activeInLayer, bool[] activeOverAllLayers)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">numQueues</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yak2D.Graphics.QueueWrap.html">QueueWrap</a>[]</td>
+        <td><span class="parametername">wraps</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>[]</td>
+        <td><span class="parametername">nextRequest</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">layer</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>[]</td>
+        <td><span class="parametername">activeInLayer</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>[]</td>
+        <td><span class="parametername">activeOverAllLayers</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      yak2D - Alex Paterson
+      
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

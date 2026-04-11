@@ -74,8 +74,8 @@
 <p>The pixel size of the <a href="xref:uidglossary#RenderArea">render area</a> does not matter.</p>
 <p>However, if the aspect ratio of the destination <a class="xref" href="glossary.html#RenderArea">render area</a> does not match that of the <a class="xref" href="renderstages.html">RenderStage</a>'s output, the output will be distorted (stretched or squashed) to fit.</p>
 <h2 id="drawing">Drawing</h2>
-<p>During <a class="xref" href="glossary.html#Drawing">Drawing</a>, <a href="xref:Yak2D.DrawRequest">DrawRequests</a> are submitted to, and rendered by, a <a href="xref:Yak2D.IDrawStage">DrawStage</a>. The final position of vertices upon the <a class="xref" href="glossary.html#RenderArea">render area</a> is transformed by the assigned <a href="xref:Yak2D.ICamera2D">Camera2D</a>.</p>
-<p>Each <a href="xref:Yak2D.ICamera2D">Camera2D</a> has a <a class="xref" href="glossary.html#VirtualResolution">virtual resolution</a> that defines the boundaries of <a class="xref" href="coordinatesystems.html#screenspace">screen space</a> as well as <a class="xref" href="coordinatesystems.html#worldspace">world space</a> once a camera's zoom, world focus point and rotation are also accounted for.</p>
+<p>During <a class="xref" href="glossary.html#Drawing">Drawing</a>, <a class="xref" href="../api/Yak2D.DrawRequest.html">DrawRequests</a> are submitted to, and rendered by, a <a class="xref" href="../api/Yak2D.IDrawStage.html">DrawStage</a>. The final position of vertices upon the <a class="xref" href="glossary.html#RenderArea">render area</a> is transformed by the assigned <a class="xref" href="../api/Yak2D.ICamera2D.html">Camera2D</a>.</p>
+<p>Each <a class="xref" href="../api/Yak2D.ICamera2D.html">Camera2D</a> has a <a class="xref" href="glossary.html#VirtualResolution">virtual resolution</a> that defines the boundaries of <a class="xref" href="coordinatesystems.html#screenspace">screen space</a> as well as <a class="xref" href="coordinatesystems.html#worldspace">world space</a> once a camera's zoom, world focus point and rotation are also accounted for.</p>
 <h2 id="what-this-means-in-practice">What this means in practice</h2>
 <p>A user can choose a <a class="xref" href="glossary.html#VirtualResolution">virtual resolution</a> and draw everything in relation to these effective screen dimensions, but it can be rendered at a final real resolution chosen simply by the an appropriately sized <a class="xref" href="glossary.html#RenderArea">render area</a>.</p>
 <h2 id="coordinate-systems-spaces">Coordinate Systems (<em><strong>spaces</strong></em>)</h2>
@@ -86,7 +86,7 @@
 <li><a class="xref" href="coordinatesystems.html#window-space"><strong>Window</strong></a> space</li>
 </ol>
 <h3 id="screen-space"><strong>Screen Space</strong></h3>
-<p>The coordinate system used when drawing with <a href="xref:Yak2D.CoordinateSpace">CoordinateSpace.Screen</a>. Positions are defined in relation to a fixed visible area defined by the camera's <a class="xref" href="glossary.html#VirtualResolution">virtual resolution</a>.</p>
+<p>The coordinate system used when drawing with <a class="xref" href="../api/Yak2D.CoordinateSpace.html">CoordinateSpace.Screen</a>. Positions are defined in relation to a fixed visible area defined by the camera's <a class="xref" href="glossary.html#VirtualResolution">virtual resolution</a>.</p>
 <p>The origin (0,0) is located in the centre. Positive X-axis runs from left to right, with positive Y-axis running 'upwards' towards the top of the visible area.</p>
 <p>Visible positions in screen space are defined by:</p>
 <img src="https://render.githubusercontent.com/render/math?math=-w/2 \geq x < w/2">
@@ -100,7 +100,7 @@
 <h4 id="screen-space-diagram">Screen Space Diagram</h4>
 <p><img src="../images/screenspace.png" alt=""></p>
 <h3 id="world-space"><strong>World Space</strong></h3>
-<p>The coordinate system used when drawing with <a href="xref:Yak2D.CoordinateSpace">CoordinateSpace.World</a>. Positions are defined in relation to an origin. The visible area is defined by the camera's world focus point (position) in relation to the origin, the camera's zoom scalar, rotation and <a class="xref" href="glossary.html#VirtualResolution">virtual resolution</a>.</p>
+<p>The coordinate system used when drawing with <a class="xref" href="../api/Yak2D.CoordinateSpace.html">CoordinateSpace.World</a>. Positions are defined in relation to an origin. The visible area is defined by the camera's world focus point (position) in relation to the origin, the camera's zoom scalar, rotation and <a class="xref" href="glossary.html#VirtualResolution">virtual resolution</a>.</p>
 <p><strong>World space axis are similar to screen space</strong>, in that when unrotated, positive X-axis runs from left to right, with positive Y-axis running 'upwards' towards the top of the visible area.</p>
 <p>Therefore, if the camera's world focus point is (0,0), it's zoom is 1.0 and there is no camera rotation, then a position in world space will match a position in screen space.</p>
 <h3 id="window-space"><strong>Window Space</strong></h3>
@@ -126,13 +126,13 @@
 <p><strong>Note:</strong> When writing shaders for a <a href="xref:Yak2D.ICustomVeldrid">CustomVeldrid</a> <a class="xref" href="renderstages.html">RenderStage</a>, the user is responsible for accounting for the backend differences between graphics APIs.</p>
 <p>When writing shaders for a <a href="xref:Yak2D.ICustomShader">CustomShader</a> <a class="xref" href="renderstages.html">RenderStage</a>, the vertex shader provided <em><strong>already accounts for the differences</strong></em> in OpenGL texture coordinates. Therefore all shaders can be written assuming origin top-left.</p>
 <h2 id="3d-rendering">3D Rendering</h2>
-<p>The <a href="xref:Yak2D.IMeshRender">MeshRender</a> <a class="xref" href="renderstages.html">RenderStage</a> uses a <a href="xref:Yak2D.ICamera3D">Camera3D</a> to manage the required view and projection matrices used during rendering.</p>
+<p>The <a href="xref:Yak2D.IMeshRender">MeshRender</a> <a class="xref" href="renderstages.html">RenderStage</a> uses a <a class="xref" href="../api/Yak2D.ICamera3D.html">Camera3D</a> to manage the required view and projection matrices used during rendering.</p>
 <p><strong>yak2D</strong> uses a Right-Handed coordinate system, which does not change across any graphics API backends. This coordinate system is positive-x towards the right, positive-y upwards and positive-z out of the screen, towards the camera.</p>
 <p><strong>Note:</strong> When writing shaders for a <a href="xref:Yak2D.ICustomVeldrid">CustomVeldrid</a> <a class="xref" href="renderstages.html">RenderStage</a>, the user is responsible for accounting for the backend differences between graphics APIs.</p>
 <h2 id="mouse-input">Mouse Input</h2>
-<p><strong>yak2D</strong> provides <a href="xref:Yak2D.IInput.MousePosition">mouse position</a> as a position on the application window, in <a class="xref" href="coordinatesystems.html#window-space">window space</a>.</p>
+<p><strong>yak2D</strong> provides <a class="xref" href="../api/Yak2D.IInput.html#Yak2D_IInput_MousePosition">mouse position</a> as a position on the application window, in <a class="xref" href="coordinatesystems.html#window-space">window space</a>.</p>
 <h2 id="coordinate-system-conversions">Coordinate System Conversions</h2>
-<p>To easily convert positions between any of <a class="xref" href="coordinatesystems.html#screen-space">screen space</a>, <a class="xref" href="coordinatesystems.html#world-space">world space</a> or <a class="xref" href="coordinatesystems.html#window-space">window space</a>, <strong>yak2D</strong> provides <a href="xref:Yak2D.ICoordinateTransforms">helper functions</a>.</p>
+<p>To easily convert positions between any of <a class="xref" href="coordinatesystems.html#screen-space">screen space</a>, <a class="xref" href="coordinatesystems.html#world-space">world space</a> or <a class="xref" href="coordinatesystems.html#window-space">window space</a>, <strong>yak2D</strong> provides <a class="xref" href="../api/Yak2D.ICoordinateTransforms.html">helper functions</a>.</p>
 
 </article>
           </div>
