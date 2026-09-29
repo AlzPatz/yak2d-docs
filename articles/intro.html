@@ -1,106 +1,164 @@
 <!DOCTYPE html>
-<!--[if IE]><![endif]-->
 <html>
-
   <head>
     <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <title>yak2D Usage Guide </title>
-      <meta name="viewport" content="width=device-width">
-      <meta name="title" content="yak2D Usage Guide ">
-    
-    
-      <link rel="shortcut icon" href="../favicon.ico">
-      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
-      <link rel="stylesheet" href="../styles/docfx.css">
-      <link rel="stylesheet" href="../styles/main.css">
-      <meta property="docfx:navrel" content="../toc.html">
-      <meta property="docfx:tocrel" content="toc.html">
-    
-    
-    
+      <title>The yak2D Manual | yak2D </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="The yak2D Manual | yak2D ">
+      
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/AlzPatz/yak2d-docs-content/blob/master/articles/intro.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
   </head>
-  <body data-spy="scroll" data-target="#affix" data-offset="120">
-    <div id="wrapper">
-      <header>
 
-        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-
-              <a class="navbar-brand" href="../index.html">
-                <img id="logo" class="svg" src="../images/logo.png" alt="">
-              </a>
-            </div>
-            <div class="collapse navbar-collapse" id="navbar">
-              <form class="navbar-form navbar-right" role="search" id="search">
-                <div class="form-group">
-                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
-                </div>
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo.png" alt="yak2D">
+            yak2D
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
               </form>
             </div>
           </div>
-        </nav>
-
-        <div class="subnav navbar navbar-default">
-          <div class="container hide-when-search" id="breadcrumb">
-            <ul class="breadcrumb">
-              <li></li>
-            </ul>
-          </div>
         </div>
-      </header>
-      <div role="main" class="container body-content hide-when-search">
+      </nav>
+    </header>
 
-        <div class="sidenav hide-when-search">
-          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
-          <div class="sidetoggle collapse" id="sidetoggle">
-            <div id="sidetoc"></div>
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
           </div>
-        </div>
-        <div class="article row grid-right">
-          <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="uid_intro">
-<h1 id="yak2d-usage-guide"><strong>yak2D</strong> Usage Guide</h1>
-
-<p>On the left of this page there are links to articles that explain the usage of the <strong>yak2D</strong> framework</p>
-
-</article>
-          </div>
-
-          <div class="hidden-sm col-md-2" role="complementary">
-            <div class="sideaffix">
-              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-                <h5>In this article</h5>
-                <div></div>
-              </nav>
-            </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
           </div>
         </div>
       </div>
 
-      <footer>
-        <div class="grad-bottom"></div>
-        <div class="footer">
-          <div class="container">
-            <span class="pull-right">
-              <a href="#top">Back to top</a>
-            </span>
-      yak2D - Alex Paterson
-      
-          </div>
-        </div>
-      </footer>
-    </div>
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
 
-    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
-    <script type="text/javascript" src="../styles/docfx.js"></script>
-    <script type="text/javascript" src="../styles/main.js"></script>
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="uid_intro">
+<h1 id="the-yak2d-manual">The yak2D Manual</h1>
+
+<p><strong>yak2D</strong> is a small C# framework for making 2D games and interactive graphics applications that run on Windows, Linux and macOS. You write a class, hand it to the framework, and yak2D runs the window, the game loop, input, and a flexible GPU rendering pipeline for you. There is no editor: everything is done in code.</p>
+<p><img src="../images/yakrun/part4.png" alt="Yak Run, the tutorial game"></p>
+<p><em><a href="../tutorials/yakrun-1.html">Yak Run</a>, the game built step by step in the tutorials.</em></p>
+<h2 id="how-these-docs-are-organised">How these docs are organised</h2>
+<table>
+<thead>
+<tr>
+<th>Section</th>
+<th>Use it to...</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><a href="../tutorials/index.html">Tutorials</a></strong></td>
+<td>Learn by building. Start here if you are new.</td>
+</tr>
+<tr>
+<td><strong>Manual: Core concepts</strong></td>
+<td>Understand how a yak2D application is put together. Short, and worth reading once.</td>
+</tr>
+<tr>
+<td><strong>Manual: Guides</strong></td>
+<td>Learn a feature area in depth (drawing, cameras, effects, input...), with working examples.</td>
+</tr>
+<tr>
+<td><strong><a href="../api/index.html">API Reference</a></strong></td>
+<td>Look up every type, method and parameter. Generated from the source code.</td>
+</tr>
+<tr>
+<td><strong><a href="samples.html">Samples</a></strong></td>
+<td>Browse ~35 small, runnable demo projects, one per feature.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="a-suggested-learning-path">A suggested learning path</h2>
+<ol>
+<li><strong><a href="../tutorials/gettingstarted.html">Getting Started</a></strong>: install .NET, create a project and open a window (10 minutes).</li>
+<li><strong><a href="overview.html">How yak2D works</a></strong>: the handful of ideas the whole framework is built on.</li>
+<li><strong><a href="../tutorials/yakrun-1.html">Yak Run tutorial</a></strong>: build a small platform game in four parts, using most of yak2D's features along the way.</li>
+<li>Dip into the <strong>Guides</strong> as you need them, and keep the <strong>API Reference</strong> open while you code.</li>
+</ol>
+<h2 id="conventions-used-in-these-docs">Conventions used in these docs</h2>
+<ul>
+<li>Code examples are taken from real projects that are compiled every time the documentation is published, so they always match the current version of yak2D. Each guide links to the complete source.</li>
+<li>Most guide examples derive from a tiny <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/master/code/Snippets/Example.cs"><code>Example</code> base class</a> that fills in empty <a class="xref" href="../api/Yak2D.IApplication.html">IApplication</a> methods, so the examples only show the code that matters. Your own applications implement <a class="xref" href="../api/Yak2D.IApplication.html">IApplication</a> directly.</li>
+<li><strong>Units</strong>: 2D positions and sizes are in <em>world units</em> or <em>screen units</em> (see <a href="coordinatesystems.html">Coordinate systems</a>), not necessarily pixels. Angles are in <strong>radians</strong> unless a parameter name says otherwise.</li>
+<li><strong>Colours</strong> are <a class="xref" href="../api/Yak2D.Colour.html">Colour</a> values with red, green, blue and alpha components from 0 to 1. There are also around 140 named colours (<code>Colour.CornflowerBlue</code>, <code>Colour.Gold</code>, ...).</li>
+<li>British spelling is used throughout the API (<code>Colour</code>, <code>Normalise</code>). An American-spelled <a class="xref" href="../api/Yak2D.Color.html">Color</a> helper class exists as well.</li>
+</ul>
+<h2 id="getting-help">Getting help</h2>
+<p>If something in yak2D or these docs doesn't work the way you expect, check <a href="troubleshooting.html">Troubleshooting and FAQ</a>, then <a href="https://github.com/AlzPatz/yak2d/issues">raise an issue on GitHub</a>.</p>
+
+</article>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          yak2D - Alex Paterson - MIT licence
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

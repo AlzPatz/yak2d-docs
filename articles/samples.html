@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>The samples | yak2D </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="The samples | yak2D ">
+      
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/AlzPatz/yak2d-docs-content/blob/master/articles/samples.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo.png" alt="yak2D">
+            yak2D
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="uid_samples">
+<h1 id="the-samples">The samples</h1>
+
+<p>The <a href="https://github.com/AlzPatz/yak2d-samples">yak2d-samples</a> repository has around 35 small projects, each demonstrating one feature. They are the best place to see a feature working in isolation.</p>
+<h2 id="running-them">Running them</h2>
+<p>You need the <a href="https://dotnet.microsoft.com/download">.NET 10 SDK</a> on Windows, Linux or macOS. Nothing else needs installing.</p>
+<pre><code class="lang-bash">git clone https://github.com/AlzPatz/yak2d-samples.git
+cd yak2d-samples/src
+dotnet run --project Bloom_Example
+</code></pre>
+<p>Or run <code>AllDemoLauncher</code> to browse every demo from one application:</p>
+<pre><code class="lang-bash">dotnet run --project AllDemoLauncher
+</code></pre>
+<p>In every sample, <strong>Escape</strong> quits and the number keys <strong>1</strong>-<strong>4</strong> switch graphics API (OpenGL, Direct3D 11, Metal, Vulkan) where the platform supports it.</p>
+<p>The samples use the <a href="https://www.nuget.org/packages/Yak2D/">Yak2D NuGet package</a>. If the <a href="https://github.com/AlzPatz/yak2d">yak2d</a> source repository is cloned next to the samples repository, they build against that source instead, which is handy when working on yak2D itself.</p>
+<h2 id="the-list">The list</h2>
+<table>
+<thead>
+<tr>
+<th>Sample</th>
+<th>Shows</th>
+<th>Guide</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Drawing</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/AlzPatz/yak2d-samples/tree/master/src/Draw_BasicPolygonHelperFunctions">Draw_BasicPolygonHelperFunctions</a></td>
+<td>Quads, polygons, lines and arrows with the helper functions</td>
+<td><a href="drawing.html">Drawing</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/AlzPatz/yak2d-samples/tree/master/src/Draw_PolygonsFromVertices">Draw_PolygonsFromVertices</a></td>
+<td>Draw requests built from vertices: coloured, textured and dual-textured</td>
+<td><a href="drawing.html#draw-requests">Drawing</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/AlzPatz/yak2d-samples/tree/master/src/Draw_FluentInterfaceDrawingHelper">Draw_FluentInterfaceDrawingHelper</a></td>
+<td>The fluent shape builder, texture brushes and transforms</td>
+<td><a href="drawing.html#the-fluent-shape-builder">Drawing</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/AlzPatz/yak2d-samples/tree/master/src/Draw_PersistentDrawQueue">Draw_PersistentDrawQueue</a></td>
+<td>Persistent draw queues mixed with per-frame drawing</td>
+<td><a href="drawing.html#drawing-things-once">Drawing</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/AlzPatz/yak2d-samples/tree/master/src/Draw_ImageFileFormats">Draw_ImageFileFormats</a></td>
+<td>Loading PNG, BMP, GIF, JPG and TGA images</td>
+<td><a href="assets.html">Assets</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/AlzPatz/yak2d-samples/tree/master/src/Draw_FontExample">Draw_FontExample</a></td>
+<td>The built-in font and a loaded bitmap font</td>
+<td><a href="text.html">Text</a></td>
+</tr>
+<tr>
+<td><strong>Cameras and viewports</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/AlzPatz/yak2d-samples/tree/master/src/Draw_Camera2DWorldAndScreen">Draw_Camera2DWorldAndScreen</a></td>
+<td>Drive a car round a map: a following, zooming, rotating camera, with a screen space HUD</td>
+<td><a href="cameras.html">Cameras</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/AlzPatz/yak2d-samples/tree/master/src/Draw_SplitScreenExample">Draw_SplitScreenExample</a></td>
+<td>Two players, two cameras, one draw stage, two viewports</td>
+<td><a href="viewports.html">Viewports</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/AlzPatz/yak2d-samples/tree/master/src/Helper_CoordinateTranforms">Helper_CoordinateTranforms</a></td>
+<td>Converting between window, screen and world positions inside a viewport</td>
+<td><a href="coordinatesystems.html#converting-between-spaces">Coordinate systems</a></td>
+</tr>
+<tr>
+<td><strong>Effects</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/AlzPatz/yak2d-samples/tree/master/src/ColourEffects_Example">ColourEffects_Example</a></td>
+<td>Single colour, colourise, grayscale, negative and opacity, and random transitions</td>
+<td><a href="effects.html#colour-effects">Effects</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/AlzPatz/yak2d-samples/tree/master/src/Bloom_Example">Bloom_Example</a></td>
+<td>Bloom</td>
+<td><a href="effects.html#bloom">Effects</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/AlzPatz/yak2d-samples/tree/master/src/Blur_Example">Blur_Example</a></td>
+<td>Blur</td>
+<td><a href="effects.html#blur">Effects</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/AlzPatz/yak2d-samples/tree/master/src/StyleEffects_Pixellate">StyleEffects_Pixellate</a></td>
+<td>Pixellate</td>
+<td><a href="effects.html#style-effects">Effects</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/AlzPatz/yak2d-samples/tree/master/src/StyleEffects_EdgeDetection">StyleEffects_EdgeDetection</a></td>
+<td>Edge detection</td>
+<td><a href="effects.html#style-effects">Effects</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/AlzPatz/yak2d-samples/tree/master/src/StyleEffects_Static">StyleEffects_Static</a></td>
+<td>Static noise</td>
+<td><a href="effects.html#style-effects">Effects</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/AlzPatz/yak2d-samples/tree/master/src/StyleEffects_OldMovie">StyleEffects_OldMovie</a></td>
+<td>Old movie reel</td>
+<td><a href="effects.html#style-effects">Effects</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/AlzPatz/yak2d-samples/tree/master/src/StyleEffects_CRT">StyleEffects_CRT</a></td>
+<td>CRT monitor, on a curved mesh</td>
+<td><a href="effects.html#style-effects">Effects</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/AlzPatz/yak2d-samples/tree/master/src/StyleEffects_UsingConfigurationHelpers">StyleEffects_UsingConfigurationHelpers</a></td>
+<td>The <code>PreSet()</code> helpers for every style effect</td>
+<td><a href="effects.html#style-effects">Effects</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/AlzPatz/yak2d-samples/tree/master/src/Mix_SimpleWholeTextureMixingWithFactors">Mix_SimpleWholeTextureMixingWithFactors</a></td>
+<td>Mixing four textures by overall amounts</td>
+<td><a href="effects.html#mix">Effects</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/AlzPatz/yak2d-samples/tree/master/src/Mix_UsingATextureForPerPixelMixing">Mix_UsingATextureForPerPixelMixing</a></td>
+<td>Mixing with a per-pixel mask texture</td>
+<td><a href="effects.html#mix">Effects</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/AlzPatz/yak2d-samples/tree/master/src/Distortion_ExampleUsingHelperFunctions">Distortion_ExampleUsingHelperFunctions</a></td>
+<td>Ripples in a pool, with the distortion helpers (click!)</td>
+<td><a href="distortion.html">Distortion</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/AlzPatz/yak2d-samples/tree/master/src/Distortion_ManualTextureCreation">Distortion_ManualTextureCreation</a></td>
+<td>Height map textures made by hand, and distortion draw requests</td>
+<td><a href="distortion.html">Distortion</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/AlzPatz/yak2d-samples/tree/master/src/DrawingAndEffects_PrerenderingTexturesForUseLater">DrawingAndEffects_PrerenderingTexturesForUseLater</a></td>
+<td>Chaining stages to pre-render an animated explosion into textures</td>
+<td><a href="surfaces.html">Surfaces</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/AlzPatz/yak2d-samples/tree/master/src/Copy_Example">Copy_Example</a></td>
+<td>Copying a surface to the window</td>
+<td><a href="surfaces.html">Surfaces</a></td>
+</tr>
+<tr>
+<td><strong>3D</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/AlzPatz/yak2d-samples/tree/master/src/Mesh_HelperExamples">Mesh_HelperExamples</a></td>
+<td>Quad, CRT, sphere and cube meshes with lights and a fly-through camera</td>
+<td><a href="mesh.html">3D meshes</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/AlzPatz/yak2d-samples/tree/master/src/Mesh_ManualMeshSimple">Mesh_ManualMeshSimple</a></td>
+<td>A mesh built by hand</td>
+<td><a href="mesh.html">3D meshes</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/AlzPatz/yak2d-samples/tree/master/src/Mesh_ManualChangingMesh">Mesh_ManualChangingMesh</a></td>
+<td>A mesh that changes every frame</td>
+<td><a href="mesh.html">3D meshes</a></td>
+</tr>
+<tr>
+<td><strong>Surfaces and data</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/AlzPatz/yak2d-samples/tree/master/src/Surfaces_CreateTextureFromDataRGBA">Surfaces_CreateTextureFromDataRGBA</a></td>
+<td>Textures generated from pixel data</td>
+<td><a href="surfaces.html#textures-from-data">Surfaces</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/AlzPatz/yak2d-samples/tree/master/src/GpuToCpu_SurfaceCopyRGBA">GpuToCpu_SurfaceCopyRGBA</a></td>
+<td>Reading colours back from the GPU</td>
+<td><a href="readback.html">Readback</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/AlzPatz/yak2d-samples/tree/master/src/GpuToCpu_SurfaceCopyFloat32">GpuToCpu_SurfaceCopyFloat32</a></td>
+<td>Reading float data back from the GPU</td>
+<td><a href="readback.html">Readback</a></td>
+</tr>
+<tr>
+<td><strong>Custom rendering</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/AlzPatz/yak2d-samples/tree/master/src/CustomShader_Example">CustomShader_Example</a></td>
+<td>A fragment shader, with runtime SPIR-V compile or precompiled for every API</td>
+<td><a href="customshaders.html">Custom shaders</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/AlzPatz/yak2d-samples/tree/master/src/CustomVeldrid_ComputeShaderExample">CustomVeldrid_ComputeShaderExample</a></td>
+<td>Conway's Game of Life as a compute shader</td>
+<td><a href="customveldrid.html">Custom Veldrid stages</a></td>
+</tr>
+<tr>
+<td><strong>Input and window</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/AlzPatz/yak2d-samples/tree/master/src/Input_MouseAndKeyboardUsage">Input_MouseAndKeyboardUsage</a></td>
+<td>Type to make letters, click to shoot them</td>
+<td><a href="input.html">Input</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/AlzPatz/yak2d-samples/tree/master/src/Input_GamepadUsage">Input_GamepadUsage</a></td>
+<td>Every gamepad button and axis</td>
+<td><a href="input.html#gamepads">Input</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/AlzPatz/yak2d-samples/tree/master/src/Window_ChangingWindowProperties">Window_ChangingWindowProperties</a></td>
+<td>Fullscreen, size, title, opacity, borders, cursor</td>
+<td><a href="window.html">Window</a></td>
+</tr>
+<tr>
+<td><strong>Framework</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/AlzPatz/yak2d-samples/tree/master/src/FrameworkItems_CreationAndDestruction">FrameworkItems_CreationAndDestruction</a></td>
+<td>Creating and destroying every kind of resource</td>
+<td><a href="resources.html">Resources</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="the-documentation-examples">The documentation examples</h2>
+<p>Every example in these guides, and the tutorial projects, are in the <a href="https://github.com/AlzPatz/yak2d-docs-content/tree/master/code">code folder of the documentation repository</a>. The guide examples are all in one project; run any of them by name:</p>
+<pre><code class="lang-bash">git clone https://github.com/AlzPatz/yak2d-docs-content.git
+cd yak2d-docs-content/code/Snippets
+dotnet run -- BloomExample
+dotnet run            # lists them all
+</code></pre>
+
+</article>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          yak2D - Alex Paterson - MIT licence
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

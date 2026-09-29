@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Distortion | yak2D </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Distortion | yak2D ">
+      
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/AlzPatz/yak2d-docs-content/blob/master/articles/distortion.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo.png" alt="yak2D">
+            yak2D
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="uid_distortion">
+<h1 id="distortion">Distortion</h1>
+
+<p>A distortion stage (<a class="xref" href="../api/Yak2D.IDistortionStage.html">IDistortionStage</a>) bends an image as if seen through water, heat haze or a lens. It makes ripples, shock waves, force fields and warping portals.</p>
+<p><img src="../images/guide/effects-distortion.png" alt="Ripples distorting an image"></p>
+<h2 id="how-it-works">How it works</h2>
+<p>A distortion stage is part draw stage, part effect:</p>
+<ol>
+<li>Each frame you <strong>draw a height map</strong>: shapes and textures submitted to the stage, just like draw requests to a draw stage. Everything drawn adds up to make a landscape of &quot;heights&quot;.</li>
+<li>When the stage is rendered, each pixel of the source image is <strong>shifted according to the slope</strong> of the height map at that point, scaled by the stage's <code>DistortionScalar</code>.</li>
+</ol>
+<p>Flat areas (including everywhere nothing was drawn) leave the image alone; steep slopes bend it strongly.</p>
+<h2 id="creating-the-stage">Creating the stage</h2>
+<pre><code class="lang-csharp">public override bool CreateResources(IServices yak)
+{
+    _city = yak.Surfaces.LoadTexture(&quot;city&quot;, AssetSourceEnum.Embedded);
+    _camera = yak.Cameras.CreateCamera2D(960, 540);
+
+    // The stage draws a height map at a lower resolution, then shifts the source image's pixels
+    // according to the slope of that height map
+    _distortion = yak.Stages.CreateDistortionStage(480, 270, true);
+    yak.Stages.SetDistortionConfig(_distortion, new DistortionEffectConfiguration { DistortionScalar = 40.0f });
+
+    // A ready made height map: rings, like a ripple on water
+    _ring = yak.Helpers.DistortionHelper.TextureGenerator.ConcentricSinusoidalFloat32(256, 256, 8, true, true);
+    _ripples = yak.Helpers.DistortionHelper.CreateNewCollection();
+    return true;
+}
+</code></pre>
+<p><a class="xref" href="../api/Yak2D.IStages.html#Yak2D_IStages_CreateDistortionStage_">CreateDistortionStage()</a> takes the size of the internal height map surface (half the source size or less is usually plenty) and whether to clear the height map drawing at the start of each frame (<code>true</code> for anything that moves).</p>
+<p><a class="xref" href="../api/Yak2D.DistortionEffectConfiguration.html">DistortionEffectConfiguration</a><code>.DistortionScalar</code> sets the overall strength.</p>
+<h2 id="drawing-the-height-map">Drawing the height map</h2>
+<p>Height map drawing works exactly like <a href="drawing.html">drawing</a>, with <a class="xref" href="../api/Yak2D.IDrawing.html#Yak2D_IDrawing_DrawDistortion_">DrawDistortion()</a> and a <a class="xref" href="../api/Yak2D.DistortionDrawRequest.html">DistortionDrawRequest</a>. There is no layer or depth (all height map drawing simply adds together), and there is an <code>Intensity</code> that scales the request's contribution instead.</p>
+<p>The height of a pixel is its <strong>red minus its green</strong> (after multiplying the texture by the request's colour). So:</p>
+<ul>
+<li>A white or red texture or colour raises the height map; green lowers it.</li>
+<li>A single-channel <code>Float32</code> texture (as made by the helpers below) has only a red channel, so it always raises.</li>
+</ul>
+<p>The easiest way to get a good height map is the built-in generator, which makes rings like ripples on water:</p>
+<pre><code class="lang-csharp">var ring = yak.Helpers.DistortionHelper.TextureGenerator.ConcentricSinusoidalFloat32(
+    256, 256,      // texture size
+    8,             // number of quarter-waves from the centre to the edge
+    true, true);   // fade the waves in towards the centre, and out towards the edge
+</code></pre>
+<p><a class="xref" href="../api/Yak2D.IDistortionTextureGenerator.html#Yak2D_IDistortionTextureGenerator_ConcentricSinusoidalRgba_">ConcentricSinusoidalRgba()</a> makes the same as an RGBA texture. For other shapes, make your own texture from data with <a class="xref" href="../api/Yak2D.ISurfaces.html#Yak2D_ISurfaces_CreateFloat32FromData_">CreateFloat32FromData()</a> or <a class="xref" href="../api/Yak2D.ISurfaces.html#Yak2D_ISurfaces_CreateRgbaFromData_">CreateRgbaFromData()</a>, or use any image.</p>
+<h2 id="rendering">Rendering</h2>
+<pre><code class="lang-csharp">q.Distortion(_distortion, _camera, source, target);
+</code></pre>
+<p>The camera positions the height map drawing, exactly as for a draw stage, so distortion drawn in world space lines up with the world as the camera moves. The source is usually a render target you have drawn your scene into.</p>
+<h2 id="animated-ripples-with-a-distortion-collection">Animated ripples with a distortion collection</h2>
+<p>Growing, fading ripples are so common that there is a helper to manage them. A distortion collection (<a class="xref" href="../api/Yak2D.IDistortionCollection.html">IDistortionCollection</a>) holds any number of textured squares, each of which moves, grows, rotates and changes intensity over its lifetime:</p>
+<pre><code class="lang-csharp">public override void PreDrawing(IServices yak, float secondsSinceLastDraw, float secondsSinceLastUpdate)
+{
+    _time += secondsSinceLastDraw;
+    if (_time &gt; 0.35f)
+    {
+        _time = 0.0f;
+        var position = new Vector2(Random.Shared.Next(-400, 400), Random.Shared.Next(-220, 220));
+
+        // Grow from nothing to 500 units across and fade out, over 2 seconds
+        _ripples.Add(LifeCycle.Single, CoordinateSpace.Screen, 2.0f, _ring,
+                     position, position, Vector2.Zero, new Vector2(500.0f),
+                     1.0f, 0.0f, 0.0f, 0.0f);
+    }
+    _ripples.Update(secondsSinceLastDraw);
+}
+
+public override void Drawing(IDrawing draw, IFps fps, IInput input, ICoordinateTransforms transforms, float secondsSinceLastDraw, float secondsSinceLastUpdate)
+{
+    // The collection submits one textured quad per ripple to the distortion stage
+    _ripples.Draw(draw, _distortion);
+
+    // Height map drawing can also be done directly, like a DrawStage. This one stays still
+    draw.DrawDistortion(_distortion, CoordinateSpace.Screen, FillType.Textured,
+                        new[]
+                        {
+                            new Vertex2D { Position = new Vector2(-150.0f, 150.0f), TexCoord0 = new Vector2(0.0f, 0.0f), Colour = Colour.White },
+                            new Vertex2D { Position = new Vector2(150.0f, 150.0f), TexCoord0 = new Vector2(1.0f, 0.0f), Colour = Colour.White },
+                            new Vertex2D { Position = new Vector2(150.0f, -150.0f), TexCoord0 = new Vector2(1.0f, 1.0f), Colour = Colour.White },
+                            new Vertex2D { Position = new Vector2(-150.0f, -150.0f), TexCoord0 = new Vector2(0.0f, 1.0f), Colour = Colour.White },
+                        },
+                        new[] { 0, 1, 2, 0, 2, 3 },
+                        Colour.White, _ring, null, TextureCoordinateMode.Mirror, TextureCoordinateMode.Mirror, 1.0f);
+}
+
+public override void Rendering(IRenderQueue q, IRenderTarget windowRenderTarget)
+{
+    q.Distortion(_distortion, _camera, _city, windowRenderTarget);
+}
+</code></pre>
+<p><a class="xref" href="../api/Yak2D.IDistortionCollection.html#Yak2D_IDistortionCollection_Add_">Add()</a> takes, in order: a <a class="xref" href="../api/Yak2D.LifeCycle.html">LifeCycle</a> (<code>Single</code> plays once and is removed; <code>LoopLinear</code> and <code>LoopReverse</code> repeat), the coordinate space, the duration in seconds, the texture, the start and end position, the start and end size, the start and end intensity, and the start and end rotation (in degrees). Call <code>Update()</code> to advance time and <code>Draw()</code> to submit everything to the stage each frame.</p>
+<p><a href="../tutorials/yakrun-4.html">Yak Run</a> uses a collection to send a ripple out from every star the yak collects.</p>
+<h2 id="see-also">See also</h2>
+<ul>
+<li>Samples: <a href="https://github.com/AlzPatz/yak2d-samples/tree/master/src/Distortion_ExampleUsingHelperFunctions">Distortion_ExampleUsingHelperFunctions</a> (click to make ripples in a pool), <a href="https://github.com/AlzPatz/yak2d-samples/tree/master/src/Distortion_ManualTextureCreation">Distortion_ManualTextureCreation</a></li>
+<li>Full example code: <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/master/code/Snippets/Effects.cs">Effects.cs</a> (<code>DistortionExample</code>)</li>
+</ul>
+
+</article>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          yak2D - Alex Paterson - MIT licence
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -4,6 +4,14 @@
   "xrefmap": "xrefmap.yml",
   "files": [
     {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
       "type": "ManagedReference",
       "source_relative_path": "api/Yak2D.AssetSourceEnum.yml",
       "output": {
@@ -1470,6 +1478,36 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "articles/assets.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/assets.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/cameras.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/cameras.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/configuration.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/configuration.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Redirection",
       "source_relative_path": "articles/continued.md",
       "output": {
         ".html": {
@@ -1490,10 +1528,60 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "articles/customshaders.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/customshaders.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/customveldrid.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/customveldrid.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Redirection",
       "source_relative_path": "articles/demogame.md",
       "output": {
         ".html": {
           "relative_path": "articles/demogame.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/distortion.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/distortion.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/drawing.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/drawing.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/effects.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/effects.html"
         }
       },
       "version": ""
@@ -1509,7 +1597,7 @@
       "version": ""
     },
     {
-      "type": "Conceptual",
+      "type": "Redirection",
       "source_relative_path": "articles/gettingstarted.md",
       "output": {
         ".html": {
@@ -1524,6 +1612,16 @@
       "output": {
         ".html": {
           "relative_path": "articles/glossary.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/input.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/input.html"
         }
       },
       "version": ""
@@ -1550,10 +1648,30 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "articles/mesh.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/mesh.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "articles/overview.md",
       "output": {
         ".html": {
           "relative_path": "articles/overview.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/readback.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/readback.html"
         }
       },
       "version": ""
@@ -1569,7 +1687,7 @@
       "version": ""
     },
     {
-      "type": "Conceptual",
+      "type": "Redirection",
       "source_relative_path": "articles/rendertargets.md",
       "output": {
         ".html": {
@@ -1580,10 +1698,40 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "articles/resources.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/resources.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/samples.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/samples.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "articles/surfaces.md",
       "output": {
         ".html": {
           "relative_path": "articles/surfaces.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/text.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/text.html"
         }
       },
       "version": ""
@@ -1603,6 +1751,16 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "articles/troubleshooting.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/troubleshooting.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Redirection",
       "source_relative_path": "articles/tutorialcustomshader.md",
       "output": {
         ".html": {
@@ -1612,7 +1770,7 @@
       "version": ""
     },
     {
-      "type": "Conceptual",
+      "type": "Redirection",
       "source_relative_path": "articles/tutorialdistribution.md",
       "output": {
         ".html": {
@@ -1622,7 +1780,7 @@
       "version": ""
     },
     {
-      "type": "Conceptual",
+      "type": "Redirection",
       "source_relative_path": "articles/tutorials.md",
       "output": {
         ".html": {
@@ -1642,11 +1800,221 @@
       "version": ""
     },
     {
+      "type": "Conceptual",
+      "source_relative_path": "articles/window.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/window.html"
+        }
+      },
+      "version": ""
+    },
+    {
       "type": "Resource",
       "source_relative_path": "favicon.ico",
       "output": {
         "resource": {
           "relative_path": "favicon.ico"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/guide/assets.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/guide/assets.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/guide/camera.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/guide/camera.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/guide/draw-requests.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/guide/draw-requests.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/guide/drawing-basics.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/guide/drawing-basics.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/guide/effects-bloom.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/guide/effects-bloom.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/guide/effects-blur.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/guide/effects-blur.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/guide/effects-colour.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/guide/effects-colour.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/guide/effects-distortion.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/guide/effects-distortion.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/guide/effects-mix.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/guide/effects-mix.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/guide/effects-style.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/guide/effects-style.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/guide/fluent-shapes.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/guide/fluent-shapes.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/guide/layers-depth.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/guide/layers-depth.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/guide/mesh.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/guide/mesh.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/guide/mouse-picking.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/guide/mouse-picking.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/guide/pixel-art.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/guide/pixel-art.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/guide/readback.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/guide/readback.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/guide/split-screen.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/guide/split-screen.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/guide/text.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/guide/text.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/guide/texture-from-data.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/guide/texture-from-data.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/guide/texture-modes.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/guide/texture-modes.png"
         }
       },
       "version": ""
@@ -1713,6 +2081,26 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "images/tutorials/customshader.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/tutorials/customshader.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/tutorials/gettingstarted.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/tutorials/gettingstarted.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "images/windowspace.png",
       "output": {
         "resource": {
@@ -1742,6 +2130,96 @@
       "version": ""
     },
     {
+      "type": "Resource",
+      "source_relative_path": "images/yakrun/grass.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/yakrun/grass.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/yakrun/part1.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/yakrun/part1.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/yakrun/part2.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/yakrun/part2.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/yakrun/part3.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/yakrun/part3.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/yakrun/part4-fall.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/yakrun/part4-fall.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/yakrun/part4-finish.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/yakrun/part4-finish.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/yakrun/part4.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/yakrun/part4.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/yakrun/soil.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/yakrun/soil.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/yakrun/yak.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/yakrun/yak.png"
+        }
+      },
+      "version": ""
+    },
+    {
       "type": "Conceptual",
       "source_relative_path": "index.md",
       "output": {
@@ -1760,6 +2238,99 @@
         },
         ".json": {
           "relative_path": "toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "tutorials/customshader.md",
+      "output": {
+        ".html": {
+          "relative_path": "tutorials/customshader.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "tutorials/distribution.md",
+      "output": {
+        ".html": {
+          "relative_path": "tutorials/distribution.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "tutorials/gettingstarted.md",
+      "output": {
+        ".html": {
+          "relative_path": "tutorials/gettingstarted.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "tutorials/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "tutorials/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "tutorials/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "tutorials/toc.html"
+        },
+        ".json": {
+          "relative_path": "tutorials/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "tutorials/yakrun-1.md",
+      "output": {
+        ".html": {
+          "relative_path": "tutorials/yakrun-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "tutorials/yakrun-2.md",
+      "output": {
+        ".html": {
+          "relative_path": "tutorials/yakrun-2.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "tutorials/yakrun-3.md",
+      "output": {
+        ".html": {
+          "relative_path": "tutorials/yakrun-3.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "tutorials/yakrun-4.md",
+      "output": {
+        ".html": {
+          "relative_path": "tutorials/yakrun-4.html"
         }
       },
       "version": ""

@@ -1,105 +1,244 @@
 <!DOCTYPE html>
-<!--[if IE]><![endif]-->
 <html>
-
   <head>
     <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <title>Surfaces </title>
-      <meta name="viewport" content="width=device-width">
-      <meta name="title" content="Surfaces ">
-    
-    
-      <link rel="shortcut icon" href="../favicon.ico">
-      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
-      <link rel="stylesheet" href="../styles/docfx.css">
-      <link rel="stylesheet" href="../styles/main.css">
-      <meta property="docfx:navrel" content="../toc.html">
-      <meta property="docfx:tocrel" content="toc.html">
-    
-    
-    
+      <title>Surfaces: textures and render targets | yak2D </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Surfaces: textures and render targets | yak2D ">
+      
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/AlzPatz/yak2d-docs-content/blob/master/articles/surfaces.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
   </head>
-  <body data-spy="scroll" data-target="#affix" data-offset="120">
-    <div id="wrapper">
-      <header>
 
-        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-
-              <a class="navbar-brand" href="../index.html">
-                <img id="logo" class="svg" src="../images/logo.png" alt="">
-              </a>
-            </div>
-            <div class="collapse navbar-collapse" id="navbar">
-              <form class="navbar-form navbar-right" role="search" id="search">
-                <div class="form-group">
-                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
-                </div>
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo.png" alt="yak2D">
+            yak2D
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
               </form>
             </div>
           </div>
-        </nav>
-
-        <div class="subnav navbar navbar-default">
-          <div class="container hide-when-search" id="breadcrumb">
-            <ul class="breadcrumb">
-              <li></li>
-            </ul>
-          </div>
         </div>
-      </header>
-      <div role="main" class="container body-content hide-when-search">
+      </nav>
+    </header>
 
-        <div class="sidenav hide-when-search">
-          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
-          <div class="sidetoggle collapse" id="sidetoggle">
-            <div id="sidetoc"></div>
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
           </div>
-        </div>
-        <div class="article row grid-right">
-          <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="uid_surfaces">
-<h1 id="surfaces">Surfaces</h1>
-
-
-</article>
-          </div>
-
-          <div class="hidden-sm col-md-2" role="complementary">
-            <div class="sideaffix">
-              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-                <h5>In this article</h5>
-                <div></div>
-              </nav>
-            </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
           </div>
         </div>
       </div>
 
-      <footer>
-        <div class="grad-bottom"></div>
-        <div class="footer">
-          <div class="container">
-            <span class="pull-right">
-              <a href="#top">Back to top</a>
-            </span>
-      yak2D - Alex Paterson
-      
-          </div>
-        </div>
-      </footer>
-    </div>
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
 
-    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
-    <script type="text/javascript" src="../styles/docfx.js"></script>
-    <script type="text/javascript" src="../styles/main.js"></script>
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="uid_surfaces">
+<h1 id="surfaces-textures-and-render-targets">Surfaces: textures and render targets</h1>
+
+<p>A <strong>surface</strong> is an image stored on the GPU. There are two kinds:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><a class="xref" href="../api/Yak2D.ITexture.html">Texture</a></th>
+<th><a class="xref" href="../api/Yak2D.IRenderTarget.html">Render target</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Can be <strong>read</strong> (drawn as a sprite, used as an effect's input)</td>
+<td>yes</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>Can be <strong>rendered onto</strong></td>
+<td>no</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>Has a depth buffer</td>
+<td>no</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>Made by</td>
+<td>loading an image, or from pixel data</td>
+<td><a class="xref" href="../api/Yak2D.ISurfaces.html#Yak2D_ISurfaces_CreateRenderTarget_">CreateRenderTarget()</a></td>
+</tr>
+</tbody>
+</table>
+<p>An <a class="xref" href="../api/Yak2D.IRenderTarget.html">IRenderTarget</a> is also an <a class="xref" href="../api/Yak2D.ITexture.html">ITexture</a>, so anywhere a texture is expected you can pass a render target. That is what makes multi-step rendering possible: render something onto a render target, then use it as the input to the next step.</p>
+<p>The <strong>window</strong> is a render target too. It is passed to <a class="xref" href="../api/Yak2D.IApplication.html#Yak2D_IApplication_Rendering_">Rendering()</a> as <code>windowRenderTarget</code>, and can also be fetched with <a class="xref" href="../api/Yak2D.ISurfaces.html#Yak2D_ISurfaces_ReturnMainWindowRenderTarget">ReturnMainWindowRenderTarget()</a>. (The window's render target cannot be read from, though, only rendered onto.)</p>
+<h2 id="textures">Textures</h2>
+<p>Load textures from image files (see <a href="assets.html">Assets</a>) or from a <code>Stream</code>:</p>
+<pre><code class="lang-csharp">var texture = yak.Surfaces.LoadTexture(&quot;yak&quot;, AssetSourceEnum.Embedded);
+using var stream = File.OpenRead(&quot;screenshot.png&quot;);
+var fromStream = yak.Surfaces.LoadTexture(stream);
+</code></pre>
+<h3 id="textures-from-data">Textures from data</h3>
+<p>Textures can also be made from pixel data in code. <a class="xref" href="../api/Yak2D.ISurfaces.html#Yak2D_ISurfaces_CreateRgbaFromData_">CreateRgbaFromData()</a> takes one <code>Vector4</code> per pixel (red, green, blue, alpha, each 0 to 1), row by row from the top-left. <a class="xref" href="../api/Yak2D.ISurfaces.html#Yak2D_ISurfaces_LoadTextureColourData_">LoadTextureColourData()</a> loads an image's pixels into a <a class="xref" href="../api/Yak2D.TextureData.html">TextureData</a> without creating a texture, so you can inspect or change them first:</p>
+<p><img src="../images/guide/texture-from-data.png" alt="Textures created from data"></p>
+<pre><code class="lang-csharp">public override bool CreateResources(IServices yak)
+{
+    _drawStage = yak.Stages.CreateDrawStage();
+    _camera = yak.Cameras.CreateCamera2D(960, 540);
+
+    // Build a texture from code: one Vector4 (R, G, B, A from 0 to 1) per pixel, row by row from the top-left
+    const int size = 8;
+    var pixels = new Vector4[size * size];
+    for (var y = 0; y &lt; size; y++)
+    {
+        for (var x = 0; x &lt; size; x++)
+        {
+            pixels[(y * size) + x] = (x + y) % 2 == 0 ? new Vector4(1.0f, 1.0f, 1.0f, 1.0f) : new Vector4(0.8f, 0.1f, 0.2f, 1.0f);
+        }
+    }
+    _checkerboard = yak.Surfaces.CreateRgbaFromData(size, size, pixels, SamplerType.Point);
+
+    // Or load an image's pixels, change them, and create a new texture from the result
+    var data = yak.Surfaces.LoadTextureColourData(&quot;yakphoto&quot;, AssetSourceEnum.Embedded);
+    var crop = new Vector4[240 * 160];
+    for (var y = 0; y &lt; 160; y++)
+    {
+        for (var x = 0; x &lt; 240; x++)
+        {
+            var p = data.Pixels[((y + 40) * (int)data.Width) + x + 120];
+            crop[(y * 240) + x] = new Vector4(p.Z, p.Y, p.X, p.W); // swap red and blue
+        }
+    }
+    _yakCorner = yak.Surfaces.CreateRgbaFromData(240, 160, crop);
+    return true;
+}
+</code></pre>
+<p><a class="xref" href="../api/Yak2D.ISurfaces.html#Yak2D_ISurfaces_CreateFloat32FromData_">CreateFloat32FromData()</a> makes a single-channel texture of <code>float</code> values, which is what the <a href="distortion.html">distortion</a> stage uses for height maps.</p>
+<h3 id="texture-size">Texture size</h3>
+<p><a class="xref" href="../api/Yak2D.ISurfaces.html#Yak2D_ISurfaces_GetSurfaceDimensions_">GetSurfaceDimensions()</a> returns a surface's width and height in pixels as a <code>System.Drawing.Size</code>. It is handy for drawing a sprite at its natural size, or keeping its aspect ratio.</p>
+<h2 id="render-targets">Render targets</h2>
+<pre><code class="lang-csharp">_scene = yak.Surfaces.CreateRenderTarget(960, 540);
+</code></pre>
+<p><a class="xref" href="../api/Yak2D.ISurfaces.html#Yak2D_ISurfaces_CreateRenderTarget_">CreateRenderTarget()</a> takes a width and height in pixels, and optionally:</p>
+<ul>
+<li><strong>autoClearColourAndDepthEachFrame</strong> (default <code>true</code>): clears the render target to transparent black, and its depth buffer, at the start of every frame. Leave it on unless you want to keep what was drawn last frame (for trails, paint programs, or pre-rendered textures).</li>
+<li><strong>samplerType</strong> (default <code>Anisotropic</code>): how the render target is filtered when it is later read and drawn at a different size. <code>Point</code> gives crisp pixels.</li>
+<li><strong>numberOfMipMapLevels</strong> (default 1, meaning none).</li>
+</ul>
+<p>Render into it with any stage, and read from it in a later step:</p>
+<pre><code class="lang-csharp">q.Draw(_drawStage, _camera, _scene);          // render the scene off-screen
+q.Blur(_blur, _scene, windowRenderTarget);    // then use it as the input to an effect
+</code></pre>
+<h3 id="example-a-retro-low-resolution-look">Example: a retro, low-resolution look</h3>
+<p>Rendering into a small render target with point sampling, then copying it to the window, gives chunky pixels without changing any drawing code:</p>
+<p><img src="../images/guide/pixel-art.png" alt="A pixel art effect using a small render target"></p>
+<pre><code class="lang-csharp">public override bool CreateResources(IServices yak)
+{
+    _drawStage = yak.Stages.CreateDrawStage();
+    _yak = yak.Surfaces.LoadTexture(&quot;yak&quot;, AssetSourceEnum.Embedded);
+
+    // The camera still works in 960 x 540 units...
+    _camera = yak.Cameras.CreateCamera2D(960, 540);
+
+    // ...but everything is drawn into a surface only 240 x 135 pixels in size, sampled with
+    // Point filtering (no smoothing) when it is later stretched across the window
+    _lowRes = yak.Surfaces.CreateRenderTarget(240, 135, true, SamplerType.Point);
+    return true;
+}
+</code></pre><pre><code class="lang-csharp">public override void Rendering(IRenderQueue q, IRenderTarget windowRenderTarget)
+{
+    q.Draw(_drawStage, _camera, _lowRes);  // draw into the small surface
+    q.Copy(_lowRes, windowRenderTarget);    // stretch it over the window
+}
+</code></pre><h3 id="other-uses">Other uses</h3>
+<ul>
+<li><strong>Post-processing</strong>: render the scene into a render target, then pass it through <a href="effects.html">effects</a> on its way to the window.</li>
+<li><strong>Pre-rendering</strong>: draw something expensive once into a render target (with auto-clear off) and then draw that as a simple textured quad every frame. The <a href="https://github.com/AlzPatz/yak2d-samples/tree/master/src/DrawingAndEffects_PrerenderingTexturesForUseLater">DrawingAndEffects_PrerenderingTexturesForUseLater</a> sample pre-renders an animated explosion this way.</li>
+<li><strong>Picture-in-picture</strong>: render a second view into a render target and draw it as a sprite.</li>
+<li><strong>Textures for 3D</strong>: use a render target as the texture on a <a href="mesh.html">3D mesh</a>.</li>
+<li><strong>Reading pixels back</strong>: render into a render target, then <a href="readback.html">copy it to the CPU</a>.</li>
+</ul>
+<h2 id="clearing">Clearing</h2>
+<p><a class="xref" href="../api/Yak2D.IRenderQueue.html#Yak2D_IRenderQueue_ClearColour_">q.ClearColour(target, colour)</a> fills a render target with a colour; <a class="xref" href="../api/Yak2D.IRenderQueue.html#Yak2D_IRenderQueue_ClearDepth_">q.ClearDepth(target)</a> resets its depth buffer. Render targets created with auto-clear on (and the window, if the <a href="configuration.html">configuration</a> asks for it) are cleared automatically at the start of every frame, before your render queue runs.</p>
+<h2 id="copying">Copying</h2>
+<p><a class="xref" href="../api/Yak2D.IRenderQueue.html#Yak2D_IRenderQueue_Copy_">q.Copy(source, target)</a> copies any surface onto a render target, stretching it to fit. The sizes do not need to match.</p>
+<h2 id="destroying-surfaces">Destroying surfaces</h2>
+<p><a class="xref" href="../api/Yak2D.ISurfaces.html#Yak2D_ISurfaces_DestroySurface_">DestroySurface()</a> destroys one texture or render target. <a class="xref" href="../api/Yak2D.ISurfaces.html#Yak2D_ISurfaces_DestroyAllUserTextures">DestroyAllUserTextures()</a>, <a class="xref" href="../api/Yak2D.ISurfaces.html#Yak2D_ISurfaces_DestroyAllUserRenderTargets">DestroyAllUserRenderTargets()</a> and <a class="xref" href="../api/Yak2D.ISurfaces.html#Yak2D_ISurfaces_DestoryAllUserSurfaces">DestoryAllUserSurfaces()</a> (note the spelling) destroy many at once. See <a href="resources.html">Resources and references</a>.</p>
+<h2 id="see-also">See also</h2>
+<ul>
+<li>Samples: <a href="https://github.com/AlzPatz/yak2d-samples/tree/master/src/Surfaces_CreateTextureFromDataRGBA">Surfaces_CreateTextureFromDataRGBA</a>, <a href="https://github.com/AlzPatz/yak2d-samples/tree/master/src/Draw_ImageFileFormats">Draw_ImageFileFormats</a>, <a href="https://github.com/AlzPatz/yak2d-samples/tree/master/src/Copy_Example">Copy_Example</a></li>
+<li>Full example code: <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/master/code/Snippets/Surfaces.cs">Surfaces.cs</a></li>
+</ul>
+
+</article>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          yak2D - Alex Paterson - MIT licence
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

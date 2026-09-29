@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Reading pixels back (GPU to CPU) | yak2D </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Reading pixels back (GPU to CPU) | yak2D ">
+      
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/AlzPatz/yak2d-docs-content/blob/master/articles/readback.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo.png" alt="yak2D">
+            yak2D
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="uid_readback">
+<h1 id="reading-pixels-back-gpu-to-cpu">Reading pixels back (GPU to CPU)</h1>
+
+<p>Rendering happens on the GPU, and its results normally stay there. A <strong>surface copy stage</strong> (<a class="xref" href="../api/Yak2D.ISurfaceCopyStage.html">ISurfaceCopyStage</a>) copies a surface's pixels back into an array your code can read. Uses include:</p>
+<ul>
+<li>pixel-perfect mouse picking (draw each object in a unique colour, read the colour under the mouse),</li>
+<li>saving screenshots,</li>
+<li>reading the results of GPU calculations (for example a <a href="customshaders.html">custom shader</a> or compute stage),</li>
+<li>testing.</li>
+</ul>
+<p><img src="../images/guide/readback.png" alt="Reading back the colour under the mouse"></p>
+<h2 id="setting-up">Setting up</h2>
+<pre><code class="lang-csharp">public override bool CreateResources(IServices yak)
+{
+    _drawStage = yak.Stages.CreateDrawStage();
+    _overlay = yak.Stages.CreateDrawStage();
+    _camera = yak.Cameras.CreateCamera2D(960, 540);
+    _canvas = yak.Surfaces.CreateRenderTarget(960, 540);
+
+    // The callback runs once the GPU has finished rendering the frame and the pixels have been copied back
+    _readback = yak.Stages.CreateSurfaceCopyDataStage(960, 540, data =&gt; _pixels = data.Pixels);
+    return true;
+}
+</code></pre>
+<p><a class="xref" href="../api/Yak2D.IStages.html#Yak2D_IStages_CreateSurfaceCopyDataStage_">CreateSurfaceCopyDataStage()</a> takes:</p>
+<ul>
+<li>the size of the internal &quot;staging&quot; texture. Match the surface you will copy; a different size works but is recreated each time, which is slower.</li>
+<li>a <strong>callback</strong>, called with a <a class="xref" href="../api/Yak2D.TextureData.html">TextureData</a> once the pixels arrive. It is called on the main thread, so it can safely change your application's state.</li>
+<li><code>useFloat32PixelFormat</code>: <code>false</code> (the default) for normal RGBA surfaces, <code>true</code> for single-channel float surfaces such as distortion height maps (then only each pixel's <code>X</code> is used).</li>
+</ul>
+<p>The callback can be changed later with <a class="xref" href="../api/Yak2D.IStages.html#Yak2D_IStages_SetSurfaceCopyDataStageCallback_">SetSurfaceCopyDataStageCallback()</a>.</p>
+<h2 id="requesting-a-copy">Requesting a copy</h2>
+<p>Add <a class="xref" href="../api/Yak2D.IRenderQueue.html#Yak2D_IRenderQueue_CopySurfaceData_">CopySurfaceData(stage, source)</a> to the render queue after whatever renders the source:</p>
+<pre><code class="lang-csharp">public override void Rendering(IRenderQueue q, IRenderTarget windowRenderTarget)
+{
+    q.Draw(_drawStage, _camera, _canvas);
+    q.CopySurfaceData(_readback, _canvas); // ask for this surface's pixels
+    q.Copy(_canvas, windowRenderTarget);
+    q.ClearDepth(windowRenderTarget);
+    q.Draw(_overlay, _camera, windowRenderTarget);
+}
+</code></pre>
+<p>The callback fires after the GPU has finished that frame, so the data is always at least a frame old. Only request a copy when you need one; copying every frame, as this example does, costs GPU-to-CPU bandwidth.</p>
+<h2 id="using-the-data">Using the data</h2>
+<p><code>TextureData.Pixels</code> holds one <code>Vector4</code> per pixel (red, green, blue, alpha from 0 to 1), row by row from the <strong>top-left</strong>, the same way round as window coordinates. So pixel (x, y) is at index <code>y * width + x</code>:</p>
+<pre><code class="lang-csharp">// Pixels are stored row by row from the top-left, the same as window coordinates
+if (_pixels != null)
+{
+    var x = (int)Math.Clamp(input.MousePosition.X, 0, 959);
+    var y = (int)Math.Clamp(input.MousePosition.Y, 0, 539);
+    var pixel = _pixels[(y * 960) + x];
+
+    var mouse = transforms.ScreenFromWindow(input.MousePosition, _camera).Position;
+    draw.DrawString(_overlay, CoordinateSpace.Screen, $&quot;R {pixel.X:0.00}  G {pixel.Y:0.00}  B {pixel.Z:0.00}&quot;,
+                    Colour.White, 22.0f, mouse + new Vector2(0.0f, 60.0f), TextJustify.Centre, 0.5f, 0);
+    draw.Helpers.DrawColouredQuad(_overlay, CoordinateSpace.Screen, new Colour(pixel.X, pixel.Y, pixel.Z, 1.0f),
+                                  mouse + new Vector2(0.0f, 90.0f), 40.0f, 40.0f, 0.5f);
+}
+</code></pre><h2 id="limits">Limits</h2>
+<ul>
+<li>The <strong>window cannot be copied</strong>. Render into a render target, copy that, and <a class="xref" href="../api/Yak2D.IRenderQueue.html#Yak2D_IRenderQueue_Copy_">copy it</a> to the window as well if you want to see it.</li>
+<li>Each copy stage can be used <strong>once per render queue</strong>. Create several stages to copy several surfaces in one frame.</li>
+</ul>
+<h2 id="see-also">See also</h2>
+<ul>
+<li>Samples: <a href="https://github.com/AlzPatz/yak2d-samples/tree/master/src/GpuToCpu_SurfaceCopyRGBA">GpuToCpu_SurfaceCopyRGBA</a>, <a href="https://github.com/AlzPatz/yak2d-samples/tree/master/src/GpuToCpu_SurfaceCopyFloat32">GpuToCpu_SurfaceCopyFloat32</a></li>
+<li>The screenshots in these docs are captured with a surface copy stage: see <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/master/code/DocsTools/Harness/CaptureApp.cs">the capture harness</a>.</li>
+</ul>
+
+</article>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          yak2D - Alex Paterson - MIT licence
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

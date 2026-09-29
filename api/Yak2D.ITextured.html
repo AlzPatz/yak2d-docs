@@ -1,450 +1,415 @@
 <!DOCTYPE html>
-<!--[if IE]><![endif]-->
 <html>
-
   <head>
     <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <title>Interface ITextured </title>
-      <meta name="viewport" content="width=device-width">
-      <meta name="title" content="Interface ITextured ">
-    
-    <meta name="description" content="The Filled object type for the shape drawing fluent interface Each of the object&#39;s methods represent a possible shape type for shape drawing The fluent type interface is designed for simple, rapid, iterative shape drawing">
-      <link rel="shortcut icon" href="../favicon.ico">
-      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
-      <link rel="stylesheet" href="../styles/docfx.css">
-      <link rel="stylesheet" href="../styles/main.css">
-      <meta property="docfx:navrel" content="../toc.html">
-      <meta property="docfx:tocrel" content="toc.html">
-    
-    
-    
+      <title>Interface ITextured | yak2D </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Interface ITextured | yak2D ">
+      
+      <meta name="description" content="The Filled object type for the shape drawing fluent interface Each of the object&#39;s methods represent a possible shape type for shape drawing The fluent type interface is designed for simple, rapid, iterative shape drawing">
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
   </head>
-  <body data-spy="scroll" data-target="#affix" data-offset="120">
-    <div id="wrapper">
-      <header>
 
-        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-
-              <a class="navbar-brand" href="../index.html">
-                <img id="logo" class="svg" src="../images/logo.png" alt="">
-              </a>
-            </div>
-            <div class="collapse navbar-collapse" id="navbar">
-              <form class="navbar-form navbar-right" role="search" id="search">
-                <div class="form-group">
-                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
-                </div>
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo.png" alt="yak2D">
+            yak2D
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
               </form>
             </div>
           </div>
-        </nav>
+        </div>
+      </nav>
+    </header>
 
-        <div class="subnav navbar navbar-default">
-          <div class="container hide-when-search" id="breadcrumb">
-            <ul class="breadcrumb">
-              <li></li>
-            </ul>
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
           </div>
         </div>
-      </header>
-      <div role="main" class="container body-content hide-when-search">
+      </div>
 
-        <div class="sidenav hide-when-search">
-          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
-          <div class="sidetoggle collapse" id="sidetoggle">
-            <div id="sidetoc"></div>
-          </div>
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
         </div>
-        <div class="article row grid-right">
-          <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Yak2D.ITextured">
+
+        <article data-uid="Yak2D.ITextured">
 
 
 
-  <h1 id="Yak2D_ITextured" data-uid="Yak2D.ITextured" class="text-break">Interface ITextured</h1>
-  <div class="markdown level0 summary"><p>The Filled object type for the shape drawing fluent interface
+  <h1 id="Yak2D_ITextured" data-uid="Yak2D.ITextured" class="text-break">
+Interface ITextured  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Interface/Utilities/DrawingHelpers/ITextured.cs"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Yak2D.html">Yak2D</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Yak2D.Api.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>The Filled object type for the shape drawing fluent interface
 Each of the object's methods represent a possible shape type for shape drawing
 The fluent type interface is designed for simple, rapid, iterative shape drawing</p>
 </div>
-  <div class="markdown level0 conceptual"></div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="Yak2D.html">Yak2D</a></h6>
-  <h6><strong>Assembly</strong>: Yak2D.Api.dll</h6>
-  <h5 id="Yak2D_ITextured_syntax">Syntax</h5>
+  <div class="markdown conceptual"></div>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public interface ITextured</code></pre>
   </div>
-  <h3 id="methods">Methods
-</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
   <a id="Yak2D_ITextured_Line_" data-uid="Yak2D.ITextured.Line*"></a>
-  <h4 id="Yak2D_ITextured_Line_System_Numerics_Vector2_System_Numerics_Vector2_System_Single_" data-uid="Yak2D.ITextured.Line(System.Numerics.Vector2,System.Numerics.Vector2,System.Single)">Line(Vector2, Vector2, float)</h4>
+
+  <h3 id="Yak2D_ITextured_Line_System_Numerics_Vector2_System_Numerics_Vector2_System_Single_" data-uid="Yak2D.ITextured.Line(System.Numerics.Vector2,System.Numerics.Vector2,System.Single)">
+  Line(Vector2, Vector2, float)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Interface/Utilities/DrawingHelpers/ITextured.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>A line</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">ILine Line(Vector2 from, Vector2 too, float width)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.vector2">Vector2</a></td>
-        <td><span class="parametername">from</span></td>
-        <td><p>Start point of the line</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.vector2">Vector2</a></td>
-        <td><span class="parametername">too</span></td>
-        <td><p>End point of the line</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
-        <td><span class="parametername">width</span></td>
-        <td><p>Width (thickness) of the line</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.ILine.html">ILine</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>from</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.vector2">Vector2</a></dt>
+    <dd><p>Start point of the line</p>
+</dd>
+    <dt><code>too</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.vector2">Vector2</a></dt>
+    <dd><p>End point of the line</p>
+</dd>
+    <dt><code>width</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>Width (thickness) of the line</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.ILine.html">ILine</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="Yak2D_ITextured_Poly_" data-uid="Yak2D.ITextured.Poly*"></a>
-  <h4 id="Yak2D_ITextured_Poly_System_Numerics_Vector2_System_Int32_System_Single_" data-uid="Yak2D.ITextured.Poly(System.Numerics.Vector2,System.Int32,System.Single)">Poly(Vector2, int, float)</h4>
+
+  <h3 id="Yak2D_ITextured_Poly_System_Numerics_Vector2_System_Int32_System_Single_" data-uid="Yak2D.ITextured.Poly(System.Numerics.Vector2,System.Int32,System.Single)">
+  Poly(Vector2, int, float)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Interface/Utilities/DrawingHelpers/ITextured.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>A regular polygon (equal side lengths). Can approximate a circle with a high enough number of sides</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">IShape Poly(Vector2 position, int numSides, float radius)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.vector2">Vector2</a></td>
-        <td><span class="parametername">position</span></td>
-        <td><p>Centre position of shape</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td><span class="parametername">numSides</span></td>
-        <td><p>The number of sides (all equal length). Large n --&gt; circle</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
-        <td><span class="parametername">radius</span></td>
-        <td><p>The shape radius (distance of each point on the outside from the centre)</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.IShape.html">IShape</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>position</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.vector2">Vector2</a></dt>
+    <dd><p>Centre position of shape</p>
+</dd>
+    <dt><code>numSides</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The number of sides (all equal length). Large n --&gt; circle</p>
+</dd>
+    <dt><code>radius</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The shape radius (distance of each point on the outside from the centre)</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.IShape.html">IShape</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="Yak2D_ITextured_Poly_" data-uid="Yak2D.ITextured.Poly*"></a>
-  <h4 id="Yak2D_ITextured_Poly_System_Numerics_Vector2___System_Int32___" data-uid="Yak2D.ITextured.Poly(System.Numerics.Vector2[],System.Int32[])">Poly(Vector2[], int[])</h4>
+
+  <h3 id="Yak2D_ITextured_Poly_System_Numerics_Vector2___System_Int32___" data-uid="Yak2D.ITextured.Poly(System.Numerics.Vector2[],System.Int32[])">
+  Poly(Vector2[], int[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Interface/Utilities/DrawingHelpers/ITextured.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>A polygon built out of user defined vertices and indices
 To render properly, the index referenced vertices must form a list of triangles
 If texture mapped, the texture coordinates are automatically generated
 If texture mapping is for a tiled texture, the centre point between all the shapes will be taken as the centre of the texture</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">IShape Poly(Vector2[] vertices, int[] indices)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.vector2">Vector2</a>[]</td>
-        <td><span class="parametername">vertices</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>[]</td>
-        <td><span class="parametername">indices</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.IShape.html">IShape</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>vertices</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.vector2">Vector2</a>[]</dt>
+    <dd></dd>
+    <dt><code>indices</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.IShape.html">IShape</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="Yak2D_ITextured_Poly_" data-uid="Yak2D.ITextured.Poly*"></a>
-  <h4 id="Yak2D_ITextured_Poly_System_Numerics_Vector2___System_Int32___System_Numerics_Vector2___" data-uid="Yak2D.ITextured.Poly(System.Numerics.Vector2[],System.Int32[],System.Numerics.Vector2[])">Poly(Vector2[], int[], Vector2[])</h4>
+
+  <h3 id="Yak2D_ITextured_Poly_System_Numerics_Vector2___System_Int32___System_Numerics_Vector2___" data-uid="Yak2D.ITextured.Poly(System.Numerics.Vector2[],System.Int32[],System.Numerics.Vector2[])">
+  Poly(Vector2[], int[], Vector2[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Interface/Utilities/DrawingHelpers/ITextured.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>A polygon built out of user defined vertices, indices and texture coordiantes
 To render properly, the index referenced vertices must form a list of triangles</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">IShape Poly(Vector2[] vertices, int[] indices, Vector2[] texCoords)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.vector2">Vector2</a>[]</td>
-        <td><span class="parametername">vertices</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>[]</td>
-        <td><span class="parametername">indices</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.vector2">Vector2</a>[]</td>
-        <td><span class="parametername">texCoords</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.IShape.html">IShape</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>vertices</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.vector2">Vector2</a>[]</dt>
+    <dd></dd>
+    <dt><code>indices</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>[]</dt>
+    <dd></dd>
+    <dt><code>texCoords</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.vector2">Vector2</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.IShape.html">IShape</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="Yak2D_ITextured_Quad_" data-uid="Yak2D.ITextured.Quad*"></a>
-  <h4 id="Yak2D_ITextured_Quad_System_Numerics_Vector2_System_Single_System_Single_" data-uid="Yak2D.ITextured.Quad(System.Numerics.Vector2,System.Single,System.Single)">Quad(Vector2, float, float)</h4>
+
+  <h3 id="Yak2D_ITextured_Quad_System_Numerics_Vector2_System_Single_System_Single_" data-uid="Yak2D.ITextured.Quad(System.Numerics.Vector2,System.Single,System.Single)">
+  Quad(Vector2, float, float)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Interface/Utilities/DrawingHelpers/ITextured.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>A quad (rectangle/square) made of two triangles</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">IShape Quad(Vector2 position, float width, float height)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.vector2">Vector2</a></td>
-        <td><span class="parametername">position</span></td>
-        <td><p>Centre position of shape</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
-        <td><span class="parametername">width</span></td>
-        <td><p>Width of shape</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
-        <td><span class="parametername">height</span></td>
-        <td><p>Height of shape</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.IShape.html">IShape</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>position</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.vector2">Vector2</a></dt>
+    <dd><p>Centre position of shape</p>
+</dd>
+    <dt><code>width</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>Width of shape</p>
+</dd>
+    <dt><code>height</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>Height of shape</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.IShape.html">IShape</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="Yak2D_ITextured_RoundedLine_" data-uid="Yak2D.ITextured.RoundedLine*"></a>
-  <h4 id="Yak2D_ITextured_RoundedLine_System_Numerics_Vector2_System_Numerics_Vector2_System_Single_System_Int32_System_Boolean_" data-uid="Yak2D.ITextured.RoundedLine(System.Numerics.Vector2,System.Numerics.Vector2,System.Single,System.Int32,System.Boolean)">RoundedLine(Vector2, Vector2, float, int, bool)</h4>
+
+  <h3 id="Yak2D_ITextured_RoundedLine_System_Numerics_Vector2_System_Numerics_Vector2_System_Single_System_Int32_System_Boolean_" data-uid="Yak2D.ITextured.RoundedLine(System.Numerics.Vector2,System.Numerics.Vector2,System.Single,System.Int32,System.Boolean)">
+  RoundedLine(Vector2, Vector2, float, int, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Interface/Utilities/DrawingHelpers/ITextured.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>A line with rounded ends
 The radius of the end rounding is equal to the line width (thickness)</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">ILine RoundedLine(Vector2 from, Vector2 too, float width, int numberOfCurveSegments, bool centreOfCurveRadiusAtLineEndPoints = true)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.vector2">Vector2</a></td>
-        <td><span class="parametername">from</span></td>
-        <td><p>Start point of the line</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.vector2">Vector2</a></td>
-        <td><span class="parametername">too</span></td>
-        <td><p>End point of the line</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
-        <td><span class="parametername">width</span></td>
-        <td><p>Width (thickness) of the line</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td><span class="parametername">numberOfCurveSegments</span></td>
-        <td><p>Rounded ends will be rendered by this number of segments (minimum 2)</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><span class="parametername">centreOfCurveRadiusAtLineEndPoints</span></td>
-        <td><p>If true, the 'from' and 'too' line positions will be positioned in the centre of the theoretical end rounding circles (the rounded ends will spill over the end points of the lines)</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.ILine.html">ILine</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>from</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.vector2">Vector2</a></dt>
+    <dd><p>Start point of the line</p>
+</dd>
+    <dt><code>too</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.vector2">Vector2</a></dt>
+    <dd><p>End point of the line</p>
+</dd>
+    <dt><code>width</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>Width (thickness) of the line</p>
+</dd>
+    <dt><code>numberOfCurveSegments</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Rounded ends will be rendered by this number of segments (minimum 2)</p>
+</dd>
+    <dt><code>centreOfCurveRadiusAtLineEndPoints</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>If true, the 'from' and 'too' line positions will be positioned in the centre of the theoretical end rounding circles (the rounded ends will spill over the end points of the lines)</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.ILine.html">ILine</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
 
 </article>
-          </div>
 
-          <div class="hidden-sm col-md-2" role="complementary">
-            <div class="sideaffix">
-              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-                <h5>In this article</h5>
-                <div></div>
-              </nav>
-            </div>
-          </div>
-        </div>
+
+
       </div>
 
-      <footer>
-        <div class="grad-bottom"></div>
-        <div class="footer">
-          <div class="container">
-            <span class="pull-right">
-              <a href="#top">Back to top</a>
-            </span>
-      yak2D - Alex Paterson
-      
-          </div>
-        </div>
-      </footer>
-    </div>
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
 
-    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
-    <script type="text/javascript" src="../styles/docfx.js"></script>
-    <script type="text/javascript" src="../styles/main.js"></script>
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          yak2D - Alex Paterson - MIT licence
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

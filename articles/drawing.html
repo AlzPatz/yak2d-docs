@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Drawing | yak2D </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Drawing | yak2D ">
+      
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/AlzPatz/yak2d-docs-content/blob/master/articles/drawing.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo.png" alt="yak2D">
+            yak2D
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="uid_drawing">
+<h1 id="drawing">Drawing</h1>
+
+<p>Everything 2D in yak2D (sprites, shapes, tiles, text) is drawn the same way: you submit <strong>draw requests</strong> to a <strong>draw stage</strong> in your <a class="xref" href="../api/Yak2D.IApplication.html#Yak2D_IApplication_Drawing_">Drawing()</a> method, then render the draw stage through a camera in <a class="xref" href="../api/Yak2D.IApplication.html#Yak2D_IApplication_Rendering_">Rendering()</a>.</p>
+<p><img src="../images/guide/drawing-basics.png" alt="Shapes drawn with the helper functions"></p>
+<h2 id="draw-stages">Draw stages</h2>
+<p>A draw stage (<a class="xref" href="../api/Yak2D.IDrawStage.html">IDrawStage</a>) collects draw requests, sorts them, batches them together, and renders them. Create one in <code>CreateResources()</code>, along with a camera to view it through:</p>
+<pre><code class="lang-csharp">private IDrawStage _drawStage;
+private ICamera2D _camera;
+private ITexture _yak;
+
+public override bool CreateResources(IServices yak)
+{
+    _drawStage = yak.Stages.CreateDrawStage();
+    _camera = yak.Cameras.CreateCamera2D(960, 540);
+    _yak = yak.Surfaces.LoadTexture(&quot;yak&quot;, AssetSourceEnum.Embedded);
+    return true;
+}
+</code></pre>
+<p><a class="xref" href="../api/Yak2D.IStages.html#Yak2D_IStages_CreateDrawStage_">CreateDrawStage()</a> has two optional parameters:</p>
+<ul>
+<li><strong>clearDynamicRequestQueueEachFrame</strong> (default <code>true</code>): the stage starts every frame empty, so you draw everything each frame. Set it to <code>false</code> to keep requests between frames (see <a href="#drawing-things-once">Drawing things once</a>).</li>
+<li><strong>blendState</strong> (default <code>BlendState.Alpha</code>): how drawn pixels combine with what is already there (see <a href="#blend-states">Blend states</a>).</li>
+</ul>
+<p>Most games need only a few draw stages: typically one for the game world and one for the HUD, so the two can be viewed through different cameras.</p>
+<h2 id="submitting-and-rendering">Submitting and rendering</h2>
+<p>In <code>Drawing()</code>, submit requests to a stage. The simplest way is with the helper functions in <code>draw.Helpers</code> (<a class="xref" href="../api/Yak2D.IDrawingHelpers.html">IDrawingHelpers</a>):</p>
+<pre><code class="lang-csharp">public override void Drawing(IDrawing draw, IFps fps, IInput input, ICoordinateTransforms transforms,
+                             float secondsSinceLastDraw, float secondsSinceLastUpdate)
+{
+    var helpers = draw.Helpers;
+
+    // Rectangles (&quot;quads&quot;): coloured, and textured. Positions are the centre of the shape
+    helpers.DrawColouredQuad(_drawStage, CoordinateSpace.Screen, Colour.CornflowerBlue,
+                             new Vector2(-330.0f, 130.0f), 200.0f, 140.0f, 0.5f);
+
+    helpers.DrawTexturedQuad(_drawStage, CoordinateSpace.Screen, _yak, Colour.White,
+                             new Vector2(-80.0f, 130.0f), 190.0f, 170.0f, 0.5f);
+
+    // Tinting: the texture colour is multiplied by the colour given
+    helpers.DrawTexturedQuad(_drawStage, CoordinateSpace.Screen, _yak, Colour.LightGreen,
+                             new Vector2(170.0f, 130.0f), 190.0f, 170.0f, 0.5f,
+                             rotation_clockwise_radians: 0.3f);
+
+    // Regular polygons: a triangle, a hexagon, and enough sides to look like a circle
+    helpers.DrawColouredPoly(_drawStage, CoordinateSpace.Screen, Colour.Orange, new Vector2(390.0f, 140.0f), 3, 70.0f, 0.5f);
+    helpers.DrawColouredPoly(_drawStage, CoordinateSpace.Screen, Colour.MediumPurple, new Vector2(-360.0f, -120.0f), 6, 75.0f, 0.5f);
+    helpers.DrawColouredPoly(_drawStage, CoordinateSpace.Screen, Colour.Crimson, new Vector2(-170.0f, -120.0f), 64, 70.0f, 0.5f,
+                             xScaling: 1.0f, yScaling: 0.6f); // squashed into an ellipse
+
+    // Lines and arrows
+    helpers.DrawLine(_drawStage, CoordinateSpace.Screen, new Vector2(-40.0f, -60.0f), new Vector2(120.0f, -180.0f),
+                     16.0f, Colour.Teal, 0.5f, rounded: true);
+    helpers.DrawArrow(_drawStage, CoordinateSpace.Screen, new Vector2(200.0f, -180.0f), new Vector2(420.0f, -60.0f),
+                      18.0f, 60.0f, 60.0f, Colour.Gold, 0.5f);
+}
+</code></pre>
+<p>Then in <code>Rendering()</code>, render the stage onto a surface through a camera:</p>
+<pre><code class="lang-csharp">public override void Rendering(IRenderQueue q, IRenderTarget windowRenderTarget)
+{
+    q.ClearColour(windowRenderTarget, Colour.DarkSlateGray);
+    q.ClearDepth(windowRenderTarget);
+    q.Draw(_drawStage, _camera, windowRenderTarget);
+}
+</code></pre>
+<p>Nothing is drawn until the stage is rendered with <a class="xref" href="../api/Yak2D.IRenderQueue.html#Yak2D_IRenderQueue_Draw_">q.Draw()</a>. A stage can be rendered more than once in a frame, through different cameras or onto different surfaces (see <a href="viewports.html">Viewports</a> for split-screen).</p>
+<p>The full example is <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/master/code/Snippets/Drawing.cs">Drawing.cs</a> (<code>DrawingBasics</code>).</p>
+<h2 id="the-helper-functions">The helper functions</h2>
+<table>
+<thead>
+<tr>
+<th>Helper</th>
+<th>Draws</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="xref" href="../api/Yak2D.IDrawingHelpers.html#Yak2D_IDrawingHelpers_DrawColouredQuad_">DrawColouredQuad</a></td>
+<td>A rectangle filled with one colour.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Yak2D.IDrawingHelpers.html#Yak2D_IDrawingHelpers_DrawTexturedQuad_">DrawTexturedQuad</a></td>
+<td>A rectangle showing a texture (a sprite). Optional texture coordinates choose part of the texture.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Yak2D.IDrawingHelpers.html#Yak2D_IDrawingHelpers_DrawColouredPoly_">DrawColouredPoly</a></td>
+<td>A regular polygon (3 sides = triangle; 32 or more looks like a circle), optionally stretched with <code>xScaling</code>/<code>yScaling</code>.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Yak2D.IDrawingHelpers.html#Yak2D_IDrawingHelpers_DrawLine_">DrawLine</a></td>
+<td>A thick line, optionally with rounded ends.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Yak2D.IDrawingHelpers.html#Yak2D_IDrawingHelpers_DrawArrow_">DrawArrow</a></td>
+<td>A line with an arrow head.</td>
+</tr>
+</tbody>
+</table>
+<p>Every helper takes the same core parameters:</p>
+<ul>
+<li><strong>space</strong>: <code>CoordinateSpace.World</code> (moved by the camera) or <code>CoordinateSpace.Screen</code> (fixed to the view). See <a href="coordinatesystems.html">Coordinate systems</a>.</li>
+<li><strong>position</strong>: the <em>centre</em> of the shape.</li>
+<li><strong>colour</strong>: for textured shapes this <em>tints</em> the texture: each texture pixel is multiplied by it, so <code>Colour.White</code> leaves the texture unchanged. Its alpha fades the whole shape.</li>
+<li><strong>depth</strong> and <strong>layer</strong>: the drawing order (next section).</li>
+<li><strong>rotation_clockwise_radians</strong>, where supported: rotation about the centre.</li>
+</ul>
+<p>For more complicated shapes, use the <a href="#the-fluent-shape-builder">fluent shape builder</a> or write <a href="#draw-requests">draw requests</a> yourself.</p>
+<h2 id="layers-and-depth">Layers and depth</h2>
+<p>Every request has a <strong>layer</strong> (an integer, 0 or more) and a <strong>depth</strong> (0.0 to 1.0):</p>
+<ul>
+<li><strong>Higher layers are always drawn on top of lower layers.</strong></li>
+<li><strong>Within a layer, lower depth is nearer the viewer</strong>: depth 0 is at the front, depth 1 at the back.</li>
+</ul>
+<p><img src="../images/guide/layers-depth.png" alt="Layers and depth"></p>
+<pre><code class="lang-csharp">public override void Drawing(IDrawing draw, IFps fps, IInput input, ICoordinateTransforms transforms,
+                             float secondsSinceLastDraw, float secondsSinceLastUpdate)
+{
+    var h = draw.Helpers;
+    var translucent = new Colour(1.0f, 1.0f, 1.0f, 0.6f);
+
+    // Left: all on layer 0, so depth decides. Lower depth is nearer the viewer
+    h.DrawColouredQuad(_drawStage, CoordinateSpace.Screen, Colour.Red, new Vector2(-300.0f, 40.0f), 200.0f, 200.0f, depth: 0.9f, layer: 0);
+    h.DrawColouredQuad(_drawStage, CoordinateSpace.Screen, Colour.Green, new Vector2(-240.0f, -20.0f), 200.0f, 200.0f, depth: 0.5f, layer: 0);
+    h.DrawColouredQuad(_drawStage, CoordinateSpace.Screen, Colour.Blue, new Vector2(-180.0f, -80.0f), 200.0f, 200.0f, depth: 0.1f, layer: 0);
+
+    // Right: the same depths, but the red square is on a higher layer, so it is drawn on top of both
+    h.DrawColouredQuad(_drawStage, CoordinateSpace.Screen, Colour.Red, new Vector2(180.0f, 40.0f), 200.0f, 200.0f, depth: 0.9f, layer: 1);
+    h.DrawColouredQuad(_drawStage, CoordinateSpace.Screen, Colour.Green, new Vector2(240.0f, -20.0f), 200.0f, 200.0f, depth: 0.5f, layer: 0);
+    h.DrawColouredQuad(_drawStage, CoordinateSpace.Screen, Colour.Blue, new Vector2(300.0f, -80.0f), 200.0f, 200.0f, depth: 0.1f, layer: 0);
+
+    // Translucent shapes blend with whatever is behind them, whatever order they were submitted in,
+    // because each stage sorts its requests back to front before drawing
+    h.DrawColouredPoly(_drawStage, CoordinateSpace.Screen, translucent, new Vector2(-240.0f, 60.0f), 48, 70.0f, depth: 0.0f, layer: 0);
+}
+</code></pre>
+<p>On the left all three squares are on layer 0, so depth decides the order. On the right the red square is on layer 1, so it is on top whatever its depth. The order you submit requests in makes no difference: each draw stage sorts its requests from back to front before drawing, which is also why transparency blends correctly.</p>
+<p>Sorting is by layer, then depth, then texture. Requests that share a texture and end up next to each other after sorting are drawn in a single batch, so giving sprites that share a texture the same layer and depth (when their relative order doesn't matter) makes drawing faster.</p>
+<h3 id="depth-between-draw-stages">Depth between draw stages</h3>
+<p>Draw stages write to the render target's <strong>depth buffer</strong>, and later stages are depth-tested against it. If you render two draw stages onto the same surface, something in the second stage can be hidden by something from the first that is on a higher layer or has a lower depth. When the second stage should simply be drawn on top of the first (a HUD over the game, for example), clear the depth in between:</p>
+<pre><code class="lang-csharp">q.Draw(_worldStage, _camera, windowRenderTarget);
+q.ClearDepth(windowRenderTarget);   // what follows is drawn on top, regardless of layers and depths
+q.Draw(_hudStage, _hudCamera, windowRenderTarget);
+</code></pre>
+<p>Always clear a surface's depth once at the start of each frame, too: with <a class="xref" href="../api/Yak2D.IRenderQueue.html#Yak2D_IRenderQueue_ClearDepth_">q.ClearDepth()</a>, by creating render targets with auto-clear on (the default), or with <a class="xref" href="../api/Yak2D.StartupConfig.html#Yak2D_StartupConfig_AutoClearMainWindowDepthEachFrame">AutoClearMainWindowDepthEachFrame</a> for the window.</p>
+<h2 id="draw-requests">Draw requests</h2>
+<p>Under the hood, everything drawn is a <a class="xref" href="../api/Yak2D.DrawRequest.html">DrawRequest</a>: a list of triangles and how to fill them. Writing them yourself gives complete control over shape, colour and texturing.</p>
+<p><img src="../images/guide/draw-requests.png" alt="Draw requests"></p>
+<p>A request is a set of <strong>vertices</strong> (<a class="xref" href="../api/Yak2D.Vertex2D.html">Vertex2D</a>) and a list of <strong>indices</strong>. Every three indices make one triangle, each index being a position in the vertex array:</p>
+<pre><code class="lang-csharp">// One triangle, with a different colour at each corner. The GPU blends between them
+var triangle = new DrawRequest
+{
+    CoordinateSpace = CoordinateSpace.Screen,
+    FillType = FillType.Coloured,
+    Colour = Colour.White, // multiplied with every vertex colour
+    Vertices = new[]
+    {
+        new Vertex2D { Position = new Vector2(-300.0f, 200.0f), Colour = Colour.Red },
+        new Vertex2D { Position = new Vector2(-150.0f, -60.0f), Colour = Colour.Lime },
+        new Vertex2D { Position = new Vector2(-450.0f, -60.0f), Colour = Colour.Blue },
+    },
+    Indices = new[] { 0, 1, 2 }, // groups of three indices into Vertices, one group per triangle
+    Depth = 0.5f,
+    Layer = 0,
+};
+draw.Draw(_drawStage, triangle);
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>DrawRequest field</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CoordinateSpace</code></td>
+<td><code>World</code> or <code>Screen</code>.</td>
+</tr>
+<tr>
+<td><code>FillType</code></td>
+<td><code>Coloured</code> (vertex colours only), <code>Textured</code> (one texture) or <code>DualTextured</code> (two blended textures).</td>
+</tr>
+<tr>
+<td><code>Vertices</code>, <code>Indices</code></td>
+<td>The triangles. The number of indices must be a multiple of three.</td>
+</tr>
+<tr>
+<td><code>Colour</code></td>
+<td>Multiplied with every vertex's colour.</td>
+</tr>
+<tr>
+<td><code>Texture0</code>, <code>Texture1</code></td>
+<td>The texture(s) for <code>Textured</code> and <code>DualTextured</code> fills (<code>null</code> otherwise).</td>
+</tr>
+<tr>
+<td><code>TextureWrap0</code>, <code>TextureWrap1</code></td>
+<td>What happens to texture coordinates outside 0 to 1: <code>Wrap</code> or <code>Mirror</code>.</td>
+</tr>
+<tr>
+<td><code>Depth</code>, <code>Layer</code></td>
+<td>Drawing order, as above.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Vertex2D field</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Position</code></td>
+<td>Where the vertex is, in the request's coordinate space.</td>
+</tr>
+<tr>
+<td><code>Colour</code></td>
+<td>The vertex colour, multiplied by the request's <code>Colour</code>. Colours are blended smoothly across each triangle. <strong>Always set it</strong> (<code>Colour.White</code> for &quot;no change&quot;): the default is transparent black, which makes the vertex invisible even on textured requests.</td>
+</tr>
+<tr>
+<td><code>TexCoord0</code>, <code>TexCoord1</code></td>
+<td>Texture coordinates for texture 0 and texture 1.</td>
+</tr>
+<tr>
+<td><code>TexWeighting</code></td>
+<td>For <code>DualTextured</code> fills: how much of texture 0 to use (1.0 = all texture 0, 0.0 = all texture 1).</td>
+</tr>
+</tbody>
+</table>
+<p>A textured rectangle needs four vertices and two triangles. Texture coordinates run from (0,0) at the <strong>top-left</strong> of the texture to (1,1) at the bottom-right:</p>
+<pre><code class="lang-csharp">// A textured rectangle made of two triangles that share two of the four vertices.
+// Texture coordinates run from (0,0) at the top-left of the texture to (1,1) at the bottom-right
+var picture = new DrawRequest
+{
+    CoordinateSpace = CoordinateSpace.Screen,
+    FillType = FillType.Textured,
+    Colour = Colour.White,
+    Texture0 = _city,
+    TextureWrap0 = TextureCoordinateMode.Wrap,
+    Vertices = new[]
+    {
+        new Vertex2D { Position = new Vector2(-100.0f, 200.0f), TexCoord0 = new Vector2(0.0f, 0.0f), Colour = Colour.White },
+        new Vertex2D { Position = new Vector2(180.0f, 200.0f), TexCoord0 = new Vector2(1.0f, 0.0f), Colour = Colour.White },
+        new Vertex2D { Position = new Vector2(180.0f, 40.0f), TexCoord0 = new Vector2(1.0f, 1.0f), Colour = Colour.White },
+        new Vertex2D { Position = new Vector2(-100.0f, 40.0f), TexCoord0 = new Vector2(0.0f, 1.0f), Colour = Colour.White },
+    },
+    Indices = new[] { 0, 1, 2, 0, 2, 3 },
+    Depth = 0.5f,
+    Layer = 0,
+};
+draw.Draw(_drawStage, picture);
+</code></pre>
+<p>Dual texturing blends two textures, with the mix set per vertex:</p>
+<pre><code class="lang-csharp">// Dual texturing blends two textures. Each vertex's TexWeighting is how much of Texture0 to use
+// (the rest is Texture1), so here the yak on the left fades into the city on the right
+var blend = new DrawRequest
+{
+    CoordinateSpace = CoordinateSpace.Screen,
+    FillType = FillType.DualTextured,
+    Colour = Colour.White,
+    Texture0 = _yakPhoto,
+    Texture1 = _city,
+    TextureWrap0 = TextureCoordinateMode.Wrap,
+    TextureWrap1 = TextureCoordinateMode.Wrap,
+    Vertices = new[]
+    {
+        new Vertex2D { Position = new Vector2(-100.0f, -20.0f), TexCoord0 = new Vector2(0.0f, 0.0f), TexCoord1 = new Vector2(0.0f, 0.0f), TexWeighting = 1.0f, Colour = Colour.White },
+        new Vertex2D { Position = new Vector2(420.0f, -20.0f), TexCoord0 = new Vector2(1.0f, 0.0f), TexCoord1 = new Vector2(1.0f, 0.0f), TexWeighting = 0.0f, Colour = Colour.White },
+        new Vertex2D { Position = new Vector2(420.0f, -220.0f), TexCoord0 = new Vector2(1.0f, 1.0f), TexCoord1 = new Vector2(1.0f, 1.0f), TexWeighting = 0.0f, Colour = Colour.White },
+        new Vertex2D { Position = new Vector2(-100.0f, -220.0f), TexCoord0 = new Vector2(0.0f, 1.0f), TexCoord1 = new Vector2(0.0f, 1.0f), TexWeighting = 1.0f, Colour = Colour.White },
+    },
+    Indices = new[] { 0, 1, 2, 0, 2, 3 },
+    Depth = 0.5f,
+    Layer = 0,
+};
+draw.Draw(_drawStage, blend);
+</code></pre>
+<p>Submit requests with <a class="xref" href="../api/Yak2D.IDrawing.html#Yak2D_IDrawing_Draw_">draw.Draw()</a>. A request can be built once and submitted every frame, as the sky gradient in the <a href="../tutorials/yakrun-3.html">Yak Run tutorial</a> is. There is also an overload that takes the request's parts as separate parameters, and one that takes the request by <code>ref</code> to avoid a copy.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>Pass <code>validate: true</code> to <code>Draw()</code> while developing. The request is checked first (enough vertices, indices in multiples of three, textures present for textured fills) and skipped with a console message if something is wrong, rather than causing an error later.</p>
+</div>
+<h2 id="texture-coordinates-wrapping-and-filtering">Texture coordinates, wrapping and filtering</h2>
+<p><img src="../images/guide/texture-modes.png" alt="Texture wrap modes and filtering"></p>
+<pre><code class="lang-csharp">public override bool CreateResources(IServices yak)
+{
+    _drawStage = yak.Stages.CreateDrawStage();
+    _camera = yak.Cameras.CreateCamera2D(960, 540);
+
+    // The same image, loaded twice with different sampler filters
+    _raccoon = yak.Surfaces.LoadTexture(&quot;raccoon&quot;, AssetSourceEnum.Embedded);
+    _raccoonPoint = yak.Surfaces.LoadTexture(&quot;raccoon&quot;, AssetSourceEnum.Embedded, ImageFormat.PNG, SamplerType.Point, false);
+    return true;
+}
+
+public override void Drawing(IDrawing draw, IFps fps, IInput input, ICoordinateTransforms transforms,
+                             float secondsSinceLastDraw, float secondsSinceLastUpdate)
+{
+    var h = draw.Helpers;
+
+    // Texture coordinates from -1 to 2 show the texture three times across and down.
+    // Wrap repeats it, Mirror flips every other copy
+    h.DrawTexturedQuad(_drawStage, CoordinateSpace.Screen, _raccoon, Colour.White, new Vector2(-300.0f, 60.0f), 300.0f, 400.0f, 0.5f,
+                       texcoord_min_x: -1.0f, texcoord_min_y: -1.0f, texcoord_max_x: 2.0f, texcoord_max_y: 2.0f,
+                       textureMode: TextureCoordinateMode.Wrap);
+
+    h.DrawTexturedQuad(_drawStage, CoordinateSpace.Screen, _raccoon, Colour.White, new Vector2(40.0f, 60.0f), 300.0f, 400.0f, 0.5f,
+                       texcoord_min_x: -1.0f, texcoord_min_y: -1.0f, texcoord_max_x: 2.0f, texcoord_max_y: 2.0f,
+                       textureMode: TextureCoordinateMode.Mirror);
+
+    // Swapping min and max x flips the image horizontally. Drawing a small texture very large shows
+    // the difference between point sampling (hard pixels) and the default (smooth) filtering
+    h.DrawTexturedQuad(_drawStage, CoordinateSpace.Screen, _raccoonPoint, Colour.White, new Vector2(330.0f, 60.0f), 220.0f, 400.0f, 0.5f,
+                       texcoord_min_x: 0.62f, texcoord_min_y: 0.35f, texcoord_max_x: 0.42f, texcoord_max_y: 0.55f);
+}
+</code></pre>
+<ul>
+<li><strong>Texture coordinates</strong> choose which part of a texture is drawn. <a class="xref" href="../api/Yak2D.IDrawingHelpers.html#Yak2D_IDrawingHelpers_DrawTexturedQuad_">DrawTexturedQuad</a> takes <code>texcoord_min_x</code>, <code>texcoord_min_y</code>, <code>texcoord_max_x</code> and <code>texcoord_max_y</code> for its left, top, right and bottom edges. Use them to pick one frame from a <strong>sprite sheet</strong> (an image containing many frames), or swap min and max to <strong>flip</strong> an image.</li>
+<li><strong>Coordinates outside 0 to 1</strong> repeat the texture. <a class="xref" href="../api/Yak2D.TextureCoordinateMode.html">TextureCoordinateMode</a> chooses how: <code>Wrap</code> repeats it (left); <code>Mirror</code> flips every other copy (middle). Repeating is how tiled floors and walls are drawn: for a 128 pixel texture over a 1000 unit wide platform, use a maximum coordinate of 1000 / 128.</li>
+<li><strong>Filtering</strong> is chosen when a texture is loaded or created (the <a class="xref" href="../api/Yak2D.SamplerType.html">SamplerType</a>). The right-hand picture is drawn from a texture loaded with <code>SamplerType.Point</code>, which keeps hard pixel edges when enlarged; the default filters are smooth.</li>
+</ul>
+<div class="TIP">
+<h5>Tip</h5>
+<p>With <code>Wrap</code>, the GPU's filtering blends the pixels at each edge of a texture with those at the opposite edge. On a sprite this can show up as faint lines or specks along an edge. Leave a transparent border round sprite images, or use <code>Mirror</code>.</p>
+</div>
+<h2 id="the-fluent-shape-builder">The fluent shape builder</h2>
+<p><code>draw.Helpers.Construct()</code> starts a chain of calls that builds a shape step by step: fill, then shape, then outline or filled, then optional transforms, then draw.</p>
+<p><img src="../images/guide/fluent-shapes.png" alt="Shapes built with the fluent interface"></p>
+<pre><code class="lang-csharp">// Construct() -&gt; fill type -&gt; shape -&gt; Filled() or Outline() -&gt; draw
+h.Construct()
+ .Coloured(Colour.Orange)
+ .Poly(new Vector2(-360.0f, 150.0f), 5, 80.0f)
+ .Outline(12.0f)
+ .SubmitDraw(_drawStage, CoordinateSpace.Screen, 0.5f, 0);
+
+h.Construct()
+ .Coloured(Colour.HotPink)
+ .Line(new Vector2(-200.0f, 90.0f), new Vector2(-40.0f, 210.0f), 14.0f)
+ .Arrow(40.0f, 50.0f)
+ .Filled()
+ .SubmitDraw(_drawStage, CoordinateSpace.Screen, 0.5f, 0);
+</code></pre>
+<p>The first call chooses the fill: <code>Coloured(colour)</code>, <code>Textured(brush, colour)</code> or <code>DualTextured(brush0, brush1, mixDirection, colour)</code>. A <a class="xref" href="../api/Yak2D.TextureBrush.html">TextureBrush</a> describes how a texture covers the shape: stretched to fit it (<a class="xref" href="../api/Yak2D.TextureScaling.html">TextureScaling</a><code>.Stretch</code>), or repeated at a fixed scale (<code>Tiled</code>):</p>
+<pre><code class="lang-csharp">// A texture brush says how a texture covers a shape: stretched to fit, or tiled at a set scale
+var stretched = new TextureBrush(_city, TextureCoordinateMode.Wrap, TextureScaling.Stretch, Vector2.One);
+var tiled = new TextureBrush(_soil, TextureCoordinateMode.Wrap, TextureScaling.Tiled, new Vector2(1.0f, 1.0f));
+
+h.Construct().Textured(stretched, Colour.White).Poly(new Vector2(120.0f, 150.0f), 8, 90.0f).Filled()
+ .SubmitDraw(_drawStage, CoordinateSpace.Screen, 0.5f, 0);
+
+h.Construct().Textured(tiled, Colour.White).Quad(new Vector2(350.0f, 150.0f), 200.0f, 160.0f).Filled()
+ .SubmitDraw(_drawStage, CoordinateSpace.Screen, 0.5f, 0);
+
+// Two brushes blended across the shape: here from the middle (yak) outwards (city)
+var yakBrush = new TextureBrush(_yakPhoto, TextureCoordinateMode.Wrap, TextureScaling.Stretch, Vector2.One);
+h.Construct().DualTextured(yakBrush, stretched, TextureMixDirection.Radial, Colour.White)
+ .Poly(new Vector2(-360.0f, -130.0f), 48, 100.0f).Filled()
+ .SubmitDraw(_drawStage, CoordinateSpace.Screen, 0.5f, 0);
+</code></pre>
+<p>The shape can be a <code>Quad</code>, a regular <code>Poly</code>, a <code>Poly</code> from your own vertices and indices (as the stars in <a href="../tutorials/yakrun-3.html">Yak Run</a> are), a <code>Line</code>, a <code>RoundedLine</code>, or an <code>Arrow</code> (made from a line). Then choose <code>Filled()</code> or <code>Outline(width)</code>.</p>
+<p>Each step returns a new object, so a finished shape can be moved, rotated, scaled or recoloured to make variations, and turned into a <a class="xref" href="../api/Yak2D.DrawRequest.html">DrawRequest</a> with <code>GenerateDrawRequest()</code> instead of being submitted straight away:</p>
+<pre><code class="lang-csharp">// Each step returns a new, modified copy, so a shape can be built once and stamped out many times
+var square = h.Construct().Coloured(Colour.Aqua).Quad(new Vector2(-120.0f, -130.0f), 60.0f, 60.0f).Filled();
+for (var n = 0; n &lt; 6; n++)
+{
+    square = square.ShiftPosition(new Vector2(80.0f, 0.0f))
+                   .Rotate(0.25f + (0.1f * _time))
+                   .ChangeColour(Colour.Aqua * (1.0f - (n * 0.12f)));
+    draw.Draw(_drawStage, square.GenerateDrawRequest(CoordinateSpace.Screen, 0.5f, 0));
+}
+</code></pre><h2 id="blend-states">Blend states</h2>
+<p>A draw stage's <a class="xref" href="../api/Yak2D.BlendState.html">BlendState</a> sets how each new pixel combines with the pixel already on the surface:</p>
+<table>
+<thead>
+<tr>
+<th>BlendState</th>
+<th>Result</th>
+<th>Use for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Alpha</code> (default)</td>
+<td>Normal transparency: the new colour covers the old in proportion to its alpha.</td>
+<td>Almost everything.</td>
+</tr>
+<tr>
+<td><code>AdditiveAlpha</code></td>
+<td>The new colour (scaled by its alpha) is <em>added</em> to the old. Overlaps get brighter.</td>
+<td>Light, fire, sparks, glows.</td>
+</tr>
+<tr>
+<td><code>AdditiveComponentWise</code></td>
+<td>Red, green, blue and alpha are all added.</td>
+<td>Accumulating values, special effects.</td>
+</tr>
+<tr>
+<td><code>Override</code></td>
+<td>The new pixel simply replaces the old, including its alpha.</td>
+<td>Copying, or drawing things that must not blend.</td>
+</tr>
+</tbody>
+</table>
+<p>The blend state belongs to the whole stage, so use a separate stage for, say, additive particle effects.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p><strong>Known issue:</strong> with <code>Alpha</code> blending, drawing a partly transparent shape onto an opaque render target leaves the target's <em>alpha</em> slightly below 1 where the shape was drawn. Copying the target is unaffected, but some effect stages (for example <a href="effects.html#colour-effects">colour effects</a> and <a href="distortion.html">distortion</a>) then show those pixels darker than expected. If translucent shapes look too dark after an effect, draw them fully opaque where you can.</p>
+</div>
+<h2 id="drawing-things-once">Drawing things once</h2>
+<p>By default every draw stage is emptied at the start of each frame, so you submit everything each frame. That is simple, and fast enough for thousands of sprites. For large amounts of unchanging drawing (a big tiled background, say) there are two ways to submit it just once:</p>
+<p><strong>A stage that is not cleared each frame.</strong> Everything submitted stays until you call <a class="xref" href="../api/Yak2D.IDrawing.html#Yak2D_IDrawing_ClearDynamicDrawRequestQueue_">ClearDynamicDrawRequestQueue()</a>. A stage whose contents have not changed is not re-sorted or re-sent to the GPU:</p>
+<pre><code class="lang-csharp">public override bool CreateResources(IServices yak)
+{
+    // This stage is NOT cleared automatically each frame: whatever is drawn to it stays until
+    // ClearDynamicDrawRequestQueue() is called. Unchanged queues are not re-sorted or re-uploaded
+    _staticStage = yak.Stages.CreateDrawStage(clearDynamicRequestQueueEachFrame: false);
+
+    // The default: a stage that starts empty every frame
+    _dynamicStage = yak.Stages.CreateDrawStage();
+
+    _camera = yak.Cameras.CreateCamera2D(960, 540);
+    _hasDrawnStaticScene = false;
+    return true;
+}
+
+private bool _hasDrawnStaticScene;
+
+public override void Drawing(IDrawing draw, IFps fps, IInput input, ICoordinateTransforms transforms,
+                             float secondsSinceLastDraw, float secondsSinceLastUpdate)
+{
+    _time += secondsSinceLastDraw;
+
+    if (!_hasDrawnStaticScene)
+    {
+        // A few thousand shapes, submitted once
+        var random = new Random(1);
+        for (var n = 0; n &lt; 3000; n++)
+        {
+            var position = new Vector2(random.Next(-480, 480), random.Next(-270, 270));
+            var colour = new Colour(0.2f, 0.3f + (0.5f * (float)random.NextDouble()), 0.4f, 1.0f);
+            draw.Helpers.DrawColouredPoly(_staticStage, CoordinateSpace.Screen, colour, position, 6, 6.0f, 0.8f);
+        }
+        _hasDrawnStaticScene = true;
+    }
+
+    // Moving things are drawn every frame to the normal stage
+    var x = 380.0f * MathF.Sin(_time);
+    draw.Helpers.DrawColouredPoly(_dynamicStage, CoordinateSpace.Screen, Colour.Orange, new Vector2(x, 0.0f), 48, 50.0f, 0.5f);
+}
+
+public override void Rendering(IRenderQueue q, IRenderTarget windowRenderTarget)
+{
+    q.ClearColour(windowRenderTarget, Colour.DarkSlateGray);
+    q.ClearDepth(windowRenderTarget);
+    q.Draw(_staticStage, _camera, windowRenderTarget);
+    q.Draw(_dynamicStage, _camera, windowRenderTarget);
+}
+</code></pre>
+<p><strong>Persistent draw queues.</strong> <a class="xref" href="../api/Yak2D.IDrawing.html#Yak2D_IDrawing_CreatePersistentDrawQueue_">CreatePersistentDrawQueue()</a> attaches an array of requests to a stage permanently (until <a class="xref" href="../api/Yak2D.IDrawing.html#Yak2D_IDrawing_RemovePersistentDrawQueue_">RemovePersistentDrawQueue()</a>). They are sorted together with the stage's normal requests, so they can be interleaved with them by layer and depth. Mixing the two means the whole stage is re-sorted when the normal requests change, so a separate uncleared stage (above) is usually simpler and just as fast.</p>
+<h2 id="performance-tips">Performance tips</h2>
+<ul>
+<li>Keep the number of <strong>draw stages</strong> small: each is a separate sort and at least one GPU draw call.</li>
+<li>Sprites that share a texture batch together when they are adjacent after sorting. Put many small images in one <strong>sprite sheet</strong> texture.</li>
+<li>Build requests that never change (vertex arrays, index arrays) once and reuse them, rather than allocating new arrays each frame.</li>
+<li>Very large numbers of unchanging shapes: see <a href="#drawing-things-once">Drawing things once</a>.</li>
+</ul>
+<h2 id="see-also">See also</h2>
+<ul>
+<li><a href="text.html">Text</a>: drawing strings</li>
+<li><a href="cameras.html">Cameras</a> and <a href="coordinatesystems.html">Coordinate systems</a>: where things appear</li>
+<li>Samples: <a href="https://github.com/AlzPatz/yak2d-samples/tree/master/src/Draw_BasicPolygonHelperFunctions">Draw_BasicPolygonHelperFunctions</a>, <a href="https://github.com/AlzPatz/yak2d-samples/tree/master/src/Draw_PolygonsFromVertices">Draw_PolygonsFromVertices</a>, <a href="https://github.com/AlzPatz/yak2d-samples/tree/master/src/Draw_FluentInterfaceDrawingHelper">Draw_FluentInterfaceDrawingHelper</a>, <a href="https://github.com/AlzPatz/yak2d-samples/tree/master/src/Draw_PersistentDrawQueue">Draw_PersistentDrawQueue</a></li>
+</ul>
+
+</article>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          yak2D - Alex Paterson - MIT licence
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

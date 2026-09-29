@@ -1,87 +1,127 @@
 <!DOCTYPE html>
-<!--[if IE]><![endif]-->
 <html>
-
   <head>
     <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <title>Class Color </title>
-      <meta name="viewport" content="width=device-width">
-      <meta name="title" content="Class Color ">
-    
-    <meta name="description" content="Methods to generate COLOURS but using the american spelling Time will tell if this generates confusion. Perhaps I should stick with the americanised spelling">
-      <link rel="shortcut icon" href="../favicon.ico">
-      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
-      <link rel="stylesheet" href="../styles/docfx.css">
-      <link rel="stylesheet" href="../styles/main.css">
-      <meta property="docfx:navrel" content="../toc.html">
-      <meta property="docfx:tocrel" content="toc.html">
-    
-    
-    
+      <title>Class Color | yak2D </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class Color | yak2D ">
+      
+      <meta name="description" content="Methods to generate COLOURS but using the american spelling Time will tell if this generates confusion. Perhaps I should stick with the americanised spelling">
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
   </head>
-  <body data-spy="scroll" data-target="#affix" data-offset="120">
-    <div id="wrapper">
-      <header>
 
-        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-
-              <a class="navbar-brand" href="../index.html">
-                <img id="logo" class="svg" src="../images/logo.png" alt="">
-              </a>
-            </div>
-            <div class="collapse navbar-collapse" id="navbar">
-              <form class="navbar-form navbar-right" role="search" id="search">
-                <div class="form-group">
-                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
-                </div>
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo.png" alt="yak2D">
+            yak2D
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
               </form>
             </div>
           </div>
-        </nav>
+        </div>
+      </nav>
+    </header>
 
-        <div class="subnav navbar navbar-default">
-          <div class="container hide-when-search" id="breadcrumb">
-            <ul class="breadcrumb">
-              <li></li>
-            </ul>
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
           </div>
         </div>
-      </header>
-      <div role="main" class="container body-content hide-when-search">
+      </div>
 
-        <div class="sidenav hide-when-search">
-          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
-          <div class="sidetoggle collapse" id="sidetoggle">
-            <div id="sidetoc"></div>
-          </div>
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
         </div>
-        <div class="article row grid-right">
-          <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Yak2D.Color">
+
+        <article data-uid="Yak2D.Color">
 
 
 
-  <h1 id="Yak2D_Color" data-uid="Yak2D.Color" class="text-break">Class Color</h1>
-  <div class="markdown level0 summary"><p>Methods to generate COLOURS but using the american spelling
+  <h1 id="Yak2D_Color" data-uid="Yak2D.Color" class="text-break">
+Class Color  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Yak2D.html">Yak2D</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Yak2D.Api.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Methods to generate COLOURS but using the american spelling
 Time will tell if this generates confusion. Perhaps I should stick with the americanised spelling</p>
 </div>
-  <div class="markdown level0 conceptual"></div>
-  <div class="inheritance">
-    <h5>Inheritance</h5>
-    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
-    <div class="level1"><span class="xref">Color</span></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static class Color</code></pre>
   </div>
-  <div class="inheritedMembers">
-    <h5>Inherited Members</h5>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">Color</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
     </div>
@@ -103,3443 +143,4583 @@ Time will tell if this generates confusion. Perhaps I should stick with the amer
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
     </div>
-  </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="Yak2D.html">Yak2D</a></h6>
-  <h6><strong>Assembly</strong>: Yak2D.Api.dll</h6>
-  <h5 id="Yak2D_Color_syntax">Syntax</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static class Color</code></pre>
-  </div>
-  <h3 id="properties">Properties
-</h3>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
   <a id="Yak2D_Color_AliceBlue_" data-uid="Yak2D.Color.AliceBlue*"></a>
-  <h4 id="Yak2D_Color_AliceBlue" data-uid="Yak2D.Color.AliceBlue">AliceBlue</h4>
+
+  <h3 id="Yak2D_Color_AliceBlue" data-uid="Yak2D.Color.AliceBlue">
+  AliceBlue
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour AliceBlue { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_AntiqueWhite_" data-uid="Yak2D.Color.AntiqueWhite*"></a>
-  <h4 id="Yak2D_Color_AntiqueWhite" data-uid="Yak2D.Color.AntiqueWhite">AntiqueWhite</h4>
+
+  <h3 id="Yak2D_Color_AntiqueWhite" data-uid="Yak2D.Color.AntiqueWhite">
+  AntiqueWhite
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour AntiqueWhite { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_Aqua_" data-uid="Yak2D.Color.Aqua*"></a>
-  <h4 id="Yak2D_Color_Aqua" data-uid="Yak2D.Color.Aqua">Aqua</h4>
+
+  <h3 id="Yak2D_Color_Aqua" data-uid="Yak2D.Color.Aqua">
+  Aqua
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour Aqua { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_Aquamarine_" data-uid="Yak2D.Color.Aquamarine*"></a>
-  <h4 id="Yak2D_Color_Aquamarine" data-uid="Yak2D.Color.Aquamarine">Aquamarine</h4>
+
+  <h3 id="Yak2D_Color_Aquamarine" data-uid="Yak2D.Color.Aquamarine">
+  Aquamarine
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour Aquamarine { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_Azure_" data-uid="Yak2D.Color.Azure*"></a>
-  <h4 id="Yak2D_Color_Azure" data-uid="Yak2D.Color.Azure">Azure</h4>
+
+  <h3 id="Yak2D_Color_Azure" data-uid="Yak2D.Color.Azure">
+  Azure
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour Azure { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_Beige_" data-uid="Yak2D.Color.Beige*"></a>
-  <h4 id="Yak2D_Color_Beige" data-uid="Yak2D.Color.Beige">Beige</h4>
+
+  <h3 id="Yak2D_Color_Beige" data-uid="Yak2D.Color.Beige">
+  Beige
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour Beige { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_Bisque_" data-uid="Yak2D.Color.Bisque*"></a>
-  <h4 id="Yak2D_Color_Bisque" data-uid="Yak2D.Color.Bisque">Bisque</h4>
+
+  <h3 id="Yak2D_Color_Bisque" data-uid="Yak2D.Color.Bisque">
+  Bisque
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour Bisque { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_Black_" data-uid="Yak2D.Color.Black*"></a>
-  <h4 id="Yak2D_Color_Black" data-uid="Yak2D.Color.Black">Black</h4>
+
+  <h3 id="Yak2D_Color_Black" data-uid="Yak2D.Color.Black">
+  Black
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour Black { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_BlanchedAlmond_" data-uid="Yak2D.Color.BlanchedAlmond*"></a>
-  <h4 id="Yak2D_Color_BlanchedAlmond" data-uid="Yak2D.Color.BlanchedAlmond">BlanchedAlmond</h4>
+
+  <h3 id="Yak2D_Color_BlanchedAlmond" data-uid="Yak2D.Color.BlanchedAlmond">
+  BlanchedAlmond
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour BlanchedAlmond { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_Blue_" data-uid="Yak2D.Color.Blue*"></a>
-  <h4 id="Yak2D_Color_Blue" data-uid="Yak2D.Color.Blue">Blue</h4>
+
+  <h3 id="Yak2D_Color_Blue" data-uid="Yak2D.Color.Blue">
+  Blue
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour Blue { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_BlueViolet_" data-uid="Yak2D.Color.BlueViolet*"></a>
-  <h4 id="Yak2D_Color_BlueViolet" data-uid="Yak2D.Color.BlueViolet">BlueViolet</h4>
+
+  <h3 id="Yak2D_Color_BlueViolet" data-uid="Yak2D.Color.BlueViolet">
+  BlueViolet
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour BlueViolet { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_Brown_" data-uid="Yak2D.Color.Brown*"></a>
-  <h4 id="Yak2D_Color_Brown" data-uid="Yak2D.Color.Brown">Brown</h4>
+
+  <h3 id="Yak2D_Color_Brown" data-uid="Yak2D.Color.Brown">
+  Brown
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour Brown { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_Burlywood_" data-uid="Yak2D.Color.Burlywood*"></a>
-  <h4 id="Yak2D_Color_Burlywood" data-uid="Yak2D.Color.Burlywood">Burlywood</h4>
+
+  <h3 id="Yak2D_Color_Burlywood" data-uid="Yak2D.Color.Burlywood">
+  Burlywood
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour Burlywood { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_CadetBlue_" data-uid="Yak2D.Color.CadetBlue*"></a>
-  <h4 id="Yak2D_Color_CadetBlue" data-uid="Yak2D.Color.CadetBlue">CadetBlue</h4>
+
+  <h3 id="Yak2D_Color_CadetBlue" data-uid="Yak2D.Color.CadetBlue">
+  CadetBlue
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour CadetBlue { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_Chartreuse_" data-uid="Yak2D.Color.Chartreuse*"></a>
-  <h4 id="Yak2D_Color_Chartreuse" data-uid="Yak2D.Color.Chartreuse">Chartreuse</h4>
+
+  <h3 id="Yak2D_Color_Chartreuse" data-uid="Yak2D.Color.Chartreuse">
+  Chartreuse
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour Chartreuse { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_Chocolate_" data-uid="Yak2D.Color.Chocolate*"></a>
-  <h4 id="Yak2D_Color_Chocolate" data-uid="Yak2D.Color.Chocolate">Chocolate</h4>
+
+  <h3 id="Yak2D_Color_Chocolate" data-uid="Yak2D.Color.Chocolate">
+  Chocolate
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour Chocolate { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_Coral_" data-uid="Yak2D.Color.Coral*"></a>
-  <h4 id="Yak2D_Color_Coral" data-uid="Yak2D.Color.Coral">Coral</h4>
+
+  <h3 id="Yak2D_Color_Coral" data-uid="Yak2D.Color.Coral">
+  Coral
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour Coral { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_CornflowerBlue_" data-uid="Yak2D.Color.CornflowerBlue*"></a>
-  <h4 id="Yak2D_Color_CornflowerBlue" data-uid="Yak2D.Color.CornflowerBlue">CornflowerBlue</h4>
+
+  <h3 id="Yak2D_Color_CornflowerBlue" data-uid="Yak2D.Color.CornflowerBlue">
+  CornflowerBlue
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour CornflowerBlue { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_Cornsilk_" data-uid="Yak2D.Color.Cornsilk*"></a>
-  <h4 id="Yak2D_Color_Cornsilk" data-uid="Yak2D.Color.Cornsilk">Cornsilk</h4>
+
+  <h3 id="Yak2D_Color_Cornsilk" data-uid="Yak2D.Color.Cornsilk">
+  Cornsilk
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour Cornsilk { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_Crimson_" data-uid="Yak2D.Color.Crimson*"></a>
-  <h4 id="Yak2D_Color_Crimson" data-uid="Yak2D.Color.Crimson">Crimson</h4>
+
+  <h3 id="Yak2D_Color_Crimson" data-uid="Yak2D.Color.Crimson">
+  Crimson
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour Crimson { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_Cyan_" data-uid="Yak2D.Color.Cyan*"></a>
-  <h4 id="Yak2D_Color_Cyan" data-uid="Yak2D.Color.Cyan">Cyan</h4>
+
+  <h3 id="Yak2D_Color_Cyan" data-uid="Yak2D.Color.Cyan">
+  Cyan
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour Cyan { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_DarkBlue_" data-uid="Yak2D.Color.DarkBlue*"></a>
-  <h4 id="Yak2D_Color_DarkBlue" data-uid="Yak2D.Color.DarkBlue">DarkBlue</h4>
+
+  <h3 id="Yak2D_Color_DarkBlue" data-uid="Yak2D.Color.DarkBlue">
+  DarkBlue
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour DarkBlue { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_DarkCyan_" data-uid="Yak2D.Color.DarkCyan*"></a>
-  <h4 id="Yak2D_Color_DarkCyan" data-uid="Yak2D.Color.DarkCyan">DarkCyan</h4>
+
+  <h3 id="Yak2D_Color_DarkCyan" data-uid="Yak2D.Color.DarkCyan">
+  DarkCyan
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour DarkCyan { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_DarkGoldenrod_" data-uid="Yak2D.Color.DarkGoldenrod*"></a>
-  <h4 id="Yak2D_Color_DarkGoldenrod" data-uid="Yak2D.Color.DarkGoldenrod">DarkGoldenrod</h4>
+
+  <h3 id="Yak2D_Color_DarkGoldenrod" data-uid="Yak2D.Color.DarkGoldenrod">
+  DarkGoldenrod
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour DarkGoldenrod { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_DarkGray_" data-uid="Yak2D.Color.DarkGray*"></a>
-  <h4 id="Yak2D_Color_DarkGray" data-uid="Yak2D.Color.DarkGray">DarkGray</h4>
+
+  <h3 id="Yak2D_Color_DarkGray" data-uid="Yak2D.Color.DarkGray">
+  DarkGray
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour DarkGray { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_DarkGreen_" data-uid="Yak2D.Color.DarkGreen*"></a>
-  <h4 id="Yak2D_Color_DarkGreen" data-uid="Yak2D.Color.DarkGreen">DarkGreen</h4>
+
+  <h3 id="Yak2D_Color_DarkGreen" data-uid="Yak2D.Color.DarkGreen">
+  DarkGreen
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour DarkGreen { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_DarkKhaki_" data-uid="Yak2D.Color.DarkKhaki*"></a>
-  <h4 id="Yak2D_Color_DarkKhaki" data-uid="Yak2D.Color.DarkKhaki">DarkKhaki</h4>
+
+  <h3 id="Yak2D_Color_DarkKhaki" data-uid="Yak2D.Color.DarkKhaki">
+  DarkKhaki
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour DarkKhaki { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_DarkMagenta_" data-uid="Yak2D.Color.DarkMagenta*"></a>
-  <h4 id="Yak2D_Color_DarkMagenta" data-uid="Yak2D.Color.DarkMagenta">DarkMagenta</h4>
+
+  <h3 id="Yak2D_Color_DarkMagenta" data-uid="Yak2D.Color.DarkMagenta">
+  DarkMagenta
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour DarkMagenta { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_DarkOliveGreen_" data-uid="Yak2D.Color.DarkOliveGreen*"></a>
-  <h4 id="Yak2D_Color_DarkOliveGreen" data-uid="Yak2D.Color.DarkOliveGreen">DarkOliveGreen</h4>
+
+  <h3 id="Yak2D_Color_DarkOliveGreen" data-uid="Yak2D.Color.DarkOliveGreen">
+  DarkOliveGreen
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour DarkOliveGreen { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_DarkOrange_" data-uid="Yak2D.Color.DarkOrange*"></a>
-  <h4 id="Yak2D_Color_DarkOrange" data-uid="Yak2D.Color.DarkOrange">DarkOrange</h4>
+
+  <h3 id="Yak2D_Color_DarkOrange" data-uid="Yak2D.Color.DarkOrange">
+  DarkOrange
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour DarkOrange { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_DarkOrchid_" data-uid="Yak2D.Color.DarkOrchid*"></a>
-  <h4 id="Yak2D_Color_DarkOrchid" data-uid="Yak2D.Color.DarkOrchid">DarkOrchid</h4>
+
+  <h3 id="Yak2D_Color_DarkOrchid" data-uid="Yak2D.Color.DarkOrchid">
+  DarkOrchid
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour DarkOrchid { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_DarkRed_" data-uid="Yak2D.Color.DarkRed*"></a>
-  <h4 id="Yak2D_Color_DarkRed" data-uid="Yak2D.Color.DarkRed">DarkRed</h4>
+
+  <h3 id="Yak2D_Color_DarkRed" data-uid="Yak2D.Color.DarkRed">
+  DarkRed
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour DarkRed { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_DarkSalmon_" data-uid="Yak2D.Color.DarkSalmon*"></a>
-  <h4 id="Yak2D_Color_DarkSalmon" data-uid="Yak2D.Color.DarkSalmon">DarkSalmon</h4>
+
+  <h3 id="Yak2D_Color_DarkSalmon" data-uid="Yak2D.Color.DarkSalmon">
+  DarkSalmon
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour DarkSalmon { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_DarkSeaGreen_" data-uid="Yak2D.Color.DarkSeaGreen*"></a>
-  <h4 id="Yak2D_Color_DarkSeaGreen" data-uid="Yak2D.Color.DarkSeaGreen">DarkSeaGreen</h4>
+
+  <h3 id="Yak2D_Color_DarkSeaGreen" data-uid="Yak2D.Color.DarkSeaGreen">
+  DarkSeaGreen
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour DarkSeaGreen { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_DarkSlateBlue_" data-uid="Yak2D.Color.DarkSlateBlue*"></a>
-  <h4 id="Yak2D_Color_DarkSlateBlue" data-uid="Yak2D.Color.DarkSlateBlue">DarkSlateBlue</h4>
+
+  <h3 id="Yak2D_Color_DarkSlateBlue" data-uid="Yak2D.Color.DarkSlateBlue">
+  DarkSlateBlue
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour DarkSlateBlue { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_DarkSlateGray_" data-uid="Yak2D.Color.DarkSlateGray*"></a>
-  <h4 id="Yak2D_Color_DarkSlateGray" data-uid="Yak2D.Color.DarkSlateGray">DarkSlateGray</h4>
+
+  <h3 id="Yak2D_Color_DarkSlateGray" data-uid="Yak2D.Color.DarkSlateGray">
+  DarkSlateGray
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour DarkSlateGray { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_DarkTurquoise_" data-uid="Yak2D.Color.DarkTurquoise*"></a>
-  <h4 id="Yak2D_Color_DarkTurquoise" data-uid="Yak2D.Color.DarkTurquoise">DarkTurquoise</h4>
+
+  <h3 id="Yak2D_Color_DarkTurquoise" data-uid="Yak2D.Color.DarkTurquoise">
+  DarkTurquoise
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour DarkTurquoise { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_DarkViolet_" data-uid="Yak2D.Color.DarkViolet*"></a>
-  <h4 id="Yak2D_Color_DarkViolet" data-uid="Yak2D.Color.DarkViolet">DarkViolet</h4>
+
+  <h3 id="Yak2D_Color_DarkViolet" data-uid="Yak2D.Color.DarkViolet">
+  DarkViolet
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour DarkViolet { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_DeepPink_" data-uid="Yak2D.Color.DeepPink*"></a>
-  <h4 id="Yak2D_Color_DeepPink" data-uid="Yak2D.Color.DeepPink">DeepPink</h4>
+
+  <h3 id="Yak2D_Color_DeepPink" data-uid="Yak2D.Color.DeepPink">
+  DeepPink
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour DeepPink { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_DeepSkyBlue_" data-uid="Yak2D.Color.DeepSkyBlue*"></a>
-  <h4 id="Yak2D_Color_DeepSkyBlue" data-uid="Yak2D.Color.DeepSkyBlue">DeepSkyBlue</h4>
+
+  <h3 id="Yak2D_Color_DeepSkyBlue" data-uid="Yak2D.Color.DeepSkyBlue">
+  DeepSkyBlue
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour DeepSkyBlue { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_DimGray_" data-uid="Yak2D.Color.DimGray*"></a>
-  <h4 id="Yak2D_Color_DimGray" data-uid="Yak2D.Color.DimGray">DimGray</h4>
+
+  <h3 id="Yak2D_Color_DimGray" data-uid="Yak2D.Color.DimGray">
+  DimGray
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour DimGray { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_DodgerBlue_" data-uid="Yak2D.Color.DodgerBlue*"></a>
-  <h4 id="Yak2D_Color_DodgerBlue" data-uid="Yak2D.Color.DodgerBlue">DodgerBlue</h4>
+
+  <h3 id="Yak2D_Color_DodgerBlue" data-uid="Yak2D.Color.DodgerBlue">
+  DodgerBlue
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour DodgerBlue { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_Firebrick_" data-uid="Yak2D.Color.Firebrick*"></a>
-  <h4 id="Yak2D_Color_Firebrick" data-uid="Yak2D.Color.Firebrick">Firebrick</h4>
+
+  <h3 id="Yak2D_Color_Firebrick" data-uid="Yak2D.Color.Firebrick">
+  Firebrick
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour Firebrick { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_FloralWhite_" data-uid="Yak2D.Color.FloralWhite*"></a>
-  <h4 id="Yak2D_Color_FloralWhite" data-uid="Yak2D.Color.FloralWhite">FloralWhite</h4>
+
+  <h3 id="Yak2D_Color_FloralWhite" data-uid="Yak2D.Color.FloralWhite">
+  FloralWhite
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour FloralWhite { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_ForestGreen_" data-uid="Yak2D.Color.ForestGreen*"></a>
-  <h4 id="Yak2D_Color_ForestGreen" data-uid="Yak2D.Color.ForestGreen">ForestGreen</h4>
+
+  <h3 id="Yak2D_Color_ForestGreen" data-uid="Yak2D.Color.ForestGreen">
+  ForestGreen
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour ForestGreen { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_Fuchsia_" data-uid="Yak2D.Color.Fuchsia*"></a>
-  <h4 id="Yak2D_Color_Fuchsia" data-uid="Yak2D.Color.Fuchsia">Fuchsia</h4>
+
+  <h3 id="Yak2D_Color_Fuchsia" data-uid="Yak2D.Color.Fuchsia">
+  Fuchsia
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour Fuchsia { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_Gainsboro_" data-uid="Yak2D.Color.Gainsboro*"></a>
-  <h4 id="Yak2D_Color_Gainsboro" data-uid="Yak2D.Color.Gainsboro">Gainsboro</h4>
+
+  <h3 id="Yak2D_Color_Gainsboro" data-uid="Yak2D.Color.Gainsboro">
+  Gainsboro
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour Gainsboro { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_GhostWhite_" data-uid="Yak2D.Color.GhostWhite*"></a>
-  <h4 id="Yak2D_Color_GhostWhite" data-uid="Yak2D.Color.GhostWhite">GhostWhite</h4>
+
+  <h3 id="Yak2D_Color_GhostWhite" data-uid="Yak2D.Color.GhostWhite">
+  GhostWhite
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour GhostWhite { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_Gold_" data-uid="Yak2D.Color.Gold*"></a>
-  <h4 id="Yak2D_Color_Gold" data-uid="Yak2D.Color.Gold">Gold</h4>
+
+  <h3 id="Yak2D_Color_Gold" data-uid="Yak2D.Color.Gold">
+  Gold
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour Gold { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_Goldenrod_" data-uid="Yak2D.Color.Goldenrod*"></a>
-  <h4 id="Yak2D_Color_Goldenrod" data-uid="Yak2D.Color.Goldenrod">Goldenrod</h4>
+
+  <h3 id="Yak2D_Color_Goldenrod" data-uid="Yak2D.Color.Goldenrod">
+  Goldenrod
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour Goldenrod { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_Gray_" data-uid="Yak2D.Color.Gray*"></a>
-  <h4 id="Yak2D_Color_Gray" data-uid="Yak2D.Color.Gray">Gray</h4>
+
+  <h3 id="Yak2D_Color_Gray" data-uid="Yak2D.Color.Gray">
+  Gray
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour Gray { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_Green_" data-uid="Yak2D.Color.Green*"></a>
-  <h4 id="Yak2D_Color_Green" data-uid="Yak2D.Color.Green">Green</h4>
+
+  <h3 id="Yak2D_Color_Green" data-uid="Yak2D.Color.Green">
+  Green
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour Green { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_GreenYellow_" data-uid="Yak2D.Color.GreenYellow*"></a>
-  <h4 id="Yak2D_Color_GreenYellow" data-uid="Yak2D.Color.GreenYellow">GreenYellow</h4>
+
+  <h3 id="Yak2D_Color_GreenYellow" data-uid="Yak2D.Color.GreenYellow">
+  GreenYellow
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour GreenYellow { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_Honeydew_" data-uid="Yak2D.Color.Honeydew*"></a>
-  <h4 id="Yak2D_Color_Honeydew" data-uid="Yak2D.Color.Honeydew">Honeydew</h4>
+
+  <h3 id="Yak2D_Color_Honeydew" data-uid="Yak2D.Color.Honeydew">
+  Honeydew
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour Honeydew { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_HotPink_" data-uid="Yak2D.Color.HotPink*"></a>
-  <h4 id="Yak2D_Color_HotPink" data-uid="Yak2D.Color.HotPink">HotPink</h4>
+
+  <h3 id="Yak2D_Color_HotPink" data-uid="Yak2D.Color.HotPink">
+  HotPink
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour HotPink { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_IndianRed_" data-uid="Yak2D.Color.IndianRed*"></a>
-  <h4 id="Yak2D_Color_IndianRed" data-uid="Yak2D.Color.IndianRed">IndianRed</h4>
+
+  <h3 id="Yak2D_Color_IndianRed" data-uid="Yak2D.Color.IndianRed">
+  IndianRed
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour IndianRed { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_Indigo_" data-uid="Yak2D.Color.Indigo*"></a>
-  <h4 id="Yak2D_Color_Indigo" data-uid="Yak2D.Color.Indigo">Indigo</h4>
+
+  <h3 id="Yak2D_Color_Indigo" data-uid="Yak2D.Color.Indigo">
+  Indigo
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour Indigo { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_Ivory_" data-uid="Yak2D.Color.Ivory*"></a>
-  <h4 id="Yak2D_Color_Ivory" data-uid="Yak2D.Color.Ivory">Ivory</h4>
+
+  <h3 id="Yak2D_Color_Ivory" data-uid="Yak2D.Color.Ivory">
+  Ivory
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour Ivory { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_Khaki_" data-uid="Yak2D.Color.Khaki*"></a>
-  <h4 id="Yak2D_Color_Khaki" data-uid="Yak2D.Color.Khaki">Khaki</h4>
+
+  <h3 id="Yak2D_Color_Khaki" data-uid="Yak2D.Color.Khaki">
+  Khaki
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour Khaki { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_Lavender_" data-uid="Yak2D.Color.Lavender*"></a>
-  <h4 id="Yak2D_Color_Lavender" data-uid="Yak2D.Color.Lavender">Lavender</h4>
+
+  <h3 id="Yak2D_Color_Lavender" data-uid="Yak2D.Color.Lavender">
+  Lavender
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour Lavender { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_LavenderBlush_" data-uid="Yak2D.Color.LavenderBlush*"></a>
-  <h4 id="Yak2D_Color_LavenderBlush" data-uid="Yak2D.Color.LavenderBlush">LavenderBlush</h4>
+
+  <h3 id="Yak2D_Color_LavenderBlush" data-uid="Yak2D.Color.LavenderBlush">
+  LavenderBlush
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour LavenderBlush { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_LawnGreen_" data-uid="Yak2D.Color.LawnGreen*"></a>
-  <h4 id="Yak2D_Color_LawnGreen" data-uid="Yak2D.Color.LawnGreen">LawnGreen</h4>
+
+  <h3 id="Yak2D_Color_LawnGreen" data-uid="Yak2D.Color.LawnGreen">
+  LawnGreen
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour LawnGreen { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_LemonChiffon_" data-uid="Yak2D.Color.LemonChiffon*"></a>
-  <h4 id="Yak2D_Color_LemonChiffon" data-uid="Yak2D.Color.LemonChiffon">LemonChiffon</h4>
+
+  <h3 id="Yak2D_Color_LemonChiffon" data-uid="Yak2D.Color.LemonChiffon">
+  LemonChiffon
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour LemonChiffon { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_LightBlue_" data-uid="Yak2D.Color.LightBlue*"></a>
-  <h4 id="Yak2D_Color_LightBlue" data-uid="Yak2D.Color.LightBlue">LightBlue</h4>
+
+  <h3 id="Yak2D_Color_LightBlue" data-uid="Yak2D.Color.LightBlue">
+  LightBlue
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour LightBlue { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_LightCoral_" data-uid="Yak2D.Color.LightCoral*"></a>
-  <h4 id="Yak2D_Color_LightCoral" data-uid="Yak2D.Color.LightCoral">LightCoral</h4>
+
+  <h3 id="Yak2D_Color_LightCoral" data-uid="Yak2D.Color.LightCoral">
+  LightCoral
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour LightCoral { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_LightCyan_" data-uid="Yak2D.Color.LightCyan*"></a>
-  <h4 id="Yak2D_Color_LightCyan" data-uid="Yak2D.Color.LightCyan">LightCyan</h4>
+
+  <h3 id="Yak2D_Color_LightCyan" data-uid="Yak2D.Color.LightCyan">
+  LightCyan
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour LightCyan { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_LightGoldenrod_" data-uid="Yak2D.Color.LightGoldenrod*"></a>
-  <h4 id="Yak2D_Color_LightGoldenrod" data-uid="Yak2D.Color.LightGoldenrod">LightGoldenrod</h4>
+
+  <h3 id="Yak2D_Color_LightGoldenrod" data-uid="Yak2D.Color.LightGoldenrod">
+  LightGoldenrod
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour LightGoldenrod { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_LightGray_" data-uid="Yak2D.Color.LightGray*"></a>
-  <h4 id="Yak2D_Color_LightGray" data-uid="Yak2D.Color.LightGray">LightGray</h4>
+
+  <h3 id="Yak2D_Color_LightGray" data-uid="Yak2D.Color.LightGray">
+  LightGray
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour LightGray { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_LightGreen_" data-uid="Yak2D.Color.LightGreen*"></a>
-  <h4 id="Yak2D_Color_LightGreen" data-uid="Yak2D.Color.LightGreen">LightGreen</h4>
+
+  <h3 id="Yak2D_Color_LightGreen" data-uid="Yak2D.Color.LightGreen">
+  LightGreen
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour LightGreen { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_LightPink_" data-uid="Yak2D.Color.LightPink*"></a>
-  <h4 id="Yak2D_Color_LightPink" data-uid="Yak2D.Color.LightPink">LightPink</h4>
+
+  <h3 id="Yak2D_Color_LightPink" data-uid="Yak2D.Color.LightPink">
+  LightPink
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour LightPink { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_LightSalmon_" data-uid="Yak2D.Color.LightSalmon*"></a>
-  <h4 id="Yak2D_Color_LightSalmon" data-uid="Yak2D.Color.LightSalmon">LightSalmon</h4>
+
+  <h3 id="Yak2D_Color_LightSalmon" data-uid="Yak2D.Color.LightSalmon">
+  LightSalmon
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour LightSalmon { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_LightSeaGreen_" data-uid="Yak2D.Color.LightSeaGreen*"></a>
-  <h4 id="Yak2D_Color_LightSeaGreen" data-uid="Yak2D.Color.LightSeaGreen">LightSeaGreen</h4>
+
+  <h3 id="Yak2D_Color_LightSeaGreen" data-uid="Yak2D.Color.LightSeaGreen">
+  LightSeaGreen
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour LightSeaGreen { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_LightSkyBlue_" data-uid="Yak2D.Color.LightSkyBlue*"></a>
-  <h4 id="Yak2D_Color_LightSkyBlue" data-uid="Yak2D.Color.LightSkyBlue">LightSkyBlue</h4>
+
+  <h3 id="Yak2D_Color_LightSkyBlue" data-uid="Yak2D.Color.LightSkyBlue">
+  LightSkyBlue
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour LightSkyBlue { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_LightSlateGray_" data-uid="Yak2D.Color.LightSlateGray*"></a>
-  <h4 id="Yak2D_Color_LightSlateGray" data-uid="Yak2D.Color.LightSlateGray">LightSlateGray</h4>
+
+  <h3 id="Yak2D_Color_LightSlateGray" data-uid="Yak2D.Color.LightSlateGray">
+  LightSlateGray
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour LightSlateGray { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_LightSteelBlue_" data-uid="Yak2D.Color.LightSteelBlue*"></a>
-  <h4 id="Yak2D_Color_LightSteelBlue" data-uid="Yak2D.Color.LightSteelBlue">LightSteelBlue</h4>
+
+  <h3 id="Yak2D_Color_LightSteelBlue" data-uid="Yak2D.Color.LightSteelBlue">
+  LightSteelBlue
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour LightSteelBlue { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_LightYellow_" data-uid="Yak2D.Color.LightYellow*"></a>
-  <h4 id="Yak2D_Color_LightYellow" data-uid="Yak2D.Color.LightYellow">LightYellow</h4>
+
+  <h3 id="Yak2D_Color_LightYellow" data-uid="Yak2D.Color.LightYellow">
+  LightYellow
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour LightYellow { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_Lime_" data-uid="Yak2D.Color.Lime*"></a>
-  <h4 id="Yak2D_Color_Lime" data-uid="Yak2D.Color.Lime">Lime</h4>
+
+  <h3 id="Yak2D_Color_Lime" data-uid="Yak2D.Color.Lime">
+  Lime
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour Lime { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_LimeGreen_" data-uid="Yak2D.Color.LimeGreen*"></a>
-  <h4 id="Yak2D_Color_LimeGreen" data-uid="Yak2D.Color.LimeGreen">LimeGreen</h4>
+
+  <h3 id="Yak2D_Color_LimeGreen" data-uid="Yak2D.Color.LimeGreen">
+  LimeGreen
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour LimeGreen { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_Linen_" data-uid="Yak2D.Color.Linen*"></a>
-  <h4 id="Yak2D_Color_Linen" data-uid="Yak2D.Color.Linen">Linen</h4>
+
+  <h3 id="Yak2D_Color_Linen" data-uid="Yak2D.Color.Linen">
+  Linen
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour Linen { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_Magenta_" data-uid="Yak2D.Color.Magenta*"></a>
-  <h4 id="Yak2D_Color_Magenta" data-uid="Yak2D.Color.Magenta">Magenta</h4>
+
+  <h3 id="Yak2D_Color_Magenta" data-uid="Yak2D.Color.Magenta">
+  Magenta
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour Magenta { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_Maroon_" data-uid="Yak2D.Color.Maroon*"></a>
-  <h4 id="Yak2D_Color_Maroon" data-uid="Yak2D.Color.Maroon">Maroon</h4>
+
+  <h3 id="Yak2D_Color_Maroon" data-uid="Yak2D.Color.Maroon">
+  Maroon
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour Maroon { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_MediumAquamarine_" data-uid="Yak2D.Color.MediumAquamarine*"></a>
-  <h4 id="Yak2D_Color_MediumAquamarine" data-uid="Yak2D.Color.MediumAquamarine">MediumAquamarine</h4>
+
+  <h3 id="Yak2D_Color_MediumAquamarine" data-uid="Yak2D.Color.MediumAquamarine">
+  MediumAquamarine
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour MediumAquamarine { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_MediumBlue_" data-uid="Yak2D.Color.MediumBlue*"></a>
-  <h4 id="Yak2D_Color_MediumBlue" data-uid="Yak2D.Color.MediumBlue">MediumBlue</h4>
+
+  <h3 id="Yak2D_Color_MediumBlue" data-uid="Yak2D.Color.MediumBlue">
+  MediumBlue
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour MediumBlue { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_MediumOrchid_" data-uid="Yak2D.Color.MediumOrchid*"></a>
-  <h4 id="Yak2D_Color_MediumOrchid" data-uid="Yak2D.Color.MediumOrchid">MediumOrchid</h4>
+
+  <h3 id="Yak2D_Color_MediumOrchid" data-uid="Yak2D.Color.MediumOrchid">
+  MediumOrchid
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour MediumOrchid { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_MediumPurple_" data-uid="Yak2D.Color.MediumPurple*"></a>
-  <h4 id="Yak2D_Color_MediumPurple" data-uid="Yak2D.Color.MediumPurple">MediumPurple</h4>
+
+  <h3 id="Yak2D_Color_MediumPurple" data-uid="Yak2D.Color.MediumPurple">
+  MediumPurple
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour MediumPurple { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_MediumSeaGreen_" data-uid="Yak2D.Color.MediumSeaGreen*"></a>
-  <h4 id="Yak2D_Color_MediumSeaGreen" data-uid="Yak2D.Color.MediumSeaGreen">MediumSeaGreen</h4>
+
+  <h3 id="Yak2D_Color_MediumSeaGreen" data-uid="Yak2D.Color.MediumSeaGreen">
+  MediumSeaGreen
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour MediumSeaGreen { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_MediumSlateBlue_" data-uid="Yak2D.Color.MediumSlateBlue*"></a>
-  <h4 id="Yak2D_Color_MediumSlateBlue" data-uid="Yak2D.Color.MediumSlateBlue">MediumSlateBlue</h4>
+
+  <h3 id="Yak2D_Color_MediumSlateBlue" data-uid="Yak2D.Color.MediumSlateBlue">
+  MediumSlateBlue
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour MediumSlateBlue { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_MediumSpringGreen_" data-uid="Yak2D.Color.MediumSpringGreen*"></a>
-  <h4 id="Yak2D_Color_MediumSpringGreen" data-uid="Yak2D.Color.MediumSpringGreen">MediumSpringGreen</h4>
+
+  <h3 id="Yak2D_Color_MediumSpringGreen" data-uid="Yak2D.Color.MediumSpringGreen">
+  MediumSpringGreen
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour MediumSpringGreen { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_MediumTurquoise_" data-uid="Yak2D.Color.MediumTurquoise*"></a>
-  <h4 id="Yak2D_Color_MediumTurquoise" data-uid="Yak2D.Color.MediumTurquoise">MediumTurquoise</h4>
+
+  <h3 id="Yak2D_Color_MediumTurquoise" data-uid="Yak2D.Color.MediumTurquoise">
+  MediumTurquoise
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour MediumTurquoise { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_MediumVioletRed_" data-uid="Yak2D.Color.MediumVioletRed*"></a>
-  <h4 id="Yak2D_Color_MediumVioletRed" data-uid="Yak2D.Color.MediumVioletRed">MediumVioletRed</h4>
+
+  <h3 id="Yak2D_Color_MediumVioletRed" data-uid="Yak2D.Color.MediumVioletRed">
+  MediumVioletRed
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour MediumVioletRed { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_MidnightBlue_" data-uid="Yak2D.Color.MidnightBlue*"></a>
-  <h4 id="Yak2D_Color_MidnightBlue" data-uid="Yak2D.Color.MidnightBlue">MidnightBlue</h4>
+
+  <h3 id="Yak2D_Color_MidnightBlue" data-uid="Yak2D.Color.MidnightBlue">
+  MidnightBlue
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour MidnightBlue { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_MintCream_" data-uid="Yak2D.Color.MintCream*"></a>
-  <h4 id="Yak2D_Color_MintCream" data-uid="Yak2D.Color.MintCream">MintCream</h4>
+
+  <h3 id="Yak2D_Color_MintCream" data-uid="Yak2D.Color.MintCream">
+  MintCream
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour MintCream { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_MistyRose_" data-uid="Yak2D.Color.MistyRose*"></a>
-  <h4 id="Yak2D_Color_MistyRose" data-uid="Yak2D.Color.MistyRose">MistyRose</h4>
+
+  <h3 id="Yak2D_Color_MistyRose" data-uid="Yak2D.Color.MistyRose">
+  MistyRose
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour MistyRose { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_Moccasin_" data-uid="Yak2D.Color.Moccasin*"></a>
-  <h4 id="Yak2D_Color_Moccasin" data-uid="Yak2D.Color.Moccasin">Moccasin</h4>
+
+  <h3 id="Yak2D_Color_Moccasin" data-uid="Yak2D.Color.Moccasin">
+  Moccasin
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour Moccasin { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_NavajoWhite_" data-uid="Yak2D.Color.NavajoWhite*"></a>
-  <h4 id="Yak2D_Color_NavajoWhite" data-uid="Yak2D.Color.NavajoWhite">NavajoWhite</h4>
+
+  <h3 id="Yak2D_Color_NavajoWhite" data-uid="Yak2D.Color.NavajoWhite">
+  NavajoWhite
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour NavajoWhite { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_NavyBlue_" data-uid="Yak2D.Color.NavyBlue*"></a>
-  <h4 id="Yak2D_Color_NavyBlue" data-uid="Yak2D.Color.NavyBlue">NavyBlue</h4>
+
+  <h3 id="Yak2D_Color_NavyBlue" data-uid="Yak2D.Color.NavyBlue">
+  NavyBlue
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour NavyBlue { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_OldLace_" data-uid="Yak2D.Color.OldLace*"></a>
-  <h4 id="Yak2D_Color_OldLace" data-uid="Yak2D.Color.OldLace">OldLace</h4>
+
+  <h3 id="Yak2D_Color_OldLace" data-uid="Yak2D.Color.OldLace">
+  OldLace
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour OldLace { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_Olive_" data-uid="Yak2D.Color.Olive*"></a>
-  <h4 id="Yak2D_Color_Olive" data-uid="Yak2D.Color.Olive">Olive</h4>
+
+  <h3 id="Yak2D_Color_Olive" data-uid="Yak2D.Color.Olive">
+  Olive
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour Olive { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_OliveDrab_" data-uid="Yak2D.Color.OliveDrab*"></a>
-  <h4 id="Yak2D_Color_OliveDrab" data-uid="Yak2D.Color.OliveDrab">OliveDrab</h4>
+
+  <h3 id="Yak2D_Color_OliveDrab" data-uid="Yak2D.Color.OliveDrab">
+  OliveDrab
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour OliveDrab { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_Orange_" data-uid="Yak2D.Color.Orange*"></a>
-  <h4 id="Yak2D_Color_Orange" data-uid="Yak2D.Color.Orange">Orange</h4>
+
+  <h3 id="Yak2D_Color_Orange" data-uid="Yak2D.Color.Orange">
+  Orange
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour Orange { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_OrangeRed_" data-uid="Yak2D.Color.OrangeRed*"></a>
-  <h4 id="Yak2D_Color_OrangeRed" data-uid="Yak2D.Color.OrangeRed">OrangeRed</h4>
+
+  <h3 id="Yak2D_Color_OrangeRed" data-uid="Yak2D.Color.OrangeRed">
+  OrangeRed
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour OrangeRed { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_Orchid_" data-uid="Yak2D.Color.Orchid*"></a>
-  <h4 id="Yak2D_Color_Orchid" data-uid="Yak2D.Color.Orchid">Orchid</h4>
+
+  <h3 id="Yak2D_Color_Orchid" data-uid="Yak2D.Color.Orchid">
+  Orchid
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour Orchid { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_PaleGoldenrod_" data-uid="Yak2D.Color.PaleGoldenrod*"></a>
-  <h4 id="Yak2D_Color_PaleGoldenrod" data-uid="Yak2D.Color.PaleGoldenrod">PaleGoldenrod</h4>
+
+  <h3 id="Yak2D_Color_PaleGoldenrod" data-uid="Yak2D.Color.PaleGoldenrod">
+  PaleGoldenrod
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour PaleGoldenrod { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_PaleGreen_" data-uid="Yak2D.Color.PaleGreen*"></a>
-  <h4 id="Yak2D_Color_PaleGreen" data-uid="Yak2D.Color.PaleGreen">PaleGreen</h4>
+
+  <h3 id="Yak2D_Color_PaleGreen" data-uid="Yak2D.Color.PaleGreen">
+  PaleGreen
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour PaleGreen { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_PaleTurquoise_" data-uid="Yak2D.Color.PaleTurquoise*"></a>
-  <h4 id="Yak2D_Color_PaleTurquoise" data-uid="Yak2D.Color.PaleTurquoise">PaleTurquoise</h4>
+
+  <h3 id="Yak2D_Color_PaleTurquoise" data-uid="Yak2D.Color.PaleTurquoise">
+  PaleTurquoise
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour PaleTurquoise { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_PaleVioletRed_" data-uid="Yak2D.Color.PaleVioletRed*"></a>
-  <h4 id="Yak2D_Color_PaleVioletRed" data-uid="Yak2D.Color.PaleVioletRed">PaleVioletRed</h4>
+
+  <h3 id="Yak2D_Color_PaleVioletRed" data-uid="Yak2D.Color.PaleVioletRed">
+  PaleVioletRed
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour PaleVioletRed { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_PapayaWhip_" data-uid="Yak2D.Color.PapayaWhip*"></a>
-  <h4 id="Yak2D_Color_PapayaWhip" data-uid="Yak2D.Color.PapayaWhip">PapayaWhip</h4>
+
+  <h3 id="Yak2D_Color_PapayaWhip" data-uid="Yak2D.Color.PapayaWhip">
+  PapayaWhip
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour PapayaWhip { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_PeachPuff_" data-uid="Yak2D.Color.PeachPuff*"></a>
-  <h4 id="Yak2D_Color_PeachPuff" data-uid="Yak2D.Color.PeachPuff">PeachPuff</h4>
+
+  <h3 id="Yak2D_Color_PeachPuff" data-uid="Yak2D.Color.PeachPuff">
+  PeachPuff
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour PeachPuff { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_Peru_" data-uid="Yak2D.Color.Peru*"></a>
-  <h4 id="Yak2D_Color_Peru" data-uid="Yak2D.Color.Peru">Peru</h4>
+
+  <h3 id="Yak2D_Color_Peru" data-uid="Yak2D.Color.Peru">
+  Peru
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour Peru { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_Pink_" data-uid="Yak2D.Color.Pink*"></a>
-  <h4 id="Yak2D_Color_Pink" data-uid="Yak2D.Color.Pink">Pink</h4>
+
+  <h3 id="Yak2D_Color_Pink" data-uid="Yak2D.Color.Pink">
+  Pink
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour Pink { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_Plum_" data-uid="Yak2D.Color.Plum*"></a>
-  <h4 id="Yak2D_Color_Plum" data-uid="Yak2D.Color.Plum">Plum</h4>
+
+  <h3 id="Yak2D_Color_Plum" data-uid="Yak2D.Color.Plum">
+  Plum
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour Plum { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_PowderBlue_" data-uid="Yak2D.Color.PowderBlue*"></a>
-  <h4 id="Yak2D_Color_PowderBlue" data-uid="Yak2D.Color.PowderBlue">PowderBlue</h4>
+
+  <h3 id="Yak2D_Color_PowderBlue" data-uid="Yak2D.Color.PowderBlue">
+  PowderBlue
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour PowderBlue { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_Purple_" data-uid="Yak2D.Color.Purple*"></a>
-  <h4 id="Yak2D_Color_Purple" data-uid="Yak2D.Color.Purple">Purple</h4>
+
+  <h3 id="Yak2D_Color_Purple" data-uid="Yak2D.Color.Purple">
+  Purple
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour Purple { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_RebeccaPurple_" data-uid="Yak2D.Color.RebeccaPurple*"></a>
-  <h4 id="Yak2D_Color_RebeccaPurple" data-uid="Yak2D.Color.RebeccaPurple">RebeccaPurple</h4>
+
+  <h3 id="Yak2D_Color_RebeccaPurple" data-uid="Yak2D.Color.RebeccaPurple">
+  RebeccaPurple
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour RebeccaPurple { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_Red_" data-uid="Yak2D.Color.Red*"></a>
-  <h4 id="Yak2D_Color_Red" data-uid="Yak2D.Color.Red">Red</h4>
+
+  <h3 id="Yak2D_Color_Red" data-uid="Yak2D.Color.Red">
+  Red
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour Red { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_RosyBrown_" data-uid="Yak2D.Color.RosyBrown*"></a>
-  <h4 id="Yak2D_Color_RosyBrown" data-uid="Yak2D.Color.RosyBrown">RosyBrown</h4>
+
+  <h3 id="Yak2D_Color_RosyBrown" data-uid="Yak2D.Color.RosyBrown">
+  RosyBrown
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour RosyBrown { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_RoyalBlue_" data-uid="Yak2D.Color.RoyalBlue*"></a>
-  <h4 id="Yak2D_Color_RoyalBlue" data-uid="Yak2D.Color.RoyalBlue">RoyalBlue</h4>
+
+  <h3 id="Yak2D_Color_RoyalBlue" data-uid="Yak2D.Color.RoyalBlue">
+  RoyalBlue
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour RoyalBlue { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_SaddleBrown_" data-uid="Yak2D.Color.SaddleBrown*"></a>
-  <h4 id="Yak2D_Color_SaddleBrown" data-uid="Yak2D.Color.SaddleBrown">SaddleBrown</h4>
+
+  <h3 id="Yak2D_Color_SaddleBrown" data-uid="Yak2D.Color.SaddleBrown">
+  SaddleBrown
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour SaddleBrown { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_Salmon_" data-uid="Yak2D.Color.Salmon*"></a>
-  <h4 id="Yak2D_Color_Salmon" data-uid="Yak2D.Color.Salmon">Salmon</h4>
+
+  <h3 id="Yak2D_Color_Salmon" data-uid="Yak2D.Color.Salmon">
+  Salmon
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour Salmon { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_SandyBrown_" data-uid="Yak2D.Color.SandyBrown*"></a>
-  <h4 id="Yak2D_Color_SandyBrown" data-uid="Yak2D.Color.SandyBrown">SandyBrown</h4>
+
+  <h3 id="Yak2D_Color_SandyBrown" data-uid="Yak2D.Color.SandyBrown">
+  SandyBrown
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour SandyBrown { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_SeaGreen_" data-uid="Yak2D.Color.SeaGreen*"></a>
-  <h4 id="Yak2D_Color_SeaGreen" data-uid="Yak2D.Color.SeaGreen">SeaGreen</h4>
+
+  <h3 id="Yak2D_Color_SeaGreen" data-uid="Yak2D.Color.SeaGreen">
+  SeaGreen
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour SeaGreen { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_Seashell_" data-uid="Yak2D.Color.Seashell*"></a>
-  <h4 id="Yak2D_Color_Seashell" data-uid="Yak2D.Color.Seashell">Seashell</h4>
+
+  <h3 id="Yak2D_Color_Seashell" data-uid="Yak2D.Color.Seashell">
+  Seashell
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour Seashell { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_Sienna_" data-uid="Yak2D.Color.Sienna*"></a>
-  <h4 id="Yak2D_Color_Sienna" data-uid="Yak2D.Color.Sienna">Sienna</h4>
+
+  <h3 id="Yak2D_Color_Sienna" data-uid="Yak2D.Color.Sienna">
+  Sienna
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour Sienna { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_Silver_" data-uid="Yak2D.Color.Silver*"></a>
-  <h4 id="Yak2D_Color_Silver" data-uid="Yak2D.Color.Silver">Silver</h4>
+
+  <h3 id="Yak2D_Color_Silver" data-uid="Yak2D.Color.Silver">
+  Silver
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour Silver { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_SkyBlue_" data-uid="Yak2D.Color.SkyBlue*"></a>
-  <h4 id="Yak2D_Color_SkyBlue" data-uid="Yak2D.Color.SkyBlue">SkyBlue</h4>
+
+  <h3 id="Yak2D_Color_SkyBlue" data-uid="Yak2D.Color.SkyBlue">
+  SkyBlue
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour SkyBlue { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_SlateBlue_" data-uid="Yak2D.Color.SlateBlue*"></a>
-  <h4 id="Yak2D_Color_SlateBlue" data-uid="Yak2D.Color.SlateBlue">SlateBlue</h4>
+
+  <h3 id="Yak2D_Color_SlateBlue" data-uid="Yak2D.Color.SlateBlue">
+  SlateBlue
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour SlateBlue { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_SlateGray_" data-uid="Yak2D.Color.SlateGray*"></a>
-  <h4 id="Yak2D_Color_SlateGray" data-uid="Yak2D.Color.SlateGray">SlateGray</h4>
+
+  <h3 id="Yak2D_Color_SlateGray" data-uid="Yak2D.Color.SlateGray">
+  SlateGray
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour SlateGray { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_Snow_" data-uid="Yak2D.Color.Snow*"></a>
-  <h4 id="Yak2D_Color_Snow" data-uid="Yak2D.Color.Snow">Snow</h4>
+
+  <h3 id="Yak2D_Color_Snow" data-uid="Yak2D.Color.Snow">
+  Snow
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour Snow { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_SpringGreen_" data-uid="Yak2D.Color.SpringGreen*"></a>
-  <h4 id="Yak2D_Color_SpringGreen" data-uid="Yak2D.Color.SpringGreen">SpringGreen</h4>
+
+  <h3 id="Yak2D_Color_SpringGreen" data-uid="Yak2D.Color.SpringGreen">
+  SpringGreen
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour SpringGreen { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_SteelBlue_" data-uid="Yak2D.Color.SteelBlue*"></a>
-  <h4 id="Yak2D_Color_SteelBlue" data-uid="Yak2D.Color.SteelBlue">SteelBlue</h4>
+
+  <h3 id="Yak2D_Color_SteelBlue" data-uid="Yak2D.Color.SteelBlue">
+  SteelBlue
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour SteelBlue { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_Tan_" data-uid="Yak2D.Color.Tan*"></a>
-  <h4 id="Yak2D_Color_Tan" data-uid="Yak2D.Color.Tan">Tan</h4>
+
+  <h3 id="Yak2D_Color_Tan" data-uid="Yak2D.Color.Tan">
+  Tan
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour Tan { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_Teal_" data-uid="Yak2D.Color.Teal*"></a>
-  <h4 id="Yak2D_Color_Teal" data-uid="Yak2D.Color.Teal">Teal</h4>
+
+  <h3 id="Yak2D_Color_Teal" data-uid="Yak2D.Color.Teal">
+  Teal
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour Teal { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_Thistle_" data-uid="Yak2D.Color.Thistle*"></a>
-  <h4 id="Yak2D_Color_Thistle" data-uid="Yak2D.Color.Thistle">Thistle</h4>
+
+  <h3 id="Yak2D_Color_Thistle" data-uid="Yak2D.Color.Thistle">
+  Thistle
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour Thistle { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_Tomato_" data-uid="Yak2D.Color.Tomato*"></a>
-  <h4 id="Yak2D_Color_Tomato" data-uid="Yak2D.Color.Tomato">Tomato</h4>
+
+  <h3 id="Yak2D_Color_Tomato" data-uid="Yak2D.Color.Tomato">
+  Tomato
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour Tomato { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_Turquoise_" data-uid="Yak2D.Color.Turquoise*"></a>
-  <h4 id="Yak2D_Color_Turquoise" data-uid="Yak2D.Color.Turquoise">Turquoise</h4>
+
+  <h3 id="Yak2D_Color_Turquoise" data-uid="Yak2D.Color.Turquoise">
+  Turquoise
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour Turquoise { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_Violet_" data-uid="Yak2D.Color.Violet*"></a>
-  <h4 id="Yak2D_Color_Violet" data-uid="Yak2D.Color.Violet">Violet</h4>
+
+  <h3 id="Yak2D_Color_Violet" data-uid="Yak2D.Color.Violet">
+  Violet
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour Violet { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_WebGray_" data-uid="Yak2D.Color.WebGray*"></a>
-  <h4 id="Yak2D_Color_WebGray" data-uid="Yak2D.Color.WebGray">WebGray</h4>
+
+  <h3 id="Yak2D_Color_WebGray" data-uid="Yak2D.Color.WebGray">
+  WebGray
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour WebGray { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_WebGreen_" data-uid="Yak2D.Color.WebGreen*"></a>
-  <h4 id="Yak2D_Color_WebGreen" data-uid="Yak2D.Color.WebGreen">WebGreen</h4>
+
+  <h3 id="Yak2D_Color_WebGreen" data-uid="Yak2D.Color.WebGreen">
+  WebGreen
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour WebGreen { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_WebMaroon_" data-uid="Yak2D.Color.WebMaroon*"></a>
-  <h4 id="Yak2D_Color_WebMaroon" data-uid="Yak2D.Color.WebMaroon">WebMaroon</h4>
+
+  <h3 id="Yak2D_Color_WebMaroon" data-uid="Yak2D.Color.WebMaroon">
+  WebMaroon
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour WebMaroon { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_WebPurple_" data-uid="Yak2D.Color.WebPurple*"></a>
-  <h4 id="Yak2D_Color_WebPurple" data-uid="Yak2D.Color.WebPurple">WebPurple</h4>
+
+  <h3 id="Yak2D_Color_WebPurple" data-uid="Yak2D.Color.WebPurple">
+  WebPurple
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour WebPurple { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_Wheat_" data-uid="Yak2D.Color.Wheat*"></a>
-  <h4 id="Yak2D_Color_Wheat" data-uid="Yak2D.Color.Wheat">Wheat</h4>
+
+  <h3 id="Yak2D_Color_Wheat" data-uid="Yak2D.Color.Wheat">
+  Wheat
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour Wheat { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_White_" data-uid="Yak2D.Color.White*"></a>
-  <h4 id="Yak2D_Color_White" data-uid="Yak2D.Color.White">White</h4>
+
+  <h3 id="Yak2D_Color_White" data-uid="Yak2D.Color.White">
+  White
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour White { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_WhiteSmoke_" data-uid="Yak2D.Color.WhiteSmoke*"></a>
-  <h4 id="Yak2D_Color_WhiteSmoke" data-uid="Yak2D.Color.WhiteSmoke">WhiteSmoke</h4>
+
+  <h3 id="Yak2D_Color_WhiteSmoke" data-uid="Yak2D.Color.WhiteSmoke">
+  WhiteSmoke
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour WhiteSmoke { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_Yellow_" data-uid="Yak2D.Color.Yellow*"></a>
-  <h4 id="Yak2D_Color_Yellow" data-uid="Yak2D.Color.Yellow">Yellow</h4>
+
+  <h3 id="Yak2D_Color_Yellow" data-uid="Yak2D.Color.Yellow">
+  Yellow
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour Yellow { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_Color_YellowGreen_" data-uid="Yak2D.Color.YellowGreen*"></a>
-  <h4 id="Yak2D_Color_YellowGreen" data-uid="Yak2D.Color.YellowGreen">YellowGreen</h4>
+
+  <h3 id="Yak2D_Color_YellowGreen" data-uid="Yak2D.Color.YellowGreen">
+  YellowGreen
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour YellowGreen { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="methods">Methods
-</h3>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
   <a id="Yak2D_Color_New_" data-uid="Yak2D.Color.New*"></a>
-  <h4 id="Yak2D_Color_New_System_Single_System_Single_System_Single_System_Single_" data-uid="Yak2D.Color.New(System.Single,System.Single,System.Single,System.Single)">New(float, float, float, float)</h4>
+
+  <h3 id="Yak2D_Color_New_System_Single_System_Single_System_Single_System_Single_" data-uid="Yak2D.Color.New(System.Single,System.Single,System.Single,System.Single)">
+  New(float, float, float, float)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/Color.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Create a four component colour, with RGBA values each within 0 to 1 range</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Colour New(float r, float g, float b, float a)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
-        <td><span class="parametername">r</span></td>
-        <td><p>Colour Component 0 to 1</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
-        <td><span class="parametername">g</span></td>
-        <td><p>Colour Component 0 to 1</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
-        <td><span class="parametername">b</span></td>
-        <td><p>Colour Component 0 to 1</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
-        <td><span class="parametername">a</span></td>
-        <td><p>Colour Component 0 to 1</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.Colour.html">Colour</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>r</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>Colour Component 0 to 1</p>
+</dd>
+    <dt><code>g</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>Colour Component 0 to 1</p>
+</dd>
+    <dt><code>b</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>Colour Component 0 to 1</p>
+</dd>
+    <dt><code>a</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>Colour Component 0 to 1</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.Colour.html">Colour</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
 
 </article>
-          </div>
 
-          <div class="hidden-sm col-md-2" role="complementary">
-            <div class="sideaffix">
-              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-                <h5>In this article</h5>
-                <div></div>
-              </nav>
-            </div>
-          </div>
-        </div>
+
+
       </div>
 
-      <footer>
-        <div class="grad-bottom"></div>
-        <div class="footer">
-          <div class="container">
-            <span class="pull-right">
-              <a href="#top">Back to top</a>
-            </span>
-      yak2D - Alex Paterson
-      
-          </div>
-        </div>
-      </footer>
-    </div>
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
 
-    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
-    <script type="text/javascript" src="../styles/docfx.js"></script>
-    <script type="text/javascript" src="../styles/main.js"></script>
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          yak2D - Alex Paterson - MIT licence
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

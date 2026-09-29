@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Yak Run, part 1: a yak on screen | yak2D </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Yak Run, part 1: a yak on screen | yak2D ">
+      
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/AlzPatz/yak2d-docs-content/blob/master/tutorials/yakrun-1.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo.png" alt="yak2D">
+            yak2D
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="uid_tut_yakrun1">
+<h1 id="yak-run-part-1-a-yak-on-screen">Yak Run, part 1: a yak on screen</h1>
+
+<p>In this four part tutorial you will build <strong>Yak Run</strong>, a small platform game. By the end, a yak runs and jumps across floating platforms, collecting glowing stars on the way to a finishing flag, with scrolling scenery, a HUD and some special effects.</p>
+<p><img src="../images/yakrun/part4.png" alt="The finished game"></p>
+<p>In this first part you will set up the project and draw the yak standing on the ground.</p>
+<p><img src="../images/yakrun/part1.png" alt="What you will have at the end of part 1"></p>
+<p><strong>You will learn:</strong> how to embed textures in a project, and how draw stages, cameras, textured and coloured quads, and depth work.</p>
+<p><strong>Before you start:</strong> complete <a href="gettingstarted.html">Getting Started</a>, so that you have the .NET SDK installed and know how to create and run a yak2D project.</p>
+<p>The finished code for each part is in the documentation repository: <a href="https://github.com/AlzPatz/yak2d-docs-content/tree/master/code/YakRun/Part1">Part 1</a>, <a href="https://github.com/AlzPatz/yak2d-docs-content/tree/master/code/YakRun/Part2">Part 2</a>, <a href="https://github.com/AlzPatz/yak2d-docs-content/tree/master/code/YakRun/Part3">Part 3</a>, <a href="https://github.com/AlzPatz/yak2d-docs-content/tree/master/code/YakRun/Part4">Part 4</a>.</p>
+<h2 id="create-the-project">Create the project</h2>
+<pre><code class="lang-bash">dotnet new console -n YakRun
+cd YakRun
+dotnet add package Yak2D
+</code></pre>
+<h2 id="add-the-yak">Add the yak</h2>
+<p>Create a folder called <code>Textures</code> in the project folder, and save this image into it as <code>yak.png</code>:</p>
+<p><a href="https://github.com/AlzPatz/yak2d-docs-content/raw/master/code/YakRun/Part1/Textures/yak.png"><img src="../images/yakrun/yak.png" alt="yak.png"></a></p>
+<p>Now tell .NET to <strong>embed</strong> everything in the <code>Textures</code> folder inside the compiled program, so the game is a single, self-contained program that cannot lose its images. Open <code>YakRun.csproj</code> and make it look like this:</p>
+<pre><code class="lang-xml">&lt;Project Sdk=&quot;Microsoft.NET.Sdk&quot;&gt;
+
+  &lt;PropertyGroup&gt;
+    &lt;OutputType&gt;Exe&lt;/OutputType&gt;
+    &lt;TargetFramework&gt;net10.0&lt;/TargetFramework&gt;
+    &lt;ImplicitUsings&gt;enable&lt;/ImplicitUsings&gt;
+    &lt;!-- yak2D resources are created in CreateResources() rather than constructors,
+         so nullable reference warnings on those fields would just be noise here --&gt;
+    &lt;Nullable&gt;disable&lt;/Nullable&gt;
+  &lt;/PropertyGroup&gt;
+
+  &lt;ItemGroup&gt;
+    &lt;PackageReference Include=&quot;Yak2D&quot; Version=&quot;1.*&quot; /&gt;
+  &lt;/ItemGroup&gt;
+
+  &lt;!-- Embed every file in the Textures folder into the application assembly --&gt;
+  &lt;ItemGroup&gt;
+    &lt;EmbeddedResource Include=&quot;Textures\**&quot; /&gt;
+  &lt;/ItemGroup&gt;
+
+&lt;/Project&gt;
+</code></pre>
+<p>Two changes from the template:</p>
+<ul>
+<li>the <code>EmbeddedResource</code> item embeds the textures;</li>
+<li><code>Nullable</code> is <code>disable</code>. yak2D resources are created in a method called <code>CreateResources()</code> rather than in constructors, so C#'s nullable warnings about uninitialised fields would just be noise.</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>yak2D finds embedded files by your program's <em>assembly name</em>, which is normally the project name. If you give your project a name containing a hyphen (like <code>yak-run</code>), also add <code>&lt;RootNamespace&gt;$(AssemblyName)&lt;/RootNamespace&gt;</code> to the <code>PropertyGroup</code>. See <a href="../articles/assets.html#embedding-assets">Assets</a> for why.</p>
+</div>
+<h2 id="the-game-class">The Game class</h2>
+<p>Replace <code>Program.cs</code> with:</p>
+<pre><code class="lang-csharp">using Yak2D;
+using YakRun;
+
+Launcher.Run(new Game());
+</code></pre>
+<p>and create <code>Game.cs</code>. We will go through it a piece at a time; the whole file is at the end of this page.</p>
+<h3 id="fields">Fields</h3>
+<pre><code class="lang-csharp">private ITexture _yakTexture;
+private IDrawStage _drawStage;
+private ICamera2D _camera;
+</code></pre>
+<p>These hold <strong>references</strong> to things yak2D creates for us: a texture, a draw stage and a camera. yak2D owns the real objects (mostly on the GPU); we keep small reference objects to tell it which ones we mean. See <a href="../articles/resources.html">Resources and references</a>.</p>
+<h3 id="start-up">Start up</h3>
+<pre><code class="lang-csharp">public StartupConfig Configure()
+{
+    return StartupConfig.Default(960, 540, &quot;Yak Run&quot;, false);
+}
+
+public void OnStartup() { }
+</code></pre>
+<p><code>Configure()</code> is the first method yak2D calls. <code>StartupConfig.Default()</code> gives a 960 x 540 window with sensible settings. <code>OnStartup()</code> is for setting up our own objects; there are none yet.</p>
+<h3 id="creating-resources">Creating resources</h3>
+<pre><code class="lang-csharp">public bool CreateResources(IServices yak)
+{
+    // &quot;yak&quot; means Textures/yak.png, embedded in this assembly (see YakRun.csproj)
+    _yakTexture = yak.Surfaces.LoadTexture(&quot;yak&quot;, AssetSourceEnum.Embedded);
+
+    // A draw stage collects and sorts everything we draw each frame
+    _drawStage = yak.Stages.CreateDrawStage();
+
+    // A camera with a 960 x 540 &quot;virtual resolution&quot;: whatever the window size,
+    // it always shows 960 x 540 world units
+    _camera = yak.Cameras.CreateCamera2D(960, 540);
+
+    return true;
+}
+
+public void ProcessMessage(FrameworkMessage msg, IServices yak)
+{
+    // All yak2D resources are lost if the graphics device is recreated (e.g. switching graphics API)
+    if (msg == FrameworkMessage.GraphicsDeviceRecreated)
+    {
+        CreateResources(yak);
+    }
+}
+</code></pre>
+<p>Everything yak2D creates is made in <code>CreateResources()</code>:</p>
+<ul>
+<li><strong><code>LoadTexture(&quot;yak&quot;, AssetSourceEnum.Embedded)</code></strong> loads <code>Textures/yak.png</code> from the embedded files. The name has no folder and no extension.</li>
+<li><strong><code>CreateDrawStage()</code></strong> makes a <em>draw stage</em>: a collector for everything we want to draw. Each frame we submit shapes and sprites to it; it sorts them and draws them efficiently.</li>
+<li><strong><code>CreateCamera2D(960, 540)</code></strong> makes a camera that shows 960 by 540 units. This is its <em>virtual resolution</em>: however big the window is, the camera shows the same 960 x 540 area, scaled to fit. Position (0,0) is in the middle, and <strong>+Y is up</strong>.</li>
+</ul>
+<p>If the graphics device is ever recreated (for example, if the graphics API is switched), every yak2D resource is lost and yak2D sends a <code>GraphicsDeviceRecreated</code> message. Handling it takes one line: call <code>CreateResources()</code> again. It is a good habit to start with.</p>
+<h3 id="update">Update</h3>
+<pre><code class="lang-csharp">public bool Update(IServices yak, float secondsSinceLastUpdate)
+{
+    return !yak.Input.WasKeyPressedThisFrame(KeyCode.Escape);
+}
+
+public void PreDrawing(IServices yak, float secondsSinceLastDraw, float secondsSinceLastUpdate) { }
+</code></pre>
+<p><code>Update()</code> is called 120 times a second by default. Returning <code>false</code> closes the game, so Escape quits. <code>PreDrawing()</code> runs just before each frame is drawn; we will use it later.</p>
+<h3 id="drawing">Drawing</h3>
+<pre><code class="lang-csharp">public void Drawing(IDrawing draw, IFps fps, IInput input, ICoordinateTransforms transforms, float secondsSinceLastDraw, float secondsSinceLastUpdate)
+{
+    // The yak: a textured rectangle (&quot;quad&quot;), centred on the world origin
+    draw.Helpers.DrawTexturedQuad(_drawStage,
+                                  CoordinateSpace.World,
+                                  _yakTexture,
+                                  Colour.White,       // White leaves the texture's colours unchanged
+                                  new Vector2(0.0f, -38.0f),
+                                  84.0f,              // width
+                                  75.0f,              // height
+                                  0.5f);              // depth: 0 is at the front, 1 at the back
+
+    // The ground: a plain coloured rectangle, further back (depth 0.9) than the yak
+    draw.Helpers.DrawColouredQuad(_drawStage,
+                                  CoordinateSpace.World,
+                                  Colour.ForestGreen,
+                                  new Vector2(0.0f, -175.0f),
+                                  960.0f,
+                                  200.0f,
+                                  0.9f);
+}
+</code></pre>
+<p><code>Drawing()</code> runs once per frame. We submit two things to the draw stage:</p>
+<ul>
+<li><strong>The yak</strong>, with <code>DrawTexturedQuad</code>: a rectangle showing a texture. The position is its centre. <code>Colour.White</code> leaves the texture's own colours unchanged (any other colour would tint it). The size keeps the image's proportions (the texture is 256 x 228 pixels).</li>
+<li><strong>The ground</strong>, with <code>DrawColouredQuad</code>: a rectangle filled with one colour.</li>
+</ul>
+<p>The last number is the <strong>depth</strong>, from 0 (front) to 1 (back). The yak is at 0.5 and the ground at 0.9, so the yak is always drawn in front of the ground, whichever order we submit them in. See <a href="../articles/drawing.html#layers-and-depth">Layers and depth</a>.</p>
+<p><code>CoordinateSpace.World</code> means the positions are in the game world, viewed through the camera. When the camera moves (in part 3), these will move on screen.</p>
+<h3 id="rendering">Rendering</h3>
+<pre><code class="lang-csharp">public void Rendering(IRenderQueue q, IRenderTarget windowRenderTarget)
+{
+    q.ClearColour(windowRenderTarget, Colour.SkyBlue);
+    q.ClearDepth(windowRenderTarget);
+    q.Draw(_drawStage, _camera, windowRenderTarget);
+}
+</code></pre>
+<p>Nothing we submitted in <code>Drawing()</code> has appeared yet. <code>Rendering()</code> builds the list of GPU work for the frame:</p>
+<ol>
+<li>clear the window to sky blue,</li>
+<li>clear the window's depth buffer, so last frame's depths don't hide this frame's drawing,</li>
+<li>render our draw stage, through our camera, onto the window.</li>
+</ol>
+<p>This split between <em>drawing</em> (describing what to draw) and <em>rendering</em> (deciding how and where it is rendered) is at the heart of yak2D. In part 4 it lets us send the whole scene through a chain of effects before it reaches the window. See <a href="../articles/overview.html#drawing-and-rendering-are-two-different-steps">How yak2D works</a>.</p>
+<h2 id="run-it">Run it</h2>
+<pre><code class="lang-bash">dotnet run
+</code></pre>
+<p>A yak stands on green ground under a blue sky. Press Escape to quit.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>Try making the window resizable (<code>config.WindowIsResizable = true;</code> in <code>Configure()</code>), then resize it. The camera's virtual resolution keeps the picture the same, just scaled.</p>
+</div>
+<h2 id="the-finished-code">The finished code</h2>
+<p>The complete files for this part are on GitHub: <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/master/code/YakRun/Part1/Game.cs">Game.cs</a>, <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/master/code/YakRun/Part1/Program.cs">Program.cs</a>, <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/master/code/YakRun/Part1/YakRun.csproj">YakRun.csproj</a>. (The <code>#region</code> lines in the code only mark the pieces shown on this page.)</p>
+<h2 id="next">Next</h2>
+<p>In <a href="yakrun-2.html">part 2</a> the yak learns to run and jump.</p>
+
+</article>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          yak2D - Alex Paterson - MIT licence
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

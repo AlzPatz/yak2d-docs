@@ -1,86 +1,126 @@
 <!DOCTYPE html>
-<!--[if IE]><![endif]-->
 <html>
-
   <head>
     <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <title>Class StartupConfig </title>
-      <meta name="viewport" content="width=device-width">
-      <meta name="title" content="Class StartupConfig ">
-    
-    <meta name="description" content="Holds the start up properties for a Yak2D application">
-      <link rel="shortcut icon" href="../favicon.ico">
-      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
-      <link rel="stylesheet" href="../styles/docfx.css">
-      <link rel="stylesheet" href="../styles/main.css">
-      <meta property="docfx:navrel" content="../toc.html">
-      <meta property="docfx:tocrel" content="toc.html">
-    
-    
-    
+      <title>Class StartupConfig | yak2D </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class StartupConfig | yak2D ">
+      
+      <meta name="description" content="Holds the start up properties for a Yak2D application">
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
   </head>
-  <body data-spy="scroll" data-target="#affix" data-offset="120">
-    <div id="wrapper">
-      <header>
 
-        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-
-              <a class="navbar-brand" href="../index.html">
-                <img id="logo" class="svg" src="../images/logo.png" alt="">
-              </a>
-            </div>
-            <div class="collapse navbar-collapse" id="navbar">
-              <form class="navbar-form navbar-right" role="search" id="search">
-                <div class="form-group">
-                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
-                </div>
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo.png" alt="yak2D">
+            yak2D
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
               </form>
             </div>
           </div>
-        </nav>
+        </div>
+      </nav>
+    </header>
 
-        <div class="subnav navbar navbar-default">
-          <div class="container hide-when-search" id="breadcrumb">
-            <ul class="breadcrumb">
-              <li></li>
-            </ul>
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
           </div>
         </div>
-      </header>
-      <div role="main" class="container body-content hide-when-search">
+      </div>
 
-        <div class="sidenav hide-when-search">
-          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
-          <div class="sidetoggle collapse" id="sidetoggle">
-            <div id="sidetoc"></div>
-          </div>
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
         </div>
-        <div class="article row grid-right">
-          <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Yak2D.StartupConfig">
+
+        <article data-uid="Yak2D.StartupConfig">
 
 
 
-  <h1 id="Yak2D_StartupConfig" data-uid="Yak2D.StartupConfig" class="text-break">Class StartupConfig</h1>
-  <div class="markdown level0 summary"><p>Holds the start up properties for a Yak2D application</p>
-</div>
-  <div class="markdown level0 conceptual"></div>
-  <div class="inheritance">
-    <h5>Inheritance</h5>
-    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
-    <div class="level1"><span class="xref">StartupConfig</span></div>
+  <h1 id="Yak2D_StartupConfig" data-uid="Yak2D.StartupConfig" class="text-break">
+Class StartupConfig  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/StartupConfig.cs"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Yak2D.html">Yak2D</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Yak2D.Api.dll</dd></dl>
   </div>
-  <div class="inheritedMembers">
-    <h5>Inherited Members</h5>
+
+  <div class="markdown summary"><p>Holds the start up properties for a Yak2D application</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class StartupConfig</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">StartupConfig</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
     </div>
@@ -102,575 +142,727 @@
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
     </div>
-  </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="Yak2D.html">Yak2D</a></h6>
-  <h6><strong>Assembly</strong>: Yak2D.Api.dll</h6>
-  <h5 id="Yak2D_StartupConfig_syntax">Syntax</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class StartupConfig</code></pre>
-  </div>
-  <h3 id="constructors">Constructors
-</h3>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
   <a id="Yak2D_StartupConfig__ctor_" data-uid="Yak2D.StartupConfig.#ctor*"></a>
-  <h4 id="Yak2D_StartupConfig__ctor" data-uid="Yak2D.StartupConfig.#ctor">StartupConfig()</h4>
+
+  <h3 id="Yak2D_StartupConfig__ctor" data-uid="Yak2D.StartupConfig.#ctor">
+  StartupConfig()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/StartupConfig.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public StartupConfig()</code></pre>
   </div>
-  <h3 id="properties">Properties
-</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
   <a id="Yak2D_StartupConfig_AutoClearMainWindowColourEachFrame_" data-uid="Yak2D.StartupConfig.AutoClearMainWindowColourEachFrame*"></a>
-  <h4 id="Yak2D_StartupConfig_AutoClearMainWindowColourEachFrame" data-uid="Yak2D.StartupConfig.AutoClearMainWindowColourEachFrame">AutoClearMainWindowColourEachFrame</h4>
+
+  <h3 id="Yak2D_StartupConfig_AutoClearMainWindowColourEachFrame" data-uid="Yak2D.StartupConfig.AutoClearMainWindowColourEachFrame">
+  AutoClearMainWindowColourEachFrame
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/StartupConfig.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Sets whether before each draw iteration, the main window render target's colour buffer (texture) is cleared to transparent black (0,0,0,0)</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool AutoClearMainWindowColourEachFrame { get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_StartupConfig_AutoClearMainWindowDepthEachFrame_" data-uid="Yak2D.StartupConfig.AutoClearMainWindowDepthEachFrame*"></a>
-  <h4 id="Yak2D_StartupConfig_AutoClearMainWindowDepthEachFrame" data-uid="Yak2D.StartupConfig.AutoClearMainWindowDepthEachFrame">AutoClearMainWindowDepthEachFrame</h4>
+
+  <h3 id="Yak2D_StartupConfig_AutoClearMainWindowDepthEachFrame" data-uid="Yak2D.StartupConfig.AutoClearMainWindowDepthEachFrame">
+  AutoClearMainWindowDepthEachFrame
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/StartupConfig.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Sets whether before each draw iteration, the main window render target's depth buffer is cleared (helps avoid situations where this is forgotten)</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool AutoClearMainWindowDepthEachFrame { get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_StartupConfig_AvoidVulkanWherePossible_" data-uid="Yak2D.StartupConfig.AvoidVulkanWherePossible*"></a>
-  <h4 id="Yak2D_StartupConfig_AvoidVulkanWherePossible" data-uid="Yak2D.StartupConfig.AvoidVulkanWherePossible">AvoidVulkanWherePossible</h4>
+
+  <h3 id="Yak2D_StartupConfig_AvoidVulkanWherePossible" data-uid="Yak2D.StartupConfig.AvoidVulkanWherePossible">
+  AvoidVulkanWherePossible
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/StartupConfig.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>If SystemDefault is selected, this toggle can be used to avoid Vulkan unless it is the only system option</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool AvoidVulkanWherePossible { get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_StartupConfig_FixedOrSmallestUpdateTimeStepInSeconds_" data-uid="Yak2D.StartupConfig.FixedOrSmallestUpdateTimeStepInSeconds*"></a>
-  <h4 id="Yak2D_StartupConfig_FixedOrSmallestUpdateTimeStepInSeconds" data-uid="Yak2D.StartupConfig.FixedOrSmallestUpdateTimeStepInSeconds">FixedOrSmallestUpdateTimeStepInSeconds</h4>
+
+  <h3 id="Yak2D_StartupConfig_FixedOrSmallestUpdateTimeStepInSeconds" data-uid="Yak2D.StartupConfig.FixedOrSmallestUpdateTimeStepInSeconds">
+  FixedOrSmallestUpdateTimeStepInSeconds
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/StartupConfig.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>If a fixed update period type is chosen, this defines the time slice in seconds of each update. Should a variable update period be chosen, this defines the smallest time interval to process an update for</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public float FixedOrSmallestUpdateTimeStepInSeconds { get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_StartupConfig_FontFolder_" data-uid="Yak2D.StartupConfig.FontFolder*"></a>
-  <h4 id="Yak2D_StartupConfig_FontFolder" data-uid="Yak2D.StartupConfig.FontFolder">FontFolder</h4>
+
+  <h3 id="Yak2D_StartupConfig_FontFolder" data-uid="Yak2D.StartupConfig.FontFolder">
+  FontFolder
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/StartupConfig.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>The root folder (either on disk or as an embedded resource location) for the user font data (.fnt files and related .png's)</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public string FontFolder { get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_StartupConfig_FpsCalculationUpdatePeriod_" data-uid="Yak2D.StartupConfig.FpsCalculationUpdatePeriod*"></a>
-  <h4 id="Yak2D_StartupConfig_FpsCalculationUpdatePeriod" data-uid="Yak2D.StartupConfig.FpsCalculationUpdatePeriod">FpsCalculationUpdatePeriod</h4>
+
+  <h3 id="Yak2D_StartupConfig_FpsCalculationUpdatePeriod" data-uid="Yak2D.StartupConfig.FpsCalculationUpdatePeriod">
+  FpsCalculationUpdatePeriod
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/StartupConfig.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>The period in seconds over which the update and draw loop 'frames per second' are calculated</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public float FpsCalculationUpdatePeriod { get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_StartupConfig_PreferredGraphicsApi_" data-uid="Yak2D.StartupConfig.PreferredGraphicsApi*"></a>
-  <h4 id="Yak2D_StartupConfig_PreferredGraphicsApi" data-uid="Yak2D.StartupConfig.PreferredGraphicsApi">PreferredGraphicsApi</h4>
+
+  <h3 id="Yak2D_StartupConfig_PreferredGraphicsApi" data-uid="Yak2D.StartupConfig.PreferredGraphicsApi">
+  PreferredGraphicsApi
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/StartupConfig.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Sets preferred graphics API. Unsupported APIs for the runtime system will be ignored and a system default will be chosen</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public GraphicsApi PreferredGraphicsApi { get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.GraphicsApi.html">GraphicsApi</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.GraphicsApi.html">GraphicsApi</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_StartupConfig_ProcessFractionalUpdatesBeforeDraw_" data-uid="Yak2D.StartupConfig.ProcessFractionalUpdatesBeforeDraw*"></a>
-  <h4 id="Yak2D_StartupConfig_ProcessFractionalUpdatesBeforeDraw" data-uid="Yak2D.StartupConfig.ProcessFractionalUpdatesBeforeDraw">ProcessFractionalUpdatesBeforeDraw</h4>
+
+  <h3 id="Yak2D_StartupConfig_ProcessFractionalUpdatesBeforeDraw" data-uid="Yak2D.StartupConfig.ProcessFractionalUpdatesBeforeDraw">
+  ProcessFractionalUpdatesBeforeDraw
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/StartupConfig.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Sets whether when ready to draw, the engine does a 'catch up' update iteration to bring current system evolution closer to realtime</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool ProcessFractionalUpdatesBeforeDraw { get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_StartupConfig_RequireAtleastOneUpdatePerDraw_" data-uid="Yak2D.StartupConfig.RequireAtleastOneUpdatePerDraw*"></a>
-  <h4 id="Yak2D_StartupConfig_RequireAtleastOneUpdatePerDraw" data-uid="Yak2D.StartupConfig.RequireAtleastOneUpdatePerDraw">RequireAtleastOneUpdatePerDraw</h4>
+
+  <h3 id="Yak2D_StartupConfig_RequireAtleastOneUpdatePerDraw" data-uid="Yak2D.StartupConfig.RequireAtleastOneUpdatePerDraw">
+  RequireAtleastOneUpdatePerDraw
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/StartupConfig.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Sets whether at least one update iteration is required before starting a new draw</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool RequireAtleastOneUpdatePerDraw { get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_StartupConfig_SyncToVerticalBlank_" data-uid="Yak2D.StartupConfig.SyncToVerticalBlank*"></a>
-  <h4 id="Yak2D_StartupConfig_SyncToVerticalBlank" data-uid="Yak2D.StartupConfig.SyncToVerticalBlank">SyncToVerticalBlank</h4>
+
+  <h3 id="Yak2D_StartupConfig_SyncToVerticalBlank" data-uid="Yak2D.StartupConfig.SyncToVerticalBlank">
+  SyncToVerticalBlank
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/StartupConfig.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Render updates wait for monitor vertical sync (to avoid screen tearing)</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool SyncToVerticalBlank { get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_StartupConfig_TextureFolderRootName_" data-uid="Yak2D.StartupConfig.TextureFolderRootName*"></a>
-  <h4 id="Yak2D_StartupConfig_TextureFolderRootName" data-uid="Yak2D.StartupConfig.TextureFolderRootName">TextureFolderRootName</h4>
+
+  <h3 id="Yak2D_StartupConfig_TextureFolderRootName" data-uid="Yak2D.StartupConfig.TextureFolderRootName">
+  TextureFolderRootName
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/StartupConfig.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>The root folder (either on disk or as an embedded resource location) for the user texture files (.png)</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public string TextureFolderRootName { get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_StartupConfig_UpdatePeriodType_" data-uid="Yak2D.StartupConfig.UpdatePeriodType*"></a>
-  <h4 id="Yak2D_StartupConfig_UpdatePeriodType" data-uid="Yak2D.StartupConfig.UpdatePeriodType">UpdatePeriodType</h4>
+
+  <h3 id="Yak2D_StartupConfig_UpdatePeriodType" data-uid="Yak2D.StartupConfig.UpdatePeriodType">
+  UpdatePeriodType
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/StartupConfig.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Defines the time period slicing for framework update calls. Framework update and draw iterations are on different loop cycles</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public UpdatePeriod UpdatePeriodType { get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.UpdatePeriod.html">UpdatePeriod</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.UpdatePeriod.html">UpdatePeriod</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_StartupConfig_WindowHeight_" data-uid="Yak2D.StartupConfig.WindowHeight*"></a>
-  <h4 id="Yak2D_StartupConfig_WindowHeight" data-uid="Yak2D.StartupConfig.WindowHeight">WindowHeight</h4>
+
+  <h3 id="Yak2D_StartupConfig_WindowHeight" data-uid="Yak2D.StartupConfig.WindowHeight">
+  WindowHeight
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/StartupConfig.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Sets window height in pixels, aswell as the height of the main window swapchain backbuffer (main render surface)</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public int WindowHeight { get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_StartupConfig_WindowIsResizable_" data-uid="Yak2D.StartupConfig.WindowIsResizable*"></a>
-  <h4 id="Yak2D_StartupConfig_WindowIsResizable" data-uid="Yak2D.StartupConfig.WindowIsResizable">WindowIsResizable</h4>
+
+  <h3 id="Yak2D_StartupConfig_WindowIsResizable" data-uid="Yak2D.StartupConfig.WindowIsResizable">
+  WindowIsResizable
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/StartupConfig.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Sets whether the window is resizable (can be changed during application runtime)</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool WindowIsResizable { get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_StartupConfig_WindowPositionX_" data-uid="Yak2D.StartupConfig.WindowPositionX*"></a>
-  <h4 id="Yak2D_StartupConfig_WindowPositionX" data-uid="Yak2D.StartupConfig.WindowPositionX">WindowPositionX</h4>
+
+  <h3 id="Yak2D_StartupConfig_WindowPositionX" data-uid="Yak2D.StartupConfig.WindowPositionX">
+  WindowPositionX
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/StartupConfig.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Sets X component of top-left position of window</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public int WindowPositionX { get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_StartupConfig_WindowPositionY_" data-uid="Yak2D.StartupConfig.WindowPositionY*"></a>
-  <h4 id="Yak2D_StartupConfig_WindowPositionY" data-uid="Yak2D.StartupConfig.WindowPositionY">WindowPositionY</h4>
+
+  <h3 id="Yak2D_StartupConfig_WindowPositionY" data-uid="Yak2D.StartupConfig.WindowPositionY">
+  WindowPositionY
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/StartupConfig.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Sets Y component of top-left position of window</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public int WindowPositionY { get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_StartupConfig_WindowState_" data-uid="Yak2D.StartupConfig.WindowState*"></a>
-  <h4 id="Yak2D_StartupConfig_WindowState" data-uid="Yak2D.StartupConfig.WindowState">WindowState</h4>
+
+  <h3 id="Yak2D_StartupConfig_WindowState" data-uid="Yak2D.StartupConfig.WindowState">
+  WindowState
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/StartupConfig.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Sets start up window state</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public DisplayState WindowState { get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.DisplayState.html">DisplayState</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.DisplayState.html">DisplayState</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_StartupConfig_WindowTitle_" data-uid="Yak2D.StartupConfig.WindowTitle*"></a>
-  <h4 id="Yak2D_StartupConfig_WindowTitle" data-uid="Yak2D.StartupConfig.WindowTitle">WindowTitle</h4>
+
+  <h3 id="Yak2D_StartupConfig_WindowTitle" data-uid="Yak2D.StartupConfig.WindowTitle">
+  WindowTitle
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/StartupConfig.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Sets the window title bar text</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public string WindowTitle { get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_StartupConfig_WindowWidth_" data-uid="Yak2D.StartupConfig.WindowWidth*"></a>
-  <h4 id="Yak2D_StartupConfig_WindowWidth" data-uid="Yak2D.StartupConfig.WindowWidth">WindowWidth</h4>
+
+  <h3 id="Yak2D_StartupConfig_WindowWidth" data-uid="Yak2D.StartupConfig.WindowWidth">
+  WindowWidth
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/StartupConfig.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Sets window width in pixels, aswell as the width of the main window swapchain backbuffer (main render surface)</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public int WindowWidth { get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="methods">Methods
-</h3>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
   <a id="Yak2D_StartupConfig_Default_" data-uid="Yak2D.StartupConfig.Default*"></a>
-  <h4 id="Yak2D_StartupConfig_Default_System_UInt32_System_UInt32_System_String_System_Boolean_" data-uid="Yak2D.StartupConfig.Default(System.UInt32,System.UInt32,System.String,System.Boolean)">Default(uint, uint, string, bool)</h4>
+
+  <h3 id="Yak2D_StartupConfig_Default_System_UInt32_System_UInt32_System_String_System_Boolean_" data-uid="Yak2D.StartupConfig.Default(System.UInt32,System.UInt32,System.String,System.Boolean)">
+  Default(uint, uint, string, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/StartupConfig.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Provides some default configuration settings
 Texture and Font folders are set to &quot;Textures&quot; and &quot;Fonts&quot; respectively</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static StartupConfig Default(uint windowWidth, uint windowHeight, string windowTitle, bool fullScreen)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></td>
-        <td><span class="parametername">windowWidth</span></td>
-        <td><p>Horizontal Window Resolution</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></td>
-        <td><span class="parametername">windowHeight</span></td>
-        <td><p>Vertical Window Resolution</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">windowTitle</span></td>
-        <td><p>Window Title</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><span class="parametername">fullScreen</span></td>
-        <td><p>Start the application in fullscreen</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.StartupConfig.html">StartupConfig</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>windowWidth</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></dt>
+    <dd><p>Horizontal Window Resolution</p>
+</dd>
+    <dt><code>windowHeight</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></dt>
+    <dd><p>Vertical Window Resolution</p>
+</dd>
+    <dt><code>windowTitle</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Window Title</p>
+</dd>
+    <dt><code>fullScreen</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>Start the application in fullscreen</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.StartupConfig.html">StartupConfig</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
 
 </article>
-          </div>
 
-          <div class="hidden-sm col-md-2" role="complementary">
-            <div class="sideaffix">
-              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-                <h5>In this article</h5>
-                <div></div>
-              </nav>
-            </div>
-          </div>
-        </div>
+
+
       </div>
 
-      <footer>
-        <div class="grad-bottom"></div>
-        <div class="footer">
-          <div class="container">
-            <span class="pull-right">
-              <a href="#top">Back to top</a>
-            </span>
-      yak2D - Alex Paterson
-      
-          </div>
-        </div>
-      </footer>
-    </div>
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
 
-    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
-    <script type="text/javascript" src="../styles/docfx.js"></script>
-    <script type="text/javascript" src="../styles/main.js"></script>
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          yak2D - Alex Paterson - MIT licence
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

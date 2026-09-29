@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Troubleshooting and FAQ | yak2D </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Troubleshooting and FAQ | yak2D ">
+      
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/AlzPatz/yak2d-docs-content/blob/master/articles/troubleshooting.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo.png" alt="yak2D">
+            yak2D
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="uid_troubleshooting">
+<h1 id="troubleshooting-and-faq">Troubleshooting and FAQ</h1>
+
+<p><strong>Start with the console.</strong> yak2D writes what it is doing, and what went wrong, to the console: which graphics API was chosen, assets it could not find, invalid requests, and so on. Most problems are explained there.</p>
+<h2 id="nothing-appears">Nothing appears</h2>
+<ul>
+<li><strong>Did you render the draw stage?</strong> Submitting draw requests is not enough; <code>Rendering()</code> must call <code>q.Draw(stage, camera, target)</code>. See <a href="overview.html#drawing-and-rendering-are-two-different-steps">How yak2D works</a>.</li>
+<li><strong>Is it inside the camera's view?</strong> In screen space the visible area is plus and minus half the camera's virtual resolution. In world space it also depends on the camera's focus and zoom.</li>
+<li><strong>Is it hidden behind something?</strong> Check layers and depths: higher layers are on top; within a layer, lower depth is in front. When two draw stages render onto the same surface, clear the depth between them. See <a href="drawing.html#layers-and-depth">Layers and depth</a>.</li>
+<li><strong>Is it transparent?</strong> A colour with alpha 0 draws nothing. That includes <code>default(Colour)</code>, and any <a class="xref" href="../api/Yak2D.Vertex2D.html">Vertex2D</a> whose <code>Colour</code> was not set, even in a textured request: vertex colours multiply the texture, and the default is transparent black. Use <code>Colour.White</code> for &quot;no change&quot;.</li>
+<li><strong>Is a colour effects stage turning everything black?</strong> <code>Opacity</code> in <a class="xref" href="../api/Yak2D.ColourEffectConfiguration.html">ColourEffectConfiguration</a> must be 1 for a normal picture; a new struct has it at 0.</li>
+</ul>
+<h2 id="a-texture-or-font-will-not-load">A texture or font will not load</h2>
+<ul>
+<li>The console says <code>The provided texture name was not found in assembly: MyGame.Textures.yak.png</code>:
+<ul>
+<li>Is the file in the <code>Textures</code> folder, with the right name? Names are given without extension or folder: <code>LoadTexture(&quot;yak&quot;, ...)</code>.</li>
+<li>Is the folder embedded? The <code>.csproj</code> needs <code>&lt;EmbeddedResource Include=&quot;Textures\**&quot; /&gt;</code>.</li>
+<li><strong>Is your RootNamespace the same as your assembly name?</strong> If your project name contains a hyphen, or you set <code>&lt;RootNamespace&gt;</code> yourself, embedded files are named differently from what yak2D looks for. Add <code>&lt;RootNamespace&gt;$(AssemblyName)&lt;/RootNamespace&gt;</code> to your <code>.csproj</code>. See <a href="assets.html#embedding-assets">Assets</a>.</li>
+</ul>
+</li>
+<li><code>Unable to find Texture file from path</code>: file assets are relative to the working directory. See <a href="assets.html#files-on-disk">Assets: Files on disk</a>.</li>
+<li>A failed <a class="xref" href="../api/Yak2D.ISurfaces.html#Yak2D_ISurfaces_LoadTexture_">LoadTexture()</a> returns <code>null</code>, and drawing with <code>null</code> then throws an exception, so the real cause is the earlier console message.</li>
+</ul>
+<h2 id="input">Input</h2>
+<ul>
+<li><strong>Key presses are missed or happen twice.</strong> &quot;Pressed/released this frame&quot; means this <em>update step</em>: check them in <code>Update()</code>, not in <code>Drawing()</code>. See <a href="input.html#held-pressed-and-released">Input</a>.</li>
+<li><strong>My gamepad's up and down are reversed.</strong> Stick Y values are negative when pushed up. See <a href="input.html#gamepads">Input: Gamepads</a>.</li>
+</ul>
+<h2 id="the-picture-is-stretched-or-the-wrong-size">The picture is stretched, or the wrong size</h2>
+<ul>
+<li>Keep each camera's virtual resolution in the same proportion as the surface (or viewport) it renders to. See <a href="cameras.html#virtual-resolution">Cameras</a>.</li>
+<li>Viewports are in real pixels and do not follow window size changes; recreate them when the window changes. See <a href="viewports.html#viewports-and-window-size">Viewports</a>.</li>
+</ul>
+<h2 id="sprites-have-faint-lines-or-specks-at-their-edges">Sprites have faint lines or specks at their edges</h2>
+<p>Texture filtering with the <code>Wrap</code> mode blends each edge of an image with the opposite edge. Leave a transparent border of a pixel or two round sprite images, or use <code>TextureCoordinateMode.Mirror</code>. See <a href="drawing.html#texture-coordinates-wrapping-and-filtering">Drawing</a>.</p>
+<h2 id="translucent-shapes-look-too-dark-after-an-effect">Translucent shapes look too dark after an effect</h2>
+<p>A known issue: see <a href="drawing.html#blend-states">Drawing: Blend states</a>. Draw them opaque if you can.</p>
+<h2 id="my-application-quits-when-i-switch-graphics-api">My application quits when I switch graphics API</h2>
+<p>Switching API sends <code>ApplicationWindowClosing</code> (twice) as the window is recreated. If you quit on that message, you will quit on a switch. See <a href="window.html#switching-graphics-api">Window: Switching graphics API</a>.</p>
+<h2 id="everything-disappeared-after-switching-graphics-api-or-the-device-was-lost">Everything disappeared after switching graphics API (or the device was lost)</h2>
+<p>All resources are destroyed when the graphics device is recreated. Recreate them when you receive <code>GraphicsDeviceRecreated</code>. See <a href="lifecycle.html#device-resets">Device resets</a>.</p>
+<h2 id="linux">Linux</h2>
+<ul>
+<li><strong>The window does not open / &quot;failed to create graphics device&quot;.</strong> Check your GPU drivers: <code>glxinfo -B</code> (OpenGL) or <code>vulkaninfo --summary</code> (Vulkan) should show your GPU. Install your distribution's Mesa packages, or your GPU vendor's drivers.</li>
+<li><strong>Which API is being used?</strong> The console says at start up. yak2D prefers OpenGL over Vulkan on Linux by default (<code>AvoidVulkanWherePossible</code>); set <code>PreferredGraphicsApi = GraphicsApi.Vulkan</code> to try Vulkan.</li>
+<li>Both X11 and Wayland sessions work.</li>
+</ul>
+<h2 id="macos">macOS</h2>
+<ul>
+<li>yak2D runs on OpenGL, or on Vulkan through the bundled MoltenVK. The Metal backend is currently disabled.</li>
+<li>macOS support is less thoroughly tested than Windows and Linux; please <a href="https://github.com/AlzPatz/yak2d/issues">report problems</a>.</li>
+</ul>
+<h2 id="the-framework-debug-overlay">The framework debug overlay</h2>
+<p>Debug builds of yak2D itself (not the NuGet package) include an overlay of timing information, toggled with <strong>Ctrl+Shift+D</strong>. It is useful when working on yak2D; in your own application, draw <a class="xref" href="../api/Yak2D.IFps.html">IFps</a> values for a simple frame rate display.</p>
+<h2 id="still-stuck">Still stuck?</h2>
+<p><a href="https://github.com/AlzPatz/yak2d/issues">Raise an issue on GitHub</a> with the console output and, ideally, a small program that shows the problem.</p>
+
+</article>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          yak2D - Alex Paterson - MIT licence
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

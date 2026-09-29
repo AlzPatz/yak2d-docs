@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Writing a custom shader | yak2D </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Writing a custom shader | yak2D ">
+      
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/AlzPatz/yak2d-docs-content/blob/master/tutorials/customshader.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo.png" alt="yak2D">
+            yak2D
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="uid_tut_customshader">
+<h1 id="writing-a-custom-shader">Writing a custom shader</h1>
+
+<p>yak2D's built-in effects cover a lot, but sooner or later you will want an effect of your own. A <strong>custom shader stage</strong> runs a <em>fragment shader</em> that you write: a small program that runs on the GPU once for every pixel of the output, and decides its colour.</p>
+<p>In this tutorial you will write a shader that makes an image ripple like a flag and slowly cycles its colours, with a setting you can change from C#. It runs on every graphics API yak2D supports.</p>
+<p><img src="../images/tutorials/customshader.png" alt="The wavy yak"></p>
+<p><strong>You will need:</strong> a yak2D project (see <a href="gettingstarted.html">Getting Started</a>). No shader experience is assumed, though some familiarity with C-like syntax helps.</p>
+<p>The finished code: <a href="https://github.com/AlzPatz/yak2d-docs-content/tree/master/code/CustomShader">code/CustomShader</a>.</p>
+<h2 id="1-the-project">1. The project</h2>
+<p>Create a project and add two folders, <code>Textures</code> (with an image in it: we use <a href="https://github.com/AlzPatz/yak2d-docs-content/raw/master/code/CustomShader/Textures/yakphoto.png">this yak photo</a>, saved as <code>yakphoto.png</code>) and <code>Shaders</code>. Embed both:</p>
+<pre><code class="lang-xml">&lt;Project Sdk=&quot;Microsoft.NET.Sdk&quot;&gt;
+
+  &lt;PropertyGroup&gt;
+    &lt;OutputType&gt;Exe&lt;/OutputType&gt;
+    &lt;TargetFramework&gt;net10.0&lt;/TargetFramework&gt;
+    &lt;ImplicitUsings&gt;enable&lt;/ImplicitUsings&gt;
+    &lt;Nullable&gt;disable&lt;/Nullable&gt;
+  &lt;/PropertyGroup&gt;
+
+  &lt;ItemGroup&gt;
+    &lt;PackageReference Include=&quot;Yak2D&quot; Version=&quot;1.*&quot; /&gt;
+  &lt;/ItemGroup&gt;
+
+  &lt;ItemGroup&gt;
+    &lt;EmbeddedResource Include=&quot;Textures\**&quot; /&gt;
+    &lt;EmbeddedResource Include=&quot;Shaders\**&quot; /&gt;
+  &lt;/ItemGroup&gt;
+
+&lt;/Project&gt;
+</code></pre><h2 id="2-the-shader">2. The shader</h2>
+<p>Create <code>Shaders/Wavy.glsl</code>:</p>
+<pre><code class="lang-glsl">#version 450
+
+// Input 0: the texture passed to q.CustomShader() as tex0. Uniform description &quot;Texture&quot; -&gt; resource set 0
+layout(set = 0, binding = 0) uniform texture2D Texture_Texture;
+layout(set = 0, binding = 1) uniform sampler Sampler_Texture;
+
+// Uniform description &quot;Settings&quot; -&gt; resource set 1. Must match the C# struct's layout
+layout(set = 1, binding = 0) uniform Settings
+{
+    float Time;
+    float Amount;
+    vec2 Pad;
+};
+
+// From yak2D's vertex shader: texture coordinates, (0,0) top-left to (1,1) bottom-right
+layout(location = 0) in vec2 FTex;
+
+layout(location = 0) out vec4 fragColor;
+
+void main()
+{
+    // Shift where we read from with a moving sine wave, so the image ripples
+    vec2 offset = Amount * vec2(sin(FTex.y * 20.0 + Time * 3.0), cos(FTex.x * 16.0 + Time * 2.0)) * 0.02;
+    vec4 colour = texture(sampler2D(Texture_Texture, Sampler_Texture), FTex + offset);
+
+    // Slowly cycle the colours by rotating red, green and blue
+    float t = Time * 0.5;
+    vec3 cycled = vec3(colour.r * cos(t) + colour.g * sin(t), colour.g, colour.b * cos(t) + colour.r * sin(t));
+    fragColor = vec4(mix(colour.rgb, cycled, Amount), colour.a);
+}
+</code></pre>
+<p>Shaders are written in <strong>GLSL</strong>, a C-like language. Going through it:</p>
+<ul>
+<li><code>#version 450</code> says which version of GLSL this is. yak2D compiles it with the Vulkan flavour of GLSL 4.50, and converts it to whatever the current graphics API needs.</li>
+<li><strong>The texture</strong>, <code>Texture_Texture</code> and <code>Sampler_Texture</code>: the image we will read. In modern GLSL a texture and its <em>sampler</em> (which says how to filter it) are separate, at bindings 0 and 1 of the same set.</li>
+<li><strong>The settings</strong>: a <code>uniform</code> block called <code>Settings</code>, with our own values in it. Every pixel sees the same values; we set them from C# each frame.</li>
+<li><strong><code>FTex</code></strong>: the input from yak2D's vertex shader, the position of this pixel as a texture coordinate, from (0,0) at the top-left of the output to (1,1) at the bottom-right.</li>
+<li><strong><code>fragColor</code></strong>: the output, the pixel's colour.</li>
+<li><strong><code>main()</code></strong> runs once per pixel. It nudges the coordinate it reads the texture at by a sine wave that changes over time (the ripple), reads the texture there, then mixes in a version with its red and blue channels rotated (the colour cycling). <code>Amount</code> controls both.</li>
+</ul>
+<p>The <code>set</code> numbers must match the order of the uniform descriptions we give yak2D in C#, and the uniform block's name must match its description's <code>Name</code>. Those are the only links between the two sides.</p>
+<h2 id="3-the-c-side">3. The C# side</h2>
+<p>Create <code>WavyYak.cs</code>.</p>
+<h3 id="the-settings-struct">The settings struct</h3>
+<pre><code class="lang-csharp">// The C# side of the shader's &quot;Settings&quot; uniform block. Uniform data must be a multiple of
+// 16 bytes, and match the shader's layout exactly, hence the padding
+[StructLayout(LayoutKind.Sequential)]
+private struct Settings
+{
+    public float Time;
+    public float Amount;
+    public float Pad0;
+    public float Pad1;
+}
+</code></pre>
+<p>This struct must have the same layout as the <code>Settings</code> block in the shader: two floats, then two more to pad it to 16 bytes, because GPU uniform data comes in 16 byte chunks. <code>[StructLayout(LayoutKind.Sequential)]</code> makes sure C# keeps the fields in order.</p>
+<h3 id="creating-the-stage">Creating the stage</h3>
+<pre><code class="lang-csharp">public bool CreateResources(IServices yak)
+{
+    _yak = yak.Surfaces.LoadTexture(&quot;yakphoto&quot;, AssetSourceEnum.Embedded);
+
+    _wavy = yak.Stages.CreateCustomShaderStage(
+        &quot;Wavy&quot;,                        // Shaders/Wavy.glsl
+        AssetSourceEnum.Embedded,
+        new[]
+        {
+            new ShaderUniformDescription { Name = &quot;Texture&quot;, UniformType = ShaderUniformType.Texture, SizeInBytes = 0 },
+            new ShaderUniformDescription { Name = &quot;Settings&quot;, UniformType = ShaderUniformType.Data, SizeInBytes = 16 },
+        },
+        BlendState.Override,           // replace the target's pixels rather than blending with them
+        useSpirvCompile: true);        // compile the one .glsl file for whichever graphics API is in use
+
+    return true;
+}
+</code></pre>
+<p>The uniform descriptions tell yak2D what the shader expects, in <code>set</code> order:</p>
+<ol>
+<li><code>&quot;Texture&quot;</code>, a texture: <code>set = 0</code> in the shader.</li>
+<li><code>&quot;Settings&quot;</code>, 16 bytes of data: <code>set = 1</code>.</li>
+</ol>
+<p><code>useSpirvCompile: true</code> tells yak2D to compile the <code>.glsl</code> file itself, for whichever graphics API is in use. <code>BlendState.Override</code> means the shader's output replaces whatever was on the target.</p>
+<h3 id="updating-the-settings">Updating the settings</h3>
+<pre><code class="lang-csharp">public bool Update(IServices yak, float secondsSinceLastUpdate)
+{
+    // Up and down arrows change the strength of the effect
+    if (yak.Input.IsKeyCurrentlyPressed(KeyCode.Up)) _amount = MathF.Min(_amount + secondsSinceLastUpdate, 2.0f);
+    if (yak.Input.IsKeyCurrentlyPressed(KeyCode.Down)) _amount = MathF.Max(_amount - secondsSinceLastUpdate, 0.0f);
+
+    return !yak.Input.WasKeyPressedThisFrame(KeyCode.Escape);
+}
+
+public void PreDrawing(IServices yak, float secondsSinceLastDraw, float secondsSinceLastUpdate)
+{
+    _time += secondsSinceLastDraw;
+
+    // Send this frame's values to the shader
+    yak.Stages.SetCustomShaderUniformValues(_wavy, &quot;Settings&quot;, new Settings { Time = _time, Amount = _amount });
+}
+</code></pre>
+<p><code>SetCustomShaderUniformValues</code> sends a struct to a named uniform. We send the time and the current strength every frame, and the arrow keys change the strength.</p>
+<h3 id="rendering">Rendering</h3>
+<pre><code class="lang-csharp">public void Rendering(IRenderQueue q, IRenderTarget windowRenderTarget)
+{
+    // Up to four input textures. This shader only reads the first
+    q.CustomShader(_wavy, _yak, null, null, null, windowRenderTarget);
+}
+</code></pre>
+<p>A custom shader stage can read up to four textures, filling the stage's texture uniforms in order. This shader has one, so the other three are <code>null</code>. The output fills the target: here, the whole window.</p>
+<h3 id="programcs">Program.cs</h3>
+<pre><code class="lang-csharp">using Yak2D;
+using CustomShader;
+
+Launcher.Run(new WavyYak());
+</code></pre><h2 id="4-run-it">4. Run it</h2>
+<pre><code class="lang-bash">dotnet run
+</code></pre>
+<p>The yak ripples and changes colour. Hold the up and down arrows to change the strength.</p>
+<p>To check it works on another graphics API, set <code>PreferredGraphicsApi</code> in <code>Configure()</code>:</p>
+<pre><code class="lang-csharp">public StartupConfig Configure()
+{
+    var config = StartupConfig.Default(960, 540, &quot;Custom Shader&quot;, false);
+    config.PreferredGraphicsApi = GraphicsApi.Vulkan;   // or OpenGL, or Direct3D11 on Windows
+    return config;
+}
+</code></pre>
+<h2 id="when-things-go-wrong">When things go wrong</h2>
+<ul>
+<li><strong>An exception when the stage is created, mentioning <code>GLSL compilation failed</code></strong>: a mistake in the shader. The message gives the line number.</li>
+<li><strong>&quot;Unable to load shader file&quot; in the console</strong>: the file is not in the embedded <code>Shaders</code> folder, or the name passed to <code>CreateCustomShaderStage()</code> is wrong (it has no extension or folder).</li>
+<li><strong>Your settings have no effect on one graphics API</strong>: the uniform block's name does not match the description's <code>Name</code>. OpenGL matches them by name.</li>
+<li><strong>Garbage values</strong>: the C# struct's layout does not match the shader's. Check the padding.</li>
+</ul>
+<h2 id="using-a-shader-as-a-post-process">Using a shader as a post-process</h2>
+<p>The input doesn't have to be a loaded texture. Render your game into a <a href="../articles/surfaces.html">render target</a> and pass that in, and the shader becomes a full-screen effect for your game, just like the built-in effects in <a href="yakrun-4.html">Yak Run part 4</a>.</p>
+<h2 id="going-further">Going further</h2>
+<ul>
+<li>The <a href="../articles/customshaders.html">Custom shaders</a> guide has the full rules, including multiple textures, arrays of data and precompiled shaders.</li>
+<li><a href="https://thebookofshaders.com/">The Book of Shaders</a> is a gentle introduction to writing fragment shaders.</li>
+<li>For work that needs more than one full-screen pass, see <a href="../articles/customveldrid.html">Custom Veldrid stages</a>.</li>
+</ul>
+
+</article>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          yak2D - Alex Paterson - MIT licence
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

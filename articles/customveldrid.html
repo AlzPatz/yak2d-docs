@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Custom Veldrid stages | yak2D </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Custom Veldrid stages | yak2D ">
+      
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/AlzPatz/yak2d-docs-content/blob/master/articles/customveldrid.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo.png" alt="yak2D">
+            yak2D
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="uid_customveldrid">
+<h1 id="custom-veldrid-stages">Custom Veldrid stages</h1>
+
+<p>yak2D is built on <a href="https://www.nuget.org/packages/NeoVeldrid">NeoVeldrid</a>, a maintained fork of the <a href="https://github.com/mellinoe/veldrid">Veldrid</a> graphics library. A <strong>custom Veldrid stage</strong> (<a class="xref" href="../api/Yak2D.ICustomVeldridStage.html">ICustomVeldridStage</a>) hands you NeoVeldrid's graphics device and command list in the middle of yak2D's render queue, so you can do anything NeoVeldrid can: compute shaders, custom vertex formats, instancing, your own pipelines, integrating another rendering library.</p>
+<p>Reach for this only when a <a href="customshaders.html">custom shader stage</a> is not enough, since you take on the work (and the cross-platform details) that yak2D normally does for you.</p>
+<h2 id="writing-a-stage">Writing a stage</h2>
+<p>Derive from <a class="xref" href="../api/Yak2D.CustomVeldridBase.html">CustomVeldridBase</a> and implement its four methods:</p>
+<pre><code class="lang-csharp">// The smallest useful custom stage: clears its target to a colour that cycles over time.
+// Real stages create pipelines, buffers and shaders in Initialise() and draw in Render()
+public class PulseStage : CustomVeldridBase
+{
+    private float _time;
+
+    public override void Initialise(GraphicsDevice device, Sdl2Window window, DisposeCollectorResourceFactory factory)
+    {
+        // Create any NeoVeldrid resources here. Ones made with 'factory' are disposed of automatically
+    }
+
+    public override void Update(float timeStepSeconds, InputSnapshot inputSnapshot)
+    {
+        _time += timeStepSeconds; // called once per yak2D update step
+    }
+
+    public override void Render(CommandList cl, GraphicsDevice device,
+                                ResourceSet texture0, ResourceSet texture1, ResourceSet texture2, ResourceSet texture3,
+                                Framebuffer framebufferTarget)
+    {
+        // Record commands into yak2D's command list. The textures passed to q.CustomVeldrid() arrive as
+        // ResourceSets (texture at binding 0, sampler at binding 1), and the target as a Framebuffer
+        var pulse = 0.5f + (0.5f * MathF.Sin(_time * 2.0f));
+        cl.SetFramebuffer(framebufferTarget);
+        cl.ClearColorTarget(0, new RgbaFloat(0.2f, 0.2f * pulse, 0.6f * pulse, 1.0f));
+    }
+
+    public override void DisposeOfResources()
+    {
+        // Dispose of anything not created through the factory
+    }
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Called</th>
+<th>Use it to</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Initialise(device, window, factory)</code></td>
+<td>once, when the stage is created</td>
+<td>create pipelines, buffers, shaders, textures. Resources made with the <code>factory</code> are disposed of automatically.</td>
+</tr>
+<tr>
+<td><code>Update(seconds, inputSnapshot)</code></td>
+<td>every update step</td>
+<td>advance your own simulation; <code>inputSnapshot</code> is NeoVeldrid's raw input for the step.</td>
+</tr>
+<tr>
+<td><code>Render(cl, device, texture0..3, framebufferTarget)</code></td>
+<td>when the stage appears in the render queue</td>
+<td>record commands into <code>cl</code>. The textures passed to <code>q.CustomVeldrid()</code> arrive as <code>ResourceSet</code>s; the target is a <code>Framebuffer</code>.</td>
+</tr>
+<tr>
+<td><code>DisposeOfResources()</code></td>
+<td>when the stage is destroyed</td>
+<td>dispose of anything <em>not</em> created through the factory.</td>
+</tr>
+</tbody>
+</table>
+<p>Don't call <code>cl.Begin()</code> or <code>cl.End()</code> in <code>Render()</code>: the command list belongs to yak2D and is already recording. Do set the framebuffer, and restore anything you change that later yak2D stages might rely on.</p>
+<h2 id="using-a-stage">Using a stage</h2>
+<pre><code class="lang-csharp">public override bool CreateResources(IServices yak)
+{
+    _pulse = yak.Stages.CreateCustomVeldridStage(new PulseStage());
+    _target = yak.Surfaces.CreateRenderTarget(960, 540);
+    return true;
+}
+
+public override void Rendering(IRenderQueue q, IRenderTarget windowRenderTarget)
+{
+    q.CustomVeldrid(_pulse, null, null, null, null, _target);
+    q.Copy(_target, windowRenderTarget);
+}
+</code></pre>
+<p><a class="xref" href="../api/Yak2D.IStages.html#Yak2D_IStages_CreateCustomVeldridStage_">CreateCustomVeldridStage()</a> takes an instance of your class. <a class="xref" href="../api/Yak2D.IRenderQueue.html#Yak2D_IRenderQueue_CustomVeldrid_">q.CustomVeldrid(stage, tex0, tex1, tex2, tex3, target)</a> runs it, with up to four input surfaces (or <code>null</code>) and a render target to draw into, which later yak2D stages can then use like any other surface.</p>
+<h2 id="things-to-watch-out-for">Things to watch out for</h2>
+<ul>
+<li><strong>Name clashes.</strong> NeoVeldrid and yak2D both define some types with the same names (for example <code>MouseButton</code>), so a file with <code>using NeoVeldrid;</code> and <code>using Yak2D;</code> may need aliases such as <code>using Colour = Yak2D.Colour;</code>.</li>
+<li><strong>Graphics API differences</strong> are yours to handle: texture coordinate origins, clip space depth, and shader languages all vary between Direct3D, Vulkan, OpenGL and Metal. NeoVeldrid's <code>NeoVeldrid.SPIRV</code> package (already a yak2D dependency) can cross-compile GLSL for you, as the sample below does.</li>
+<li><strong>Device resets</strong> destroy your stage along with everything else; create it again in <code>CreateResources()</code>.</li>
+<li>The pipeline's output description must match the target's format. yak2D render targets are RGBA with a depth buffer.</li>
+</ul>
+<h2 id="see-also">See also</h2>
+<ul>
+<li>Sample: <a href="https://github.com/AlzPatz/yak2d-samples/tree/master/src/CustomVeldrid_ComputeShaderExample">CustomVeldrid_ComputeShaderExample</a>: Conway's Game of Life running as a compute shader, drawn into a render target and then displayed with a normal draw stage.</li>
+<li><a href="https://www.nuget.org/packages/NeoVeldrid">NeoVeldrid</a> and the original <a href="https://veldrid.dev/">Veldrid documentation</a></li>
+</ul>
+
+</article>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          yak2D - Alex Paterson - MIT licence
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

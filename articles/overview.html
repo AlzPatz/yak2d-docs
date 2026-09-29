@@ -1,159 +1,396 @@
 <!DOCTYPE html>
-<!--[if IE]><![endif]-->
 <html>
-
   <head>
     <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <title>yak2D Overview and Basic Usage </title>
-      <meta name="viewport" content="width=device-width">
-      <meta name="title" content="yak2D Overview and Basic Usage ">
-    
-    
-      <link rel="shortcut icon" href="../favicon.ico">
-      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
-      <link rel="stylesheet" href="../styles/docfx.css">
-      <link rel="stylesheet" href="../styles/main.css">
-      <meta property="docfx:navrel" content="../toc.html">
-      <meta property="docfx:tocrel" content="toc.html">
-    
-    
-    
+      <title>How yak2D works | yak2D </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="How yak2D works | yak2D ">
+      
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/AlzPatz/yak2d-docs-content/blob/master/articles/overview.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
   </head>
-  <body data-spy="scroll" data-target="#affix" data-offset="120">
-    <div id="wrapper">
-      <header>
 
-        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-
-              <a class="navbar-brand" href="../index.html">
-                <img id="logo" class="svg" src="../images/logo.png" alt="">
-              </a>
-            </div>
-            <div class="collapse navbar-collapse" id="navbar">
-              <form class="navbar-form navbar-right" role="search" id="search">
-                <div class="form-group">
-                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
-                </div>
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo.png" alt="yak2D">
+            yak2D
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
               </form>
             </div>
           </div>
-        </nav>
-
-        <div class="subnav navbar navbar-default">
-          <div class="container hide-when-search" id="breadcrumb">
-            <ul class="breadcrumb">
-              <li></li>
-            </ul>
-          </div>
         </div>
-      </header>
-      <div role="main" class="container body-content hide-when-search">
+      </nav>
+    </header>
 
-        <div class="sidenav hide-when-search">
-          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
-          <div class="sidetoggle collapse" id="sidetoggle">
-            <div id="sidetoc"></div>
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
           </div>
-        </div>
-        <div class="article row grid-right">
-          <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="uid_overview">
-<h1 id="yak2d-overview-and-basic-usage"><strong>yak2D</strong> Overview and Basic Usage</h1>
-
-<h2 id="overview">Overview</h2>
-<p>A framework that simplifies the creation of interactive cross platform desktop 2D graphics applications.</p>
-<p>It provides 2D polygon sorting and drawing functions, in addition to shader effects. Bitmap Font Rendering is also provided.</p>
-<p><strong>yak2D</strong> offers basic input functionality (mouse &amp; keyboard, as well as gamepad).</p>
-<p>Audio functionality is <em><strong>not</strong></em> provided by the framework.</p>
-<h2 id="structure">Structure</h2>
-<p>For those that care about such definitions, <strong>yak2D</strong> is structured as a <em>framework</em> rather than a <em>library</em>. This structure is suitable given the control that <strong>yak2D</strong> must have over the <a class="xref" href="lifecycle.html">application lifecycle</a> - in particular, the timing and sequencing of <strong>update</strong> and <strong>render</strong> steps.</p>
-<p>The framework accepts an instance of the user's implementation of the <a class="xref" href="../api/Yak2D.IApplication.html">IApplication</a> interface and calls its methods during the <a class="xref" href="lifecycle.html">application lifecycle</a>.</p>
-<h2 id="rendering">Rendering</h2>
-<p><strong>yak2D</strong> offers simple and flexible configuration of the render path, enabling complex 2D effects to be quickly implemented.</p>
-<p>For each render frame, a render queue is built out of <a class="xref" href="renderstages.html">RenderStages</a>. A <a class="xref" href="renderstages.html">RenderStage</a> provides a specific render function, (usually) taking <a class="xref" href="surfaces.html">Surfaces</a> as input and a <a class="xref" href="rendertargets.html">RenderTarget</a> as output.</p>
-<p><a class="xref" href="glossary.html#drawing">Drawing</a> in <strong>yak2D</strong> refers to the collection, sorting, transforming and ultimately rendering of coloured and textured 2D polygons (here is where you draw your 'sprites') upon a <a class="xref" href="rendertargets.html">RenderTarget</a>. <a class="xref" href="glossary.html#drawing">Drawing</a> functionality is encompassed within a special type of <a class="xref" href="renderstages.html">RenderStage</a>. Prior to rendering, <a class="xref" href="../api/Yak2D.DrawRequest.html">DrawRequests</a>, must be submitted to a <a class="xref" href="../api/Yak2D.IDrawStage.html">DrawStage</a>. When rendering, a <a class="xref" href="glossary.html#camera">Camera</a> defines the transformation of the positions of <a class="xref" href="../api/Yak2D.DrawRequest.html">DrawRequests</a>. <a class="xref" href="../api/Yak2D.IApplication.html">IApplication</a> exposes specific <a class="xref" href="glossary.html#drawing">Drawing</a> methods that run before <a class="xref" href="../api/Yak2D.IApplication.html#Yak2D_IApplication_Rendering_">Rendering</a> for the submission of <a class="xref" href="../api/Yak2D.DrawRequest.html">DrawRequests</a>, as well as the configuration of <a class="xref" href="glossary.html#camera">Cameras</a> and the general configuration of <a class="xref" href="renderstages.html">RenderStages</a>.</p>
-<h2 id="core-loop">Core Loop</h2>
-<p>A user must define three main parts of a <strong>yak2D</strong> application's core loop:</p>
-<ol>
-<li><strong>Update</strong>
-<ul>
-<li>Designed for non-graphical application code, such as simulation updates. Fixed and Variable timesteps may be chosen for updates.</li>
-</ul>
-</li>
-<li><strong>Draw (and Pre-Draw)</strong>
-<ul>
-<li>Used for submitting <a class="xref" href="../api/Yak2D.DrawRequest.html">DrawRequests</a> to  <a class="xref" href="../api/Yak2D.IDrawStage.html">DrawStages</a> and configuring <a class="xref" href="renderstages.html">RenderStages</a></li>
-</ul>
-</li>
-<li><strong>Render</strong>
-<ul>
-<li>For building the render queue by ordering <a class="xref" href="renderstages.html">RenderStages</a> and defining the input and output <a class="xref" href="surfaces.html">Surfaces</a> for each step</li>
-</ul>
-</li>
-</ol>
-<p>Loop timing is different for 1, the <a class="xref" href="glossary.html#updatestep">UpdateStep</a>, versus 2 and 3, which are grouped together within the <a class="xref" href="glossary.html#renderstep">RenderStep</a></p>
-<h2 id="resources">Resources</h2>
-<p><strong>yak2D</strong> manages the creation and destruction of all objects related to framework usage (<a class="xref" href="../api/Yak2D.ITexture.html">Textures</a>, <a class="xref" href="../api/Yak2D.ICamera2D.html">Cameras</a>, <a class="xref" href="../api/Yak2D.IRenderStage.html">RenderStages</a>... being examples). These objects are called <a class="xref" href="glossary.html#resource">Resources</a> and are not passed to the user directly. Rather, a user application holds lightweight objects that reference the underlying resource. These lightweight objects are simple wrappers around <code>int64</code> keys and in some instances a user may wish to hold only these <code>int64</code> keys. Many of <strong>yak2D</strong>'s functions accept either object (derived from <a class="xref" href="../api/Yak2D.IKeyed.html">IKeyed</a>) or the raw int64 keys. The <a class="xref" href="../api/Yak2D.IKeyed.html">IKeyed</a> object hierarchy is used so that C#'s type system ensures a user avoids passing the wrong objects to functions, as well as get instant feedback on object type from intellisense.</p>
-<p><a class="xref" href="../api/Yak2D.IApplication.html">IApplication</a> exposes the method <a class="xref" href="../api/Yak2D.IApplication.html#Yak2D_IApplication_CreateResources_">CreateResources</a> which is where all <a class="xref" href="glossary.html#resource">Resource</a> creation should be performed. This method is called once at application start up, and then whenever <a class="xref" href="glossary.html#resource">Resources</a> should be re-created (such as when a graphics device is lost during a Graphics API change).</p>
-<h2 id="basic-usage">Basic Usage</h2>
-<ul>
-<li>Install the <a href="https://dotnet.microsoft.com/download">.NET 10 SDK</a> (Windows, Linux or macOS)</li>
-<li>Create a new console application and add <strong>yak2D</strong>:
-<pre><code class="lang-bash">dotnet new console -n MyApp
-cd MyApp
-dotnet add package Yak2D
-</code></pre>
-</li>
-<li>Create a class that implements <a class="xref" href="../api/Yak2D.IApplication.html">IApplication</a></li>
-<li>In <code>Program.cs</code>, pass an instance of your <a class="xref" href="../api/Yak2D.IApplication.html">IApplication</a> implementation to <a class="xref" href="../api/Yak2D.Launcher.html#Yak2D_Launcher_Run_">Launcher.Run()</a></li>
-<li><code>dotnet run</code></li>
-</ul>
-<p>Please see the <a class="xref" href="tutorials.html">tutorials</a> for a more detailed step by step guide to creating an application.</p>
-<h2 id="further-reading">Further Reading</h2>
-<p>Please refer to:</p>
-<p><a class="xref" href="glossary.html">Glossary of Terms</a> for a summary of terms used (hopefully consistently) across <strong>yak2D</strong>'s API and Documentation.</p>
-<p><a class="xref" href="features.html">Framework Features</a> for a detailed overview of <strong>yak2D</strong>'s features.</p>
-<p><a class="xref" href="lifecycle.html">Application Lifecycle</a> for a description of the general flow of an application running on the <strong>yak2D</strong> framework, including a description of when a user's <a class="xref" href="../api/Yak2D.IApplication.html">IApplication</a> method implementations are called.</p>
-
-</article>
-          </div>
-
-          <div class="hidden-sm col-md-2" role="complementary">
-            <div class="sideaffix">
-              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-                <h5>In this article</h5>
-                <div></div>
-              </nav>
-            </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
           </div>
         </div>
       </div>
 
-      <footer>
-        <div class="grad-bottom"></div>
-        <div class="footer">
-          <div class="container">
-            <span class="pull-right">
-              <a href="#top">Back to top</a>
-            </span>
-      yak2D - Alex Paterson
-      
-          </div>
-        </div>
-      </footer>
-    </div>
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
 
-    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
-    <script type="text/javascript" src="../styles/docfx.js"></script>
-    <script type="text/javascript" src="../styles/main.js"></script>
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="uid_overview">
+<h1 id="how-yak2d-works">How yak2D works</h1>
+
+<p>This page explains the handful of ideas that the whole framework is built on. Once these click, the rest of yak2D is mostly details.</p>
+<h2 id="yak2d-is-a-framework-it-calls-you">yak2D is a framework: it calls you</h2>
+<p>A <em>library</em> is code you call. A <em>framework</em> calls your code. yak2D is a framework because it needs to control the timing of your game: when to process input, when to update the simulation, and when the GPU is ready for the next frame.</p>
+<p>You write a class that implements <a class="xref" href="../api/Yak2D.IApplication.html">IApplication</a> and pass an instance to <a class="xref" href="../api/Yak2D.Launcher.html#Yak2D_Launcher_Run_">Launcher.Run()</a>:</p>
+<pre><code class="lang-csharp">using Yak2D;
+
+Launcher.Run(new MyGame());   // returns when the application shuts down
+</code></pre>
+<p>The framework then calls your class's methods at the right moments. There are nine of them, in three groups:</p>
+<table>
+<thead>
+<tr>
+<th>When</th>
+<th>Method</th>
+<th>What you do there</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Once, at start up</strong></td>
+<td><a class="xref" href="../api/Yak2D.IApplication.html#Yak2D_IApplication_Configure">Configure()</a></td>
+<td>Return a <a class="xref" href="../api/Yak2D.StartupConfig.html">StartupConfig</a>: window size, title, timing, graphics API...</td>
+</tr>
+<tr>
+<td></td>
+<td><a class="xref" href="../api/Yak2D.IApplication.html#Yak2D_IApplication_OnStartup">OnStartup()</a></td>
+<td>Set up your own (non-yak2D) objects.</td>
+</tr>
+<tr>
+<td></td>
+<td><a class="xref" href="../api/Yak2D.IApplication.html#Yak2D_IApplication_CreateResources_">CreateResources()</a></td>
+<td>Create yak2D resources: textures, draw stages, cameras, render targets...</td>
+</tr>
+<tr>
+<td><strong>Every update step</strong></td>
+<td><a class="xref" href="../api/Yak2D.IApplication.html#Yak2D_IApplication_ProcessMessage_">ProcessMessage()</a></td>
+<td>React to <a class="xref" href="../api/Yak2D.FrameworkMessage.html">framework messages</a> (window resized, gamepad connected, device reset...).</td>
+</tr>
+<tr>
+<td></td>
+<td><a class="xref" href="../api/Yak2D.IApplication.html#Yak2D_IApplication_Update_">Update()</a></td>
+<td>Game logic: input, movement, collisions. Return <code>false</code> to quit.</td>
+</tr>
+<tr>
+<td><strong>Every frame</strong></td>
+<td><a class="xref" href="../api/Yak2D.IApplication.html#Yak2D_IApplication_PreDrawing_">PreDrawing()</a></td>
+<td>Last-minute changes before drawing: move cameras, change effect settings.</td>
+</tr>
+<tr>
+<td></td>
+<td><a class="xref" href="../api/Yak2D.IApplication.html#Yak2D_IApplication_Drawing_">Drawing()</a></td>
+<td>Describe what to draw: submit shapes, sprites and text to <em>draw stages</em>.</td>
+</tr>
+<tr>
+<td></td>
+<td><a class="xref" href="../api/Yak2D.IApplication.html#Yak2D_IApplication_Rendering_">Rendering()</a></td>
+<td>Describe <em>how</em> to render the frame: which stages run, in which order, onto which surfaces.</td>
+</tr>
+<tr>
+<td><strong>Once, at exit</strong></td>
+<td><a class="xref" href="../api/Yak2D.IApplication.html#Yak2D_IApplication_Shutdown">Shutdown()</a></td>
+<td>Release anything of your own.</td>
+</tr>
+</tbody>
+</table>
+<p>Updates and frames run on separate clocks: by default updates happen at a fixed 120 per second, while frames are drawn as fast as the display allows. See <a href="lifecycle.html">Application lifecycle</a> for the exact timing rules.</p>
+<h2 id="services-everything-you-can-ask-yak2d-to-do">Services: everything you can ask yak2D to do</h2>
+<p>Most methods receive an <a class="xref" href="../api/Yak2D.IServices.html">IServices</a> parameter, conventionally named <code>yak</code>. It is your way into the framework:</p>
+<table>
+<thead>
+<tr>
+<th>Service</th>
+<th>Used for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>yak.Surfaces</code> (<a class="xref" href="../api/Yak2D.ISurfaces.html">ISurfaces</a>)</td>
+<td>Loading textures, creating render targets</td>
+</tr>
+<tr>
+<td><code>yak.Stages</code> (<a class="xref" href="../api/Yak2D.IStages.html">IStages</a>)</td>
+<td>Creating and configuring render stages and viewports</td>
+</tr>
+<tr>
+<td><code>yak.Cameras</code> (<a class="xref" href="../api/Yak2D.ICameras.html">ICameras</a>)</td>
+<td>Creating and moving 2D and 3D cameras</td>
+</tr>
+<tr>
+<td><code>yak.Fonts</code> (<a class="xref" href="../api/Yak2D.IFonts.html">IFonts</a>)</td>
+<td>Loading bitmap fonts, measuring text</td>
+</tr>
+<tr>
+<td><code>yak.Input</code> (<a class="xref" href="../api/Yak2D.IInput.html">IInput</a>)</td>
+<td>Keyboard, mouse and gamepads</td>
+</tr>
+<tr>
+<td><code>yak.Display</code> (<a class="xref" href="../api/Yak2D.IDisplay.html">IDisplay</a>)</td>
+<td>The window: size, fullscreen, title, vsync, cursor</td>
+</tr>
+<tr>
+<td><code>yak.Backend</code> (<a class="xref" href="../api/Yak2D.IBackend.html">IBackend</a>)</td>
+<td>Which graphics API is in use, and switching it</td>
+</tr>
+<tr>
+<td><code>yak.FPS</code> (<a class="xref" href="../api/Yak2D.IFps.html">IFps</a>)</td>
+<td>Update and draw rates</td>
+</tr>
+<tr>
+<td><code>yak.Helpers</code> (<a class="xref" href="../api/Yak2D.IHelpers.html">IHelpers</a>)</td>
+<td>Coordinate conversion, mesh builders, distortion helpers</td>
+</tr>
+</tbody>
+</table>
+<p><a class="xref" href="../api/Yak2D.IApplication.html#Yak2D_IApplication_Drawing_">Drawing()</a> is slightly different: instead of <code>IServices</code> it receives exactly what drawing needs, including <a class="xref" href="../api/Yak2D.IDrawing.html">IDrawing</a> (<code>draw</code>), which submits things to be drawn.</p>
+<h2 id="resources-you-hold-references-yak2d-holds-the-objects">Resources: you hold references, yak2D holds the objects</h2>
+<p>Textures, render targets, render stages, cameras, viewports and fonts are <strong>resources</strong>. yak2D creates and owns them; you get back a small reference object (an <a class="xref" href="../api/Yak2D.ITexture.html">ITexture</a>, an <a class="xref" href="../api/Yak2D.IDrawStage.html">IDrawStage</a>, ...) that you pass back to the framework when you want to use it.</p>
+<p>Resources are created in <a class="xref" href="../api/Yak2D.IApplication.html#Yak2D_IApplication_CreateResources_">CreateResources()</a>. If the graphics device is ever recreated (for example when the graphics API is switched), <strong>every resource is lost</strong> and you receive the <a class="xref" href="../api/Yak2D.FrameworkMessage.html">GraphicsDeviceRecreated</a> message. The simple, robust pattern is to call <code>CreateResources()</code> again when that happens. See <a href="resources.html">Resources and references</a>.</p>
+<h2 id="drawing-and-rendering-are-two-different-steps">Drawing and rendering are two different steps</h2>
+<p>This is the most important idea in yak2D.</p>
+<p><strong>Drawing</strong> means <em>describing</em> what should appear: &quot;a yak texture here, a green rectangle there, this text at the top&quot;. You submit these descriptions, called <strong>draw requests</strong>, to a <strong>draw stage</strong> (<a class="xref" href="../api/Yak2D.IDrawStage.html">IDrawStage</a>). Nothing appears on screen yet. The draw stage sorts its requests (by layer, depth and texture) and batches them efficiently for the GPU.</p>
+<p><strong>Rendering</strong> means <em>running the GPU work</em> that produces the frame. In <a class="xref" href="../api/Yak2D.IApplication.html#Yak2D_IApplication_Rendering_">Rendering()</a> you build a <strong>render queue</strong>: an ordered list of operations such as &quot;clear the window&quot;, &quot;render this draw stage through this camera onto this surface&quot;, &quot;blur this surface onto that one&quot;. The framework then executes the queue.</p>
+<pre><code class="lang-mermaid">flowchart LR
+    subgraph Drawing[&quot;Drawing() : what to draw&quot;]
+        A[&quot;DrawTexturedQuad(stage, ...)&quot;] --&gt; S[(Draw stage)]
+        B[&quot;DrawString(stage, ...)&quot;] --&gt; S
+    end
+    subgraph Rendering[&quot;Rendering() : how to render it&quot;]
+        S --&gt; D[&quot;q.Draw(stage, camera, target)&quot;]
+        D --&gt; T[/Render target/]
+        T --&gt; E[&quot;q.Bloom(bloom, target, window)&quot;]
+        E --&gt; W[/Window/]
+    end
+</code></pre>
+<p>This separation is what makes yak2D flexible. The same draw stage can be rendered twice through two cameras (split screen). A scene can be rendered into an off-screen surface, blurred, mixed with another, wrapped round a 3D mesh, and only then shown in the window.</p>
+<h2 id="render-stages-and-surfaces">Render stages and surfaces</h2>
+<p>A <strong>render stage</strong> (<a class="xref" href="../api/Yak2D.IRenderStage.html">IRenderStage</a>) is one reusable step of GPU work. Draw stages are one kind; the others are effects and utilities:</p>
+<table>
+<thead>
+<tr>
+<th>Stage</th>
+<th>Reads</th>
+<th>Does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="drawing.html">Draw</a></td>
+<td>its queued draw requests</td>
+<td>Draws 2D shapes, sprites and text through a 2D camera</td>
+</tr>
+<tr>
+<td><a href="effects.html#colour-effects">Colour effects</a></td>
+<td>a texture</td>
+<td>Grayscale, tint, negative, fade...</td>
+</tr>
+<tr>
+<td><a href="effects.html#bloom">Bloom</a></td>
+<td>a texture</td>
+<td>Makes bright areas glow</td>
+</tr>
+<tr>
+<td><a href="effects.html#blur">Blur / Blur1D</a></td>
+<td>a texture</td>
+<td>Blurs in both, or one, direction</td>
+</tr>
+<tr>
+<td><a href="effects.html#style-effects">Style effects</a></td>
+<td>a texture</td>
+<td>Pixellate, edge detection, static, old movie, CRT</td>
+</tr>
+<tr>
+<td><a href="effects.html#mix">Mix</a></td>
+<td>up to four textures</td>
+<td>Blends textures together</td>
+</tr>
+<tr>
+<td><a href="distortion.html">Distortion</a></td>
+<td>a texture + its queued height map drawing</td>
+<td>Ripples, shock waves, heat haze</td>
+</tr>
+<tr>
+<td><a href="mesh.html">Mesh render</a></td>
+<td>a texture</td>
+<td>Wraps a texture round a lit 3D mesh</td>
+</tr>
+<tr>
+<td><a href="customshaders.html">Custom shader</a></td>
+<td>up to four textures</td>
+<td>Runs your own fragment shader</td>
+</tr>
+<tr>
+<td><a href="customveldrid.html">Custom Veldrid</a></td>
+<td>up to four textures</td>
+<td>Runs your own low-level NeoVeldrid code</td>
+</tr>
+<tr>
+<td><a href="readback.html">Surface copy</a></td>
+<td>a texture</td>
+<td>Copies pixels back to the CPU</td>
+</tr>
+</tbody>
+</table>
+<p>Stages read from and write to <strong>surfaces</strong>: a <a class="xref" href="../api/Yak2D.ITexture.html">texture</a> is an image you can read from; a <a class="xref" href="../api/Yak2D.IRenderTarget.html">render target</a> is a surface you can also render onto (and read from later). The window itself is a render target, passed to <code>Rendering()</code> as <code>windowRenderTarget</code>. See <a href="surfaces.html">Surfaces and render targets</a>.</p>
+<h2 id="cameras-and-coordinates">Cameras and coordinates</h2>
+<p>Draw stages are rendered through a <strong>2D camera</strong> (<a class="xref" href="../api/Yak2D.ICamera2D.html">ICamera2D</a>). A camera has a <em>virtual resolution</em>, for example 960 x 540, which is how many units it shows across and down, whatever the real window size. Each draw request is in either:</p>
+<ul>
+<li><strong>World space</strong>: moved, zoomed and rotated by the camera. Use it for the game world.</li>
+<li><strong>Screen space</strong>: fixed to the camera's view, with (0,0) in the middle. Use it for HUDs and menus.</li>
+</ul>
+<p>See <a href="cameras.html">Cameras</a> and <a href="coordinatesystems.html">Coordinate systems</a>.</p>
+<h2 id="putting-it-together">Putting it together</h2>
+<p>Here is a complete, minimal program that draws a sprite and then applies an effect to the whole scene. Everything in it is explained in the guides and in the <a href="../tutorials/yakrun-1.html">Yak Run tutorial</a>.</p>
+<pre><code class="lang-csharp">public class OverviewGame : IApplication
+{
+    private ITexture _yak;
+    private IDrawStage _drawStage;
+    private ICamera2D _camera;
+    private IRenderTarget _scene;
+    private IColourEffectsStage _sepia;
+
+    public StartupConfig Configure() =&gt; StartupConfig.Default(960, 540, &quot;Overview&quot;, false);
+
+    public void OnStartup() { }
+
+    public bool CreateResources(IServices yak)
+    {
+        _yak = yak.Surfaces.LoadTexture(&quot;yak&quot;, AssetSourceEnum.Embedded);
+        _drawStage = yak.Stages.CreateDrawStage();
+        _camera = yak.Cameras.CreateCamera2D(960, 540);
+        _scene = yak.Surfaces.CreateRenderTarget(960, 540);
+        _sepia = yak.Stages.CreateColourEffectsStage();
+        yak.Stages.SetColourEffectsConfig(_sepia, new ColourEffectConfiguration
+        {
+            Colourise = 0.8f,
+            ColourForSingleColourAndColourise = Colour.Burlywood,
+            Opacity = 1.0f
+        });
+        return true;
+    }
+
+    public void ProcessMessage(FrameworkMessage msg, IServices yak)
+    {
+        if (msg == FrameworkMessage.GraphicsDeviceRecreated)
+        {
+            CreateResources(yak);
+        }
+    }
+
+    public bool Update(IServices yak, float secondsSinceLastUpdate)
+    {
+        return !yak.Input.WasKeyPressedThisFrame(KeyCode.Escape);
+    }
+
+    public void PreDrawing(IServices yak, float secondsSinceLastDraw, float secondsSinceLastUpdate) { }
+
+    public void Drawing(IDrawing draw, IFps fps, IInput input, ICoordinateTransforms transforms,
+                        float secondsSinceLastDraw, float secondsSinceLastUpdate)
+    {
+        draw.Helpers.DrawColouredQuad(_drawStage, CoordinateSpace.Screen, Colour.SkyBlue, Vector2.Zero, 960.0f, 540.0f, 0.9f);
+        draw.Helpers.DrawTexturedQuad(_drawStage, CoordinateSpace.World, _yak, Colour.White, Vector2.Zero, 168.0f, 150.0f, 0.5f);
+    }
+
+    public void Rendering(IRenderQueue q, IRenderTarget windowRenderTarget)
+    {
+        q.Draw(_drawStage, _camera, _scene);                 // draw the scene off-screen...
+        q.ColourEffects(_sepia, _scene, windowRenderTarget); // ...then colourise it onto the window
+    }
+
+    public void Shutdown() { }
+}
+</code></pre>
+<p>Run it with <code>Launcher.Run(new OverviewGame());</code>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This example loads <code>Textures/yak.png</code> as an <em>embedded resource</em>. See <a href="assets.html">Assets</a> for how to add image files to a project.</p>
+</div>
+<h2 id="next">Next</h2>
+<ul>
+<li><a href="lifecycle.html">Application lifecycle</a>: exact call order and timing</li>
+<li><a href="drawing.html">Drawing</a>: everything about draw stages and draw requests</li>
+<li><a href="renderstages.html">The render queue and render stages</a>: building rendering pipelines</li>
+</ul>
+
+</article>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          yak2D - Alex Paterson - MIT licence
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

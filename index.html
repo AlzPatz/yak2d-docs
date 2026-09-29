@@ -1,106 +1,203 @@
 <!DOCTYPE html>
-<!--[if IE]><![endif]-->
 <html>
-
   <head>
     <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <title>yak2D Documentation </title>
-      <meta name="viewport" content="width=device-width">
-      <meta name="title" content="yak2D Documentation ">
-    
-    
-      <link rel="shortcut icon" href="favicon.ico">
-      <link rel="stylesheet" href="styles/docfx.vendor.min.css">
-      <link rel="stylesheet" href="styles/docfx.css">
-      <link rel="stylesheet" href="styles/main.css">
-      <meta property="docfx:navrel" content="toc.html">
-      <meta property="docfx:tocrel" content="toc.html">
-    
-    
-    
+      <title>yak2D | yak2D </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="yak2D | yak2D ">
+      
+      
+      <link rel="icon" href="favicon.ico">
+      <link rel="stylesheet" href="public/docfx.min.css">
+      <link rel="stylesheet" href="public/main.css">
+      <meta name="docfx:navrel" content="toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/AlzPatz/yak2d-docs-content/blob/master/index.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
   </head>
-  <body data-spy="scroll" data-target="#affix" data-offset="120">
-    <div id="wrapper">
-      <header>
 
-        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-
-              <a class="navbar-brand" href="index.html">
-                <img id="logo" class="svg" src="images/logo.png" alt="">
-              </a>
-            </div>
-            <div class="collapse navbar-collapse" id="navbar">
-              <form class="navbar-form navbar-right" role="search" id="search">
-                <div class="form-group">
-                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
-                </div>
+  <body class="tex2jax_ignore" data-layout="landing" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="index.html">
+            <img id="logo" class="svg" src="images/logo.png" alt="yak2D">
+            yak2D
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
               </form>
             </div>
           </div>
-        </nav>
-
-        <div class="subnav navbar navbar-default">
-          <div class="container hide-when-search" id="breadcrumb">
-            <ul class="breadcrumb">
-              <li></li>
-            </ul>
-          </div>
         </div>
-      </header>
-      <div role="main" class="container body-content hide-when-search">
-        <div class="article row grid">
-          <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="">
-<h1 id="yak2d-documentation"><strong>yak2D</strong> Documentation</h1>
+      </nav>
+    </header>
 
-<p>The <strong>yak2D</strong> framework enables the creation of interactive <strong>cross platform</strong> desktop 2D graphics applications.</p>
-<p>It offers simple 2D polygon (coloured, textured and dual textured) drawing functions, in addition to flexible render path creation making use of shader effects (both inbuilt and user defined).</p>
-<p>Quickly create 2D games and prototypes that run on all major desktop operating systems. Graphics, Input, Windowing and Application Lifecycle are all provided for and managed by the framework (<em>just add sound</em>). Avoid the bloat of large game engines (or make life harder for yourself - whatever your opinion). No GUI, <strong>do it all in code..</strong> :)</p>
-<p>yak2D is a .NET 10 library, built upon <a href="https://www.nuget.org/packages/NeoVeldrid">NeoVeldrid</a> (a maintained fork of the <a href="https://github.com/mellinoe/veldrid">Veldrid</a> cross-platform, graphics API agnostic rendering library). Application windowing and input are handled by SDL2, which is bundled with the NuGet package: there is nothing else to install.</p>
-<p><strong>Supported Desktop Platforms: Windows, Linux and MacOS</strong></p>
-<p><strong>Supported Graphics APIs: Direct3D 11, Vulkan, OpenGL</strong> <em>(Metal support is currently disabled; macOS uses OpenGL or Vulkan via MoltenVK)</em></p>
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="yak2d">yak2D</h1>
+
+<p><strong>A small C# framework for making 2D games and graphics applications that run on Windows, Linux and macOS.</strong></p>
+<p>yak2D gives you a window, a game loop, input, and a flexible GPU rendering pipeline, from a single NuGet package with nothing else to install. You write the game in C#; there is no editor, and no engine to fight. Draw sprites, shapes and text, then send your scene through bloom, blur, distortion, CRT and colour effects, your own shaders, or onto 3D meshes, in whatever order you like.</p>
 <p><a href="https://www.nuget.org/packages/Yak2D/"><img src="https://img.shields.io/nuget/v/yak2d.svg" alt="NuGet"></a></p>
-<p>Please see the <a href="https://github.com/AlzPatz/yak2d-samples">Demo Samples</a> for usage examples, the <a class="xref" href="articles/gettingstarted.html">Getting Started</a> tutorial to create your first application, or the <a class="xref" href="articles/intro.html">Usage Guide</a> for additional guidance on <strong>yak2D</strong> concepts and operation.</p>
+<p><img src="images/yakrun/part4.png" alt="Yak Run, the tutorial game"></p>
+<h2 id="start-here">Start here</h2>
+<table>
+<thead>
+<tr>
+<th>Page</th>
+<th>What you'll find</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><a href="tutorials/gettingstarted.html">Getting Started</a></strong></td>
+<td>Install .NET, create a project, open a window. About 10 minutes.</td>
+</tr>
+<tr>
+<td><strong><a href="tutorials/yakrun-1.html">Yak Run tutorial</a></strong></td>
+<td>Build the game above, step by step, in four parts.</td>
+</tr>
+<tr>
+<td><strong><a href="articles/overview.html">How yak2D works</a></strong></td>
+<td>The few ideas the whole framework is built on.</td>
+</tr>
+<tr>
+<td><strong><a href="articles/intro.html">Manual</a></strong></td>
+<td>Every feature, explained with working examples.</td>
+</tr>
+<tr>
+<td><strong><a href="api/index.html">API Reference</a></strong></td>
+<td>Every type and method.</td>
+</tr>
+<tr>
+<td><strong><a href="articles/samples.html">Samples</a></strong></td>
+<td>~35 small demo projects, one per feature.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="a-taste">A taste</h2>
+<pre><code class="lang-csharp">using System.Numerics;
+using Yak2D;
+
+Launcher.Run(new Hello());
+</code></pre>
+<pre><code class="lang-csharp">public class Hello : IApplication
+{
+    private IDrawStage _stage;
+    private ICamera2D _camera;
+
+    public StartupConfig Configure() =&gt; StartupConfig.Default(960, 540, &quot;Hello, yak2D&quot;, false);
+
+    public void OnStartup() { }
+
+    public bool CreateResources(IServices yak)
+    {
+        _stage = yak.Stages.CreateDrawStage();
+        _camera = yak.Cameras.CreateCamera2D(960, 540);
+        return true;
+    }
+
+    public void ProcessMessage(FrameworkMessage msg, IServices yak)
+    {
+        if (msg == FrameworkMessage.GraphicsDeviceRecreated) CreateResources(yak);
+    }
+
+    public bool Update(IServices yak, float seconds) =&gt; !yak.Input.WasKeyPressedThisFrame(KeyCode.Escape);
+
+    public void PreDrawing(IServices yak, float secondsSinceLastDraw, float secondsSinceLastUpdate) { }
+
+    public void Drawing(IDrawing draw, IFps fps, IInput input, ICoordinateTransforms transforms,
+                        float secondsSinceLastDraw, float secondsSinceLastUpdate)
+    {
+        draw.Helpers.DrawColouredPoly(_stage, CoordinateSpace.Screen, Colour.Gold, Vector2.Zero, 5, 120.0f, 0.5f);
+        draw.DrawString(_stage, CoordinateSpace.Screen, &quot;Hello, yak2D&quot;, Colour.White, 48.0f,
+                        new Vector2(0.0f, -150.0f), TextJustify.Centre, 0.5f, 0);
+    }
+
+    public void Rendering(IRenderQueue q, IRenderTarget window)
+    {
+        q.ClearColour(window, Colour.DarkSlateBlue);
+        q.ClearDepth(window);
+        q.Draw(_stage, _camera, window);
+    }
+
+    public void Shutdown() { }
+}
+</code></pre>
+<pre><code class="lang-bash">dotnet new console -n Hello &amp;&amp; cd Hello &amp;&amp; dotnet add package Yak2D
+# put the code above in Program.cs, then:
+dotnet run
+</code></pre>
+<h2 id="features">Features</h2>
+<ul>
+<li><strong>Cross-platform</strong>: Windows, Linux and macOS on Direct3D 11, Vulkan and OpenGL, from one codebase.</li>
+<li><strong>2D drawing</strong>: sprites, shapes, lines, custom polygons and text, sorted by layer and depth, batched automatically.</li>
+<li><strong>Cameras</strong>: resolution-independent 2D cameras with zoom and rotation, world and screen space, split screen viewports.</li>
+<li><strong>Effects</strong>: bloom, blur, colour grading, pixellate, CRT, old movie, static, edge detection, distortion and mixing, chained in any order, with smooth transitions.</li>
+<li><strong>Beyond the built-ins</strong>: custom GLSL shaders on any API, 3D meshes with lighting, raw NeoVeldrid access, GPU to CPU readback.</li>
+<li><strong>Input</strong>: keyboard, mouse and gamepads.</li>
+</ul>
+<p><a href="articles/features.html">See all features</a></p>
+<h2 id="source">Source</h2>
+<p>yak2D is open source under the MIT licence: <a href="https://github.com/AlzPatz/yak2d">github.com/AlzPatz/yak2d</a>. It is built on <a href="https://www.nuget.org/packages/NeoVeldrid">NeoVeldrid</a>, <a href="https://github.com/dotnet/Silk.NET">Silk.NET</a> and <a href="https://www.libsdl.org/">SDL</a>.</p>
 
 </article>
-          </div>
 
-          <div class="hidden-sm col-md-2" role="complementary">
-            <div class="sideaffix">
-              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-                <h5>In this article</h5>
-                <div></div>
-              </nav>
-            </div>
-          </div>
-        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
       </div>
 
-      <footer>
-        <div class="grad-bottom"></div>
-        <div class="footer">
-          <div class="container">
-            <span class="pull-right">
-              <a href="#top">Back to top</a>
-            </span>
-      yak2D - Alex Paterson
-      
-          </div>
-        </div>
-      </footer>
-    </div>
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
 
-    <script type="text/javascript" src="styles/docfx.vendor.min.js"></script>
-    <script type="text/javascript" src="styles/docfx.js"></script>
-    <script type="text/javascript" src="styles/main.js"></script>
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          yak2D - Alex Paterson - MIT licence
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

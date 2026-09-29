@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Distributing your game | yak2D </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Distributing your game | yak2D ">
+      
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/AlzPatz/yak2d-docs-content/blob/master/tutorials/distribution.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo.png" alt="yak2D">
+            yak2D
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="uid_tut_distribution">
+<h1 id="distributing-your-game">Distributing your game</h1>
+
+<p>Once your game runs with <code>dotnet run</code>, you will want to give it to people who don't have the .NET SDK. This tutorial packages a game (here, <a href="yakrun-1.html">Yak Run</a>) for Windows, Linux and macOS.</p>
+<h2 id="publish">Publish</h2>
+<p><code>dotnet publish</code> builds a ready-to-run folder. You can build for any platform from any platform, by choosing a <strong>runtime identifier (RID)</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Platform</th>
+<th>RID</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Windows (64 bit)</td>
+<td><code>win-x64</code> (or <code>win-arm64</code>)</td>
+</tr>
+<tr>
+<td>Linux (64 bit)</td>
+<td><code>linux-x64</code> (or <code>linux-arm64</code>)</td>
+</tr>
+<tr>
+<td>macOS on Apple Silicon</td>
+<td><code>osx-arm64</code></td>
+</tr>
+<tr>
+<td>macOS on Intel</td>
+<td><code>osx-x64</code></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-bash">dotnet publish -c Release -r win-x64 --self-contained -o publish/windows
+dotnet publish -c Release -r linux-x64 --self-contained -o publish/linux
+dotnet publish -c Release -r osx-arm64 --self-contained -o publish/macos
+</code></pre>
+<p><code>--self-contained</code> includes the .NET runtime, so players need nothing installed. The yak2D NuGet package brings the right native libraries for each platform (SDL2, the shader compiler, and MoltenVK on macOS), and <code>publish</code> copies them into the folder automatically. Each folder is around 140 MB; zipped, much less.</p>
+<p>Zip the folder and share it. The player unzips it and runs <code>YakRun.exe</code> (Windows) or <code>YakRun</code> (Linux and macOS).</p>
+<h3 id="smaller-downloads">Smaller downloads</h3>
+<ul>
+<li><strong>Framework-dependent</strong>: leave out <code>--self-contained</code>. The download is only a few MB, but players must install the <a href="https://dotnet.microsoft.com/download">.NET 10 runtime</a> first.</li>
+<li><strong>Fewer files</strong>: add <code>-p:PublishSingleFile=true</code>. The .NET parts are combined into the executable, leaving it plus a handful of native libraries (<code>libSDL2-2.0.so</code>, <code>libshaderc_shared.so</code>, <code>libspirv-cross.so</code> on Linux, and their equivalents elsewhere). Keep those next to the executable.</li>
+</ul>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>Do <strong>not</strong> add <code>-p:IncludeNativeLibrariesForSelfExtract=true</code> to squeeze everything into one file: the game then fails at start up because SDL2 cannot be found. Keep the native libraries as separate files.</p>
+</div>
+<p>Trimming (<code>-p:PublishTrimmed=true</code>) is not supported: yak2D uses reflection internally, which trimming can break.</p>
+<h2 id="assets">Assets</h2>
+<p>If your assets are <strong>embedded</strong> (as in the tutorials), they are inside <code>YakRun.dll</code>, and there is nothing else to ship. If you load assets as <strong>files</strong>, make sure they are copied to the output (see <a href="../articles/assets.html#files-on-disk">Assets</a>), and set the working directory at start up, because players will not always start your game from its own folder:</p>
+<pre><code class="lang-csharp">Directory.SetCurrentDirectory(AppContext.BaseDirectory);
+Launcher.Run(new Game());
+</code></pre>
+<h2 id="windows">Windows</h2>
+<p>yak2D applications are console applications, so a console window opens alongside the game. To hide it, change the output type in your <code>.csproj</code>:</p>
+<pre><code class="lang-xml">&lt;OutputType&gt;WinExe&lt;/OutputType&gt;
+</code></pre>
+<p>Framework messages are then no longer visible; if you want to keep them, pass your own <a href="../articles/lifecycle.html#framework-console-messages">IFrameworkMessenger</a> that writes them to a log file.</p>
+<p>To set the executable's icon, add <code>&lt;ApplicationIcon&gt;icon.ico&lt;/ApplicationIcon&gt;</code>.</p>
+<h2 id="linux">Linux</h2>
+<p>The published executable needs to be marked as executable after unzipping (<code>chmod +x YakRun</code>); archiving with <code>tar</code> preserves this, while some zip tools do not:</p>
+<pre><code class="lang-bash">tar -czf YakRun-linux-x64.tar.gz -C publish/linux .
+</code></pre>
+<p>For desktop integration (a menu entry and icon), add a <code>.desktop</code> file. For wider distribution, tools such as AppImage or Flatpak can wrap the published folder. Players need working OpenGL or Vulkan drivers, which desktop Linux distributions normally have.</p>
+<h2 id="macos">macOS</h2>
+<p>A published folder runs from the terminal. For a double-clickable application, put it inside an <strong>app bundle</strong>:</p>
+<pre><code class="lang-text">YakRun.app/
+└── Contents/
+    ├── Info.plist
+    ├── MacOS/
+    │   └── (everything from publish/macos)
+    └── Resources/
+        └── YakRun.icns
+</code></pre>
+<p><code>Info.plist</code> needs at least <code>CFBundleExecutable</code> (<code>YakRun</code>), <code>CFBundleIdentifier</code> (e.g. <code>com.example.yakrun</code>), <code>CFBundleName</code> and <code>CFBundlePackageType</code> (<code>APPL</code>).</p>
+<p>Apps downloaded from the internet must be <strong>signed and notarised</strong> with an Apple Developer ID before macOS will open them normally; otherwise players have to allow the app explicitly in System Settings, under Privacy &amp; Security. See Apple's documentation on notarising macOS software.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>macOS support in yak2D is less thoroughly tested than Windows and Linux, and the steps above have not been tested on a Mac as part of writing this tutorial. Please <a href="https://github.com/AlzPatz/yak2d/issues">report problems</a>.</p>
+</div>
+<h2 id="checklist">Checklist</h2>
+<ul>
+<li>Build with <code>-c Release</code>.</li>
+<li>Test the published build on each platform you ship for, ideally on a machine without the .NET SDK.</li>
+<li>Run it from a different folder, to check your assets are found.</li>
+<li>Try it on OpenGL and Vulkan (set <code>PreferredGraphicsApi</code>) if you are unsure which your players will get.</li>
+</ul>
+
+</article>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          yak2D - Alex Paterson - MIT licence
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Yak Run, part 4: effects and polish | yak2D </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Yak Run, part 4: effects and polish | yak2D ">
+      
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/AlzPatz/yak2d-docs-content/blob/master/tutorials/yakrun-4.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo.png" alt="yak2D">
+            yak2D
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="uid_tut_yakrun4">
+<h1 id="yak-run-part-4-effects-and-polish">Yak Run, part 4: effects and polish</h1>
+
+<p>The game from <a href="yakrun-3.html">part 3</a> is complete, but plain. In this final part the whole scene goes through a chain of GPU effects on its way to the screen: the stars and sun <strong>glow</strong>, collecting a star sends out a <strong>ripple</strong>, and falling off the level <strong>fades the world to grey</strong>. The HUD stays crisp on top of it all.</p>
+<p><img src="../images/yakrun/part4.png" alt="Glowing stars, and a ripple where a star was just collected"></p>
+<p><img src="../images/yakrun/part4-fall.png" alt="Falling fades the world to grey, but not the HUD"></p>
+<p><strong>You will learn:</strong> render targets, building a post-processing pipeline, bloom, distortion and the distortion helpers, colour effects with smooth transitions, and resizable windows.</p>
+<p>The finished code for this part: <a href="https://github.com/AlzPatz/yak2d-docs-content/tree/master/code/YakRun/Part4">code/YakRun/Part4</a>. Only <code>Game.cs</code> changes.</p>
+<h2 id="the-idea-render-into-surfaces-not-the-window">The idea: render into surfaces, not the window</h2>
+<p>So far every draw stage has been rendered straight onto the window. But a render stage can render onto any <strong>render target</strong>: an off-screen image on the GPU. And a render target can then be the <em>input</em> to another stage. By rendering the scene into a render target, then passing it through effect stages, each reading one surface and writing the next, we can transform the whole picture:</p>
+<pre><code class="lang-mermaid">flowchart LR
+    BG[(background)] --&gt; W1[/world target/]
+    LV[(level)] --&gt; W1
+    W1 -- &quot;Distortion&lt;br/&gt;(ripples)&quot; --&gt; W2[/distorted target/]
+    W2 -- &quot;ColourEffects&lt;br/&gt;(grey fade)&quot; --&gt; W3[/coloured target/]
+    W3 -- &quot;Bloom&lt;br/&gt;(glow)&quot; --&gt; WIN[/window/]
+    HUD[(HUD)] --&gt; WIN
+</code></pre>
+<p>See <a href="../articles/surfaces.html">Surfaces and render targets</a> and <a href="../articles/renderstages.html">The render queue and render stages</a>.</p>
+<h2 id="new-fields">New fields</h2>
+<pre><code class="lang-csharp">// Game state (plain C# objects, these survive a graphics device reset)
+private Level _level;
+private Yak _yak;
+private Background _background;
+private Vector2 _lastSafePosition;
+private Vector2 _cameraFocus;
+private int _starsCollected;
+private bool _finished;
+private float _time;
+private float _respawnTimer;
+
+// yak2D resources (created in CreateResources)
+private ITexture _yakTexture;
+private ITexture _grassTexture;
+private ITexture _soilTexture;
+private ITexture _rippleTexture;
+
+private IDrawStage _backgroundStage;
+private IDrawStage _levelStage;
+private IDrawStage _hudStage;
+
+private ICamera2D _camera;
+private ICamera2D _backgroundCamera;
+private ICamera2D _hudCamera;
+
+private IRenderTarget _worldTarget;
+private IRenderTarget _distortedTarget;
+private IRenderTarget _colouredTarget;
+
+private IDistortionStage _distortionStage;
+private IDistortionCollection _ripples;
+private IColourEffectsStage _colourStage;
+private IBloomStage _bloomStage;
+</code></pre>
+<p>Three render targets, three effect stages, a texture for the ripples and a helper to manage them, plus a timer for respawning.</p>
+<h2 id="creating-the-effects">Creating the effects</h2>
+<p><code>CreateResources()</code> now ends with a call to <code>CreateEffects()</code>:</p>
+<pre><code class="lang-csharp">private void CreateEffects(IServices yak)
+{
+    // Off-screen surfaces for the post-processing chain. They clear themselves each frame
+    _worldTarget = yak.Surfaces.CreateRenderTarget(960, 540);
+    _distortedTarget = yak.Surfaces.CreateRenderTarget(960, 540);
+    _colouredTarget = yak.Surfaces.CreateRenderTarget(960, 540);
+
+    // Ripples: a distortion stage, a ring shaped height map texture, and a helper collection
+    // that grows and fades each ripple over time
+    _distortionStage = yak.Stages.CreateDistortionStage(480, 270, true);
+    yak.Stages.SetDistortionConfig(_distortionStage, new DistortionEffectConfiguration { DistortionScalar = 30.0f });
+    _rippleTexture = yak.Helpers.DistortionHelper.TextureGenerator.ConcentricSinusoidalFloat32(128, 128, 6, true, true);
+    _ripples = yak.Helpers.DistortionHelper.CreateNewCollection();
+
+    // Colour effects start as &quot;no change&quot;, and are used to fade the world to grey when the yak falls
+    _colourStage = yak.Stages.CreateColourEffectsStage();
+    yak.Stages.SetColourEffectsConfig(_colourStage, NormalColours);
+
+    // Bloom makes the brightest pixels (the stars and the sun) glow
+    _bloomStage = yak.Stages.CreateBloomStage(240, 135);
+    yak.Stages.SetBloomConfig(_bloomStage, new BloomEffectConfiguration
+    {
+        BrightnessThreshold = 0.86f, // luminance (0 to 1): the stars and sun are brighter than this, the clouds are not
+        AdditiveMixAmount = 0.9f,
+        NumberOfBlurSamples = 8,
+        ReSamplerType = ResizeSamplerType.Average4x4
+    });
+}
+
+private static readonly ColourEffectConfiguration NormalColours = new ColourEffectConfiguration { Opacity = 1.0f };
+
+private static readonly ColourEffectConfiguration FallenColours = new ColourEffectConfiguration
+{
+    GrayScale = 1.0f,
+    SingleColour = 0.3f,
+    ColourForSingleColourAndColourise = Colour.Black,
+    Opacity = 1.0f
+};
+</code></pre>
+<p><strong>Render targets.</strong> Each is 960 x 540, the same as the cameras' virtual resolution. By default a render target clears itself at the start of every frame.</p>
+<p><strong>Distortion.</strong> A distortion stage bends its input image according to a <em>height map</em> that we draw into it each frame, a bit like looking through rippling water. <code>ConcentricSinusoidalFloat32</code> generates a height map texture of rings, and a <em>distortion collection</em> animates copies of it: each one grows, moves and fades over its lifetime. See <a href="../articles/distortion.html">Distortion</a>.</p>
+<p><strong>Colour effects.</strong> A colour effects stage can grey, tint, fade or invert its input. We keep two configurations: <code>NormalColours</code> (no change: note <code>Opacity</code> must be 1) and <code>FallenColours</code> (fully grey, and darkened by blending 30% towards black). See <a href="../articles/effects.html#colour-effects">Colour effects</a>.</p>
+<p><strong>Bloom.</strong> Bloom makes bright areas glow. Only pixels brighter than the threshold take part, using <em>luminance</em> (how bright a colour looks to us). The stars' pale yellow and the sun are brighter than 0.86; the slightly grey clouds are not, so they do not glow. See <a href="../articles/effects.html#bloom">Bloom</a>.</p>
+<h2 id="triggering-the-effects">Triggering the effects</h2>
+<p>The update code gains two effect triggers:</p>
+<pre><code class="lang-csharp">public bool Update(IServices yak, float secondsSinceLastUpdate)
+{
+    var input = yak.Input;
+
+    if (input.WasKeyPressedThisFrame(KeyCode.Escape))
+    {
+        return false; // returning false shuts the application down
+    }
+
+    if (input.WasKeyPressedThisFrame(KeyCode.R))
+    {
+        Restart();
+    }
+
+    if (_respawnTimer &gt; 0.0f)
+    {
+        UpdateRespawn(yak, secondsSinceLastUpdate);
+        return true;
+    }
+
+    var (move, jump) = ReadControls(input);
+
+    if (_finished)
+    {
+        move = 0.0f;
+        jump = false;
+    }
+    else
+    {
+        _time += secondsSinceLastUpdate;
+    }
+
+    _yak.Update(secondsSinceLastUpdate, move, jump, _level.Platforms);
+
+    if (_yak.OnGround)
+    {
+        _lastSafePosition = _yak.Position;
+    }
+
+    CollectStars();
+
+    if (!_finished &amp;&amp; _yak.Position.X &gt;= _level.Flag.X)
+    {
+        _finished = true;
+    }
+
+    if (_yak.Position.Y &lt; Level.FallLimit)
+    {
+        // Fade to grey over a quarter of a second, respawn shortly after
+        yak.Stages.SetColourEffectsConfig(_colourStage, FallenColours, 0.25f);
+        _respawnTimer = 0.6f;
+    }
+
+    return true;
+}
+
+private static (float move, bool jump) ReadControls(IInput input)
+{
+    var move = 0.0f;
+    if (input.IsKeyCurrentlyPressed(KeyCode.Left) || input.IsKeyCurrentlyPressed(KeyCode.A)) move -= 1.0f;
+    if (input.IsKeyCurrentlyPressed(KeyCode.Right) || input.IsKeyCurrentlyPressed(KeyCode.D)) move += 1.0f;
+
+    var jump = input.WasKeyPressedThisFrame(KeyCode.Space) ||
+               input.WasKeyPressedThisFrame(KeyCode.Up) ||
+               input.WasKeyPressedThisFrame(KeyCode.W);
+
+    // Any connected gamepad works too: left stick to run, A to jump
+    foreach (var id in input.ConnectedGamepadIds())
+    {
+        var stick = input.GamepadAxisValue(id, GamepadAxis.LeftX);
+        if (MathF.Abs(stick) &gt; 0.25f)
+        {
+            move = stick;
+        }
+        jump |= input.WasGamepadButtonPressedThisFrame(id, GamepadButton.A);
+    }
+
+    return (Math.Clamp(move, -1.0f, 1.0f), jump);
+}
+
+private void CollectStars()
+{
+    foreach (var star in _level.Stars.Where(s =&gt; !s.Collected))
+    {
+        if (Vector2.Distance(star.Position, _yak.Position) &lt; 50.0f)
+        {
+            star.Collected = true;
+            _starsCollected++;
+
+            // A ripple that grows from nothing to 400 units wide and fades out over 0.8 seconds
+            _ripples.Add(LifeCycle.Single, CoordinateSpace.World, 0.8f, _rippleTexture,
+                         star.Position, star.Position,
+                         Vector2.Zero, new Vector2(400.0f),
+                         1.0f, 0.0f,
+                         0.0f, 0.0f);
+        }
+    }
+}
+
+private void UpdateRespawn(IServices yak, float seconds)
+{
+    _respawnTimer -= seconds;
+    if (_respawnTimer &lt;= 0.0f)
+    {
+        _yak = new Yak(_lastSafePosition);
+        yak.Stages.SetColourEffectsConfig(_colourStage, NormalColours, 0.5f);
+    }
+}
+</code></pre>
+<p><strong>Collecting a star</strong> adds a ripple to the collection, at the star's position in world space: it grows from nothing to 400 units wide while its intensity fades from 1 to 0, over 0.8 seconds, and is then removed automatically.</p>
+<p><strong>Falling</strong> switches the colour stage to <code>FallenColours</code> with a <strong>transition</strong> of 0.25 seconds: rather than changing instantly, the stage blends smoothly from its current settings to the new ones. After 0.6 seconds the yak reappears and the colours blend back over half a second. There is no animation code of our own at all. See <a href="../articles/renderstages.html#smooth-transitions">Smooth transitions</a>.</p>
+<p>The ripples are advanced in <code>PreDrawing()</code>, and submitted to the distortion stage in <code>Drawing()</code>:</p>
+<pre><code class="lang-csharp">public void PreDrawing(IServices yak, float secondsSinceLastDraw, float secondsSinceLastUpdate)
+{
+    // Ease the camera towards the yak, looking a little ahead in the direction of travel
+    var target = _yak.Position + new Vector2(0.15f * _yak.Velocity.X, 60.0f);
+    target.Y = Math.Clamp(target.Y, -80.0f, 200.0f);
+    _cameraFocus = Vector2.Lerp(_cameraFocus, target, 1.0f - MathF.Exp(-6.0f * secondsSinceLastDraw));
+
+    yak.Cameras.SetCamera2DFocusAndZoom(_camera, _cameraFocus, 1.0f);
+    yak.Cameras.SetCamera2DFocusAndZoom(_backgroundCamera, _cameraFocus * Background.ParallaxFactor, 1.0f);
+
+    _ripples.Update(secondsSinceLastDraw);
+}
+</code></pre><pre><code class="lang-csharp">public void Drawing(IDrawing draw, IFps fps, IInput input, ICoordinateTransforms transforms, float secondsSinceLastDraw, float secondsSinceLastUpdate)
+{
+    _background.Draw(draw, _backgroundStage);
+    _level.Draw(draw, _levelStage, _grassTexture, _soilTexture, _time);
+    _yak.Draw(draw, _levelStage, _yakTexture);
+    _ripples.Draw(draw, _distortionStage);
+    DrawHud(draw);
+}
+
+private void DrawHud(IDrawing draw)
+{
+    // HUD text is in Screen space: (0,0) is the middle of the screen, +Y is up, and the
+    // virtual screen is 960 x 540. A string's position is the top of the text
+    var stars = $&quot;Stars {_starsCollected} / {_level.Stars.Count}&quot;;
+    draw.DrawString(_hudStage, CoordinateSpace.Screen, stars, Colour.White, 28.0f,
+                    new Vector2(-460.0f, 255.0f), TextJustify.Left, 0.5f, 0);
+
+    draw.DrawString(_hudStage, CoordinateSpace.Screen, $&quot;{_time:0.0}s&quot;, Colour.White, 28.0f,
+                    new Vector2(460.0f, 255.0f), TextJustify.Right, 0.5f, 0);
+
+    if (_time &lt; 4.0f &amp;&amp; !_finished)
+    {
+        draw.DrawString(_hudStage, CoordinateSpace.Screen, &quot;Arrows / A D to run, Space to jump&quot;, Colour.White, 22.0f,
+                        new Vector2(0.0f, 150.0f), TextJustify.Centre, 0.5f, 0);
+    }
+
+    if (_finished)
+    {
+        draw.Helpers.DrawColouredQuad(_hudStage, CoordinateSpace.Screen, new Colour(0.0f, 0.0f, 0.0f, 0.5f),
+                                      new Vector2(0.0f, 20.0f), 620.0f, 150.0f, 0.6f);
+        draw.DrawString(_hudStage, CoordinateSpace.Screen, &quot;You made it!&quot;, Colour.Gold, 56.0f,
+                        new Vector2(0.0f, 80.0f), TextJustify.Centre, 0.5f, 0);
+        draw.DrawString(_hudStage, CoordinateSpace.Screen, $&quot;{_starsCollected} stars in {_time:0.0} seconds. R to run again&quot;,
+                        Colour.White, 24.0f, new Vector2(0.0f, 0.0f), TextJustify.Centre, 0.5f, 0);
+    }
+}
+</code></pre><h2 id="the-pipeline">The pipeline</h2>
+<pre><code class="lang-csharp">public void Rendering(IRenderQueue q, IRenderTarget windowRenderTarget)
+{
+    // 1. Draw the scene into an off-screen render target: the background, then the level on top
+    q.Draw(_backgroundStage, _backgroundCamera, _worldTarget);
+    q.ClearDepth(_worldTarget);
+    q.Draw(_levelStage, _camera, _worldTarget);
+
+    // 2. Post-processing: each stage reads one surface and writes the next
+    q.Distortion(_distortionStage, _camera, _worldTarget, _distortedTarget);
+    q.ColourEffects(_colourStage, _distortedTarget, _colouredTarget);
+    q.Bloom(_bloomStage, _colouredTarget, windowRenderTarget);
+
+    // 3. The HUD is drawn straight onto the window, on top of (and unaffected by) the effects
+    q.ClearDepth(windowRenderTarget);
+    q.Draw(_hudStage, _hudCamera, windowRenderTarget);
+}
+</code></pre>
+<p>Read it from top to bottom:</p>
+<ol>
+<li>The background and level stages are rendered into <code>_worldTarget</code> (with a depth clear between, as before).</li>
+<li><strong>Distortion</strong> reads <code>_worldTarget</code> and writes the rippled version to <code>_distortedTarget</code>. It takes the main camera too, so ripples drawn in world space line up with the stars.</li>
+<li><strong>Colour effects</strong> read that and write <code>_colouredTarget</code>.</li>
+<li><strong>Bloom</strong> reads that and writes to the window.</li>
+<li>The HUD is drawn on the window last, after a depth clear, so it is unaffected by every effect: it stays white when the world goes grey.</li>
+</ol>
+<p>Each step reads one surface and writes a different one. A stage should never read and write the same surface in one step.</p>
+<h2 id="a-resizable-window">A resizable window</h2>
+<pre><code class="lang-csharp">public StartupConfig Configure()
+{
+    var config = StartupConfig.Default(960, 540, &quot;Yak Run&quot;, false);
+    config.WindowIsResizable = true; // everything is drawn at a virtual resolution, so any window size works
+    return config;
+}
+
+public void OnStartup()
+{
+    _level = new Level();
+    _background = new Background();
+    Restart();
+}
+
+private void Restart()
+{
+    _level.Reset();
+    _yak = new Yak(_level.Start);
+    _lastSafePosition = _level.Start;
+    _cameraFocus = _level.Start;
+    _starsCollected = 0;
+    _finished = false;
+    _time = 0.0f;
+}
+</code></pre>
+<p>Because the whole scene is rendered at a fixed 960 x 540 and the last step (bloom) stretches it onto the window, the game works at any window size without any other changes. Try resizing the window, or making it fullscreen. (If the window's shape changes, the picture stretches to fill it; see <a href="../articles/cameras.html#virtual-resolution">Cameras</a> for how to handle that.)</p>
+<h2 id="run-it">Run it</h2>
+<p><img src="../images/yakrun/part4-finish.png" alt="Finished!"></p>
+<h2 id="where-next">Where next?</h2>
+<p>You have used most of yak2D's building blocks. Some ideas for taking Yak Run further, and where to look:</p>
+<ul>
+<li><strong>Enemies and moving platforms</strong>: more game objects with their own <code>Update()</code> and <code>Draw()</code>, like <code>Yak</code>.</li>
+<li><strong>A title screen and pause menu</strong>: a game state enum, a blurred copy of the game behind the menu (<a href="../articles/effects.html#blur">Blur</a>), and text.</li>
+<li><strong>Sprite sheet animation</strong>: several frames in one texture, chosen with texture coordinates (<a href="../articles/drawing.html#texture-coordinates-wrapping-and-filtering">Drawing</a>).</li>
+<li><strong>Particles</strong>: many small, short-lived shapes on a draw stage with <code>BlendState.AdditiveAlpha</code> (<a href="../articles/drawing.html#blend-states">Blend states</a>).</li>
+<li><strong>A retro look</strong>: render the world into a small render target with point sampling (<a href="../articles/surfaces.html#example-a-retro-low-resolution-look">Surfaces</a>), or add the CRT style effect (<a href="../articles/effects.html#style-effects">Style effects</a>).</li>
+<li><strong>Your own effect</strong>: <a href="customshader.html">write a custom shader</a>.</li>
+<li><strong>Share it</strong>: <a href="distribution.html">distribute your game</a>.</li>
+</ul>
+
+</article>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          yak2D - Alex Paterson - MIT licence
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

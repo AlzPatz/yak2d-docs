@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Resources and references | yak2D </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Resources and references | yak2D ">
+      
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/AlzPatz/yak2d-docs-content/blob/master/articles/resources.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo.png" alt="yak2D">
+            yak2D
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="uid_resources">
+<h1 id="resources-and-references">Resources and references</h1>
+
+<h2 id="what-is-a-resource">What is a resource?</h2>
+<p>A <strong>resource</strong> is anything yak2D creates and manages for you, usually because it lives on the GPU:</p>
+<table>
+<thead>
+<tr>
+<th>Resource</th>
+<th>Reference type</th>
+<th>Created with</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Texture</td>
+<td><a class="xref" href="../api/Yak2D.ITexture.html">ITexture</a></td>
+<td><code>yak.Surfaces.LoadTexture()</code>, <code>CreateRgbaFromData()</code>, <code>CreateFloat32FromData()</code></td>
+</tr>
+<tr>
+<td>Render target</td>
+<td><a class="xref" href="../api/Yak2D.IRenderTarget.html">IRenderTarget</a> (also an <a class="xref" href="../api/Yak2D.ITexture.html">ITexture</a>)</td>
+<td><code>yak.Surfaces.CreateRenderTarget()</code></td>
+</tr>
+<tr>
+<td>Render stage</td>
+<td><a class="xref" href="../api/Yak2D.IDrawStage.html">IDrawStage</a>, <a class="xref" href="../api/Yak2D.IBloomStage.html">IBloomStage</a>, ... (all <a class="xref" href="../api/Yak2D.IRenderStage.html">IRenderStage</a>)</td>
+<td><code>yak.Stages.Create...Stage()</code></td>
+</tr>
+<tr>
+<td>Viewport</td>
+<td><a class="xref" href="../api/Yak2D.IViewport.html">IViewport</a></td>
+<td><code>yak.Stages.CreateViewport()</code></td>
+</tr>
+<tr>
+<td>Camera</td>
+<td><a class="xref" href="../api/Yak2D.ICamera2D.html">ICamera2D</a>, <a class="xref" href="../api/Yak2D.ICamera3D.html">ICamera3D</a></td>
+<td><code>yak.Cameras.CreateCamera2D()</code>, <code>CreateCamera3D()</code></td>
+</tr>
+<tr>
+<td>Font</td>
+<td><a class="xref" href="../api/Yak2D.IFont.html">IFont</a></td>
+<td><code>yak.Fonts.LoadFont()</code></td>
+</tr>
+<tr>
+<td>Persistent queue</td>
+<td><a class="xref" href="../api/Yak2D.IPersistentDrawQueue.html">IPersistentDrawQueue</a>, <a class="xref" href="../api/Yak2D.IPersistentDistortionQueue.html">IPersistentDistortionQueue</a></td>
+<td><code>draw.CreatePersistentDrawQueue()</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="references-and-ids">References and ids</h2>
+<p>The objects you get back are lightweight <strong>references</strong>. Every one of them implements <a class="xref" href="../api/Yak2D.IKeyed.html">IKeyed</a>, which has a single property: a <code>ulong</code> <a class="xref" href="../api/Yak2D.IKeyed.html#Yak2D_IKeyed_Id">Id</a>. yak2D holds the real object and looks it up by that id.</p>
+<p>Each resource type has its own reference interface, so the compiler stops you passing, say, a camera where a texture is expected. Almost every yak2D method also has an overload that takes the raw <code>ulong</code> id instead, which can be convenient if you store ids in your own data structures:</p>
+<pre><code class="lang-csharp">ulong textureId = texture.Id;
+draw.Helpers.DrawTexturedQuad(drawStage.Id, CoordinateSpace.World, textureId, Colour.White, position, 64, 64, 0.5f);
+</code></pre>
+<p>If you have an id and need an <a class="xref" href="../api/Yak2D.ITexture.html">ITexture</a> reference back (for example for a <a class="xref" href="../api/Yak2D.DrawRequest.html">DrawRequest</a>), use <a class="xref" href="../api/Yak2D.IDrawing.html#Yak2D_IDrawing_WrapTextureId_">IDrawing.WrapTextureId()</a>.</p>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>Ids are just numbers. If you pass the id of one kind of resource to a method expecting another, yak2D cannot tell at compile time; it will report an error in the console when it fails to find the resource. Prefer the typed references unless you have a reason not to.</p>
+</div>
+<h2 id="when-to-create-resources">When to create resources</h2>
+<p>Create resources in <a class="xref" href="../api/Yak2D.IApplication.html#Yak2D_IApplication_CreateResources_">CreateResources()</a>. You <em>can</em> create them later (for example when a level loads), but everything must be re-creatable if the graphics device is reset, and the simplest way to guarantee that is to keep all creation in one method that can be called again:</p>
+<pre><code class="lang-csharp">private ITexture _player;
+private IDrawStage _drawStage;
+private ICamera2D _camera;
+
+// Game state lives in ordinary fields and is created once
+private Vector2 _playerPosition;
+
+public void OnStartup()
+{
+    _playerPosition = Vector2.Zero;
+}
+
+// yak2D resources are all created here, so this method can simply be called again
+public bool CreateResources(IServices yak)
+{
+    _player = yak.Surfaces.LoadTexture(&quot;yak&quot;, AssetSourceEnum.Embedded);
+    _drawStage = yak.Stages.CreateDrawStage();
+    _camera = yak.Cameras.CreateCamera2D(960, 540);
+    return true;
+}
+
+public void ProcessMessage(FrameworkMessage msg, IServices yak)
+{
+    switch (msg)
+    {
+        case FrameworkMessage.GraphicsDeviceRecreated:
+            // Every texture, surface, stage, camera, viewport and font has gone: make them again
+            CreateResources(yak);
+            break;
+
+        case FrameworkMessage.SwapChainFramebufferReCreated:
+            // The window's render target changed (e.g. the window was resized). The one passed to
+            // Rendering() is always current; only re-fetch it if you stored it yourself
+            break;
+    }
+}
+</code></pre>
+<p>After a device reset, every old reference is invalid. The new resources have new ids.</p>
+<h2 id="destroying-resources">Destroying resources</h2>
+<p>Resources you no longer need can be destroyed, which frees their GPU memory:</p>
+<table>
+<thead>
+<tr>
+<th>To destroy...</th>
+<th>Call</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A texture or render target</td>
+<td><code>yak.Surfaces.DestroySurface(surface)</code></td>
+</tr>
+<tr>
+<td>All of your textures and render targets</td>
+<td><code>yak.Surfaces.DestoryAllUserSurfaces()</code> <em>(sic)</em>, <code>DestroyAllUserTextures()</code>, <code>DestroyAllUserRenderTargets()</code></td>
+</tr>
+<tr>
+<td>A render stage</td>
+<td><code>yak.Stages.DestroyStage(stage)</code>, or <code>DestroyAllStages()</code></td>
+</tr>
+<tr>
+<td>A viewport</td>
+<td><code>yak.Stages.DestroyViewport(viewport)</code>, or <code>DestroyAllViewports()</code></td>
+</tr>
+<tr>
+<td>A camera</td>
+<td><code>yak.Cameras.DestroyCamera(camera)</code>, <code>DestroyAllCameras()</code>, <code>DestroyAllCameras2D()</code>, <code>DestroyAllCameras3D()</code></td>
+</tr>
+<tr>
+<td>A font</td>
+<td><code>yak.Fonts.DestroyFont(font)</code>, or <code>DestroyAllUserFonts()</code></td>
+</tr>
+<tr>
+<td>A persistent draw queue</td>
+<td><code>draw.RemovePersistentDrawQueue(stage, queue)</code></td>
+</tr>
+</tbody>
+</table>
+<p>Destruction is <strong>deferred</strong> until the current frame has finished rendering, so it is safe to destroy something that is still used in this frame's render queue. It is good practice to destroy things in <code>PreDrawing()</code> or <code>Drawing()</code>, close to the rendering they affect.</p>
+<p>You do not need to destroy anything at shutdown; yak2D releases everything itself.</p>
+<h2 id="counting-resources">Counting resources</h2>
+<p>For debugging, the services report how many resources exist: <a class="xref" href="../api/Yak2D.ISurfaces.html#Yak2D_ISurfaces_TotalUserSurfaceCount">ISurfaces.TotalUserSurfaceCount</a>, <a class="xref" href="../api/Yak2D.ISurfaces.html#Yak2D_ISurfaces_UserTextureCount">UserTextureCount</a>, <a class="xref" href="../api/Yak2D.ISurfaces.html#Yak2D_ISurfaces_UserRenderTargetCount">UserRenderTargetCount</a>, <a class="xref" href="../api/Yak2D.IStages.html#Yak2D_IStages_CountRenderStages">IStages.CountRenderStages</a>, <a class="xref" href="../api/Yak2D.IStages.html#Yak2D_IStages_CountViewports">CountViewports</a>, <a class="xref" href="../api/Yak2D.ICameras.html#Yak2D_ICameras_Camera2DCount">ICameras.Camera2DCount</a>, <a class="xref" href="../api/Yak2D.ICameras.html#Yak2D_ICameras_Camera3DCount">Camera3DCount</a> and <a class="xref" href="../api/Yak2D.IFonts.html#Yak2D_IFonts_UserFontCount">IFonts.UserFontCount</a>. A number that keeps growing usually means something is being created every frame by mistake.</p>
+<p>The <a href="https://github.com/AlzPatz/yak2d-samples/tree/master/src/FrameworkItems_CreationAndDestruction">FrameworkItems_CreationAndDestruction</a> sample creates and destroys every kind of resource interactively.</p>
+
+</article>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          yak2D - Alex Paterson - MIT licence
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

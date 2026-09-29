@@ -11542,51 +11542,102 @@ references:
   fullName.vb: Yak2D.Yak2DException.New
   nameWithType: Yak2DException.Yak2DException
   nameWithType.vb: Yak2DException.New
+- uid: uid_assets
+  name: 'Assets: textures, fonts and shaders'
+  href: articles/assets.html
+- uid: uid_cameras
+  name: Cameras
+  href: articles/cameras.html
+- uid: uid_configuration
+  name: Configuration
+  href: articles/configuration.html
 - uid: uid_coordinatesystems
-  name: yak2D Coordinate Systems and Rendering Resolution
+  name: Coordinate systems
   href: articles/coordinatesystems.html
+- uid: uid_customshaders
+  name: Custom shaders
+  href: articles/customshaders.html
+- uid: uid_customveldrid
+  name: Custom Veldrid stages
+  href: articles/customveldrid.html
+- uid: uid_distortion
+  name: Distortion
+  href: articles/distortion.html
+- uid: uid_drawing
+  name: Drawing
+  href: articles/drawing.html
+- uid: uid_effects
+  name: Post-processing effects
+  href: articles/effects.html
 - uid: uid_features
   name: Features
   href: articles/features.html
 - uid: uid_glossary
-  name: yak2D Glossary
+  name: Glossary
   href: articles/glossary.html
+- uid: uid_input
+  name: Input
+  href: articles/input.html
 - uid: uid_intro
-  name: yak2D Usage Guide
+  name: The yak2D Manual
   href: articles/intro.html
 - uid: uid_lifecycle
-  name: yak2D Application Lifecycle
+  name: Application lifecycle
   href: articles/lifecycle.html
+- uid: uid_mesh
+  name: 3D meshes
+  href: articles/mesh.html
 - uid: uid_overview
-  name: yak2D Overview and Basic Usage
+  name: How yak2D works
   href: articles/overview.html
+- uid: uid_readback
+  name: Reading pixels back (GPU to CPU)
+  href: articles/readback.html
 - uid: uid_renderstages
-  name: RenderStages
+  name: The render queue and render stages
   href: articles/renderstages.html
-- uid: uid_rendertargets
-  name: RenderTargets
-  href: articles/rendertargets.html
+- uid: uid_resources
+  name: Resources and references
+  href: articles/resources.html
+- uid: uid_samples
+  name: The samples
+  href: articles/samples.html
 - uid: uid_surfaces
-  name: Surfaces
+  name: 'Surfaces: textures and render targets'
   href: articles/surfaces.html
-- uid: uid_tut_continued
-  name: Getting Started - Continued (part 2)
-  href: articles/continued.html
+- uid: uid_text
+  name: Text
+  href: articles/text.html
+- uid: uid_troubleshooting
+  name: Troubleshooting and FAQ
+  href: articles/troubleshooting.html
 - uid: uid_tut_customshader
-  name: Tutorial - CustomShader
-  href: articles/tutorialcustomshader.html
-- uid: uid_tut_demogame
-  name: Building the DemoGame
-  href: articles/demogame.html
+  name: Writing a custom shader
+  href: tutorials/customshader.html
 - uid: uid_tut_distribution
-  name: Tutorial - Distributing your Application
-  href: articles/tutorialdistribution.html
+  name: Distributing your game
+  href: tutorials/distribution.html
 - uid: uid_tut_gettingstarted
   name: Getting Started
-  href: articles/gettingstarted.html
+  href: tutorials/gettingstarted.html
+- uid: uid_tut_yakrun1
+  name: 'Yak Run, part 1: a yak on screen'
+  href: tutorials/yakrun-1.html
+- uid: uid_tut_yakrun2
+  name: 'Yak Run, part 2: running and jumping'
+  href: tutorials/yakrun-2.html
+- uid: uid_tut_yakrun3
+  name: 'Yak Run, part 3: building a level'
+  href: tutorials/yakrun-3.html
+- uid: uid_tut_yakrun4
+  name: 'Yak Run, part 4: effects and polish'
+  href: tutorials/yakrun-4.html
 - uid: uid_tutorials
   name: Tutorials
-  href: articles/tutorials.html
+  href: tutorials/index.html
 - uid: uid_viewports
   name: Viewports
   href: articles/viewports.html
+- uid: uid_window
+  name: Window, display and graphics API
+  href: articles/window.html

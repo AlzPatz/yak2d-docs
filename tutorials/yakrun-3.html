@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Yak Run, part 3: building a level | yak2D </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Yak Run, part 3: building a level | yak2D ">
+      
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/AlzPatz/yak2d-docs-content/blob/master/tutorials/yakrun-3.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo.png" alt="yak2D">
+            yak2D
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="uid_tut_yakrun3">
+<h1 id="yak-run-part-3-building-a-level">Yak Run, part 3: building a level</h1>
+
+<p>The yak can run and jump; now it needs somewhere to go. In this part you will build a long, scrolling level of grassy platforms, with distant scenery, stars to collect, a finishing flag and an on-screen display.</p>
+<p><img src="../images/yakrun/part3.png" alt="Part 3: the level"></p>
+<p><strong>You will learn:</strong> tiled textures, custom polygons, drawing from raw draw requests with per-vertex colours, world space versus screen space, a camera that follows the player, parallax scrolling with a second camera, drawing text, and rendering several draw stages on top of each other.</p>
+<p>The finished code for this part: <a href="https://github.com/AlzPatz/yak2d-docs-content/tree/master/code/YakRun/Part3">code/YakRun/Part3</a>. <code>Box.cs</code> and <code>Yak.cs</code> are unchanged from part 2.</p>
+<h2 id="new-textures">New textures</h2>
+<p>Save these into the <code>Textures</code> folder as <code>grass.png</code> and <code>soil.png</code>. Both are designed to <strong>tile</strong>: their left and right edges (and, for the soil, top and bottom) join up seamlessly.</p>
+<p><a href="https://github.com/AlzPatz/yak2d-docs-content/raw/master/code/YakRun/Part3/Textures/grass.png"><img src="../images/yakrun/grass.png" alt="grass.png"></a>   <a href="https://github.com/AlzPatz/yak2d-docs-content/raw/master/code/YakRun/Part3/Textures/soil.png"><img src="../images/yakrun/soil.png" alt="soil.png"></a></p>
+<h2 id="the-level">The level</h2>
+<p>Create <code>Level.cs</code>. It starts with a tiny class for a star, which just needs a position and whether it has been collected:</p>
+<pre><code class="lang-csharp">public class Star
+{
+    public Vector2 Position;
+    public bool Collected;
+}
+</code></pre>
+<p>The level itself is just data: platforms, stars, a start point and a flag.</p>
+<pre><code class="lang-csharp">public const float GrassHeight = 28.0f;
+
+// Falling below this height loses the yak
+public const float FallLimit = -800.0f;
+
+public Vector2 Start { get; } = new Vector2(-250.0f, -120.0f);
+public Vector2 Flag { get; } = new Vector2(5150.0f, -150.0f);
+
+public List&lt;Box&gt; Platforms { get; } = new List&lt;Box&gt;
+{
+    new Box(-1400.0f, -700.0f, 160.0f, 1300.0f),   // a tall wall at the far left
+    new Box(-1300.0f, -700.0f, 2000.0f, 550.0f),
+    new Box(820.0f, -700.0f, 500.0f, 500.0f),
+    new Box(1420.0f, -120.0f, 240.0f, 50.0f),
+    new Box(1760.0f, -700.0f, 420.0f, 580.0f),
+    new Box(2280.0f, -40.0f, 200.0f, 40.0f),
+    new Box(2560.0f, 80.0f, 200.0f, 40.0f),
+    new Box(2840.0f, -60.0f, 240.0f, 40.0f),
+    new Box(3180.0f, -700.0f, 700.0f, 530.0f),
+    new Box(3980.0f, -700.0f, 300.0f, 620.0f),
+    new Box(4380.0f, -700.0f, 1050.0f, 550.0f),
+};
+
+public List&lt;Star&gt; Stars { get; } = new[]
+{
+    new Vector2(300.0f, -40.0f), new Vector2(760.0f, 0.0f), new Vector2(1070.0f, -90.0f),
+    new Vector2(1540.0f, 40.0f), new Vector2(1970.0f, 0.0f), new Vector2(2380.0f, 90.0f),
+    new Vector2(2660.0f, 210.0f), new Vector2(2960.0f, 70.0f), new Vector2(3530.0f, -60.0f),
+    new Vector2(3930.0f, 60.0f), new Vector2(4130.0f, 30.0f), new Vector2(4700.0f, -40.0f),
+}.Select(p =&gt; new Star { Position = p }).ToList();
+</code></pre>
+<p>The platforms are laid out so every gap can be jumped. (The yak jumps about 190 units high and about 300 units across.)</p>
+<h3 id="drawing-the-level">Drawing the level</h3>
+<pre><code class="lang-csharp">public void Draw(IDrawing draw, IDrawStage stage, ITexture grass, ITexture soil, float time)
+{
+    foreach (var platform in Platforms)
+    {
+        DrawPlatform(draw, stage, platform, grass, soil);
+    }
+
+    foreach (var star in Stars.Where(s =&gt; !s.Collected))
+    {
+        // Each star bobs gently and spins
+        var position = star.Position + new Vector2(0.0f, 6.0f * MathF.Sin((3.0f * time) + star.Position.X));
+        DrawStar(draw, stage, position, 2.0f * time);
+    }
+
+    // The finishing flag: a pole (a line) and a triangle (a three sided polygon)
+    var poleTop = Flag + new Vector2(0.0f, 220.0f);
+    draw.Helpers.DrawLine(stage, CoordinateSpace.World, Flag, poleTop, 8.0f, Colour.WhiteSmoke, 0.6f, 1, rounded: true);
+    draw.Helpers.DrawColouredPoly(stage, CoordinateSpace.World, Colour.Crimson, poleTop + new Vector2(40.0f, -30.0f), 3, 44.0f,
+                                  depth: 0.6f, layer: 1, xScaling: 1.0f, yScaling: 0.7f,
+                                  rotation_clockwise_radians: MathF.PI / 2.0f);
+}
+
+// A five pointed star built from our own vertices: ten points round the outside (alternating
+// long and short) plus one in the middle, joined up as ten triangles
+private static void DrawStar(IDrawing draw, IDrawStage stage, Vector2 centre, float angle)
+{
+    var vertices = new Vector2[11];
+    var indices = new int[30];
+    vertices[0] = centre;
+    for (var n = 0; n &lt; 10; n++)
+    {
+        var radius = n % 2 == 0 ? 26.0f : 11.0f;
+        var a = angle + (n * MathF.PI / 5.0f);
+        vertices[n + 1] = centre + (radius * new Vector2(MathF.Sin(a), MathF.Cos(a)));
+
+        indices[(3 * n) + 0] = 0;
+        indices[(3 * n) + 1] = n + 1;
+        indices[(3 * n) + 2] = ((n + 1) % 10) + 1;
+    }
+
+    draw.Helpers.Construct()
+                .Coloured(new Colour(1.0f, 0.92f, 0.4f, 1.0f))
+                .Poly(vertices, indices)
+                .Filled()
+                .SubmitDraw(stage, CoordinateSpace.World, 0.4f, 1);
+}
+
+private static void DrawPlatform(IDrawing draw, IDrawStage stage, Box box, ITexture grass, ITexture soil)
+{
+    // Soil: the texture repeats every 128 units in both directions. Texture coordinates above 1.0
+    // wrap round (TextureCoordinateMode.Wrap), so the maximum coordinate is simply size / 128
+    draw.Helpers.DrawTexturedQuad(stage, CoordinateSpace.World, soil, Colour.White,
+                                  box.Centre, box.Width, box.Height,
+                                  depth: 0.8f, layer: 1,
+                                  texcoord_max_x: box.Width / 128.0f,
+                                  texcoord_max_y: box.Height / 128.0f,
+                                  textureMode: TextureCoordinateMode.Wrap);
+
+    // Grass: a strip along the top edge, repeating horizontally only, drawn in front of the soil (lower depth).
+    // Mirror (rather than Wrap) stops the texture's bottom row bleeding into the transparent top edge
+    var grassCentre = new Vector2(box.Centre.X, box.Top - (0.5f * GrassHeight) + 8.0f);
+    draw.Helpers.DrawTexturedQuad(stage, CoordinateSpace.World, grass, Colour.White,
+                                  grassCentre, box.Width, GrassHeight + 16.0f,
+                                  depth: 0.7f, layer: 1,
+                                  texcoord_max_x: box.Width / 128.0f,
+                                  textureMode: TextureCoordinateMode.Mirror);
+}
+</code></pre>
+<p>There is a lot of yak2D in these few methods:</p>
+<p><strong>Tiled platforms.</strong> Each platform is two textured quads: soil for the body and a strip of grass along the top. Normally texture coordinates run from 0 to 1 across a quad, showing the texture once. Going beyond 1 repeats it. The soil texture is 128 pixels square, so setting the maximum texture coordinate to <code>width / 128</code> repeats it once every 128 units, however big the platform. See <a href="../articles/drawing.html#texture-coordinates-wrapping-and-filtering">Texture coordinates</a>.</p>
+<p><strong>Wrap versus Mirror.</strong> The soil uses <code>TextureCoordinateMode.Wrap</code> (repeat). The grass uses <code>Mirror</code>, which flips every other copy. That makes no visible difference to random grass, but it stops the bottom row of the image bleeding into the transparent top edge, which <code>Wrap</code> would otherwise show as a thin line above the grass.</p>
+<p><strong>Depth within a layer.</strong> The grass (depth 0.7) is in front of the soil (0.8), and stars (0.4) and the flag (0.6) are in front of both. Everything in the level is on layer 1, behind the yak on layer 2.</p>
+<p><strong>Custom polygons.</strong> The stars are built from our own points: ten round the outside, alternating long and short, plus one in the middle, joined into ten triangles by the index list. <code>Construct().Coloured(...).Poly(vertices, indices).Filled()</code> turns them into something drawable. See <a href="../articles/drawing.html#the-fluent-shape-builder">The fluent shape builder</a>.</p>
+<p><strong>Helpers for the rest.</strong> The flag's pole is a <code>DrawLine</code> with rounded ends, and the flag itself is a three sided <code>DrawColouredPoly</code>, squashed and rotated a quarter turn.</p>
+<h2 id="the-background">The background</h2>
+<p>Create <code>Background.cs</code>. The scenery behind the level is drawn by its own draw stage, so it can be viewed through its own camera.</p>
+<h3 id="a-gradient-sky-from-a-raw-draw-request">A gradient sky from a raw draw request</h3>
+<pre><code class="lang-csharp">public const float ParallaxFactor = 0.3f;
+
+// A screen-sized rectangle with a different colour at each corner. The GPU blends between
+// vertex colours, which gives a gradient for free. It is built once and re-submitted every frame
+private readonly DrawRequest _sky = new DrawRequest
+{
+    CoordinateSpace = CoordinateSpace.Screen,
+    FillType = FillType.Coloured,
+    Colour = Colour.White,
+    Vertices = new[]
+    {
+        new Vertex2D { Position = new Vector2(-480.0f, 270.0f), Colour = new Colour(0.20f, 0.40f, 0.85f, 1.0f) },
+        new Vertex2D { Position = new Vector2(480.0f, 270.0f), Colour = new Colour(0.20f, 0.40f, 0.85f, 1.0f) },
+        new Vertex2D { Position = new Vector2(480.0f, -270.0f), Colour = new Colour(0.75f, 0.88f, 1.00f, 1.0f) },
+        new Vertex2D { Position = new Vector2(-480.0f, -270.0f), Colour = new Colour(0.75f, 0.88f, 1.00f, 1.0f) },
+    },
+    Indices = new[] { 0, 1, 2, 0, 2, 3 },
+    Depth = 0.95f,
+    Layer = 0,
+};
+</code></pre>
+<p>The helper functions cover most drawing, but a <a class="xref" href="../api/Yak2D.DrawRequest.html">DrawRequest</a> built by hand gives complete control. This one is a rectangle made of two triangles (six indices into four vertices) with a different colour at each corner. The GPU blends smoothly between vertex colours, so a darker blue at the top fading to a pale blue at the bottom gives a gradient for free.</p>
+<p>It is in <strong>screen space</strong>, so it always fills the view exactly, wherever the camera is. The request is built once, in a field initialiser, and submitted every frame.</p>
+<h3 id="mountains-clouds-and-a-sun">Mountains, clouds and a sun</h3>
+<pre><code class="lang-csharp">public void Draw(IDrawing draw, IDrawStage stage)
+{
+    draw.Draw(stage, _sky);
+
+    // The sun is in Screen space, so it stays put however the camera moves
+    draw.Helpers.DrawColouredPoly(stage, CoordinateSpace.Screen, new Colour(1.0f, 0.95f, 0.6f, 1.0f),
+                                  new Vector2(330.0f, 160.0f), 48, 55.0f, depth: 0.9f);
+
+    // Mountains and hills are World space triangles (three sided regular polygons, stretched)
+    for (var n = 0; n &lt; 18; n++)
+    {
+        var x = -900.0f + (n * 230.0f);
+        var height = 230.0f + (70.0f * MathF.Sin(n * 1.7f));
+        DrawMountain(draw, stage, new Vector2(x, -200.0f), height + 50.0f, 1.5f, new Colour(0.55f, 0.60f, 0.75f, 1.0f), 0.8f);
+        DrawMountain(draw, stage, new Vector2(x + 115.0f, -360.0f), (0.6f * height) + 140.0f, 2.4f, new Colour(0.35f, 0.55f, 0.40f, 1.0f), 0.7f);
+    }
+
+    // Clouds: a few overlapping circles (a many sided polygon approximates a circle)
+    for (var n = 0; n &lt; 8; n++)
+    {
+        var centre = new Vector2(-600.0f + (n * 420.0f), 150.0f + (40.0f * MathF.Sin(n * 2.3f)));
+        var colour = new Colour(0.80f, 0.82f, 0.88f, 1.0f);
+        draw.Helpers.DrawColouredPoly(stage, CoordinateSpace.World, colour, centre, 32, 38.0f, 0.6f);
+        draw.Helpers.DrawColouredPoly(stage, CoordinateSpace.World, colour, centre + new Vector2(40.0f, 10.0f), 32, 46.0f, 0.6f);
+        draw.Helpers.DrawColouredPoly(stage, CoordinateSpace.World, colour, centre + new Vector2(85.0f, -5.0f), 32, 32.0f, 0.6f);
+    }
+}
+
+private static void DrawMountain(IDrawing draw, IDrawStage stage, Vector2 baseCentre, float height, float widthScale, Colour colour, float depth)
+{
+    // A regular triangle of 'radius' r has its top point r above the centre and its base r/2 below
+    var radius = height / 1.5f;
+    var centre = baseCentre + new Vector2(0.0f, 0.5f * radius);
+    draw.Helpers.DrawColouredPoly(stage, CoordinateSpace.World, colour, centre, 3, radius, depth, 0, xScaling: widthScale);
+}
+</code></pre>
+<ul>
+<li>The <strong>sun</strong> is in screen space too, so it stays in the same place on screen.</li>
+<li><strong>Mountains and hills</strong> are triangles (three sided polygons) stretched sideways. They are in world space, so they move when the camera moves.</li>
+<li><strong>Clouds</strong> are three overlapping circles each (a polygon with enough sides looks round).</li>
+</ul>
+<h2 id="a-following-camera-and-parallax">A following camera, and parallax</h2>
+<p>The level is far wider than the screen, so the camera must follow the yak. And to make the scenery look far away, the background camera moves more slowly than the main camera. This is <strong>parallax</strong>. Both happen in <code>PreDrawing()</code>, which runs just before each frame is drawn:</p>
+<pre><code class="lang-csharp">public void PreDrawing(IServices yak, float secondsSinceLastDraw, float secondsSinceLastUpdate)
+{
+    // Ease the camera towards the yak, looking a little ahead in the direction of travel
+    var target = _yak.Position + new Vector2(0.15f * _yak.Velocity.X, 60.0f);
+    target.Y = Math.Clamp(target.Y, -80.0f, 200.0f);
+    _cameraFocus = Vector2.Lerp(_cameraFocus, target, 1.0f - MathF.Exp(-6.0f * secondsSinceLastDraw));
+
+    yak.Cameras.SetCamera2DFocusAndZoom(_camera, _cameraFocus, 1.0f);
+
+    // The background camera moves less, so the scenery seems further away
+    yak.Cameras.SetCamera2DFocusAndZoom(_backgroundCamera, _cameraFocus * Background.ParallaxFactor, 1.0f);
+}
+</code></pre>
+<ul>
+<li>The camera <strong>eases towards</strong> a target point instead of jumping to it. <code>1 - exp(-6 * seconds)</code> moves the same fraction of the remaining distance per second at any frame rate.</li>
+<li>It looks a little <strong>ahead</strong> of the yak in the direction it is running, and a little above it, and its height is limited so it doesn't swing up and down too much.</li>
+<li>The background camera is focused on the same point <strong>scaled by 0.3</strong>, so the scenery moves at 30% of the speed of the level.</li>
+</ul>
+<p>See <a href="../articles/cameras.html">Cameras</a>.</p>
+<h2 id="three-draw-stages-three-cameras">Three draw stages, three cameras</h2>
+<p>The game now draws three groups of things, each seen through a different camera:</p>
+<pre><code class="lang-csharp">public bool CreateResources(IServices yak)
+{
+    _yakTexture = yak.Surfaces.LoadTexture(&quot;yak&quot;, AssetSourceEnum.Embedded);
+    _grassTexture = yak.Surfaces.LoadTexture(&quot;grass&quot;, AssetSourceEnum.Embedded);
+    _soilTexture = yak.Surfaces.LoadTexture(&quot;soil&quot;, AssetSourceEnum.Embedded);
+
+    // Three draw stages, so each group of drawing can be viewed through its own camera
+    _backgroundStage = yak.Stages.CreateDrawStage();
+    _levelStage = yak.Stages.CreateDrawStage();
+    _hudStage = yak.Stages.CreateDrawStage();
+
+    _camera = yak.Cameras.CreateCamera2D(960, 540);
+    _backgroundCamera = yak.Cameras.CreateCamera2D(960, 540);
+    _hudCamera = yak.Cameras.CreateCamera2D(960, 540);
+
+    return true;
+}
+
+public void ProcessMessage(FrameworkMessage msg, IServices yak)
+{
+    if (msg == FrameworkMessage.GraphicsDeviceRecreated)
+    {
+        CreateResources(yak);
+    }
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Draw stage</th>
+<th>Camera</th>
+<th>Contents</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>_backgroundStage</code></td>
+<td><code>_backgroundCamera</code>, moving slowly</td>
+<td>sky, sun, mountains, clouds</td>
+</tr>
+<tr>
+<td><code>_levelStage</code></td>
+<td><code>_camera</code>, following the yak</td>
+<td>platforms, stars, flag, yak</td>
+</tr>
+<tr>
+<td><code>_hudStage</code></td>
+<td><code>_hudCamera</code>, never moves</td>
+<td>score, time, messages</td>
+</tr>
+</tbody>
+</table>
+<p>Game state now lives in several fields, and <code>Restart()</code> puts it back to the beginning:</p>
+<pre><code class="lang-csharp">// Game state (plain C# objects, these survive a graphics device reset)
+private Level _level;
+private Yak _yak;
+private Background _background;
+private Vector2 _lastSafePosition;
+private Vector2 _cameraFocus;
+private int _starsCollected;
+private bool _finished;
+private float _time;
+
+// yak2D resources (created in CreateResources)
+private ITexture _yakTexture;
+private ITexture _grassTexture;
+private ITexture _soilTexture;
+
+private IDrawStage _backgroundStage;
+private IDrawStage _levelStage;
+private IDrawStage _hudStage;
+
+private ICamera2D _camera;
+private ICamera2D _backgroundCamera;
+private ICamera2D _hudCamera;
+</code></pre><pre><code class="lang-csharp">public StartupConfig Configure()
+{
+    return StartupConfig.Default(960, 540, &quot;Yak Run&quot;, false);
+}
+
+public void OnStartup()
+{
+    _level = new Level();
+    _background = new Background();
+    Restart();
+}
+
+private void Restart()
+{
+    _level.Reset();
+    _yak = new Yak(_level.Start);
+    _lastSafePosition = _level.Start;
+    _cameraFocus = _level.Start;
+    _starsCollected = 0;
+    _finished = false;
+    _time = 0.0f;
+}
+</code></pre><h2 id="game-rules">Game rules</h2>
+<pre><code class="lang-csharp">public bool Update(IServices yak, float secondsSinceLastUpdate)
+{
+    var input = yak.Input;
+
+    if (input.WasKeyPressedThisFrame(KeyCode.Escape))
+    {
+        return false;
+    }
+
+    if (input.WasKeyPressedThisFrame(KeyCode.R))
+    {
+        Restart();
+    }
+
+    var (move, jump) = ReadControls(input);
+
+    if (_finished)
+    {
+        move = 0.0f;
+        jump = false;
+    }
+    else
+    {
+        _time += secondsSinceLastUpdate;
+    }
+
+    _yak.Update(secondsSinceLastUpdate, move, jump, _level.Platforms);
+
+    if (_yak.OnGround)
+    {
+        _lastSafePosition = _yak.Position;
+    }
+
+    CollectStars();
+
+    if (!_finished &amp;&amp; _yak.Position.X &gt;= _level.Flag.X)
+    {
+        _finished = true;
+    }
+
+    if (_yak.Position.Y &lt; Level.FallLimit)
+    {
+        // Fell off the level: back to the last place the yak was standing
+        _yak = new Yak(_lastSafePosition);
+    }
+
+    return true;
+}
+
+private static (float move, bool jump) ReadControls(IInput input)
+{
+    var move = 0.0f;
+    if (input.IsKeyCurrentlyPressed(KeyCode.Left) || input.IsKeyCurrentlyPressed(KeyCode.A)) move -= 1.0f;
+    if (input.IsKeyCurrentlyPressed(KeyCode.Right) || input.IsKeyCurrentlyPressed(KeyCode.D)) move += 1.0f;
+
+    var jump = input.WasKeyPressedThisFrame(KeyCode.Space) ||
+               input.WasKeyPressedThisFrame(KeyCode.Up) ||
+               input.WasKeyPressedThisFrame(KeyCode.W);
+
+    foreach (var id in input.ConnectedGamepadIds())
+    {
+        var stick = input.GamepadAxisValue(id, GamepadAxis.LeftX);
+        if (MathF.Abs(stick) &gt; 0.25f)
+        {
+            move = stick;
+        }
+        jump |= input.WasGamepadButtonPressedThisFrame(id, GamepadButton.A);
+    }
+
+    return (Math.Clamp(move, -1.0f, 1.0f), jump);
+}
+
+private void CollectStars()
+{
+    foreach (var star in _level.Stars.Where(s =&gt; !s.Collected))
+    {
+        if (Vector2.Distance(star.Position, _yak.Position) &lt; 50.0f)
+        {
+            star.Collected = true;
+            _starsCollected++;
+        }
+    }
+}
+</code></pre>
+<p>Each update the yak moves using the level's platforms, then the rules are checked:</p>
+<ul>
+<li>Standing on something remembers a <strong>safe position</strong>. Falling below the level's <code>FallLimit</code> puts the yak back there.</li>
+<li>Touching a <strong>star</strong> collects it.</li>
+<li>Passing the <strong>flag</strong> finishes the level: the controls stop and the clock stops.</li>
+<li><strong>R</strong> restarts.</li>
+</ul>
+<h2 id="the-hud">The HUD</h2>
+<pre><code class="lang-csharp">public void Drawing(IDrawing draw, IFps fps, IInput input, ICoordinateTransforms transforms, float secondsSinceLastDraw, float secondsSinceLastUpdate)
+{
+    _background.Draw(draw, _backgroundStage);
+    _level.Draw(draw, _levelStage, _grassTexture, _soilTexture, _time);
+    _yak.Draw(draw, _levelStage, _yakTexture);
+    DrawHud(draw);
+}
+
+private void DrawHud(IDrawing draw)
+{
+    // HUD text is in Screen space: (0,0) is the middle of the screen, +Y is up, and the
+    // virtual screen is 960 x 540. A string's position is the top of the text
+    var stars = $&quot;Stars {_starsCollected} / {_level.Stars.Count}&quot;;
+    draw.DrawString(_hudStage, CoordinateSpace.Screen, stars, Colour.White, 28.0f,
+                    new Vector2(-460.0f, 255.0f), TextJustify.Left, 0.5f, 0);
+
+    draw.DrawString(_hudStage, CoordinateSpace.Screen, $&quot;{_time:0.0}s&quot;, Colour.White, 28.0f,
+                    new Vector2(460.0f, 255.0f), TextJustify.Right, 0.5f, 0);
+
+    if (_time &lt; 4.0f &amp;&amp; !_finished)
+    {
+        draw.DrawString(_hudStage, CoordinateSpace.Screen, &quot;Arrows / A D to run, Space to jump&quot;, Colour.White, 22.0f,
+                        new Vector2(0.0f, 150.0f), TextJustify.Centre, 0.5f, 0);
+    }
+
+    if (_finished)
+    {
+        draw.Helpers.DrawColouredQuad(_hudStage, CoordinateSpace.Screen, new Colour(0.0f, 0.0f, 0.0f, 0.5f),
+                                      new Vector2(0.0f, 20.0f), 620.0f, 150.0f, 0.6f);
+        draw.DrawString(_hudStage, CoordinateSpace.Screen, &quot;You made it!&quot;, Colour.Gold, 56.0f,
+                        new Vector2(0.0f, 80.0f), TextJustify.Centre, 0.5f, 0);
+        draw.DrawString(_hudStage, CoordinateSpace.Screen, $&quot;{_starsCollected} stars in {_time:0.0} seconds. R to run again&quot;,
+                        Colour.White, 24.0f, new Vector2(0.0f, 0.0f), TextJustify.Centre, 0.5f, 0);
+    }
+}
+</code></pre>
+<p>Text is drawn with <code>DrawString</code>, which submits one textured quad per letter to a draw stage, using yak2D's built-in font. The HUD is in <strong>screen space</strong>: (0,0) is the middle of the screen, the edges are at plus and minus 480 across and 270 up and down, and <strong>the position given is the top of the text</strong>. <code>TextJustify</code> sets whether the x position is the left edge, centre or right edge. See <a href="../articles/text.html">Text</a>.</p>
+<h2 id="rendering-the-stages-on-top-of-each-other">Rendering the stages on top of each other</h2>
+<pre><code class="lang-csharp">public void Rendering(IRenderQueue q, IRenderTarget windowRenderTarget)
+{
+    // Each draw stage is drawn through its own camera. Depth is cleared in between,
+    // so each stage is drawn completely on top of the one before
+    q.ClearDepth(windowRenderTarget);
+    q.Draw(_backgroundStage, _backgroundCamera, windowRenderTarget);
+    q.ClearDepth(windowRenderTarget);
+    q.Draw(_levelStage, _camera, windowRenderTarget);
+    q.ClearDepth(windowRenderTarget);
+    q.Draw(_hudStage, _hudCamera, windowRenderTarget);
+}
+</code></pre>
+<p>All three stages are rendered onto the window, in order. Between them, the depth buffer is cleared. Depth values written by one stage stay in the depth buffer and are tested against by the next stage, so without the clears, something in the background could hide something in the level. Clearing depth between stages means each is simply drawn on top of the one before. See <a href="../articles/drawing.html#depth-between-draw-stages">Depth between draw stages</a>.</p>
+<p>The sky covers the whole window, so we no longer need to clear the window's colour.</p>
+<h2 id="run-it">Run it</h2>
+<p>Run to the flag, collecting as many stars as you can. Fall off, and you are put back where you last stood.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>Try designing your own level by editing <code>Platforms</code> and <code>Stars</code>. Or add a second row of mountains with a parallax factor of 0.15, drawn behind the first (with a greater depth) by another camera.</p>
+</div>
+<h2 id="next">Next</h2>
+<p>The game works. In <a href="yakrun-4.html">part 4</a> it gets some polish: glowing stars, ripples when you collect them, and a fade to grey when you fall.</p>
+
+</article>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          yak2D - Alex Paterson - MIT licence
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

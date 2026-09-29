@@ -1,82 +1,120 @@
 <!DOCTYPE html>
-<!--[if IE]><![endif]-->
 <html>
-
   <head>
     <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <title>Struct OldMovieConfiguration </title>
-      <meta name="viewport" content="width=device-width">
-      <meta name="title" content="Struct OldMovieConfiguration ">
-    
-    <meta name="description" content="Creates the effect of an old movie reel / projector Includes: Scratch Lines in frames, Noise, Random Vertical Shifting, Dimming, Reel Rolling, Over Exposure Flicker">
-      <link rel="shortcut icon" href="../favicon.ico">
-      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
-      <link rel="stylesheet" href="../styles/docfx.css">
-      <link rel="stylesheet" href="../styles/main.css">
-      <meta property="docfx:navrel" content="../toc.html">
-      <meta property="docfx:tocrel" content="toc.html">
-    
-    
-    
+      <title>Struct OldMovieConfiguration | yak2D </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Struct OldMovieConfiguration | yak2D ">
+      
+      <meta name="description" content="Creates the effect of an old movie reel / projector Includes: Scratch Lines in frames, Noise, Random Vertical Shifting, Dimming, Reel Rolling, Over Exposure Flicker">
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
   </head>
-  <body data-spy="scroll" data-target="#affix" data-offset="120">
-    <div id="wrapper">
-      <header>
 
-        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-
-              <a class="navbar-brand" href="../index.html">
-                <img id="logo" class="svg" src="../images/logo.png" alt="">
-              </a>
-            </div>
-            <div class="collapse navbar-collapse" id="navbar">
-              <form class="navbar-form navbar-right" role="search" id="search">
-                <div class="form-group">
-                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
-                </div>
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo.png" alt="yak2D">
+            yak2D
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
               </form>
             </div>
           </div>
-        </nav>
+        </div>
+      </nav>
+    </header>
 
-        <div class="subnav navbar navbar-default">
-          <div class="container hide-when-search" id="breadcrumb">
-            <ul class="breadcrumb">
-              <li></li>
-            </ul>
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
           </div>
         </div>
-      </header>
-      <div role="main" class="container body-content hide-when-search">
+      </div>
 
-        <div class="sidenav hide-when-search">
-          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
-          <div class="sidetoggle collapse" id="sidetoggle">
-            <div id="sidetoc"></div>
-          </div>
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
         </div>
-        <div class="article row grid-right">
-          <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Yak2D.OldMovieConfiguration">
+
+        <article data-uid="Yak2D.OldMovieConfiguration">
 
 
 
-  <h1 id="Yak2D_OldMovieConfiguration" data-uid="Yak2D.OldMovieConfiguration" class="text-break">Struct OldMovieConfiguration</h1>
-  <div class="markdown level0 summary"><p>Creates the effect of an old movie reel / projector
+  <h1 id="Yak2D_OldMovieConfiguration" data-uid="Yak2D.OldMovieConfiguration" class="text-break">
+Struct OldMovieConfiguration  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/EffectsConfiguration/StyleEffectGroupConfiguration.cs"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Yak2D.html">Yak2D</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Yak2D.Api.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Creates the effect of an old movie reel / projector
 Includes: Scratch Lines in frames, Noise, Random Vertical Shifting, Dimming, Reel Rolling, Over Exposure Flicker</p>
 </div>
-  <div class="markdown level0 conceptual"></div>
-  <div class="inheritedMembers">
-    <h5>Inherited Members</h5>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public struct OldMovieConfiguration</code></pre>
+  </div>
+
+
+
+
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetype.equals">ValueType.Equals(object)</a>
     </div>
@@ -95,41 +133,56 @@ Includes: Scratch Lines in frames, Noise, Random Vertical Shifting, Dimming, Ree
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
     </div>
-  </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="Yak2D.html">Yak2D</a></h6>
-  <h6><strong>Assembly</strong>: Yak2D.Api.dll</h6>
-  <h5 id="Yak2D_OldMovieConfiguration_syntax">Syntax</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public struct OldMovieConfiguration</code></pre>
-  </div>
-  <h3 id="properties">Properties
-</h3>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
   <a id="Yak2D_OldMovieConfiguration_Dim_" data-uid="Yak2D.OldMovieConfiguration.Dim*"></a>
-  <h4 id="Yak2D_OldMovieConfiguration_Dim" data-uid="Yak2D.OldMovieConfiguration.Dim">Dim</h4>
+
+  <h3 id="Yak2D_OldMovieConfiguration_Dim" data-uid="Yak2D.OldMovieConfiguration.Dim">
+  Dim
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/EffectsConfiguration/StyleEffectGroupConfiguration.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Scalar for random dimming amount</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public float Dim { readonly get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_OldMovieConfiguration_Intensity_" data-uid="Yak2D.OldMovieConfiguration.Intensity*"></a>
-  <h4 id="Yak2D_OldMovieConfiguration_Intensity" data-uid="Yak2D.OldMovieConfiguration.Intensity">Intensity</h4>
+
+  <h3 id="Yak2D_OldMovieConfiguration_Intensity" data-uid="Yak2D.OldMovieConfiguration.Intensity">
+  Intensity
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/EffectsConfiguration/StyleEffectGroupConfiguration.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Used for twice:</p>
 <ol>
 <li>An interpolation between unmodified texture coordinates and modified. 1.0 resulting in max pixellation</li>
@@ -137,581 +190,731 @@ Includes: Scratch Lines in frames, Noise, Random Vertical Shifting, Dimming, Ree
 </ol>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public float Intensity { readonly get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_OldMovieConfiguration_Noise_" data-uid="Yak2D.OldMovieConfiguration.Noise*"></a>
-  <h4 id="Yak2D_OldMovieConfiguration_Noise" data-uid="Yak2D.OldMovieConfiguration.Noise">Noise</h4>
+
+  <h3 id="Yak2D_OldMovieConfiguration_Noise" data-uid="Yak2D.OldMovieConfiguration.Noise">
+  Noise
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/EffectsConfiguration/StyleEffectGroupConfiguration.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Scalar for Noise</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public float Noise { readonly get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_OldMovieConfiguration_OverExposureFlickerTimeMax_" data-uid="Yak2D.OldMovieConfiguration.OverExposureFlickerTimeMax*"></a>
-  <h4 id="Yak2D_OldMovieConfiguration_OverExposureFlickerTimeMax" data-uid="Yak2D.OldMovieConfiguration.OverExposureFlickerTimeMax">OverExposureFlickerTimeMax</h4>
+
+  <h3 id="Yak2D_OldMovieConfiguration_OverExposureFlickerTimeMax" data-uid="Yak2D.OldMovieConfiguration.OverExposureFlickerTimeMax">
+  OverExposureFlickerTimeMax
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/EffectsConfiguration/StyleEffectGroupConfiguration.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Maximum time for over exposure flicker duration. Duration chosen randomly in range</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public float OverExposureFlickerTimeMax { readonly get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_OldMovieConfiguration_OverExposureFlickerTimeMin_" data-uid="Yak2D.OldMovieConfiguration.OverExposureFlickerTimeMin*"></a>
-  <h4 id="Yak2D_OldMovieConfiguration_OverExposureFlickerTimeMin" data-uid="Yak2D.OldMovieConfiguration.OverExposureFlickerTimeMin">OverExposureFlickerTimeMin</h4>
+
+  <h3 id="Yak2D_OldMovieConfiguration_OverExposureFlickerTimeMin" data-uid="Yak2D.OldMovieConfiguration.OverExposureFlickerTimeMin">
+  OverExposureFlickerTimeMin
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/EffectsConfiguration/StyleEffectGroupConfiguration.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Minimum time for over exposure flicker duration. Duration chosen randomly in range</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public float OverExposureFlickerTimeMin { readonly get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_OldMovieConfiguration_OverExposureIntensityMax_" data-uid="Yak2D.OldMovieConfiguration.OverExposureIntensityMax*"></a>
-  <h4 id="Yak2D_OldMovieConfiguration_OverExposureIntensityMax" data-uid="Yak2D.OldMovieConfiguration.OverExposureIntensityMax">OverExposureIntensityMax</h4>
+
+  <h3 id="Yak2D_OldMovieConfiguration_OverExposureIntensityMax" data-uid="Yak2D.OldMovieConfiguration.OverExposureIntensityMax">
+  OverExposureIntensityMax
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/EffectsConfiguration/StyleEffectGroupConfiguration.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Maximum Over Exposure Intensity. Intensity chosen randomly in range</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public float OverExposureIntensityMax { readonly get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_OldMovieConfiguration_OverExposureIntensityMin_" data-uid="Yak2D.OldMovieConfiguration.OverExposureIntensityMin*"></a>
-  <h4 id="Yak2D_OldMovieConfiguration_OverExposureIntensityMin" data-uid="Yak2D.OldMovieConfiguration.OverExposureIntensityMin">OverExposureIntensityMin</h4>
+
+  <h3 id="Yak2D_OldMovieConfiguration_OverExposureIntensityMin" data-uid="Yak2D.OldMovieConfiguration.OverExposureIntensityMin">
+  OverExposureIntensityMin
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/EffectsConfiguration/StyleEffectGroupConfiguration.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Minimum Over Exposure Intensity. Intensity chosen randomly in range</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public float OverExposureIntensityMin { readonly get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_OldMovieConfiguration_OverExposureOscillationsMax_" data-uid="Yak2D.OldMovieConfiguration.OverExposureOscillationsMax*"></a>
-  <h4 id="Yak2D_OldMovieConfiguration_OverExposureOscillationsMax" data-uid="Yak2D.OldMovieConfiguration.OverExposureOscillationsMax">OverExposureOscillationsMax</h4>
+
+  <h3 id="Yak2D_OldMovieConfiguration_OverExposureOscillationsMax" data-uid="Yak2D.OldMovieConfiguration.OverExposureOscillationsMax">
+  OverExposureOscillationsMax
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/EffectsConfiguration/StyleEffectGroupConfiguration.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Maximum number of over exposure oscillations per flicker. Number of chosen randomly in range</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public float OverExposureOscillationsMax { readonly get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_OldMovieConfiguration_OverExposureOscillationsMin_" data-uid="Yak2D.OldMovieConfiguration.OverExposureOscillationsMin*"></a>
-  <h4 id="Yak2D_OldMovieConfiguration_OverExposureOscillationsMin" data-uid="Yak2D.OldMovieConfiguration.OverExposureOscillationsMin">OverExposureOscillationsMin</h4>
+
+  <h3 id="Yak2D_OldMovieConfiguration_OverExposureOscillationsMin" data-uid="Yak2D.OldMovieConfiguration.OverExposureOscillationsMin">
+  OverExposureOscillationsMin
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/EffectsConfiguration/StyleEffectGroupConfiguration.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Minimum number of over exposure oscillations per flicker. Number of chosen randomly in range</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public float OverExposureOscillationsMin { readonly get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_OldMovieConfiguration_OverExposureProbabilityStart_" data-uid="Yak2D.OldMovieConfiguration.OverExposureProbabilityStart*"></a>
-  <h4 id="Yak2D_OldMovieConfiguration_OverExposureProbabilityStart" data-uid="Yak2D.OldMovieConfiguration.OverExposureProbabilityStart">OverExposureProbabilityStart</h4>
+
+  <h3 id="Yak2D_OldMovieConfiguration_OverExposureProbabilityStart" data-uid="Yak2D.OldMovieConfiguration.OverExposureProbabilityStart">
+  OverExposureProbabilityStart
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/EffectsConfiguration/StyleEffectGroupConfiguration.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Chance over exposure flicker starts each frame (lower less likely)</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public float OverExposureProbabilityStart { readonly get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_OldMovieConfiguration_ProbabilityRollEnds_" data-uid="Yak2D.OldMovieConfiguration.ProbabilityRollEnds*"></a>
-  <h4 id="Yak2D_OldMovieConfiguration_ProbabilityRollEnds" data-uid="Yak2D.OldMovieConfiguration.ProbabilityRollEnds">ProbabilityRollEnds</h4>
+
+  <h3 id="Yak2D_OldMovieConfiguration_ProbabilityRollEnds" data-uid="Yak2D.OldMovieConfiguration.ProbabilityRollEnds">
+  ProbabilityRollEnds
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/EffectsConfiguration/StyleEffectGroupConfiguration.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Chance a reel roll stops each frame when rolling (lower less likley)</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public float ProbabilityRollEnds { readonly get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_OldMovieConfiguration_ProbabilityRollStarts_" data-uid="Yak2D.OldMovieConfiguration.ProbabilityRollStarts*"></a>
-  <h4 id="Yak2D_OldMovieConfiguration_ProbabilityRollStarts" data-uid="Yak2D.OldMovieConfiguration.ProbabilityRollStarts">ProbabilityRollStarts</h4>
+
+  <h3 id="Yak2D_OldMovieConfiguration_ProbabilityRollStarts" data-uid="Yak2D.OldMovieConfiguration.ProbabilityRollStarts">
+  ProbabilityRollStarts
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/EffectsConfiguration/StyleEffectGroupConfiguration.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Chance a reel roll starts each frame (lower less likley)</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public float ProbabilityRollStarts { readonly get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_OldMovieConfiguration_RndShiftCutOff_" data-uid="Yak2D.OldMovieConfiguration.RndShiftCutOff*"></a>
-  <h4 id="Yak2D_OldMovieConfiguration_RndShiftCutOff" data-uid="Yak2D.OldMovieConfiguration.RndShiftCutOff">RndShiftCutOff</h4>
+
+  <h3 id="Yak2D_OldMovieConfiguration_RndShiftCutOff" data-uid="Yak2D.OldMovieConfiguration.RndShiftCutOff">
+  RndShiftCutOff
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/EffectsConfiguration/StyleEffectGroupConfiguration.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Random cut off factor for shifting screen vertically at random intervals
 A higher value makes random shifts less likely</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public float RndShiftCutOff { readonly get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_OldMovieConfiguration_RndShiftScalar_" data-uid="Yak2D.OldMovieConfiguration.RndShiftScalar*"></a>
-  <h4 id="Yak2D_OldMovieConfiguration_RndShiftScalar" data-uid="Yak2D.OldMovieConfiguration.RndShiftScalar">RndShiftScalar</h4>
+
+  <h3 id="Yak2D_OldMovieConfiguration_RndShiftScalar" data-uid="Yak2D.OldMovieConfiguration.RndShiftScalar">
+  RndShiftScalar
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/EffectsConfiguration/StyleEffectGroupConfiguration.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>The intensity of random shift movement</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public float RndShiftScalar { readonly get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_OldMovieConfiguration_RollAccelerationMax_" data-uid="Yak2D.OldMovieConfiguration.RollAccelerationMax*"></a>
-  <h4 id="Yak2D_OldMovieConfiguration_RollAccelerationMax" data-uid="Yak2D.OldMovieConfiguration.RollAccelerationMax">RollAccelerationMax</h4>
+
+  <h3 id="Yak2D_OldMovieConfiguration_RollAccelerationMax" data-uid="Yak2D.OldMovieConfiguration.RollAccelerationMax">
+  RollAccelerationMax
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/EffectsConfiguration/StyleEffectGroupConfiguration.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Max reel roll texture coordinte acceleration. Acceleration is chosen randomly in interval</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public float RollAccelerationMax { readonly get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_OldMovieConfiguration_RollAccelerationMin_" data-uid="Yak2D.OldMovieConfiguration.RollAccelerationMin*"></a>
-  <h4 id="Yak2D_OldMovieConfiguration_RollAccelerationMin" data-uid="Yak2D.OldMovieConfiguration.RollAccelerationMin">RollAccelerationMin</h4>
+
+  <h3 id="Yak2D_OldMovieConfiguration_RollAccelerationMin" data-uid="Yak2D.OldMovieConfiguration.RollAccelerationMin">
+  RollAccelerationMin
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/EffectsConfiguration/StyleEffectGroupConfiguration.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Min reel roll texture coordinte acceleration. Acceleration is chosen randomly in interval</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public float RollAccelerationMin { readonly get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_OldMovieConfiguration_RollOverallScale_" data-uid="Yak2D.OldMovieConfiguration.RollOverallScale*"></a>
-  <h4 id="Yak2D_OldMovieConfiguration_RollOverallScale" data-uid="Yak2D.OldMovieConfiguration.RollOverallScale">RollOverallScale</h4>
+
+  <h3 id="Yak2D_OldMovieConfiguration_RollOverallScale" data-uid="Yak2D.OldMovieConfiguration.RollOverallScale">
+  RollOverallScale
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/EffectsConfiguration/StyleEffectGroupConfiguration.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Linear scaler to modify overal roll movement</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public float RollOverallScale { readonly get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_OldMovieConfiguration_RollShakeFactor_" data-uid="Yak2D.OldMovieConfiguration.RollShakeFactor*"></a>
-  <h4 id="Yak2D_OldMovieConfiguration_RollShakeFactor" data-uid="Yak2D.OldMovieConfiguration.RollShakeFactor">RollShakeFactor</h4>
+
+  <h3 id="Yak2D_OldMovieConfiguration_RollShakeFactor" data-uid="Yak2D.OldMovieConfiguration.RollShakeFactor">
+  RollShakeFactor
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/EffectsConfiguration/StyleEffectGroupConfiguration.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Scales the amount of random shaking in the texture coordinate shifting of the reel rolls</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public float RollShakeFactor { readonly get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_OldMovieConfiguration_RollSpeedMax_" data-uid="Yak2D.OldMovieConfiguration.RollSpeedMax*"></a>
-  <h4 id="Yak2D_OldMovieConfiguration_RollSpeedMax" data-uid="Yak2D.OldMovieConfiguration.RollSpeedMax">RollSpeedMax</h4>
+
+  <h3 id="Yak2D_OldMovieConfiguration_RollSpeedMax" data-uid="Yak2D.OldMovieConfiguration.RollSpeedMax">
+  RollSpeedMax
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/EffectsConfiguration/StyleEffectGroupConfiguration.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Max reel roll texture coordinte speed. Speed is chosen randomly in interval</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public float RollSpeedMax { readonly get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_OldMovieConfiguration_RollSpeedMin_" data-uid="Yak2D.OldMovieConfiguration.RollSpeedMin*"></a>
-  <h4 id="Yak2D_OldMovieConfiguration_RollSpeedMin" data-uid="Yak2D.OldMovieConfiguration.RollSpeedMin">RollSpeedMin</h4>
+
+  <h3 id="Yak2D_OldMovieConfiguration_RollSpeedMin" data-uid="Yak2D.OldMovieConfiguration.RollSpeedMin">
+  RollSpeedMin
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/EffectsConfiguration/StyleEffectGroupConfiguration.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Min reel roll texture coordinte speed. Speed is chosen randomly in interval</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public float RollSpeedMin { readonly get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Yak2D_OldMovieConfiguration_Scratch_" data-uid="Yak2D.OldMovieConfiguration.Scratch*"></a>
-  <h4 id="Yak2D_OldMovieConfiguration_Scratch" data-uid="Yak2D.OldMovieConfiguration.Scratch">Scratch</h4>
+
+  <h3 id="Yak2D_OldMovieConfiguration_Scratch" data-uid="Yak2D.OldMovieConfiguration.Scratch">
+  Scratch
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/EffectsConfiguration/StyleEffectGroupConfiguration.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Scalar for amount of scratch lines</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public float Scratch { readonly get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="methods">Methods
-</h3>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
   <a id="Yak2D_OldMovieConfiguration_GenerateDefault_" data-uid="Yak2D.OldMovieConfiguration.GenerateDefault*"></a>
-  <h4 id="Yak2D_OldMovieConfiguration_GenerateDefault" data-uid="Yak2D.OldMovieConfiguration.GenerateDefault">GenerateDefault()</h4>
+
+  <h3 id="Yak2D_OldMovieConfiguration_GenerateDefault" data-uid="Yak2D.OldMovieConfiguration.GenerateDefault">
+  GenerateDefault()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/EffectsConfiguration/StyleEffectGroupConfiguration.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Generate a Default Configurations for the Old Movie Effect</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static OldMovieConfiguration GenerateDefault()</code></pre>
   </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.OldMovieConfiguration.html">OldMovieConfiguration</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.OldMovieConfiguration.html">OldMovieConfiguration</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="Yak2D_OldMovieConfiguration_PreSet_" data-uid="Yak2D.OldMovieConfiguration.PreSet*"></a>
-  <h4 id="Yak2D_OldMovieConfiguration_PreSet_System_Single_" data-uid="Yak2D.OldMovieConfiguration.PreSet(System.Single)">PreSet(float)</h4>
+
+  <h3 id="Yak2D_OldMovieConfiguration_PreSet_System_Single_" data-uid="Yak2D.OldMovieConfiguration.PreSet(System.Single)">
+  PreSet(float)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/EffectsConfiguration/StyleEffectGroupConfiguration.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Returns a pre-set effect configuration scaled between 0 and 1</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static OldMovieConfiguration PreSet(float amount)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
-        <td><span class="parametername">amount</span></td>
-        <td><p>0 to 1 intensity of effect</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Yak2D.OldMovieConfiguration.html">OldMovieConfiguration</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>amount</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>0 to 1 intensity of effect</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Yak2D.OldMovieConfiguration.html">OldMovieConfiguration</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
 
 </article>
-          </div>
 
-          <div class="hidden-sm col-md-2" role="complementary">
-            <div class="sideaffix">
-              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-                <h5>In this article</h5>
-                <div></div>
-              </nav>
-            </div>
-          </div>
-        </div>
+
+
       </div>
 
-      <footer>
-        <div class="grad-bottom"></div>
-        <div class="footer">
-          <div class="container">
-            <span class="pull-right">
-              <a href="#top">Back to top</a>
-            </span>
-      yak2D - Alex Paterson
-      
-          </div>
-        </div>
-      </footer>
-    </div>
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
 
-    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
-    <script type="text/javascript" src="../styles/docfx.js"></script>
-    <script type="text/javascript" src="../styles/main.js"></script>
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          yak2D - Alex Paterson - MIT licence
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

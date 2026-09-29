@@ -1,111 +1,310 @@
 <!DOCTYPE html>
-<!--[if IE]><![endif]-->
 <html>
-
   <head>
     <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <title>yak2D Application Lifecycle </title>
-      <meta name="viewport" content="width=device-width">
-      <meta name="title" content="yak2D Application Lifecycle ">
-    
-    
-      <link rel="shortcut icon" href="../favicon.ico">
-      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
-      <link rel="stylesheet" href="../styles/docfx.css">
-      <link rel="stylesheet" href="../styles/main.css">
-      <meta property="docfx:navrel" content="../toc.html">
-      <meta property="docfx:tocrel" content="toc.html">
-    
-    
-    
+      <title>Application lifecycle | yak2D </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Application lifecycle | yak2D ">
+      
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/AlzPatz/yak2d-docs-content/blob/master/articles/lifecycle.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
   </head>
-  <body data-spy="scroll" data-target="#affix" data-offset="120">
-    <div id="wrapper">
-      <header>
 
-        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-
-              <a class="navbar-brand" href="../index.html">
-                <img id="logo" class="svg" src="../images/logo.png" alt="">
-              </a>
-            </div>
-            <div class="collapse navbar-collapse" id="navbar">
-              <form class="navbar-form navbar-right" role="search" id="search">
-                <div class="form-group">
-                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
-                </div>
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo.png" alt="yak2D">
+            yak2D
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
               </form>
             </div>
           </div>
-        </nav>
-
-        <div class="subnav navbar navbar-default">
-          <div class="container hide-when-search" id="breadcrumb">
-            <ul class="breadcrumb">
-              <li></li>
-            </ul>
-          </div>
         </div>
-      </header>
-      <div role="main" class="container body-content hide-when-search">
+      </nav>
+    </header>
 
-        <div class="sidenav hide-when-search">
-          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
-          <div class="sidetoggle collapse" id="sidetoggle">
-            <div id="sidetoc"></div>
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
           </div>
-        </div>
-        <div class="article row grid-right">
-          <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="uid_lifecycle">
-<h1 id="yak2d-application-lifecycle"><strong>yak2D</strong> Application Lifecycle</h1>
-
-<p>Below is a diagram of program flow for an application using the <strong>yak2D</strong> framework.</p>
-<p>Methods which the user defines or calls are coloured in light pink.</p>
-<p><img src="../images/lifecycle.png" alt=""></p>
-<p>The program loop is broadly split into two parts ('steps'): <strong>Update</strong> and <strong>Render</strong></p>
-<p>The frequency of Update steps is defined by the <a class="xref" href="../api/Yak2D.UpdatePeriod.html">UpdatePeriod</a> Type declared in the <a class="xref" href="../api/Yak2D.StartupConfig.html">StartupConfig</a> returned by the <a class="xref" href="../api/Yak2D.IApplication.html#Yak2D_IApplication_Configure">Configure</a> method of the user's <a class="xref" href="../api/Yak2D.IApplication.html">IApplication</a> implementation.</p>
-<p>The render steps are executed whenever all required Updates have been processed and as quickly as the GPU is able too (subject to vertical sync waits if required). Once Render commands are passed to the GPU, the main execution thread is not blocked, allowing additional Update steps to be processed, if required, until the GPU becomes free again.</p>
-
-</article>
-          </div>
-
-          <div class="hidden-sm col-md-2" role="complementary">
-            <div class="sideaffix">
-              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-                <h5>In this article</h5>
-                <div></div>
-              </nav>
-            </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
           </div>
         </div>
       </div>
 
-      <footer>
-        <div class="grad-bottom"></div>
-        <div class="footer">
-          <div class="container">
-            <span class="pull-right">
-              <a href="#top">Back to top</a>
-            </span>
-      yak2D - Alex Paterson
-      
-          </div>
-        </div>
-      </footer>
-    </div>
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
 
-    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
-    <script type="text/javascript" src="../styles/docfx.js"></script>
-    <script type="text/javascript" src="../styles/main.js"></script>
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="uid_lifecycle">
+<h1 id="application-lifecycle">Application lifecycle</h1>
+
+<p>This page describes exactly when yak2D calls each of your <a class="xref" href="../api/Yak2D.IApplication.html">IApplication</a> methods, and how update and frame timing works.</p>
+<h2 id="start-up">Start up</h2>
+<p>When you call <a class="xref" href="../api/Yak2D.Launcher.html#Yak2D_Launcher_Run_">Launcher.Run()</a>, yak2D:</p>
+<ol>
+<li>Calls <strong><a class="xref" href="../api/Yak2D.IApplication.html#Yak2D_IApplication_Configure">Configure()</a></strong> and reads the <a class="xref" href="../api/Yak2D.StartupConfig.html">StartupConfig</a> you return.</li>
+<li>Creates the window and graphics device using that configuration.</li>
+<li>Calls <strong><a class="xref" href="../api/Yak2D.IApplication.html#Yak2D_IApplication_OnStartup">OnStartup()</a></strong>.</li>
+<li>Calls <strong><a class="xref" href="../api/Yak2D.IApplication.html#Yak2D_IApplication_CreateResources_">CreateResources()</a></strong>. If it returns <code>false</code>, the application shuts down straight away.</li>
+<li>Enters the main loop.</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p><code>Configure()</code> runs <em>before</em> <code>OnStartup()</code>. So <code>Configure()</code> cannot depend on anything you set up in <code>OnStartup()</code>: if your configuration comes from a settings file, read it in <code>Configure()</code> (or in your constructor).</p>
+</div>
+<p><code>OnStartup()</code> is for setting up your own objects (game state, lists, random number generators). Anything created by yak2D, such as textures, stages or cameras, belongs in <code>CreateResources()</code>, which may be called again later (see <a href="#device-resets">Device resets</a>).</p>
+<h2 id="the-main-loop">The main loop</h2>
+<p>The loop has two independent parts: <strong>update steps</strong> and <strong>frames</strong> (also called draw or render steps). Each time round the loop, yak2D runs as many update steps as are due, then draws a frame if the GPU has finished the previous one.</p>
+<pre><code class="lang-mermaid">flowchart TD
+    Start([Launcher.Run]) --&gt; C[Configure]
+    C --&gt; O[OnStartup]
+    O --&gt; R[CreateResources]
+    R --&gt; L{Update steps due?}
+    L -- yes --&gt; U1[Process window events and input]
+    U1 --&gt; PM[&quot;ProcessMessage (once per queued message)&quot;]
+    PM --&gt; U[Update]
+    U -- returns false --&gt; SD[Shutdown]
+    U -- returns true --&gt; L
+    L -- no --&gt; G{GPU ready for&lt;br/&gt;another frame?}
+    G -- no --&gt; L
+    G -- yes --&gt; F[&quot;Fractional update&lt;br/&gt;(if enabled)&quot;]
+    F --&gt; PD[PreDrawing]
+    PD --&gt; D[Drawing]
+    D --&gt; RE[Rendering]
+    RE --&gt; GPU[&quot;Framework submits the render queue to the GPU&lt;br/&gt;(the GPU works while the loop continues)&quot;]
+    GPU --&gt; L
+</code></pre>
+<h3 id="an-update-step">An update step</h3>
+<p>Each update step:</p>
+<ol>
+<li>Processes window events (SDL) and gathers input.</li>
+<li>Calls <strong><a class="xref" href="../api/Yak2D.IApplication.html#Yak2D_IApplication_ProcessMessage_">ProcessMessage()</a></strong> once for each <a class="xref" href="../api/Yak2D.FrameworkMessage.html">FrameworkMessage</a> waiting in the queue.</li>
+<li>Calls <strong><a class="xref" href="../api/Yak2D.IApplication.html#Yak2D_IApplication_Update_">Update()</a></strong> with the length of the step in seconds. Returning <code>false</code> ends the application.</li>
+</ol>
+<p>Input state is tied to update steps. &quot;Pressed this frame&quot; and &quot;released this frame&quot; queries (<a class="xref" href="../api/Yak2D.IInput.html#Yak2D_IInput_WasKeyPressedThisFrame_">WasKeyPressedThisFrame</a> and friends) are true for exactly <strong>one update step</strong>. Check them in <code>Update()</code>, not in the drawing methods, or you may miss presses or see them twice. See <a href="input.html">Input</a>.</p>
+<h3 id="a-frame">A frame</h3>
+<p>When the GPU has finished the previous frame, yak2D:</p>
+<ol>
+<li>Optionally runs one extra, shorter update step (see <a href="#fractional-updates">Fractional updates</a>).</li>
+<li>Calls <strong><a class="xref" href="../api/Yak2D.IApplication.html#Yak2D_IApplication_PreDrawing_">PreDrawing()</a></strong>: move cameras, update effect settings, advance animations.</li>
+<li>Prepares the draw stages (auto-clearing ones are emptied), then calls <strong><a class="xref" href="../api/Yak2D.IApplication.html#Yak2D_IApplication_Drawing_">Drawing()</a></strong>: submit draw requests.</li>
+<li>Calls <strong><a class="xref" href="../api/Yak2D.IApplication.html#Yak2D_IApplication_Rendering_">Rendering()</a></strong>: build the render queue.</li>
+<li>Submits the queued GPU work, and carries straight on with the loop. The GPU renders in the background; the next frame starts once it has finished.</li>
+</ol>
+<p>Both drawing methods receive <code>secondsSinceLastDraw</code> (use it for purely visual animation) and <code>secondsSinceLastUpdate</code> (how far &quot;between&quot; update steps this frame is, useful for interpolating positions).</p>
+<h2 id="update-timing">Update timing</h2>
+<p><a class="xref" href="../api/Yak2D.StartupConfig.html#Yak2D_StartupConfig_UpdatePeriodType">StartupConfig.UpdatePeriodType</a> chooses how update steps are timed:</p>
+<table>
+<thead>
+<tr>
+<th><a class="xref" href="../api/Yak2D.UpdatePeriod.html">UpdatePeriod</a></th>
+<th>Behaviour</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Fixed</code> (default)</td>
+<td>Every update step is exactly <a class="xref" href="../api/Yak2D.StartupConfig.html#Yak2D_StartupConfig_FixedOrSmallestUpdateTimeStepInSeconds">FixedOrSmallestUpdateTimeStepInSeconds</a> long (1/120 s by default). If time has passed for several steps, several run back to back.</td>
+</tr>
+<tr>
+<td><code>Fixed_Adaptive</code></td>
+<td>Starts fixed, but doubles the step if updates are using nearly all the available time, and halves it again when there is time to spare. The step is never smaller than 1/120 s.</td>
+</tr>
+<tr>
+<td><code>Variable</code></td>
+<td>Each update step is as long as the real time since the last one, but never shorter than <code>FixedOrSmallestUpdateTimeStepInSeconds</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>A fixed step is the easiest to reason about: physics and movement behave identically however fast the computer is. The <a href="../tutorials/yakrun-2.html">Yak Run</a> tutorial relies on this.</p>
+<h3 id="fractional-updates">Fractional updates</h3>
+<p>With a fixed step there is usually some time left over when a frame is due: for example 3 ms of a 8.3 ms step. If <a class="xref" href="../api/Yak2D.StartupConfig.html#Yak2D_StartupConfig_ProcessFractionalUpdatesBeforeDraw">ProcessFractionalUpdatesBeforeDraw</a> is <code>true</code> (the default), yak2D runs one extra update step of just that leftover time before drawing, so the frame shows the world exactly &quot;now&quot;. This makes motion smooth, but means <code>Update()</code> is occasionally called with a shorter time step than normal. Always use the <code>secondsSinceLastUpdate</code> you are given rather than assuming the configured step.</p>
+<p>If you would rather every step be identical (for example, for a deterministic simulation or replays), set it to <code>false</code> and, if you want extra smoothness, interpolate in the drawing methods using <code>secondsSinceLastUpdate</code>.</p>
+<h3 id="frames-without-updates">Frames without updates</h3>
+<p><a class="xref" href="../api/Yak2D.StartupConfig.html#Yak2D_StartupConfig_RequireAtleastOneUpdatePerDraw">RequireAtleastOneUpdatePerDraw</a> (default <code>true</code>) stops a frame being drawn unless at least one update step has run since the previous frame. Nothing would have changed, so there is nothing new to draw. Before the very first frame, at least one update step always runs.</p>
+<h3 id="frame-rate-and-vsync">Frame rate and vsync</h3>
+<p>With <a class="xref" href="../api/Yak2D.StartupConfig.html#Yak2D_StartupConfig_SyncToVerticalBlank">SyncToVerticalBlank</a> on (the default), frames are limited to the display's refresh rate, avoiding tearing. With it off, frames are drawn as fast as the GPU allows. You can change it at runtime with <a class="xref" href="../api/Yak2D.IDisplay.html#Yak2D_IDisplay_SetVsync_">IDisplay.SetVsync()</a>. The current update and draw rates are available from <a class="xref" href="../api/Yak2D.IFps.html">IFps</a>:</p>
+<pre><code class="lang-csharp">public override void Drawing(IDrawing draw, IFps fps, IInput input, ICoordinateTransforms transforms, float secondsSinceLastDraw, float secondsSinceLastUpdate)
+{
+    draw.DrawString(_drawStage, CoordinateSpace.Screen, $&quot;Update {fps.UpdateFPS:0}/s   Draw {fps.DrawFPS:0}/s&quot;,
+                    Colour.White, 24.0f, new Vector2(-620.0f, 340.0f), TextJustify.Left, 0.5f, 0);
+}
+</code></pre><h2 id="framework-messages">Framework messages</h2>
+<p><a class="xref" href="../api/Yak2D.IApplication.html#Yak2D_IApplication_ProcessMessage_">ProcessMessage()</a> receives these <a class="xref" href="../api/Yak2D.FrameworkMessage.html">FrameworkMessage</a> values:</p>
+<table>
+<thead>
+<tr>
+<th>Message</th>
+<th>Meaning</th>
+<th>What to do</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GraphicsDeviceRecreated</code></td>
+<td>The graphics device was recreated. <strong>All yak2D resources are gone.</strong></td>
+<td>Recreate them: call <code>CreateResources()</code> (see below).</td>
+</tr>
+<tr>
+<td><code>SwapChainFramebufferReCreated</code></td>
+<td>The window's render target was recreated, e.g. after a resize.</td>
+<td>Nothing, unless you stored the window render target yourself. Rebuild any <a href="viewports.html">viewports</a> that depend on the window size.</td>
+</tr>
+<tr>
+<td><code>WindowWasResized</code></td>
+<td>The window changed size.</td>
+<td>Optional: react to the new size (<a class="xref" href="../api/Yak2D.IDisplay.html">IDisplay</a>).</td>
+</tr>
+<tr>
+<td><code>WindowGainedFocus</code> / <code>WindowLostFocus</code></td>
+<td>The window gained or lost keyboard focus.</td>
+<td>Optional: pause the game when focus is lost.</td>
+</tr>
+<tr>
+<td><code>GamepadAdded</code> / <code>GamepadRemoved</code></td>
+<td>A gamepad was connected or disconnected.</td>
+<td>Optional: refresh <a class="xref" href="../api/Yak2D.IInput.html#Yak2D_IInput_ConnectedGamepadIds">IInput.ConnectedGamepadIds()</a>.</td>
+</tr>
+<tr>
+<td><code>ApplicationWindowClosing</code></td>
+<td>The window is closing.</td>
+<td>See the warning below.</td>
+</tr>
+<tr>
+<td><code>LowMemoryReported</code></td>
+<td>The operating system reported low memory.</td>
+<td>Optional.</td>
+</tr>
+</tbody>
+</table>
+<div class="WARNING">
+<h5>Warning</h5>
+<p><code>ApplicationWindowClosing</code> is also sent (twice) while the graphics API is being switched with <a class="xref" href="../api/Yak2D.IBackend.html#Yak2D_IBackend_SetGraphicsApi_">IBackend.SetGraphicsApi()</a>, because the window is recreated during the switch. If your application quits when it receives this message, it will also quit when switching API. When the user closes the window, yak2D ends the loop itself, so you rarely need to act on this message.</p>
+</div>
+<h2 id="device-resets">Device resets</h2>
+<p>The graphics device is recreated when you switch graphics API (<a class="xref" href="../api/Yak2D.IBackend.html#Yak2D_IBackend_SetGraphicsApi_">IBackend.SetGraphicsApi()</a>), and can also be recreated by the platform. When that happens every texture, render target, stage, camera, viewport and font is destroyed, and you receive <code>GraphicsDeviceRecreated</code>.</p>
+<p><strong>yak2D does not call <code>CreateResources()</code> for you again.</strong> Handle the message yourself:</p>
+<pre><code class="lang-csharp">private ITexture _player;
+private IDrawStage _drawStage;
+private ICamera2D _camera;
+
+// Game state lives in ordinary fields and is created once
+private Vector2 _playerPosition;
+
+public void OnStartup()
+{
+    _playerPosition = Vector2.Zero;
+}
+
+// yak2D resources are all created here, so this method can simply be called again
+public bool CreateResources(IServices yak)
+{
+    _player = yak.Surfaces.LoadTexture(&quot;yak&quot;, AssetSourceEnum.Embedded);
+    _drawStage = yak.Stages.CreateDrawStage();
+    _camera = yak.Cameras.CreateCamera2D(960, 540);
+    return true;
+}
+
+public void ProcessMessage(FrameworkMessage msg, IServices yak)
+{
+    switch (msg)
+    {
+        case FrameworkMessage.GraphicsDeviceRecreated:
+            // Every texture, surface, stage, camera, viewport and font has gone: make them again
+            CreateResources(yak);
+            break;
+
+        case FrameworkMessage.SwapChainFramebufferReCreated:
+            // The window's render target changed (e.g. the window was resized). The one passed to
+            // Rendering() is always current; only re-fetch it if you stored it yourself
+            break;
+    }
+}
+</code></pre>
+<p>This is why it pays to create <em>every</em> yak2D resource in <code>CreateResources()</code>, and to keep your game state in ordinary C# objects that are not affected. After a reset you may see a few &quot;Unable to retrieve surface&quot; console messages for the one frame that is rendered before your application has processed the message; they are harmless.</p>
+<h2 id="shutdown">Shutdown</h2>
+<p>The application shuts down when <code>Update()</code> returns <code>false</code>, when <code>CreateResources()</code> returns <code>false</code> at start up, or when the user closes the window. yak2D then calls <strong><a class="xref" href="../api/Yak2D.IApplication.html#Yak2D_IApplication_Shutdown">Shutdown()</a></strong>, releases all of its own resources, and <code>Launcher.Run()</code> returns. Use <code>Shutdown()</code> for anything of your own that needs releasing or saving (settings, open files, audio). yak2D resources are released automatically.</p>
+<h2 id="framework-console-messages">Framework console messages</h2>
+<p>yak2D reports what it is doing (graphics API chosen, warnings, errors) through an <a class="xref" href="../api/Yak2D.IFrameworkMessenger.html">IFrameworkMessenger</a>. By default these are written to the console. To send them somewhere else, such as a log file or your own in-game console, pass your own implementation to <code>Launcher.Run()</code>:</p>
+<pre><code class="lang-csharp">public class FileLogger : IFrameworkMessenger
+{
+    private readonly StreamWriter _log = new StreamWriter(&quot;yak2d.log&quot;);
+    public void Report(string message) =&gt; _log.WriteLine(message);
+    public void Shutdown() =&gt; _log.Dispose();
+}
+
+Launcher.Run(new MyGame(), new FileLogger());
+</code></pre>
+
+</article>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          yak2D - Alex Paterson - MIT licence
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

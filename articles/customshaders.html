@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Custom shaders | yak2D </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Custom shaders | yak2D ">
+      
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/AlzPatz/yak2d-docs-content/blob/master/articles/customshaders.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo.png" alt="yak2D">
+            yak2D
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="uid_customshaders">
+<h1 id="custom-shaders">Custom shaders</h1>
+
+<p>A custom shader stage (<a class="xref" href="../api/Yak2D.ICustomShaderStage.html">ICustomShaderStage</a>) runs a <strong>fragment shader you write</strong> over a whole render target (or viewport). It can read up to four textures and any amount of your own data, so anything the built-in effects cannot do is a shader away.</p>
+<p>For a step-by-step walk-through, see the <strong><a href="../tutorials/customshader.html">Custom Shader tutorial</a></strong>. This page is the reference.</p>
+<h2 id="the-two-ways-to-supply-a-shader">The two ways to supply a shader</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>SPIR-V compile (recommended)</th>
+<th>Precompiled per graphics API</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>useSpirvCompile</code></td>
+<td><code>true</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td>You write</td>
+<td>one Vulkan-style GLSL 450 file</td>
+<td>one compiled file per API</td>
+</tr>
+<tr>
+<td>File(s)</td>
+<td><code>Shaders/&lt;Name&gt;.glsl</code></td>
+<td><code>Shaders/Vulkan/&lt;Name&gt;.spv</code>, <code>Shaders/OpenGL/&lt;Name&gt;.glsl</code>, <code>Shaders/Direct3D/&lt;Name&gt;.hlsl.bytes</code>, <code>Shaders/Metal/&lt;Name&gt;.metallib</code></td>
+</tr>
+<tr>
+<td>Runs on</td>
+<td>every API, compiled at runtime</td>
+<td>only the APIs you provide files for</td>
+</tr>
+</tbody>
+</table>
+<p>With SPIR-V compile, yak2D compiles your GLSL when the stage is created and cross-compiles it for whichever graphics API is in use. It is by far the easiest option, and the one used in these docs. Precompiled shaders avoid the (small) runtime compile cost, but you have to produce each version yourself (with tools such as <code>glslangValidator</code>, SPIRV-Cross and <code>fxc</code>). The <code>Shaders</code> folder follows the same <a href="assets.html">embedded or file rules</a> as other assets.</p>
+<h2 id="creating-the-stage">Creating the stage</h2>
+<pre><code class="lang-csharp">public bool CreateResources(IServices yak)
+{
+    _yak = yak.Surfaces.LoadTexture(&quot;yakphoto&quot;, AssetSourceEnum.Embedded);
+
+    _wavy = yak.Stages.CreateCustomShaderStage(
+        &quot;Wavy&quot;,                        // Shaders/Wavy.glsl
+        AssetSourceEnum.Embedded,
+        new[]
+        {
+            new ShaderUniformDescription { Name = &quot;Texture&quot;, UniformType = ShaderUniformType.Texture, SizeInBytes = 0 },
+            new ShaderUniformDescription { Name = &quot;Settings&quot;, UniformType = ShaderUniformType.Data, SizeInBytes = 16 },
+        },
+        BlendState.Override,           // replace the target's pixels rather than blending with them
+        useSpirvCompile: true);        // compile the one .glsl file for whichever graphics API is in use
+
+    return true;
+}
+</code></pre>
+<p><a class="xref" href="../api/Yak2D.IStages.html#Yak2D_IStages_CreateCustomShaderStage_">CreateCustomShaderStage()</a> takes:</p>
+<ul>
+<li>the shader's name (no extension, no folder);</li>
+<li>where to load it from (<a class="xref" href="../api/Yak2D.AssetSourceEnum.html">AssetSourceEnum</a>);</li>
+<li>a list of <strong>uniform descriptions</strong>, one for each input the shader has (see below);</li>
+<li>a <a class="xref" href="../api/Yak2D.BlendState.html">BlendState</a> for how the output combines with the target. <code>Override</code> replaces the target's pixels; <code>Alpha</code> blends by your output's alpha;</li>
+<li><code>useSpirvCompile</code>.</li>
+</ul>
+<h2 id="uniforms-the-shaders-inputs">Uniforms: the shader's inputs</h2>
+<p>Each <a class="xref" href="../api/Yak2D.ShaderUniformDescription.html">ShaderUniformDescription</a> becomes one <strong>resource set</strong> in the shader, numbered in the order they are listed: the first description is <code>set = 0</code>, the second <code>set = 1</code>, and so on.</p>
+<table>
+<thead>
+<tr>
+<th>UniformType</th>
+<th>In the shader</th>
+<th>In C#</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Texture</code></td>
+<td>a <code>texture2D</code> at binding 0 and a <code>sampler</code> at binding 1 of its set</td>
+<td><code>SizeInBytes = 0</code>. Filled from the textures passed to <code>q.CustomShader()</code>, in order.</td>
+</tr>
+<tr>
+<td><code>Data</code></td>
+<td>a <code>uniform</code> block at binding 0 of its set</td>
+<td>a struct, set with <a class="xref" href="../api/Yak2D.IStages.html#Yak2D_IStages_SetCustomShaderUniformValues_">SetCustomShaderUniformValues()</a>.</td>
+</tr>
+</tbody>
+</table>
+<p>The shader for the example above:</p>
+<pre><code class="lang-glsl">#version 450
+
+// Description 0, &quot;Texture&quot; (a texture): set 0
+layout(set = 0, binding = 0) uniform texture2D Texture_Texture;
+layout(set = 0, binding = 1) uniform sampler Sampler_Texture;
+
+// Description 1, &quot;Settings&quot; (data): set 1. The block name must match the description's Name
+layout(set = 1, binding = 0) uniform Settings
+{
+    float Time;
+    float Amount;
+    vec2 Pad;
+};
+
+layout(location = 0) in vec2 FTex;         // texture coordinates, from yak2D's vertex shader
+layout(location = 0) out vec4 fragColor;   // the output colour
+
+void main()
+{
+    vec2 offset = Amount * vec2(sin(FTex.y * 20.0 + Time * 3.0), cos(FTex.x * 16.0 + Time * 2.0)) * 0.02;
+    fragColor = texture(sampler2D(Texture_Texture, Sampler_Texture), FTex + offset);
+}
+</code></pre>
+<p>Rules that matter:</p>
+<ul>
+<li><strong>The uniform block name must be exactly the description's <code>Name</code>.</strong> On OpenGL, blocks are matched by name; a mismatch is silently ignored and the shader sees zeros. (Vulkan matches by set and binding, so it may appear to work there anyway.)</li>
+<li><strong>Texture first, sampler second</strong> within a texture's set (bindings 0 and 1). The <code>Texture_&lt;Name&gt;</code> / <code>Sampler_&lt;Name&gt;</code> naming shown is a sensible convention.</li>
+<li><strong>Data blocks must be a multiple of 16 bytes</strong>, and the C# struct's layout must match the GLSL layout exactly. GLSL's <code>std140</code> rules align a <code>vec3</code> or <code>vec4</code> to 16 bytes, so pad with spare floats or <code>Vector4</code>s, or set explicit <code>[FieldOffset]</code>s. <code>SizeInBytes</code> in the description must be the struct's size.</li>
+<li><strong>Texture coordinates</strong> in <code>FTex</code> run from (0,0) at the top-left to (1,1) at the bottom-right on every graphics API; yak2D's vertex shader takes care of the differences.</li>
+</ul>
+<p>The matching C# struct:</p>
+<pre><code class="lang-csharp">// The C# side of the shader's &quot;Settings&quot; uniform block. Uniform data must be a multiple of
+// 16 bytes, and match the shader's layout exactly, hence the padding
+[StructLayout(LayoutKind.Sequential)]
+private struct Settings
+{
+    public float Time;
+    public float Amount;
+    public float Pad0;
+    public float Pad1;
+}
+</code></pre><h2 id="setting-data-each-frame">Setting data each frame</h2>
+<p><a class="xref" href="../api/Yak2D.IStages.html#Yak2D_IStages_SetCustomShaderUniformValues_">SetCustomShaderUniformValues()</a> sends a struct (or an array of structs) to the named uniform. Call it whenever the values change, typically in <code>PreDrawing()</code>:</p>
+<pre><code class="lang-csharp">public bool Update(IServices yak, float secondsSinceLastUpdate)
+{
+    // Up and down arrows change the strength of the effect
+    if (yak.Input.IsKeyCurrentlyPressed(KeyCode.Up)) _amount = MathF.Min(_amount + secondsSinceLastUpdate, 2.0f);
+    if (yak.Input.IsKeyCurrentlyPressed(KeyCode.Down)) _amount = MathF.Max(_amount - secondsSinceLastUpdate, 0.0f);
+
+    return !yak.Input.WasKeyPressedThisFrame(KeyCode.Escape);
+}
+
+public void PreDrawing(IServices yak, float secondsSinceLastDraw, float secondsSinceLastUpdate)
+{
+    _time += secondsSinceLastDraw;
+
+    // Send this frame's values to the shader
+    yak.Stages.SetCustomShaderUniformValues(_wavy, &quot;Settings&quot;, new Settings { Time = _time, Amount = _amount });
+}
+</code></pre><h2 id="rendering">Rendering</h2>
+<p><a class="xref" href="../api/Yak2D.IRenderQueue.html#Yak2D_IRenderQueue_CustomShader_">q.CustomShader(stage, tex0, tex1, tex2, tex3, target)</a> runs the shader over the target. The textures fill the stage's <code>Texture</code> descriptions in order; pass <code>null</code> for any you don't use:</p>
+<pre><code class="lang-csharp">public void Rendering(IRenderQueue q, IRenderTarget windowRenderTarget)
+{
+    // Up to four input textures. This shader only reads the first
+    q.CustomShader(_wavy, _yak, null, null, null, windowRenderTarget);
+}
+</code></pre><h2 id="debugging-shaders">Debugging shaders</h2>
+<ul>
+<li>If the stage cannot find the shader file, a message is written to the console when the stage is created. Check the <a href="assets.html#embedding-assets">embedded asset rules</a>: the file must be in a <code>Shaders</code> folder that is embedded (or copied to the output).</li>
+<li>A GLSL error makes <code>CreateCustomShaderStage()</code> throw a <code>NeoVeldrid.SPIRV.SpirvCompilationException</code> whose message gives the line number and the compiler's error, e.g. <code>GLSL compilation failed: &lt;veldrid-spirv-input&gt;:27: error: syntax error, unexpected SEMICOLON</code>.</li>
+<li>A black result often means a data block was not bound (check the block name) or <code>Opacity</code>-style values are zero. A result that ignores your uniforms on one API but not another is almost always a name mismatch.</li>
+<li>Test on more than one graphics API: switch with <a class="xref" href="../api/Yak2D.StartupConfig.html#Yak2D_StartupConfig_PreferredGraphicsApi">StartupConfig.PreferredGraphicsApi</a>.</li>
+</ul>
+<h2 id="see-also">See also</h2>
+<ul>
+<li><a href="../tutorials/customshader.html">Custom Shader tutorial</a></li>
+<li>Sample: <a href="https://github.com/AlzPatz/yak2d-samples/tree/master/src/CustomShader_Example">CustomShader_Example</a>, which includes precompiled versions for every API</li>
+<li>For shaders that need more than a single full-screen pass (compute shaders, custom vertex formats), see <a href="customveldrid.html">Custom Veldrid stages</a></li>
+</ul>
+
+</article>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          yak2D - Alex Paterson - MIT licence
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Input | yak2D </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Input | yak2D ">
+      
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/AlzPatz/yak2d-docs-content/blob/master/articles/input.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo.png" alt="yak2D">
+            yak2D
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="uid_input">
+<h1 id="input">Input</h1>
+
+<p>Keyboard, mouse and gamepad input all come from <a class="xref" href="../api/Yak2D.IInput.html">IInput</a>, available as <code>yak.Input</code> in <code>Update()</code> and as the <code>input</code> parameter of <code>Drawing()</code>.</p>
+<pre><code class="lang-csharp">public override bool Update(IServices yak, float secondsSinceLastUpdate)
+{
+    var input = yak.Input;
+    const float speed = 300.0f;
+
+    // Held keys: true for every update while the key is down. Good for movement
+    var direction = Vector2.Zero;
+    if (input.IsKeyCurrentlyPressed(KeyCode.Left)) direction.X -= 1.0f;
+    if (input.IsKeyCurrentlyPressed(KeyCode.Right)) direction.X += 1.0f;
+    if (input.IsKeyCurrentlyPressed(KeyCode.Up)) direction.Y += 1.0f;
+    if (input.IsKeyCurrentlyPressed(KeyCode.Down)) direction.Y -= 1.0f;
+
+    // Gamepads: ids of the connected pads, then axes (-1 to 1) and buttons
+    foreach (var id in input.ConnectedGamepadIds())
+    {
+        var stick = new Vector2(input.GamepadAxisValue(id, GamepadAxis.LeftX), -input.GamepadAxisValue(id, GamepadAxis.LeftY));
+        if (stick.Length() &gt; 0.2f)
+        {
+            direction = stick; // SDL reports stick Y as positive downwards, hence the minus above
+        }
+        if (input.WasGamepadButtonPressedThisFrame(id, GamepadButton.B))
+        {
+            _clicks.Clear();
+        }
+    }
+
+    _position += direction * speed * secondsSinceLastUpdate;
+
+    // Pressed / released &quot;this frame&quot;: true for exactly one update. Good for actions
+    if (input.WasKeyPressedThisFrame(KeyCode.Space))
+    {
+        _clicks.Clear();
+    }
+
+    foreach (var key in input.KeysPressedThisFrame())
+    {
+        _lastKey = key.ToString();
+    }
+
+    // The mouse position is in window pixels, from the top-left corner
+    if (input.WasMousePressedThisFrame(MouseButton.Left))
+    {
+        _clicks.Add(yak.Helpers.CoordinateTransforms.ScreenFromWindow(input.MousePosition, _camera).Position);
+    }
+
+    return !input.WasKeyPressedThisFrame(KeyCode.Escape);
+}
+</code></pre><h2 id="held-pressed-and-released">Held, pressed and released</h2>
+<p>Every button and key can be asked three questions:</p>
+<table>
+<thead>
+<tr>
+<th>Question</th>
+<th>Keyboard</th>
+<th>Mouse</th>
+<th>Gamepad</th>
+<th>True for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Is it down?</td>
+<td><a class="xref" href="../api/Yak2D.IInput.html#Yak2D_IInput_IsKeyCurrentlyPressed_">IsKeyCurrentlyPressed</a></td>
+<td><a class="xref" href="../api/Yak2D.IInput.html#Yak2D_IInput_IsMouseCurrentlyPressed_">IsMouseCurrentlyPressed</a></td>
+<td><a class="xref" href="../api/Yak2D.IInput.html#Yak2D_IInput_IsGamepadButtonCurrentlyPressed_">IsGamepadButtonCurrentlyPressed</a></td>
+<td>every update while held. Use for movement.</td>
+</tr>
+<tr>
+<td>Did it just go down?</td>
+<td><a class="xref" href="../api/Yak2D.IInput.html#Yak2D_IInput_WasKeyPressedThisFrame_">WasKeyPressedThisFrame</a></td>
+<td><a class="xref" href="../api/Yak2D.IInput.html#Yak2D_IInput_WasMousePressedThisFrame_">WasMousePressedThisFrame</a></td>
+<td><a class="xref" href="../api/Yak2D.IInput.html#Yak2D_IInput_WasGamepadButtonPressedThisFrame_">WasGamepadButtonPressedThisFrame</a></td>
+<td>exactly one update. Use for actions: jump, fire, open a menu.</td>
+</tr>
+<tr>
+<td>Did it just come up?</td>
+<td><a class="xref" href="../api/Yak2D.IInput.html#Yak2D_IInput_WasKeyReleasedThisFrame_">WasKeyReleasedThisFrame</a></td>
+<td><a class="xref" href="../api/Yak2D.IInput.html#Yak2D_IInput_WasMouseReleasedThisFrame_">WasMouseReleasedThisFrame</a></td>
+<td><a class="xref" href="../api/Yak2D.IInput.html#Yak2D_IInput_WasGamepadButtonReleasedThisFrame_">WasGamepadButtonReleasedThisFrame</a></td>
+<td>exactly one update.</td>
+</tr>
+</tbody>
+</table>
+<p>There are also <code>HowLongHas...BeenHeldDown()</code> methods (seconds, for charge-up moves), and methods returning lists of everything pressed, held or released (e.g. <a class="xref" href="../api/Yak2D.IInput.html#Yak2D_IInput_KeysPressedThisFrame">KeysPressedThisFrame()</a> for text entry or key rebinding).</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>&quot;This frame&quot; means <strong>this update step</strong>. Pressed and released are worked out once per update, so check them in <code>Update()</code>. In <code>Drawing()</code> you may see the same press on several frames, or miss one entirely. &quot;Is it down?&quot; is fine anywhere.</p>
+</div>
+<h2 id="keyboard">Keyboard</h2>
+<p>Keys are identified by <a class="xref" href="../api/Yak2D.KeyCode.html">KeyCode</a> values: <code>KeyCode.A</code>, <code>KeyCode.Space</code>, <code>KeyCode.Left</code>, <code>KeyCode.Number1</code>, <code>KeyCode.F1</code>, <code>KeyCode.ControlLeft</code> and so on. They refer to physical keys, named after a US keyboard layout.</p>
+<h2 id="mouse">Mouse</h2>
+<table>
+<thead>
+<tr>
+<th>Property / method</th>
+<th>Gives</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="xref" href="../api/Yak2D.IInput.html#Yak2D_IInput_MousePosition">MousePosition</a></td>
+<td>The pointer position in <strong>window pixels, from the top-left</strong>. Convert it to world or screen coordinates with the <a href="coordinatesystems.html#converting-between-spaces">coordinate transforms</a>.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Yak2D.IInput.html#Yak2D_IInput_MousePositionDeltaSinceLastFrame">MousePositionDeltaSinceLastFrame</a></td>
+<td>How far it moved since the last update.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Yak2D.IInput.html#Yak2D_IInput_MouseVelocity">MouseVelocity</a></td>
+<td>Its speed, in pixels per second.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Yak2D.IInput.html#Yak2D_IInput_IsMouseOverWindow">IsMouseOverWindow</a></td>
+<td>Whether the pointer is over the window (see the API notes for a caveat).</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Yak2D.MouseButton.html">MouseButton</a></td>
+<td><code>Left</code>, <code>Middle</code>, <code>Right</code>, and extra buttons.</td>
+</tr>
+</tbody>
+</table>
+<p>Hide the pointer with <a class="xref" href="../api/Yak2D.IDisplay.html#Yak2D_IDisplay_SetCursorVisible_">IDisplay.SetCursorVisible(false)</a>.</p>
+<h2 id="gamepads">Gamepads</h2>
+<p>Gamepads use the Xbox-style layout (via SDL's game controller support, which recognises most controllers):</p>
+<ul>
+<li><a class="xref" href="../api/Yak2D.IInput.html#Yak2D_IInput_ConnectedGamepadIds">ConnectedGamepadIds()</a> lists the ids of connected pads. Pass an id to every gamepad method.</li>
+<li><a class="xref" href="../api/Yak2D.GamepadButton.html">GamepadButton</a>: <code>A</code>, <code>B</code>, <code>X</code>, <code>Y</code>, <code>Back</code>, <code>Start</code>, <code>Guide</code>, <code>LeftShoulder</code>, <code>RightShoulder</code>, <code>LeftStick</code>, <code>RightStick</code>, <code>DPadUp</code>/<code>Down</code>/<code>Left</code>/<code>Right</code>.</li>
+<li><a class="xref" href="../api/Yak2D.IInput.html#Yak2D_IInput_GamepadAxisValue_">GamepadAxisValue(id, axis)</a> reads a <a class="xref" href="../api/Yak2D.GamepadAxis.html">GamepadAxis</a>: <code>LeftX</code>, <code>LeftY</code>, <code>RightX</code>, <code>RightY</code> (-1 to 1) and <code>TriggerLeft</code>, <code>TriggerRight</code>.</li>
+<li>The stick Y axes follow SDL's convention: <strong>pushing up gives a negative value</strong>. Negate it if your world has +Y up.</li>
+<li>Sticks rarely rest at exactly zero. Ignore small values (a &quot;dead zone&quot; of about 0.2).</li>
+<li>You receive <code>GamepadAdded</code> and <code>GamepadRemoved</code> <a href="lifecycle.html#framework-messages">messages</a> as pads come and go.</li>
+</ul>
+<h2 id="raw-input">Raw input</h2>
+<p><a class="xref" href="../api/Yak2D.IInput.html#Yak2D_IInput_RawVeldridInputSnapshot">RawVeldridInputSnapshot</a> exposes NeoVeldrid's underlying input snapshot for the current update, including the stream of typed characters (useful for text entry).</p>
+<h2 id="see-also">See also</h2>
+<ul>
+<li>Samples: <a href="https://github.com/AlzPatz/yak2d-samples/tree/master/src/Input_MouseAndKeyboardUsage">Input_MouseAndKeyboardUsage</a>, <a href="https://github.com/AlzPatz/yak2d-samples/tree/master/src/Input_GamepadUsage">Input_GamepadUsage</a></li>
+<li><a href="../tutorials/yakrun-2.html">Yak Run part 2</a> reads keyboard and gamepad for a platform game.</li>
+<li>Full example code: <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/master/code/Snippets/Application.cs">Application.cs</a> (<code>InputExample</code>)</li>
+</ul>
+
+</article>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          yak2D - Alex Paterson - MIT licence
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

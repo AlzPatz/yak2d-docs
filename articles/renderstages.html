@@ -1,105 +1,318 @@
 <!DOCTYPE html>
-<!--[if IE]><![endif]-->
 <html>
-
   <head>
     <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <title>RenderStages </title>
-      <meta name="viewport" content="width=device-width">
-      <meta name="title" content="RenderStages ">
-    
-    
-      <link rel="shortcut icon" href="../favicon.ico">
-      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
-      <link rel="stylesheet" href="../styles/docfx.css">
-      <link rel="stylesheet" href="../styles/main.css">
-      <meta property="docfx:navrel" content="../toc.html">
-      <meta property="docfx:tocrel" content="toc.html">
-    
-    
-    
+      <title>The render queue and render stages | yak2D </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="The render queue and render stages | yak2D ">
+      
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/AlzPatz/yak2d-docs-content/blob/master/articles/renderstages.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
   </head>
-  <body data-spy="scroll" data-target="#affix" data-offset="120">
-    <div id="wrapper">
-      <header>
 
-        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-
-              <a class="navbar-brand" href="../index.html">
-                <img id="logo" class="svg" src="../images/logo.png" alt="">
-              </a>
-            </div>
-            <div class="collapse navbar-collapse" id="navbar">
-              <form class="navbar-form navbar-right" role="search" id="search">
-                <div class="form-group">
-                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
-                </div>
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo.png" alt="yak2D">
+            yak2D
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
               </form>
             </div>
           </div>
-        </nav>
-
-        <div class="subnav navbar navbar-default">
-          <div class="container hide-when-search" id="breadcrumb">
-            <ul class="breadcrumb">
-              <li></li>
-            </ul>
-          </div>
         </div>
-      </header>
-      <div role="main" class="container body-content hide-when-search">
+      </nav>
+    </header>
 
-        <div class="sidenav hide-when-search">
-          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
-          <div class="sidetoggle collapse" id="sidetoggle">
-            <div id="sidetoc"></div>
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
           </div>
-        </div>
-        <div class="article row grid-right">
-          <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="uid_renderstages">
-<h1 id="renderstages">RenderStages</h1>
-
-
-</article>
-          </div>
-
-          <div class="hidden-sm col-md-2" role="complementary">
-            <div class="sideaffix">
-              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-                <h5>In this article</h5>
-                <div></div>
-              </nav>
-            </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
           </div>
         </div>
       </div>
 
-      <footer>
-        <div class="grad-bottom"></div>
-        <div class="footer">
-          <div class="container">
-            <span class="pull-right">
-              <a href="#top">Back to top</a>
-            </span>
-      yak2D - Alex Paterson
-      
-          </div>
-        </div>
-      </footer>
-    </div>
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
 
-    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
-    <script type="text/javascript" src="../styles/docfx.js"></script>
-    <script type="text/javascript" src="../styles/main.js"></script>
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="uid_renderstages">
+<h1 id="the-render-queue-and-render-stages">The render queue and render stages</h1>
+
+<p>Each frame, <a class="xref" href="../api/Yak2D.IApplication.html#Yak2D_IApplication_Rendering_">Rendering()</a> builds a <strong>render queue</strong>: the ordered list of GPU operations that produces the frame. Every call you make on the <a class="xref" href="../api/Yak2D.IRenderQueue.html">IRenderQueue</a> (<code>q</code>) adds one step. When <code>Rendering()</code> returns, yak2D runs the steps in order.</p>
+<h2 id="what-can-go-in-the-queue">What can go in the queue</h2>
+<table>
+<thead>
+<tr>
+<th>Call</th>
+<th>Does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="xref" href="../api/Yak2D.IRenderQueue.html#Yak2D_IRenderQueue_ClearColour_">ClearColour(target, colour)</a></td>
+<td>Fill a render target with a colour.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Yak2D.IRenderQueue.html#Yak2D_IRenderQueue_ClearDepth_">ClearDepth(target)</a></td>
+<td>Reset a render target's depth buffer.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Yak2D.IRenderQueue.html#Yak2D_IRenderQueue_Draw_">Draw(drawStage, camera, target)</a></td>
+<td>Render a <a href="drawing.html">draw stage</a> through a 2D camera.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Yak2D.IRenderQueue.html#Yak2D_IRenderQueue_Copy_">Copy(source, target)</a></td>
+<td>Copy (and stretch) one surface onto another.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Yak2D.IRenderQueue.html#Yak2D_IRenderQueue_ColourEffects_">ColourEffects(stage, source, target)</a></td>
+<td><a href="effects.html#colour-effects">Colour effects</a>.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Yak2D.IRenderQueue.html#Yak2D_IRenderQueue_Bloom_">Bloom(stage, source, target)</a></td>
+<td><a href="effects.html#bloom">Bloom</a>.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Yak2D.IRenderQueue.html#Yak2D_IRenderQueue_Blur_">Blur(stage, source, target)</a>, <a class="xref" href="../api/Yak2D.IRenderQueue.html#Yak2D_IRenderQueue_Blur1D_">Blur1D(...)</a></td>
+<td><a href="effects.html#blur">Blur</a>.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Yak2D.IRenderQueue.html#Yak2D_IRenderQueue_StyleEffects_">StyleEffects(stage, source, target)</a></td>
+<td><a href="effects.html#style-effects">Style effects</a>.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Yak2D.IRenderQueue.html#Yak2D_IRenderQueue_Mix_">Mix(stage, mix, t0, t1, t2, t3, target)</a></td>
+<td><a href="effects.html#mix">Mix</a> up to four surfaces.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Yak2D.IRenderQueue.html#Yak2D_IRenderQueue_Distortion_">Distortion(stage, camera, source, target)</a></td>
+<td><a href="distortion.html">Distortion</a>.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Yak2D.IRenderQueue.html#Yak2D_IRenderQueue_MeshRender_">MeshRender(stage, camera3D, source, target)</a></td>
+<td><a href="mesh.html">3D mesh</a>.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Yak2D.IRenderQueue.html#Yak2D_IRenderQueue_CustomShader_">CustomShader(stage, t0, t1, t2, t3, target)</a></td>
+<td>Your own <a href="customshaders.html">shader</a>.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Yak2D.IRenderQueue.html#Yak2D_IRenderQueue_CustomVeldrid_">CustomVeldrid(stage, t0, t1, t2, t3, target)</a></td>
+<td>Your own <a href="customveldrid.html">NeoVeldrid code</a>.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Yak2D.IRenderQueue.html#Yak2D_IRenderQueue_CopySurfaceData_">CopySurfaceData(stage, source)</a></td>
+<td><a href="readback.html">Copy pixels back to the CPU</a>.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Yak2D.IRenderQueue.html#Yak2D_IRenderQueue_SetViewport_">SetViewport(viewport)</a>, <a class="xref" href="../api/Yak2D.IRenderQueue.html#Yak2D_IRenderQueue_RemoveViewport">RemoveViewport()</a></td>
+<td>Limit the following steps to part of the surface (<a href="viewports.html">viewports</a>).</td>
+</tr>
+</tbody>
+</table>
+<h2 id="building-a-pipeline">Building a pipeline</h2>
+<p>The pattern is always the same: each step reads one or more surfaces and writes to a render target. Chaining steps through render targets builds up a pipeline. This is the one from the <a href="../tutorials/yakrun-4.html">Yak Run tutorial</a>:</p>
+<pre><code class="lang-csharp">public void Rendering(IRenderQueue q, IRenderTarget windowRenderTarget)
+{
+    // 1. Draw the scene into an off-screen render target: the background, then the level on top
+    q.Draw(_backgroundStage, _backgroundCamera, _worldTarget);
+    q.ClearDepth(_worldTarget);
+    q.Draw(_levelStage, _camera, _worldTarget);
+
+    // 2. Post-processing: each stage reads one surface and writes the next
+    q.Distortion(_distortionStage, _camera, _worldTarget, _distortedTarget);
+    q.ColourEffects(_colourStage, _distortedTarget, _colouredTarget);
+    q.Bloom(_bloomStage, _colouredTarget, windowRenderTarget);
+
+    // 3. The HUD is drawn straight onto the window, on top of (and unaffected by) the effects
+    q.ClearDepth(windowRenderTarget);
+    q.Draw(_hudStage, _hudCamera, windowRenderTarget);
+}
+</code></pre>
+<pre><code class="lang-mermaid">flowchart LR
+    BG[(background&lt;br/&gt;draw stage)] -- &quot;Draw (background camera)&quot; --&gt; W1[/world target/]
+    LV[(level&lt;br/&gt;draw stage)] -- &quot;Draw (main camera)&quot; --&gt; W1
+    W1 -- Distortion --&gt; W2[/distorted target/]
+    W2 -- ColourEffects --&gt; W3[/coloured target/]
+    W3 -- Bloom --&gt; WIN[/window/]
+    HUD[(HUD&lt;br/&gt;draw stage)] -- &quot;Draw (HUD camera)&quot; --&gt; WIN
+</code></pre>
+<p>A few rules to keep in mind:</p>
+<ul>
+<li><strong>Order matters.</strong> Steps run in the order you add them. A step sees everything earlier steps rendered into its source.</li>
+<li><strong>Don't read and write the same surface in one step.</strong> Use two render targets and go back and forth between them if you need several effects in a row.</li>
+<li><strong>Effect stages fill the whole target</strong> (or the whole viewport), stretching their source to fit.</li>
+<li><strong>Clear what you need.</strong> Render targets with auto-clear on start each frame empty; the window and other surfaces only change when you clear or render onto them. Clear depth between draw stages rendered to the same target when the second should be on top (see <a href="drawing.html#depth-between-draw-stages">Drawing</a>).</li>
+</ul>
+<h2 id="render-stages">Render stages</h2>
+<p>Everything except clears, copies and viewports is done by a <strong>render stage</strong>. Stages are <a href="resources.html">resources</a>: create them once in <code>CreateResources()</code> with <code>yak.Stages.Create...Stage()</code>, then use them every frame.</p>
+<table>
+<thead>
+<tr>
+<th>Stage</th>
+<th>Create with</th>
+<th>Configure with</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="drawing.html">Draw</a></td>
+<td><a class="xref" href="../api/Yak2D.IStages.html#Yak2D_IStages_CreateDrawStage_">CreateDrawStage()</a></td>
+<td>draw requests each frame</td>
+</tr>
+<tr>
+<td><a href="effects.html#colour-effects">Colour effects</a></td>
+<td><a class="xref" href="../api/Yak2D.IStages.html#Yak2D_IStages_CreateColourEffectsStage">CreateColourEffectsStage()</a></td>
+<td><a class="xref" href="../api/Yak2D.IStages.html#Yak2D_IStages_SetColourEffectsConfig_">SetColourEffectsConfig()</a></td>
+</tr>
+<tr>
+<td><a href="effects.html#bloom">Bloom</a></td>
+<td><a class="xref" href="../api/Yak2D.IStages.html#Yak2D_IStages_CreateBloomStage_">CreateBloomStage()</a></td>
+<td><a class="xref" href="../api/Yak2D.IStages.html#Yak2D_IStages_SetBloomConfig_">SetBloomConfig()</a></td>
+</tr>
+<tr>
+<td><a href="effects.html#blur">Blur</a></td>
+<td><a class="xref" href="../api/Yak2D.IStages.html#Yak2D_IStages_CreateBlurStage_">CreateBlurStage()</a></td>
+<td><a class="xref" href="../api/Yak2D.IStages.html#Yak2D_IStages_SetBlurConfig_">SetBlurConfig()</a></td>
+</tr>
+<tr>
+<td><a href="effects.html#blur">Blur1D</a></td>
+<td><a class="xref" href="../api/Yak2D.IStages.html#Yak2D_IStages_CreateBlur1DStage_">CreateBlur1DStage()</a></td>
+<td><a class="xref" href="../api/Yak2D.IStages.html#Yak2D_IStages_SetBlur1DConfig_">SetBlur1DConfig()</a></td>
+</tr>
+<tr>
+<td><a href="effects.html#style-effects">Style effects</a></td>
+<td><a class="xref" href="../api/Yak2D.IStages.html#Yak2D_IStages_CreateStyleEffectsStage">CreateStyleEffectsStage()</a></td>
+<td><code>SetStyleEffects...Config()</code></td>
+</tr>
+<tr>
+<td><a href="effects.html#mix">Mix</a></td>
+<td><a class="xref" href="../api/Yak2D.IStages.html#Yak2D_IStages_CreateMixStage">CreateMixStage()</a></td>
+<td><a class="xref" href="../api/Yak2D.IStages.html#Yak2D_IStages_SetMixStageProperties_">SetMixStageProperties()</a></td>
+</tr>
+<tr>
+<td><a href="distortion.html">Distortion</a></td>
+<td><a class="xref" href="../api/Yak2D.IStages.html#Yak2D_IStages_CreateDistortionStage_">CreateDistortionStage()</a></td>
+<td><a class="xref" href="../api/Yak2D.IStages.html#Yak2D_IStages_SetDistortionConfig_">SetDistortionConfig()</a> + height map drawing</td>
+</tr>
+<tr>
+<td><a href="mesh.html">Mesh render</a></td>
+<td><a class="xref" href="../api/Yak2D.IStages.html#Yak2D_IStages_CreateMeshRenderStage">CreateMeshRenderStage()</a></td>
+<td><code>SetMeshRender...()</code></td>
+</tr>
+<tr>
+<td><a href="customshaders.html">Custom shader</a></td>
+<td><a class="xref" href="../api/Yak2D.IStages.html#Yak2D_IStages_CreateCustomShaderStage_">CreateCustomShaderStage()</a></td>
+<td><a class="xref" href="../api/Yak2D.IStages.html#Yak2D_IStages_SetCustomShaderUniformValues_">SetCustomShaderUniformValues()</a></td>
+</tr>
+<tr>
+<td><a href="customveldrid.html">Custom Veldrid</a></td>
+<td><a class="xref" href="../api/Yak2D.IStages.html#Yak2D_IStages_CreateCustomVeldridStage_">CreateCustomVeldridStage()</a></td>
+<td>your own code</td>
+</tr>
+<tr>
+<td><a href="readback.html">Surface copy</a></td>
+<td><a class="xref" href="../api/Yak2D.IStages.html#Yak2D_IStages_CreateSurfaceCopyDataStage_">CreateSurfaceCopyDataStage()</a></td>
+<td><a class="xref" href="../api/Yak2D.IStages.html#Yak2D_IStages_SetSurfaceCopyDataStageCallback_">SetSurfaceCopyDataStageCallback()</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="one-configuration-per-stage-per-frame">One configuration per stage per frame</h3>
+<p>A stage has a single configuration, and it applies to every use of that stage within a frame. If you want the same effect twice in one frame with different settings (say, a light blur and a heavy blur), create <strong>two stages</strong>. Stages are cheap.</p>
+<h3 id="smooth-transitions">Smooth transitions</h3>
+<p>Most <code>Set...Config()</code> methods take an optional <code>transitionSeconds</code>. Instead of switching at once, the stage blends from its current settings to the new ones over that time. Fades, flashes and gradual changes need no code of your own:</p>
+<pre><code class="lang-csharp">public override bool Update(IServices yak, float secondsSinceLastUpdate)
+{
+    if (yak.Input.WasKeyPressedThisFrame(KeyCode.Space))
+    {
+        _grey = !_grey;
+        var target = new ColourEffectConfiguration { Opacity = 1.0f, GrayScale = _grey ? 1.0f : 0.0f };
+
+        // The stage blends from its current settings to the new ones over 1.5 seconds
+        yak.Stages.SetColourEffectsConfig(_colour, target, 1.5f);
+    }
+    return base.Update(yak, secondsSinceLastUpdate);
+}
+</code></pre>
+<p>Yak Run uses this to fade the world to grey when the yak falls, and back again when it reappears.</p>
+<h3 id="destroying-stages">Destroying stages</h3>
+<p><a class="xref" href="../api/Yak2D.IStages.html#Yak2D_IStages_DestroyStage_">DestroyStage()</a> destroys one stage; <a class="xref" href="../api/Yak2D.IStages.html#Yak2D_IStages_DestroyAllStages">DestroyAllStages()</a> destroys them all. <a class="xref" href="../api/Yak2D.IStages.html#Yak2D_IStages_CountRenderStages">CountRenderStages</a> tells you how many exist.</p>
+<h2 id="see-also">See also</h2>
+<ul>
+<li><a href="surfaces.html">Surfaces and render targets</a></li>
+<li><a href="effects.html">Post-processing effects</a></li>
+<li>Sample: <a href="https://github.com/AlzPatz/yak2d-samples/tree/master/src/DrawingAndEffects_PrerenderingTexturesForUseLater">DrawingAndEffects_PrerenderingTexturesForUseLater</a> chains several stages to pre-render an animation</li>
+</ul>
+
+</article>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          yak2D - Alex Paterson - MIT licence
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

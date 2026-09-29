@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Post-processing effects | yak2D </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Post-processing effects | yak2D ">
+      
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/AlzPatz/yak2d-docs-content/blob/master/articles/effects.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo.png" alt="yak2D">
+            yak2D
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="uid_effects">
+<h1 id="post-processing-effects">Post-processing effects</h1>
+
+<p>yak2D's effect stages read a surface and write a changed version of it to a render target. The source can be a loaded texture, or (more usually) a render target you have just drawn your scene into. See <a href="renderstages.html">The render queue and render stages</a> for how stages fit together.</p>
+<p>Every effect follows the same three steps:</p>
+<ol>
+<li><strong>Create</strong> the stage in <code>CreateResources()</code>.</li>
+<li><strong>Configure</strong> it (once, or whenever you like, optionally with a smooth transition).</li>
+<li><strong>Use</strong> it in the render queue: <code>q.Effect(stage, source, target)</code>.</li>
+</ol>
+<p>The examples below show &quot;before and after&quot; side by side using <a href="viewports.html">viewports</a>. Their full source is in <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/master/code/Snippets/Effects.cs">Effects.cs</a>.</p>
+<h2 id="colour-effects">Colour effects</h2>
+<p><img src="../images/guide/effects-colour.png" alt="Colour effects"></p>
+<p>A colour effects stage (<a class="xref" href="../api/Yak2D.IColourEffectsStage.html">IColourEffectsStage</a>) can combine several simple colour changes:</p>
+<pre><code class="lang-csharp">public override bool CreateResources(IServices yak)
+{
+    _yak = yak.Surfaces.LoadTexture(&quot;yakphoto&quot;, AssetSourceEnum.Embedded);
+
+    // A stage has one configuration per frame, so three different looks need three stages
+    _grey = yak.Stages.CreateColourEffectsStage();
+    _tint = yak.Stages.CreateColourEffectsStage();
+    _negative = yak.Stages.CreateColourEffectsStage();
+
+    // Start from &quot;no effect&quot; (everything 0, full opacity) and switch on one effect at a time
+    var none = new ColourEffectConfiguration { Opacity = 1.0f };
+
+    var grey = none;
+    grey.GrayScale = 1.0f;
+    yak.Stages.SetColourEffectsConfig(_grey, grey);
+
+    var tint = none;
+    tint.Colourise = 1.0f;
+    tint.ColourForSingleColourAndColourise = Colour.Orange;
+    yak.Stages.SetColourEffectsConfig(_tint, tint);
+
+    var negative = none;
+    negative.Negative = 1.0f;
+    yak.Stages.SetColourEffectsConfig(_negative, negative);
+</code></pre><pre><code class="lang-csharp">public override void Rendering(IRenderQueue q, IRenderTarget windowRenderTarget)
+{
+    // Effects read a texture (any Texture or RenderTarget) and write to a render target. No draw stage needed
+    q.SetViewport(_quarters[0]);
+    q.Copy(_yak, windowRenderTarget);
+    q.SetViewport(_quarters[1]);
+    q.ColourEffects(_grey, _yak, windowRenderTarget);
+    q.SetViewport(_quarters[2]);
+    q.ColourEffects(_tint, _yak, windowRenderTarget);
+    q.SetViewport(_quarters[3]);
+    q.ColourEffects(_negative, _yak, windowRenderTarget);
+</code></pre>
+<p><a class="xref" href="../api/Yak2D.ColourEffectConfiguration.html">ColourEffectConfiguration</a> settings are applied in this order:</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Range</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ClearBackground</code>, <code>BackgroundClearColour</code></td>
+<td></td>
+<td>Optionally clear the whole target first.</td>
+</tr>
+<tr>
+<td><code>SingleColour</code></td>
+<td>0 to 1</td>
+<td>Blend towards a flat <code>ColourForSingleColourAndColourise</code> (1 = solid colour). Good for hit flashes.</td>
+</tr>
+<tr>
+<td><code>GrayScale</code></td>
+<td>0 to 1</td>
+<td>Blend towards grey (1 = fully grey).</td>
+</tr>
+<tr>
+<td><code>Colourise</code></td>
+<td>0 to 1</td>
+<td>Blend towards a version tinted with <code>ColourForSingleColourAndColourise</code> (sepia, night vision...).</td>
+</tr>
+<tr>
+<td><code>Negative</code></td>
+<td>0 to 1</td>
+<td>Blend towards the inverted image.</td>
+</tr>
+<tr>
+<td><code>Opacity</code></td>
+<td>0 to 1</td>
+<td>Multiply the result's colour and alpha. <strong>Set this to 1</strong>; a new configuration struct has it at 0, which gives a black result.</td>
+</tr>
+</tbody>
+</table>
+<p>With <code>transitionSeconds</code>, a stage fades smoothly to new settings, which makes fades to black, flashes and &quot;the world goes grey when you die&quot; effects very little code:</p>
+<pre><code class="lang-csharp">public override bool Update(IServices yak, float secondsSinceLastUpdate)
+{
+    if (yak.Input.WasKeyPressedThisFrame(KeyCode.Space))
+    {
+        _grey = !_grey;
+        var target = new ColourEffectConfiguration { Opacity = 1.0f, GrayScale = _grey ? 1.0f : 0.0f };
+
+        // The stage blends from its current settings to the new ones over 1.5 seconds
+        yak.Stages.SetColourEffectsConfig(_colour, target, 1.5f);
+    }
+    return base.Update(yak, secondsSinceLastUpdate);
+}
+</code></pre><h2 id="bloom">Bloom</h2>
+<p><img src="../images/guide/effects-bloom.png" alt="Bloom: before and after"></p>
+<p>Bloom makes bright areas glow, like a camera looking at a light. The stage keeps only the pixels brighter than a threshold, blurs them, and adds them back on top of the original:</p>
+<pre><code class="lang-csharp">public override bool CreateResources(IServices yak)
+{
+    _scene = yak.Stages.CreateDrawStage();
+    _camera = yak.Cameras.CreateCamera2D(480, 540);
+    _target = yak.Surfaces.CreateRenderTarget(480, 540);
+
+    // The bloom works on a smaller copy of the image: smaller is faster and spreads the glow further
+    _bloom = yak.Stages.CreateBloomStage(120, 135);
+    yak.Stages.SetBloomConfig(_bloom, new BloomEffectConfiguration
+    {
+        BrightnessThreshold = 0.6f,   // only pixels brighter than this (luminance, 0 to 1) glow
+        AdditiveMixAmount = 1.5f,     // how strongly the glow is added back on top
+        NumberOfBlurSamples = 8,      // up to 8
+        ReSamplerType = ResizeSamplerType.Average4x4
+    });
+</code></pre><pre><code class="lang-csharp">public override void Rendering(IRenderQueue q, IRenderTarget windowRenderTarget)
+{
+    q.Draw(_scene, _camera, _target);
+
+    q.SetViewport(_left);
+    q.Copy(_target, windowRenderTarget);
+
+    q.SetViewport(_right);
+    q.Bloom(_bloom, _target, windowRenderTarget);
+</code></pre>
+<p>The two numbers passed to <a class="xref" href="../api/Yak2D.IStages.html#Yak2D_IStages_CreateBloomStage_">CreateBloomStage()</a> are the size of the smaller surface the glow is worked out on. Smaller is faster and spreads the glow further, but is blockier; a quarter of the source size is a good starting point.</p>
+<p><a class="xref" href="../api/Yak2D.BloomEffectConfiguration.html">BloomEffectConfiguration</a>:</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>BrightnessThreshold</code></td>
+<td>Pixels with a <em>luminance</em> (perceived brightness: 0.2126 R + 0.7152 G + 0.0722 B) below this do not glow.</td>
+</tr>
+<tr>
+<td><code>AdditiveMixAmount</code></td>
+<td>How strongly the glow is added back. Can be more than 1.</td>
+</tr>
+<tr>
+<td><code>NumberOfBlurSamples</code></td>
+<td>Blur quality, 1 to 8.</td>
+</tr>
+<tr>
+<td><code>ReSamplerType</code></td>
+<td>How the image is shrunk: <code>NearestNeighbour</code>, <code>Average2x2</code> or <code>Average4x4</code> (smoothest).</td>
+</tr>
+</tbody>
+</table>
+<p>Luminance weights green heavily and blue hardly at all. In the picture above, the pink circle's luminance is only about 0.3, below the 0.6 threshold, so it does not glow at all, while the green text, cyan square and yellow triangle do. Choose colours with the threshold in mind: in <a href="../tutorials/yakrun-4.html">Yak Run</a> the stars glow but the (slightly greyer) clouds do not.</p>
+<h2 id="blur">Blur</h2>
+<p><img src="../images/guide/effects-blur.png" alt="Blur and directional blur"></p>
+<p><a class="xref" href="../api/Yak2D.IBlurStage.html">Blur</a> blurs in every direction; <a class="xref" href="../api/Yak2D.IBlur1DStage.html">Blur1D</a> blurs along one direction only, which gives a sense of speed:</p>
+<pre><code class="lang-csharp">public override bool CreateResources(IServices yak)
+{
+    _city = yak.Surfaces.LoadTexture(&quot;city&quot;, AssetSourceEnum.Embedded);
+
+    // As with bloom, the sample surface size trades quality for spread and speed
+    _blur = yak.Stages.CreateBlurStage(240, 135);
+    yak.Stages.SetBlurConfig(_blur, new BlurEffectConfiguration
+    {
+        MixAmount = 1.0f,   // 0 = original image, 1 = fully blurred
+        NumberOfBlurSamples = 8,
+        ReSamplerType = ResizeSamplerType.Average4x4
+    });
+
+    // Blur1D only blurs along one direction, e.g. for a sense of speed
+    _horizontal = yak.Stages.CreateBlur1DStage(240, 135);
+    yak.Stages.SetBlur1DConfig(_horizontal, new Blur1DEffectConfiguration
+    {
+        MixAmount = 1.0f,
+        NumberOfBlurSamples = 8,
+        BlurDirection = Vector2.UnitX,
+        ReSamplerType = ResizeSamplerType.Average4x4
+    });
+
+    _diagonal = yak.Stages.CreateBlur1DStage(240, 135);
+    yak.Stages.SetBlur1DConfig(_diagonal, new Blur1DEffectConfiguration
+    {
+        MixAmount = 1.0f,
+        NumberOfBlurSamples = 8,
+        BlurDirection = Vector2.Normalize(new Vector2(1.0f, 1.0f)),
+        ReSamplerType = ResizeSamplerType.Average4x4
+    });
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>MixAmount</code></td>
+<td>0 = the original, 1 = fully blurred. Animate it for focus pulls.</td>
+</tr>
+<tr>
+<td><code>NumberOfBlurSamples</code></td>
+<td>Blur quality, 1 to 8.</td>
+</tr>
+<tr>
+<td><code>BlurDirection</code> (Blur1D only)</td>
+<td>The direction to blur along, as a unit vector (e.g. <code>Vector2.UnitX</code> for horizontal).</td>
+</tr>
+<tr>
+<td><code>ReSamplerType</code></td>
+<td>As for bloom.</td>
+</tr>
+</tbody>
+</table>
+<p>As with bloom, the sample surface size given when creating the stage controls quality, speed and how far the blur spreads. A blurred copy of the game behind a pause menu is a classic use.</p>
+<h2 id="style-effects">Style effects</h2>
+<p><img src="../images/guide/effects-style.png" alt="Style effects"></p>
+<p>A style effects stage (<a class="xref" href="../api/Yak2D.IStyleEffectsStage.html">IStyleEffectsStage</a>) contains five retro and stylised effects, applied in this order: <strong>pixellate → edge detection → static → old movie → CRT</strong>. A new stage has them all switched off. Each has its own configuration method and a <code>PreSet(amount)</code> helper that gives good settings for an amount from 0 to 1:</p>
+<pre><code class="lang-csharp">public override bool CreateResources(IServices yak)
+{
+    _yak = yak.Surfaces.LoadTexture(&quot;yakphoto&quot;, AssetSourceEnum.Embedded);
+
+    _pixellate = yak.Stages.CreateStyleEffectsStage();
+    _edges = yak.Stages.CreateStyleEffectsStage();
+    _static = yak.Stages.CreateStyleEffectsStage();
+    _oldMovie = yak.Stages.CreateStyleEffectsStage();
+    _crt = yak.Stages.CreateStyleEffectsStage();
+
+    // Each effect has a PreSet(amount) helper that gives a sensible configuration for an amount from 0 to 1.
+    // A new style stage has every effect switched off, so these each switch on just one
+    yak.Stages.SetStyleEffectsPixellateConfig(_pixellate, PixellateConfiguration.PreSet(0.6f));
+    yak.Stages.SetStyleEffectsEdgeDetectionConfig(_edges, EdgeDetectionConfiguration.PreSet(1.0f));
+    yak.Stages.SetStyleEffectsStaticConfig(_static, StaticConfiguration.PreSet(0.5f));
+    yak.Stages.SetStyleEffectsOldMovieConfig(_oldMovie, OldMovieConfiguration.PreSet(0.8f));
+    yak.Stages.SetStyleEffectsCrtConfig(_crt, CrtEffectConfiguration.PreSet(1.0f, 320.0f / 270.0f));
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Effect</th>
+<th>Configuration</th>
+<th>Main settings</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pixellate</td>
+<td><a class="xref" href="../api/Yak2D.PixellateConfiguration.html">PixellateConfiguration</a></td>
+<td><code>NumXDivisions</code>, <code>NumYDivisions</code> (how many &quot;big pixels&quot; across and down), <code>Intensity</code>.</td>
+</tr>
+<tr>
+<td>Edge detection</td>
+<td><a class="xref" href="../api/Yak2D.EdgeDetectionConfiguration.html">EdgeDetectionConfiguration</a></td>
+<td><code>Intensity</code>; <code>IsFreichen</code> chooses the Frei-Chen filter instead of Sobel.</td>
+</tr>
+<tr>
+<td>Static</td>
+<td><a class="xref" href="../api/Yak2D.StaticConfiguration.html">StaticConfiguration</a></td>
+<td><code>Intensity</code>, <code>TimeSpeed</code> (how fast it changes), <code>TexelScaler</code> (size of the noise), <code>IgnoreTransparent</code>.</td>
+</tr>
+<tr>
+<td>Old movie</td>
+<td><a class="xref" href="../api/Yak2D.OldMovieConfiguration.html">OldMovieConfiguration</a></td>
+<td>Scratches, noise, dimming, reel rolls and over-exposure flicker. Start from <code>PreSet()</code> or <code>GenerateDefault()</code>.</td>
+</tr>
+<tr>
+<td>CRT</td>
+<td><a class="xref" href="../api/Yak2D.CrtEffectConfiguration.html">CrtEffectConfiguration</a></td>
+<td>Red/green/blue &quot;phosphor&quot; filtering and scanlines. <code>PreSet(amount, aspectRatio)</code>. Combine with a <a href="mesh.html">CRT-shaped mesh</a> for a curved old monitor.</td>
+</tr>
+</tbody>
+</table>
+<p><a class="xref" href="../api/Yak2D.IStages.html#Yak2D_IStages_SetStyleEffectsGroupConfig_">SetStyleEffectsGroupConfig()</a> sets all five at once with a <a class="xref" href="../api/Yak2D.StyleEffectGroupConfiguration.html">StyleEffectGroupConfiguration</a>. The static and old movie effects animate by themselves over time.</p>
+<h2 id="mix">Mix</h2>
+<p><img src="../images/guide/effects-mix.png" alt="Mixing textures"></p>
+<p>A mix stage (<a class="xref" href="../api/Yak2D.IMixStage.html">IMixStage</a>) blends up to four surfaces. <a class="xref" href="../api/Yak2D.IStages.html#Yak2D_IStages_SetMixStageProperties_">SetMixStageProperties()</a> takes a <code>Vector4</code> with the amount of each input (X for input 0, Y for input 1, and so on). An optional <strong>mask</strong> texture scales those amounts per pixel: its red channel for input 0, green for input 1, blue for input 2 and alpha for input 3.</p>
+<pre><code class="lang-csharp">public override bool CreateResources(IServices yak)
+{
+    _city = yak.Surfaces.LoadTexture(&quot;city&quot;, AssetSourceEnum.Embedded);
+    _yak = yak.Surfaces.LoadTexture(&quot;yakphoto&quot;, AssetSourceEnum.Embedded);
+
+    // Half and half of the first two inputs
+    _even = yak.Stages.CreateMixStage();
+    yak.Stages.SetMixStageProperties(_even, new Vector4(0.5f, 0.5f, 0.0f, 0.0f));
+
+    // Full amounts of each, but scaled per pixel by a mask texture
+    _masked = yak.Stages.CreateMixStage();
+    yak.Stages.SetMixStageProperties(_masked, new Vector4(1.0f, 1.0f, 0.0f, 0.0f));
+
+    // The mask is generated in code: its R channel is input 0's share of each pixel, G is input 1's.
+    // Here a circle of yak inside the city
+    const int size = 128;
+    var pixels = new Vector4[size * size];
+    for (var y = 0; y &lt; size; y++)
+    {
+        for (var x = 0; x &lt; size; x++)
+        {
+            var distance = Vector2.Distance(new Vector2(x, y), new Vector2(size / 2)) / (size / 2);
+            var yakAmount = Math.Clamp((0.8f - distance) * 5.0f, 0.0f, 1.0f);
+            pixels[(y * size) + x] = new Vector4(1.0f - yakAmount, yakAmount, 0.0f, 0.0f);
+        }
+    }
+    _mask = yak.Surfaces.CreateRgbaFromData(size, size, pixels);
+</code></pre><pre><code class="lang-csharp">public override void Rendering(IRenderQueue q, IRenderTarget windowRenderTarget)
+{
+    q.ClearColour(windowRenderTarget, Colour.DarkSlateGray);
+
+    q.SetViewport(_thirds[0]);
+    q.Copy(_mask, windowRenderTarget);
+
+    // Up to four inputs. Unused inputs, and the mask when it is not wanted, can be null
+    q.SetViewport(_thirds[1]);
+    q.Mix(_even, null, _city, _yak, null, null, windowRenderTarget);
+
+    q.SetViewport(_thirds[2]);
+    q.Mix(_masked, _mask, _city, _yak, null, null, windowRenderTarget);
+</code></pre>
+<p>Uses include cross-fading between scenes, revealing one image through another, and blending day and night versions of a scene.</p>
+<h2 id="copy">Copy</h2>
+<p>Not strictly an effect, but <a class="xref" href="../api/Yak2D.IRenderQueue.html#Yak2D_IRenderQueue_Copy_">q.Copy(source, target)</a> is the simplest step of all: it stretches any surface onto a render target, with no stage needed.</p>
+<h2 id="performance">Performance</h2>
+<p>Each effect is one or more full-screen passes over its target, so cost grows with the target's size. Blur and bloom do most of their work on the smaller sample surface given when the stage is created, so reducing that size is the quickest way to make them cheaper. Rendering the whole pipeline at a fixed resolution (for example 960 x 540 render targets) and letting the last step stretch it to the window keeps the cost the same on any display.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p><strong>Known issue:</strong> partly transparent shapes drawn onto a render target leave its alpha slightly below 1 there, and the colour effects and distortion stages then show those pixels darker than expected. See <a href="drawing.html#blend-states">Drawing: Blend states</a>.</p>
+</div>
+<h2 id="see-also">See also</h2>
+<ul>
+<li><a href="distortion.html">Distortion</a>, <a href="mesh.html">3D meshes</a>, <a href="customshaders.html">Custom shaders</a></li>
+<li>Samples: <a href="https://github.com/AlzPatz/yak2d-samples/tree/master/src/Bloom_Example">Bloom_Example</a>, <a href="https://github.com/AlzPatz/yak2d-samples/tree/master/src/Blur_Example">Blur_Example</a>, <a href="https://github.com/AlzPatz/yak2d-samples/tree/master/src/ColourEffects_Example">ColourEffects_Example</a>, <a href="https://github.com/AlzPatz/yak2d-samples/tree/master/src/StyleEffects_CRT">StyleEffects_CRT</a>, <a href="https://github.com/AlzPatz/yak2d-samples/tree/master/src/StyleEffects_OldMovie">StyleEffects_OldMovie</a>, <a href="https://github.com/AlzPatz/yak2d-samples/tree/master/src/Mix_SimpleWholeTextureMixingWithFactors">Mix_SimpleWholeTextureMixingWithFactors</a>, <a href="https://github.com/AlzPatz/yak2d-samples/tree/master/src/Mix_UsingATextureForPerPixelMixing">Mix_UsingATextureForPerPixelMixing</a></li>
+</ul>
+
+</article>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          yak2D - Alex Paterson - MIT licence
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

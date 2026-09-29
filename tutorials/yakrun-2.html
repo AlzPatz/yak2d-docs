@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Yak Run, part 2: running and jumping | yak2D </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Yak Run, part 2: running and jumping | yak2D ">
+      
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/AlzPatz/yak2d-docs-content/blob/master/tutorials/yakrun-2.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo.png" alt="yak2D">
+            yak2D
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="uid_tut_yakrun2">
+<h1 id="yak-run-part-2-running-and-jumping">Yak Run, part 2: running and jumping</h1>
+
+<p>In <a href="yakrun-1.html">part 1</a> the yak stood still. Now it runs, jumps, falls and lands, and bumps into things. Along the way you will see how yak2D's update loop and input work.</p>
+<p><img src="../images/yakrun/part2.png" alt="The yak jumping between blocks"></p>
+<p><strong>You will learn:</strong> reading the keyboard and gamepads, &quot;held&quot; versus &quot;pressed&quot; input, fixed update steps, simple platform physics with collisions, and animating a sprite by stretching it.</p>
+<p>The finished code for this part: <a href="https://github.com/AlzPatz/yak2d-docs-content/tree/master/code/YakRun/Part2">code/YakRun/Part2</a>.</p>
+<h2 id="a-box-type">A box type</h2>
+<p>Platforms and the yak's collision area are all rectangles, so we start with a small rectangle type. Create <code>Box.cs</code>:</p>
+<pre><code class="lang-csharp">using System.Numerics;
+
+namespace YakRun;
+
+// An axis-aligned rectangle in world units. World space has +Y pointing up,
+// so Bottom is the smaller Y value and Top the larger
+public readonly record struct Box(float Left, float Bottom, float Width, float Height)
+{
+    public float Right =&gt; Left + Width;
+    public float Top =&gt; Bottom + Height;
+    public Vector2 Centre =&gt; new Vector2(Left + (0.5f * Width), Bottom + (0.5f * Height));
+
+    public static Box FromCentre(Vector2 centre, float width, float height) =&gt;
+        new Box(centre.X - (0.5f * width), centre.Y - (0.5f * height), width, height);
+
+    // Strict inequalities, so boxes that are only touching (e.g. standing on the ground) do not overlap
+    public bool Overlaps(Box other) =&gt;
+        Left &lt; other.Right &amp;&amp; Right &gt; other.Left &amp;&amp; Bottom &lt; other.Top &amp;&amp; Top &gt; other.Bottom;
+}
+</code></pre>
+<p>Remember that in yak2D's world space <strong>+Y is up</strong>, so a box's <code>Bottom</code> is its smaller Y value. <code>Overlaps</code> uses <code>&lt;</code> and <code>&gt;</code> rather than <code>&lt;=</code> and <code>&gt;=</code>, so a yak standing exactly on top of a platform is touching it, but not overlapping it.</p>
+<h2 id="the-yak-class">The Yak class</h2>
+<p>Create <code>Yak.cs</code>. The yak has a position, a velocity, and a few tuning numbers.</p>
+<h3 id="tuning">Tuning</h3>
+<pre><code class="lang-csharp">// The collision box. The sprite is drawn a little larger than this
+public const float Width = 64.0f;
+public const float Height = 60.0f;
+
+private const float SpriteWidth = 84.0f;
+private const float SpriteHeight = SpriteWidth * (228.0f / 256.0f); // keep the texture's aspect ratio
+
+private const float RunSpeed = 380.0f;       // units per second
+private const float Acceleration = 2600.0f;  // units per second, per second
+private const float Gravity = 2400.0f;
+private const float JumpSpeed = 960.0f;
+private const float MaxFallSpeed = 1500.0f;
+</code></pre>
+<p>Positions are in world units, which at the camera's zoom of 1 are the same size as screen pixels in a 960 x 540 window. Speeds are in units per second, and accelerations in units per second per second. These numbers are simply what felt good: try changing them.</p>
+<h3 id="state">State</h3>
+<pre><code class="lang-csharp">public Vector2 Position;   // centre of the collision box, in world units
+public Vector2 Velocity;
+public bool OnGround { get; private set; }
+
+private float _runCycle;   // advances while running, drives the bobbing animation
+
+public Box Bounds =&gt; Box.FromCentre(Position, Width, Height);
+
+public Yak(Vector2 start)
+{
+    Position = start;
+}
+</code></pre>
+<p><code>Position</code> is the centre of the yak's collision box. It is a <em>field</em> rather than a property so that <code>Position.X += ...</code> works on the <code>Vector2</code> directly.</p>
+<h3 id="moving">Moving</h3>
+<pre><code class="lang-csharp">// moveInput is -1 (left) to +1 (right). Called once per fixed update step
+public void Update(float seconds, float moveInput, bool jumpPressed, IReadOnlyList&lt;Box&gt; platforms)
+{
+    // Ease towards the target running speed, so starting and stopping feel smooth
+    Velocity.X = MoveTowards(Velocity.X, moveInput * RunSpeed, Acceleration * seconds);
+
+    if (jumpPressed &amp;&amp; OnGround)
+    {
+        Velocity.Y = JumpSpeed;
+    }
+
+    Velocity.Y = MathF.Max(Velocity.Y - (Gravity * seconds), -MaxFallSpeed);
+
+    // Move one axis at a time, pushing the yak back out of anything it now overlaps
+    Position.X += Velocity.X * seconds;
+    foreach (var platform in platforms)
+    {
+        if (Bounds.Overlaps(platform))
+        {
+            Position.X = Velocity.X &gt; 0.0f ? platform.Left - (0.5f * Width) : platform.Right + (0.5f * Width);
+            Velocity.X = 0.0f;
+        }
+    }
+
+    Position.Y += Velocity.Y * seconds;
+    OnGround = false;
+    foreach (var platform in platforms)
+    {
+        if (Bounds.Overlaps(platform))
+        {
+            if (Velocity.Y &lt; 0.0f)
+            {
+                Position.Y = platform.Top + (0.5f * Height); // landed on top
+                OnGround = true;
+            }
+            else
+            {
+                Position.Y = platform.Bottom - (0.5f * Height); // bumped our head
+            }
+            Velocity.Y = 0.0f;
+        }
+    }
+
+    var running = OnGround &amp;&amp; MathF.Abs(Velocity.X) &gt; 10.0f;
+    _runCycle = running ? _runCycle + (seconds * 16.0f) : 0.0f;
+}
+
+private static float MoveTowards(float current, float target, float maxChange)
+{
+    var difference = target - current;
+    return MathF.Abs(difference) &lt;= maxChange ? target : current + (MathF.Sign(difference) * maxChange);
+}
+</code></pre>
+<p>This runs once per update step. <code>seconds</code> is the length of the step, so multiplying every speed and acceleration by it makes the yak move at the same real-world speed whatever the step length.</p>
+<ol>
+<li><strong>Horizontal speed</strong> eases towards the target (<code>moveInput * RunSpeed</code>) at a fixed rate, so the yak takes a moment to get going and to stop.</li>
+<li><strong>Jumping</strong> only works when standing on something: it sets an upward velocity.</li>
+<li><strong>Gravity</strong> pulls the velocity down every step, up to a maximum falling speed.</li>
+<li><strong>Collisions</strong> are handled one axis at a time. First the yak moves horizontally; if it now overlaps a platform, it is pushed back to the platform's side. Then it moves vertically; if it overlaps, it is pushed out above (it has landed) or below (it bumped its head). Handling the axes separately means the yak slides neatly along floors and walls.</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>By default yak2D runs updates at a <strong>fixed</strong> 120 steps per second, independently of how fast frames are drawn. Physics like this behaves identically on every computer. yak2D may occasionally run one shorter step just before a frame is drawn, to keep motion smooth, which is another reason to always use the <code>seconds</code> value you are given. See <a href="../articles/lifecycle.html#update-timing">Application lifecycle: Update timing</a>.</p>
+</div>
+<h3 id="drawing">Drawing</h3>
+<pre><code class="lang-csharp">public void Draw(IDrawing draw, IDrawStage stage, ITexture texture)
+{
+    // A little squash and stretch: bob while running, stretch upwards while in the air
+    var bob = MathF.Sin(_runCycle);
+    var scaleX = OnGround ? 1.0f + (0.05f * bob) : 0.9f;
+    var scaleY = OnGround ? 1.0f - (0.07f * bob) : 1.12f;
+
+    var width = SpriteWidth * scaleX;
+    var height = SpriteHeight * scaleY;
+
+    // Keep the sprite's feet on the bottom of the collision box whatever its height
+    var centre = new Vector2(Position.X, Position.Y - (0.5f * Height) + (0.5f * height));
+
+    // Lean in the direction of travel (rotation is clockwise, in radians)
+    var lean = 0.15f * (Velocity.X / RunSpeed);
+
+    draw.Helpers.DrawTexturedQuad(stage,
+                                  CoordinateSpace.World,
+                                  texture,
+                                  Colour.White,
+                                  centre,
+                                  width,
+                                  height,
+                                  depth: 0.5f,
+                                  layer: 2,
+                                  rotation_clockwise_radians: lean);
+}
+</code></pre>
+<p>The yak is one still image, but a little squash and stretch makes it feel alive:</p>
+<ul>
+<li>While running, a sine wave bobs its width and height in opposite directions, so it looks like it is bounding along.</li>
+<li>In the air it is stretched tall and thin.</li>
+<li>It leans in the direction it is moving, using the quad's <code>rotation_clockwise_radians</code>.</li>
+</ul>
+<p>Because the height changes, the sprite's centre is moved so its feet stay on the bottom of the collision box. The yak is drawn on <strong>layer 2</strong>, which will keep it in front of the level we build in part 3.</p>
+<h2 id="changes-to-gamecs">Changes to Game.cs</h2>
+<h3 id="fields-and-start-up">Fields and start up</h3>
+<pre><code class="lang-csharp">// Game state
+private Yak _yak;
+
+// The solid things the yak can stand on: the ground and two blocks
+private readonly List&lt;Box&gt; _platforms = new List&lt;Box&gt;
+{
+    new Box(-480.0f, -600.0f, 960.0f, 525.0f),
+    new Box(120.0f, -75.0f, 160.0f, 70.0f),
+    new Box(-330.0f, -75.0f, 110.0f, 150.0f),
+};
+
+// yak2D resources
+private ITexture _yakTexture;
+private IDrawStage _drawStage;
+private ICamera2D _camera;
+</code></pre><pre><code class="lang-csharp">public StartupConfig Configure()
+{
+    return StartupConfig.Default(960, 540, &quot;Yak Run&quot;, false);
+}
+
+public void OnStartup()
+{
+    _yak = new Yak(new Vector2(-100.0f, -45.0f));
+}
+</code></pre>
+<p>The platforms are plain C# data: the ground and two blocks to jump on. The <code>Yak</code> is created in <code>OnStartup()</code>. Game objects like these are ordinary C# objects, not yak2D resources, so they survive a graphics device reset untouched.</p>
+<h3 id="reading-the-controls">Reading the controls</h3>
+<pre><code class="lang-csharp">public bool Update(IServices yak, float secondsSinceLastUpdate)
+{
+    var input = yak.Input;
+
+    if (input.WasKeyPressedThisFrame(KeyCode.Escape))
+    {
+        return false;
+    }
+
+    var (move, jump) = ReadControls(input);
+
+    _yak.Update(secondsSinceLastUpdate, move, jump, _platforms);
+
+    return true;
+}
+
+private static (float move, bool jump) ReadControls(IInput input)
+{
+    var move = 0.0f;
+    if (input.IsKeyCurrentlyPressed(KeyCode.Left) || input.IsKeyCurrentlyPressed(KeyCode.A)) move -= 1.0f;
+    if (input.IsKeyCurrentlyPressed(KeyCode.Right) || input.IsKeyCurrentlyPressed(KeyCode.D)) move += 1.0f;
+
+    // &quot;Pressed this frame&quot; is only true for the first update after the key goes down,
+    // so holding space does not make the yak bounce continuously
+    var jump = input.WasKeyPressedThisFrame(KeyCode.Space) ||
+               input.WasKeyPressedThisFrame(KeyCode.Up) ||
+               input.WasKeyPressedThisFrame(KeyCode.W);
+
+    // Any connected gamepad works too: left stick to run, A to jump
+    foreach (var id in input.ConnectedGamepadIds())
+    {
+        var stick = input.GamepadAxisValue(id, GamepadAxis.LeftX);
+        if (MathF.Abs(stick) &gt; 0.25f)
+        {
+            move = stick;
+        }
+        jump |= input.WasGamepadButtonPressedThisFrame(id, GamepadButton.A);
+    }
+
+    return (Math.Clamp(move, -1.0f, 1.0f), jump);
+}
+
+public void PreDrawing(IServices yak, float secondsSinceLastDraw, float secondsSinceLastUpdate) { }
+</code></pre>
+<p>yak2D's input service can answer three questions about each key or button:</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>True for</th>
+<th>Used for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>IsKeyCurrentlyPressed</code></td>
+<td>every update while the key is down</td>
+<td>running</td>
+</tr>
+<tr>
+<td><code>WasKeyPressedThisFrame</code></td>
+<td>only the first update after it goes down</td>
+<td>jumping</td>
+</tr>
+<tr>
+<td><code>WasKeyReleasedThisFrame</code></td>
+<td>only the first update after it comes up</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Using &quot;pressed this frame&quot; for jumping means holding space makes one jump, not a jump every time the yak lands.</p>
+<p>Gamepads work the same way, using an id for each connected pad. The left stick's X axis gives a value from -1 to 1, so a gentle push makes a gentle run. Values near zero are ignored, because sticks rarely rest exactly at zero.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>&quot;This frame&quot; means <em>this update step</em>. Always check pressed and released in <code>Update()</code>, not in <code>Drawing()</code>. See <a href="../articles/input.html">Input</a>.</p>
+</div>
+<h3 id="drawing-1">Drawing</h3>
+<pre><code class="lang-csharp">public void Drawing(IDrawing draw, IFps fps, IInput input, ICoordinateTransforms transforms, float secondsSinceLastDraw, float secondsSinceLastUpdate)
+{
+    foreach (var platform in _platforms)
+    {
+        draw.Helpers.DrawColouredQuad(_drawStage, CoordinateSpace.World, Colour.ForestGreen,
+                                      platform.Centre, platform.Width, platform.Height, 0.9f);
+    }
+
+    _yak.Draw(draw, _drawStage, _yakTexture);
+}
+</code></pre>
+<p>The platforms are drawn as green rectangles, from the same <code>Box</code> data used for collisions, and then the yak draws itself.</p>
+<h2 id="run-it">Run it</h2>
+<p>Arrow keys (or A and D) to run, space (or up, or W) to jump. Jump onto both blocks, and try walking into the tall one.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>Try making the yak float like it is on the moon (lower <code>Gravity</code>), or turn it into a speed demon (raise <code>RunSpeed</code>). What happens if <code>Acceleration</code> is very low?</p>
+</div>
+<h2 id="next">Next</h2>
+<p>In <a href="yakrun-3.html">part 3</a> we build a proper level with scenery, a camera that follows the yak, stars to collect and a finishing line.</p>
+
+</article>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          yak2D - Alex Paterson - MIT licence
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

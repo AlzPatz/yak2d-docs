@@ -1,76 +1,94 @@
 <!DOCTYPE html>
-<!--[if IE]><![endif]-->
 <html>
-
   <head>
     <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <title>yak2D Coordinate Systems and Rendering Resolution </title>
-      <meta name="viewport" content="width=device-width">
-      <meta name="title" content="yak2D Coordinate Systems and Rendering Resolution ">
-    
-    
-      <link rel="shortcut icon" href="../favicon.ico">
-      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
-      <link rel="stylesheet" href="../styles/docfx.css">
-      <link rel="stylesheet" href="../styles/main.css">
-      <meta property="docfx:navrel" content="../toc.html">
-      <meta property="docfx:tocrel" content="toc.html">
-    
-    
-    
+      <title>Coordinate systems | yak2D </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Coordinate systems | yak2D ">
+      
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/AlzPatz/yak2d-docs-content/blob/master/articles/coordinatesystems.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
   </head>
-  <body data-spy="scroll" data-target="#affix" data-offset="120">
-    <div id="wrapper">
-      <header>
 
-        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-
-              <a class="navbar-brand" href="../index.html">
-                <img id="logo" class="svg" src="../images/logo.png" alt="">
-              </a>
-            </div>
-            <div class="collapse navbar-collapse" id="navbar">
-              <form class="navbar-form navbar-right" role="search" id="search">
-                <div class="form-group">
-                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
-                </div>
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo.png" alt="yak2D">
+            yak2D
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
               </form>
             </div>
           </div>
-        </nav>
+        </div>
+      </nav>
+    </header>
 
-        <div class="subnav navbar navbar-default">
-          <div class="container hide-when-search" id="breadcrumb">
-            <ul class="breadcrumb">
-              <li></li>
-            </ul>
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
           </div>
         </div>
-      </header>
-      <div role="main" class="container body-content hide-when-search">
+      </div>
 
-        <div class="sidenav hide-when-search">
-          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
-          <div class="sidetoggle collapse" id="sidetoggle">
-            <div id="sidetoc"></div>
-          </div>
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
         </div>
-        <div class="article row grid-right">
-          <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="uid_coordinatesystems">
-<h1 id="yak2d-coordinate-systems-and-rendering-resolution"><strong>yak2D</strong> Coordinate Systems and Rendering Resolution</h1>
+
+        <article data-uid="uid_coordinatesystems">
+<h1 id="coordinate-systems">Coordinate systems</h1>
 
 <h2 id="renderstage-output">RenderStage Output</h2>
-<p>A RenderStage's output is render area size agnostic. This means that a <a class="xref" href="renderstages.html">RenderStage</a>'s output will fill the entire destination <a class="xref" href="glossary.html#renderarea">render area</a>, which is either an entire <a class="xref" href="rendertargets.html">RenderTarget</a> or a rectangular area of one defined by a <a class="xref" href="viewports.html">viewport</a>.</p>
+<p>A RenderStage's output is render area size agnostic. This means that a <a class="xref" href="renderstages.html">RenderStage</a>'s output will fill the entire destination <a class="xref" href="glossary.html#renderarea">render area</a>, which is either an entire <a class="xref" href="surfaces.html">RenderTarget</a> or a rectangular area of one defined by a <a class="xref" href="viewports.html">viewport</a>.</p>
 <p>The pixel size of the <a class="xref" href="glossary.html#renderarea">render area</a> does not matter.</p>
 <p>However, if the aspect ratio of the destination <a class="xref" href="glossary.html#renderarea">render area</a> does not match that of the <a class="xref" href="renderstages.html">RenderStage</a>'s output, the output will be distorted (stretched or squashed) to fit.</p>
 <h2 id="drawing">Drawing</h2>
@@ -105,7 +123,7 @@
 <p>Therefore, if the camera's world focus point is (0,0), it's zoom is 1.0 and there is no camera rotation, then a position in world space will match a position in screen space.</p>
 <h3 id="window-space"><strong>Window Space</strong></h3>
 <p>Window space is used when defining <a class="xref" href="viewports.html">viewports</a> and is the coordinate system used for <a class="xref" href="../api/Yak2D.IInput.html#Yak2D_IInput_MousePosition">mouse position</a>.</p>
-<p>The origin (0,0) of window space is positioned at the top-left corner of the window (or <a class="xref" href="rendertargets.html">RenderTarget</a>), with positive X-axis running from left to right, and positive Y-axis running 'downwards' towards the bottom of the window (or <a class="xref" href="rendertargets.html">RenderTarget</a>).</p>
+<p>The origin (0,0) of window space is positioned at the top-left corner of the window (or <a class="xref" href="surfaces.html">RenderTarget</a>), with positive X-axis running from left to right, and positive Y-axis running 'downwards' towards the bottom of the window (or <a class="xref" href="surfaces.html">RenderTarget</a>).</p>
 <p>Window space units are absolute pixels.</p>
 <p>Valid / visible pixel positions in window space are defined by:</p>
 <p><code>0 &lt;= x &lt; w</code></p>
@@ -113,16 +131,16 @@
 <p><code>0 &lt;= y &lt; h</code></p>
 <p>where:</p>
 <ul>
-<li>w = Window or <a class="xref" href="rendertargets.html">RenderTarget</a> width</li>
-<li>h = Window or <a class="xref" href="rendertargets.html">RenderTarget</a> height</li>
+<li>w = Window or <a class="xref" href="surfaces.html">RenderTarget</a> width</li>
+<li>h = Window or <a class="xref" href="surfaces.html">RenderTarget</a> height</li>
 </ul>
 <h4 id="window-space-diagram">Window Space Diagram</h4>
 <p><img src="../images/windowspace.png" alt=""></p>
 <h2 id="viewports">Viewports</h2>
-<p><a class="xref" href="viewports.html">Viewports</a> are used to define rectangular <a class="xref" href="glossary.html#renderarea">render areas</a> of a <a class="xref" href="rendertargets.html">RenderTarget</a>.</p>
+<p><a class="xref" href="viewports.html">Viewports</a> are used to define rectangular <a class="xref" href="glossary.html#renderarea">render areas</a> of a <a class="xref" href="surfaces.html">RenderTarget</a>.</p>
 <p>Viewport position and size are defined in pixel units and use <a class="xref" href="coordinatesystems.html#window-space">window space</a> coordinates.</p>
 <h2 id="texture-coordinates">Texture Coordinates</h2>
-<p><strong>yak2D</strong> texture coordinates are origin top-left and do not change across any graphics API backends. This is the same as used in Direct3D, Vulkan and Metal APIs, and is the coordinate system as <a class="xref" href="coordinatesystems.html#window-space">window space</a>.</p>
+<p><strong>yak2D</strong> texture coordinates are origin top-left and do not change across any graphics API backends. This is the same as used in Direct3D, Vulkan and Metal APIs, and is the same as <a class="xref" href="coordinatesystems.html#window-space">window space</a>.</p>
 <p><strong>Note:</strong> When writing shaders for a <a class="xref" href="../api/Yak2D.ICustomVeldridStage.html">CustomVeldrid</a> <a class="xref" href="renderstages.html">RenderStage</a>, the user is responsible for accounting for the backend differences between graphics APIs.</p>
 <p>When writing shaders for a <a class="xref" href="../api/Yak2D.ICustomShaderStage.html">CustomShader</a> <a class="xref" href="renderstages.html">RenderStage</a>, the vertex shader provided <em><strong>already accounts for the differences</strong></em> in OpenGL texture coordinates. Therefore all shaders can be written assuming origin top-left.</p>
 <h2 id="3d-rendering">3D Rendering</h2>
@@ -130,40 +148,98 @@
 <p><strong>yak2D</strong> uses a Right-Handed coordinate system, which does not change across any graphics API backends. This coordinate system is positive-x towards the right, positive-y upwards and positive-z out of the screen, towards the camera.</p>
 <p><strong>Note:</strong> When writing shaders for a <a class="xref" href="../api/Yak2D.ICustomVeldridStage.html">CustomVeldrid</a> <a class="xref" href="renderstages.html">RenderStage</a>, the user is responsible for accounting for the backend differences between graphics APIs.</p>
 <h2 id="mouse-input">Mouse Input</h2>
-<p><strong>yak2D</strong> provides <a class="xref" href="../api/Yak2D.IInput.html#Yak2D_IInput_MousePosition">mouse position</a> as a position on the application window, in <a class="xref" href="coordinatesystems.html#window-space">window space</a>.</p>
-<h2 id="coordinate-system-conversions">Coordinate System Conversions</h2>
-<p>To easily convert positions between any of <a class="xref" href="coordinatesystems.html#screen-space">screen space</a>, <a class="xref" href="coordinatesystems.html#world-space">world space</a> or <a class="xref" href="coordinatesystems.html#window-space">window space</a>, <strong>yak2D</strong> provides <a class="xref" href="../api/Yak2D.ICoordinateTransforms.html">helper functions</a>.</p>
+<p><strong>yak2D</strong> provides <a class="xref" href="../api/Yak2D.IInput.html#Yak2D_IInput_MousePosition">mouse position</a> as a position on the application window, in <a class="xref" href="coordinatesystems.html#window-space">window space</a>. Convert it to world or screen space with the helpers below.</p>
+<h2 id="converting-between-spaces">Converting between spaces</h2>
+<p><a class="xref" href="../api/Yak2D.ICoordinateTransforms.html">ICoordinateTransforms</a> converts positions between the three spaces for a given camera. It is available as the <code>transforms</code> parameter of <code>Drawing()</code>, and as <code>yak.Helpers.CoordinateTransforms</code> everywhere else.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Converts</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="xref" href="../api/Yak2D.ICoordinateTransforms.html#Yak2D_ICoordinateTransforms_WorldFromScreen_">WorldFromScreen</a>, <a class="xref" href="../api/Yak2D.ICoordinateTransforms.html#Yak2D_ICoordinateTransforms_ScreenFromWorld_">ScreenFromWorld</a></td>
+<td>between world and screen space</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Yak2D.ICoordinateTransforms.html#Yak2D_ICoordinateTransforms_WorldFromWindow_">WorldFromWindow</a>, <a class="xref" href="../api/Yak2D.ICoordinateTransforms.html#Yak2D_ICoordinateTransforms_ScreenFromWindow_">ScreenFromWindow</a></td>
+<td>from a window position (such as the mouse) into world or screen space</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Yak2D.ICoordinateTransforms.html#Yak2D_ICoordinateTransforms_WindowFromWorld_">WindowFromWorld</a>, <a class="xref" href="../api/Yak2D.ICoordinateTransforms.html#Yak2D_ICoordinateTransforms_WindowFromScreen_">WindowFromScreen</a></td>
+<td>from world or screen space to a window position</td>
+</tr>
+</tbody>
+</table>
+<p>Methods involving window space take an optional <a class="xref" href="viewports.html">viewport</a>, for when the camera is rendered into part of the window, and return a <a class="xref" href="../api/Yak2D.TransformResult.html">TransformResult</a>: the converted <code>Position</code>, plus <code>Contained</code>, which says whether the point is actually inside the camera's view (or, converting to window space, inside the window).</p>
+<p>A common use is finding what the mouse is pointing at in the game world:</p>
+<p><img src="../images/guide/mouse-picking.png" alt="Mouse picking through a zoomed, rotated camera"></p>
+<pre><code class="lang-csharp">public override bool Update(IServices yak, float secondsSinceLastUpdate)
+{
+    var input = yak.Input;
+    if (input.WasMousePressedThisFrame(MouseButton.Left))
+    {
+        // Mouse positions are window pixels from the top-left. Convert to the camera's world space
+        var world = yak.Helpers.CoordinateTransforms.WorldFromWindow(input.MousePosition, _camera);
+        if (world.Contained)
+        {
+            _placed.Add(world.Position);
+        }
+    }
+    return base.Update(yak, secondsSinceLastUpdate);
+}
+
+public override void Drawing(IDrawing draw, IFps fps, IInput input, ICoordinateTransforms transforms,
+                             float secondsSinceLastDraw, float secondsSinceLastUpdate)
+{
+    // A world space grid, seen through a zoomed and rotated camera
+    for (var n = -10; n &lt;= 10; n++)
+    {
+        draw.Helpers.DrawLine(_drawStage, CoordinateSpace.World, new Vector2(n * 100.0f, -1000.0f), new Vector2(n * 100.0f, 1000.0f), 2.0f, Colour.DimGray, 0.9f);
+        draw.Helpers.DrawLine(_drawStage, CoordinateSpace.World, new Vector2(-1000.0f, n * 100.0f), new Vector2(1000.0f, n * 100.0f), 2.0f, Colour.DimGray, 0.9f);
+    }
+
+    foreach (var p in _placed)
+    {
+        draw.Helpers.DrawColouredPoly(_drawStage, CoordinateSpace.World, Colour.Gold, p, 5, 14.0f, 0.5f);
+    }
+
+    // The cursor, in world space and screen space
+    var world = transforms.WorldFromWindow(input.MousePosition, _camera);
+    var screen = transforms.ScreenFromWindow(input.MousePosition, _camera);
+    if (world.Contained)
+    {
+        draw.Helpers.DrawColouredPoly(_drawStage, CoordinateSpace.World, Colour.Red, world.Position, 32, 10.0f, 0.4f);
+        draw.DrawString(_drawStage, CoordinateSpace.Screen,
+                        $&quot;window {input.MousePosition:0}  screen {screen.Position:0}  world {world.Position:0}&quot;,
+                        Colour.White, 20.0f, new Vector2(0.0f, -230.0f), TextJustify.Centre, 0.3f, 1);
+    }
+}
+</code></pre>
+<p>The conversions take the camera's focus, zoom, rotation and virtual resolution into account, and the window's current size, so they keep working when the window is resized.</p>
 
 </article>
-          </div>
 
-          <div class="hidden-sm col-md-2" role="complementary">
-            <div class="sideaffix">
-              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-                <h5>In this article</h5>
-                <div></div>
-              </nav>
-            </div>
-          </div>
-        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
       </div>
 
-      <footer>
-        <div class="grad-bottom"></div>
-        <div class="footer">
-          <div class="container">
-            <span class="pull-right">
-              <a href="#top">Back to top</a>
-            </span>
-      yak2D - Alex Paterson
-      
-          </div>
-        </div>
-      </footer>
-    </div>
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
 
-    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
-    <script type="text/javascript" src="../styles/docfx.js"></script>
-    <script type="text/javascript" src="../styles/main.js"></script>
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          yak2D - Alex Paterson - MIT licence
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
