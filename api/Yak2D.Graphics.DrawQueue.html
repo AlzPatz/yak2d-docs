@@ -115,12 +115,12 @@
   <h3 id="constructors">Constructors
 </h3>
   <a id="Yak2D_Graphics_DrawQueue__ctor_" data-uid="Yak2D.Graphics.DrawQueue.#ctor*"></a>
-  <h4 id="Yak2D_Graphics_DrawQueue__ctor_Yak2D_IFrameworkMessenger_Yak2D_Graphics_IComparerCollection_System_Int32_System_Int32_System_Boolean_" data-uid="Yak2D.Graphics.DrawQueue.#ctor(Yak2D.IFrameworkMessenger,Yak2D.Graphics.IComparerCollection,System.Int32,System.Int32,System.Boolean)">DrawQueue(IFrameworkMessenger, IComparerCollection, int, int, bool)</h4>
+  <h4 id="Yak2D_Graphics_DrawQueue__ctor_Yak2D_IFrameworkMessenger_System_Int32_System_Int32_System_Boolean_" data-uid="Yak2D.Graphics.DrawQueue.#ctor(Yak2D.IFrameworkMessenger,System.Int32,System.Int32,System.Boolean)">DrawQueue(IFrameworkMessenger, int, int, bool)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public DrawQueue(IFrameworkMessenger frameworkMessenger, IComparerCollection comparers, int initialRequestQueueSize, int scalarForPerElementArraySizes, bool skipDrawQueueSortingByDepthsAndLayers)</code></pre>
+    <pre><code class="lang-csharp hljs">public DrawQueue(IFrameworkMessenger frameworkMessenger, int initialRequestQueueSize, int scalarForPerElementArraySizes, bool skipDrawQueueSortingByDepthsAndLayers)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -135,11 +135,6 @@
       <tr>
         <td><a class="xref" href="Yak2D.IFrameworkMessenger.html">IFrameworkMessenger</a></td>
         <td><span class="parametername">frameworkMessenger</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Yak2D.Graphics.IComparerCollection.html">IComparerCollection</a></td>
-        <td><span class="parametername">comparers</span></td>
         <td></td>
       </tr>
       <tr>
@@ -192,7 +187,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Add(ref CoordinateSpace target, ref FillType type, ref Colour colour, ref Vertex2D[] vertices, ref int[] indices, ref ulong texture0, ref ulong texture1, ref TextureCoordinateMode texmode0, ref TextureCoordinateMode texmode1, ref float depth, ref int layer)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Add(ref CoordinateSpace target, ref FillType type, ref Colour colour, ref Vertex2D[] vertices, ref int[] indices, ref ulong texture0, ref ulong texture1, ref TextureCoordinateMode texMode0, ref TextureCoordinateMode texMode1, ref float depth, ref int layer)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -241,12 +236,12 @@
       </tr>
       <tr>
         <td><a class="xref" href="Yak2D.TextureCoordinateMode.html">TextureCoordinateMode</a></td>
-        <td><span class="parametername">texmode0</span></td>
+        <td><span class="parametername">texMode0</span></td>
         <td></td>
       </tr>
       <tr>
         <td><a class="xref" href="Yak2D.TextureCoordinateMode.html">TextureCoordinateMode</a></td>
-        <td><span class="parametername">texmode1</span></td>
+        <td><span class="parametername">texMode1</span></td>
         <td></td>
       </tr>
       <tr>
@@ -267,7 +262,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool AddIfValid(ref CoordinateSpace target, ref FillType type, ref Colour colour, ref Vertex2D[] vertices, ref int[] indices, ref ulong texture0, ref ulong texture1, ref TextureCoordinateMode texmode0, ref TextureCoordinateMode texmode1, ref float depth, ref int layer)</code></pre>
+    <pre><code class="lang-csharp hljs">public bool AddIfValid(ref CoordinateSpace target, ref FillType type, ref Colour colour, ref Vertex2D[] vertices, ref int[] indices, ref ulong texture0, ref ulong texture1, ref TextureCoordinateMode texMode0, ref TextureCoordinateMode texMode1, ref float depth, ref int layer)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -316,12 +311,12 @@
       </tr>
       <tr>
         <td><a class="xref" href="Yak2D.TextureCoordinateMode.html">TextureCoordinateMode</a></td>
-        <td><span class="parametername">texmode0</span></td>
+        <td><span class="parametername">texMode0</span></td>
         <td></td>
       </tr>
       <tr>
         <td><a class="xref" href="Yak2D.TextureCoordinateMode.html">TextureCoordinateMode</a></td>
-        <td><span class="parametername">texmode1</span></td>
+        <td><span class="parametername">texMode1</span></td>
         <td></td>
       </tr>
       <tr>

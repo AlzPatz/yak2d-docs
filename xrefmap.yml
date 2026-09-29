@@ -11557,102 +11557,6 @@ references:
   commentId: Overload:Yak2D.Graphics.CommonOperations.RotateVectorClockwise
   fullName: Yak2D.Graphics.CommonOperations.RotateVectorClockwise
   nameWithType: CommonOperations.RotateVectorClockwise
-- uid: Yak2D.Graphics.ComparerCollection
-  name: ComparerCollection
-  href: api/Yak2D.Graphics.ComparerCollection.html
-  commentId: T:Yak2D.Graphics.ComparerCollection
-  fullName: Yak2D.Graphics.ComparerCollection
-  nameWithType: ComparerCollection
-- uid: Yak2D.Graphics.ComparerCollection.#ctor
-  name: ComparerCollection()
-  href: api/Yak2D.Graphics.ComparerCollection.html#Yak2D_Graphics_ComparerCollection__ctor
-  commentId: M:Yak2D.Graphics.ComparerCollection.#ctor
-  name.vb: New()
-  fullName: Yak2D.Graphics.ComparerCollection.ComparerCollection()
-  fullName.vb: Yak2D.Graphics.ComparerCollection.New()
-  nameWithType: ComparerCollection.ComparerCollection()
-  nameWithType.vb: ComparerCollection.New()
-- uid: Yak2D.Graphics.ComparerCollection.#ctor*
-  name: ComparerCollection
-  href: api/Yak2D.Graphics.ComparerCollection.html#Yak2D_Graphics_ComparerCollection__ctor_
-  commentId: Overload:Yak2D.Graphics.ComparerCollection.#ctor
-  name.vb: New
-  fullName: Yak2D.Graphics.ComparerCollection.ComparerCollection
-  fullName.vb: Yak2D.Graphics.ComparerCollection.New
-  nameWithType: ComparerCollection.ComparerCollection
-  nameWithType.vb: ComparerCollection.New
-- uid: Yak2D.Graphics.ComparerCollection.DrawTarget
-  name: DrawTarget
-  href: api/Yak2D.Graphics.ComparerCollection.html#Yak2D_Graphics_ComparerCollection_DrawTarget
-  commentId: P:Yak2D.Graphics.ComparerCollection.DrawTarget
-  fullName: Yak2D.Graphics.ComparerCollection.DrawTarget
-  nameWithType: ComparerCollection.DrawTarget
-- uid: Yak2D.Graphics.ComparerCollection.DrawTarget*
-  name: DrawTarget
-  href: api/Yak2D.Graphics.ComparerCollection.html#Yak2D_Graphics_ComparerCollection_DrawTarget_
-  commentId: Overload:Yak2D.Graphics.ComparerCollection.DrawTarget
-  fullName: Yak2D.Graphics.ComparerCollection.DrawTarget
-  nameWithType: ComparerCollection.DrawTarget
-- uid: Yak2D.Graphics.ComparerCollection.DrawType
-  name: DrawType
-  href: api/Yak2D.Graphics.ComparerCollection.html#Yak2D_Graphics_ComparerCollection_DrawType
-  commentId: P:Yak2D.Graphics.ComparerCollection.DrawType
-  fullName: Yak2D.Graphics.ComparerCollection.DrawType
-  nameWithType: ComparerCollection.DrawType
-- uid: Yak2D.Graphics.ComparerCollection.DrawType*
-  name: DrawType
-  href: api/Yak2D.Graphics.ComparerCollection.html#Yak2D_Graphics_ComparerCollection_DrawType_
-  commentId: Overload:Yak2D.Graphics.ComparerCollection.DrawType
-  fullName: Yak2D.Graphics.ComparerCollection.DrawType
-  nameWithType: ComparerCollection.DrawType
-- uid: Yak2D.Graphics.ComparerCollection.Integer
-  name: Integer
-  href: api/Yak2D.Graphics.ComparerCollection.html#Yak2D_Graphics_ComparerCollection_Integer
-  commentId: P:Yak2D.Graphics.ComparerCollection.Integer
-  fullName: Yak2D.Graphics.ComparerCollection.Integer
-  nameWithType: ComparerCollection.Integer
-- uid: Yak2D.Graphics.ComparerCollection.Integer*
-  name: Integer
-  href: api/Yak2D.Graphics.ComparerCollection.html#Yak2D_Graphics_ComparerCollection_Integer_
-  commentId: Overload:Yak2D.Graphics.ComparerCollection.Integer
-  fullName: Yak2D.Graphics.ComparerCollection.Integer
-  nameWithType: ComparerCollection.Integer
-- uid: Yak2D.Graphics.ComparerCollection.ReverseFloat
-  name: ReverseFloat
-  href: api/Yak2D.Graphics.ComparerCollection.html#Yak2D_Graphics_ComparerCollection_ReverseFloat
-  commentId: P:Yak2D.Graphics.ComparerCollection.ReverseFloat
-  fullName: Yak2D.Graphics.ComparerCollection.ReverseFloat
-  nameWithType: ComparerCollection.ReverseFloat
-- uid: Yak2D.Graphics.ComparerCollection.ReverseFloat*
-  name: ReverseFloat
-  href: api/Yak2D.Graphics.ComparerCollection.html#Yak2D_Graphics_ComparerCollection_ReverseFloat_
-  commentId: Overload:Yak2D.Graphics.ComparerCollection.ReverseFloat
-  fullName: Yak2D.Graphics.ComparerCollection.ReverseFloat
-  nameWithType: ComparerCollection.ReverseFloat
-- uid: Yak2D.Graphics.ComparerCollection.TextureCoordMode
-  name: TextureCoordMode
-  href: api/Yak2D.Graphics.ComparerCollection.html#Yak2D_Graphics_ComparerCollection_TextureCoordMode
-  commentId: P:Yak2D.Graphics.ComparerCollection.TextureCoordMode
-  fullName: Yak2D.Graphics.ComparerCollection.TextureCoordMode
-  nameWithType: ComparerCollection.TextureCoordMode
-- uid: Yak2D.Graphics.ComparerCollection.TextureCoordMode*
-  name: TextureCoordMode
-  href: api/Yak2D.Graphics.ComparerCollection.html#Yak2D_Graphics_ComparerCollection_TextureCoordMode_
-  commentId: Overload:Yak2D.Graphics.ComparerCollection.TextureCoordMode
-  fullName: Yak2D.Graphics.ComparerCollection.TextureCoordMode
-  nameWithType: ComparerCollection.TextureCoordMode
-- uid: Yak2D.Graphics.ComparerCollection.ULong
-  name: ULong
-  href: api/Yak2D.Graphics.ComparerCollection.html#Yak2D_Graphics_ComparerCollection_ULong
-  commentId: P:Yak2D.Graphics.ComparerCollection.ULong
-  fullName: Yak2D.Graphics.ComparerCollection.ULong
-  nameWithType: ComparerCollection.ULong
-- uid: Yak2D.Graphics.ComparerCollection.ULong*
-  name: ULong
-  href: api/Yak2D.Graphics.ComparerCollection.html#Yak2D_Graphics_ComparerCollection_ULong_
-  commentId: Overload:Yak2D.Graphics.ComparerCollection.ULong
-  fullName: Yak2D.Graphics.ComparerCollection.ULong
-  nameWithType: ComparerCollection.ULong
 - uid: Yak2D.Graphics.CopyStageRenderer
   name: CopyStageRenderer
   href: api/Yak2D.Graphics.CopyStageRenderer.html
@@ -13672,15 +13576,15 @@ references:
   commentId: T:Yak2D.Graphics.DrawQueue
   fullName: Yak2D.Graphics.DrawQueue
   nameWithType: DrawQueue
-- uid: Yak2D.Graphics.DrawQueue.#ctor(Yak2D.IFrameworkMessenger,Yak2D.Graphics.IComparerCollection,System.Int32,System.Int32,System.Boolean)
-  name: DrawQueue(IFrameworkMessenger, IComparerCollection, int, int, bool)
-  href: api/Yak2D.Graphics.DrawQueue.html#Yak2D_Graphics_DrawQueue__ctor_Yak2D_IFrameworkMessenger_Yak2D_Graphics_IComparerCollection_System_Int32_System_Int32_System_Boolean_
-  commentId: M:Yak2D.Graphics.DrawQueue.#ctor(Yak2D.IFrameworkMessenger,Yak2D.Graphics.IComparerCollection,System.Int32,System.Int32,System.Boolean)
-  name.vb: New(IFrameworkMessenger, IComparerCollection, Integer, Integer, Boolean)
-  fullName: Yak2D.Graphics.DrawQueue.DrawQueue(Yak2D.IFrameworkMessenger, Yak2D.Graphics.IComparerCollection, int, int, bool)
-  fullName.vb: Yak2D.Graphics.DrawQueue.New(Yak2D.IFrameworkMessenger, Yak2D.Graphics.IComparerCollection, Integer, Integer, Boolean)
-  nameWithType: DrawQueue.DrawQueue(IFrameworkMessenger, IComparerCollection, int, int, bool)
-  nameWithType.vb: DrawQueue.New(IFrameworkMessenger, IComparerCollection, Integer, Integer, Boolean)
+- uid: Yak2D.Graphics.DrawQueue.#ctor(Yak2D.IFrameworkMessenger,System.Int32,System.Int32,System.Boolean)
+  name: DrawQueue(IFrameworkMessenger, int, int, bool)
+  href: api/Yak2D.Graphics.DrawQueue.html#Yak2D_Graphics_DrawQueue__ctor_Yak2D_IFrameworkMessenger_System_Int32_System_Int32_System_Boolean_
+  commentId: M:Yak2D.Graphics.DrawQueue.#ctor(Yak2D.IFrameworkMessenger,System.Int32,System.Int32,System.Boolean)
+  name.vb: New(IFrameworkMessenger, Integer, Integer, Boolean)
+  fullName: Yak2D.Graphics.DrawQueue.DrawQueue(Yak2D.IFrameworkMessenger, int, int, bool)
+  fullName.vb: Yak2D.Graphics.DrawQueue.New(Yak2D.IFrameworkMessenger, Integer, Integer, Boolean)
+  nameWithType: DrawQueue.DrawQueue(IFrameworkMessenger, int, int, bool)
+  nameWithType.vb: DrawQueue.New(IFrameworkMessenger, Integer, Integer, Boolean)
 - uid: Yak2D.Graphics.DrawQueue.#ctor*
   name: DrawQueue
   href: api/Yak2D.Graphics.DrawQueue.html#Yak2D_Graphics_DrawQueue__ctor_
@@ -13762,15 +13666,15 @@ references:
   commentId: T:Yak2D.Graphics.DrawQueueFactory
   fullName: Yak2D.Graphics.DrawQueueFactory
   nameWithType: DrawQueueFactory
-- uid: Yak2D.Graphics.DrawQueueFactory.#ctor(Yak2D.IFrameworkMessenger,Yak2D.Internal.IStartupPropertiesCache,Yak2D.Graphics.IComparerCollection)
-  name: DrawQueueFactory(IFrameworkMessenger, IStartupPropertiesCache, IComparerCollection)
-  href: api/Yak2D.Graphics.DrawQueueFactory.html#Yak2D_Graphics_DrawQueueFactory__ctor_Yak2D_IFrameworkMessenger_Yak2D_Internal_IStartupPropertiesCache_Yak2D_Graphics_IComparerCollection_
-  commentId: M:Yak2D.Graphics.DrawQueueFactory.#ctor(Yak2D.IFrameworkMessenger,Yak2D.Internal.IStartupPropertiesCache,Yak2D.Graphics.IComparerCollection)
-  name.vb: New(IFrameworkMessenger, IStartupPropertiesCache, IComparerCollection)
-  fullName: Yak2D.Graphics.DrawQueueFactory.DrawQueueFactory(Yak2D.IFrameworkMessenger, Yak2D.Internal.IStartupPropertiesCache, Yak2D.Graphics.IComparerCollection)
-  fullName.vb: Yak2D.Graphics.DrawQueueFactory.New(Yak2D.IFrameworkMessenger, Yak2D.Internal.IStartupPropertiesCache, Yak2D.Graphics.IComparerCollection)
-  nameWithType: DrawQueueFactory.DrawQueueFactory(IFrameworkMessenger, IStartupPropertiesCache, IComparerCollection)
-  nameWithType.vb: DrawQueueFactory.New(IFrameworkMessenger, IStartupPropertiesCache, IComparerCollection)
+- uid: Yak2D.Graphics.DrawQueueFactory.#ctor(Yak2D.IFrameworkMessenger,Yak2D.Internal.IStartupPropertiesCache)
+  name: DrawQueueFactory(IFrameworkMessenger, IStartupPropertiesCache)
+  href: api/Yak2D.Graphics.DrawQueueFactory.html#Yak2D_Graphics_DrawQueueFactory__ctor_Yak2D_IFrameworkMessenger_Yak2D_Internal_IStartupPropertiesCache_
+  commentId: M:Yak2D.Graphics.DrawQueueFactory.#ctor(Yak2D.IFrameworkMessenger,Yak2D.Internal.IStartupPropertiesCache)
+  name.vb: New(IFrameworkMessenger, IStartupPropertiesCache)
+  fullName: Yak2D.Graphics.DrawQueueFactory.DrawQueueFactory(Yak2D.IFrameworkMessenger, Yak2D.Internal.IStartupPropertiesCache)
+  fullName.vb: Yak2D.Graphics.DrawQueueFactory.New(Yak2D.IFrameworkMessenger, Yak2D.Internal.IStartupPropertiesCache)
+  nameWithType: DrawQueueFactory.DrawQueueFactory(IFrameworkMessenger, IStartupPropertiesCache)
+  nameWithType.vb: DrawQueueFactory.New(IFrameworkMessenger, IStartupPropertiesCache)
 - uid: Yak2D.Graphics.DrawQueueFactory.#ctor*
   name: DrawQueueFactory
   href: api/Yak2D.Graphics.DrawQueueFactory.html#Yak2D_Graphics_DrawQueueFactory__ctor_
@@ -16597,84 +16501,6 @@ references:
   commentId: Overload:Yak2D.Graphics.ICommandProcessor.Process
   fullName: Yak2D.Graphics.ICommandProcessor.Process
   nameWithType: ICommandProcessor.Process
-- uid: Yak2D.Graphics.IComparerCollection
-  name: IComparerCollection
-  href: api/Yak2D.Graphics.IComparerCollection.html
-  commentId: T:Yak2D.Graphics.IComparerCollection
-  fullName: Yak2D.Graphics.IComparerCollection
-  nameWithType: IComparerCollection
-- uid: Yak2D.Graphics.IComparerCollection.DrawTarget
-  name: DrawTarget
-  href: api/Yak2D.Graphics.IComparerCollection.html#Yak2D_Graphics_IComparerCollection_DrawTarget
-  commentId: P:Yak2D.Graphics.IComparerCollection.DrawTarget
-  fullName: Yak2D.Graphics.IComparerCollection.DrawTarget
-  nameWithType: IComparerCollection.DrawTarget
-- uid: Yak2D.Graphics.IComparerCollection.DrawTarget*
-  name: DrawTarget
-  href: api/Yak2D.Graphics.IComparerCollection.html#Yak2D_Graphics_IComparerCollection_DrawTarget_
-  commentId: Overload:Yak2D.Graphics.IComparerCollection.DrawTarget
-  fullName: Yak2D.Graphics.IComparerCollection.DrawTarget
-  nameWithType: IComparerCollection.DrawTarget
-- uid: Yak2D.Graphics.IComparerCollection.DrawType
-  name: DrawType
-  href: api/Yak2D.Graphics.IComparerCollection.html#Yak2D_Graphics_IComparerCollection_DrawType
-  commentId: P:Yak2D.Graphics.IComparerCollection.DrawType
-  fullName: Yak2D.Graphics.IComparerCollection.DrawType
-  nameWithType: IComparerCollection.DrawType
-- uid: Yak2D.Graphics.IComparerCollection.DrawType*
-  name: DrawType
-  href: api/Yak2D.Graphics.IComparerCollection.html#Yak2D_Graphics_IComparerCollection_DrawType_
-  commentId: Overload:Yak2D.Graphics.IComparerCollection.DrawType
-  fullName: Yak2D.Graphics.IComparerCollection.DrawType
-  nameWithType: IComparerCollection.DrawType
-- uid: Yak2D.Graphics.IComparerCollection.Integer
-  name: Integer
-  href: api/Yak2D.Graphics.IComparerCollection.html#Yak2D_Graphics_IComparerCollection_Integer
-  commentId: P:Yak2D.Graphics.IComparerCollection.Integer
-  fullName: Yak2D.Graphics.IComparerCollection.Integer
-  nameWithType: IComparerCollection.Integer
-- uid: Yak2D.Graphics.IComparerCollection.Integer*
-  name: Integer
-  href: api/Yak2D.Graphics.IComparerCollection.html#Yak2D_Graphics_IComparerCollection_Integer_
-  commentId: Overload:Yak2D.Graphics.IComparerCollection.Integer
-  fullName: Yak2D.Graphics.IComparerCollection.Integer
-  nameWithType: IComparerCollection.Integer
-- uid: Yak2D.Graphics.IComparerCollection.ReverseFloat
-  name: ReverseFloat
-  href: api/Yak2D.Graphics.IComparerCollection.html#Yak2D_Graphics_IComparerCollection_ReverseFloat
-  commentId: P:Yak2D.Graphics.IComparerCollection.ReverseFloat
-  fullName: Yak2D.Graphics.IComparerCollection.ReverseFloat
-  nameWithType: IComparerCollection.ReverseFloat
-- uid: Yak2D.Graphics.IComparerCollection.ReverseFloat*
-  name: ReverseFloat
-  href: api/Yak2D.Graphics.IComparerCollection.html#Yak2D_Graphics_IComparerCollection_ReverseFloat_
-  commentId: Overload:Yak2D.Graphics.IComparerCollection.ReverseFloat
-  fullName: Yak2D.Graphics.IComparerCollection.ReverseFloat
-  nameWithType: IComparerCollection.ReverseFloat
-- uid: Yak2D.Graphics.IComparerCollection.TextureCoordMode
-  name: TextureCoordMode
-  href: api/Yak2D.Graphics.IComparerCollection.html#Yak2D_Graphics_IComparerCollection_TextureCoordMode
-  commentId: P:Yak2D.Graphics.IComparerCollection.TextureCoordMode
-  fullName: Yak2D.Graphics.IComparerCollection.TextureCoordMode
-  nameWithType: IComparerCollection.TextureCoordMode
-- uid: Yak2D.Graphics.IComparerCollection.TextureCoordMode*
-  name: TextureCoordMode
-  href: api/Yak2D.Graphics.IComparerCollection.html#Yak2D_Graphics_IComparerCollection_TextureCoordMode_
-  commentId: Overload:Yak2D.Graphics.IComparerCollection.TextureCoordMode
-  fullName: Yak2D.Graphics.IComparerCollection.TextureCoordMode
-  nameWithType: IComparerCollection.TextureCoordMode
-- uid: Yak2D.Graphics.IComparerCollection.ULong
-  name: ULong
-  href: api/Yak2D.Graphics.IComparerCollection.html#Yak2D_Graphics_IComparerCollection_ULong
-  commentId: P:Yak2D.Graphics.IComparerCollection.ULong
-  fullName: Yak2D.Graphics.IComparerCollection.ULong
-  nameWithType: IComparerCollection.ULong
-- uid: Yak2D.Graphics.IComparerCollection.ULong*
-  name: ULong
-  href: api/Yak2D.Graphics.IComparerCollection.html#Yak2D_Graphics_IComparerCollection_ULong_
-  commentId: Overload:Yak2D.Graphics.IComparerCollection.ULong
-  fullName: Yak2D.Graphics.IComparerCollection.ULong
-  nameWithType: IComparerCollection.ULong
 - uid: Yak2D.Graphics.ICopyStageRenderer
   name: ICopyStageRenderer
   href: api/Yak2D.Graphics.ICopyStageRenderer.html
@@ -38893,67 +38719,6 @@ references:
   commentId: N:Yak2D.Utility
   fullName: Yak2D.Utility
   nameWithType: Yak2D.Utility
-- uid: Yak2D.Utility.ArrayComparer`1
-  name: ArrayComparer<T>
-  href: api/Yak2D.Utility.ArrayComparer-1.html
-  commentId: T:Yak2D.Utility.ArrayComparer`1
-  name.vb: ArrayComparer(Of T)
-  fullName: Yak2D.Utility.ArrayComparer<T>
-  fullName.vb: Yak2D.Utility.ArrayComparer(Of T)
-  nameWithType: ArrayComparer<T>
-  nameWithType.vb: ArrayComparer(Of T)
-- uid: Yak2D.Utility.ArrayComparer`1.#ctor(System.Boolean)
-  name: ArrayComparer(bool)
-  href: api/Yak2D.Utility.ArrayComparer-1.html#Yak2D_Utility_ArrayComparer_1__ctor_System_Boolean_
-  commentId: M:Yak2D.Utility.ArrayComparer`1.#ctor(System.Boolean)
-  name.vb: New(Boolean)
-  fullName: Yak2D.Utility.ArrayComparer<T>.ArrayComparer(bool)
-  fullName.vb: Yak2D.Utility.ArrayComparer(Of T).New(Boolean)
-  nameWithType: ArrayComparer<T>.ArrayComparer(bool)
-  nameWithType.vb: ArrayComparer(Of T).New(Boolean)
-- uid: Yak2D.Utility.ArrayComparer`1.#ctor*
-  name: ArrayComparer
-  href: api/Yak2D.Utility.ArrayComparer-1.html#Yak2D_Utility_ArrayComparer_1__ctor_
-  commentId: Overload:Yak2D.Utility.ArrayComparer`1.#ctor
-  name.vb: New
-  fullName: Yak2D.Utility.ArrayComparer<T>.ArrayComparer
-  fullName.vb: Yak2D.Utility.ArrayComparer(Of T).New
-  nameWithType: ArrayComparer<T>.ArrayComparer
-  nameWithType.vb: ArrayComparer(Of T).New
-- uid: Yak2D.Utility.ArrayComparer`1.Compare(System.Int32,System.Int32)
-  name: Compare(int, int)
-  href: api/Yak2D.Utility.ArrayComparer-1.html#Yak2D_Utility_ArrayComparer_1_Compare_System_Int32_System_Int32_
-  commentId: M:Yak2D.Utility.ArrayComparer`1.Compare(System.Int32,System.Int32)
-  name.vb: Compare(Integer, Integer)
-  fullName: Yak2D.Utility.ArrayComparer<T>.Compare(int, int)
-  fullName.vb: Yak2D.Utility.ArrayComparer(Of T).Compare(Integer, Integer)
-  nameWithType: ArrayComparer<T>.Compare(int, int)
-  nameWithType.vb: ArrayComparer(Of T).Compare(Integer, Integer)
-- uid: Yak2D.Utility.ArrayComparer`1.Compare*
-  name: Compare
-  href: api/Yak2D.Utility.ArrayComparer-1.html#Yak2D_Utility_ArrayComparer_1_Compare_
-  commentId: Overload:Yak2D.Utility.ArrayComparer`1.Compare
-  fullName: Yak2D.Utility.ArrayComparer<T>.Compare
-  fullName.vb: Yak2D.Utility.ArrayComparer(Of T).Compare
-  nameWithType: ArrayComparer<T>.Compare
-  nameWithType.vb: ArrayComparer(Of T).Compare
-- uid: Yak2D.Utility.ArrayComparer`1.SetItems(`0[])
-  name: SetItems(T[])
-  href: api/Yak2D.Utility.ArrayComparer-1.html#Yak2D_Utility_ArrayComparer_1_SetItems__0___
-  commentId: M:Yak2D.Utility.ArrayComparer`1.SetItems(`0[])
-  name.vb: SetItems(T())
-  fullName: Yak2D.Utility.ArrayComparer<T>.SetItems(T[])
-  fullName.vb: Yak2D.Utility.ArrayComparer(Of T).SetItems(T())
-  nameWithType: ArrayComparer<T>.SetItems(T[])
-  nameWithType.vb: ArrayComparer(Of T).SetItems(T())
-- uid: Yak2D.Utility.ArrayComparer`1.SetItems*
-  name: SetItems
-  href: api/Yak2D.Utility.ArrayComparer-1.html#Yak2D_Utility_ArrayComparer_1_SetItems_
-  commentId: Overload:Yak2D.Utility.ArrayComparer`1.SetItems
-  fullName: Yak2D.Utility.ArrayComparer<T>.SetItems
-  fullName.vb: Yak2D.Utility.ArrayComparer(Of T).SetItems
-  nameWithType: ArrayComparer<T>.SetItems
-  nameWithType.vb: ArrayComparer(Of T).SetItems
 - uid: Yak2D.Utility.ArrayFunctions
   name: ArrayFunctions
   href: api/Yak2D.Utility.ArrayFunctions.html

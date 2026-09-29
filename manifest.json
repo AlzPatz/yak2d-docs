@@ -1,4 +1,5 @@
 {
+  "docfx_version": "2.81.0+ba844df625370a6bd7c1ecab0d0ec4d1d9128ac4",
   "source_base_path": "/home/runner/work/yak2d-docs-content/yak2d-docs-content/docs",
   "xrefmap": "xrefmap.yml",
   "files": [
@@ -1446,20 +1447,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Yak2D.Graphics.ComparerCollection.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Yak2D.Graphics.ComparerCollection.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Yak2D.Graphics.ComparerCollection",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Yak2D.Graphics.CopyStageRenderer.yml",
       "output": {
         ".html": {
@@ -2436,20 +2423,6 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Yak2D.Graphics.ICommandProcessor",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Yak2D.Graphics.IComparerCollection.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Yak2D.Graphics.IComparerCollection.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Yak2D.Graphics.IComparerCollection",
       "Summary": null
     },
     {
@@ -5968,20 +5941,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Yak2D.Utility.ArrayComparer-1.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Yak2D.Utility.ArrayComparer-1.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Yak2D.Utility.ArrayComparer<T>",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Yak2D.Utility.ArrayFunctions.yml",
       "output": {
         ".html": {
@@ -6162,11 +6121,11 @@
       "type": "Toc",
       "source_relative_path": "api/toc.yml",
       "output": {
-        ".html": {
-          "relative_path": "api/toc.html"
-        },
         ".json": {
           "relative_path": "api/toc.json"
+        },
+        ".html": {
+          "relative_path": "api/toc.html"
         }
       },
       "version": ""
@@ -6295,11 +6254,11 @@
       "type": "Toc",
       "source_relative_path": "articles/toc.yml",
       "output": {
-        ".html": {
-          "relative_path": "articles/toc.html"
-        },
         ".json": {
           "relative_path": "articles/toc.json"
+        },
+        ".html": {
+          "relative_path": "articles/toc.html"
         }
       },
       "version": ""
@@ -6528,11 +6487,11 @@
       "type": "Toc",
       "source_relative_path": "toc.yml",
       "output": {
-        ".html": {
-          "relative_path": "toc.html"
-        },
         ".json": {
           "relative_path": "toc.json"
+        },
+        ".html": {
+          "relative_path": "toc.html"
         }
       },
       "version": ""
