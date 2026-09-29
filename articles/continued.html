@@ -73,8 +73,8 @@
 <p>Expand the blank project created in the <a class="xref" href="gettingstarted.html">first tutorial</a> to:</p>
 <ol>
 <li>Add a texture to the project</li>
-<li>Draw the texture to an off-screen <a href="xref:rendertargets">RenderTarget</a></li>
-<li>Apply a built in graphical effect (using a <a class="xref" href="renderstages.html">RenderStage</a>) to the contents of the off-screen <a href="xref:rendertargets">RenderTarget</a> and display this on the screen</li>
+<li>Draw the texture to an off-screen <a class="xref" href="rendertargets.html">RenderTarget</a></li>
+<li>Apply a built in graphical effect (using a <a class="xref" href="renderstages.html">RenderStage</a>) to the contents of the off-screen <a class="xref" href="rendertargets.html">RenderTarget</a> and display this on the screen</li>
 </ol>
 <h2 id="prerequisites">Prerequisites</h2>
 <ul>
@@ -111,8 +111,8 @@
 <p>Create a variable in <code>MyApplication.cs</code> to store a reference to an <a class="xref" href="../api/Yak2D.ITexture.html">ITexture</a>:</p>
 <pre><code class="lang-csharp">private ITexture _texture;
 </code></pre>
-<p>We load the <a class="xref" href="../api/Yak2D.ITexture.html">ITexture</a> in <code>MyApplication.cs</code>'s <a href="xref:Yak2D.IApplication.CreateResources">CreateResources()</a> method. As a reminder, all <a class="xref" href="glossary.html#Resource">resource</a> creation should be completed within, or be triggered by, this method.</p>
-<p>Assuming you have named your Texture <code>logo.png</code>, modify <a href="xref:Yak2D.IApplication.CreateResources">CreateResources()</a> to load the texture using the following:</p>
+<p>We load the <a class="xref" href="../api/Yak2D.ITexture.html">ITexture</a> in <code>MyApplication.cs</code>'s <a class="xref" href="../api/Yak2D.IApplication.html#Yak2D_IApplication_CreateResources_">CreateResources()</a> method. As a reminder, all <a class="xref" href="glossary.html#resource">resource</a> creation should be completed within, or be triggered by, this method.</p>
+<p>Assuming you have named your Texture <code>logo.png</code>, modify <a class="xref" href="../api/Yak2D.IApplication.html#Yak2D_IApplication_CreateResources_">CreateResources()</a> to load the texture using the following:</p>
 <pre><code class="lang-csharp">public bool CreateResources(IServices yak)
 {
     _texture = yak.Surfaces.LoadTexture(&quot;logo&quot;, AssetSourceEnum.Embedded);

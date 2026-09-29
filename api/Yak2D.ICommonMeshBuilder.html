@@ -84,7 +84,9 @@
 </h3>
   <a id="Yak2D_ICommonMeshBuilder_CreateCrtMesh_" data-uid="Yak2D.ICommonMeshBuilder.CreateCrtMesh*"></a>
   <h4 id="Yak2D_ICommonMeshBuilder_CreateCrtMesh_System_Single_System_Single_System_UInt32_System_Single_System_Single_" data-uid="Yak2D.ICommonMeshBuilder.CreateCrtMesh(System.Single,System.Single,System.UInt32,System.Single,System.Single)">CreateCrtMesh(float, float, uint, float, float)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Creates Mesh to replicate cured scren of cathode ray monitor
+It's general approach to is to take a surface patch on a sphere and deform as required</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -103,27 +105,32 @@
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
         <td><span class="parametername">width</span></td>
-        <td></td>
+        <td><p>Width of Mesh at widest point</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
         <td><span class="parametername">height</span></td>
-        <td></td>
+        <td><p>Height of Mesg at tallest point</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></td>
         <td><span class="parametername">numMeshDivisionsPerAxis</span></td>
-        <td></td>
+        <td><p>Defines the number of segments that the curved surface is divided into on each axis</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
         <td><span class="parametername">horizontalAngularCurvatureFraction</span></td>
-        <td></td>
+        <td><p>Amount of horizontal curvature, as a fraction (0.0 to 1.0) of the maximum</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
         <td><span class="parametername">cornerRoundingFraction</span></td>
-        <td></td>
+        <td><p>Defines the size of curved corners in terms of a fraction of the smallest dimension. 1.0 in the instance that width==height would result in no uncurved edge portions ('circular' edge)</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -192,7 +199,8 @@
   </table>
   <a id="Yak2D_ICommonMeshBuilder_CreateRectangularCuboidMesh_" data-uid="Yak2D.ICommonMeshBuilder.CreateRectangularCuboidMesh*"></a>
   <h4 id="Yak2D_ICommonMeshBuilder_CreateRectangularCuboidMesh_System_Numerics_Vector3_System_Single_System_Single_System_Single_System_Single_System_Nullable_Yak2D_RectangularCuboidMeshTexCoords__" data-uid="Yak2D.ICommonMeshBuilder.CreateRectangularCuboidMesh(System.Numerics.Vector3,System.Single,System.Single,System.Single,System.Single,System.Nullable{Yak2D.RectangularCuboidMeshTexCoords})">CreateRectangularCuboidMesh(Vector3, float, float, float, float, RectangularCuboidMeshTexCoords?)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Creates a 6 sided mesh, cuboid in shape</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -211,32 +219,38 @@
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.vector3">Vector3</a></td>
         <td><span class="parametername">position</span></td>
-        <td></td>
+        <td><p>Position of centre of mesh</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
         <td><span class="parametername">width</span></td>
-        <td></td>
+        <td><p>Width of mesh</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
         <td><span class="parametername">height</span></td>
-        <td></td>
+        <td><p>Height of mesh</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
         <td><span class="parametername">depth</span></td>
-        <td></td>
+        <td><p>Depth of mesh</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
         <td><span class="parametername">rotationDegreesAroundY</span></td>
-        <td></td>
+        <td><p>Angle in degress to rotate shape around Y (up) axis</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="Yak2D.RectangularCuboidMeshTexCoords.html">RectangularCuboidMeshTexCoords</a>?</td>
         <td><span class="parametername">textureCoords</span></td>
-        <td></td>
+        <td><p>Defines how texture coordinates are mapped onto the 6 sides</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -302,7 +316,7 @@ When width == height == depth, a sphere is generated</p>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
         <td><span class="parametername">rotationDegreesClockwiseYAxis</span></td>
-        <td><p>Angle in degress to rotate shape around Y (up) axis&quot;</p>
+        <td><p>Angle in degress to rotate shape around Y (up) axis</p>
 </td>
       </tr>
       <tr>
@@ -314,7 +328,8 @@ When width == height == depth, a sphere is generated</p>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></td>
         <td><span class="parametername">numDivsVertical</span></td>
-        <td></td>
+        <td><p>Defines the number of segments that the curved surface is divided into from pole to pole</p>
+</td>
       </tr>
     </tbody>
   </table>

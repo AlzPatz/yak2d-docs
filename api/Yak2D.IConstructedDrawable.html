@@ -255,7 +255,8 @@ It currently only supports references (not raw unsigned integer ids). Wrap ids i
   </table>
   <a id="Yak2D_IConstructedDrawable_GenerateDrawRequest_" data-uid="Yak2D.IConstructedDrawable.GenerateDrawRequest*"></a>
   <h4 id="Yak2D_IConstructedDrawable_GenerateDrawRequest_Yak2D_CoordinateSpace_System_Single_System_Int32_" data-uid="Yak2D.IConstructedDrawable.GenerateDrawRequest(Yak2D.CoordinateSpace,System.Single,System.Int32)">GenerateDrawRequest(CoordinateSpace, float, int)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Create a draw request (to submit to a DrawStage later) to draw the shape in its current state</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -274,17 +275,22 @@ It currently only supports references (not raw unsigned integer ids). Wrap ids i
       <tr>
         <td><a class="xref" href="Yak2D.CoordinateSpace.html">CoordinateSpace</a></td>
         <td><span class="parametername">space</span></td>
-        <td></td>
+        <td><p>The coordinate space (world or screen) that the vertices should be transformed by</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
         <td><span class="parametername">depth</span></td>
-        <td></td>
+        <td><p>Z depth of vertices defining ordering within a layer (0.0 [front] to 1.0 [back])</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
         <td><span class="parametername">layer</span></td>
-        <td></td>
+        <td><blockquote>
+<p>= 0. The layer that these vertices belong too, lower layers are drawn behind higher layers</p>
+</blockquote>
+</td>
       </tr>
     </tbody>
   </table>
@@ -325,7 +331,8 @@ It currently only supports references (not raw unsigned integer ids). Wrap ids i
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.vector2">Vector2</a></td>
         <td><span class="parametername">delta</span></td>
-        <td></td>
+        <td><p>Amount to shift shape position by</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -346,7 +353,8 @@ It currently only supports references (not raw unsigned integer ids). Wrap ids i
   </table>
   <a id="Yak2D_IConstructedDrawable_SubmitDraw_" data-uid="Yak2D.IConstructedDrawable.SubmitDraw*"></a>
   <h4 id="Yak2D_IConstructedDrawable_SubmitDraw_Yak2D_IDrawStage_Yak2D_CoordinateSpace_System_Single_System_Int32_" data-uid="Yak2D.IConstructedDrawable.SubmitDraw(Yak2D.IDrawStage,Yak2D.CoordinateSpace,System.Single,System.Int32)">SubmitDraw(IDrawStage, CoordinateSpace, float, int)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Create and submit the draw request to draw the shape in its current state to a draw stage</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -365,22 +373,28 @@ It currently only supports references (not raw unsigned integer ids). Wrap ids i
       <tr>
         <td><a class="xref" href="Yak2D.IDrawStage.html">IDrawStage</a></td>
         <td><span class="parametername">drawStage</span></td>
-        <td></td>
+        <td><p>DrawStage reference</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="Yak2D.CoordinateSpace.html">CoordinateSpace</a></td>
         <td><span class="parametername">space</span></td>
-        <td></td>
+        <td><p>The coordinate space (world or screen) that the vertices should be transformed by</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
         <td><span class="parametername">depth</span></td>
-        <td></td>
+        <td><p>Z depth of vertices defining ordering within a layer (0.0 [front] to 1.0 [back])</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
         <td><span class="parametername">layer</span></td>
-        <td></td>
+        <td><blockquote>
+<p>= 0. The layer that these vertices belong too, lower layers are drawn behind higher layers</p>
+</blockquote>
+</td>
       </tr>
     </tbody>
   </table>

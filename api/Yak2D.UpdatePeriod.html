@@ -105,7 +105,13 @@ the simulation will slow down and fall behind the clock</p>
       </tr>
       <tr>
         <td id="Yak2D_UpdatePeriod_Fixed_Adaptive">Fixed_Adaptive</td>
-        <td></td>
+        <td><p>Framework automatically adjusts the fixed timestep used to process update loop iterations / 'frames'
+The framework measures the percentage of time sat 'idle'
+Should the framework be utilised above a certain percentage (currently hard coded at 95%) for a number of frames (currently 8)
+Then the relieve pressure on the system, the fixed timestep is doubled
+The opposite is true for underutilisation, however the time period over which it must be observed to
+result in a timestep halfing is longer (120 frames currentyl hardcoded at &lt;= 40% utilisation)</p>
+</td>
       </tr>
       <tr>
         <td id="Yak2D_UpdatePeriod_Variable">Variable</td>

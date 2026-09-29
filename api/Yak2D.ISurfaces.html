@@ -136,7 +136,8 @@ Both RenderTarget and Textures can be used as Textures (pixel sources)</p>
   </table>
   <a id="Yak2D_ISurfaces_UserTextureCount_" data-uid="Yak2D.ISurfaces.UserTextureCount*"></a>
   <h4 id="Yak2D_ISurfaces_UserTextureCount" data-uid="Yak2D.ISurfaces.UserTextureCount">UserTextureCount</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Textures cannot be drawn too, they do not have a depth component</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -161,7 +162,8 @@ Both RenderTarget and Textures can be used as Textures (pixel sources)</p>
 </h3>
   <a id="Yak2D_ISurfaces_CreateFloat32FromData_" data-uid="Yak2D.ISurfaces.CreateFloat32FromData*"></a>
   <h4 id="Yak2D_ISurfaces_CreateFloat32FromData_System_UInt32_System_UInt32_System_Single___Yak2D_SamplerType_" data-uid="Yak2D.ISurfaces.CreateFloat32FromData(System.UInt32,System.UInt32,System.Single[],Yak2D.SamplerType)">CreateFloat32FromData(uint, uint, float[], SamplerType)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Geneate a texture of floats (used in distortion stages) directly from an array</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -180,22 +182,26 @@ Both RenderTarget and Textures can be used as Textures (pixel sources)</p>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></td>
         <td><span class="parametername">textureWidth</span></td>
-        <td></td>
+        <td><p>Width in pixels</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></td>
         <td><span class="parametername">textureHeight</span></td>
-        <td></td>
+        <td><p>Height in pixels</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>[]</td>
         <td><span class="parametername">pixels</span></td>
-        <td></td>
+        <td><p>Pixel data, one dimensional array, texture top-left pixel at 0 index, data ordered in rows</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="Yak2D.SamplerType.html">SamplerType</a></td>
         <td><span class="parametername">samplerType</span></td>
-        <td></td>
+        <td><p>Sampler filter to be when sampling the Texture</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -282,7 +288,8 @@ Both RenderTarget and Textures can be used as Textures (pixel sources)</p>
   </table>
   <a id="Yak2D_ISurfaces_CreateRgbaFromData_" data-uid="Yak2D.ISurfaces.CreateRgbaFromData*"></a>
   <h4 id="Yak2D_ISurfaces_CreateRgbaFromData_System_UInt32_System_UInt32_System_Numerics_Vector4___Yak2D_SamplerType_System_Boolean_" data-uid="Yak2D.ISurfaces.CreateRgbaFromData(System.UInt32,System.UInt32,System.Numerics.Vector4[],Yak2D.SamplerType,System.Boolean)">CreateRgbaFromData(uint, uint, Vector4[], SamplerType, bool)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Geneate a texture of RGBA pixels directly from an array of Vector4s</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -301,27 +308,32 @@ Both RenderTarget and Textures can be used as Textures (pixel sources)</p>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></td>
         <td><span class="parametername">textureWidth</span></td>
-        <td></td>
+        <td><p>Width in pixels</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></td>
         <td><span class="parametername">textureHeight</span></td>
-        <td></td>
+        <td><p>Height in pixels</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.vector4">Vector4</a>[]</td>
         <td><span class="parametername">pixels</span></td>
-        <td></td>
+        <td><p>Pixel data, one dimensional array, texture top-left pixel at 0 index, data ordered in rows</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="Yak2D.SamplerType.html">SamplerType</a></td>
         <td><span class="parametername">samplerType</span></td>
-        <td></td>
+        <td><p>Sampler filter to be when sampling the Texture</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
         <td><span class="parametername">generateMipMaps</span></td>
-        <td></td>
+        <td><p>Should MipMaps be created</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -507,7 +519,8 @@ Both RenderTarget and Textures can be used as Textures (pixel sources)</p>
   </table>
   <a id="Yak2D_ISurfaces_LoadTexture_" data-uid="Yak2D.ISurfaces.LoadTexture*"></a>
   <h4 id="Yak2D_ISurfaces_LoadTexture_System_IO_Stream_Yak2D_SamplerType_System_Boolean_" data-uid="Yak2D.ISurfaces.LoadTexture(System.IO.Stream,Yak2D.SamplerType,System.Boolean)">LoadTexture(Stream, SamplerType, bool)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Load a texture from a stream</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -526,17 +539,20 @@ Both RenderTarget and Textures can be used as Textures (pixel sources)</p>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a></td>
         <td><span class="parametername">stream</span></td>
-        <td></td>
+        <td><p>Data stream containing image data</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="Yak2D.SamplerType.html">SamplerType</a></td>
         <td><span class="parametername">samplerType</span></td>
-        <td></td>
+        <td><p>Sampler filter to be when sampling the Texture</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
         <td><span class="parametername">generateMipMaps</span></td>
-        <td></td>
+        <td><p>Should MipMaps be created</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -557,7 +573,8 @@ Both RenderTarget and Textures can be used as Textures (pixel sources)</p>
   </table>
   <a id="Yak2D_ISurfaces_LoadTexture_" data-uid="Yak2D.ISurfaces.LoadTexture*"></a>
   <h4 id="Yak2D_ISurfaces_LoadTexture_System_String_Yak2D_AssetSourceEnum_Yak2D_ImageFormat_Yak2D_SamplerType_System_Boolean_" data-uid="Yak2D.ISurfaces.LoadTexture(System.String,Yak2D.AssetSourceEnum,Yak2D.ImageFormat,Yak2D.SamplerType,System.Boolean)">LoadTexture(string, AssetSourceEnum, ImageFormat, SamplerType, bool)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Load a texture from an image asset</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -576,27 +593,32 @@ Both RenderTarget and Textures can be used as Textures (pixel sources)</p>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
         <td><span class="parametername">path</span></td>
-        <td></td>
+        <td><p>Image asset name including path (no file extension)</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="Yak2D.AssetSourceEnum.html">AssetSourceEnum</a></td>
         <td><span class="parametername">assetType</span></td>
-        <td></td>
+        <td><p>Embedded in the binary or a file location</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="Yak2D.ImageFormat.html">ImageFormat</a></td>
         <td><span class="parametername">imageFormat</span></td>
-        <td></td>
+        <td><p>Image file encoding</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="Yak2D.SamplerType.html">SamplerType</a></td>
         <td><span class="parametername">samplerType</span></td>
-        <td></td>
+        <td><p>Sampler filter to be when sampling the Texture</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
         <td><span class="parametername">generateMipMaps</span></td>
-        <td></td>
+        <td><p>Should MipMaps be created</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -637,19 +659,19 @@ Both RenderTarget and Textures can be used as Textures (pixel sources)</p>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
         <td><span class="parametername">path</span></td>
-        <td><p>Image (.png) asset name including path (no file extension)&quot;</p>
+        <td><p>Image (.png) asset name including path (no file extension)</p>
 </td>
       </tr>
       <tr>
         <td><a class="xref" href="Yak2D.AssetSourceEnum.html">AssetSourceEnum</a></td>
         <td><span class="parametername">assetType</span></td>
-        <td><p>Embedded in the binary or a file location&quot;</p>
+        <td><p>Embedded in the binary or a file location</p>
 </td>
       </tr>
       <tr>
         <td><a class="xref" href="Yak2D.ImageFormat.html">ImageFormat</a></td>
         <td><span class="parametername">imageFormat</span></td>
-        <td><p>Image file encoding&quot;</p>
+        <td><p>Image file encoding</p>
 </td>
       </tr>
     </tbody>

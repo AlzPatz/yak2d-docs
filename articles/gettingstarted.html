@@ -70,272 +70,190 @@
 <h1 id="getting-started">Getting Started</h1>
 
 <h2 id="aim">Aim</h2>
-<p>By the end of this article you will have created a new project that uses <strong>yak2D</strong>. You will have created the outline of an application, which clears the display to a colour and exits when the escape key is pressed.</p>
-<p>This blank project will be used as the starting point for further tutorials (or your own applications!)</p>
+<p>By the end of this article you will have created a new project that uses <strong>yak2D</strong>: an application that opens a window, clears it to a colour every frame, and exits when the escape key is pressed.</p>
+<p>This blank project is the starting point for the <a class="xref" href="continued.html">next tutorial</a> (or your own applications!).</p>
 <h2 id="prerequisites">Prerequisites</h2>
 <ul>
-<li>A desktop OS (Windows, Linux or MacOS)</li>
+<li>A desktop OS: <strong>Windows</strong>, <strong>Linux</strong> or <strong>macOS</strong> (x64 or arm64)</li>
+<li>A GPU and driver supporting at least one of Direct3D 11, Vulkan, OpenGL or Metal</li>
 <li>Basic C# knowledge</li>
 </ul>
 <h2 id="environment-setup">Environment Setup</h2>
-<p>You wil require software to help you write code</p>
+<p><strong>yak2D</strong> applications are .NET applications. <strong>yak2D</strong> targets <strong>.NET 10</strong>, so you need the <strong>.NET 10 SDK</strong> (or later).</p>
+<p>The steps in this tutorial use the <code>dotnet</code> command line tool, which works the same way on every platform. Any editor can be used; popular choices are <a href="https://visualstudio.microsoft.com/">Visual Studio</a> (Windows), <a href="https://www.jetbrains.com/rider/">JetBrains Rider</a> (all platforms) and <a href="https://code.visualstudio.com/">Visual Studio Code</a> with the C# Dev Kit extension (all platforms).</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>There is no need to install SDL2 or any other native library. The <strong>yak2D</strong> NuGet package brings in everything it needs (including SDL2 for windowing and input) for Windows, Linux and macOS.</p>
+</div>
+<h3 id="install-the-net-sdk">Install the .NET SDK</h3>
+<h4 id="windows">Windows</h4>
+<p>Either:</p>
 <ul>
-<li><strong>Windows</strong>: <a href="https://visualstudio.microsoft.com/">Visual Studio</a></li>
-<li><strong>Linux</strong> and <strong>MacOS</strong>: A <a href="https://code.visualstudio.com/">text editor</a> of any sort</li>
+<li>Install <a href="https://visualstudio.microsoft.com/">Visual Studio</a> with the <strong>.NET desktop development</strong> workload (this includes the SDK), or</li>
+<li>Download the .NET 10 SDK installer from <a href="https://dotnet.microsoft.com/download">dot.net</a>, or</li>
+<li>From a terminal: <code>winget install Microsoft.DotNet.SDK.10</code></li>
 </ul>
-<p><strong>yak2D</strong> applications are built with .NET. <strong>yak2D</strong> targets the <code>NetStandard2.0</code> framework.</p>
-<p>This tutorial uses the command line tooling <code>dotnet [command]</code> for Linux and MacOS environments. Whilst the command line tools are also available for Windows, using the <a href="https://visualstudio.microsoft.com/">Visual Studio IDE</a> is described below.</p>
-<h3 id="windows">Windows</h3>
-<ol>
-<li>Download the Visual Studio IDE. At the time of writing the free version of Visual Studio is Community 2019
-<ul>
-<li>During the installation, install .NET Core desktop development packages (at the time of writing, this is included under the &quot;.NET desktop development&quot; workload option presented by the Visual Studio Installer)</li>
-</ul>
-</li>
-<li>Open Visual Studio and Create a new Console App (.NET Core). Choose the project name and disk location
-<img src="../images/win_00.png" alt=""></li>
-<li>Once the project is open, add the <strong>yak2D</strong> nuget packages to your project:
-<ul>
-<li>In the solution explorer, right click on the project and go to &quot;Manage Nuget Packages&quot;
-<img src="../images/win_01.png" alt=""></li>
-<li>In the Nuget Package Manager, navigate to the browse tab</li>
-<li>Search for &quot;yak2D&quot; and install the latest stable version
-<img src="../images/win_02.png" alt=""></li>
-</ul>
-</li>
-<li>Once the <strong>yak2D</strong> package has downloaded, and you have accepted any licenses, add a new class file to your project. This file will hold your the root of your application's code:
-<ul>
-<li>In the solution explorer, right click on the project and go to &quot;Add&quot;, then &quot;New Item...&quot;
-<img src="../images/win_03.png" alt=""></li>
-<li>Choose &quot;Class&quot; and name your file with a <code>.cs</code> extension. For this tutorial <code>MyApplication.cs</code> was chosen
-<img src="../images/win_04.png" alt=""></li>
-</ul>
-</li>
-<li>In <code>MyApplication.cs</code> delete the <code>using</code> statements at the top of the file, these are not needed.</li>
-</ol>
-<p>With the project set up, ready for code, please scroll down and continue with the <a class="xref" href="gettingstarted.html#Writing-Code">writing code</a> section.</p>
-<h3 id="linux">Linux</h3>
-<ol>
-<li>Download your chosen text editor</li>
-<li>Install .NET SDK
-<ul>
-<li><p>The installation method may vary depending on your linux flavour, information for common distros can be found <a href="https://docs.microsoft.com/en-us/dotnet/core/install/linux">here</a></p>
-</li>
-<li><p>As an example, for Ubuntu 20.10 and .NET 5, the following terminal commands can be used:</p>
-<ul>
-<li>Add the Microsoft package signing key to your list of trusted keys and add the package repository:</li>
-</ul>
-<pre><code class="lang-bash">wget https://packages.microsoft.com/config/ubuntu/20.10/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+<h4 id="linux">Linux</h4>
+<p>Most distributions package the .NET SDK. For example:</p>
+<pre><code class="lang-bash"># Fedora
+sudo dnf install dotnet-sdk-10.0
+
+# Ubuntu (older releases may first need the .NET backports repository - see the guide below)
+sudo apt-get update &amp;&amp; sudo apt-get install -y dotnet-sdk-10.0
 </code></pre>
-<ul>
-<li>Install the .NET SDK:</li>
-</ul>
-<pre><code class="lang-bash">sudo dpkg -i packages-microsoft-prod.deb
-sudo apt-get update; \
-sudo apt-get install -y apt-transport-https &amp;&amp; \
-sudo apt-get update &amp;&amp; \
-sudo apt-get install -y dotnet-sdk-5.0
+<p>For other distributions, or if your distribution does not yet package .NET 10, see Microsoft's <a href="https://learn.microsoft.com/dotnet/core/install/linux">Linux install guide</a>.</p>
+<p>Make sure your graphics drivers are installed. On most desktop distributions the default Mesa drivers (Intel / AMD) or the vendor's proprietary drivers (NVIDIA) provide OpenGL and Vulkan support. Both X11 and Wayland sessions are supported.</p>
+<h4 id="macos">macOS</h4>
+<p>Download the .NET 10 SDK installer (Arm64 for Apple Silicon, x64 for Intel Macs) from <a href="https://dotnet.microsoft.com/download">dot.net</a>, or use Homebrew:</p>
+<pre><code class="lang-bash">brew install --cask dotnet-sdk
 </code></pre>
-</li>
-</ul>
-</li>
-<li><a href="https://wiki.libsdl.org/Installation">Install the SDL2 Library</a>
-<ul>
-<li>The installation process will vary depending on your linux flavour</li>
-<li>As example, on Ubuntu 20.10, from a terminal window:</li>
-</ul>
-<pre><code class="lang-bash">sudo apt install libsdl2-dev libsdl2-2.0-0
+<div class="NOTE">
+<h5>Note</h5>
+<p>macOS support is less thoroughly tested than Windows and Linux. The Metal backend is currently disabled, so on macOS <strong>yak2D</strong> renders using OpenGL (or Vulkan, via the bundled MoltenVK). Please <a href="https://github.com/AlzPatz/yak2d/issues">raise an issue</a> if you run into problems.</p>
+</div>
+<h3 id="check-the-installation">Check the installation</h3>
+<p>Open a terminal (Command Prompt / PowerShell on Windows) and run:</p>
+<pre><code class="lang-bash">dotnet --version
 </code></pre>
-</li>
-<li>In the terminal, navigate to the folder in which you wish your project folder to be created</li>
-<li>To create a new Console application, type the following command. The name of the project follows the -n tag:</li>
-</ol>
-<pre><code class="lang-bash">dotnet new console -n GettingStartedLinux
+<p>The version reported should be <code>10.0.100</code> or higher.</p>
+<h2 id="create-the-project">Create the Project</h2>
+<p>From a terminal, navigate to the folder in which you want your project folder to be created, then run:</p>
+<pre><code class="lang-bash">dotnet new console -n MyFirstYakApp
+cd MyFirstYakApp
+dotnet add package Yak2D
 </code></pre>
-<ol start="6">
-<li>Navigate to the project directory</li>
-</ol>
-<pre><code class="lang-bash">cd GettingStartedLinux
-</code></pre>
-<ol start="7">
-<li>Install Yak2D nuget package:</li>
-</ol>
-<pre><code class="lang-bash">dotnet add package yak2D
-</code></pre>
-<ol start="8">
-<li>You will notice <code>Program.cs</code> is already present. We need to add a code file that will contain our implementation of the <a class="xref" href="../api/Yak2D.IApplication.html">IApplication</a> interface. You can do this in a number of ways, including using the following command:</li>
-</ol>
-<pre><code class="lang-bash">touch MyApplication.cs
-</code></pre>
-<ol start="9">
-<li>Open the empty file in your text editor</li>
-<li>For now we add a simple class definition that we will expand upon in the next section. We put the class definition int the namespace of the project, although that is not strictly required (the namespace must match that which the main function is contained within in <code>Program.cs</code>):</li>
-</ol>
-<pre><code class="lang-csharp">namespace GettingStarted
-{
-    class MyApplication
-    {
-            
-    }
-}     
-</code></pre>
-<p>With the project set up, ready for code, please scroll down and continue with the <a class="xref" href="gettingstarted.html#Writing-Code">writing code</a> section.</p>
-<h3 id="macos">MacOS</h3>
-<p><em>Under Construction a.k.a waiting for some time with a Mac. Installing .NET on MacOS is relatively easy, please google for a guide. <code>dotnet</code> command line functions then work the same as on a linux distro</em></p>
+<p>This creates a console application project containing <code>MyFirstYakApp.csproj</code> and <code>Program.cs</code>, and adds a reference to the latest <a href="https://www.nuget.org/packages/Yak2D/"><strong>yak2D</strong> NuGet package</a>.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>In Visual Studio or Rider you can instead create a new <strong>Console App</strong> project and add the <code>Yak2D</code> package using the NuGet package manager. The rest of this tutorial is the same.</p>
+</div>
+<p>Open the <code>MyFirstYakApp</code> folder in your editor.</p>
 <h2 id="writing-code">Writing Code</h2>
-<p><em>At this stage it is assumed you have a .NET core console project created with two source files: <code>Program.cs</code> and <code>MyApplication.cs</code></em>.</p>
-<p>To launch a <strong>yak2D</strong> application you must create a class that implements the <a class="xref" href="../api/Yak2D.IApplication.html">IApplication</a> interface, instantiate an instance of the class, and pass that to the <a href="xref:Yak2D.Launcher.Run">Launcher.Run()</a> method:</p>
-<ol>
-<li><p>In <code>MyApplication.cs</code> add the following using statement at the top of the file:</p>
-<p><code>using Yak2D;</code></p>
-</li>
-<li><p>In <code>MyApplication.cs</code> let the class inherrit from the <a class="xref" href="../api/Yak2D.IApplication.html">IApplication</a> interface by changing the class definition line from:</p>
-<p><code>class MyApplication</code></p>
-<p>to</p>
-<p><code>class MyApplication : IApplication</code></p>
-</li>
-<li><p>We now need to provide implementations of the methods described by the <a class="xref" href="../api/Yak2D.IApplication.html">IApplication</a> interface.</p>
-<ul>
-<li>We will tackle each method one at a time. If you are using a variant of Visual Studio or another IDE with the ability, you can ask the editor to automatically fill in blank methods for the interface to save some typing. In Visual Studio (windows) you can navigate to the drop down button under the red squiggly line and click on <code>Implement Interface</code>:
-<img src="../images/win_05.png" alt=""></li>
-<li><em>Please note</em>: The auto-fill functions are not guaranteed to order the methods in the most logical way. Whilst the order in which the methods appear in the source code file <strong>do not matter</strong>, it is recommended to re-order your methods in the way described below to better reflect program execution flow and code understanding.</li>
-<li>All methods should be written between the opening curly bracket ({) following <code>class MyApplication : IApplication</code> and the next closing curly bracket immediately following.</li>
-<li><strong>Implement <a class="xref" href="../api/Yak2D.IApplication.html#Yak2D_IApplication_OnStartup">OnStartup()</a></strong>. This method runs before any other in the application and allows you to add any code you wish to run ahead of the application's other methods. In this instance, we do not have any code we wish to run, so we provide an empty method implementation:</li>
-</ul>
-<pre><code class="lang-csharp">public void OnStartup() { }
-</code></pre>
-<ul>
-<li><strong>Implement <a class="xref" href="../api/Yak2D.IApplication.html#Yak2D_IApplication_Configure">Configure()</a></strong>. This method returns an instance of the <a class="xref" href="../api/Yak2D.StartupConfig.html">StartupConfig</a> class, which holds application configuration information. It is called once at application start up. We can use a helper method within <a class="xref" href="../api/Yak2D.StartupConfig.html">StartupConfig</a> to simplify the creation and get some default values. Below we pass a window resolution of 960 by 540 pixels, a string for the window title of &quot;My Application!&quot; and finally we pass <code>false</code> for whether to open the application in fullscreen mode (i.e requesting a windowed application).</li>
-</ul>
-<pre><code class="lang-csharp">public StartupConfig Configure()
+<p>To launch a <strong>yak2D</strong> application you create a class that implements the <a class="xref" href="../api/Yak2D.IApplication.html">IApplication</a> interface, and pass an instance of it to <a class="xref" href="../api/Yak2D.Launcher.html#Yak2D_Launcher_Run_">Launcher.Run()</a>. The framework then takes control, calling your class's methods at the right points in the <a class="xref" href="lifecycle.html">application lifecycle</a>.</p>
+<h3 id="create-the-application-class">Create the application class</h3>
+<p>Create a new file in the project folder called <code>MyApplication.cs</code>, containing:</p>
+<pre><code class="lang-csharp">using Yak2D;
+
+namespace MyFirstYakApp;
+
+public class MyApplication : IApplication
 {
-    return StartupConfig.Default(960, 540, &quot;My Application!&quot;, false);
+
 }
 </code></pre>
-<ul>
-<li><strong>Implement <a href="xref:Yak2D.IApplication.CreateResources">CreateResources()</a></strong>. All <a class="xref" href="glossary.html#Resource">resource</a> creation should be completed within, or be triggered by, this method. It runs once before the main update and rendering loops begin and is also triggered if the application loses it's <a class="xref" href="glossary.html#Resource">resources</a> at anytime. A blank application uses no resources so for now an empty method is all that is required. The method must return <code>true</code> to indicate to the framework that it was successful:</li>
-</ul>
-<pre><code class="lang-csharp">public bool CreateResources(IServices yak) 
-{ 
+<p>Your editor will now complain that <code>MyApplication</code> does not implement the members of <a class="xref" href="../api/Yak2D.IApplication.html">IApplication</a>. We add each one in turn below. <em>(Most editors offer an &quot;Implement interface&quot; quick-fix that generates empty methods for you. The order the methods appear in the file does not matter, but the order below follows the order in which the framework calls them.)</em></p>
+<p>All of the following methods go between the curly brackets of the <code>MyApplication</code> class.</p>
+<p><strong><a class="xref" href="../api/Yak2D.IApplication.html#Yak2D_IApplication_OnStartup">OnStartup()</a></strong> runs before any other method. There is nothing we need to do here yet:</p>
+<pre><code class="lang-csharp">public void OnStartup() { }
+</code></pre>
+<p><strong><a class="xref" href="../api/Yak2D.IApplication.html#Yak2D_IApplication_Configure">Configure()</a></strong> is called once at start up and returns a <a class="xref" href="../api/Yak2D.StartupConfig.html">StartupConfig</a> describing the window, graphics API and timing settings. The <a class="xref" href="../api/Yak2D.StartupConfig.html#Yak2D_StartupConfig_Default_">StartupConfig.Default()</a> helper fills in sensible defaults; we pass a window size of 960 x 540 pixels, a window title, and <code>false</code> to request a window rather than fullscreen:</p>
+<pre><code class="lang-csharp">public StartupConfig Configure()
+{
+    return StartupConfig.Default(960, 540, &quot;My First yak2D App&quot;, false);
+}
+</code></pre>
+<p><strong><a class="xref" href="../api/Yak2D.IApplication.html#Yak2D_IApplication_CreateResources_">CreateResources()</a></strong> is where all <a class="xref" href="glossary.html#resource">resources</a> (textures, fonts, render stages, cameras, etc.) are created. It runs once before the main loop starts, and again if the application ever loses its resources (for example, if the graphics API is changed at runtime). A blank application uses no resources. Returning <code>true</code> tells the framework creation succeeded:</p>
+<pre><code class="lang-csharp">public bool CreateResources(IServices yak)
+{
     return true;
 }
 </code></pre>
-<ul>
-<li><strong>Implement <a href="xref:Yak2D.IApplication.ProcessMessage">ProcessMessage()</a></strong>. Ahead of an <a class="xref" href="glossary.html#updatestep">UpdateStep</a>, this method is called once for every message generated by the framework. Allows the application to be informed about a number of different events, such as a gamepad being added or the window being resized. There are no messages we need to process for the blank application, so you guessed it, we create another empty method implementation:</li>
-</ul>
+<p><strong><a class="xref" href="../api/Yak2D.IApplication.html#Yak2D_IApplication_ProcessMessage_">ProcessMessage()</a></strong> is called once for every <a class="xref" href="../api/Yak2D.FrameworkMessage.html">FrameworkMessage</a> generated by the framework (such as a gamepad being connected or the window being resized), ahead of each <a class="xref" href="glossary.html#updatestep">UpdateStep</a>. We can ignore them for now:</p>
 <pre><code class="lang-csharp">public void ProcessMessage(FrameworkMessage msg, IServices yak) { }
 </code></pre>
-<ul>
-<li><strong>Implement <a href="xref:Yak2D.IApplication.Update">Update()</a></strong>. Called during an <a class="xref" href="glossary.html#updatestep">UpdateStep</a>. Used for non-drawing and rendering application logic. For this application we simply return <code>false</code> (which triggers an application shutdown) if the <code>escape</code> key is pressed.</li>
-</ul>
+<p><strong><a class="xref" href="../api/Yak2D.IApplication.html#Yak2D_IApplication_Update_">Update()</a></strong> is called during each <a class="xref" href="glossary.html#updatestep">UpdateStep</a>, and is where non-drawing application logic (game simulation, input handling, etc.) lives. Returning <code>false</code> shuts the application down, so here we return <code>false</code> when the escape key is pressed:</p>
 <pre><code class="lang-csharp">public bool Update(IServices yak, float secondsSinceLastUpdate)
 {
     return !yak.Input.IsKeyCurrentlyPressed(KeyCode.Escape);
 }
 </code></pre>
-<ul>
-<li><strong>Implement <a href="xref:Yak2D.IApplication.PreDrawing">PreDrawing()</a></strong>. The first user method of three called during a <a class="xref" href="glossary.html#renderstep">RenderStep</a>. A place for non-drawing or rendering code to be executed ahead of drawing and rendering. Again, for a blank application, we create an empty method.</li>
-</ul>
+<p><strong><a class="xref" href="../api/Yak2D.IApplication.html#Yak2D_IApplication_PreDrawing_">PreDrawing()</a></strong> is the first of three methods called during each <a class="xref" href="glossary.html#renderstep">RenderStep</a>. It is a place to run non-drawing code ahead of drawing, such as moving cameras or updating render stage settings. Nothing is needed here yet:</p>
 <pre><code class="lang-csharp">public void PreDrawing(IServices yak, float secondsSinceLastDraw, float secondsSinceLastUpdate) { }
 </code></pre>
-<ul>
-<li><strong>Implement <a href="xref:Yak2D.IApplication.Drawing">Drawing()</a></strong>. The second user method of three called during a <a class="xref" href="glossary.html#renderstep">RenderStep</a>. As the name implies, this method is used for <a class="xref" href="glossary.html#drawing">drawing</a>, namely creating and submitting <a class="xref" href="../api/Yak2D.DrawRequest.html">DrawRequests</a> to <a class="xref" href="../api/Yak2D.IDrawStage.html">DrawStages</a>. The blank application does not contain a <a class="xref" href="../api/Yak2D.IDrawStage.html">DrawStage</a> and so an empty method is created.</li>
-</ul>
+<p><strong><a class="xref" href="../api/Yak2D.IApplication.html#Yak2D_IApplication_Drawing_">Drawing()</a></strong> is the second. It is where <a class="xref" href="../api/Yak2D.DrawRequest.html">DrawRequests</a> are created and submitted to <a class="xref" href="../api/Yak2D.IDrawStage.html">DrawStages</a> (i.e. where you draw your sprites and shapes). The blank application draws nothing:</p>
 <pre><code class="lang-csharp">public void Drawing(IDrawing draw, IFps fps, IInput input, ICoordinateTransforms transforms, float secondsSinceLastDraw, float secondsSinceLastUpdate) { }
 </code></pre>
-<ul>
-<li><strong>Implement <a href="xref:Yak2D.IApplication.Rendering">Rendering()</a></strong>. The third user method of three called during a <a class="xref" href="glossary.html#renderstep">RenderStep</a>. In this method the user must build the <a class="xref" href="glossary.html#renderqueue">RenderQueue</a> by calling methods provided by the <a class="xref" href="../api/Yak2D.IRenderQueue.html">IRenderQueue</a> instance. In this example, the only action to queue is to clear the window's <a class="xref" href="../api/Yak2D.IRenderTarget.html">RenderTarget</a> colour data with a colour as well as clearing its depth buffer. <em>Note: A user may choose for the framework to automatically clear the window's <a class="xref" href="../api/Yak2D.IRenderTarget.html">RenderTarget</a>'s colour and depth ahead of actions placed into the <a class="xref" href="glossary.html#renderqueue">RenderQueue</a>. In fact, the default<a class="xref" href="../api/Yak2D.StartupConfig.html">StartupConfig</a> provided by the helper method used in <a class="xref" href="../api/Yak2D.IApplication.html#Yak2D_IApplication_Configure">Configure()</a> above is set to auto-clear. The auto-clear colour is always transparent black RGBA(0, 0, 0, 0). Therefore in the code below, the depth clear is not technically required</em></li>
-</ul>
+<p><strong><a class="xref" href="../api/Yak2D.IApplication.html#Yak2D_IApplication_Rendering_">Rendering()</a></strong> is the third. Here you build the <a class="xref" href="glossary.html#renderqueue">RenderQueue</a>: the ordered list of rendering operations the GPU performs this frame. The blank application has one operation: clearing the window's <a class="xref" href="../api/Yak2D.IRenderTarget.html">RenderTarget</a> to a colour:</p>
 <pre><code class="lang-csharp">public void Rendering(IRenderQueue q, IRenderTarget windowRenderTarget)
 {
-    q.ClearDepth(windowRenderTarget);
-    q.ClearColour(windowRenderTarget, Colour.Pink);
+    q.ClearColour(windowRenderTarget, Colour.CornflowerBlue);
 }
 </code></pre>
-<ul>
-<li><strong>Implement <a class="xref" href="../api/Yak2D.IApplication.html#Yak2D_IApplication_Shutdown">Shutdown()</a></strong>. Called upon application exit. A place for the user application to release any acquired resources not related to the <strong>yak2D</strong> framework and that will not be disposed of automatically. In this blank application, an empty method suffices.</li>
-</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p><a class="xref" href="../api/Yak2D.StartupConfig.html">StartupConfig</a> also has <code>AutoClearMainWindowColourEachFrame</code> and <code>AutoClearMainWindowDepthEachFrame</code> settings which, when <code>true</code>, clear the window to transparent black before your render queue runs. <code>StartupConfig.Default()</code> sets both to <code>false</code>, which is why we clear explicitly here.</p>
+</div>
+<p><strong><a class="xref" href="../api/Yak2D.IApplication.html#Yak2D_IApplication_Shutdown">Shutdown()</a></strong> is called when the application exits. Use it to release anything your application holds that is <em>not</em> managed by <strong>yak2D</strong> (framework resources are cleaned up automatically):</p>
 <pre><code class="lang-csharp">public void Shutdown() { }
 </code></pre>
-</li>
-<li><p>Next modify <code>Program.cs</code> to create an instance of the  <code>MyApplication</code> class and pass it to the <a href="xref:Yak2D.Launcher.Run">launcher's run method</a>.</p>
-<ul>
-<li>Add the following using statement at the top of the file:</li>
-</ul>
-<p><code>using Yak2D;</code></p>
-<ul>
-<li>Delete any code in the <code>Main()</code> method (likely `Console.WriteLine(&quot;Hello World!&quot;);', replacing the method with the following:</li>
-</ul>
-<pre><code class="lang-csharp">static void Main(string[] args)
-{
-    Launcher.Run(new MyApplication());
-}
+<h3 id="launch-the-application">Launch the application</h3>
+<p>Replace the contents of <code>Program.cs</code> with:</p>
+<pre><code class="lang-csharp">using Yak2D;
+using MyFirstYakApp;
+
+Launcher.Run(new MyApplication());
 </code></pre>
-</li>
-</ol>
-<h2 id="running-the-blank-application">Running the blank application</h2>
-<h3 id="windows-1">Windows</h3>
-<p>Hit F5 or click on the green play button in the Visual Studio IDE.</p>
-<h3 id="linux-and-macos">Linux and MacOS</h3>
-<p>In a terminal window, navigate to the directory that contains the application project file `.csproj' and execute the following command:</p>
-<p><code>dotnet run</code></p>
+<h2 id="running-the-application">Running the Application</h2>
+<p>From the project folder, run:</p>
+<pre><code class="lang-bash">dotnet run
+</code></pre>
+<p><em>(In Visual Studio or Rider, press F5 or the Run button.)</em></p>
 <h2 id="result">Result</h2>
-<p>If you followed the steps correctly you should be presented with a window with a pink background. If you press escape the application should exit.</p>
-<p><img src="../images/win_06.png" alt=""></p>
+<p>A 960 x 540 window titled &quot;My First yak2D App&quot; opens, filled with a cornflower blue background. Press escape to exit.</p>
+<p>The console also shows some start up information, including which graphics API was chosen, for example:</p>
+<pre><code class="lang-text">Graphics API Requested: SystemDefault
+Graphics API Chosen: OpenGL
+...
+Yak2D Framework entering core loops
+</code></pre>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<ul>
+<li><strong>Choosing a graphics API</strong>: by default, <strong>yak2D</strong> uses the system's default graphics API if it supports it (Direct3D 11 on Windows; Vulkan on Linux). Otherwise it tries Direct3D 11, then OpenGL, then Vulkan, using the first one available. <code>StartupConfig.Default()</code> sets <a class="xref" href="../api/Yak2D.StartupConfig.html#Yak2D_StartupConfig_AvoidVulkanWherePossible">AvoidVulkanWherePossible</a> to <code>true</code>, so Vulkan is only used if nothing else is available (which is why the Linux example output above shows OpenGL). To request a specific API, set <a class="xref" href="../api/Yak2D.StartupConfig.html#Yak2D_StartupConfig_PreferredGraphicsApi">PreferredGraphicsApi</a> on the returned config (if the system does not support it, the default selection above is used instead).</li>
+<li><strong>Linux: the application fails to create a window or graphics device</strong>: check that your GPU drivers are installed and working (e.g. <code>glxinfo -B</code> or <code>vulkaninfo --summary</code>).</li>
+</ul>
 <h2 id="complete-code-listing">Complete Code Listing</h2>
 <p>Program.cs</p>
-<pre><code class="lang-csharp">using System;
-using Yak2D;
+<pre><code class="lang-csharp">using Yak2D;
+using MyFirstYakApp;
 
-namespace GettingStarted
-{
-    class Program
-    {
-		static void Main(string[] args)
-		{
-   			Launcher.Run(new MyApplication());
-		}
-    }
-}
+Launcher.Run(new MyApplication());
 </code></pre>
 <p>MyApplication.cs</p>
 <pre><code class="lang-csharp">using Yak2D;
 
-namespace GettingStarted
+namespace MyFirstYakApp;
+
+public class MyApplication : IApplication
 {
-    class MyApplication : IApplication
+    public void OnStartup() { }
+
+    public StartupConfig Configure()
     {
-        public void OnStartup() { }
-
-        public StartupConfig Configure()
-        {
-            return StartupConfig.Default(960, 540, &quot;My Application!&quot;, false);
-        }
-
-        public bool CreateResources(IServices yak)
-        {
-            return true;
-        }
-
-        public void ProcessMessage(FrameworkMessage msg, IServices yak) { }
-
-        public bool Update(IServices yak, float secondsSinceLastUpdate)
-        {
-            return !yak.Input.IsKeyCurrentlyPressed(KeyCode.Escape);
-        }
-
-        public void PreDrawing(IServices yak, float secondsSinceLastDraw, float secondsSinceLastUpdate) { }
-        
-        public void Drawing(IDrawing draw, IFps fps, IInput input, ICoordinateTransforms transforms, float secondsSinceLastDraw, float secondsSinceLastUpdate) { }
-
-        public void Rendering(IRenderQueue q, IRenderTarget windowRenderTarget)
-        {
-            q.ClearDepth(windowRenderTarget);
-            q.ClearColour(windowRenderTarget, Colour.Pink);
-        }
-
-        public void Shutdown() { }
+        return StartupConfig.Default(960, 540, &quot;My First yak2D App&quot;, false);
     }
+
+    public bool CreateResources(IServices yak)
+    {
+        return true;
+    }
+
+    public void ProcessMessage(FrameworkMessage msg, IServices yak) { }
+
+    public bool Update(IServices yak, float secondsSinceLastUpdate)
+    {
+        return !yak.Input.IsKeyCurrentlyPressed(KeyCode.Escape);
+    }
+
+    public void PreDrawing(IServices yak, float secondsSinceLastDraw, float secondsSinceLastUpdate) { }
+
+    public void Drawing(IDrawing draw, IFps fps, IInput input, ICoordinateTransforms transforms, float secondsSinceLastDraw, float secondsSinceLastUpdate) { }
+
+    public void Rendering(IRenderQueue q, IRenderTarget windowRenderTarget)
+    {
+        q.ClearColour(windowRenderTarget, Colour.CornflowerBlue);
+    }
+
+    public void Shutdown() { }
 }
 </code></pre>
 

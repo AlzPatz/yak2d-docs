@@ -602,7 +602,8 @@ A combination of all the effects can be applied together</p>
   </table>
   <a id="Yak2D_IStages_CreateSurfaceCopyDataStage_" data-uid="Yak2D.IStages.CreateSurfaceCopyDataStage*"></a>
   <h4 id="Yak2D_IStages_CreateSurfaceCopyDataStage_System_UInt32_System_UInt32_System_Action_Yak2D_TextureData__System_Boolean_" data-uid="Yak2D.IStages.CreateSurfaceCopyDataStage(System.UInt32,System.UInt32,System.Action{Yak2D.TextureData},System.Boolean)">CreateSurfaceCopyDataStage(uint, uint, Action&lt;TextureData&gt;, bool)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Creates a stage enabling copying of surface pixel data to cpu array</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -621,22 +622,26 @@ A combination of all the effects can be applied together</p>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></td>
         <td><span class="parametername">initialStagingTextureWidth</span></td>
-        <td></td>
+        <td><p>Initial width of staging texture created. If a texture of a difference size is copied from this is recreated at rendertime (slower)</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></td>
         <td><span class="parametername">initialStagingTextureHeight</span></td>
-        <td></td>
+        <td><p>Initial width of staging texture created. If a texture of a difference size is copied from this is recreated at rendertime (slower)</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="Yak2D.TextureData.html">TextureData</a>&gt;</td>
         <td><span class="parametername">callback</span></td>
-        <td></td>
+        <td><p>User delegate called once rendering complete to provide user the results data. Rendering may happen asynchronously hence the use of callbacks to avoid multithreaded issues</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
         <td><span class="parametername">useFloat32PixelFormat</span></td>
-        <td></td>
+        <td><p>Set True if surface copying data from has pixel type of single floats. False, default, is four component RGBA</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -790,7 +795,8 @@ The topleft corner of a render surface is defined as the origin (0,0)</p>
   </table>
   <a id="Yak2D_IStages_DestroyViewport_" data-uid="Yak2D.IStages.DestroyViewport*"></a>
   <h4 id="Yak2D_IStages_DestroyViewport_System_UInt64_" data-uid="Yak2D.IStages.DestroyViewport(System.UInt64)">DestroyViewport(ulong)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Destroy viewport object data</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -809,13 +815,15 @@ The topleft corner of a render surface is defined as the origin (0,0)</p>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint64">ulong</a></td>
         <td><span class="parametername">viewport</span></td>
-        <td></td>
+        <td><p>The viewport id to destroy</p>
+</td>
       </tr>
     </tbody>
   </table>
   <a id="Yak2D_IStages_DestroyViewport_" data-uid="Yak2D.IStages.DestroyViewport*"></a>
   <h4 id="Yak2D_IStages_DestroyViewport_Yak2D_IViewport_" data-uid="Yak2D.IStages.DestroyViewport(Yak2D.IViewport)">DestroyViewport(IViewport)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Destroy viewport object data</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -834,7 +842,8 @@ The topleft corner of a render surface is defined as the origin (0,0)</p>
       <tr>
         <td><a class="xref" href="Yak2D.IViewport.html">IViewport</a></td>
         <td><span class="parametername">viewport</span></td>
-        <td></td>
+        <td><p>The viewport reference to destroy</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1511,7 +1520,8 @@ The topleft corner of a render surface is defined as the origin (0,0)</p>
       <tr>
         <td><a class="xref" href="Yak2D.MeshRenderLightingPropertiesConfiguration.html">MeshRenderLightingPropertiesConfiguration</a></td>
         <td><span class="parametername">configuration</span></td>
-        <td></td>
+        <td><p>The target stage configuration</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
