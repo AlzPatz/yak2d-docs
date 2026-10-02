@@ -122,6 +122,10 @@
     var negative = none;
     negative.Negative = 1.0f;
     yak.Stages.SetColourEffectsConfig(_negative, negative);
+
+    CreateQuarters(yak);
+    return true;
+}
 </code></pre><pre><code class="lang-csharp">public override void Rendering(IRenderQueue q, IRenderTarget windowRenderTarget)
 {
     // Effects read a texture (any Texture or RenderTarget) and write to a render target. No draw stage needed
@@ -133,6 +137,9 @@
     q.ColourEffects(_tint, _yak, windowRenderTarget);
     q.SetViewport(_quarters[3]);
     q.ColourEffects(_negative, _yak, windowRenderTarget);
+
+    RenderLabels(q, windowRenderTarget);
+}
 </code></pre>
 <p><a class="xref" href="../api/Yak2D.ColourEffectConfiguration.html">ColourEffectConfiguration</a> settings are applied in this order:</p>
 <table>
