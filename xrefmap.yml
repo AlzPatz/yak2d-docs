@@ -55,6 +55,12 @@ references:
   commentId: F:Yak2D.BlendState.Override
   fullName: Yak2D.BlendState.Override
   nameWithType: BlendState.Override
+- uid: Yak2D.BlendState.Premultiplied
+  name: Premultiplied
+  href: api/Yak2D.BlendState.html#Yak2D_BlendState_Premultiplied
+  commentId: F:Yak2D.BlendState.Premultiplied
+  fullName: Yak2D.BlendState.Premultiplied
+  nameWithType: BlendState.Premultiplied
 - uid: Yak2D.BloomEffectConfiguration
   name: BloomEffectConfiguration
   href: api/Yak2D.BloomEffectConfiguration.html
