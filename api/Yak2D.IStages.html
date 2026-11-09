@@ -378,7 +378,7 @@ The user defines the shader code, constrained by a set maximum number of texture
     <dd><p>Embedded in the binary or a file location&quot;</p>
 </dd>
     <dt><code>uniformDescriptions</code> <a class="xref" href="Yak2D.ShaderUniformDescription.html">ShaderUniformDescription</a>[]</dt>
-    <dd><p>Description of shader uniforms (textures or data structs)</p>
+    <dd><p>Description of shader uniforms (textures or data structs). One resource set per description, in order. A Texture uniform's set has the texture at binding 0 and the sampler at binding 1, named Texture_&lt;Name&gt; / Sampler_&lt;Name&gt; when useSpirvCompile is true, and Sampler_&lt;Name&gt; / Texture_&lt;Name&gt; for precompiled shaders. A Data uniform is one UniformBuffer element named Name</p>
 </dd>
     <dt><code>blendState</code> <a class="xref" href="Yak2D.BlendState.html">BlendState</a></dt>
     <dd><p>How source pixels are mixed with destination pixels on surfaces</p>
@@ -400,6 +400,14 @@ The user defines the shader code, constrained by a set maximum number of texture
 
 
 
+  <h4 class="section" id="Yak2D_IStages_CreateCustomShaderStage_System_String_Yak2D_AssetSourceEnum_Yak2D_ShaderUniformDescription___Yak2D_BlendState_System_Boolean__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>Each uniform description becomes one resource set, in the order given.
+A Texture uniform's set has two elements: the texture at binding 0 and the sampler at binding 1.
+When useSpirvCompile is true the texture element is named Texture_&lt;Name&gt; and the sampler element Sampler_&lt;Name&gt;.
+When false (precompiled per-backend shaders) the texture element is named Sampler_&lt;Name&gt; and the sampler element Texture_&lt;Name&gt;,
+so a precompiled OpenGL shader declares uniform sampler2D Sampler_&lt;Name&gt;.
+A Data uniform's set has one UniformBuffer element named exactly Name.</p>
+</div>
 
 
 
