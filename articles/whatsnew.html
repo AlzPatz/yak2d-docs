@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>What&#39;s new | yak2D </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="What&#39;s new | yak2D ">
+      
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/AlzPatz/yak2d-docs-content/blob/master/articles/whatsnew.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo.png" alt="yak2D">
+            yak2D
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="uid_whatsnew">
+<h1 id="whats-new">What's new</h1>
+
+<p>Changes in each release of the <a href="https://www.nuget.org/packages/Yak2D/">Yak2D package</a> that affect applications. yak2D follows <a href="https://semver.org/">semantic versioning</a> from 1.1.0: <code>1.x.y</code> releases never break your code, so you can always update within 1.x with:</p>
+<pre><code class="lang-bash">dotnet add package Yak2D
+</code></pre>
+<p>The full history is in the <a href="https://github.com/AlzPatz/yak2d/commits/master">yak2d repository</a>.</p>
+<h2 id="123-november-2026">1.2.3 (November 2026)</h2>
+<ul>
+<li><strong>Custom shaders on OpenGL:</strong> with SPIR-V compiled shaders, textures are now bound by name, so a shader that reads more than one texture gets the right one on OpenGL. Name each texture <code>Texture_&lt;Name&gt;</code> and its sampler <code>Sampler_&lt;Name&gt;</code>, after the uniform description's <code>Name</code>. See <a href="customshaders.html#uniforms-the-shaders-inputs">Custom shaders</a>.</li>
+</ul>
+<h2 id="122-and-121-november-2026">1.2.2 and 1.2.1 (November 2026)</h2>
+<ul>
+<li><strong>Window resizing:</strong> fixed crashes and errors that could happen while the window was being resized, when the window's render target was recreated at the same moment a frame was being presented.</li>
+</ul>
+<h2 id="120-october-2026">1.2.0 (October 2026)</h2>
+<ul>
+<li><strong>Correct transparency on render targets.</strong> <code>BlendState.Alpha</code> now keeps a surface's alpha channel correct. Before, translucent shapes drawn onto a render target lowered its alpha, so they came out too dark after effects such as <a href="effects.html#colour-effects">colour effects</a> and <a href="distortion.html">distortion</a>. Drawing onto opaque surfaces looks exactly as before.</li>
+<li><strong>New <code>BlendState.Premultiplied</code></strong> for drawing a transparent render target over something else without dark edges. See <a href="drawing.html#transparent-render-targets-and-premultiplied">Transparent render targets</a>, and the <a href="cookbook.html#a-transparent-layer-over-a-scene">Cookbook recipe</a>.</li>
+<li><strong>Lighter image loading:</strong> images are now decoded with StbImageSharp instead of ImageSharp. The same formats are supported (PNG, JPG, BMP, GIF and TGA) and nothing changes in your code.</li>
+<li><strong>Fixed</strong> a crash when a stage was destroyed in the same frame as shutdown or a device reset.</li>
+</ul>
+<h2 id="110-september-2026">1.1.0 (September 2026)</h2>
+<p>The first stable 1.x release.</p>
+<ul>
+<li><strong>Faster, stable draw sorting:</strong> draw requests are sorted about twice as fast, and the sort is now stable: requests that would otherwise sort equally (same layer, depth and textures) always draw in the order they were submitted, instead of possibly swapping between frames.</li>
+<li><strong>Licence:</strong> the package is now MIT licensed throughout (the last Apache-licensed code was removed).</li>
+<li>Built on <a href="https://www.nuget.org/packages/NeoVeldrid">NeoVeldrid</a> 1.2.1 and .NET 10, with SDL2 and all native libraries included in the package.</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Version 1.0.0 is deprecated and unlisted on NuGet. Use 1.1.0 or later.</p>
+</div>
+
+</article>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          yak2D - Alex Paterson - MIT licence
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

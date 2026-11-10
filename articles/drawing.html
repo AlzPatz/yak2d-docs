@@ -486,12 +486,22 @@ for (var n = 0; n &lt; 6; n++)
 <td>The new pixel simply replaces the old, including its alpha.</td>
 <td>Copying, or drawing things that must not blend.</td>
 </tr>
+<tr>
+<td><code>Premultiplied</code></td>
+<td>Like <code>Alpha</code>, but for source colours that are <em>already</em> multiplied by their alpha.</td>
+<td>Drawing a transparent <a href="surfaces.html">render target</a> (one that was drawn into with <code>Alpha</code>) over something else.</td>
+</tr>
 </tbody>
 </table>
-<p>The blend state belongs to the whole stage, so use a separate stage for, say, additive particle effects.</p>
+<p>The blend state belongs to the whole stage, so use a separate stage for, say, additive particle effects. Pass it when creating the stage:</p>
+<pre><code class="lang-csharp">var sparks = yak.Stages.CreateDrawStage(true, BlendState.AdditiveAlpha);
+</code></pre>
+<h3 id="transparent-render-targets-and-premultiplied">Transparent render targets and <code>Premultiplied</code></h3>
+<p>Drawing with <code>Alpha</code> onto a surface that is opaque behaves exactly as you would expect, and the surface stays opaque. Drawing onto a surface cleared to transparent (<code>Colour.Clear</code>) stores <em>premultiplied</em> colour: each pixel's colour is already scaled by its coverage, and its alpha says how much of whatever is behind it should show through.</p>
+<p>To draw such a surface over something else, use a stage with <code>BlendState.Premultiplied</code>. Using <code>Alpha</code> instead would scale the colour by alpha a second time, so soft and semi-transparent edges come out too dark. The <a href="cookbook.html#a-transparent-layer-over-a-scene">Cookbook</a> shows the two side by side.</p>
 <div class="NOTE">
 <h5>Note</h5>
-<p><strong>Known issue:</strong> with <code>Alpha</code> blending, drawing a partly transparent shape onto an opaque render target leaves the target's <em>alpha</em> slightly below 1 where the shape was drawn. Copying the target is unaffected, but some effect stages (for example <a href="effects.html#colour-effects">colour effects</a> and <a href="distortion.html">distortion</a>) then show those pixels darker than expected. If translucent shapes look too dark after an effect, draw them fully opaque where you can.</p>
+<p><code>Premultiplied</code>, and the correct alpha behaviour described here, arrived in <strong>yak2D 1.2.0</strong>. Before that, translucent shapes drawn onto a render target could look too dark after an effect such as <a href="effects.html#colour-effects">colour effects</a> or <a href="distortion.html">distortion</a>. See <a href="whatsnew.html">What's new</a>.</p>
 </div>
 <h2 id="drawing-things-once">Drawing things once</h2>
 <p>By default every draw stage is emptied at the start of each frame, so you submit everything each frame. That is simple, and fast enough for thousands of sprites. For large amounts of unchanging drawing (a big tiled background, say) there are two ways to submit it just once:</p>

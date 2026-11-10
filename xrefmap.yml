@@ -11554,9 +11554,15 @@ references:
 - uid: uid_cameras
   name: Cameras
   href: articles/cameras.html
+- uid: uid_cheatsheet
+  name: Cheat sheet
+  href: articles/cheatsheet.html
 - uid: uid_configuration
   name: Configuration
   href: articles/configuration.html
+- uid: uid_cookbook
+  name: Cookbook
+  href: articles/cookbook.html
 - uid: uid_coordinatesystems
   name: Coordinate systems
   href: articles/coordinatesystems.html
@@ -11644,6 +11650,9 @@ references:
 - uid: uid_viewports
   name: Viewports
   href: articles/viewports.html
+- uid: uid_whatsnew
+  name: What's new
+  href: articles/whatsnew.html
 - uid: uid_window
   name: Window, display and graphics API
   href: articles/window.html

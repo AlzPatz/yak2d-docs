@@ -120,8 +120,11 @@
 </ul>
 <h2 id="sprites-have-faint-lines-or-specks-at-their-edges">Sprites have faint lines or specks at their edges</h2>
 <p>Texture filtering with the <code>Wrap</code> mode blends each edge of an image with the opposite edge. Leave a transparent border of a pixel or two round sprite images, or use <code>TextureCoordinateMode.Mirror</code>. See <a href="drawing.html#texture-coordinates-wrapping-and-filtering">Drawing</a>.</p>
-<h2 id="translucent-shapes-look-too-dark-after-an-effect">Translucent shapes look too dark after an effect</h2>
-<p>A known issue: see <a href="drawing.html#blend-states">Drawing: Blend states</a>. Draw them opaque if you can.</p>
+<h2 id="translucent-shapes-look-too-dark-or-have-dark-fringes">Translucent shapes look too dark, or have dark fringes</h2>
+<ul>
+<li><strong>After an effect (colour effects, distortion):</strong> this was a bug in yak2D before 1.2.0. Update the <code>Yak2D</code> package (<code>dotnet add package Yak2D</code>).</li>
+<li><strong>When drawing a transparent render target over something else:</strong> the render target holds premultiplied colour, so composite it with a draw stage created with <code>BlendState.Premultiplied</code>, not <code>Alpha</code>. See <a href="drawing.html#transparent-render-targets-and-premultiplied">Transparent render targets</a>.</li>
+</ul>
 <h2 id="my-application-quits-when-i-switch-graphics-api">My application quits when I switch graphics API</h2>
 <p>Switching API sends <code>ApplicationWindowClosing</code> (twice) as the window is recreated. If you quit on that message, you will quit on a switch. See <a href="window.html#switching-graphics-api">Window: Switching graphics API</a>.</p>
 <h2 id="everything-disappeared-after-switching-graphics-api-or-the-device-was-lost">Everything disappeared after switching graphics API (or the device was lost)</h2>

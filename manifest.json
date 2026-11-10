@@ -1498,6 +1498,16 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "articles/cheatsheet.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/cheatsheet.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "articles/configuration.md",
       "output": {
         ".html": {
@@ -1512,6 +1522,16 @@
       "output": {
         ".html": {
           "relative_path": "articles/continued.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/cookbook.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/cookbook.html"
         }
       },
       "version": ""
@@ -1801,6 +1821,16 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "articles/whatsnew.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/whatsnew.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "articles/window.md",
       "output": {
         ".html": {
@@ -1975,6 +2005,56 @@
       "output": {
         "resource": {
           "relative_path": "images/guide/readback.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/guide/recipe-hud.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/guide/recipe-hud.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/guide/recipe-parallax.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/guide/recipe-parallax.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/guide/recipe-particles.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/guide/recipe-particles.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/guide/recipe-sprite-animation.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/guide/recipe-sprite-animation.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/guide/recipe-transparent-layer.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/guide/recipe-transparent-layer.png"
         }
       },
       "version": ""

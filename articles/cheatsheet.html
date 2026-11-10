@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Cheat sheet | yak2D </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Cheat sheet | yak2D ">
+      
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/AlzPatz/yak2d-docs-content/blob/master/articles/cheatsheet.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo.png" alt="yak2D">
+            yak2D
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="uid_cheatsheet">
+<h1 id="cheat-sheet">Cheat sheet</h1>
+
+<p>The whole of everyday yak2D on one page. Each section links to the guide that explains it, and every name links to its <a href="../api/index.html">API reference</a> entry.</p>
+<h2 id="a-complete-application">A complete application</h2>
+<p>Every yak2D program is one class implementing <a class="xref" href="../api/Yak2D.IApplication.html">IApplication</a>, passed to <a class="xref" href="../api/Yak2D.Launcher.html#Yak2D_Launcher_Run_">Launcher.Run()</a>. This is a complete program, a good starting point to copy:</p>
+<pre><code class="lang-csharp">using System.Numerics;
+using Yak2D;
+
+Launcher.Run(new Hello());
+</code></pre>
+<pre><code class="lang-csharp">public class Hello : IApplication
+{
+    private IDrawStage _stage;
+    private ICamera2D _camera;
+
+    public StartupConfig Configure() =&gt; StartupConfig.Default(960, 540, &quot;Hello, yak2D&quot;, false);
+
+    public void OnStartup() { }
+
+    public bool CreateResources(IServices yak)
+    {
+        _stage = yak.Stages.CreateDrawStage();
+        _camera = yak.Cameras.CreateCamera2D(960, 540);
+        return true;
+    }
+
+    public void ProcessMessage(FrameworkMessage msg, IServices yak)
+    {
+        if (msg == FrameworkMessage.GraphicsDeviceRecreated) CreateResources(yak);
+    }
+
+    public bool Update(IServices yak, float seconds) =&gt; !yak.Input.WasKeyPressedThisFrame(KeyCode.Escape);
+
+    public void PreDrawing(IServices yak, float secondsSinceLastDraw, float secondsSinceLastUpdate) { }
+
+    public void Drawing(IDrawing draw, IFps fps, IInput input, ICoordinateTransforms transforms,
+                        float secondsSinceLastDraw, float secondsSinceLastUpdate)
+    {
+        draw.Helpers.DrawColouredPoly(_stage, CoordinateSpace.Screen, Colour.Gold, Vector2.Zero, 5, 120.0f, 0.5f);
+        draw.DrawString(_stage, CoordinateSpace.Screen, &quot;Hello, yak2D&quot;, Colour.White, 48.0f,
+                        new Vector2(0.0f, -150.0f), TextJustify.Centre, 0.5f, 0);
+    }
+
+    public void Rendering(IRenderQueue q, IRenderTarget window)
+    {
+        q.ClearColour(window, Colour.DarkSlateBlue);
+        q.ClearDepth(window);
+        q.Draw(_stage, _camera, window);
+    }
+
+    public void Shutdown() { }
+}
+</code></pre><h2 id="when-each-method-runs">When each method runs</h2>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Runs</th>
+<th>Put here</th>
+<th>Gets</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Configure()</code></td>
+<td>once, first</td>
+<td>window size, title, timing (<a href="configuration.html">StartupConfig</a>)</td>
+<td></td>
+</tr>
+<tr>
+<td><code>OnStartup()</code></td>
+<td>once</td>
+<td>your own (non-yak2D) objects</td>
+<td></td>
+</tr>
+<tr>
+<td><code>CreateResources()</code></td>
+<td>once, then <em>by you</em> after a device reset</td>
+<td>textures, stages, cameras, fonts, render targets</td>
+<td><code>yak</code></td>
+</tr>
+<tr>
+<td><code>ProcessMessage()</code></td>
+<td>per <a href="lifecycle.html#framework-messages">message</a>, before <code>Update()</code></td>
+<td>device reset, focus, resize, gamepads</td>
+<td><code>yak</code></td>
+</tr>
+<tr>
+<td><code>Update()</code></td>
+<td>every step (120 per second by default)</td>
+<td>input, movement, game rules. <code>return false</code> quits</td>
+<td><code>yak</code>, step length</td>
+</tr>
+<tr>
+<td><code>PreDrawing()</code></td>
+<td>every frame</td>
+<td>camera moves, effect settings</td>
+<td><code>yak</code></td>
+</tr>
+<tr>
+<td><code>Drawing()</code></td>
+<td>every frame</td>
+<td><code>draw.…</code> calls: what to draw</td>
+<td><code>draw</code>, <code>fps</code>, <code>input</code>, <code>transforms</code></td>
+</tr>
+<tr>
+<td><code>Rendering()</code></td>
+<td>every frame</td>
+<td><code>q.…</code> calls: how to render it</td>
+<td><code>q</code>, the window</td>
+</tr>
+<tr>
+<td><code>Shutdown()</code></td>
+<td>once, last</td>
+<td>save settings, release your own things</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Full details: <a href="lifecycle.html">Application lifecycle</a>.</p>
+<h2 id="services-yak">Services (<code>yak.…</code>)</h2>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>For</th>
+<th>Common calls</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="xref" href="../api/Yak2D.ISurfaces.html">Surfaces</a></td>
+<td>textures, render targets</td>
+<td><code>LoadTexture(name, AssetSourceEnum.Embedded)</code>, <code>CreateRenderTarget(w, h)</code>, <code>CreateRgbaFromData(…)</code></td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Yak2D.IStages.html">Stages</a></td>
+<td>render stages, viewports</td>
+<td><code>CreateDrawStage()</code>, <code>CreateBloomStage(w, h)</code>, <code>CreateViewport(x, y, w, h)</code>, <code>Set…Config(stage, config, transitionSeconds)</code></td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Yak2D.ICameras.html">Cameras</a></td>
+<td>2D and 3D cameras</td>
+<td><code>CreateCamera2D(960, 540)</code>, <code>SetCamera2DFocusAndZoom(cam, focus, zoom)</code>, <code>SetCamera2DFocusZoomAndRotation(…)</code></td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Yak2D.IFonts.html">Fonts</a></td>
+<td>bitmap fonts</td>
+<td><code>LoadFont(name, AssetSourceEnum.Embedded)</code>, <code>MeasureStringLength(…)</code></td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Yak2D.IInput.html">Input</a></td>
+<td>keyboard, mouse, gamepads</td>
+<td>see <a href="#input">Input</a> below</td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Yak2D.IDisplay.html">Display</a></td>
+<td>the window</td>
+<td><code>SetDisplayState(…)</code>, <code>SetWindowResolution(w, h)</code>, <code>SetVsync(on)</code>, <code>SetCursorVisible(on)</code></td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Yak2D.IBackend.html">Backend</a></td>
+<td>graphics API</td>
+<td><code>GraphicsApi</code>, <code>IsGraphicsApiSupported(api)</code>, <code>SetGraphicsApi(api)</code></td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Yak2D.IFps.html">FPS</a></td>
+<td>performance</td>
+<td><code>DrawFPS</code>, <code>UpdateFPS</code></td>
+</tr>
+<tr>
+<td><a class="xref" href="../api/Yak2D.IHelpers.html">Helpers</a></td>
+<td>utilities</td>
+<td><code>CoordinateTransforms</code>, <code>CommonMeshBuilder</code>, <code>DistortionHelper</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="drawing-in-drawing">Drawing (in <code>Drawing()</code>)</h2>
+<p>All drawing goes to a <a href="drawing.html">draw stage</a> and takes a <a href="#coordinate-spaces">coordinate space</a>, a depth and (usually) a layer.</p>
+<table>
+<thead>
+<tr>
+<th>Draw</th>
+<th>Call</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Rectangle</td>
+<td><code>draw.Helpers.DrawColouredQuad(stage, space, colour, centre, width, height, depth)</code></td>
+</tr>
+<tr>
+<td>Sprite</td>
+<td><code>draw.Helpers.DrawTexturedQuad(stage, space, texture, tint, centre, width, height, depth)</code></td>
+</tr>
+<tr>
+<td>Part of a texture (sprite sheet)</td>
+<td><code>…DrawTexturedQuad(…, texcoord_min_x: …, texcoord_max_x: …)</code> (<a href="cookbook.html#sprite-sheet-animation">recipe</a>)</td>
+</tr>
+<tr>
+<td>Polygon or circle</td>
+<td><code>draw.Helpers.DrawColouredPoly(stage, space, colour, centre, sides, radius, depth)</code></td>
+</tr>
+<tr>
+<td>Line, arrow</td>
+<td><code>draw.Helpers.DrawLine(stage, space, from, to, width, colour, depth)</code>, <code>DrawArrow(…)</code></td>
+</tr>
+<tr>
+<td>Text</td>
+<td><code>draw.DrawString(stage, space, text, colour, size, topPosition, TextJustify.Centre, depth, layer)</code> (<a href="text.html">Text</a>)</td>
+</tr>
+<tr>
+<td>Outlines and more shapes</td>
+<td><code>draw.Helpers.Construct().Coloured(c).Poly(…).Outline(w).SubmitDraw(stage, space, depth, layer)</code> (<a href="drawing.html#the-fluent-shape-builder">fluent builder</a>)</td>
+</tr>
+<tr>
+<td>Your own triangles</td>
+<td><code>draw.Draw(stage, new DrawRequest { … })</code> (<a href="drawing.html#draw-requests">draw requests</a>)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Ordering:</strong> higher <strong>layer</strong> is always on top. Within a layer, lower <strong>depth</strong> (0 to 1) is nearer. Positions are the <strong>centre</strong> of a shape, except text, where y is the <strong>top</strong>. Angles are <strong>radians</strong>, clockwise.</p>
+<h2 id="rendering-in-rendering">Rendering (in <code>Rendering()</code>)</h2>
+<p>The render queue runs in the order you build it. A render target can be the output of one step and the input of the next.</p>
+<pre><code class="lang-csharp">q.ClearColour(target, Colour.Black);       // start each target you render to
+q.ClearDepth(target);
+q.Draw(drawStage, camera, target);         // draw stage → target, through a 2D camera
+q.Bloom(bloom, source, target);            // effects: read a texture, write a target
+q.Blur(blur, source, target);              //   also Blur1D, ColourEffects, StyleEffects
+q.Distortion(distortion, camera, source, target);
+q.Mix(mix, mask, tex0, tex1, tex2, tex3, target);
+q.MeshRender(mesh, camera3D, source, target);
+q.CustomShader(shader, tex0, tex1, tex2, tex3, target);
+q.Copy(source, target);                    // stretch any surface onto a target
+q.SetViewport(viewport);                   // render into part of a target...
+q.RemoveViewport();                        // ...then the whole target again
+</code></pre>
+<p>Details: <a href="renderstages.html">The render queue and render stages</a>, <a href="effects.html">Post-processing effects</a>.</p>
+<h2 id="input">Input</h2>
+<p>Check input in <strong><code>Update()</code></strong>. &quot;This frame&quot; means this update step.</p>
+<table>
+<thead>
+<tr>
+<th>Question</th>
+<th>Keyboard</th>
+<th>Mouse</th>
+<th>Gamepad</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Held now?</td>
+<td><code>IsKeyCurrentlyPressed(KeyCode.Left)</code></td>
+<td><code>IsMouseCurrentlyPressed(MouseButton.Left)</code></td>
+<td><code>IsGamepadButtonCurrentlyPressed(id, button)</code></td>
+</tr>
+<tr>
+<td>Just pressed?</td>
+<td><code>WasKeyPressedThisFrame(KeyCode.Space)</code></td>
+<td><code>WasMousePressedThisFrame(…)</code></td>
+<td><code>WasGamepadButtonPressedThisFrame(id, button)</code></td>
+</tr>
+<tr>
+<td>Just released?</td>
+<td><code>WasKeyReleasedThisFrame(…)</code></td>
+<td><code>WasMouseReleasedThisFrame(…)</code></td>
+<td><code>WasGamepadButtonReleasedThisFrame(id, button)</code></td>
+</tr>
+<tr>
+<td>Held for how long?</td>
+<td><code>HowLongHasKeyBeenHeldDown(…)</code></td>
+<td><code>HowLongHasMouseBeenHeldDown(…)</code></td>
+<td><code>HowLongHasGamepadButtonBeenHeldDown(id, button)</code></td>
+</tr>
+<tr>
+<td>Where / how far?</td>
+<td></td>
+<td><code>MousePosition</code> (window pixels)</td>
+<td><code>GamepadAxisValue(id, axis)</code></td>
+</tr>
+</tbody>
+</table>
+<p>Gamepads: <code>ConnectedGamepadIds()</code>. Details: <a href="input.html">Input</a>.</p>
+<h2 id="coordinate-spaces">Coordinate spaces</h2>
+<table>
+<thead>
+<tr>
+<th>Space</th>
+<th>Origin</th>
+<th>+Y</th>
+<th>Units</th>
+<th>Used for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>World</strong></td>
+<td>world (0,0), wherever the camera looks</td>
+<td>up</td>
+<td>world units</td>
+<td>the game world: moves, zooms and rotates with the camera</td>
+</tr>
+<tr>
+<td><strong>Screen</strong></td>
+<td>centre of the camera's view</td>
+<td>up</td>
+<td>virtual resolution (e.g. 960 x 540)</td>
+<td>HUDs and menus: fixed to the view</td>
+</tr>
+<tr>
+<td><strong>Window</strong></td>
+<td>top-left of the window</td>
+<td><strong>down</strong></td>
+<td>real pixels</td>
+<td>mouse position, viewports</td>
+</tr>
+</tbody>
+</table>
+<p>Convert with <code>transforms</code> (in <code>Drawing()</code>) or <code>yak.Helpers.CoordinateTransforms</code>: <code>WorldFromWindow(input.MousePosition, camera)</code> and friends. Details: <a href="coordinatesystems.html">Coordinate systems</a>.</p>
+<h2 id="blend-states">Blend states</h2>
+<p>Set per draw stage: <code>yak.Stages.CreateDrawStage(true, BlendState.AdditiveAlpha)</code>.</p>
+<table>
+<thead>
+<tr>
+<th>BlendState</th>
+<th>Use for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Alpha</code> (default)</td>
+<td>almost everything</td>
+</tr>
+<tr>
+<td><code>AdditiveAlpha</code></td>
+<td>light, fire, sparks, glows</td>
+</tr>
+<tr>
+<td><code>AdditiveComponentWise</code></td>
+<td>accumulating values</td>
+</tr>
+<tr>
+<td><code>Override</code></td>
+<td>replacing pixels outright</td>
+</tr>
+<tr>
+<td><code>Premultiplied</code></td>
+<td>drawing a transparent render target over something else (1.2.0+)</td>
+</tr>
+</tbody>
+</table>
+<p>Details: <a href="drawing.html#blend-states">Drawing: Blend states</a>.</p>
+<h2 id="assets">Assets</h2>
+<table>
+<thead>
+<tr>
+<th>Asset</th>
+<th>Put it in</th>
+<th>Load it with</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Texture</td>
+<td><code>Textures/hero.png</code></td>
+<td><code>yak.Surfaces.LoadTexture(&quot;hero&quot;, AssetSourceEnum.Embedded)</code></td>
+</tr>
+<tr>
+<td>Font</td>
+<td><code>Fonts/pixel_16.fnt</code> + pages</td>
+<td><code>yak.Fonts.LoadFont(&quot;pixel&quot;, AssetSourceEnum.Embedded)</code></td>
+</tr>
+<tr>
+<td>Shader</td>
+<td><code>Shaders/wavy.glsl</code></td>
+<td><code>yak.Stages.CreateCustomShaderStage(&quot;wavy&quot;, AssetSourceEnum.Embedded, …)</code></td>
+</tr>
+</tbody>
+</table>
+<p>To embed, add <code>&lt;EmbeddedResource Include=&quot;Textures\**&quot; /&gt;</code> (and the same for <code>Fonts</code>, <code>Shaders</code>) to your <code>.csproj</code>. No extension in the name. Details: <a href="assets.html">Assets</a>.</p>
+<h2 id="remember">Remember</h2>
+<ul>
+<li>Create <strong>every</strong> yak2D resource in <code>CreateResources()</code>, and call it again on <code>FrameworkMessage.GraphicsDeviceRecreated</code>. (<a href="lifecycle.html#device-resets">Device resets</a>)</li>
+<li>Draw stages are <strong>emptied every frame</strong> by default: submit everything you want to see, every frame. (<a href="drawing.html#drawing-things-once">Drawing things once</a>)</li>
+<li>Keep a camera's virtual resolution the <strong>same shape</strong> as what it renders to, or the picture stretches. (<a href="cameras.html#virtual-resolution">Cameras</a>)</li>
+<li>Nothing on screen? See <a href="troubleshooting.html#nothing-appears">Troubleshooting</a>.</li>
+</ul>
+
+</article>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          yak2D - Alex Paterson - MIT licence
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

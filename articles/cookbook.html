@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Cookbook | yak2D </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Cookbook | yak2D ">
+      
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/AlzPatz/yak2d-docs-content/blob/master/articles/cookbook.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/logo.png" alt="yak2D">
+            yak2D
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="uid_cookbook">
+<h1 id="cookbook">Cookbook</h1>
+
+<p>Short, complete answers to &quot;how do I...?&quot; questions that come up in almost every game. Each recipe is a small, runnable program: the code shown is taken from <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/master/code/Snippets/Recipes.cs">Recipes.cs</a> and compiled every time these docs are published. Run any of them from the <code>code/Snippets</code> folder of the <a href="https://github.com/AlzPatz/yak2d-docs-content">docs repository</a>:</p>
+<pre><code class="lang-bash">dotnet run -- SpriteAnimation
+</code></pre>
+<p>Like the guide examples, recipes derive from a tiny <a href="https://github.com/AlzPatz/yak2d-docs-content/blob/master/code/Snippets/Example.cs"><code>Example</code> base class</a> that provides a 960 x 540 window, quits on <strong>Escape</strong>, and recreates resources after a <a href="lifecycle.html#device-resets">device reset</a>.</p>
+<table>
+<thead>
+<tr>
+<th>I want to...</th>
+<th>Recipe</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Animate a sprite from a sprite sheet</td>
+<td><a href="#sprite-sheet-animation">Sprite sheet animation</a></td>
+</tr>
+<tr>
+<td>Shake the screen when something hits</td>
+<td><a href="#screen-shake">Screen shake</a></td>
+</tr>
+<tr>
+<td>Fade to black between scenes</td>
+<td><a href="#fade-to-black-between-scenes">Fade transitions</a></td>
+</tr>
+<tr>
+<td>Scroll layered backgrounds at different speeds</td>
+<td><a href="#parallax-scrolling">Parallax scrolling</a></td>
+</tr>
+<tr>
+<td>Make sparks, explosions and magic</td>
+<td><a href="#particles">Particles</a></td>
+</tr>
+<tr>
+<td>Show health, score and frame rate</td>
+<td><a href="#a-hud-health-bar-score-and-fps">A HUD</a></td>
+</tr>
+<tr>
+<td>Toggle full screen and pause the game</td>
+<td><a href="#full-screen-and-pause">Full screen and pause</a></td>
+</tr>
+<tr>
+<td>Draw a translucent layer over a scene</td>
+<td><a href="#a-transparent-layer-over-a-scene">A transparent layer</a></td>
+</tr>
+<tr>
+<td>...and more</td>
+<td><a href="#recipes-elsewhere-in-these-docs">Recipes elsewhere in the docs</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="sprite-sheet-animation">Sprite sheet animation</h2>
+<p><img src="../images/guide/recipe-sprite-animation.png" alt="Coins spinning, from an eight-frame sprite sheet"></p>
+<p>A sprite sheet packs every frame of an animation into one texture. Choose the frame from the time, then show just that slice of the texture by setting the texture coordinates of <a class="xref" href="../api/Yak2D.IDrawingHelpers.html#Yak2D_IDrawingHelpers_DrawTexturedQuad_">DrawTexturedQuad</a>. Texture coordinates run from 0 to 1 across the whole image, so with eight frames side by side, frame <code>n</code> spans <code>n / 8</code> to <code>(n + 1) / 8</code>.</p>
+<pre><code class="lang-csharp">private const int FrameCount = 8;          // frames side by side in coin.png
+private const float FramesPerSecond = 12.0f;
+
+// Draws one frame of a horizontal sprite sheet by choosing which slice of the texture to show
+private void DrawFrame(IDrawingHelpers h, Vector2 position, float size, int frame, bool flip = false)
+{
+    var left = frame / (float)FrameCount;
+    var right = (frame + 1) / (float)FrameCount;
+    if (flip)
+    {
+        (left, right) = (right, left); // swapping the x texture coordinates mirrors the sprite
+    }
+
+    h.DrawTexturedQuad(_drawStage, CoordinateSpace.Screen, _coin, Colour.White, position, size, size, 0.5f,
+                       texcoord_min_x: left, texcoord_max_x: right);
+}
+
+public override void Drawing(IDrawing draw, IFps fps, IInput input, ICoordinateTransforms transforms,
+                             float secondsSinceLastDraw, float secondsSinceLastUpdate)
+{
+    _time += secondsSinceLastDraw;
+    var frame = (int)(_time * FramesPerSecond) % FrameCount;
+
+    // A row of coins, each started a frame later than the last, so they ripple
+    for (var n = 0; n &lt; 7; n++)
+    {
+        DrawFrame(draw.Helpers, new Vector2(-360.0f + (n * 120.0f), 60.0f), 96.0f, (frame + n) % FrameCount);
+    }
+
+    // Every frame of the sheet, for reference
+    for (var n = 0; n &lt; FrameCount; n++)
+    {
+        DrawFrame(draw.Helpers, new Vector2(-350.0f + (n * 100.0f), -140.0f), 64.0f, n);
+        draw.DrawString(_drawStage, CoordinateSpace.Screen, n.ToString(), Colour.LightGray, 20.0f,
+                        new Vector2(-350.0f + (n * 100.0f), -180.0f), TextJustify.Centre, 0.5f, 0);
+    }
+}
+</code></pre>
+<ul>
+<li><strong>Mirroring for free:</strong> swap the left and right texture coordinates to face a sprite the other way, rather than storing a flipped copy.</li>
+<li><strong>Sheets in a grid</strong> work the same way: pick a row as well as a column, and set <code>texcoord_min_y</code> and <code>texcoord_max_y</code> too.</li>
+<li><strong>Faint lines at frame edges?</strong> Leave a pixel or two of transparent space round each frame, because filtering samples slightly into the neighbouring frame. For crisp pixel art, also load the sheet with <a class="xref" href="../api/Yak2D.SamplerType.html">SamplerType.Point</a> (see <a href="assets.html#texture-options">Texture options</a>).</li>
+<li>Because every frame comes from the same texture, a crowd of animated sprites still <a href="drawing.html#performance-tips">batches</a> into very few GPU draw calls.</li>
+</ul>
+<h2 id="screen-shake">Screen shake</h2>
+<p>A shake is a small, fast, random offset added to the camera, which decays over time. Keeping a single <code>_trauma</code> value between 0 and 1, adding to it on each hit and letting it wear off, gives shakes that combine naturally when several things happen at once:</p>
+<pre><code class="lang-csharp">private float _trauma;   // 0 = still, 1 = maximum shake
+private float _time;
+
+public override bool Update(IServices yak, float secondsSinceLastUpdate)
+{
+    if (yak.Input.WasKeyPressedThisFrame(KeyCode.Space))
+    {
+        _trauma = MathF.Min(1.0f, _trauma + 0.6f); // hits add up, to a limit
+    }
+
+    _trauma = MathF.Max(0.0f, _trauma - (1.2f * secondsSinceLastUpdate)); // and wear off over time
+    return base.Update(yak, secondsSinceLastUpdate);
+}
+
+public override void PreDrawing(IServices yak, float secondsSinceLastDraw, float secondsSinceLastUpdate)
+{
+    _time += secondsSinceLastDraw;
+
+    // Squaring makes small knocks subtle and big ones violent. Sine waves at unrelated frequencies
+    // give a smooth, random-looking wobble (use a noise function if you have one)
+    var shake = _trauma * _trauma;
+    var offset = new Vector2(MathF.Sin(_time * 41.0f) + MathF.Sin(_time * 23.0f),
+                             MathF.Sin(_time * 37.0f) + MathF.Sin(_time * 19.0f)) * (12.0f * shake);
+    var angle = 0.05f * shake * MathF.Sin(_time * 29.0f);
+
+    var focus = Vector2.Zero; // wherever the camera would normally look
+    yak.Cameras.SetCamera2DFocusZoomAndRotation(_camera, focus + offset, 1.0f, angle);
+}
+</code></pre>
+<p>The shake is applied in <a class="xref" href="../api/Yak2D.IApplication.html#Yak2D_IApplication_PreDrawing_">PreDrawing()</a>, the place for camera moves, so it is as smooth as the frame rate allows. In a real game, add the offset to wherever your <a href="cameras.html#following-a-player">following camera</a> is already looking.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p><a href="coordinatesystems.html#screen-space">Screen space</a> is fixed to the camera's view, so screen-space text shakes too. Draw the HUD through a second, still camera if it should stay steady: see <a href="cameras.html#more-than-one-camera">More than one camera</a>.</p>
+</div>
+<h2 id="fade-to-black-between-scenes">Fade to black between scenes</h2>
+<p>Draw a black rectangle over the whole view, on a <a href="drawing.html#layers-and-depth">layer</a> above everything else, and animate its alpha. Fade out, swap the scene while the screen is black, then fade back in:</p>
+<pre><code class="lang-csharp">private enum Fade { None, Out, In }
+
+private const float FadeSeconds = 0.4f;
+private Fade _fade = Fade.None;
+private float _blackness;      // 0 = scene fully visible, 1 = fully black
+private int _scene;
+
+public override bool Update(IServices yak, float secondsSinceLastUpdate)
+{
+    if (_fade == Fade.None &amp;&amp; yak.Input.WasKeyPressedThisFrame(KeyCode.Space))
+    {
+        _fade = Fade.Out;
+    }
+
+    var step = secondsSinceLastUpdate / FadeSeconds;
+    switch (_fade)
+    {
+        case Fade.Out:
+            _blackness = MathF.Min(1.0f, _blackness + step);
+            if (_blackness == 1.0f)
+            {
+                _scene = (_scene + 1) % 2; // swap scenes while the screen is black
+                _fade = Fade.In;
+            }
+            break;
+        case Fade.In:
+            _blackness = MathF.Max(0.0f, _blackness - step);
+            if (_blackness == 0.0f)
+            {
+                _fade = Fade.None;
+            }
+            break;
+    }
+    return base.Update(yak, secondsSinceLastUpdate);
+}
+
+public override void Drawing(IDrawing draw, IFps fps, IInput input, ICoordinateTransforms transforms,
+                             float secondsSinceLastDraw, float secondsSinceLastUpdate)
+{
+    var picture = _scene == 0 ? _city : _yakPhoto;
+    draw.Helpers.DrawTexturedQuad(_drawStage, CoordinateSpace.Screen, picture, Colour.White, Vector2.Zero, 960.0f, 540.0f, 0.9f);
+    draw.DrawString(_drawStage, CoordinateSpace.Screen, $&quot;Scene {_scene + 1}: press Space&quot;, Colour.White, 32.0f,
+                    new Vector2(0.0f, 230.0f), TextJustify.Centre, 0.5f, 0);
+
+    // A black rectangle over everything (a higher layer always draws on top), as opaque as the fade
+    if (_blackness &gt; 0.0f)
+    {
+        draw.Helpers.DrawColouredQuad(_drawStage, CoordinateSpace.Screen, new Colour(0.0f, 0.0f, 0.0f, _blackness),
+                                      Vector2.Zero, 960.0f, 540.0f, 0.0f, layer: 100);
+    }
+}
+</code></pre>
+<p>The fade runs in <a class="xref" href="../api/Yak2D.IApplication.html#Yak2D_IApplication_Update_">Update()</a>, so it takes the same time however fast the computer is, and key presses are ignored while a fade is in progress.</p>
+<p>For fades and colour changes applied to a whole rendered image, such as a slow fade to grey when the player dies, use a <a href="effects.html#colour-effects">colour effects stage</a> with a <a href="renderstages.html#smooth-transitions">smooth transition</a> instead. <a href="../tutorials/yakrun-4.html">Yak Run part 4</a> does exactly that.</p>
+<h2 id="parallax-scrolling">Parallax scrolling</h2>
+<p><img src="../images/guide/recipe-parallax.png" alt="Background layers scrolling at different speeds behind a yak"></p>
+<p>Layers further away should move more slowly as the camera moves. A simple way to do this without any extra cameras is to draw each background layer in <strong>screen space</strong>, covering the view, and scroll its <em>texture coordinates</em> by a fraction of the camera's position. With <a class="xref" href="../api/Yak2D.TextureCoordinateMode.html">TextureCoordinateMode.Wrap</a> the texture repeats for ever, so the layers never run out:</p>
+<pre><code class="lang-csharp">// Draws a texture across the whole view, scrolled by a fraction of the camera's movement.
+// 0 = fixed to the screen (infinitely far away), 1 = moves with the world
+private void DrawBackdrop(IDrawingHelpers h, ITexture texture, Colour tint, float speed, float y, float height, float tileWidth, float depth)
+{
+    var scroll = _cameraX * speed / tileWidth; // in texture widths; Wrap repeats the texture forever
+    h.DrawTexturedQuad(_drawStage, CoordinateSpace.Screen, texture, tint, new Vector2(0.0f, y), 960.0f, height, depth,
+                       texcoord_min_x: scroll, texcoord_max_x: scroll + (960.0f / tileWidth),
+                       textureMode: TextureCoordinateMode.Wrap);
+}
+
+public override void Drawing(IDrawing draw, IFps fps, IInput input, ICoordinateTransforms transforms,
+                             float secondsSinceLastDraw, float secondsSinceLastUpdate)
+{
+    var h = draw.Helpers;
+
+    // Far to near: each layer is nearer (lower depth) and scrolls faster than the one behind it.
+    // Distant layers are tinted darker and drawn smaller, which also helps them read as far away
+    DrawBackdrop(h, _city, Colour.White, 0.1f, 0.0f, 540.0f, 960.0f, 0.9f);
+    DrawBackdrop(h, _soil, new Colour(0.45f, 0.5f, 0.45f, 1.0f), 0.4f, -105.0f, 50.0f, 64.0f, 0.85f);
+    DrawBackdrop(h, _grass, new Colour(0.45f, 0.6f, 0.45f, 1.0f), 0.4f, -75.0f, 20.0f, 64.0f, 0.8f);
+    DrawBackdrop(h, _soil, Colour.White, 1.0f, -215.0f, 110.0f, 128.0f, 0.7f);
+    DrawBackdrop(h, _grass, Colour.White, 1.0f, -150.0f, 40.0f, 128.0f, 0.6f);
+
+    // The yak lives in world space, keeping pace with the camera
+    h.DrawTexturedQuad(_drawStage, CoordinateSpace.World, _yak, Colour.White, new Vector2(_cameraX - 200.0f, -80.0f), 120.0f, 107.0f, 0.5f);
+}
+</code></pre>
+<p>Speed <code>1.0</code> keeps pace with the world (the ground the yak walks on); <code>0.1</code> barely moves (the distant city). Lower <a href="drawing.html#layers-and-depth">depth</a> values are nearer, so each layer is drawn in front of the slower ones behind it.</p>
+<p>For backgrounds that are made of separate objects (mountains, clouds) rather than tiling textures, give the background its own draw stage and camera, and move that camera more slowly. <a href="../tutorials/yakrun-3.html#a-following-camera-and-parallax">Yak Run part 3</a> shows that approach.</p>
+<h2 id="particles">Particles</h2>
+<p><img src="../images/guide/recipe-particles.png" alt="Bursts of additive particles"></p>
+<p>Particles are many small, short-lived shapes. Keep them in a list of plain structs, move them in <code>Update()</code>, and draw them every frame. Drawing onto a stage created with <a href="drawing.html#blend-states">BlendState.AdditiveAlpha</a> adds each particle's colour to what is behind it, so overlapping sparks glow brighter, like real light:</p>
+<pre><code class="lang-csharp">private struct Particle
+{
+    public Vector2 Position;
+    public Vector2 Velocity;
+    public float Age;
+    public float Life;
+    public Colour Colour;
+}
+
+private readonly List&lt;Particle&gt; _particles = new List&lt;Particle&gt;();
+private IDrawStage _glow;
+
+public override bool CreateResources(IServices yak)
+{
+    _camera = yak.Cameras.CreateCamera2D(960, 540);
+    _background = yak.Stages.CreateDrawStage();
+
+    // Additive blending: overlapping sparks add up and get brighter, like light does
+    _glow = yak.Stages.CreateDrawStage(true, BlendState.AdditiveAlpha);
+    return true;
+}
+
+private void Burst(Vector2 at, Colour colour)
+{
+    for (var n = 0; n &lt; 150; n++)
+    {
+        var angle = (float)_random.NextDouble() * MathF.Tau;
+        var speed = 60.0f + (260.0f * (float)_random.NextDouble());
+        _particles.Add(new Particle
+        {
+            Position = at,
+            Velocity = speed * new Vector2(MathF.Cos(angle), MathF.Sin(angle)),
+            Life = 0.8f + (0.8f * (float)_random.NextDouble()),
+            Colour = colour,
+        });
+    }
+}
+
+public override bool Update(IServices yak, float secondsSinceLastUpdate)
+{
+    // A burst wherever the mouse is clicked, and one every so often on its own
+    if (yak.Input.WasMousePressedThisFrame(MouseButton.Left))
+    {
+        var at = yak.Helpers.CoordinateTransforms.ScreenFromWindow(yak.Input.MousePosition, _camera).Position;
+        Burst(at, Colour.Gold);
+    }
+
+    _time += secondsSinceLastUpdate;
+    if (_time &gt; _nextBurst)
+    {
+        var at = new Vector2(_random.Next(-380, 380), _random.Next(-120, 180));
+        Burst(at, _random.Next(2) == 0 ? Colour.Orange : Colour.DeepSkyBlue);
+        _nextBurst = _time + 0.6f;
+    }
+
+    // Move, slow down, fall, age. Remove from the end backwards so the indexes stay valid
+    for (var n = _particles.Count - 1; n &gt;= 0; n--)
+    {
+        var p = _particles[n];
+        p.Velocity = (p.Velocity * (1.0f - (1.5f * secondsSinceLastUpdate))) + new Vector2(0.0f, -220.0f * secondsSinceLastUpdate);
+        p.Position += p.Velocity * secondsSinceLastUpdate;
+        p.Age += secondsSinceLastUpdate;
+        if (p.Age &gt;= p.Life)
+        {
+            _particles.RemoveAt(n);
+        }
+        else
+        {
+            _particles[n] = p;
+        }
+    }
+    return base.Update(yak, secondsSinceLastUpdate);
+}
+
+public override void Drawing(IDrawing draw, IFps fps, IInput input, ICoordinateTransforms transforms,
+                             float secondsSinceLastDraw, float secondsSinceLastUpdate)
+{
+    foreach (var p in _particles)
+    {
+        // Fade out and shrink over the particle's life. With additive blending the colour is scaled
+        // by its alpha before being added, so fading the alpha alone is enough
+        var fade = 1.0f - (p.Age / p.Life);
+        var colour = new Colour(p.Colour.R, p.Colour.G, p.Colour.B, fade);
+        draw.Helpers.DrawColouredPoly(_glow, CoordinateSpace.Screen, colour, p.Position, 6, 3.0f + (5.0f * fade), 0.5f);
+    }
+
+    draw.DrawString(_background, CoordinateSpace.Screen, $&quot;{_particles.Count} particles - click to add more&quot;, Colour.Gray, 22.0f,
+                    new Vector2(0.0f, -230.0f), TextJustify.Centre, 0.5f, 0);
+}
+
+public override void Rendering(IRenderQueue q, IRenderTarget windowRenderTarget)
+{
+    q.ClearColour(windowRenderTarget, new Colour(0.04f, 0.04f, 0.08f, 1.0f));
+    q.ClearDepth(windowRenderTarget);
+    q.Draw(_background, _camera, windowRenderTarget);
+    q.ClearDepth(windowRenderTarget); // so the glow is never hidden behind the background's depth
+    q.Draw(_glow, _camera, windowRenderTarget);
+}
+</code></pre>
+<ul>
+<li><strong>Thousands are fine.</strong> Every particle here is one small coloured polygon on one stage, so they all go to the GPU together.</li>
+<li><strong>Use textures</strong> for soft or shaped particles: swap <code>DrawColouredPoly</code> for <code>DrawTexturedQuad</code> with a small blurred-dot image, all from one texture or <a href="#sprite-sheet-animation">sprite sheet</a>.</li>
+<li><strong>More glow:</strong> render the particles into a <a href="surfaces.html#render-targets">render target</a> and run <a href="effects.html#bloom">bloom</a> over it.</li>
+<li>The struct is copied out of the list, changed and written back, because a <code>List&lt;T&gt;</code> of structs cannot be changed in place.</li>
+</ul>
+<h2 id="a-hud-health-bar-score-and-fps">A HUD: health bar, score and FPS</h2>
+<p><img src="../images/guide/recipe-hud.png" alt="A health bar, score and frame rate drawn over a scene"></p>
+<p>HUD elements belong in <a href="coordinatesystems.html#screen-space">screen space</a>, which is fixed to the camera's view with (0,0) in the middle. For a 960 x 540 camera the edges are at x = ±480 and y = ±270, so position everything relative to those. Text <a href="text.html#drawing-a-string">justification</a> helps: right-justified text grows leftwards from the point you give, which keeps a score tucked into the right-hand corner.</p>
+<pre><code class="lang-csharp">// Screen space has (0,0) in the centre, so the edges of a 960 x 540 camera are at x = +-480, y = +-270
+private const float Left = -480.0f;
+private const float Right = 480.0f;
+private const float Top = 270.0f;
+private const float Margin = 20.0f;
+
+// A bar that empties from right to left. Quads are positioned by their centre, so the
+// filled part's centre moves left as it shrinks
+private void DrawBar(IDrawingHelpers h, Vector2 topLeft, float width, float height, float amount, Colour colour)
+{
+    var centre = topLeft + new Vector2(0.5f * width, -0.5f * height);
+    h.DrawColouredQuad(_drawStage, CoordinateSpace.Screen, new Colour(0.0f, 0.0f, 0.0f, 0.6f), centre, width + 6.0f, height + 6.0f, 0.3f, 10);
+
+    var filled = width * Math.Clamp(amount, 0.0f, 1.0f);
+    h.DrawColouredQuad(_drawStage, CoordinateSpace.Screen, colour, topLeft + new Vector2(0.5f * filled, -0.5f * height), filled, height, 0.2f, 10);
+}
+
+public override void Drawing(IDrawing draw, IFps fps, IInput input, ICoordinateTransforms transforms,
+                             float secondsSinceLastDraw, float secondsSinceLastUpdate)
+{
+    _time += secondsSinceLastDraw;
+    draw.Helpers.DrawTexturedQuad(_drawStage, CoordinateSpace.Screen, _city, Colour.White, Vector2.Zero, 960.0f, 540.0f, 0.9f);
+
+    // Top left: a health bar that changes colour as it drops
+    var health = 0.55f + (0.45f * MathF.Sin(0.8f * _time));
+    var barColour = health &gt; 0.3f ? Colour.LimeGreen : Colour.Red;
+    DrawBar(draw.Helpers, new Vector2(Left + Margin, Top - Margin), 260.0f, 22.0f, health, barColour);
+
+    // Top right: a score, right-justified so it grows leftwards from the corner
+    var score = (int)(_time * 137.0f);
+    draw.DrawString(_drawStage, CoordinateSpace.Screen, $&quot;SCORE {score:000000}&quot;, Colour.White, 30.0f,
+                    new Vector2(Right - Margin, Top - Margin + 4.0f), TextJustify.Right, 0.2f, 10);
+
+    // Bottom left: frame rates, from the IFps given to Drawing()
+    draw.DrawString(_drawStage, CoordinateSpace.Screen, $&quot;{fps.DrawFPS:0} fps, {fps.UpdateFPS:0} updates/s&quot;, Colour.Yellow, 18.0f,
+                    new Vector2(Left + Margin, -Top + Margin + 18.0f), TextJustify.Left, 0.2f, 10);
+}
+</code></pre>
+<p>Quads are positioned by their <em>centre</em>, so a bar that empties to the left needs its centre moved as its width shrinks, as <code>DrawBar</code> does. A high <a href="drawing.html#layers-and-depth">layer</a> (here 10) keeps the HUD above the game whatever depths the game uses. The frame rates come from the <a class="xref" href="../api/Yak2D.IFps.html">IFps</a> passed to <code>Drawing()</code>.</p>
+<h2 id="full-screen-and-pause">Full screen and pause</h2>
+<p>Two things players expect from any game: a full-screen toggle, and pausing when they switch to another window.</p>
+<pre><code class="lang-csharp">private bool _paused;
+
+public override void ProcessMessage(FrameworkMessage msg, IServices yak)
+{
+    base.ProcessMessage(msg, yak); // keeps recreating resources after a device reset
+
+    // Pause automatically when the player switches to another window
+    if (msg == FrameworkMessage.WindowLostFocus)
+    {
+        _paused = true;
+    }
+}
+
+public override bool Update(IServices yak, float secondsSinceLastUpdate)
+{
+    var input = yak.Input;
+
+    // F11 toggles between a window and borderless full screen (which switches instantly,
+    // without changing the display mode)
+    if (input.WasKeyPressedThisFrame(KeyCode.F11))
+    {
+        var fullScreen = yak.Display.DisplayState == DisplayState.BorderlessFullScreen;
+        yak.Display.SetDisplayState(fullScreen ? DisplayState.Normal : DisplayState.BorderlessFullScreen);
+    }
+
+    if (input.WasKeyPressedThisFrame(KeyCode.P))
+    {
+        _paused = !_paused;
+    }
+
+    if (!_paused)
+    {
+        _spin += secondsSinceLastUpdate; // the &quot;game&quot;: skipped entirely while paused
+    }
+    return base.Update(yak, secondsSinceLastUpdate);
+}
+</code></pre>
+<ul>
+<li><a class="xref" href="../api/Yak2D.DisplayState.html">DisplayState.BorderlessFullScreen</a> covers the screen with a borderless window, which switches quickly and plays well with alt-tab. <code>DisplayState.FullScreen</code> is exclusive full screen. See <a href="window.html">Window, display and graphics API</a>.</li>
+<li><a href="lifecycle.html#framework-messages">FrameworkMessage.WindowLostFocus</a> arrives through <a class="xref" href="../api/Yak2D.IApplication.html#Yak2D_IApplication_ProcessMessage_">ProcessMessage()</a>. The override calls <code>base.ProcessMessage()</code> so resources are still recreated after a <a href="lifecycle.html#device-resets">device reset</a>.</li>
+<li>Pausing just means not advancing the game in <code>Update()</code>. Drawing carries on, so the paused scene (and a &quot;paused&quot; message) stays on screen.</li>
+</ul>
+<h2 id="a-transparent-layer-over-a-scene">A transparent layer over a scene</h2>
+<p><img src="../images/guide/recipe-transparent-layer.png" alt="Soft clouds composited with Premultiplied on the left and Alpha on the right"></p>
+<p>Sometimes a group of translucent things should be drawn into a render target of its own first: so it can be blurred, faded or distorted as one, or reused. A render target cleared to <a class="xref" href="../api/Yak2D.Colour.html">Colour.Clear</a> and drawn into with <code>Alpha</code> blending holds <em>premultiplied</em> colour, and must be drawn over the scene with a stage using <code>BlendState.Premultiplied</code> (yak2D 1.2.0 and later):</p>
+<pre><code class="lang-csharp">private IDrawStage _puffs;          // draws translucent shapes into the layer
+private IRenderTarget _layer;       // starts fully transparent each frame
+private IDrawStage _premultiplied;  // composites the layer correctly
+private IDrawStage _alpha;          // composites it the naive way, for comparison
+
+public override bool CreateResources(IServices yak)
+{
+    _camera = yak.Cameras.CreateCamera2D(960, 540);
+    _background = yak.Stages.CreateDrawStage();
+    _city = yak.Surfaces.LoadTexture(&quot;city&quot;, AssetSourceEnum.Embedded);
+
+    _puffs = yak.Stages.CreateDrawStage();
+    _layer = yak.Surfaces.CreateRenderTarget(960, 540);
+    _premultiplied = yak.Stages.CreateDrawStage(true, BlendState.Premultiplied);
+    _alpha = yak.Stages.CreateDrawStage(true, BlendState.Alpha);
+    return true;
+}
+
+public override void Drawing(IDrawing draw, IFps fps, IInput input, ICoordinateTransforms transforms,
+                             float secondsSinceLastDraw, float secondsSinceLastUpdate)
+{
+    draw.Helpers.DrawTexturedQuad(_background, CoordinateSpace.Screen, _city, Colour.White, Vector2.Zero, 960.0f, 540.0f, 0.9f);
+
+    // The same soft white clouds on both halves of the layer: overlapping, half-transparent circles
+    foreach (var x in new[] { -240.0f, 240.0f })
+    {
+        for (var n = 0; n &lt; 5; n++)
+        {
+            var puff = new Vector2(x - 120.0f + (n * 60.0f), 20.0f * MathF.Sin(n * 1.7f));
+            draw.Helpers.DrawColouredPoly(_puffs, CoordinateSpace.Screen, new Colour(1.0f, 1.0f, 1.0f, 0.5f), puff, 48, 70.0f, 0.5f);
+        }
+    }
+
+    // The layer is a texture, so it can be drawn like one. Left half: Premultiplied. Right half: Alpha
+    draw.Helpers.DrawTexturedQuad(_premultiplied, CoordinateSpace.Screen, _layer, Colour.White, new Vector2(-240.0f, 0.0f), 480.0f, 540.0f, 0.5f,
+                                  texcoord_max_x: 0.5f);
+    draw.Helpers.DrawTexturedQuad(_alpha, CoordinateSpace.Screen, _layer, Colour.White, new Vector2(240.0f, 0.0f), 480.0f, 540.0f, 0.5f,
+                                  texcoord_min_x: 0.5f);
+
+    draw.DrawString(_background, CoordinateSpace.Screen, &quot;Premultiplied&quot;, Colour.White, 30.0f, new Vector2(-240.0f, 220.0f), TextJustify.Centre, 0.5f, 0);
+    draw.DrawString(_background, CoordinateSpace.Screen, &quot;Alpha (too dark)&quot;, Colour.White, 30.0f, new Vector2(240.0f, 220.0f), TextJustify.Centre, 0.5f, 0);
+}
+
+public override void Rendering(IRenderQueue q, IRenderTarget windowRenderTarget)
+{
+    // 1. Draw the translucent shapes into the transparent layer
+    q.ClearColour(_layer, Colour.Clear);
+    q.Draw(_puffs, _camera, _layer);
+
+    // 2. Draw the background, then the layer over it, onto the window
+    q.ClearColour(windowRenderTarget, Colour.Black);
+    q.ClearDepth(windowRenderTarget);
+    q.Draw(_background, _camera, windowRenderTarget);
+    q.ClearDepth(windowRenderTarget);
+    q.Draw(_premultiplied, _camera, windowRenderTarget);
+    q.Draw(_alpha, _camera, windowRenderTarget);
+}
+</code></pre>
+<p>The left half uses <code>Premultiplied</code> and the clouds are clean white. The right half draws exactly the same layer with <code>Alpha</code>, which scales the colour by alpha a second time, so the soft areas turn grey. See <a href="drawing.html#transparent-render-targets-and-premultiplied">Transparent render targets</a>.</p>
+<p>Note the order in <code>Rendering()</code>: the layer is rendered <em>before</em> the stage that draws it, because the render queue runs in the order it is built. A <a class="xref" href="../api/Yak2D.IRenderTarget.html">render target</a> is also a <a class="xref" href="../api/Yak2D.ITexture.html">texture</a>, so it can be drawn with any texture-drawing function.</p>
+<h2 id="recipes-elsewhere-in-these-docs">Recipes elsewhere in these docs</h2>
+<table>
+<thead>
+<tr>
+<th>I want to...</th>
+<th>Where</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Make the camera follow the player smoothly</td>
+<td><a href="cameras.html#following-a-player">Cameras: Following a player</a></td>
+</tr>
+<tr>
+<td>Find what the mouse is pointing at in the world</td>
+<td><a href="coordinatesystems.html#converting-between-spaces">Coordinate systems: Converting between spaces</a></td>
+</tr>
+<tr>
+<td>Give my game a chunky, low-resolution pixel-art look</td>
+<td><a href="surfaces.html#example-a-retro-low-resolution-look">Surfaces: A retro, low-resolution look</a></td>
+</tr>
+<tr>
+<td>Split the screen between two players</td>
+<td><a href="viewports.html">Viewports</a></td>
+</tr>
+<tr>
+<td>Draw text that fits in a box</td>
+<td><a href="text.html#measuring-text">Text: Measuring text</a></td>
+</tr>
+<tr>
+<td>Draw thousands of unchanging shapes cheaply</td>
+<td><a href="drawing.html#drawing-things-once">Drawing: Drawing things once</a></td>
+</tr>
+<tr>
+<td>Make something glow</td>
+<td><a href="effects.html#bloom">Effects: Bloom</a></td>
+</tr>
+<tr>
+<td>Add ripples and shock waves</td>
+<td><a href="distortion.html">Distortion</a></td>
+</tr>
+<tr>
+<td>Blend smoothly between two effect settings</td>
+<td><a href="renderstages.html#smooth-transitions">Smooth transitions</a></td>
+</tr>
+<tr>
+<td>Read a pixel's colour back from the GPU</td>
+<td><a href="readback.html">Reading pixels back</a></td>
+</tr>
+<tr>
+<td>Make a texture from my own pixel data</td>
+<td><a href="surfaces.html#textures-from-data">Surfaces: Textures from data</a></td>
+</tr>
+<tr>
+<td>Wrap the game onto a curved CRT screen</td>
+<td><a href="mesh.html">3D meshes</a></td>
+</tr>
+<tr>
+<td>Write my own effect</td>
+<td><a href="../tutorials/customshader.html">Writing a custom shader</a></td>
+</tr>
+<tr>
+<td>Ship the game to players</td>
+<td><a href="../tutorials/distribution.html">Distributing your game</a></td>
+</tr>
+</tbody>
+</table>
+
+</article>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          yak2D - Alex Paterson - MIT licence
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

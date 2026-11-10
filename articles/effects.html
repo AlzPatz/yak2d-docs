@@ -422,10 +422,6 @@
 <p>Not strictly an effect, but <a class="xref" href="../api/Yak2D.IRenderQueue.html#Yak2D_IRenderQueue_Copy_">q.Copy(source, target)</a> is the simplest step of all: it stretches any surface onto a render target, with no stage needed.</p>
 <h2 id="performance">Performance</h2>
 <p>Each effect is one or more full-screen passes over its target, so cost grows with the target's size. Blur and bloom do most of their work on the smaller sample surface given when the stage is created, so reducing that size is the quickest way to make them cheaper. Rendering the whole pipeline at a fixed resolution (for example 960 x 540 render targets) and letting the last step stretch it to the window keeps the cost the same on any display.</p>
-<div class="NOTE">
-<h5>Note</h5>
-<p><strong>Known issue:</strong> partly transparent shapes drawn onto a render target leave its alpha slightly below 1 there, and the colour effects and distortion stages then show those pixels darker than expected. See <a href="drawing.html#blend-states">Drawing: Blend states</a>.</p>
-</div>
 <h2 id="see-also">See also</h2>
 <ul>
 <li><a href="distortion.html">Distortion</a>, <a href="mesh.html">3D meshes</a>, <a href="customshaders.html">Custom shaders</a></li>

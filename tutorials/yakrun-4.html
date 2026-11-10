@@ -406,9 +406,10 @@ private void Restart()
 <p>You have used most of yak2D's building blocks. Some ideas for taking Yak Run further, and where to look:</p>
 <ul>
 <li><strong>Enemies and moving platforms</strong>: more game objects with their own <code>Update()</code> and <code>Draw()</code>, like <code>Yak</code>.</li>
-<li><strong>A title screen and pause menu</strong>: a game state enum, a blurred copy of the game behind the menu (<a href="../articles/effects.html#blur">Blur</a>), and text.</li>
-<li><strong>Sprite sheet animation</strong>: several frames in one texture, chosen with texture coordinates (<a href="../articles/drawing.html#texture-coordinates-wrapping-and-filtering">Drawing</a>).</li>
-<li><strong>Particles</strong>: many small, short-lived shapes on a draw stage with <code>BlendState.AdditiveAlpha</code> (<a href="../articles/drawing.html#blend-states">Blend states</a>).</li>
+<li><strong>A title screen and pause menu</strong>: a game state enum, a <a href="../articles/cookbook.html#fade-to-black-between-scenes">fade between screens</a>, a blurred copy of the game behind the menu (<a href="../articles/effects.html#blur">Blur</a>), and <a href="../articles/cookbook.html#full-screen-and-pause">pausing when the window loses focus</a>.</li>
+<li><strong>Sprite sheet animation</strong>: several frames in one texture, chosen with texture coordinates (<a href="../articles/cookbook.html#sprite-sheet-animation">Cookbook recipe</a>).</li>
+<li><strong>Particles</strong>: dust when the yak lands, sparkles when a star is collected: many small, short-lived shapes on a draw stage with <code>BlendState.AdditiveAlpha</code> (<a href="../articles/cookbook.html#particles">Cookbook recipe</a>).</li>
+<li><strong>Screen shake</strong> when the yak lands hard (<a href="../articles/cookbook.html#screen-shake">Cookbook recipe</a>).</li>
 <li><strong>A retro look</strong>: render the world into a small render target with point sampling (<a href="../articles/surfaces.html#example-a-retro-low-resolution-look">Surfaces</a>), or add the CRT style effect (<a href="../articles/effects.html#style-effects">Style effects</a>).</li>
 <li><strong>Your own effect</strong>: <a href="customshader.html">write a custom shader</a>.</li>
 <li><strong>Share it</strong>: <a href="distribution.html">distribute your game</a>.</li>
