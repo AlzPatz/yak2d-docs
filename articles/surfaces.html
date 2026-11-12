@@ -128,7 +128,8 @@ using var stream = File.OpenRead(&quot;screenshot.png&quot;);
 var fromStream = yak.Surfaces.LoadTexture(stream);
 </code></pre>
 <h3 id="textures-from-data">Textures from data</h3>
-<p>Textures can also be made from pixel data in code. <a class="xref" href="../api/Yak2D.ISurfaces.html#Yak2D_ISurfaces_CreateRgbaFromData_">CreateRgbaFromData()</a> takes one <code>Vector4</code> per pixel (red, green, blue, alpha, each 0 to 1), row by row from the top-left. <a class="xref" href="../api/Yak2D.ISurfaces.html#Yak2D_ISurfaces_LoadTextureColourData_">LoadTextureColourData()</a> loads an image's pixels into a <a class="xref" href="../api/Yak2D.TextureData.html">TextureData</a> without creating a texture, so you can inspect or change them first:</p>
+<p>Textures can also be made from pixel data in code. <a class="xref" href="../api/Yak2D.ISurfaces.html#Yak2D_ISurfaces_CreateRgbaFromData_">CreateRgbaFromData()</a> takes one <code>Vector4</code> per pixel (red, green, blue, alpha, each 0 to 1), row by row from the top-left. <a class="xref" href="../api/Yak2D.ISurfaces.html#Yak2D_ISurfaces_LoadTextureColourData_">LoadTextureColourData()</a> loads an image's pixels into a <a class="xref" href="../api/Yak2D.TextureData.html">TextureData</a> without creating a texture, so you can inspect or change them first.</p>
+<p>Index 0 is the top-left pixel and row 0 the top of the image on every graphics API (from yak2D 1.3.0), so the same array draws the same way up everywhere: don't flip rows for OpenGL. <code>LoadTextureColourData()</code> also returns <code>TextureData.Pixels</code> with row 0 at the top, so its output can go straight into <code>CreateRgbaFromData()</code>:</p>
 <p><img src="../images/guide/texture-from-data.png" alt="Textures created from data"></p>
 <pre><code class="lang-csharp">public override bool CreateResources(IServices yak)
 {
@@ -162,7 +163,7 @@ var fromStream = yak.Surfaces.LoadTexture(stream);
     return true;
 }
 </code></pre>
-<p><a class="xref" href="../api/Yak2D.ISurfaces.html#Yak2D_ISurfaces_CreateFloat32FromData_">CreateFloat32FromData()</a> makes a single-channel texture of <code>float</code> values, which is what the <a href="distortion.html">distortion</a> stage uses for height maps.</p>
+<p><a class="xref" href="../api/Yak2D.ISurfaces.html#Yak2D_ISurfaces_CreateFloat32FromData_">CreateFloat32FromData()</a> makes a single-channel texture of <code>float</code> values, which is what the <a href="distortion.html">distortion</a> stage uses for height maps. Its rows are ordered the same way: row 0 is the top on every graphics API, with no flip for OpenGL.</p>
 <h3 id="texture-size">Texture size</h3>
 <p><a class="xref" href="../api/Yak2D.ISurfaces.html#Yak2D_ISurfaces_GetSurfaceDimensions_">GetSurfaceDimensions()</a> returns a surface's width and height in pixels as a <code>System.Drawing.Size</code>. It is handy for drawing a sprite at its natural size, or keeping its aspect ratio.</p>
 <h2 id="render-targets">Render targets</h2>

@@ -120,6 +120,8 @@
 </ul>
 <h2 id="sprites-have-faint-lines-or-specks-at-their-edges">Sprites have faint lines or specks at their edges</h2>
 <p>Texture filtering with the <code>Wrap</code> mode blends each edge of an image with the opposite edge. Leave a transparent border of a pixel or two round sprite images, or use <code>TextureCoordinateMode.Mirror</code>. See <a href="drawing.html#texture-coordinates-wrapping-and-filtering">Drawing</a>.</p>
+<h2 id="a-texture-made-from-pixel-data-is-upside-down-on-opengl-only-after-updating-to-130">A texture made from pixel data is upside down on OpenGL only (after updating to 1.3.0)</h2>
+<p>From yak2D 1.3.0, <a class="xref" href="../api/Yak2D.ISurfaces.html#Yak2D_ISurfaces_CreateRgbaFromData_">CreateRgbaFromData()</a> and <a class="xref" href="../api/Yak2D.ISurfaces.html#Yak2D_ISurfaces_CreateFloat32FromData_">CreateFloat32FromData()</a> put row 0 at the top on every graphics API, OpenGL included. If your code flipped the pixel rows itself for OpenGL, remove that flip. See <a href="surfaces.html#textures-from-data">Textures from data</a>.</p>
 <h2 id="translucent-shapes-look-too-dark-or-have-dark-fringes">Translucent shapes look too dark, or have dark fringes</h2>
 <ul>
 <li><strong>After an effect (colour effects, distortion):</strong> this was a bug in yak2D before 1.2.0. Update the <code>Yak2D</code> package (<code>dotnet add package Yak2D</code>).</li>

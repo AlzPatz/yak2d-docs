@@ -91,6 +91,14 @@
 <pre><code class="lang-bash">dotnet add package Yak2D
 </code></pre>
 <p>The full history is in the <a href="https://github.com/AlzPatz/yak2d/commits/master">yak2d repository</a>.</p>
+<h2 id="130-november-2026">1.3.0 (November 2026)</h2>
+<ul>
+<li><strong>Behaviour change on OpenGL: textures made from pixel data are now the same way up on every graphics API.</strong> <a class="xref" href="../api/Yak2D.ISurfaces.html#Yak2D_ISurfaces_CreateRgbaFromData_">CreateRgbaFromData()</a> and <a class="xref" href="../api/Yak2D.ISurfaces.html#Yak2D_ISurfaces_CreateFloat32FromData_">CreateFloat32FromData()</a> now treat index 0 as the top-left pixel and row 0 as the top of the image on OpenGL too, as they already did on Vulkan, Direct3D11 and Metal, so one array draws the same way up everywhere. <strong>If your application flipped pixel rows itself for OpenGL, remove that flip</strong>, or the texture now draws upside down on OpenGL. <a class="xref" href="../api/Yak2D.ISurfaces.html#Yak2D_ISurfaces_LoadTextureColourData_">LoadTextureColourData()</a> also returns row 0 at the top on every graphics API now, so its output can go straight into <code>CreateRgbaFromData()</code>. See <a href="surfaces.html#textures-from-data">Textures from data</a>.</li>
+<li><strong>New <code>YAK2D_TEXTURE_ROWS_BOTTOM_UP</code> define</strong> in custom shaders compiled with <code>useSpirvCompile: true</code>, for texture coordinates a shader computes itself (<code>FTex</code> is already correct everywhere). Shaders that don't use it work as before. See <a href="customshaders.html#texture-coordinates-you-compute-yourself">Custom shaders</a>.</li>
+<li><strong>Draw layers 10 and above now draw.</strong> Before, anything drawn on layer 10 or higher was lost. See <a href="drawing.html#layers-and-depth">Layers and depth</a>.</li>
+<li><strong>Fixed</strong> the second texture (<code>Texture1</code>) of a <code>DualTextured</code> draw request being sampled upside down on Vulkan; it now matches the other graphics APIs.</li>
+<li><strong>Ubuntu:</strong> the bundled SDL2, shaderc and spirv-cross libraries now load without installing any system packages.</li>
+</ul>
 <h2 id="123-november-2026">1.2.3 (November 2026)</h2>
 <ul>
 <li><strong>Custom shaders on OpenGL:</strong> with SPIR-V compiled shaders, textures are now bound by name, so a shader that reads more than one texture gets the right one on OpenGL. Name each texture <code>Texture_&lt;Name&gt;</code> and its sampler <code>Sampler_&lt;Name&gt;</code>, after the uniform description's <code>Name</code>. See <a href="customshaders.html#uniforms-the-shaders-inputs">Custom shaders</a>.</li>

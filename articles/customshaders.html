@@ -216,7 +216,16 @@ private struct Settings
     public float Pad0;
     public float Pad1;
 }
-</code></pre><h2 id="setting-data-each-frame">Setting data each frame</h2>
+</code></pre><h3 id="texture-coordinates-you-compute-yourself">Texture coordinates you compute yourself</h3>
+<p><code>FTex</code> is already correct on every graphics API, so a shader that samples with <code>FTex</code> (or an offset from it, as above) needs no flip.</p>
+<p>A shader that works out its own texture coordinates, for example tiling a texture in world space or picking a cell of an atlas, has to allow for how the texture's rows are stored: bottom-up on OpenGL, top-down on Vulkan, Direct3D11 and Metal. From yak2D 1.3.0, stages created with <code>useSpirvCompile: true</code> get a define for this, inserted directly after the <code>#version</code> line: <code>#define YAK2D_TEXTURE_ROWS_BOTTOM_UP 1</code> on OpenGL, <code>0</code> on Vulkan, Direct3D11 and Metal. Flip the coordinate when it is set:</p>
+<pre><code class="lang-glsl">#if YAK2D_TEXTURE_ROWS_BOTTOM_UP
+    uv.y = 1.0 - uv.y;
+#endif
+</code></pre>
+<p>Shaders that don't use the define compile and behave as before.</p>
+<p>Precompiled per-API shaders (<code>useSpirvCompile: false</code>) don't get the define. A <code>Shaders/OpenGL</code> shader only ever runs on OpenGL, so flip the coordinate there directly.</p>
+<h2 id="setting-data-each-frame">Setting data each frame</h2>
 <p><a class="xref" href="../api/Yak2D.IStages.html#Yak2D_IStages_SetCustomShaderUniformValues_">SetCustomShaderUniformValues()</a> sends a struct (or an array of structs) to the named uniform. Call it whenever the values change, typically in <code>PreDrawing()</code>:</p>
 <pre><code class="lang-csharp">public bool Update(IServices yak, float secondsSinceLastUpdate)
 {
