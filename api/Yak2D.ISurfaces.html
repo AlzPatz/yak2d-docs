@@ -232,7 +232,9 @@ Both RenderTarget and Textures can be used as Textures (pixel sources)</p>
   <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Interface/Services/ISurfaces.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Geneate a texture of floats (used in distortion stages) directly from an array</p>
+  <div class="markdown level1 summary"><p>Geneate a texture of floats (used in distortion stages) directly from an array
+Index 0 is the top-left pixel and row 0 is the top of the image on every backend. Where the backend stores texture rows
+bottom-up (OpenGL) the framework mirrors the rows itself, so callers must not pre-mirror. The caller's array is not modified</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -249,7 +251,7 @@ Both RenderTarget and Textures can be used as Textures (pixel sources)</p>
     <dd><p>Height in pixels</p>
 </dd>
     <dt><code>pixels</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>[]</dt>
-    <dd><p>Pixel data, one dimensional array, texture top-left pixel at 0 index, data ordered in rows</p>
+    <dd><p>Pixel data, one dimensional array, texture top-left pixel at 0 index, data ordered in rows, row 0 is the top of the image on every backend</p>
 </dd>
     <dt><code>samplerType</code> <a class="xref" href="Yak2D.SamplerType.html">SamplerType</a></dt>
     <dd><p>Sampler filter to be when sampling the Texture</p>
@@ -329,7 +331,10 @@ Both RenderTarget and Textures can be used as Textures (pixel sources)</p>
   <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Interface/Services/ISurfaces.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Geneate a texture of RGBA pixels directly from an array of Vector4s</p>
+  <div class="markdown level1 summary"><p>Geneate a texture of RGBA pixels directly from an array of Vector4s
+Index 0 is the top-left pixel and row 0 is the top of the image on every backend. Where the backend stores texture rows
+bottom-up (OpenGL) the framework mirrors the rows itself, as it does for loaded image files, so callers must not pre-mirror.
+The caller's array is not modified</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -346,7 +351,7 @@ Both RenderTarget and Textures can be used as Textures (pixel sources)</p>
     <dd><p>Height in pixels</p>
 </dd>
     <dt><code>pixels</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.vector4">Vector4</a>[]</dt>
-    <dd><p>Pixel data, one dimensional array, texture top-left pixel at 0 index, data ordered in rows</p>
+    <dd><p>Pixel data, one dimensional array, texture top-left pixel at 0 index, data ordered in rows, row 0 is the top of the image on every backend</p>
 </dd>
     <dt><code>samplerType</code> <a class="xref" href="Yak2D.SamplerType.html">SamplerType</a></dt>
     <dd><p>Sampler filter to be when sampling the Texture</p>
@@ -696,7 +701,9 @@ Both RenderTarget and Textures can be used as Textures (pixel sources)</p>
   <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Interface/Services/ISurfaces.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Loads texture colour data from a .png image asset</p>
+  <div class="markdown level1 summary"><p>Loads texture colour data from a .png image asset
+The returned Pixels are ordered in rows with the top-left pixel at index 0: row 0 is the top of the image on every backend
+(the data can be passed straight to CreateRgbaFromData, which mirrors rows itself where the backend needs it)</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 

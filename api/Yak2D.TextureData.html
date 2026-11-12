@@ -183,7 +183,8 @@ Struct TextureData  <a class="header-action link-secondary" title="View source" 
   </h3>
 
   <div class="markdown level1 summary"><p>Texture Pixel Data as normalised four component RGBA floats when used for texture creation or reading RGBA texture data
-If used to pass Float32 Pixel data back from the GPU, then the first component is used only</p>
+If used to pass Float32 Pixel data back from the GPU, then the first component is used only
+Ordered in rows with the top-left pixel at index 0 when loaded with ISurfaces.LoadTextureColourData: row 0 is the top of the image on every backend</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
