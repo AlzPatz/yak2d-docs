@@ -91,6 +91,10 @@
 <pre><code class="lang-bash">dotnet add package Yak2D
 </code></pre>
 <p>The full history is in the <a href="https://github.com/AlzPatz/yak2d/commits/master">yak2d repository</a>.</p>
+<h2 id="131-november-2026">1.3.1 (November 2026)</h2>
+<ul>
+<li><strong>Fixed</strong> loading a texture, or making one with <a class="xref" href="../api/Yak2D.ISurfaces.html#Yak2D_ISurfaces_CreateRgbaFromData_">CreateRgbaFromData()</a> or <a class="xref" href="../api/Yak2D.ISurfaces.html#Yak2D_ISurfaces_CreateFloat32FromData_">CreateFloat32FromData()</a>, with <code>SamplerType.PointMagLinearMin</code> throwing an exception (&quot;slot 1 must be a Sampler&quot;). Render targets already worked with it.</li>
+</ul>
 <h2 id="130-november-2026">1.3.0 (November 2026)</h2>
 <ul>
 <li><strong>Behaviour change on OpenGL: textures made from pixel data are now the same way up on every graphics API.</strong> <a class="xref" href="../api/Yak2D.ISurfaces.html#Yak2D_ISurfaces_CreateRgbaFromData_">CreateRgbaFromData()</a> and <a class="xref" href="../api/Yak2D.ISurfaces.html#Yak2D_ISurfaces_CreateFloat32FromData_">CreateFloat32FromData()</a> now treat index 0 as the top-left pixel and row 0 as the top of the image on OpenGL too, as they already did on Vulkan, Direct3D11 and Metal, so one array draws the same way up everywhere. <strong>If your application flipped pixel rows itself for OpenGL, remove that flip</strong>, or the texture now draws upside down on OpenGL. <a class="xref" href="../api/Yak2D.ISurfaces.html#Yak2D_ISurfaces_LoadTextureColourData_">LoadTextureColourData()</a> also returns row 0 at the top on every graphics API now, so its output can go straight into <code>CreateRgbaFromData()</code>. See <a href="surfaces.html#textures-from-data">Textures from data</a>.</li>
