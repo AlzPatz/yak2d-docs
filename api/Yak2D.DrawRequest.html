@@ -305,9 +305,7 @@ A drawing request is comprised of indexed vertices arranged in a triangle list</
   <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Structs/DrawRequest.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><blockquote>
-<p>= 0. The layer that these vertices belong too, lower layers are drawn behind higher layers</p>
-</blockquote>
+  <div class="markdown level1 summary"><p>Negative values are treated as 0 (rejected when validate is true). The layer that these vertices belong too, lower layers are drawn behind higher layers</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 

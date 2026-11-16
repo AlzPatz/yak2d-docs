@@ -160,7 +160,7 @@ Interface IApplication  <a class="header-action link-secondary" title="View sour
   <a class="header-action link-secondary" title="View source" href="https://github.com/AlzPatz/yak2d/blob/master/src/Yak2D.Api/Interface/IApplication.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Called whenever framework related resources should be created, including once at start up and whenever resources are lost (such as graphics device change). An application should be able to restore all required resources at any moment this is called</p>
+  <div class="markdown level1 summary"><p>Called once at startup. After a graphics device reset Yak2D does not call it again: every Yak2D resource is gone, and the application receives <a class="xref" href="Yak2D.FrameworkMessage.html#Yak2D_FrameworkMessage_GraphicsDeviceRecreated">GraphicsDeviceRecreated</a>, on which it should recreate them (calling CreateResources itself is the simple way)</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 

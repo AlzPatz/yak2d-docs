@@ -203,7 +203,7 @@ Interface IBackend  <a class="header-action link-secondary" title="View source" 
   </h3>
 
   <div class="markdown level1 summary"><p>Sets new Graphis API (will not action if platform is not supported or requested API is the same as that currently in use)
-Note: upon any API change, all framework resources will be destroyed and a call to [re-]CreateResources in the application will be made</p>
+Note: upon any API change, all framework resources are destroyed and the application receives FrameworkMessage.GraphicsDeviceRecreated; recreate resources there</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
